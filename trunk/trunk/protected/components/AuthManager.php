@@ -4,8 +4,8 @@
  */
 class AuthManager extends CDbAuthManager{
     public function init(){
-		
-		// Run the parent
+        
+        // Run the parent
         parent::init();
  
         // Run only if we are not guests

@@ -4,39 +4,16 @@
  */
 class IndexController extends SiteBaseController {
 	
-	const PAGE_SIZE         = 6;
-    const PAGE_SIZE_NEW     = 12;
+	const PAGE_SIZE = 5;
 	/**
 	 * Controller constructor
 	 */
-    public function init()
-    {
-        parent::init();
-    }
-	
-	/**
-	 * List of available actions
-	 */
-	public function actions()
+	public function init()
 	{
-	   return array(
-	      'captcha' => array(
-	         'class' => 'CCaptchaAction',
-	         'backColor' => 0xFFFFFF,
-		     'minLength' => 3,
-		     'maxLength' => 7,
-			 'testLimit' => 3,
-			 'padding' => array_rand( range( 2, 10 ) ),
-	      ),
-	   );
+		parent::init();
 	}
-	
-	/**
-	 * Index action
-	 */
-    public function actionindex() {
+
+	public function actionIndex() {
 		$this->render('index');
-    }
-
-
+	}
 }
