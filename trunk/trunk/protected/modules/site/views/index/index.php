@@ -1,31 +1,63 @@
 <div class="container">
-    <div class="row with__sep">
-        <h3 class="text-center">Phasellus ultrices nulla quis nibh. Quisque a lectus. Lorem ipsum dolor sit amet ...</h3>
-        <p class="text-center big-paragraph">Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
-    </div>
+
     <div class="row no_padding icons__blocks text-center">
-        <h2 class="page_title"><span>our services</span><br />
-            <span class="sep"></span><br />
-            <small>Cras ornare tristique elit</small></h2>
-        <div class="col-md-4">
-            <h3><small><a href="#">Creative Design</a></small></h3>
-            <p class="small-paragraph">Vestibulum auctor dapibus neque.</p>
-            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/img1.jpg" alt="image" class="img-responsive img-rounded">
-            <p>Quisque et aliquam mauris. Nunc id cursus quam. Curabitur aliquam ornare ante et commodo. Nulla eu erat id massa egestas eleifend. Sed id venenatis.</p>
+        <h2 class="page_title"><span>Join to Labeeto now</span><br />
+            <span class="sep"></span>
+        <div class="col-md-12 wrapper-form grey-info-block">
+
+            <?php $form=$this->beginWidget('CActiveForm', array(
+                'id'=>'members-form',
+                'enableAjaxValidation'=>false,
+            )); ?>
+            <div class="row first-row fix-row">
+                <div class="col-md-2">
+                  <label class="label-join"> I'm a</label>
+                </div>
+                <div class="col-md-2">
+                    <?php echo $form->dropDownList($model,'gender',array('0'=>'Man','1'=>'Woman'),array('class'=>'form-control')); ?>
+                    <?php echo $form->error($model,'gender'); ?>
+                </div>
+                <div class="col-md-4">
+                    <label class="label-join">Interested in</label>
+                </div>
+                <div class="col-md-2">
+                    <?php echo $form->dropDownList($model,'interesting',array('0'=>'Men','1'=>'Women','2'=>'Both'),array('class'=>'form-control')); ?>
+                    <?php echo $form->error($model,'interesting'); ?>
+                </div>
+            </div>
+            <div  class="row fix-row">
+                <div class="col-md-2">
+                    <label class="label-join"> Age</label>
+                </div>
+                <div class="col-md-2">
+                    <?php echo $form->textField($model,'agefrom',array('class'=>'form-control')); ?>
+                    <?php echo $form->error($model,'agefrom'); ?>
+                </div>
+                <div class="col-md-2">
+                    <label class="label-join"> to</label>
+                </div>
+                <div class="col-md-2">
+                    <?php echo $form->textField($model,'ageto',array('class'=>'form-control')); ?>
+                    <?php echo $form->error($model,'ageto'); ?>
+                </div>
+                <div class="col-md-2">
+                    <label class="label-join"> near</label>
+                </div>
+                <div class="col-md-2">
+                    <?php echo $form->textField($model,'near',array('class'=>'form-control')); ?>
+                    <?php echo $form->error($model,'near'); ?>
+                </div>
+            </div>
+            <div class="row fix-row">
+                <a href="#" class="dc_bright_button bright-red bright-round">Register now</a>
+                <a href="#" class="dc_bright_button bright-blue bright-bubble"><img class="fb_connect" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/facebook_a.png">Connect</a>
+                <label class="label-join fix-size">Already a member?<a href="#">Login>> </a></label>
+            </div>
+
+            <?php $this->endWidget(); ?>
+
         </div>
-        <div class="col-md-4">
-            <h3><small><a href="#">Multipurpose</a></small></h3>
-            <p class="small-paragraph">Vestibulum auctor dapibus neque.</p>
-            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/img2.jpg" alt="image" class="img-responsive img-rounded">
-            <p>Quisque et aliquam mauris. Nunc id cursus quam. Curabitur aliquam ornare ante et commodo. Nulla eu erat id massa egestas eleifend. Sed id venenatis.</p>
-        </div>
-        <div class="col-md-4">
-            <h3><small><a href="#">Fully Responsive</a></small></h3>
-            <p class="small-paragraph">Vestibulum auctor dapibus neque.</p>
-            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/img3.jpg" alt="image" class="img-responsive img-rounded">
-            <p>Quisque et aliquam mauris. Nunc id cursus quam. Curabitur aliquam ornare ante et commodo. Nulla eu erat id massa egestas eleifend. Sed id venenatis.</p>
-        </div>
-        <p><a href="#" class="btn btn-primary btn-lg">Learn more</a></p>
+
     </div>
 </div>
 <div class="row grey-info-block text-center">

@@ -14,7 +14,7 @@ class IndexController extends SiteBaseController {
 	}
 
 	public function actionIndex() {
-
-		$this->render('index');
+        $model =  new Members();
+		$this->render('index',compact('model'));
 	}
 }
