@@ -222,15 +222,15 @@ header {
 .navbar-default .navbar-brand, .navbar-default .navbar-brand:hover {
 	font-family: 'Cookie', cursive;
 	font-size: 50px;
-	color: #1a1a1a;
-	background: #BBB;
-	width: 160px;
-	height: 160px;
+	color: white;
+	/*background: #BBB;*/
+	width: 100%;
+	height: 100%;
 	text-transform: none;
 	line-height: 160px;
 	text-align: center;
 	display: block;
-	margin: 0 auto;
+	margin: 0 ;
 	float: none;
 	padding: 0;
 	border-radius: 100%;
@@ -402,7 +402,8 @@ ul.dropdown-menu>li>a:hover {
 	right: 20px;
 }
 .carousel-control .carousel-control-left:hover {
-    background: url('../images/prev_a.png') no-repeat;
+	background: url('../images/prev_a.png') no-repeat;
+    background: url('../images/next.png') no-repeat;
 }
 .carousel-control .carousel-control-right:hover {
 	background: url('../images/next_a.png') no-repeat;
@@ -437,7 +438,7 @@ ul.dropdown-menu>li>a:hover {
 	background: url('../images/lines.png') repeat-x left bottom;
 }
 .container .row:first-child {
-	padding: 45px 10% 50px 10%;
+	padding: 0 10% 50px 10%;
 }
 p.big-paragraph {
 	font-size: 18px;
@@ -1249,6 +1250,28 @@ h2 {
 	width: 100%
 }
 .navbar-brand a img {
-	width:100%;
+	width:160px;
+    margin-left: 10px;
 }
-
+.first-row {
+    margin-top: 20px;
+}
+.label-join {
+    text-transform: none;
+}
+.fix-row {
+    padding: 10px!important;
+}
+.wrapper-form {
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+.fb_connect {
+    width: 25%;
+    margin-right: 7px;
+}
+.fix-size {
+    font-size: 15px;
+}
