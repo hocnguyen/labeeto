@@ -44,7 +44,7 @@ h1 {
 h2 {
 	font-size: 32px;
 	line-height: 24px;
-	padding: 40px 0;
+	padding: 20px 0;
 	color: #1e1e1e;
 	text-transform: uppercase;
 }
@@ -273,7 +273,7 @@ header {
 	text-transform: uppercase;
 	font-weight: bold;
 	text-decoration: none;
-	padding: 25px 0;
+	padding:0;
 	display: block;
 }
 .dropper a.dropdown-toggle:hover {
@@ -1304,4 +1304,29 @@ h2 {
 }
 .text-footer-center {
     text-align: center;
+}
+.username {
+    background: url('../images/arrow_down.png') right no-repeat;
+}
+.avatar {
+    width: 20%;
+}
+.message {
+    width: 24px;
+    height: 24px;
+    background: url('../images/message.png') right no-repeat;
+}
+.img-home-profile {
+    width: 98%;
+    margin: 7px auto;
+    border-radius: 5px;
+}
+.fix-nav-tabs {
+    padding-left: 0!important;
+    border-radius: 5px;
+}
+.fix-tabs-content {
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 5px;
 }

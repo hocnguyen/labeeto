@@ -16,31 +16,8 @@ class CustomUrlManager extends CUrlManager {
             $this->rules = array(
                 "/admin"       => 'admin/index/index',
                 "/admin/login" => 'admin/index/login',
-                /*
-                -----------------------ADMIN--------------
-                "/admin" => 'admin/index/index',
-                "/admin/<_c:([a-zA-z0-9-]+)>" => 'admin/<_c>/index',
-                "/admin/<_c:([a-zA-z0-9-]+)>/<_a:([a-zA-z0-9-]+)>" => 'admin/<_c>/<_a>',
-                "/admin/<_c:([a-zA-z0-9-]+)>/<_a:([a-zA-z0-9-]+)>//*" => 'admin/<_c>/<_a>/',
-                
-                "/<order:(all|popular)>" => 'site/videos/allvideos',
-                "/<_a:(genres|search|new)>" => 'site/videos/<_a>',
-                "/<_a:(addmirror|notworking)>/<id:([0-9]+)>" => 'site/videos/<_a>',
-                
-                "/profile" => 'site/users/index',
-                "/<_a:(register|login|logout|verify|socialLogin)>" => 'site/users/<_a>',
-                "/admin-login" => 'site/users/admin',
-                "/forgot-password" => 'site/users/lostpassword',
-                "/change-password" => 'site/users/changepass',
-                "/contact-us" => 'site/contactus/index',
-                "/messages" => 'site/usermessages/index',
-                "/<_a:(viewmessage|sendmessage)>" => 'site/usermessages/<_a>',
-                // "/invoices" => 'site/transactions/index',
-                // "/buy-a-plan" => 'site/transactions/buyplan',
-                // "/<_a:(earning|cashout)>" => 'site/transactions/<_a>',
-                // "/<id:(\d+)>-<ualias:(.*?)>/blog/<alias:(.*)>" => array('site/blog/viewpost'),*/
-                
-                /*"/" => 'site/index/index',*/
+                /* Home page After login*/
+                "/home" => 'site/index/home',
                 'gii'=>'gii',
                 'gii/<controller:\w+>'=>'gii/<controller>',
                 'gii/<controller:\w+>/<action:\w+>'=>'gii/<controller>/<action>',
@@ -48,10 +25,10 @@ class CustomUrlManager extends CUrlManager {
                 "/<_c:([a-zA-z0-9-]+)>/<_a:([a-zA-z0-9-]+)>" => 'site/<_c>/<_a>',
                 "/<_c:([a-zA-z0-9-]+)>/<_a:([a-zA-z0-9-]+)>/id/<id:\d+>" => 'site/<_c>/<_a>/',
                 "/<_c:([a-zA-z0-9-]+)>/<_a:([a-zA-z0-9-]+)>/tags/<tags:(.*?)>" => 'site/<_c>/<_a>/',
-                "/admin" => 'admin/index/index',
                 "/admin/<_c:([a-zA-z0-9-]+)>" => 'admin/<_c>/index',
                 "/admin/<_c:([a-zA-z0-9-]+)>/<_a:([a-zA-z0-9-]+)>" => 'admin/<_c>/<_a>',
                 "/admin/<_c:([a-zA-z0-9-]+)>/<_a:([a-zA-z0-9-]+)>//*" => 'admin/<_c>/<_a>/',
+
             );
             
             $urlrules = array_merge( $_more, $this->rules );
