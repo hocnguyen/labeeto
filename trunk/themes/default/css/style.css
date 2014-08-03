@@ -221,7 +221,7 @@ header {
 }
 .navbar-default .navbar-brand, .navbar-default .navbar-brand:hover {
 	font-family: 'Cookie', cursive;
-	font-size: 50px;
+	font-size: 45px;
 	color: white;
 	/*background: #BBB;*/
 	width: 100%;
@@ -586,6 +586,12 @@ p.big-paragraph {
 .socialicon-mail {
 	background: url('../images/mail.png') no-repeat;
 }
+.socialicon-insta {
+    background: url('../images/Instanorm.png') no-repeat;
+}
+.socialicon-insta:hover {
+	background: url('../images/Instahover.png') no-repeat;
+}
 .socialicon-twitter:hover {
 	background: url('../images/twitter_a.png') no-repeat;
 }
@@ -638,7 +644,7 @@ aside a.btn {
 
 footer {
 	background: #1b2021;
-	padding: 45px 0 70px;
+	padding:0;
 	color: #808080;
 }
 footer h3 small {
@@ -647,13 +653,13 @@ footer h3 small {
 }
 footer hr {
 	border-top: 1px solid #47454a;
-	margin: 70px 0 0 0;
+	margin: 0;
 }
 footer p span {
 	color: #fff;
 }
 footer .text-center {
-	padding: 40px 0;
+	padding: 10px 0;
 	margin: 0;
 }
 footer .form-group {
@@ -1281,4 +1287,21 @@ h2 {
 }
 .fb_connect_popup {
     width: 15%;
+}
+.register_button{
+    height: 28px;
+    font-size: 13px!important;
+}
+.facebook-img {
+    margin-top: 10px;
+}
+.social__icons {
+    text-align: right;
+    margin-top: 20px;
+}
+.menu-footer {
+    color:white;
+}
+.text-footer-center {
+    text-align: center;
 }

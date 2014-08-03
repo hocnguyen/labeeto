@@ -18,10 +18,18 @@
                     <?php echo $form->error($model,'gender'); ?>
                 </div>
                 <div class="col-md-4">
-                    <label class="label-join">Interested in</label>
+                    <label class="label-join">Looking For</label>
                 </div>
-                <div class="col-md-2">
-                    <?php echo $form->dropDownList($model,'interesting',array('0'=>'Men','1'=>'Women','2'=>'Both'),array('class'=>'form-control')); ?>
+                <div class="col-md-4">
+                    <?php
+                    $lookingFor = array(
+                        '0'=>' Something Casual',
+                        '1'=>' Something Serious',
+                        '2'=>'Friendship',
+                        '3'=>'Training',
+                        '4'=>'Anything',
+                    );
+                    echo $form->dropDownList($model,'interesting',$lookingFor,array('class'=>'form-control')); ?>
                     <?php echo $form->error($model,'interesting'); ?>
                 </div>
             </div>
@@ -49,9 +57,10 @@
                 </div>
             </div>
             <div class="row fix-row">
-                
-                <a href="#" class="dc_bright_button bright-red bright-round">Register now</a>
-                <a href="#" class="dc_bright_button bright-blue bright-bubble"><img class="fb_connect" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/facebook_a.png">Connect</a>
+                <button class="register_button dc_ibutton-red">Register now</button>
+                <a href="#" class="">
+                    <img class="facebook-img" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/connect_fb.png">
+                </a>
                 <label class="label-join fix-size">Already a member?<a href="#">Login>> </a></label>
             </div>
 
@@ -63,27 +72,23 @@
 </div>
 <div class="row grey-info-block text-center">
     <div class="container">
-        <h2 class="page_title"><span>about us</span><br />
-            <span class="sep"></span><br />
-            <small>Cras ornare tristique elit</small></h2>
-        <div class="col-md-6"> <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/pic1.jpg" alt="image" class="img-rounded img-responsive">
-            <h3><small>Commodo id natoque malesuada</small></h3>
-            <p class="small-paragraph">Phasellus ultrices nulla quis nibh. Quisque a lectus.</p>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+        <h2 class="page_title"><span>Why Choose Labeeto</span><br />
+            <span class="sep"></span></h2>
+        <div class="col-md-4"> <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/meet-people.jpg" alt="image" class="img-rounded img-responsive">
+            <h3><small>Meet people</small></h3>
+            <p class="small-paragraph"></p>
+            <p>we understand how hard it is to find people who share a healthy active lifestyle. We are dedicated to building a community full of motivation and inspiration</p>
         </div>
-        <div class="col-md-6"> <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/pic2.jpg" alt="image" class="img-rounded img-responsive">
-            <h3><small>Auctor etiam porttitor phasellus</small></h3>
-            <p class="small-paragraph">Phasellus ultrices nulla quis nibh. Quisque a lectus.</p>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+        <div class="col-md-4"> <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/find-love.jpg" alt="image" class="img-rounded img-responsive">
+            <h3><small>Find Love</small></h3>
+            <p class="small-paragraph"></p>
+            <p>We will offer you a chance to find someone who wants to archive the same healthy lifestyle that you care about.</p>
+        </div>
+        <div class="col-md-4"> <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/get-fix.jpg" alt="image" class="img-rounded img-responsive">
+            <h3><small>Get fix</small></h3>
+            <p class="small-paragraph"></p>
+            <p>We want to help you  meet your goals. When you share your achievements other will help motivate you along the way. Personal trainers will have their chance out and help you on your journey .</p>
         </div>
         <div class="clear"></div>
-    </div>
-</div>
-<div class="text-center three-blocks">
-    <div class="container">
-        <div class="row">
-            <h2 class="">Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus.</h2>
-            <p class="">Sed adipiscing ornare risus. Morbi est est, blandit sit amet, sagittis vel, euismod vel, velit. Pellentesque egestas sem. Suspendisse commodo ullamcorper magna.</p>
-        </div>
     </div>
 </div>
