@@ -14,9 +14,11 @@
 <header class="main__header">
     <?php $this->renderPartial('../elements/header') ?>
 </header>
-<section class="slider">
-    <?php $this->renderPartial('../elements/slider') ?>
-</section>
+
+<?php if($this->login==0){ //Yii::app()->user->isGuest
+    $this->renderPartial('../elements/slider');
+}
+ ?>
 <!--end of slider section-->
 <section class="main__middle__container">
     <?php echo $content ?>
