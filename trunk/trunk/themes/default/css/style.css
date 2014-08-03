@@ -20,10 +20,10 @@ a, input, button {
 	transition: all ease .2s;
 }
 a {
-	color: #adc648;
+	color: red;
 }
 a:hover {
-	color: #adc648;
+	color: red;
 	text-decoration: underline;
 }
 hr {
@@ -54,7 +54,7 @@ h2 span {
 span.sep {
 	width: 80px;
 	display: inline-block;
-	border-top: 1px solid #adc648;
+	border-top: 1px solid red;
 }
 h2 small {
 	color: #c7c7c7;
@@ -89,7 +89,7 @@ h3 a {
 }
 h3 a:hover {
 	text-decoration: none;
-	color: #adc648;
+	color: red;
 }
 h3 small {
 	font-size: 18px;
@@ -132,7 +132,7 @@ h2.with__margin2 {
 	box-shadow: none;
 }
 .form-control:focus {
-	border-color: #adc648;
+	border-color: red;
 }
 /*Buttons*/
 
@@ -140,8 +140,8 @@ h2.with__margin2 {
 	font-size: 18px;
 	text-transform: none;
 	color: #fff;
-	background-color: #adc648;
-	border-color: #adc648;
+	background-color: red;
+	border-color: red;
 	border-bottom: 4px solid #f2f2f2;
 }
 .btn-primary:hover, .btn-primary:focus {
@@ -175,8 +175,8 @@ h2.with__margin2 {
 	background: none;
 }
 .btn-default:hover, .btn-default:focus {
-	background-color: #adc648;
-	border-color: #adc648;
+	background-color: red;
+	border-color: red;
 	color: #fff;
 }
 button.btn-primary:focus, .btn-default:focus, .btn-info:focus {
@@ -197,8 +197,8 @@ button.btn-primary:focus, .btn-default:focus, .btn-info:focus {
 footer .btn.btn-default {
 	margin-top: 5px;
 	font-size: 12px;
-	background-color: #adc648;
-	border-color: #adc648;
+	background-color: red;
+	border-color: red;
 }
 footer .btn.btn-default:hover {
 	color: #fff;
@@ -208,7 +208,7 @@ footer .btn.btn-default:hover {
 /*Header*/
 
 header {
-	background: #1a1a1a;
+	background: #222222;
 	width: 100%;
 }
 .navbar-header {
@@ -247,7 +247,7 @@ header {
 .navbar-default {
 	background: none;
 	border: none;
-	padding: 40px 0 0 0;
+	padding: 0;
 	margin-bottom: 0px;
 	position: relative;
 	z-index: 999;
@@ -277,13 +277,13 @@ header {
 	display: block;
 }
 .dropper a.dropdown-toggle:hover {
-	color: #ADC648;
+	color: red;
 }
 .navbar-default .nav-justified>li.dropdown:hover, .navbar-default .nav-justified>li.dropdown.active {
-	border-top: 1px solid #adc648;
+	border-top: 1px solid red;
 }
 .navbar-default .nav-justified li.active .dropper a.dropdown-toggle, .navbar-default .nav-justified li.open .dropper a.dropdown-toggle {
-	color: #ADC648;
+	color: red;
 }
 .navbar-default .nav-justified>li>a {
 	color: #fff;
@@ -299,8 +299,8 @@ header {
 	background: none;
 }
 .navbar-default .nav-justified>li.active>a, .navbar-default .nav-justified>li>a:hover, .navbar-default .nav-justified>li.open>a {
-	border-top: 1px solid #adc648;
-	color: #adc648;
+	border-top: 1px solid red;
+	color: red;
 	background: none;
 }
 .navbar-default .nav-justified>li:first-child {
@@ -350,7 +350,7 @@ ul.dropdown-menu>li>a {
 	text-transform: none;
 }
 ul.dropdown-menu>li>a:hover {
-	color: #adc648;
+	color: red;
 	border-top: none;
 	background: none;
 }
@@ -445,7 +445,7 @@ p.big-paragraph {
 	color: #c3c3c3;
 }
 .orange {
-	color: #adc648;
+	color: red;
 	padding: 0 0 10px 0;
 }
 .black-text {
@@ -897,7 +897,7 @@ ul.dropdown-menu {
 	padding: 0px 0 20px 2px;
 	overflow: hidden;
 	margin: 20px 0;
-	border-bottom: #ADC648 solid 2px;
+	border-bottom: red solid 2px;
 }
 #portfolio ul.controls li {
 	float: left;
@@ -909,9 +909,9 @@ ul.dropdown-menu {
 }
 #portfolio ul.controls li:hover, #portfolio ul.controls li.active {
 	padding: 4px 15px;
-	color: #ADC648;
+	color: red;
 	margin: 0 -1px;
-	border: 1px solid #ADC648;
+	border: 1px solid red;
 }
 #portfolio ul#Grid {
 	margin: 0 0 30px 0;
@@ -967,10 +967,10 @@ ul.dropdown-menu {
 	bottom: 0;
 	color: #FFF;
 	line-height: 30px;
-	background: #ADC648;
+	background: red;
 }
 #portfolio ul#Grid li:hover span.text {
-	background: #ADC648;
+	background: red;
 	opacity: 0.9;
 }
 #portfolio ul#Grid span.text span {
@@ -983,13 +983,13 @@ ul.dropdown-menu {
 }
 #portfolio ul#Grid span.text:after {
 	border-color: rgba(63, 141, 191, 0);
-	border-bottom-color: #ADC648;
+	border-bottom-color: red;
 	border-width: 10px;
 	margin-left: -10px;
 }
 #portfolio ul#Grid span.text:before {
 	border-color: rgba(63, 141, 191, 0);
-	border-bottom-color: #ADC648;
+	border-bottom-color: red;
 	border-width: 16px;
 	margin-left: -16px;
 }
@@ -1044,7 +1044,7 @@ ul.dropdown-menu {
 	max-height: 350px;
 }
 .open a.dropdown-toggle {
-	color: #ADC648;
+	color: red;
 }
 .navbar-default ul.navbar-collapse {
 	display: block !important;
@@ -1092,7 +1092,7 @@ footer {
 	margin-top: -30px;
 }
 .navbar-default .nav-justified>li.dropdown:hover, .navbar-default .nav-justified>li.dropdown.active {
-	border-top: 0px solid #adc648;
+	border-top: 0px solid red;
 }
 .row {
 	padding: 15px 0;
@@ -1274,4 +1274,11 @@ h2 {
 }
 .fix-size {
     font-size: 15px;
+}
+.right-top-conner {
+    float: right;
+    margin-top: 10px;
+}
+.fb_connect_popup {
+    width: 15%;
 }

@@ -1,7 +1,7 @@
 <div class="container">
 
     <div class="row no_padding icons__blocks text-center">
-        <h2 class="page_title"><span>Join to Labeeto now</span><br />
+        <h2 class="page_title"><span>Join Labeeto now</span><br />
             <span class="sep"></span>
         <div class="col-md-12 wrapper-form grey-info-block">
 
@@ -49,6 +49,7 @@
                 </div>
             </div>
             <div class="row fix-row">
+                
                 <a href="#" class="dc_bright_button bright-red bright-round">Register now</a>
                 <a href="#" class="dc_bright_button bright-blue bright-bubble"><img class="fb_connect" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/facebook_a.png">Connect</a>
                 <label class="label-join fix-size">Already a member?<a href="#">Login>> </a></label>
