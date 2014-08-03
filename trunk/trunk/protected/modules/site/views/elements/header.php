@@ -2,8 +2,8 @@
     <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
             <div class="right-top-conner">
-                <a href="#" class="dc_bright_button bright-red bright-round " data-toggle="modal" data-target="#myModal">Login</a>
-                <a href="#" class="dc_bright_button bright-red bright-round">Register</a>
+                <button class="register_button dc_ibutton-red" data-toggle="modal" data-target="#myModal">Login</button>
+                <button class="register_button dc_ibutton-red">Register </button>
             </div>
             <h1 class="navbar-brand">
                 <a href="">
@@ -53,8 +53,11 @@
                </div>
             </div>
             <div class="modal-footer">
-                <a href="#" class="dc_bright_button bright-red bright-round">Login </a> Or
-                <a href="#" class="dc_bright_button bright-blue bright-bubble"><img class="fb_connect_popup" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/facebook.png">Login via Facebook</a>
+                <button class="register_button dc_ibutton-red">Register now</button> Or
+                <a href="#" class="">
+                    <img class="" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/signin_fb.png">
+                </a>
+
             </div>
         </div>
     </div>
