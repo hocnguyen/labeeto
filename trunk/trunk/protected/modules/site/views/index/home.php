@@ -8,9 +8,7 @@
                     <ul class="nav nav-tabs fix-nav-tabs" role="tablist">
                         <li class="active"><a href="#popular" role="tab" data-toggle="tab">Popular</a></li>
                         <li><a href="#newest" role="tab" data-toggle="tab">Newest</a></li>
-
                     </ul>
-
                     <!-- Tab panes -->
                     <div class="tab-content fix-tabs-content">
                         <div class="tab-pane active" id="popular">
@@ -23,11 +21,18 @@
 
                     </div>
                 </div>
+                <div class="row fix-row">
+                    <div class="wrapper-post">
+                        <h3 class="title-post">Post Achievment</h3>
+                    </div>
 
+                </div>
             </section>
             <aside class="col-md-4">
-                <h3><span></span></h3>
-
+                <div class=" wrapper-ads">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/ads1.jpg"/>
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/ads2.jpg"/>
+                </div>
             </aside>
         </div>
 

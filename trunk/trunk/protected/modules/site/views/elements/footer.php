@@ -16,6 +16,7 @@
             <div class="social__icons">
                 <a href="#" class="socialicon socialicon-facebook"></a>
                 <a href="#" class="socialicon socialicon-insta"></a>
+                <a href="#" class="socialicon socialicon-twitter"></a>
             </div>
         </div>
     </div>
