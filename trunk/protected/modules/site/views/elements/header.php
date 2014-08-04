@@ -72,7 +72,7 @@
                </div>
             </div>
             <div class="modal-footer">
-                <button class="register_button dc_ibutton-red">Register now</button> Or
+                <button class="register_button dc_ibutton-red">Login</button> Or
                 <a href="#" class="">
                     <img class="" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/signin_fb.png">
                 </a>
