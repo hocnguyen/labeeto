@@ -1348,5 +1348,104 @@ h2 {
     text-align: left;
 }
 .wrapper-post {
-    
+    padding: 10px;
+    margin-top: -10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    float: left;
+}
+.wrapper-post-btn {
+    height: 30px;
+    width: 100%;
+    background-color: #e9eaed;
+}
+.wrapper-option-post {
+    height: 30px;
+    width: 100%;
+    background-color: white;
+}
+.left-post {
+    text-align: left;
+    padding: 3px;
+    width: 50%;
+    float: left;
+}
+.right-post {
+    text-align: right;
+    padding: 3px 10px 3px 3px;
+    width: 50%;
+    float: right;
+}
+.right-post button {
+    font-size: 15px!important;
+}
+.camera-icon-post {
+    width: 24px;
+    height: 24px;
+    background: url('../images/camera.png') no-repeat;
+    float: left;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.camera-icon-post:hover {
+    background: url('../images/camera-hover.png') no-repeat;
+}
+.textarea-post {
+    border: none;
+    border-radius: 0;
+    border-top-right-radius: 5px;
+}
+.custom-photo-video {
+    height: 100px;
+    width: 50%;
+    background-color: white;
+}
+.custom-photo-video a {
+    position: absolute;
+    margin-top: 40px;
+    margin-left: -30px;
+}
+.fix-video-post {
+    border-left: 1px solid #ddd;
+    float: right;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.fix-upload-photo {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.content-post {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+.the-status {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.the-status img {
+    border-radius: 5px;
+    margin-right: 20px;
+}
+.fix-content-status {
+    text-align: justify;
+}
+.like-btn {
+    cursor: pointer;
+    height: 32px;
+    background: url('../images/likes.png') no-repeat center;
+}
+.like-btn:hover {
+    cursor: pointer;
+    height: 32px;
+    background: url('../images/likes-hover.png') no-repeat center;
+}
+.number-likes {
+    float: left;
+    margin-left: 50px;
+    font-size: 23px;
+    font-weight: bold;
 }

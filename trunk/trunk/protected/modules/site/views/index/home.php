@@ -23,7 +23,63 @@
                 </div>
                 <div class="row fix-row">
                     <div class="wrapper-post">
-                        <h3 class="title-post">Post Achievment</h3>
+                        <h4 class="title-post">Post Achievment</h4>
+                        <ul class="nav nav-tabs fix-nav-tabs" role="tablist">
+                            <li class="active"><a href="#status" role="tab" data-toggle="tab">Update Status</a></li>
+                            <li><a href="#photo_video" role="tab" data-toggle="tab">Add Photo / Video</a></li>
+                        </ul>
+                        <div class="tab-content fix-tabs-content">
+                            <div class="tab-pane active" id="status">
+                                <textarea rows="4" class="form-control textarea-post" placeholder="What's on your mind?"></textarea>
+                                <div class="wrapper-post-btn">
+                                    <div class="right-post">
+                                        <button class="dc_ibutton-red">Post</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="photo_video">
+                               <div class="custom-photo-video fix-video-post">
+                                   <a href="#">Upload Video</a>
+                               </div>
+                                <div class=" custom-photo-video fix-upload-photo">
+                                    <a href="#">Upload Photo</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="content-post">
+                            <div class="col-md-12">
+                                <article class="the-status"> <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/img1.jpg" alt="pic1" class="pull-left img-responsive">
+                                    <div class="text">
+                                        <div class="like-btn">
+                                            <div class="number-likes">100</div>
+                                        </div>
+                                        <p class="fix-content-status">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna</p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </article>
+                                <article class="the-status"> <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/img2.jpg" alt="pic2" class="pull-left img-responsive">
+                                    <div class="text">
+                                        <div class="like-btn">
+                                            <div class="number-likes">100</div>
+                                        </div>
+                                        <p class="fix-content-status">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna</p>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </article>
+                                <article class="the-status"> <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/img3.jpg" alt="pic3" class="pull-left img-responsive">
+                                    <div class="text">
+                                        <div class="like-btn">
+                                            <div class="number-likes">100</div>
+                                        </div>
+                                        <p class="fix-content-status">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna</p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </article>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
