@@ -31,6 +31,7 @@
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery-1.11.0.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/bootstrap.min.js"></script>
+<script src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 
     $('.carousel').carousel({

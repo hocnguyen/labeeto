@@ -1328,6 +1328,7 @@ h2 {
 .fix-nav-tabs {
     padding-left: 0!important;
     border-radius: 5px;
+    border-bottom: none;
 }
 .fix-tabs-content {
     border: 1px solid #ddd;
@@ -1337,7 +1338,6 @@ h2 {
 .wrapper-ads {
     padding: 5px;
     border: 1px solid #ddd;
-    margin-top: 50px;
     border-radius: 5px;
 }
 .wrapper-ads img {
@@ -1345,7 +1345,7 @@ h2 {
     border-radius: 5px;
 }
 .title-post {
-    text-align: left;
+    text-align: center;
 }
 .wrapper-post {
     padding: 10px;
@@ -1355,7 +1355,7 @@ h2 {
     float: left;
 }
 .wrapper-post-btn {
-    height: 30px;
+    height: 35px;
     width: 100%;
     background-color: #e9eaed;
 }
@@ -1364,20 +1364,10 @@ h2 {
     width: 100%;
     background-color: white;
 }
-.left-post {
-    text-align: left;
-    padding: 3px;
-    width: 50%;
-    float: left;
-}
-.right-post {
-    text-align: right;
-    padding: 3px 10px 3px 3px;
-    width: 50%;
-    float: right;
-}
-.right-post button {
+
+.wrapper-post-btn button {
     font-size: 15px!important;
+    margin-right: 10px;
 }
 .camera-icon-post {
     width: 24px;
@@ -1390,11 +1380,7 @@ h2 {
 .camera-icon-post:hover {
     background: url('../images/camera-hover.png') no-repeat;
 }
-.textarea-post {
-    border: none;
-    border-radius: 0;
-    border-top-right-radius: 5px;
-}
+
 .custom-photo-video {
     height: 100px;
     width: 50%;
@@ -1421,9 +1407,7 @@ h2 {
     margin-top: 10px;
 }
 .the-status {
-    border: 1px solid #ddd;
     padding: 10px;
-    border-radius: 5px;
     margin-bottom: 10px;
 }
 .the-status img {
@@ -1436,16 +1420,31 @@ h2 {
 .like-btn {
     cursor: pointer;
     height: 32px;
-    background: url('../images/likes.png') no-repeat center;
+    background: url('../images/like.png') no-repeat 94%;
 }
 .like-btn:hover {
     cursor: pointer;
     height: 32px;
-    background: url('../images/likes-hover.png') no-repeat center;
+    background: url('../images/like-hover.png') no-repeat 94%;
 }
 .number-likes {
-    float: left;
-    margin-left: 50px;
+    float: right;
+    margin-top: 5px;
     font-size: 23px;
     font-weight: bold;
+}
+.wrapper-ads-top {
+    padding: 30px;
+}
+.right-post {
+    float: right;
+}
+.img-upload {
+    margin-right: 20px;
+    margin-bottom: 3px;
+}
+.wrapper-item {
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 5px;
 }
