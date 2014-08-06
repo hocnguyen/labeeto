@@ -2,7 +2,7 @@
     <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
             <?php
-            if($this->login==0) { //Yii::app()->user->isGuest ?>
+            if($this->login == 0) { //Yii::app()->user->isGuest ?>
                 <div class="right-top-conner">
                     <button class="register_button dc_ibutton-red" data-toggle="modal" data-target="#myModal">Login</button>
                     <button class="register_button dc_ibutton-red">Register </button>
@@ -18,7 +18,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
         </div>
 
-        <?php if($this->login ==1) { //!Yii::app()->user->isGuest ?>
+        <?php if($this->login == 1 ) { //!Yii::app()->user->isGuest ?>
             <div class="navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav nav-justified">
                     <li class="active"><a href="">HOME</a></li>
@@ -76,7 +76,6 @@
                 <a href="#" class="">
                     <img class="" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/signin_fb.png">
                 </a>
-
             </div>
         </div>
     </div>
