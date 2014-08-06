@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php $this->renderPartial('../elements/header') ?>
 
 <body>
 	<header id="site-header" role="banner">
@@ -26,6 +26,6 @@
     <section id="error">
         <?php echo $content ?>
     </section>
-    <?php include 'footer.php'; ?>
+    <?php $this->renderPartial('../elements/footer') ?>
 </body>
 </html>

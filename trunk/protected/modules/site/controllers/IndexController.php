@@ -3,7 +3,9 @@
  * Index controller Home page
  */
 class IndexController extends SiteBaseController {
+	
 	public $login;
+	
 	const PAGE_SIZE = 5;
 	/**
 	 * Controller constructor
@@ -22,5 +24,10 @@ class IndexController extends SiteBaseController {
     public function actionHome(){
         $this->login = 1; // set template user login to check
         $this->render('home');
+    }
+
+    public function actionSpeedDay(){
+    	$this->login = 1;
+        $this->render('static/speed_day');
     }
 }
