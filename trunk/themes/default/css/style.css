@@ -20,10 +20,10 @@ a, input, button {
 	transition: all ease .2s;
 }
 a {
-	color: red;
+	color: #21a9e1;
 }
 a:hover {
-	color: red;
+	color: #21a9e1;
 	text-decoration: none;
 }
 hr {
@@ -54,7 +54,7 @@ h2 span {
 span.sep {
 	width: 80px;
 	display: inline-block;
-	border-top: 1px solid red;
+	border-top: 1px solid #21a9e1;
 }
 h2 small {
 	color: #c7c7c7;
@@ -89,7 +89,7 @@ h3 a {
 }
 h3 a:hover {
 	text-decoration: none;
-	color: red;
+	color: #21a9e1;
 }
 h3 small {
 	font-size: 18px;
@@ -132,7 +132,7 @@ h2.with__margin2 {
 	box-shadow: none;
 }
 .form-control:focus {
-	border-color: red;
+	border-color: #21a9e1;
 }
 .form-control {
     font-family:  cursive;
@@ -144,8 +144,8 @@ h2.with__margin2 {
 	font-size: 18px;
 	text-transform: none;
 	color: #fff;
-	background-color: red;
-	border-color: red;
+	background-color: #21a9e1;
+	border-color: #21a9e1;
 	border-bottom: 4px solid #f2f2f2;
 }
 .btn-primary:hover, .btn-primary:focus {
@@ -179,20 +179,20 @@ h2.with__margin2 {
 	background: none;
 }
 .btn-default:hover, .btn-default:focus {
-	background-color: red;
-	border-color: red;
+	background-color: #21a9e1;
+	border-color: #21a9e1;
 	color: #fff;
 }
 button.btn-primary:focus, .btn-default:focus, .btn-info:focus {
 	outline: none;
 }
 .btn-lg {
-	width: 180px;
-	height: 57px;
-	line-height: 57px;
-	padding: 0;
-	font-size: 18px;
-	text-transform: uppercase;
+    height: 57px;
+    line-height: 47px;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 7px;
+    border-radius: 0;
 }
 .btn-lg.btn-primary {
 	width: 250px;
@@ -201,8 +201,8 @@ button.btn-primary:focus, .btn-default:focus, .btn-info:focus {
 footer .btn.btn-default {
 	margin-top: 5px;
 	font-size: 12px;
-	background-color: red;
-	border-color: red;
+	background-color: #21a9e1;
+	border-color: #21a9e1;
 }
 footer .btn.btn-default:hover {
 	color: #fff;
@@ -212,8 +212,10 @@ footer .btn.btn-default:hover {
 /*Header*/
 
 header {
-	background: #222222;
-	width: 100%;
+    background: rgba(34, 34, 34, 0.56);
+    width: 100%;
+    position: absolute;
+    z-index: 999;
 }
 .navbar-header {
 	float: none;
@@ -281,13 +283,13 @@ header {
 	display: block;
 }
 .dropper a.dropdown-toggle:hover {
-	color: red;
+	color: #21a9e1;
 }
 .navbar-default .nav-justified>li.dropdown:hover, .navbar-default .nav-justified>li.dropdown.active {
-	border-top: 1px solid red;
+	border-top: 1px solid #21a9e1;
 }
 .navbar-default .nav-justified li.active .dropper a.dropdown-toggle, .navbar-default .nav-justified li.open .dropper a.dropdown-toggle {
-	color: red;
+	color: #21a9e1;
 }
 .navbar-default .nav-justified>li>a {
 	color: #fff;
@@ -303,8 +305,8 @@ header {
 	background: none;
 }
 .navbar-default .nav-justified>li.active>a, .navbar-default .nav-justified>li>a:hover, .navbar-default .nav-justified>li.open>a {
-	border-top: 1px solid red;
-	color: red;
+	border-top: 1px solid #21a9e1;
+	color: #21a9e1;
 	background: none;
 }
 .navbar-default .nav-justified>li:first-child {
@@ -354,7 +356,7 @@ ul.dropdown-menu>li>a {
 	text-transform: none;
 }
 ul.dropdown-menu>li>a:hover {
-	color: red;
+	color: #21a9e1;
 	border-top: none;
 	background: none;
 }
@@ -449,7 +451,7 @@ p.big-paragraph {
 	color: #c3c3c3;
 }
 .orange {
-	color: red;
+	color: #21a9e1;
 	padding: 0 0 10px 0;
 }
 .black-text {
@@ -491,7 +493,7 @@ p.big-paragraph {
 /* grey-info-block */
 
 .grey-info-block {
-	background: url('../images/line_bg_repeat.jpg') repeat;
+	/*background: url('../images/line_bg_repeat.jpg') repeat;*/
 	width: 100%;
 	padding: 0 0 75px 0;
 	margin: 0;
@@ -501,8 +503,8 @@ p.big-paragraph {
 	font-size: 14px;
 	position: relative;
 	padding-bottom: 20px;
-	margin-bottom: 40px;
-	margin-top: 15px;
+	/*margin-bottom: 40px;
+	margin-top: 15px;*/
 	color: #c7c7c7;
 	border-bottom: 1px solid #e4e4e4;
 }
@@ -579,21 +581,15 @@ p.big-paragraph {
 	height: 32px;
 }
 .socialicon-twitter {
-	background: url('../images/Twittericon.png') no-repeat;
+	background: url('../labee/twiter.png') no-repeat 50%;
 }
 .socialicon-facebook {
-	background: url('../images/facebook.png') no-repeat;
-}
-.socialicon-google {
-	background: url('../images/google.png') no-repeat;
-}
-.socialicon-mail {
-	background: url('../images/mail.png') no-repeat;
+	background: url('../labee/facebook.png') no-repeat 50%;
 }
 .socialicon-insta {
-    background: url('../images/Instanorm.png') no-repeat;
+    background: url('../labee/intergram.png') no-repeat 50%;
 }
-.socialicon-insta:hover {
+/*.socialicon-insta:hover {
 	background: url('../images/Instahover.png') no-repeat;
 }
 .socialicon-twitter:hover {
@@ -601,13 +597,8 @@ p.big-paragraph {
 }
 .socialicon-facebook:hover {
 	background: url('../images/facebook_a.png') no-repeat;
-}
-.socialicon-google:hover {
-	background: url('../images/google_a.png') no-repeat;
-}
-.socialicon-mail:hover {
-	background: url('../images/mail_a.png') no-repeat;
-}
+}*/
+
 /* Contact Form */
 
 .contact-form {
@@ -665,6 +656,7 @@ footer p span {
 footer .text-center {
 	padding: 10px 0;
 	margin: 0;
+    font-size: 12pt;
 }
 footer .form-group {
 	width: 90%;
@@ -907,7 +899,7 @@ ul.dropdown-menu {
 	padding: 0px 0 20px 2px;
 	overflow: hidden;
 	margin: 20px 0;
-	border-bottom: red solid 2px;
+	border-bottom: #21a9e1 solid 2px;
 }
 #portfolio ul.controls li {
 	float: left;
@@ -919,9 +911,9 @@ ul.dropdown-menu {
 }
 #portfolio ul.controls li:hover, #portfolio ul.controls li.active {
 	padding: 4px 15px;
-	color: red;
+	color: #21a9e1;
 	margin: 0 -1px;
-	border: 1px solid red;
+	border: 1px solid #21a9e1;
 }
 #portfolio ul#Grid {
 	margin: 0 0 30px 0;
@@ -977,10 +969,10 @@ ul.dropdown-menu {
 	bottom: 0;
 	color: #FFF;
 	line-height: 30px;
-	background: red;
+	background: #21a9e1;
 }
 #portfolio ul#Grid li:hover span.text {
-	background: red;
+	background: #21a9e1;
 	opacity: 0.9;
 }
 #portfolio ul#Grid span.text span {
@@ -993,13 +985,13 @@ ul.dropdown-menu {
 }
 #portfolio ul#Grid span.text:after {
 	border-color: rgba(63, 141, 191, 0);
-	border-bottom-color: red;
+	border-bottom-color: #21a9e1;
 	border-width: 10px;
 	margin-left: -10px;
 }
 #portfolio ul#Grid span.text:before {
 	border-color: rgba(63, 141, 191, 0);
-	border-bottom-color: red;
+	border-bottom-color: #21a9e1;
 	border-width: 16px;
 	margin-left: -16px;
 }
@@ -1054,7 +1046,7 @@ ul.dropdown-menu {
 	max-height: 350px;
 }
 .open a.dropdown-toggle {
-	color: red;
+	color: #21a9e1;
 }
 .navbar-default ul.navbar-collapse {
 	display: block !important;
@@ -1102,7 +1094,7 @@ footer {
 	margin-top: -30px;
 }
 .navbar-default .nav-justified>li.dropdown:hover, .navbar-default .nav-justified>li.dropdown.active {
-	border-top: 0px solid red;
+	border-top: 0px solid #21a9e1;
 }
 .row {
 	padding: 15px 0;
@@ -1299,10 +1291,7 @@ h2 {
 .facebook-img {
     margin-top: 10px;
 }
-.social__icons {
-    text-align: right;
-    margin-top: 20px;
-}
+
 .menu-footer {
     color:white;
 }
@@ -1447,4 +1436,62 @@ h2 {
     border: 1px solid #ddd;
     border-top: none;
     border-radius: 5px;
+}
+.logo {
+    margin-top: 10px;
+    width: 50%;
+    float: left;
+    text-align: left;
+}
+.login-header {
+    width: 50%;
+    float: right;
+    margin-top: 15px;
+    font-size: 13pt;
+    font-weight: bold;
+    text-align: right;
+}
+.text-footer-center h3 {
+    text-transform: none;
+}
+.labeeto-footer img {
+    width: 6%;
+    margin-left: 5px;
+    margin-top: -4px;
+}
+.social__icons {
+    width: 100%;
+    text-align: center;
+}
+.signin-btn {
+    width: 100%;
+    height: 40px;
+    background: url('../labee/signin.png');
+    float: left;
+}
+.signin-btn-fb {
+    width: 100%;
+    height: 40px;
+    background: url('../labee/signinfb.png');
+    float: left;
+}
+.signin-btn:hover,.signin-btn-fb:hover {
+    color: white;
+}
+.signin {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 13pt;
+}
+.last-btn {
+    margin-top: 10px;
+}
+.text-login {
+    height: 40px;
+}
+@media screen and (min-width: 768px){
+    .fix-dialog-login{
+         width: 35%;
+    }
 }
