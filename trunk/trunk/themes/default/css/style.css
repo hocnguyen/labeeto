@@ -584,20 +584,20 @@ p.big-paragraph {
 	background: url('../labee/twiter.png') no-repeat 50%;
 }
 .socialicon-facebook {
-	background: url('../labee/facebook.png') no-repeat 50%;
+	background: url('../labee/Facebookicon.png') no-repeat 50%;
 }
 .socialicon-insta {
     background: url('../labee/intergram.png') no-repeat 50%;
 }
-/*.socialicon-insta:hover {
-	background: url('../images/Instahover.png') no-repeat;
+.socialicon-insta:hover {
+	background: url('../labee/Instaiconhover.png') no-repeat 50%;
 }
 .socialicon-twitter:hover {
-	background: url('../images/Twitterhover.png') no-repeat;
+	background: url('../labee/Twittericonhover.png') no-repeat 50%;
 }
 .socialicon-facebook:hover {
-	background: url('../images/facebook_a.png') no-repeat;
-}*/
+	background: url('../labee/facebook.png') no-repeat 50%;
+}
 
 /* Contact Form */
 
@@ -1490,8 +1490,48 @@ h2 {
 .text-login {
     height: 40px;
 }
+.forgot-pass{
+    margin-top: 10px;
+    float: left;
+}
+.fix-content-padding {
+    padding: 5px 20px 0px 20px ;
+}
+.logo-register {
+
+}
+.labeeto {
+    color: #21a9e1;
+}
+.fix-control {
+    margin-bottom: 3px;
+}
+.agree-term {
+    margin-top: 10px;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+.img_hover {
+    cursor: pointer;
+    width: 170px;
+    -webkit-transition: width 1s, height 1s, -webkit-transform 1s; /* For Safari 3.1 to 6.0 */
+    transition: width 1s, height 1s, transform 1s;
+}
+.img_hover:hover {
+    width: 170px;
+    -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+    transform: rotate(360deg);
+
+}
 @media screen and (min-width: 768px){
     .fix-dialog-login{
-         width: 35%;
+         width: 40%;
+    }
+
+    .fix-control {
+        width: 22%;
+        float:left;
+        margin-right: 10px;
     }
 }
