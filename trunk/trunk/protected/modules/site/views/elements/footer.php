@@ -1,31 +1,22 @@
 <div class="container">
-    <div class="row fix-row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10">
-            <div class="col-md-2 text-footer-center">
-                <h3><small><a class="menu-footer" href="#">About</a> </small></h3>
-            </div>
-            <div class="col-md-3 text-footer-center">
-                <h3><small> <a class="menu-footer" href="#">Privacy Policy </a></small></h3>
-
-            </div>
-            <div class="col-md-3 text-footer-center">
-                <h3><small> <a class="menu-footer" href="#">Terms Of Use </a></small></h3>
-            </div>
-            <div class="col-md-2 text-footer-center">
-                <h3><small> <a class="menu-footer" href="#">Sign Up </a></small></h3>
-            </div>
-            <div class="col-md-2 text-footer-center">
-                <h3><small> <a class="menu-footer" href="#">Contact Us </a></small></h3>
-            </div>
-        </div>
-        <div class="col-lg-1"></div>
+    <div class="clearfix">
+        <ul class="footer-nav">
+            <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/footer_logo.png" alt="labeeto"/></a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Term of Use</a></li>
+            <li><a href="#">Site Map</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+        <ul class="social-share">
+            <li class="fb"><a href="#">Facebook</a></li>
+            <li class="twitter"><a href="#">Twitter</a></li>
+            <li class="insta"><a href="#">Instagram</a></li>
+        </ul>
     </div>
-    <hr>
-    <p class="text-center"> Made in Brisbane | &copy;Copyright 2014 <a class="labeeto-footer" href="/"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/labee/logo.png" /></a> . All rights reserved.</p>
-    <div class="social__icons">
-        <a href="#" class="socialicon socialicon-facebook"></a>
-        <a href="#" class="socialicon socialicon-twitter"></a>
-        <a href="#" class="socialicon socialicon-insta"></a>
-    </div>
+    <p class="copyright">
+        &copy; 2014 Labeeto All Right Reserved.
+    </p>
 </div>
