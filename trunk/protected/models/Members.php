@@ -19,6 +19,13 @@
  * @property string $photo
  * @property string $address
  * @property string $phone
+ * @property string $vericode
+ * @property string $street
+ * @property string $nr
+ * @property string $ext_information
+ * @property integer $postcode
+ * @property string $state
+ * @property string $city
  * @property integer $country_id
  * @property integer $status
  * @property string $last_logged
@@ -55,15 +62,15 @@ class Members extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('country_id', 'required'),
-			array('gender, interesting, joined, country_id, status', 'numerical', 'integerOnly'=>true),
-			array('username, email, photo, address', 'length', 'max'=>155),
-			array('password, fname, lname, phone', 'length', 'max'=>40),
+			array('gender, interesting, joined, postcode, country_id, status', 'numerical', 'integerOnly'=>true),
+			array('username, email, photo, address, city', 'length', 'max'=>155),
+			array('password, fname, lname, phone, vericode', 'length', 'max'=>40),
 			array('role, ipaddress', 'length', 'max'=>30),
+			array('street, nr, ext_information, state', 'length', 'max'=>255),
 			array('birthday, last_logged', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, gender, interesting, email, password, joined, role, ipaddress, fname, lname, birthday, photo, address, phone, country_id, status, last_logged', 'safe', 'on'=>'search'),
+			array('id, username, gender, interesting, email, password, joined, role, ipaddress, fname, lname, birthday, photo, address, phone, vericode, street, nr, ext_information, postcode, state, city, country_id, status, last_logged', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -99,6 +106,13 @@ class Members extends CActiveRecord
 			'photo' => Yii::t('global', 'Photo'),
 			'address' => Yii::t('global', 'Address'),
 			'phone' => Yii::t('global', 'Phone'),
+			'vericode' => Yii::t('global', 'Vericode'),
+			'street' => Yii::t('global', 'Street'),
+			'nr' => Yii::t('global', 'Nr'),
+			'ext_information' => Yii::t('global', 'Ext Information'),
+			'postcode' => Yii::t('global', 'Postcode'),
+			'state' => Yii::t('global', 'State'),
+			'city' => Yii::t('global', 'City'),
 			'country_id' => Yii::t('global', 'Country'),
 			'status' => Yii::t('global', 'Status'),
 			'last_logged' => Yii::t('global', 'Last Logged'),
@@ -131,6 +145,13 @@ class Members extends CActiveRecord
 		$criteria->compare('photo',$this->photo,true);
 		$criteria->compare('address',$this->address,true);
 		$criteria->compare('phone',$this->phone,true);
+		$criteria->compare('vericode',$this->vericode,true);
+		$criteria->compare('street',$this->street,true);
+		$criteria->compare('nr',$this->nr,true);
+		$criteria->compare('ext_information',$this->ext_information,true);
+		$criteria->compare('postcode',$this->postcode);
+		$criteria->compare('state',$this->state,true);
+		$criteria->compare('city',$this->city,true);
 		$criteria->compare('country_id',$this->country_id);
 		$criteria->compare('status',$this->status);
 		$criteria->compare('last_logged',$this->last_logged,true);

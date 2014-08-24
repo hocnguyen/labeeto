@@ -17,7 +17,17 @@ class IndexController extends SiteBaseController {
 
 	public function actionIndex() {
         $model =  new Members();
-        $this->login= 0;// set template no login to check
+        if(isset($_POST['SignUp'])) {
+            /*$model->username= $_POST['SignUp']['username'];
+            $model->email= $_POST['SignUp']['email'];
+            $model->password= sha1(md5($_POST['SignUp']['password']));*/
+           /* $data = array(
+                'username'=>$_POST['SignUp']['username'],
+                'email'=>$_POST['SignUp']['email'],
+                'password'=>$_POST['SignUp']['password']
+            );*/
+            $this->redirect('/my_feed?type=registration');
+        }
 		$this->render('index',compact('model'));
 	}
 

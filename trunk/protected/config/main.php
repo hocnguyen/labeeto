@@ -44,6 +44,7 @@ return array(
             'widgets' => 'application.widgets',
         ),
         'components' => array(
+
             'format' => array(
                 'class' => 'CFormatter',
             ),
@@ -110,6 +111,9 @@ return array(
                         'coreScriptPosition'=>CClientScript::POS_BEGIN
                     )
                 ),
+            ),
+            'Facebook' => array(
+                'class'=>'application.extensions.facebook.Social',
             ),
             'utils'=>array('class'=>'Utils'),
         ),        

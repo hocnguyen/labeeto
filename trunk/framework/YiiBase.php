@@ -541,7 +541,7 @@ class YiiBase
 	 */
 	public static function powered()
 	{
-		return Yii::t('yii','Powered by {yii}.', array('{yii}'=>'<a href="http://netbiz.vn/" rel="external">NetBiz consulting</a>'));
+		return Yii::t('yii','Powered by {yii}.', array('{yii}'=>'<a href="" rel="external">Viet Nam Central Team</a>'));
 	}
 
 	/**

@@ -1,13 +1,32 @@
 <div class="container">
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="navbar-header">
-            <div class="logo">
-                <a href="/"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/labee/logo.png" /></a>
-            </div>
-            <div class="login-header">
-                <a href="#" data-toggle="modal" data-target="#myModal" class="login">LOGIN</a>
-            </div>
-         </div>
-    </nav>
+    <a href="#" id="logo">
+        <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/top_logo.png" alt="Logo"/>
+    </a>
+    <a href="#facebook-fancybox" class="fancybox" id="login-btn">LOGIN</a>
 </div>
-
+<!-- Fancybox come here -->
+<div id="facebook-fancybox" class="facebook-fancybox">
+    <div class="fancybox-heading">
+        <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fancybox_heading.png" alt="Sign in to Labeeto"/>
+    </div>
+    <div class="inner-fancybox">
+        <div class="inner-wrapper">
+            <form action="#" id="fancybox-form">
+                <input type="text" class="username-input" placeholder="Username"/>
+                <input type="password" class="password-input" placeholder="Password"/>
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="remember-check"/>
+                    <label for="remember-check">Remember me</label>
+                </div>
+                <input type="submit" value="Log In"/>
+            </form>
+            <p class="signup-text">Not a member? <a href="#">Sign Up</a></p>
+        </div>
+        <div id="or"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/or_line.png" alt=""/></div>
+        <div class="inner-wrapper">
+            <a href="#">
+                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/signin_fb.png" id="facebookPopup" alt="Sign In With Facebook"/>
+            </a>
+        </div>
+    </div>
+</div>
