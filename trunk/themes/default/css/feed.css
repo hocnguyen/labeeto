@@ -1,0 +1,244 @@
+
+body {
+    background: url('../images/bg-feed.png');
+}
+
+.head-feed {
+    background: url('../images/bg-head-feed.png') repeat-x;
+    height: 50px;
+}
+.content-head{
+    width: 80%;
+    height: 50px;
+    margin: 0 auto;
+}
+#logo {
+    margin-top: 13px;
+    float: left;
+}
+.menu-nav {
+    width: 55%;
+    float: left;
+    margin-left: 20px;
+    background: url("../images/line-nav.png") no-repeat;
+}
+.menu-item {
+    width: 25%;
+    float: left;
+    color: white;
+    padding-top: 16px;
+    background: url("../images/line-nav.png") no-repeat right;
+    height: 50px;
+    font-weight: bold;
+    font-family: "Proxima Nova";
+
+}
+.search {
+    background: url("../images/search.png") no-repeat right 10%;
+}
+.top-rate {
+    background: url("../images/top_rate.png") no-repeat right 10%;
+}
+.get-fit {
+    background: url("../images/get_fit.png") no-repeat right 10%;
+}
+.inspire {
+    background: url("../images/insprite.png") no-repeat right 10%;
+}
+.icon {
+    height: 37px;
+    float: left;
+    width: 40px;
+    margin-right: 10px;
+}
+.menu-nav a:hover {
+    color: #5dc1ea;
+    text-decoration: none;
+    border: 5px solid transparent;
+    -webkit-border-image: url('../images/bottom-login.png') 27 27 27 27 stretch stretch; /* Safari 5 */
+    -o-border-image: url('../images/bottom-login.png') 27 27 27 27 stretch stretch; /* Opera */
+    border-image: url('../images/bottom-login.png') 27 27 27 27 stretch stretch;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+}
+.menu-nav a:hover .search,
+.menu-nav a:hover .top-rate,
+.menu-nav a:hover .get-fit,
+.menu-nav a:hover .inspire {
+    background: url("../images/nav_active.png") no-repeat right 10%;
+}
+.notify {
+    float: left;
+    width: 17%;
+    height: 50px;
+    padding: 16px 10px 10px 20px;
+    background: url('../images/line-nav.png') no-repeat right;
+}
+.friend-request {
+    background: url('../images/friend.png') no-repeat center;
+    width: 22px;
+    height: 20px;
+    float: left;
+    cursor: pointer;
+    margin-left: 30px;
+}
+.friend-active {
+    background: url('../images/friend_active.png') no-repeat center!important;
+}
+.message-request {
+    background: url('../images/message.png')  no-repeat center;
+    width: 22px;
+    height: 20px;
+    float: left;
+    cursor: pointer;
+    margin-left:25px ;
+}
+.message-active {
+    background: url('../images/message_active.png') no-repeat center!important;
+}
+.notify-request {
+    background: url('../images/notify.png')  no-repeat center   ;
+    width: 22px;
+    height: 20px;
+    float: left;
+    cursor: pointer;
+    margin-left:25px ;
+}
+.notify-active {
+    background: url('../images/notify_active.png') no-repeat center!important;
+}
+.notice-notify {
+    float: right;
+    width: 19px;
+    height: 17px;
+    background-color: #ff4056;
+    margin-top: -8px;
+    border-radius: 2px;
+    margin-right: -11px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    font-family: "Proxima Nova";
+}
+.profile-nav {
+    float: left;
+    width: 16%;
+    cursor: pointer;
+
+}
+.profile-nav:hover {
+    background: rgba(35, 47, 55, 0.7);
+}
+.avatar-nav {
+    width: 40px;
+    border-radius: 20px;
+    margin: 5px 20px;
+    float: left;
+}
+.username-nav {
+    float: left;
+    color: #5dc1ea;
+    font-weight: bold;
+    margin-top: 15px;
+    font-family: "Proxima Nova";
+    font-size: 13px;
+ }
+ .arrow-nav {
+     float: right;
+     padding: 21px 0;
+     background: url('../images/line-nav.png') no-repeat right;
+     padding-right: 20px;
+ }
+ .menu-profile {
+     display: none;
+     width: 234px;
+     height: 414px;
+     position: absolute;
+     right: 140px;
+     background: url('../images/bg_nav_menu.png');
+     top: 44px;
+     border-radius: 5px;
+ }
+ .profile-item {
+     width: 100%;
+     float: left;
+     padding: 15px 15px 11px 15px;
+     color: white;
+     background: url("../images/line-profile.png") no-repeat top;
+     font-family: "Proxima Nova";
+     line-height: 25px;
+ }
+.profile-item:hover {
+    color: #ff6476;
+    text-decoration: none;
+}
+ .firt-profile {
+     background: none!important;
+     margin-top: 10px;
+ }
+ .icon-profile {
+     width: 25px;
+     height: 25px;
+     float: left;
+     margin-right: 10px;
+ }
+ .your-profile {
+     background: url('../images/your-profile.png') no-repeat center;
+ }
+ .favorite {
+     background: url('../images/favorite.png') no-repeat center;
+ }
+ .post-an-achievement {
+     background: url('../images/post-an-chievement.png') no-repeat center;
+ }
+ .invite-friend {
+     background: url('../images/invite-friend.png') no-repeat center;
+ }
+ .settings {
+     background: url('../images/settings.png') no-repeat center;
+ }
+ .post-an-ad {
+     background: url('../images/post-an-ad.png') no-repeat center;
+ }
+ .upgrade-account {
+     background: url('../images/upgrade-nom.png') no-repeat center;
+ }
+ .logout {
+     background: url('../images/logout.png') no-repeat center;
+ }
+
+.profile-item:hover .your-profile {
+     background: url('../images/your-profile-active.png') no-repeat center;
+ }
+.profile-item:hover .favorite {
+     background: url('../images/favorite-active.png') no-repeat center;
+ }
+.profile-item:hover .post-an-achievement {
+     background: url('../images/post-an-chievement-active.png') no-repeat center;
+ }
+.profile-item:hover .invite-friend {
+     background: url('../images/invite-friend-active.png') no-repeat center;
+ }
+.profile-item:hover .settings {
+     background: url('../images/settings-active.png') no-repeat center;
+ }
+.profile-item:hover .post-an-ad {
+     background: url('../images/post-an-ad-active.png') no-repeat center;
+ }
+.profile-item:hover .upgrade-account {
+     background: url('../images/upgrade-account.png') no-repeat center;
+ }
+.profile-item:hover .logout {
+     background: url('../images/logout-active.png') no-repeat center;
+ }
+ .banner-ad-top {
+     margin: 0 auto;
+     width: 728px;
+     padding: 20px 0;
+ }
+ #content-feed {
+     border: 1px solid #ddd;
+     border-bottom: none;
+     border-top: none;
+ }
