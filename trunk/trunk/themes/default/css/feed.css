@@ -242,3 +242,67 @@ body {
      border-bottom: none;
      border-top: none;
  }
+ .content-main {
+     float: left;
+     width: 100%;
+ }
+ .left-content{
+     float: left;
+     width: 65%;
+ }
+ .post-home {
+     float: left;
+     width: 100%;
+     border: 1px solid #ddd;
+     border-radius: 5px;
+ }
+ .avatar-post {
+     float: left;
+ }
+ .avatar-post img {
+     border-top-left-radius: 5px;
+ }
+ .post-textarea {
+     width: 630px;
+     border-right: 0;
+     height: 107px;
+     border-top-right-radius: 5px;
+     padding-left: 10px;
+ }
+ .footer-post {
+     float: left;
+     width: 100%;
+     height: 50px;
+     background: #f6f6f6;
+     border-bottom-left-radius: 5px;
+     border-bottom-right-radius: 5px;
+     padding-left: 115px;
+ }
+.footer-post a {
+    color: rgba(128, 128, 128, 0.66);
+    margin: 15px;
+    float: left;
+}
+.footer-post a:hover {
+    text-decoration: none;
+}
+.add-media img{
+    margin-right: 10px;
+}
+.add-location img {
+
+}
+.post-btn {
+    float: right!important;
+    margin-top: 10px!important;
+}
+.tabs {
+    float: left;
+    width: 100%;
+}
+.right-content {
+    float: right;
+    width: 35%;
+    min-height: 100px;
+    padding: 0 10px 0 20px;
+}
