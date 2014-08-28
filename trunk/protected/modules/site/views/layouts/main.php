@@ -34,7 +34,7 @@
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/app.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl . '/js/jquery.validationEngine.js' ?>"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl . '/js/jquery.validationEngine-en.js' ?>"></script>
-<!--<script type="text/javascript" src="<?php /*echo Yii::app()->themeManager->baseUrl . '/js/bootstrap.min.js' */?>"></script>-->
+<script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl . '/js/jquery.session.js' ?>"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl . '/js/oauthpopup.js' ?>"></script>
 </body>
 

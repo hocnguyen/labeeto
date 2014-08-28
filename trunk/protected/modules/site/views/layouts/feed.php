@@ -39,7 +39,7 @@
             </div>
             <div class="profile-nav">
                 <img class="avatar-nav" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatart-step2.png" />
-                <div class="username-nav">ROMEO</div>
+                <div class="username-nav"><?php echo Yii::app()->user->username ?></div>
                 <img class="arrow-nav" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/arrow_down.png" />
             </div>
         </div>
@@ -51,19 +51,12 @@
             <a href="#" class=" profile-item"><span class="icon-profile settings"></span>SETTING</a>
             <a href="#" class=" profile-item"><span class="icon-profile post-an-ad"></span>POST AN AD</a>
             <a href="#" class=" profile-item"><span class="icon-profile upgrade-account"></span>UPGRADE ACCOUNT</a>
-            <a href="#" class=" profile-item"><span class="icon-profile logout"></span>LOGOUT</a>
+            <a href="<?php echo $this->createUrl('/logout/index'); ?>" class=" profile-item"><span class="icon-profile logout"></span>LOGOUT</a>
         </div>
     </header>
     <main class="container" id="content-feed">
-        <?php //echo $content ?>
-        <div class="banner-ad-top">
-            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/ads-top.png" />
-        </div>
-        <div class="content-main">
-            <div class="left-content"></div>
-            <div class="right-content"></div>
+        <?php echo $content ?>
 
-        </div>
     </main>
 
 
@@ -71,7 +64,7 @@
     <footer class="clearfix">
         <?php //echo $this->renderPartial('../elements/footer-feed') ?>
     </footer>
-
+    <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl . '/js/jquery.session.js' ?>"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/feed.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl . '/js/jquery.validationEngine.js' ?>"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl . '/js/jquery.validationEngine-en.js' ?>"></script>
