@@ -5,16 +5,18 @@
 
     'enableAjaxValidation'=>false,
 ));*/ ?>
-<form id="signup-form">
+<div id="signup-form" >
 <div class="form-wrapper">
+    <div class="error"></div>
     <input type="text" name="SignUp[username]" id="username" class="username-input validate[required]" placeholder="Username"/>
     <input type="text" name="SignUp[email]" id="email" class="email-input validate[required,custom[email]]" placeholder="Email"/>
     <input type="password"  name="SignUp[password]" id="password" class="password-input validate[required]" placeholder="Password"/>
     <a href="#registration" class="registrations">
         <input type="submit" value="Sign Up" class="signup-home"/>
     </a>
+
 </div>
-</form>
+</div>
 <?php //$this->endWidget(); ?>
 
 <p class="description">
@@ -67,28 +69,28 @@
             <div class="wrapper-form">
                 <div class="firstname column-form">
                     <label>First Name</label>
-                    <input type="text" name="firstname" class="text-input"/>
+                    <input type="text" name="firstname" id="firstname" class="text-input"/>
                 </div>
                 <div class="lastname column-form">
                     <label>Last Name</label>
-                    <input type="text" name="lastname" class="text-input"/>
+                    <input type="text" name="lastname" id="lastname" class="text-input"/>
                 </div>
                 <div class="birthday column-form">
                     <label>Birthday</label>
                     <div class="select-option">
-                        <select class="day text-select" name="day">
+                        <select class="day text-select" id="day" name="day">
                             <option>Day</option>
                             <?php for($i=1;$i<=31;$i++) {
                                 echo "<option value='".$i."'>".$i."</option>";
                             }?>
                         </select>
-                        <select class="month text-select" name="month">
+                        <select class="month text-select" id="month" name="month">
                             <option>Month</option>
                             <?php for($i=1;$i<=12;$i++) {
                                 echo "<option value='".$i."'>".$i."</option>";
                             }?>
                         </select>
-                        <select class="year text-select" name="year">
+                        <select class="year text-select" id="year" name="year">
                             <option>Year</option>
                             <?php for($i=1960;$i<=1996;$i++) {
                                 echo "<option value='".$i."'>".$i."</option>";
@@ -99,13 +101,13 @@
                 <div class="height column-form">
                     <label>Height</label>
                     <div class="select-option">
-                        <select class="day text-select" name="day">
+                        <select class="day text-select"id="feet" name="feet">
                             <option>Feet</option>
                             <?php for($i=1;$i<=10;$i++) {
                                 echo "<option value='".$i."'>".$i."</option>";
                             }?>
                         </select>
-                        <select class="month text-select" name="month">
+                        <select class="month text-select" id="inches" name="inches">
                             <option>Inches</option>
                             <?php for($i=1;$i<=10;$i++) {
                                 echo "<option value='".$i."'>".$i."</option>";
@@ -123,14 +125,14 @@
                 </div>
                 <div class="ethnicity column-form">
                     <label>Ethnicity</label>
-                    <select name="ehtnicity" class="text-ehtnicity">
+                    <select name="ehtnicity" id="ehtnicity" class="text-ehtnicity">
                         <option>Pre-Fill</option>
                         <option>Pre-Fill</option>
                     </select>
                 </div>
                 <div class="address column-form">
                     <label>Address</label>
-                    <input type="text" value="Current city or Hometown" name="address" class="text-input"/>
+                    <input type="text" placeholder="Current city or Hometown" id="address" name="address" class="text-input"/>
                 </div>
                 <div class="button-next">
                     <input type="submit" value="Next" class="btn-next btn-next-style">
@@ -174,12 +176,7 @@
             <div class="avatar-step2">
                 <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatart-step2.png"/>
             </div>
-            <p class="detail-temp-info">Romeo Martin Rosales <br/>
-                June 5, 1990<br/>
-                5.5 ft, Male<br/>
-                Filipino<br/>
-                Manila, Philippines
-            </p>
+            <p class="detail-temp-info"> </p>
             <div class="btn-edit-wrapper">
                 <input type="button" class="btn-edit" value="Edit">
             </div>
@@ -189,54 +186,54 @@
             <div class="wrapper-form">
                 <div class="career column-form-full">
                     <label>Career</label>
-                    <input type="text" name="career" class="text-input"/>
+                    <input type="text" name="career" id="career" class="text-input"/>
                 </div>
 
                 <div class="education column-form">
                     <label>Education</label>
-                    <select name="education" class="text-input">
+                    <select name="education" id="education" class="text-input">
                         <option>Pre-Fill</option>
                         <option>Pre-Fill</option>
                     </select>
                 </div>
                 <div class="religion column-form">
                     <label>Religion</label>
-                    <select name="religion" class="text-input">
+                    <select name="religion" id="religion" class="text-input">
                         <option>Pre-Fill</option>
                         <option>Pre-Fill</option>
                     </select>
                 </div>
                 <div class="excercise form-three-column">
                     <label>Exercise</label>
-                    <select name="excercise" class="text-input">
+                    <select name="excercise" id="excercise" class="text-input">
                         <option>Pre-Fill</option>
                         <option>Pre-Fill</option>
                     </select>
                 </div>
                 <div class="fitness-passion form-three-column">
                     <label>Fitness Passion</label>
-                    <select name="passion" class="text-input">
+                    <select name="passion" id="passion" class="text-input">
                         <option>Pre-Fill</option>
                         <option>Pre-Fill</option>
                     </select>
                 </div>
                 <div class="firness-goal form-three-column">
                     <label>Fitness Goal</label>
-                    <select name="goal" class="text-input">
+                    <select name="goal" id="goal" class="text-input">
                         <option>Pre-Fill</option>
                         <option>Pre-Fill</option>
                     </select>
                 </div>
                 <div class="smoke column-form">
                     <label>Do you smoke?</label>
-                    <select name="smoke" class="text-input">
+                    <select name="smoke" id="smoke" class="text-input">
                         <option>Pre-Fill</option>
                         <option>Pre-Fill</option>
                     </select>
                 </div>
                 <div class="drink column-form">
                     <label>Do you drink?</label>
-                    <select name="drink" class="text-input">
+                    <select name="drink" id="drink" class="text-input">
                         <option>Pre-Fill</option>
                         <option>Pre-Fill</option>
                     </select>
@@ -302,11 +299,8 @@
 </div>
 <script type="text/javascript">
     $(document).ready(function(){
-
-
         <?php  if(isset($_SESSION['User'])) { ?>
         window.location.assign("/my_feed");
         <?php }?>
-
     });
 </script>

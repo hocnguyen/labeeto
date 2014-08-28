@@ -141,7 +141,12 @@ class MembersController extends SiteBaseController {
 
     public function actionMy_feed(){
         $this->layout = 'feed';
-        $this->render('my_feed');
+        if(!Yii::app()->user->isGuest){
+            $this->render('my_feed');
+        } else {
+            $this->redirect('/');
+        }
+
     }
 
     public function actionLogin(){
@@ -154,5 +159,49 @@ class MembersController extends SiteBaseController {
             session_destroy();
         }
         $this->redirect('/');
+    }
+    public function actionRegister(){
+        $model = new Members();
+        $model->username = $_GET['username'];
+        $model->email = $_GET['email'];
+        $model->password = md5(sha1($_GET['password']));
+        $model->fname = $_GET['firstname'];
+        $model->lname = $_GET['lastname'];
+        $model->birthday = $_GET['birthday'];
+        $model->height = $_GET['height'];
+        $model->gender = $_GET['gender'];
+        $model->ehtnicity = $_GET['ehtnicity'];
+        $model->address = $_GET['address'];
+        $model->career = $_GET['career'];
+        $model->education = $_GET['education'];
+        $model->religion = $_GET['religion'];
+        $model->excercise = $_GET['excercise'];
+        $model->passion = $_GET['passion'];
+        $model->goal = $_GET['goal'];
+        $model->smoke = $_GET['smoke'];
+        $model->drink = $_GET['drink'];
+        if($model->save()){
+            $identity = new InternalIdentity($model->email, $_GET['password']);
+            if($identity->authenticate())
+            {
+                Yii::app()->user->setFlash('success', Yii::t('login', 'Thanks. You register successful.'));
+                Yii::app()->user->login($identity, (Yii::app()->params['loggedInDays'] * 60 * 60 * 24 ));
+            }
+        }
+    }
+
+    public function actionCheckUser(){
+        $this->layout = '';
+        $record = Members::model()->findByAttributes(array(),array(
+            'condition'=>'username=:name OR email=:name ',
+            'params'=>array('name'=>$_GET['name']),
+
+        ));
+        if($record===null){
+            echo 1;
+        }else {
+            echo 0;
+        }
+
     }
 }

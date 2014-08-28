@@ -143,6 +143,7 @@ body {
     margin-top: 15px;
     font-family: "Proxima Nova";
     font-size: 13px;
+    text-transform: uppercase;
  }
  .arrow-nav {
      float: right;

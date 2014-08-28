@@ -65,7 +65,7 @@ class LoginController extends SiteBaseController
                 
 					
 				// Redirect
-				$this->redirect(Yii::app()->homeUrl);
+				$this->redirect('/my_feed');
 			}
 		}
 		/*
