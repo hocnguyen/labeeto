@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <!-- Bootstrap -->
-
+    <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/bootstrap.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/feed.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/validationEngine.jquery.css" rel="stylesheet">
@@ -33,8 +33,74 @@
                 <div class="message-request"> <!-- Class active: message-active -->
                     <!--<div class="notice-notify">45</div>-->
                 </div>
-                <div class="notify-request notify-active">
+                <div class="notify-request notify-active" id="toggle-notification">
                     <div class="notice-notify">45</div>
+                    <div class="menu-notification">
+                        <span class="only-this-span"></span>
+                        <ul>
+                            <li><span style="color: white; padding-left: 15px;">NOTIFICATIONS</span><span>(45)</span><span style="float: right; padding-right: 15px;">See All</span></li>
+                            <li>
+                                <a href="#">
+                                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_1.png">
+                                        <h6>SAORI TABATA <span class="active-infor">thgt ft likes your</span><span class="content-infor">post prive photo in timeline</span></h6> 
+                                        <span class="minuten">16 mins</span>
+                                </a>
+                                <div class="content-active">
+                                    <span class="delete-post"></span><span class="check-post"></span>
+                                </div> 
+                                
+                            </li>
+                            
+                            <li>
+                                <a href="#">
+                                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_1.png">
+                                        <h6>SAORI TABATA <span class="active-infor">thgt ft likes your</span><span class="content-infor">post prive photo in timeline</span></h6> 
+                                        <span class="minuten">16 mins</span>
+                                </a>
+                                <div class="content-active">
+                                    <span class="delete-post"></span><span class="check-post"></span>
+                                </div> 
+                                
+                            </li>
+                            
+                            <li>
+                                <a href="#">
+                                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_1.png">
+                                        <h6>SAORI TABATA <span class="active-infor">thgt ft likes your</span><span class="content-infor">post prive photo in timeline</span></h6> 
+                                        <span class="minuten">16 mins</span>
+                                </a>
+                                <div class="content-active">
+                                    <span class="delete-post"></span><span class="check-post"></span>
+                                </div> 
+                                
+                            </li>
+                            
+                            <li>
+                                <a href="#">
+                                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_1.png">
+                                        <h6>SAORI TABATA <span class="active-infor">thgt ft likes your</span><span class="content-infor">post prive photo in timeline</span></h6> 
+                                        <span class="minuten">16 mins</span>
+                                </a>
+                                <div class="content-active">
+                                    <span class="delete-post"></span><span class="check-post"></span>
+                                </div> 
+                                
+                            </li>
+                            
+                            <li>
+                                <a href="#">
+                                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_1.png">
+                                        <h6>SAORI TABATA <span class="active-infor">thgt ft likes your</span><span class="content-infor">post prive photo in timeline</span></h6> 
+                                        <span class="minuten">16 mins</span>
+                                </a>
+                                <div class="content-active">
+                                    <span class="delete-post"></span><span class="check-post"></span>
+                                </div> 
+                                
+                            </li>
+                            
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="profile-nav">
@@ -54,15 +120,15 @@
             <a href="<?php echo $this->createUrl('/logout/index'); ?>" class=" profile-item"><span class="icon-profile logout"></span>LOGOUT</a>
         </div>
     </header>
-    <main class="container" id="content-feed">
+    <div class="container" id="content-feed">
         <?php echo $content ?>
 
-    </main>
+    </div>
 
 
 
     <footer class="clearfix">
-        <?php //echo $this->renderPartial('../elements/footer-feed') ?>
+        <?php echo $this->renderPartial('../elements/footer-feed') ?>
     </footer>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl . '/js/jquery.session.js' ?>"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/feed.js"></script>
