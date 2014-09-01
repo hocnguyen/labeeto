@@ -126,6 +126,7 @@ body {
     float: left;
     width: 16%;
     cursor: pointer;
+    position: relative;
 
 }
 .profile-nav:hover {
