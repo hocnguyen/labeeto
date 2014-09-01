@@ -158,7 +158,6 @@
                 <li><a href="#" class="special-pag">2</a></li>
                 <li><a href="#" class="normal-pag">3</a></li>
                 <li><a href="#" class="normal-pag">4</a></li>
-                <li><a href="#" class="normal-pag">5</a></li>
                 <li><a href="#">....</a></li>
                 <li><a href="#" class="normal-pag">9</a></li>
                 <li><a href="#" class="normal-pag">10</a></li>
