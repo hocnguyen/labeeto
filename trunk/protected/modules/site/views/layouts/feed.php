@@ -107,17 +107,19 @@
                 <img class="avatar-nav" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatart-step2.png" />
                 <div class="username-nav"><?php echo Yii::app()->user->username ?></div>
                 <img class="arrow-nav" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/arrow_down.png" />
+                
+                <div class="menu-profile">
+                    <a href="#" class=" profile-item firt-profile"><span class="icon-profile your-profile"></span>YOUR PROFILE</a>
+                    <a href="#" class=" profile-item"><span class="icon-profile favorite"></span>FAVORITE</a>
+                    <a href="#" class=" profile-item"><span class="icon-profile post-an-achievement"></span>POST AN ACHIEVEMENT</a>
+                    <a href="#" class=" profile-item"><span class="icon-profile invite-friend"></span>INVITE FRIEND</a>
+                    <a href="#" class=" profile-item"><span class="icon-profile settings"></span>SETTING</a>
+                    <a href="#" class=" profile-item"><span class="icon-profile post-an-ad"></span>POST AN AD</a>
+                    <a href="#" class=" profile-item"><span class="icon-profile upgrade-account"></span>UPGRADE ACCOUNT</a>
+                    <a href="<?php echo $this->createUrl('/logout/index'); ?>" class=" profile-item"><span class="icon-profile logout"></span>LOGOUT</a>
+                </div>
+        
             </div>
-        </div>
-        <div class="menu-profile">
-            <a href="#" class=" profile-item firt-profile"><span class="icon-profile your-profile"></span>YOUR PROFILE</a>
-            <a href="#" class=" profile-item"><span class="icon-profile favorite"></span>FAVORITE</a>
-            <a href="#" class=" profile-item"><span class="icon-profile post-an-achievement"></span>POST AN ACHIEVEMENT</a>
-            <a href="#" class=" profile-item"><span class="icon-profile invite-friend"></span>INVITE FRIEND</a>
-            <a href="#" class=" profile-item"><span class="icon-profile settings"></span>SETTING</a>
-            <a href="#" class=" profile-item"><span class="icon-profile post-an-ad"></span>POST AN AD</a>
-            <a href="#" class=" profile-item"><span class="icon-profile upgrade-account"></span>UPGRADE ACCOUNT</a>
-            <a href="<?php echo $this->createUrl('/logout/index'); ?>" class=" profile-item"><span class="icon-profile logout"></span>LOGOUT</a>
         </div>
     </header>
     <div class="container" id="content-feed">
