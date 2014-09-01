@@ -13,6 +13,11 @@
             <li><a href="#">Contract Us</a></li>
                                           
         </ul>
+        <ul class="social">
+            <li class="fb"><a href="#">Facebook</a></li>
+            <li class="twitter"><a href="#">Twitter</a></li>
+            <li class="insta"><a href="#">Instagram</a></li>
+        </ul>
     </div>
 </div>
 <div class="clearfix copy-right">
