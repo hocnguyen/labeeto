@@ -2,15 +2,19 @@
     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/ads-top.png" />
 </div>
 <div class="content-main">
-    <?php $this->widget('widgets.admin.notifications'); ?>
+    <?php //$this->widget('widgets.admin.notifications'); ?>
      <!-- Content Left  -->
     <div class="left-content">
         <!-- Form first -->
         <form class="post-home" method="post" name="" action="#">
-            <div class="avatar-post">
-                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post.png">
+            <div class="content-avatar">
+                <div class="avatar-post">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post.png">
+                </div>
             </div>
-            <textarea class="post-textarea" placeholder="Post an achievement..."></textarea>
+            <div class="content-textarea">
+                <textarea class="post-textarea" placeholder="Post an achievement..."></textarea>
+            </div>
             <div class="footer-post">
                 <a href="#" class="add-media">
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/icon-upload.png" />
@@ -33,26 +37,32 @@
             <div>
                 <div class="my-tabs">
                     <ul class="nav nav-tabs" role="tablist">
-                      <li class="active"><a href="#home" role="tab" data-toggle="tab">Popular</a></li>
-                      <li><a href="#messages-11" role="tab" data-toggle="tab">Recent</a></li>
-                      <li><a href="#settings-11" role="tab" data-toggle="tab">Trending</a></li>
+                      <li class="active"><a href="#popular" role="tab" data-toggle="tab">Popular</a></li>
+                      <li><a href="#recent" role="tab" data-toggle="tab">Recent</a></li>
+                      <li><a href="#trending" role="tab" data-toggle="tab">Trending</a></li>
                     </ul>
                 </div>
-                <div class="my-tabs-div"></div>
-                <form>
-                    <input type="text" name="search" class="form-control seach-tab"/>
-                </form>
-                <div class="my-tabs-footer">
-                    <p>CURRENTLY TRENDING <span id="toggle">Menu toggel</span></p>
-                    <div class="menu-slide">
-                        <span></span>
-                        <ul>
-                            <li><a href="#">#LOL</a></li>
-                            <li><a href="#">#Legday</a></li>
-                            <li><a href="#">#CARDIO</a></li>
-                            <li><a href="#">#ALSawareness</a></li>
-                            <li><a href="#">#WCW</a></li>
-                        </ul>
+                <div class="tab-content">
+                    <div id="popular" class="tab-pane"></div>
+                    <div id="recent" class="tab-pane"></div>
+                    <div id="trending" class="tab-pane">
+                        <div class="my-tabs-div"></div>
+                        <form>
+                            <input type="text" name="search" class="form-control seach-tab"/>
+                        </form>
+                        <div class="my-tabs-footer">
+                            <p>CURRENTLY TRENDING <span id="toggle">Menu toggel</span></p>
+                            <div class="menu-slide">
+                                <span></span>
+                                <ul>
+                                    <li><a href="#">#LOL</a></li>
+                                    <li><a href="#">#Legday</a></li>
+                                    <li><a href="#">#CARDIO</a></li>
+                                    <li><a href="#">#ALSawareness</a></li>
+                                    <li><a href="#">#WCW</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -209,6 +219,7 @@ $(document).ready(function(){
    $("#toggle-notification").click(function(){
     $(".menu-notification").toggle();
    });
+
 });
 </script>
 
