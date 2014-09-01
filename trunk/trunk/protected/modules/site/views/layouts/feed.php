@@ -21,10 +21,10 @@
                 <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/logo-feed.png" alt="Logo"/>
             </a>
             <div class="menu-nav">
-                <a href="#" class=" menu-item"><span class="icon search"></span> SEARCH</a>
-                <a href="#" class=" menu-item"><span class="icon top-rate"></span>TOP RATED</a>
-                <a href="#" class=" menu-item"><span class="icon get-fit"></span>GET FIT</a>
-                <a href="#" class=" menu-item"><span class="icon inspire"></span>INSPIRE</a>
+                <a href="#" class="menu-item"><span class="icon search"></span> SEARCH</a>
+                <a href="#" class="menu-item"><span class="icon top-rate"></span>TOP RATED</a>
+                <a href="#" class="menu-item"><span class="icon get-fit"></span>GET FIT</a>
+                <a href="#" class="menu-item"><span class="icon inspire"></span>Speed date</a>
             </div>
             <div class="notify">
                 <div class="friend-request friend-active">
