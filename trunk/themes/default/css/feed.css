@@ -4,11 +4,12 @@ body {
 }
 #wrapper{overflow: hidden;}
 .head-feed {
-    background: url('../images/bg-head-feed.png') repeat-x;
+    /*background: url('../images/bg-head-feed.png') repeat-x;*/
     height: 50px;
+    background-color: #191d1e;
 }
 .content-head{
-    width: 80%;
+    width: 980px;
     height: 50px;
     margin: 0 auto;
 }
@@ -17,7 +18,7 @@ body {
     float: left;
 }
 .menu-nav {
-    width: 55%;
+    width: 54%;
     float: left;
     margin-left: 20px;
     background: url("../images/line-nav.png") no-repeat;
@@ -31,7 +32,7 @@ body {
     height: 50px;
     font-family: "Myriad Pro";
     text-transform: uppercase;
-    width: 150px;
+    width: 132px;
 
 }
 .search {
@@ -73,7 +74,7 @@ body {
     float: left;
     width: 17%;
     height: 50px;
-    padding: 16px 10px 10px 20px;
+    padding: 16px 10px 10px 0px;
     background: url('../images/line-nav.png') no-repeat right;
 }
 .friend-request {
@@ -125,7 +126,6 @@ body {
 }
 .profile-nav {
     float: left;
-    width: 16%;
     cursor: pointer;
     position: relative;
 
@@ -248,9 +248,10 @@ body {
      border: 1px solid #ddd;
      border-bottom: none;
      border-top: none;
-     width: 80%;
+     /*width: 80%;*/
      margin: 0px auto;
      padding-bottom: 50px;
+     width: 980px;
  }
  .content-main {
      float: left;
@@ -278,7 +279,7 @@ body {
      height: 107px;
      border-top-right-radius: 5px;
      padding-left: 10px;
-     width: 84%;
+     width: 82%;
  }
  .footer-post {
      float: left;
@@ -651,10 +652,11 @@ span.minuten{
     font-weight: bold;
 }
 .footer-feed{
-    background: url('../images/bg-head-feed.png') repeat; 
+    /*background: url('../images/bg-head-feed.png') repeat; */
     height: 90px; 
     padding: 25px 0 0 20px; 
     margin-top: 50px;
+    background-color: #191d1e;
 }
 .content-footer{
     width: 80%; 
