@@ -6,7 +6,7 @@ body {
 .head-feed {
     /*background: url('../images/bg-head-feed.png') repeat-x;*/
     height: 50px;
-    background-color: #191d1e;
+    background-color: #3c3a45;
 }
 .content-head{
     width: 980px;
@@ -72,7 +72,7 @@ body {
 }
 .notify {
     float: left;
-    width: 17%;
+    width: 15%;
     height: 50px;
     padding: 16px 10px 10px 0px;
     background: url('../images/line-nav.png') no-repeat right;
@@ -83,7 +83,7 @@ body {
     height: 20px;
     float: left;
     cursor: pointer;
-    margin-left: 30px;
+    margin-left: 10px;
 }
 .friend-active {
     background: url('../images/friend_active.png') no-repeat center!important;
@@ -125,7 +125,6 @@ body {
     font-family: "Proxima Nova";
 }
 .profile-nav {
-    float: left;
     cursor: pointer;
     position: relative;
 
@@ -143,17 +142,17 @@ body {
     float: left;
     color: #5dc1ea;
     font-weight: bold;
-    margin-top: 15px;
     font-family: "Proxima Nova";
     font-size: 13px;
     text-transform: uppercase;
     position: relative;
+    top: 15px;
  }
  .arrow-nav {
      float: right;
      padding: 21px 0;
      background: url('../images/line-nav.png') no-repeat right;
-     padding-right: 20px;
+     padding-right: 5px;
  }
  .menu-profile {
      display: none;
@@ -659,7 +658,7 @@ span.minuten{
     background-color: #191d1e;
 }
 .content-footer{
-    width: 80%; 
+    width: 980px;
     margin: 0 auto;
 }
 .menu-footer li{ 
@@ -675,7 +674,7 @@ span.minuten{
 .menu-footer li a{
     color: white; 
     text-decoration: none; 
-    padding: 20px; 
+    padding: 10px; 
     font:normal 14px/normal Arial; 
     text-decoration: none;
 }
@@ -775,4 +774,53 @@ a.add-location-1:hover{
 }
 .right-content div img{
     width: 100%;
+}
+.icon-fb{
+    background: url('../images/icon-upload.png') no-repeat; 
+    padding: 17px 0px 0 40px;
+}
+.icon-tw{
+    background: url('../images/icon-upload.png') no-repeat; 
+    padding: 17px 0px 0 40px;
+}
+.icon-gg{
+    background: url('../images/icon-gg.png') no-repeat; 
+    padding: 17px 0px 0 40px;
+}
+ul.social{
+    float: right;
+}
+.social li {
+    list-style: none;
+    float: right;
+}
+ul.social li{
+    width: 18px;
+    height: 18px;
+    background: url('../images/social_sprite.png') no-repeat;
+    transition: all .7s;
+    float: left;
+    margin-right: 15px;
+}
+ul.social li.fb{
+    background-position: 0 0;
+}
+ul.social li.twitter{
+    background-position: -30px 0;
+}
+ul.social li.insta{
+    background-position: -63px 0;
+}
+ul.social li a{
+    display: block;
+    text-indent: -9999px;
+}
+ul.social li.fb:hover{
+    background-position: 0 -18px;
+}
+ul.social li.twitter:hover{
+    background-position: -30px -18px;
+}
+ul.social li.insta:hover{
+    background-position: -63px -18px;
 }
