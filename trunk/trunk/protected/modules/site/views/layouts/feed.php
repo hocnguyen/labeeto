@@ -105,7 +105,7 @@
             </div>
             <div class="profile-nav">
                 <img class="avatar-nav" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatart-step2.png" />
-                <div class="username-nav"><?php echo Yii::app()->user->username ?></div>
+                <div class="username-nav"><?php ; echo Yii::app()->user->username; ?></div>
                 <img class="arrow-nav" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/arrow_down.png" />
                 
                 <div class="menu-profile">
@@ -118,7 +118,7 @@
                     <a href="#" class=" profile-item"><span class="icon-profile upgrade-account"></span>UPGRADE ACCOUNT</a>
                     <a href="<?php echo $this->createUrl('/logout/index'); ?>" class=" profile-item"><span class="icon-profile logout"></span>LOGOUT</a>
                 </div>
-        
+                                                
             </div>
         </div>
     </header>
