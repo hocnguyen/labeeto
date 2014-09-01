@@ -145,6 +145,7 @@ body {
     font-family: "Proxima Nova";
     font-size: 13px;
     text-transform: uppercase;
+    position: relative;
  }
  .arrow-nav {
      float: right;
@@ -236,8 +237,10 @@ body {
  }
  .banner-ad-top {
      margin: 0 auto;
-     width: 728px;
+     /*width: 728px;*/
      padding: 20px 0;
+    width: 80%;
+    text-align: center;
  }
  #content-feed {
      border: 1px solid #ddd;
@@ -483,7 +486,7 @@ cursor: pointer;}
     border-bottom: transparent;
 }
 .menu-slide ul li a:hover{
-    color: #0015ca;
+    color: #ff6476;
 }
 
 .menu-notification{
@@ -762,4 +765,10 @@ a.add-media-1:hover,
 a.add-location-1:hover{
     background-color: transparent !important; 
     text-decoration: none;
+}
+.content-avatar .content-avatar img{
+    width: 100%;
+}
+.content-textarea textarea{
+    width: 100%;
 }
