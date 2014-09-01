@@ -160,7 +160,7 @@ body {
      width: 234px;
      height: 414px;
      position: absolute;
-     right: 140px;
+     right: 0px;
      background: url('../images/bg_nav_menu.png');
      top: 44px;
      border-radius: 5px;
@@ -767,12 +767,6 @@ a.add-media-1:hover,
 a.add-location-1:hover{
     background-color: transparent !important; 
     text-decoration: none;
-}
-.content-avatar .content-avatar img{
-    width: 100%;
-}
-.content-textarea textarea{
-    width: 100%;
 }
 .banner-ad-top img{
     width: 100%;
