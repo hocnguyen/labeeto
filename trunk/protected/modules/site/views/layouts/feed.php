@@ -105,7 +105,16 @@
             </div>
             <div class="profile-nav">
                 <img class="avatar-nav" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatart-step2.png" />
-                <div class="username-nav"><?php ; echo Yii::app()->user->username; ?></div>
+                <div class="username-nav">
+                <?php 
+                if(strlen(Yii::app()->user->username) > 8){
+                    echo substr(Yii::app()->user->username, 0, 5). '...';
+                }else{
+                    echo Yii::app()->user->username;
+                }
+                 
+                ?>
+                </div>
                 <img class="arrow-nav" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/arrow_down.png" />
                 
                 <div class="menu-profile">
