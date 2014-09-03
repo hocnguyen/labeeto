@@ -92,7 +92,7 @@
                 },
                 "space": {
                     "regex": /^([0-9a-z]+)$/,
-                    "alertText": "* Can't use space in here"
+                    "alertText": "* Invalid username"
                 },
                 "integer": {
                     "regex": /^[\-\+]?\d+$/,
