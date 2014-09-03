@@ -548,14 +548,14 @@ input[type=submit]:hover{
 .wrapper-form {
     width: 97%;
     float: left;
-    padding: 20px;
+    padding: 5px 20px 5px 20px;
 }
 .text-input{
     height: 30px;
     border-radius: 2px;
     border: 1px solid #ddd;
     width: 97%;
-    color: #BDBDBD;
+    padding-left: 5px;
 }
 .column-form {
     width: 50%;
@@ -788,8 +788,49 @@ input[type=submit]:hover{
     text-align: left;
     padding-left: 50px;
 }
-#address::-webkit-input-placeholder { font-size: 13px }
-#address::-moz-placeholder{ font-size: 13px }
+
+label.error-label {
+    color: white;
+    float: left;
+    width: 100%;
+    padding: 5px 10px;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.fix-range {
+    float: left;
+    width: 100%;
+}
+.relationship {
+    height: 51px;
+}
+
+#relations{
+    height: 34px;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    black;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    black;
+    opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    black;
+    opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    black;
+}
+.error-zip {
+    display: none;
+    position: absolute;
+    bottom: 58px;
+}
+#zipcode::-webkit-input-placeholder { font-size: 13px }
+#zipcode::-moz-placeholder{ font-size: 13px }
 @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
     main#content { padding-bottom: 134px; }
     footer{ padding-top: 35px; }
@@ -838,3 +879,6 @@ input[type=submit]:hover{
         padding-top: 250px;
     }
 }
+
+
+
