@@ -16,11 +16,11 @@ class LoginController extends SiteBaseController
 		{
 			$this->redirect(Yii::app()->homeUrl);
 		}
-		
+
 		// Add page breadcrumb and title
 		$this->pageTitle[] = Yii::t('global', 'Login');
 		$this->breadcrumbs[ Yii::t('global', 'Login') ] = array('login/index');
-		
+
 		parent::init();
 	}
 	
@@ -48,25 +48,21 @@ class LoginController extends SiteBaseController
 	{
 		$model = new LoginForm;
 		
-		if( isset($_POST['LoginForm']) )
-		{
+		if( isset($_POST['LoginForm']) ) {
 			$model->attributes = $_POST['LoginForm'];
-            
-			if( $model->validate() )
-			{
-				// Login
-				$identity = new InternalIdentity($model->email, $model->password);
-                if($identity->authenticate())
-				{
-					// Member authenticated, Login
-					Yii::app()->user->setFlash('success', Yii::t('login', 'Thanks. You are now logged in.'));
-					Yii::app()->user->login($identity, (Yii::app()->params['loggedInDays'] * 60 * 60 * 24 ));
-				}
-                
-					
-				// Redirect
-				$this->redirect('/my_feed');
-			}
+                if( $model->validate() )
+                {
+                    // Login
+                    $identity = new InternalIdentity($model->email, $model->password);
+                    if($identity->authenticate())
+                    {
+                        // Member authenticated, Login
+                        Yii::app()->user->setFlash('success', Yii::t('login', 'Thanks. You are now logged in.'));
+                        Yii::app()->user->login($identity, (Yii::app()->params['loggedInDays'] * 60 * 60 * 24 ));
+                    }
+                    // Redirect
+                    $this->redirect('/my_feed');
+                }
 		}
 		/*
 		// Load facebook

@@ -141,7 +141,7 @@
                 </div>
                 <div class="address column-form">
                     <label>Zip Code/ Post Code</label>
-                    <input type="text" placeholder="Zip code/ Post code" id="zipcode" name="zipcode" class="text-input validate[maxSize[5],minSize[5],required] "/>
+                    <input type="text" placeholder="Zip code/ Post code" id="zipcode" name="zipcode" class="text-input validate[maxSize[4],minSize[4],required] "/>
                 </div>
                 <div class="error-zip">
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/error-zip.png" />
