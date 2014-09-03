@@ -165,8 +165,6 @@ class MembersController extends SiteBaseController {
         $model->username = $_GET['username'];
         $model->email = $_GET['email'];
         $model->password = md5(sha1($_GET['password']));
-        $model->fname = $_GET['firstname'];
-        $model->lname = $_GET['lastname'];
         $model->birthday = $_GET['birthday'];
         $model->height = $_GET['height'];
         $model->gender = $_GET['gender'];
@@ -180,6 +178,10 @@ class MembersController extends SiteBaseController {
         $model->goal = $_GET['goal'];
         $model->smoke = $_GET['smoke'];
         $model->drink = $_GET['drink'];
+        $model->relations = $_GET['relations'];
+        $model->zipcode = $_GET['zipcode'];
+        $model->latitude = $_GET['latitude'];
+        $model->longtitude = $_GET['longtitude'];
         if($model->save()){
             $identity = new InternalIdentity($model->email, $_GET['password']);
             if($identity->authenticate())
@@ -204,4 +206,5 @@ class MembersController extends SiteBaseController {
         }
 
     }
+
 }

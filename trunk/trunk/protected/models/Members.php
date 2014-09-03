@@ -25,6 +25,10 @@
  * @property string $passion
  * @property string $goal
  * @property string $smoke
+ * @property string $relations
+ * @property string $zipcode
+ * @property string $latitude
+ * @property string $longtitude
  * @property string $drink
  * @property integer $status
  * @property string $last_logged
@@ -66,11 +70,13 @@ class Members extends CActiveRecord
 			array('career, height, smoke', 'length', 'max'=>100),
 			array('password, fname, lname, education, religion', 'length', 'max'=>40),
 			array('role, ehtnicity', 'length', 'max'=>30),
-			array('excercise, passion, goal, drink', 'length', 'max'=>255),
+			array('excercise, passion, goal, relations, drink', 'length', 'max'=>255),
+			array('zipcode', 'length', 'max'=>5),
+			array('latitude, longtitude', 'length', 'max'=>50),
 			array('birthday, last_logged', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, gender, career, email, password, joined, role, ehtnicity, fname, lname, birthday, photo, address, education, religion, height, excercise, passion, goal, smoke, drink, status, last_logged', 'safe', 'on'=>'search'),
+			array('id, username, gender, career, email, password, joined, role, ehtnicity, fname, lname, birthday, photo, address, education, religion, height, excercise, passion, goal, smoke, relations, zipcode, latitude, longtitude, drink, status, last_logged', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -112,6 +118,10 @@ class Members extends CActiveRecord
 			'passion' => Yii::t('global', 'Passion'),
 			'goal' => Yii::t('global', 'Goal'),
 			'smoke' => Yii::t('global', 'Smoke'),
+			'relations' => Yii::t('global', 'Relations'),
+			'zipcode' => Yii::t('global', 'Zipcode'),
+			'latitude' => Yii::t('global', 'Latitude'),
+			'longtitude' => Yii::t('global', 'Longtitude'),
 			'drink' => Yii::t('global', 'Drink'),
 			'status' => Yii::t('global', 'Status'),
 			'last_logged' => Yii::t('global', 'Last Logged'),
@@ -150,6 +160,10 @@ class Members extends CActiveRecord
 		$criteria->compare('passion',$this->passion,true);
 		$criteria->compare('goal',$this->goal,true);
 		$criteria->compare('smoke',$this->smoke,true);
+		$criteria->compare('relations',$this->relations,true);
+		$criteria->compare('zipcode',$this->zipcode,true);
+		$criteria->compare('latitude',$this->latitude,true);
+		$criteria->compare('longtitude',$this->longtitude,true);
 		$criteria->compare('drink',$this->drink,true);
 		$criteria->compare('status',$this->status);
 		$criteria->compare('last_logged',$this->last_logged,true);
@@ -158,6 +172,7 @@ class Members extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
     public function hashPassword( $password )
     {
         return md5(sha1($password));

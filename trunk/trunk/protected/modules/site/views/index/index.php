@@ -1,15 +1,15 @@
 <h1 class="heading"> Meet people. Find love. Get fit.</h1>
 <h2 class="tag-line"> We'll get you connected to people who share your healthy lifestyle and passionate goals</h2>
-<?php /*$form=$this->beginWidget('CActiveForm', array(
+<?php $form=$this->beginWidget('CActiveForm', array(
     'id'=>'signup-form',
 
     'enableAjaxValidation'=>false,
-));*/ ?>
+)); ?>
 <div id="signup-form" >
-<div class="form-wrapper">
+<div class="form-wrapper" id="sign-up">
     <div class="error"></div>
-    <input type="text" name="SignUp[username]" id="username" class="username-input validate[required]" placeholder="Username"/>
-    <input type="text" name="SignUp[email]" id="email" class="email-input validate[required,custom[email]]" placeholder="Email"/>
+    <input type="text" name="SignUp[username]" id="username" class="username-input validate[required,custom[space]] "  placeholder="Username"/>
+    <input type="text" name="SignUp[email]" id="email" class="email-input validate[required,custom[email]" placeholder="Email"/>
     <input type="password"  name="SignUp[password]" id="password" class="password-input validate[required]" placeholder="Password"/>
     <a href="#registration" class="registrations">
         <input type="submit" value="Sign Up" class="signup-home"/>
@@ -17,17 +17,23 @@
 
 </div>
 </div>
-<?php //$this->endWidget(); ?>
+<?php $this->endWidget(); ?>
 
 <p class="description">
     By clicking Sign Up, you agree to our <a href="#">Terms</a> and that you have read our <a href="#">Data Use Policy</a>,including our
     <a href="#">Cookie Use</a>.
 </p>
+
 <a href="#" id="signin-fb">
     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/signin_fb.png" id='facebook' alt="Sign in with Facebook"/>
 </a>
 <div id="registration" class="registration-fancybox">
 <div class="step-1 ">
+    <?php $form=$this->beginWidget('CActiveForm', array(
+        'id'=>'signup-form-step2',
+
+        'enableAjaxValidation'=>false,
+    )); ?>
     <div class="registration-head">
         <div class="wrapper-step">
             <div class="step1">
@@ -67,31 +73,34 @@
         </div>
         <div class="center-content">
             <div class="wrapper-form">
-                <div class="firstname column-form">
-                    <label>First Name</label>
-                    <input type="text" name="firstname" id="firstname" class="text-input"/>
+                <div class="username column-form">
+                    <label>Username</label>
+                    <input type="text" id="username-step2" name="username-step2" class="text-input validate[required]"/>
                 </div>
-                <div class="lastname column-form">
-                    <label>Last Name</label>
-                    <input type="text" name="lastname" id="lastname" class="text-input"/>
+                <div class="relationship column-form">
+                    <label>Relation Status</label>
+                    <select name="relations" id="relations" class="text-input validate[required]">
+                        <option>Single</option>
+                        <option>Married</option>
+                    </select>
                 </div>
                 <div class="birthday column-form">
                     <label>Birthday</label>
                     <div class="select-option">
-                        <select class="day text-select" id="day" name="day">
-                            <option>Day</option>
+                        <select class="day text-select validate[required]" id="day" name="day">
+                            <option value="">Day</option>
                             <?php for($i=1;$i<=31;$i++) {
                                 echo "<option value='".$i."'>".$i."</option>";
-                            }?>
+                            } ?>
                         </select>
-                        <select class="month text-select" id="month" name="month">
-                            <option>Month</option>
+                        <select class="month text-select validate[required]" id="month" name="month">
+                            <option value="">Month</option>
                             <?php for($i=1;$i<=12;$i++) {
                                 echo "<option value='".$i."'>".$i."</option>";
                             }?>
                         </select>
-                        <select class="year text-select" id="year" name="year">
-                            <option>Year</option>
+                        <select class="year text-select validate[required]" id="year" name="year">
+                            <option value="">Year</option>
                             <?php for($i=1960;$i<=1996;$i++) {
                                 echo "<option value='".$i."'>".$i."</option>";
                             }?>
@@ -101,14 +110,14 @@
                 <div class="height column-form">
                     <label>Height</label>
                     <div class="select-option">
-                        <select class="day text-select"id="feet" name="feet">
-                            <option>Feet</option>
+                        <select class="day text-select validate[required]" id="feet" name="feet">
+                            <option value="">Feet</option>
                             <?php for($i=1;$i<=10;$i++) {
                                 echo "<option value='".$i."'>".$i."</option>";
                             }?>
                         </select>
-                        <select class="month text-select" id="inches" name="inches">
-                            <option>Inches</option>
+                        <select class="month text-select validate[required]" id="inches" name="inches">
+                            <option value="">Inches</option>
                             <?php for($i=1;$i<=10;$i++) {
                                 echo "<option value='".$i."'>".$i."</option>";
                             }?>
@@ -119,20 +128,23 @@
                 <div class="gender ">
                     <label>Gender</label>
                     <div class="group-radio">
-                        <label for="male" class="text-radio"><input  type="radio" name="gender" value="0" checked id="male"/>Male</label>
-                        <label for="female" class="text-radio"><input  type="radio" name="gender" value="1" id="female"/>Female</label>
+                        <span class="text-radio"><input  type="radio" name="gender" value="0" checked id="male"/>Male</span>
+                        <span for="female" class="text-radio"><input  type="radio" name="gender" value="1" id="female"/>Female</span>
                     </div>
                 </div>
                 <div class="ethnicity column-form">
                     <label>Ethnicity</label>
-                    <select name="ehtnicity" id="ehtnicity" class="text-ehtnicity">
+                    <select name="ehtnicity" id="ehtnicity" class="text-ehtnicity validate[required]">
                         <option>Pre-Fill</option>
                         <option>Pre-Fill</option>
                     </select>
                 </div>
                 <div class="address column-form">
-                    <label>Address</label>
-                    <input type="text" placeholder="Current city or Hometown" id="address" name="address" class="text-input"/>
+                    <label>Zip Code/ Post Code</label>
+                    <input type="text" placeholder="Zip code/ Post code" id="zipcode" name="zipcode" class="text-input validate[maxSize[5],minSize[5],required] "/>
+                </div>
+                <div class="error-zip">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/error-zip.png" />
                 </div>
                 <div class="button-next">
                     <input type="submit" value="Next" class="btn-next btn-next-style">
@@ -140,8 +152,13 @@
             </div>
         </div>
     </div>
+    <?php $this->endWidget(); ?>
 </div>
 <div class="step-2">
+    <?php $form=$this->beginWidget('CActiveForm', array(
+        'id'=>'signup-form-step3',
+        'enableAjaxValidation'=>false,
+    )); ?>
     <div class="registration-head">
         <div class="wrapper-step">
             <div class="step2">
@@ -184,59 +201,81 @@
         </div>
         <div class="center-content">
             <div class="wrapper-form">
-                <div class="career column-form-full">
+                <div class="career column-form">
                     <label>Career</label>
-                    <input type="text" name="career" id="career" class="text-input"/>
+                    <input type="text" name="career" id="career" class="text-input validate[required]"/>
                 </div>
+                <div class="excercise column-form">
+                    <label>Exercise</label><br/>
+                    <!--<input name="excercise" id="excercise" class="text-input">-->
+                    <div class="fix-range">
+                        <label style="margin-right: 20px;">Never</label>
+                        <input type=range min=0 max=100 value=50 id="excrise" step=20 list=volsettings>
 
+                        <datalist id=volsettings>
+                            <option>0</option>
+                            <option>20</option>
+                            <option>40</option>
+                            <option>60</option>
+                            <option>80</option>
+                            <option>100</option>
+                        </datalist>
+                        <label style="float: right;margin-right: 40px;">Often</label>
+                    </div>
+                </div>
                 <div class="education column-form">
                     <label>Education</label>
-                    <select name="education" id="education" class="text-input">
+                    <select name="education" id="education" class="text-input" style="height: 34px;">
                         <option>Pre-Fill</option>
                         <option>Pre-Fill</option>
                     </select>
                 </div>
                 <div class="religion column-form">
                     <label>Religion</label>
-                    <select name="religion" id="religion" class="text-input">
-                        <option>Pre-Fill</option>
-                        <option>Pre-Fill</option>
-                    </select>
+                    <input type="text" name="religion" id="religion" class="text-input validate[required]" />
                 </div>
-                <div class="excercise form-three-column">
-                    <label>Exercise</label>
-                    <select name="excercise" id="excercise" class="text-input">
-                        <option>Pre-Fill</option>
-                        <option>Pre-Fill</option>
-                    </select>
-                </div>
-                <div class="fitness-passion form-three-column">
+
+                <div class="fitness-passion column-form">
                     <label>Fitness Passion</label>
-                    <select name="passion" id="passion" class="text-input">
-                        <option>Pre-Fill</option>
-                        <option>Pre-Fill</option>
-                    </select>
+                    <input name="passion" id="passion" class="text-input validate[required]"/>
+
                 </div>
-                <div class="firness-goal form-three-column">
+                <div class="firness-goal column-form">
                     <label>Fitness Goal</label>
-                    <select name="goal" id="goal" class="text-input">
-                        <option>Pre-Fill</option>
-                        <option>Pre-Fill</option>
-                    </select>
+                    <input name="goal" id="goal" class="text-input validate[required]" />
                 </div>
                 <div class="smoke column-form">
                     <label>Do you smoke?</label>
-                    <select name="smoke" id="smoke" class="text-input">
-                        <option>Pre-Fill</option>
-                        <option>Pre-Fill</option>
-                    </select>
+                    <div class="fix-range">
+                        <label style="margin-right: 20px;">Never</label>
+                        <input type=range min=0 max=100 value=50 id="smoke" step=20 list=volsettings>
+
+                        <datalist id=volsettings>
+                            <option>0</option>
+                            <option>20</option>
+                            <option>40</option>
+                            <option>60</option>
+                            <option>80</option>
+                            <option>100</option>
+                        </datalist>
+                        <label style="float: right;margin-right: 40px;">Often</label>
+                    </div>
                 </div>
                 <div class="drink column-form">
                     <label>Do you drink?</label>
-                    <select name="drink" id="drink" class="text-input">
-                        <option>Pre-Fill</option>
-                        <option>Pre-Fill</option>
-                    </select>
+                    <div class="fix-range">
+                        <label style="margin-right: 20px;">Never</label>
+                        <input type=range min=0 max=100 value=50 id="drink" step=20 list=volsettings>
+                        <datalist id=volsettings>
+                            <option>0</option>
+                            <option>20</option>
+                            <option>40</option>
+                            <option>60</option>
+                            <option>80</option>
+                            <option>100</option>
+                        </datalist>
+                        <label style="float: right;margin-right: 40px;">Often</label>
+                    </div>
                 </div>
 
 
@@ -248,6 +287,7 @@
             </div>
         </div>
     </div>
+    <?php $this->endWidget(); ?>
 </div>
 </div>
 <div id="step3" class="registration-fancybox">
@@ -292,7 +332,7 @@
                     <a class="icon-location" href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/icon-location.png"/>Add Location</a>
                 </div>
                 <input type="button" class="btn-skip" value="SKIP"/>
-                <input type="submit" value="" class="btn-post btn-post-style"/>
+                <input type="submit"  value="" class="btn-post btn-post-style"/>
             </div>
         </div>
     </div>
@@ -300,7 +340,10 @@
 <script type="text/javascript">
     $(document).ready(function(){
         <?php  if(isset($_SESSION['User'])) { ?>
-        window.location.assign("/my_feed");
+            window.location.assign("/my_feed");
         <?php }?>
+
+
     });
+
 </script>

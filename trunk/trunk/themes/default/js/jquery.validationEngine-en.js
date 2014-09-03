@@ -12,7 +12,7 @@
                     "alertTextCheckboxe": "* This checkbox is required",
                     "alertTextDateRange": "* Both date range fields are required"
                 },
-                "requiredInFunction": { 
+                "requiredInFunction": {
                     "func": function(field, rules, i, options){
                         return (field.val() == "test") ? true : false;
                     },
@@ -85,6 +85,14 @@
                     // HTML5 compatible email regex ( http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#    e-mail-state-%28type=email%29 )
                     "regex": /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                     "alertText": "* Invalid email address"
+                },
+                "zip": {
+                    "regex": /^[0-9]{6}|[0-9]{5}-[0-9]{4}$/,
+                    "alertText": "* Enter Valid Zip Code (XXXXXX or XXXXX-XXXX)"
+                },
+                "space": {
+                    "regex": /^([0-9a-z]+)$/,
+                    "alertText": "* Can't use space in here"
                 },
                 "integer": {
                     "regex": /^[\-\+]?\d+$/,
