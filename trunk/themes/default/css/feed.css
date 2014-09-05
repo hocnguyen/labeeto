@@ -166,6 +166,7 @@ body {
      background: url('../images/bg_nav_menu.png');
      top: 44px;
      border-radius: 5px;
+     z-index: 999;
  }
  .profile-item {
      width: 100%;
@@ -1178,4 +1179,11 @@ span.my-btn button{
     text-align: center; 
     color: white;
     font: normal 28pt/normal Myriad Pro;
+}
+.arrow-up{
+    background: url('../images/arrow.png') no-repeat;
+    padding: 0px 15px;
+    position: absolute;
+    height: 30px;
+    width: 30px;
 }
