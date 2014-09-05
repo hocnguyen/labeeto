@@ -5,13 +5,13 @@
     <?php //$this->widget('widgets.admin.notifications'); ?>
     <hr class="hr-line" />
     
-    <div style="position: relative;overflow: hidden; height: 185px;">
+    <div class="infor-user">
         <div class="report-user-1">
             <a class="report-user user-report">Report User</a>
         </div>
 
-        <div style="position: absolute;top: 0px;left: 0px;">
-            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post.png" style="width: 185px;height: 183px;border-radius: 100%;border: 2px solid #000;padding: 1px;"/>
+        <div class="avartar">
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post.png"/>
         </div>
         <div class="content-infor">
             <div class="name_user">

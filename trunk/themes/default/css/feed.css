@@ -1187,3 +1187,20 @@ span.my-btn button{
     height: 30px;
     width: 30px;
 }
+.avartar{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.avartar img{
+    width: 185px;
+    height: 183px;
+    border-radius: 100%;
+    border: 2px solid #000;
+    padding: 1px
+}
+.infor-user{
+    position: relative;
+    overflow: hidden; 
+    height: 185px;
+}
