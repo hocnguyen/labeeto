@@ -6,7 +6,7 @@ body {
 .head-feed {
     /*background: url('../images/bg-head-feed.png') repeat-x;*/
     height: 50px;
-    background-color: #3c3a45;
+    background-color: #2b3a44;
 }
 .content-head{
     width: 980px;
@@ -32,8 +32,7 @@ body {
     height: 50px;
     font-family: "Myriad Pro";
     text-transform: uppercase;
-    width: 132px;
-
+    padding-right: 22px;
 }
 .search {
     background: url("../images/search.png") no-repeat right 10%;
@@ -45,10 +44,10 @@ body {
     background: url("../images/get_fit.png") no-repeat right 10%;
 }
 .inspire {
-    background: url("../images/insprite.png") no-repeat right 10%;
+    background: url("../images/speed_date.png") no-repeat right 10%;
 }
 .icon {
-    height: 37px;
+    height: 23px;
     float: left;
     width: 40px;
     margin-right: 10px;
@@ -65,10 +64,14 @@ body {
     border-left: 0px;
 }
 .menu-nav a:hover .search,
-.menu-nav a:hover .top-rate,
-.menu-nav a:hover .get-fit,
+.menu-nav a:hover .get-fit,{
+    /*background: url("../images/nav_active.png") no-repeat right 10%;*/
+}
 .menu-nav a:hover .inspire {
-    background: url("../images/nav_active.png") no-repeat right 10%;
+    background: url("../images/speed_date.png") no-repeat right 10%;
+}
+.menu-nav a:hover .top-rate{
+    background: url("../images/star_green.png") no-repeat right 10%;
 }
 .notify {
     float: left;
@@ -237,10 +240,8 @@ body {
      background: url('../images/logout-active.png') no-repeat center;
  }
  .banner-ad-top {
-     margin: 0 auto;
-     /*width: 728px;*/
+     width: 728px;
      padding: 20px 0;
-    width: 80%;
     text-align: center;
  }
  #content-feed {
@@ -250,7 +251,7 @@ body {
      /*width: 80%;*/
      margin: 0px auto;
      padding-bottom: 50px;
-     width: 980px;
+     width: 960px;
  }
  .content-main {
      float: left;
@@ -315,7 +316,7 @@ body {
     float: right;
     width: 35%;
     min-height: 100px;
-    padding: 0 10px 0 20px;
+    padding: 0 0 0 20px;
 }
 .tabs{
     float: left;
@@ -496,11 +497,11 @@ cursor: pointer;}
 }
 .menu-notification span.only-this-span{
     position: absolute; 
-    background: url(../images/icon-arrow.png) no-repeat; 
+    background: url(../images/up.png) no-repeat; 
     width: 20px; 
     height: 11px; 
-    top: -15px; 
-    right: 20px;
+    top: -17px; 
+    right: 10px;
 }
 .menu-notification{
     display: none;
@@ -823,4 +824,358 @@ ul.social li.twitter:hover{
 }
 ul.social li.insta:hover{
     background-position: -63px -18px;
+}
+/*My profile*/
+.hr-line{
+    border-top: 1px solid #ddd;
+    width: 103%;
+    margin-left: -1.5%;
+    margin-top: 0px;
+}
+.left-profile{
+    float: left;
+    width: 40%;
+}
+.right-profile{
+    float: left;
+    width: 60%;
+    padding: 0 0 0 20px;
+}
+.h2-name{
+    color: #4d5a63;
+    font-weight: bold !important;
+}
+.infor-pro{
+    padding: 10px;
+}
+.content-post h4 {
+    color: #977c7c;
+}
+.content-post h4 span.link_1 {
+    color: #fc5b6e;
+}
+.bit-and-bit{
+    width: 100%; 
+    background-color: #324450; 
+    border-top-left-radius: 5px; 
+    border-top-right-radius: 5px;
+    padding: 18px 10px 18px 10px;
+    color: #ffffff;
+}
+.add_question{
+    float: right;
+    background-color: #425c6d;
+    border: transparent;
+    padding: 5px 20px 5px 20px;
+    font: normal 12pt/normal Myriad Pro;
+}
+.bit-and-bit span{
+    font: normal 18pt/normal Myriad Pro;
+    text-transform: uppercase;
+}
+.content-bit{
+    padding: 10px;
+    background-color: #ec5268;
+    border-bottom: 1px solid #b7283d;
+    border-left: 1px solid #ff94a3;
+    border-top: 1px solid #ff94a3;
+    border-right: 1px solid #ff94a3;
+}
+.content-bit-final span.godfather,
+.content-bit span.godfather{
+    display: inherit;
+    color: #ffffff;
+    font: normal 12pt/normal Myriad Pro;
+    padding-top: 10px;
+}
+.content-bit-final span.what,
+.content-bit span.what{
+    text-transform: uppercase;
+    color: #f2e8dc;
+    font: normal 12pt/normal Myriad Pro;
+}
+.content-bit-final{
+    padding: 10px;
+    background-color: #ec5268;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom: 1px solid #b7283d;
+}
+.content-bit-final span.note-span,
+.content-bit span.note-span, 
+span.note-span{
+    float: right;
+    background: url('../images/note.png') no-repeat;
+    padding: 10px;
+}
+ul li.content-bit{
+    list-style: none;
+}
+.post a.link_question:hover{
+    text-decoration: none;
+}
+.looking-for{
+    width: 100%;
+    background-color: #2886ac;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 9px 10px 4px 20px;
+    border-bottom: 1px solid #073b50;
+    border-left: 1px solid #3b9bc2;
+    border-right: 1px solid #3b9bc2;
+    border-top: 1px solid #3b9bc2;
+    border: 1px solid #162732;
+}
+.looking-for span.looking_img{
+    background: url('../images/king.png') no-repeat;
+    padding: 0px 10px 10px 40px;
+    color: #f0dec7;
+    font: normal 12pt/normal Myriad Pro;
+    text-transform: uppercase;
+}
+.looking-about{
+    width: 100%;
+    background-color: #2886ac;
+    padding: 9px 10px 4px 20px;
+    border-bottom: 1px solid #073b50;
+    border-left: 1px solid #162732;
+    border-right: 1px solid #162732;
+    border-top: 1px solid #3b9bc2;
+}
+.looking-about span.looking_about{
+    background: url('../images/about.png') no-repeat;
+    padding: 0px 10px 10px 40px;
+    color: #f0dec7;
+    font: normal 12pt/normal Myriad Pro;
+    text-transform: uppercase;
+}
+.looking-about p,
+.looking-for p{
+    color: #ebf0f4;
+    font: normal 12pt/normal Myriad Pro;
+    padding-top: 5px;
+}
+.education{
+    width: 100%;
+    background-color: #324450;
+    padding: 10px 10px 10px 20px;
+    border-bottom: 1px solid #073b50;
+    border-left: 1px solid #516b7c;
+    border-right: 1px solid #516b7c;
+    border-top: 1px solid #516b7c;
+}
+.education-span{
+    text-transform: uppercase;
+    color: #dddddd;
+    font: normal 12pt/normal Myriad Pro;
+}
+.bachelor{
+    display: inherit;
+    color: #dddddd;
+    font: normal 12pt/normal Myriad Pro;
+    padding-top: 5px;
+}
+.search-pre{
+    width: 96%;
+    border-radius:3px;
+    padding: 5px;
+    border: transparent;
+}
+.favorite_a{
+    padding-left: 20px;
+}
+.often{
+    color: #ffffff;
+    font: normal 12pt/normal Myriad Pro;
+    float: right;
+    position: relative;
+    top: -17px;
+    right: 0px;
+}
+span.my-btn{
+    
+}
+span.my-btn input{
+    background-color: #e2d1bd;
+    text-transform: uppercase;
+    padding: 4px 10px 1px 10px;
+    border-radius: 3px;
+    border: transparent;
+    color: #2a2722;
+    font: normal 12pt/normal Myriad Pro;
+}
+span.my-btn button{
+    background-color: #282727;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 4px 10px 2px 10px;
+    text-transform: uppercase;
+    margin-left: 10px;
+    border: transparent;
+    font: normal 12pt/normal Myriad Pro;
+    margin-top: 5px;
+}
+.content-infor{
+    height: 50px;
+    background-color: #2d3c46;
+    float: right;
+    width: 87%;
+    border-top-right-radius: 5px;
+}
+.name_user{
+    width: 35%;
+    color: #ffffff;
+    float: left;
+    text-align: center;
+    font: normal 20pt/normal Myriad Pro;
+    padding-top: 10px;
+}
+.menu-nav-infor{
+    width: 65%;
+    float: left;
+    padding: 0px 0px 15px 0px;
+}
+.menu-nav-infor ul li{
+    list-style: none;
+    float: left;
+    padding: 15px 25px 0px 18px;
+    border-left: 1px solid #1f2a32;
+    height: 50px;
+}
+.menu-nav-infor ul li a{
+    text-transform: uppercase;
+    color: #ffffff;
+    font: normal 12pt/normal Myriad Pro;
+}
+.menu-nav-infor ul li a:hover{
+    text-decoration: none;
+}
+.span-chat{
+    background: url('../images/chat.png') no-repeat;
+    width: 25px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.span-message{
+    background: url('../images/message_1.png') no-repeat;
+    width: 25px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.span-favorite{
+    background: url('../images/farvorite.png') no-repeat;
+    width: 25px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.span-rate{
+    background: url('../images/rate.png') no-repeat;
+    width: 25px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.img-photo-video ul li{
+    float: left;
+    list-style: none;
+    width: 110px;
+    height: 110px;
+}
+.img-photo-video{
+    float: left;
+    width: 40%;
+}
+.content-img{
+    float: right;
+    width: 90%;
+    background-color: #f6f6f6;
+    border: 1px solid #ddd;
+    border-right: none;
+}
+.icon-people{
+    background: url('../images/icon-people.png') no-repeat;
+    padding: 0px 10px 10px 10px;
+    margin-right: 10px;
+}
+.icon-vali{
+    background: url('../images/vali.png') no-repeat;
+    padding: 0px 10px 10px 10px;
+    margin-right: 10px;
+}
+.icon-location{
+    background: url('../images/location.png') no-repeat;
+    padding: 0px 10px 10px 10px;
+    margin-right: 10px;
+}
+.street{
+    text-transform: uppercase;
+    color: #374651;
+    font: normal 13pt/normal Myriad Pro;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    float: right;
+    padding: 10px 0px 5px 15px;
+}
+.businuess{
+    color: #ff4056;
+    text-transform: uppercase;
+    font: normal 13pt/normal Myriad Pro;
+    border-bottom: 1px solid #ddd;
+    width: 105%;
+    float: right;
+    padding: 10px 0px 5px 15px;
+}
+.location{
+    text-transform: uppercase;
+    color: #9f8787;
+    font: normal 13pt/normal Myriad Pro;
+    width: 105%;
+    float: right;
+    padding: 10px 0px 5px 0px;
+}
+.photo-private{
+    float: left;
+    width: 107px;
+    height: 110px;
+    position: relative;
+}
+.photo-private img{
+    width: 100%;
+}
+.report-user-1{
+    display: block;
+    overflow: hidden;
+    width:100%;
+}
+.report-user-1 a:hover{
+    color: #9f8787;
+    text-decoration: none;
+}
+.user-report{
+    float: right;
+    color: #9f8787;
+}
+.photo-private h6{
+    position: absolute;
+    z-index: 111;
+    top:0;
+    left: 0; 
+    padding: 0px 30px; 
+    text-transform: uppercase; 
+    text-align: center; 
+    color: white;
+    font: normal 12pt/normal Myriad Pro;
+}
+.photo-private h3{
+    position: absolute;
+    z-index: 111;
+    top:30px;
+    left: 0; 
+    padding: 15px 30px;
+    text-align: center; 
+    color: white;
+    font: normal 28pt/normal Myriad Pro;
 }
