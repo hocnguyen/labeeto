@@ -20,6 +20,7 @@ class CustomUrlManager extends CUrlManager {
                 "/home" => 'site/index/home',
                 //"/my_feed/<user_id:([a-zA-z0-9-_]+)>" => 'site/members/my_feed',
                 "/my_feed" => 'site/members/my_feed',
+                "/profile" => 'site/members/profile',
                 'gii'=>'gii',
                 'gii/<controller:\w+>'=>'gii/<controller>',
                 'gii/<controller:\w+>/<action:\w+>'=>'gii/<controller>/<action>',
