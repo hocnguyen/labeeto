@@ -206,5 +206,15 @@ class MembersController extends SiteBaseController {
         }
 
     }
+    
+     public function actionProfile(){
+        $this->layout = 'feed';
+        if(!Yii::app()->user->isGuest){
+            $this->render('profile');
+        } else {
+            $this->redirect('/');
+        }
+
+    }
 
 }
