@@ -19,37 +19,42 @@
             </div>
             <div class="menu-nav-infor">
                 <ul style="float: right;">
+                    <li><a href="#">preview profile</a></li>
+                    <li><a href="#">verify profile</a></li>
+                    <!--
                     <li><a href="#"><span class="span-chat"></span>CHAT</a></li>
                     <li><a href="#"><span class="span-message"></span>Message</a></li>
                     <li><a href="#"><span class="span-favorite"></span>Favorite</a></li>
-                    <li><a href="#"><span class="span-rate"></span>Rate</a></li>
+                    <li><a href="#"><span class="span-rate"></span>Rate</a></li> -->
                 </ul>
             </div>
         </div>
        
-        <div class="content-img">
-            <div style="float: left; width: 60%; padding-left: 14%;">
-                <div class="street"><span class="icon-people"></span>24, M, Straight</div>
-                <div class="businuess"><span class="icon-vali"></span>FREELANCE UI/UX DESIGNER</div>
-                <div class="location"><span class="icon-location"></span>Metro Manila, Philipines</div>
-            </div>
-            <div class="img-photo-video">
-                <div class="photo-private">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo.png" />
-                    <h6>Photos</h6>
-                    <h3>243</h3>
+        <div>
+            <div class="content-img">
+                <div style="float: left; width: 60%; padding-left: 14%;">
+                    <div class="street"><span class="icon-people"></span>24, M, Straight</div>
+                    <div class="businuess"><span class="icon-vali"></span>FREELANCE UI/UX DESIGNER</div>
+                    <div class="location"><span class="icon-location"></span>Metro Manila, Philipines</div>
                 </div>
-                <div class="photo-private">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo.png" />
-                    <h6>Private Photo</h6>
-                    <h3>8</h3>
+                <div class="img-photo-video">
+                    <div class="photo-private">
+                        <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo.png" />
+                        <h6>Photos</h6>
+                        <h3>243</h3>
+                    </div>
+                    <div class="photo-private">
+                        <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo.png" />
+                        <h6>Private Photo</h6>
+                        <h3>8</h3>
+                    </div>
+                    <div class="photo-private">
+                        <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo.png" />
+                        <h6>Videos</h6>
+                        <h3>15</h3>
+                    </div>
+                    
                 </div>
-                <div class="photo-private">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo.png" />
-                    <h6>Videos</h6>
-                    <h3>15</h3>
-                </div>
-                
             </div>
         </div>
         
