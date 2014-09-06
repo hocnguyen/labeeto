@@ -1,3 +1,4 @@
+
 <h1 class="heading"> Meet people. Find love. Get fit.</h1>
 <h2 class="tag-line"> We'll get you connected to people who share your healthy lifestyle and passionate goals</h2>
 <?php $form=$this->beginWidget('CActiveForm', array(

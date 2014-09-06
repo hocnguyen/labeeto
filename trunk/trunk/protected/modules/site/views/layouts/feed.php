@@ -125,7 +125,7 @@
                     <a href="#" class=" profile-item"><span class="icon-profile settings"></span>SETTING</a>
                     <a href="#" class=" profile-item"><span class="icon-profile post-an-ad"></span>POST AN AD</a>
                     <a href="#" class=" profile-item"><span class="icon-profile upgrade-account"></span>UPGRADE ACCOUNT</a>
-                    <a href="<?php echo $this->createUrl('/logout/index'); ?>" class=" profile-item"><span class="icon-profile logout"></span>LOGOUT</a>
+                    <a href="<?php echo $this->createUrl('/user/logout'); ?>" class=" profile-item"><span class="icon-profile logout"></span>LOGOUT</a>
                 </div>
                                                 
             </div>
