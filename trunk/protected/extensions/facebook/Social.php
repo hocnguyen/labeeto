@@ -18,7 +18,7 @@ class Social{
                     try{
                         //get the facebook user profile data
                         $user_profile = $facebook->api('/me');
-                        $params = array('next' => BASE_URL.'members/logoutFacebook');
+                        $params = array('next' => BASE_URL.'user/logoutFacebook');
                         //logout url
                         $logout =$facebook->getLogoutUrl($params);
                         $_SESSION['User']=$user_profile;
@@ -32,7 +32,7 @@ class Social{
                   //login url
                   $loginurl = $facebook->getLoginUrl(array(
                                 'scope'			=> 'email,read_stream, publish_stream, user_birthday, user_location, user_work_history, user_hometown, user_photos',
-                                'redirect_uri'	=> BASE_URL.'members/login',
+                                'redirect_uri'	=> BASE_URL.'user/login',
                                 'display'=>'popup'
                                 ));
                   header('Location: '.$loginurl);
