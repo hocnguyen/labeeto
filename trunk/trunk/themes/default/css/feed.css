@@ -543,7 +543,7 @@ cursor: pointer;}
     position: relative;
 }
 .menu-notification ul li:first-child{
-    background-color: rgba(70, 63, 63, 0.89); 
+    background-color: #2d3c46; 
     padding: 10px 0px 10px 5px;
 }
 .menu-notification li a img{ 
@@ -569,7 +569,7 @@ cursor: pointer;}
 }
 span.minuten{
     font:normal 13px/normal Arial; 
-    color: red; 
+    color: #99aab5; 
     float: left; 
 }
 .content-infor{
@@ -1019,7 +1019,7 @@ span.my-btn button{
     font: normal 12pt/normal Myriad Pro;
     margin-top: 5px;
 }
-.content-infor{
+.content-infor-profile{
     height: 50px;
     background-color: #2d3c46;
     float: right;
@@ -1226,4 +1226,28 @@ span.my-btn button{
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 12px solid #2886ac;
+}
+
+.range-2{
+    background: url('../images/test.png') no-repeat;
+    padding:  5px 10px 10px 6px;
+}
+.input-range{
+    width: 60% !important; 
+    background-color: #420811; 
+    -webkit-appearance: none; 
+    border-radius: 15px; 
+    height: 9px;
+}
+ul li span.notification-header{
+    color: white; 
+    padding-left: 15px;
+}
+ul li span.notification-number{
+    color: #ffc8a4;
+}
+ul li span.notification-seeall{
+    float: right; 
+    padding-right: 15px; 
+    color: #dddddd;
 }
