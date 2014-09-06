@@ -31,6 +31,7 @@
         </div>
        
         <div>
+            <div style="width: 10%; border-bottom: 1px solid #ddd; height: 50px;"></div>
             <div class="content-img">
                 <div style="float: left; width: 60%; padding-left: 14%;">
                     <div class="street"><span class="icon-people"></span>24, M, Straight</div>
