@@ -19,10 +19,13 @@
             </div>
             <div class="menu-nav-infor">
                 <ul style="float: right;">
+                    <li><a href="#">preview profile</a></li>
+                    <li><a href="#">verify profile</a></li>
+                    <!--
                     <li><a href="#"><span class="span-chat"></span>CHAT</a></li>
                     <li><a href="#"><span class="span-message"></span>Message</a></li>
                     <li><a href="#"><span class="span-favorite"></span>Favorite</a></li>
-                    <li><a href="#"><span class="span-rate"></span>Rate</a></li>
+                    <li><a href="#"><span class="span-rate"></span>Rate</a></li> -->
                 </ul>
             </div>
         </div>
