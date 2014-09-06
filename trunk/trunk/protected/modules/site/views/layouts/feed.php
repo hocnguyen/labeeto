@@ -38,11 +38,15 @@
                     <div class="menu-notification">
                         <span class="only-this-span"></span>
                         <ul>
-                            <li><span style="color: white; padding-left: 15px;">NOTIFICATIONS</span><span>(45)</span><span style="float: right; padding-right: 15px;">See All</span></li>
+                            <li>
+                                <span class="notification-header">NOTIFICATIONS</span>
+                                <span class="notification-number">(45)</span>
+                                <span class="notification-seeall">See All</span>
+                            </li>
                             <li>
                                 <a href="#">
                                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_1.png">
-                                        <h6>SAORI TABATA <span class="active-infor">thgt ft likes your</span><span class="content-infor">post prive photo in timeline</span></h6> 
+                                        <h6>SAORI TABATA <span class="active-infor">likes your</span><span class="content-infor">post prive photo in timeline</span></h6> 
                                         <span class="minuten">16 mins</span>
                                 </a>
                                 <div class="content-active">
@@ -54,7 +58,7 @@
                             <li>
                                 <a href="#">
                                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_1.png">
-                                        <h6>SAORI TABATA <span class="active-infor">thgt ft likes your</span><span class="content-infor">post prive photo in timeline</span></h6> 
+                                        <h6>SAORI TABATA <span class="active-infor">likes your</span><span class="content-infor">post prive photo in timeline</span></h6> 
                                         <span class="minuten">16 mins</span>
                                 </a>
                                 <div class="content-active">
@@ -66,7 +70,7 @@
                             <li>
                                 <a href="#">
                                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_1.png">
-                                        <h6>SAORI TABATA <span class="active-infor">thgt ft likes your</span><span class="content-infor">post prive photo in timeline</span></h6> 
+                                        <h6>SAORI TABATA <span class="active-infor">likes your</span><span class="content-infor">post prive photo in timeline</span></h6> 
                                         <span class="minuten">16 mins</span>
                                 </a>
                                 <div class="content-active">
@@ -78,7 +82,7 @@
                             <li>
                                 <a href="#">
                                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_1.png">
-                                        <h6>SAORI TABATA <span class="active-infor">thgt ft likes your</span><span class="content-infor">post prive photo in timeline</span></h6> 
+                                        <h6>SAORI TABATA <span class="active-infor">likes your</span><span class="content-infor">post prive photo in timeline</span></h6> 
                                         <span class="minuten">16 mins</span>
                                 </a>
                                 <div class="content-active">
@@ -90,7 +94,7 @@
                             <li>
                                 <a href="#">
                                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_1.png">
-                                        <h6>SAORI TABATA <span class="active-infor">thgt ft likes your</span><span class="content-infor">post prive photo in timeline</span></h6> 
+                                        <h6>SAORI TABATA <span class="active-infor">likes your</span><span class="content-infor">post prive photo in timeline</span></h6> 
                                         <span class="minuten">16 mins</span>
                                 </a>
                                 <div class="content-active">
