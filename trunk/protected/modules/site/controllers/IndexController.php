@@ -16,7 +16,7 @@ class IndexController extends SiteBaseController {
 	}
 
 	public function actionIndex() {
-        $model =  new Members();
+        $model =  new User();
         if(isset($_POST['SignUp'])) {
             /*$model->username= $_POST['SignUp']['username'];
             $model->email= $_POST['SignUp']['email'];
