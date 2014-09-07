@@ -7,13 +7,13 @@
     
     <div class="infor-user">
         <div class="report-user-1">
-            <a class="report-user user-report">Report User</a>
+            <!--<a class="report-user user-report">Report User</a>-->
         </div>
 
         <div class="avartar">
             <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post.png"/>
         </div>
-        <div class="content-infor">
+        <div class="content-infor-profile">
             <div class="name_user">
                 Romeo
             </div>
@@ -149,19 +149,40 @@
             <div class="content-bit favorite_a">
                 <span class="what">HOW OFTEN DO YOU EXCERCISE?</span>
                 <a href="#"><span class="note-span"></span></a>
-                <span class="godfather">Nope</span><span></span><span class="often">Often</span>
+                <div style="position: relative;">
+                    
+                    <span class="godfather">Nope</span>
+                    <p class="range-2">
+                        <input type="range" value="20" max="100" class="input-range" />
+                    </p>
+                    <span class="often">Often</span>
+                </div>
             </div>
             
             <div class="content-bit favorite_a">
                 <span class="what">DO YOU DRINK?</span>
                 <a href="#"><span class="note-span"></span></a>
-                <span class="godfather">Nope</span><span></span><span class="often">Often</span>
+                <div style="position: relative;">
+                    
+                    <span class="godfather">Nope</span>
+                    <p class="range-2">
+                        <input type="range" value="20" max="100" class="input-range" />
+                    </p>
+                    <span class="often">Often</span>
+                </div>
             </div>
             
             <div class="content-bit favorite_a">
                 <span class="what">DO YOU SMOKE?</span>
                 <a href="#"><span class="note-span"></span></a>
-                <span class="godfather">Nope</span><span></span><span class="often">Often</span>
+                <div style="position: relative;">
+                    
+                    <span class="godfather">Nope</span>
+                    <p class="range-2">
+                        <input type="range" value="20" max="100" class="input-range" />
+                    </p>
+                    <span class="often">Often</span>
+                </div>
             </div>
             
             <div class="content-bit-final favorite_a">
@@ -185,7 +206,7 @@
                 <span class="refesh">1002</span>
             </div>
             <div class="content-post">
-                <h3 style="padding-left: 10px;"><span class="link_3">ICEBUCKET CHALLENGE</span> <span class="link_2">#ALSawareness </span><span class="link_1">#LOL</span></h3>
+                <h3><span class="link_3">ICEBUCKET CHALLENGE</span> <span class="link_2">#ALSawareness </span><span class="link_1">#LOL</span></h3>
                 <iframe title="YouTube video player" class="youtube-player" type="text/html" style="padding-left: 10px;"
                 width="98%" height="390" src="http://www.youtube.com/embed/uIbkLjjlMV8"
                 frameborder="0" allowFullScreen></iframe>
@@ -214,13 +235,13 @@
                 <div class="profile">
                     <img src="/themes/default/images/avatart-step2.png">
                     <div class="crycle-img">
-                        <h2 class="h2-name">Rome Martin J. Rosales<span class="time-location">33 M, NY,</span> <span class="dot-icon">Yesterday</span></h2>
+                        <h2 class="h2-name">Martin Rosales<span class="time-location">33 M, NY,</span> <span class="dot-icon">Yesterday</span></h2>
                     </div>
                 </div>
                 <div class="refesh">75</div>
             </div>
             <div class="content-post">
-                <h4 style="padding-left: 10px; padding-right: 10px;;">Shoutout to my nigga Manny Pacman Pacquiao for
+                <h4>Shoutout to my nigga Manny Pacman Pacquiao for
                 helping in my weight-loss programme.<span class="link_1">#LOL</span></h4>
             </div>
         </div>
