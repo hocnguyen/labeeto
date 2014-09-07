@@ -69,7 +69,7 @@ body {
     background: url("../images/line-nav.png") no-repeat right;
     height: 50px;
     text-transform: uppercase;
-    padding-right: 18px;
+    padding-right: 15px;
     font: normal 12pt/normal Myriad Pro;
 }
 .search {
@@ -90,6 +90,7 @@ body {
     float: left;
     width: 40px;
     margin-right: 8px;
+    margin-left: -10px;
 }
 .menu-nav a:hover {
     color: #5dc1ea;
@@ -118,7 +119,7 @@ body {
     float: left;
     width: 15%;
     height: 50px;
-    padding: 16px 10px 10px 0px;
+    padding: 16px 10px 10px 10px;
     background: url('../images/line-nav.png') no-repeat right;
 }
 .friend-request {
@@ -149,7 +150,7 @@ body {
     height: 20px;
     float: left;
     cursor: pointer;
-    margin-left:25px ;
+    margin-left: 12px;
     position: relative;
 }
 .notify-active {
@@ -167,6 +168,7 @@ body {
     text-align: center;
     font-size: 12px;
     font-family: "Proxima Nova";
+    padding-top: 3px;
 }
 .profile-nav {
     cursor: pointer;
@@ -194,7 +196,7 @@ body {
  }
  .arrow-nav {
      float: right;
-     padding: 18px 0;
+     padding: 20px 0;
      background: url('../images/line-nav.png') no-repeat right;
      padding-right: 20px;
  }
@@ -487,14 +489,17 @@ a.report-user:hover{
 .content-post h3 span.link_1{
     color: #fc5b6e;
     font:normal 20pt/normal Myriad Pro; 
+    cursor: pointer;
 }
 .content-post h3 span.link_2{
     color: #51a9cd;
-    font:normal 20px/normal Myriad Pro; 
+    font:normal 20px/normal Myriad Pro;
+    cursor: pointer;
 }
 .content-post h3 span.link_3{
     color: #886969;
     font:normal 20pt/normal Myriad Pro; 
+    cursor: pointer;
 }
 
 #toggle{float: right;
@@ -655,11 +660,10 @@ span.minuten{
 }
 .dot-icon{
     background: url(../images/icon-dot.png) no-repeat 0px; 
-    text-indent: 10px; 
+    text-indent: 17px; 
     display: inline-block; 
     color: #a39c9c; 
-    font-size: 18px; 
-    font-family: Myriad Pro;
+    vertical-align: middle;
 }
 .crycle-img a{
     text-decoration: none; 
@@ -675,6 +679,7 @@ span.minuten{
     font-size: 18px; 
     font-family: Myriad Pro; 
     margin-left: 15px;
+    padding-right: 10px;
 }
 .first-infor{
     overflow:hidden;
@@ -715,7 +720,7 @@ span.minuten{
 .footer-feed{
     /*background: url('../images/bg-head-feed.png') repeat; */
     height: 90px; 
-    padding: 25px 0 0 20px; 
+    padding: 35px 0 0 20px; 
     background-color: #191d1e;
 }
 .content-footer{
@@ -784,7 +789,11 @@ span.minuten{
     color: white;
     font:normal 12pt/normal Myriad Pro; 
 }
-.menu-footer li{margin-left: 10px;font:normal 12pt/normal Myriad Pro; }
+.menu-footer li{
+    margin-left: 10px;
+    font:normal 12pt/normal Myriad Pro; 
+    padding-top: 5px;
+}
 #ReportUser .modal-header img, 
 #SendaMessage .modal-header img{
     width: 50px; 
@@ -1258,7 +1267,7 @@ span.my-btn button{
 .photo-private h6{
     position: absolute;
     z-index: 111;
-    top:0;
+    top:10px;
     left: 0; 
     padding: 0px 30px; 
     text-transform: uppercase; 
@@ -1269,12 +1278,13 @@ span.my-btn button{
 .photo-private h3{
     position: absolute;
     z-index: 111;
-    top:30px;
+    top:45px;
     left: 0; 
     padding: 15px 30px;
     text-align: center; 
     color: white;
-    font: normal 28pt/normal Myriad Pro;
+    font: normal 35pt/normal Myriad Pro;
+    width: 100%;
 }
 .arrow-up{
     background: url('../images/arrow.png') no-repeat;
