@@ -1,3 +1,41 @@
+    /**
+    * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+    * http://cssreset.com
+    */
+    body, div, span, object,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, samp,
+    small, strong, sub, sup, tt, var,
+    b, i,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    }
+    body {
+    line-height: 1;
+    }
+    ol, ul {
+    list-style: none;
+    }
+    blockquote, q {
+    quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+    content: '';
+    content: none;
+    }
+    table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
 
 body {
     background: url('../images/bg-feed.png');
@@ -30,9 +68,9 @@ body {
     padding-top: 16px;
     background: url("../images/line-nav.png") no-repeat right;
     height: 50px;
-    font-family: "Myriad Pro";
     text-transform: uppercase;
     padding-right: 18px;
+    font: normal 12pt/normal Myriad Pro;
 }
 .search {
     background: url("../images/search.png") no-repeat right 10%;
@@ -141,7 +179,7 @@ body {
 .avatar-nav {
     width: 40px;
     border-radius: 20px;
-    margin: 5px 20px;
+    margin: 5px 10px;
     float: left;
 }
 .username-nav {
@@ -149,16 +187,16 @@ body {
     color: #5dc1ea;
     font-weight: bold;
     font-family: "Proxima Nova";
-    font-size: 13px;
     text-transform: uppercase;
     position: relative;
     top: 15px;
+    font-size: 11pt;
  }
  .arrow-nav {
      float: right;
-     padding: 21px 0;
+     padding: 18px 0;
      background: url('../images/line-nav.png') no-repeat right;
-     padding-right: 5px;
+     padding-right: 20px;
  }
  .menu-profile {
      display: none;
@@ -175,10 +213,10 @@ body {
      width: 100%;
      float: left;
      padding: 15px 15px 11px 15px;
-     color: white;
+     color: #b9adad;
      background: url("../images/line-profile.png") no-repeat top;
-     font-family: "Proxima Nova";
      line-height: 25px;
+     font: normal 12pt/normal Myriad Pro;
  }
 .profile-item:hover {
     color: #ff6476;
@@ -279,12 +317,12 @@ body {
      border-top-left-radius: 5px;
  }
  .post-textarea {
-     /*width: 630px;*/
+     width: 507px;
      border-right: 0;
      height: 107px;
      border-top-right-radius: 5px;
-     padding-left: 10px;
-     width: 82%;
+     padding: 10px;
+     font: normal 12pt/normal Myriad Pro;
  }
  .footer-post {
      float: left;
@@ -296,9 +334,10 @@ body {
      padding-left: 115px;
  }
 .footer-post a {
-    color: rgba(128, 128, 128, 0.66);
+    color: #b9adad;
     margin: 15px;
     float: left;
+    font: normal 11pt/normal Myriad Pro;
 }
 .footer-post a:hover {
     text-decoration: none;
@@ -396,7 +435,7 @@ body {
 .my-tabs-footer p{
     color: white;
     text-transform: uppercase;
-    padding-top: 5px;
+    padding-top: 8px;
     padding-left: 30px;
     font-size: 13px;
 }
@@ -431,32 +470,43 @@ body {
     padding: 15px;
 }
 .content-post h3,.content-post img {
-    padding-left: 20px;
-    padding-right: 20px;
     width: 100%;
+    padding: 10px;
 }
-.content-post h3{
-    color: #696a64;
+a.message:hover{
+    color: #fc5b6e;
+}
+a.report-user:hover{
+    color: #cdc7c7;
+}
+.content-post h3.h3-shot{
+    color: #977c7c;
+    padding: 10px;
+    font:normal 18pt/normal Myriad Pro; 
 }
 .content-post h3 span.link_1{
     color: #fc5b6e;
+    font:normal 20pt/normal Myriad Pro; 
 }
 .content-post h3 span.link_2{
     color: #51a9cd;
+    font:normal 20px/normal Myriad Pro; 
 }
 .content-post h3 span.link_3{
     color: #886969;
+    font:normal 20pt/normal Myriad Pro; 
 }
 
 #toggle{float: right;
-background: url(../images/icon-slide.png) no-repeat;
-text-indent: -9999px;
-width: 12px;
-height: 9px;
-position: relative;
-top: 4px;
-right: 9px;
-cursor: pointer;}
+    background: url(../images/icon-slide.png) no-repeat;
+    text-indent: -9999px;
+    width: 12px;
+    height: 9px;
+    position: relative;
+    top: 4px;
+    right: 9px;
+    cursor: pointer;
+}
 .menu-slide span{
     position: absolute; 
     background: url(../images/icon-arrow.png) no-repeat; 
@@ -527,7 +577,7 @@ cursor: pointer;}
 .menu-notification ul li a{
     overflow: hidden;
     display:block;
-    padding: 0px 10px 10px 10px;
+    padding: 5px 10px 0px 10px;
     border-top:1px solid #20303b;
     border-bottom:1px solid #20303b;
     text-decoration: none; 
@@ -565,11 +615,11 @@ cursor: pointer;}
     padding: 15px;
 }
 .menu-notification li a h6{
-    font:normal 13px/normal Arial; 
+    font:normal 13px/normal Myriad Pro; 
     color: #51a9cd;
 }
 span.minuten{
-    font:normal 13px/normal Arial; 
+    font:normal 13px/normal Myriad Pro; 
     color: #99aab5; 
     float: left; 
 }
@@ -592,6 +642,7 @@ span.minuten{
     background: url(../images/icon-mess.png) no-repeat 0px; 
     text-indent: 30px; 
     display: inline-block;
+    font:normal 10pt/normal Myriad Pro;
 }
 .report-user{
     background: url(../images/icon-user.png) no-repeat 0px; 
@@ -599,6 +650,8 @@ span.minuten{
     display: inline-block; 
     margin-left: 15px;
     cursor: pointer;
+    font:normal 10pt/normal Myriad Pro;
+    color: #cdc7c7;
 }
 .dot-icon{
     background: url(../images/icon-dot.png) no-repeat 0px; 
@@ -642,12 +695,12 @@ span.minuten{
     margin-left: 20px;
 }
 .first-infor .profile .crycle-img h2{
-    font:normal 16px/normal Arial;
+    font:normal 16pt/normal Myriad Pro;
     margin:6px 0 ;
     padding:0;
 }
 .first-infor .profile .crycle-img h2 span{
-    font:normal 14px/normal Arial;
+    font:normal 14pt/normal Myriad Pro;
 }
 .first-infor .refesh{
     float: right;
@@ -655,7 +708,9 @@ span.minuten{
     text-indent: 40px;
     padding: 7px 0px;
     color:#51a9cd; 
+    font:normal 14pt/normal Myriad Pro;
     font-weight: bold;
+    
 }
 .footer-feed{
     /*background: url('../images/bg-head-feed.png') repeat; */
@@ -681,7 +736,7 @@ span.minuten{
     color: white; 
     text-decoration: none; 
     padding: 10px; 
-    font:normal 14px/normal Arial; 
+    font:normal 12pt/normal Myriad Pro; 
     text-decoration: none;
 }
 .menu-footer li a.active{
@@ -689,6 +744,7 @@ span.minuten{
 }
 .menu-footer li a:hover{
     text-decoration: none;
+    color: #51a9cd;
 }
 .copy-right{
     background: url('../images/bg-footer.png') repeat; 
@@ -706,19 +762,29 @@ span.minuten{
 .prev-post, .next-post{
     background: url('../images/pag_3.png') no-repeat; 
     float: left; 
-    padding: 5px 15px 5px 12px;
-    }
+    padding: 8px 15px 5px 12px;
+    color: white;
+    font:normal 12pt/normal Myriad Pro; 
+}
+.pagination-post ul li a:hover{
+    text-decoration: none;
+}
 .normal-pag{
     background: url('../images/pag_1.png') no-repeat; 
     float: left; 
-    padding: 5px 15px 5px 12px;
+    padding: 8px 15px 5px 12px;
+    color: white;
+    font:normal 12pt/normal Myriad Pro; 
+    
 }
 .special-pag{
     background: url('../images/pag_2.png') no-repeat; 
     float: left; 
-    padding: 5px 15px 5px 12px;
+    padding: 8px 15px 5px 12px;
+    color: white;
+    font:normal 12pt/normal Myriad Pro; 
 }
-.menu-footer li{margin-left: 10px;}
+.menu-footer li{margin-left: 10px;font:normal 12pt/normal Myriad Pro; }
 #ReportUser .modal-header img, 
 #SendaMessage .modal-header img{
     width: 50px; 
@@ -729,6 +795,8 @@ span.minuten{
     float: left; 
     text-align: left; 
     width: 80%;
+    font: normal 12pt/normal Myriad Pro;
+    color: #9f9f9f;
 }
 .my-report{
     background-color: #fc5b6e; 
@@ -740,7 +808,7 @@ span.minuten{
 }
 .header-report, 
 .footer-report{
-    background-color: rgb(243, 238, 238);
+    background-color: #e8e8e8;
 }
 .modal-content{
     width: 470px; 
@@ -749,16 +817,31 @@ span.minuten{
 .footer-report{margin-top: 0px;}
 .report-title{
     background: url('../images/warning.png') no-repeat;
-    padding: 0px 0px 0 31px
+    padding: 0px 0px 0 31px;
+    font: normal 14pt/normal Myriad Pro;
+    color: #676b6d;
 }
-#ReportUser .header-report img{margin-top: 15px;}
+#ReportUser .header-report img{
+    margin-top: 15px;
+    position: relative;
+}
 .user-kaka{
     font:normal 16px/normal Myriad Pro; 
     padding-left: 15px; 
-    margin-top: 10px;
+    position: absolute;
+    top: 30px;
+}
+.span-to{
+    position: relative;
+    font: normal 10pt/normal Myriad Pro;
+    top: -20px;
+}
+.user-ricky{
+    top: 65px;
 }
 #SendaMessage .modal-header img{
     margin-left: 10px;
+    position: relative;
 } 
 .add-media-1{
     background: url('../images/icon-upload.png') no-repeat; 
@@ -985,6 +1068,8 @@ ul li.content-bit{
     border-radius:3px;
     padding: 5px;
     border: transparent;
+    height: 34px;
+    font: normal 12pt/normal Myriad Pro;
 }
 .favorite_a{
     padding-left: 20px;
@@ -1216,8 +1301,6 @@ span.my-btn button{
     overflow: hidden; 
     height: 196px;
 }
-
-
 .looking-for:after {
     content: '';
     position: absolute;
@@ -1233,6 +1316,10 @@ span.my-btn button{
 .range-2{
     background: url('../images/test.png') no-repeat;
     padding:  5px 10px 10px 6px;
+    position: absolute;
+    width: 100%;
+    top: 10px;
+    left: 60px;
 }
 .input-range{
     width: 60% !important; 
@@ -1244,12 +1331,23 @@ span.my-btn button{
 ul li span.notification-header{
     color: white; 
     padding-left: 15px;
+    font: normal 12pt/normal Myriad Pro;
 }
 ul li span.notification-number{
     color: #ffc8a4;
+    font: normal 12pt/normal Myriad Pro;
 }
 ul li span.notification-seeall{
     float: right; 
     padding-right: 15px; 
     color: #dddddd;
+    font: normal 12pt/normal Myriad Pro;
+}
+ul li.menu-nav{
+    list-style: none;
+    float: left;
+}
+.content-post h4{
+    padding: 10px;
+    font: normal 18pt/normal Myriad Pro;
 }
