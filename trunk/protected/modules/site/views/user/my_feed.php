@@ -83,7 +83,7 @@
                 <span class="refesh">10</span>
             </div>
             <div class="content-post">
-                <h3><span class="link_1">ICEBUCKET</span> <span class="link_3">CHALLENGE</span> <span class="link_2">#ALSawareness #LOL</span></h3>
+                <h3><span class="link_3">ICEBUCKET CHALLENGE</span> <span class="link_2">#ALSawareness #LOL</span></h3>
                 <iframe title="YouTube video player" class="youtube-player" type="text/html" style="padding-left: 10px;"
                 width="98%" height="390" src="http://www.youtube.com/embed/uIbkLjjlMV8"
                 frameborder="0" allowFullScreen></iframe>
@@ -106,7 +106,9 @@
                 <span class="refesh">10</span>
             </div>
             <div class="content-post">
-                <h3><span class="link_1">yumMmm</span> <span class="link_3">#burger #7200cal</span> <span class="link_2">#LOL #depressed </span></h3>
+                <h3><span class="link_3">yumMmm</span> <span class="link_2">#burger #7200cal</span><span class="link_1"> #LOL </span><span class="link_2">#depressed 
+
+</span></h3>
                 <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/break.png">
             </div>
         </div>
@@ -145,7 +147,7 @@
                 <div class="refesh">12</div>
             </div>
             <div class="content-post">
-                <h3><span class="link_1">OUCH</span> <span class="link_3">#LOL</span> <span class="link_2">#legday</span></h3>
+                <h3><span class="link_3">OUCH</span> <span class="link_1">#LOL</span> <span class="link_2">#legday</span></h3>
                 <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/img_2.png">
             </div>
         </div>
