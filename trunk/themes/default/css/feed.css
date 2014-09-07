@@ -32,7 +32,7 @@ body {
     height: 50px;
     font-family: "Myriad Pro";
     text-transform: uppercase;
-    padding-right: 22px;
+    padding-right: 18px;
 }
 .search {
     background: url("../images/search.png") no-repeat right 10%;
@@ -246,7 +246,8 @@ body {
  .banner-ad-top {
      width: 728px;
      padding: 20px 0;
-    text-align: center;
+     text-align: center;
+     margin: 0px auto;
  }
  #content-feed {
      border: 1px solid #ddd;
@@ -1025,6 +1026,7 @@ span.my-btn button{
     float: right;
     width: 87%;
     border-top-right-radius: 5px;
+    margin-top: 19px;
 }
 .name_user{
     width: 35%;
