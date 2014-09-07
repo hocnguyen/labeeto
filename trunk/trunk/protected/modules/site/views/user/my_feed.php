@@ -20,7 +20,7 @@
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/icon-upload.png" />
                     Add Media
                 </a>
-                <a href="#" class="add-location">
+                <a href="#" class="add-location" style="margin-top: 10px;">
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/icon-location.png" />
                     Add Location
                 </a>
@@ -84,7 +84,7 @@
             </div>
             <div class="content-post">
                 <h3><span class="link_1">ICEBUCKET</span> <span class="link_3">CHALLENGE</span> <span class="link_2">#ALSawareness #LOL</span></h3>
-                <iframe title="YouTube video player" class="youtube-player" type="text/html" style="padding-left: 20px;"
+                <iframe title="YouTube video player" class="youtube-player" type="text/html" style="padding-left: 10px;"
                 width="98%" height="390" src="http://www.youtube.com/embed/uIbkLjjlMV8"
                 frameborder="0" allowFullScreen></iframe>
             </div>
@@ -117,7 +117,7 @@
                 <div class="profile">
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_2.png">
                     <div class="crycle-img">
-                        <h2>William Leonard Roberts II<span class="time-location">33 M, NY,</span> <span class="dot-icon">Yesterday</span></h2>
+                        <h2>William Leonard Roberts<span class="time-location">33 M, NY,</span> <span class="dot-icon">Yesterday</span></h2>
                         <a class="message" data-toggle="modal" data-target="#SendaMessage">Send a Message</a>
                         <a class="report-user" data-toggle="modal" data-target="#ReportUser">Report User</a>
                     </div>
@@ -125,7 +125,7 @@
                 <div class="refesh">15</div>
             </div>
             <div class="content-post">
-                <h3>Shoutout to my nigga Manny Pacman Pacquiao for
+                <h3 class="h3-shot">Shoutout to my nigga Manny Pacman Pacquiao for
                     helping in my weight-loss programme. <span class="link_1">#LOL</span></h3>
             </div>
         </div>
@@ -230,7 +230,7 @@ $(document).ready(function(){
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title report-title">Is there something wrong with this profile? </h4>
         <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
-        <span class="user-kaka">Ricky Martin</span>
+        <span class="user-kaka user-ricky">Ricky Martin</span>
       </div>
       <div class="">
         <select class="form-control" style="border-radius: 0;">
@@ -256,7 +256,7 @@ $(document).ready(function(){
     <div class="modal-content">
           <div class="modal-header header-report">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            To <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
+            <span class="span-to">To</span> <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
             <span class="user-kaka">Ricky Martin</span>
           </div>
           <div class="">
