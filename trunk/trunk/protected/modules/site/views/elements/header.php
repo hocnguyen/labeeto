@@ -1,9 +1,9 @@
 <div class="container">
-    <a href="#" id="logo">
+    <a href="/" id="logo">
         <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/top_logo.png" alt="Logo"/>
     </a>
     <?php if(!Yii::app()->user->isGuest){ ?>
-        vinhtq    <a href="<?php echo $this->createUrl('/user/logout'); ?>" class="deleteSessionAjax" style="color: #A10EA1;"><?php echo Yii::t('global', '(Logout)'); ?></a>
+            <a href="<?php echo $this->createUrl('/user/logout'); ?>" class="deleteSessionAjax" style="color: #A10EA1;"><?php echo Yii::t('global', '(Logout)'); ?></a>
     <?php } else { ?>
         <a href="#facebook-fancybox" class="fancybox" id="login-btn">LOGIN</a>
     <?php } ?>
@@ -16,6 +16,7 @@
     <div class="inner-fancybox">
         <div class="inner-wrapper">
             <?php echo CHtml::form($this->createUrl('/user/loginUser'), 'post', array('class'=>'frmcontact', 'id'=>'fancybox-form')); ?>
+            <div class="message-login-error"></div>
             <input type="text" class="username-input" placeholder="Username" name="LoginForm[email]"/>
             <input type="password" class="password-input" placeholder="Password" name="LoginForm[password]"/>
             <div class="checkbox-wrapper">

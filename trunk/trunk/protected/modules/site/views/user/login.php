@@ -24,7 +24,7 @@
                 </div>
            </div>
         </div>
-        
+
         <div class="row-fluid clearfix">
            <div class="row">
                 <div class="form-add">
@@ -35,7 +35,7 @@
                 </div>
            </div>
         </div>
-        
+
     <div class="row-fluid clearfix">
        <div class="row">
            <div class="form-add">
@@ -46,7 +46,7 @@
            </div>
        </div>
     </div>
-        
+
         <?php $this->endWidget(); ?>
 
     </div><!-- form -->
