@@ -9,7 +9,7 @@
         <div class="isw-grid"></div>
         <h1><?php echo Yii::t('global', 'Help Topic'); ?> #<?php echo $model->id; ?></small></h1>
         <ul class="buttons">
-            <li><a class="isw-left tipb" href="javascript: history.back()" data-original-title="<?php echo Yii::t('global','Back')?>"></a></li>
+            <li><a class="isw-left tipb" href="javascript: history.back()" data-original-title="Back"></a></li>
         </ul> 
     </div>
     

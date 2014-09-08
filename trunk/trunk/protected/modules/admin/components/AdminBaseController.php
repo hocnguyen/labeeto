@@ -43,7 +43,7 @@ class AdminBaseController extends BaseController {
 			$this->redirect(Yii::app()->homeUrl);
 		}
 		
-
+       // Yii::app()->counter->refresh();
         
 		/* Run init */
         parent::init();

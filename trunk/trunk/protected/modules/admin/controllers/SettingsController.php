@@ -23,11 +23,8 @@ class SettingsController extends AdminBaseController {
 		{
 			if( count( $_POST ) )
 			{
-
-
-                foreach( $_POST as $key => $value )
+				foreach( $_POST as $key => $value )
 				{
-
 					if( !preg_match('/setting_\d+/', $key) )
 					{
 						continue;
@@ -39,8 +36,23 @@ class SettingsController extends AdminBaseController {
 					
 					// Update setting
 					Settings::model()->updateByPk($settingID, array( 'value' => $settingValue ));
+                    $getLogosite = Settings::model()->findByAttributes(array('settingkey'=>'logo_site'));
+                    $nameLogosite = "setting_".$getLogosite->id;
+                    if($_FILES[$nameLogosite]['name'] != NULL){
+                        $rnd = rand(0,9999);
+                        if($_FILES[$nameLogosite]['type'] == "image/jpeg" || $_FILES[$nameLogosite]['type'] == "image/png" || $_FILES[$nameLogosite]['type'] == "image/gif"){
+                            $path = "uploads/logo/";
+                            $tmp_name = $_FILES[$nameLogosite]['tmp_name'];
+                            echo $rnd;
+                            $name =$rnd.$_FILES[$nameLogosite]['name'];
+                            if(move_uploaded_file($tmp_name,$path.$name)) {
+                                Settings::model()->updateByPk($getLogosite->id, array( 'value' => $name ));
+                            }
+                        }
+                    }
 				}
 			}
+			
 			// Clear cache
 			Yii::app()->settings->clearCache();
 			
@@ -53,11 +65,12 @@ class SettingsController extends AdminBaseController {
 		$cat1 = Settings::model()->findAll('category=:category', array( ':category' => 2 ));
 		$cat2 = Settings::model()->findAll('category=:category', array( ':category' => 3 ));
         $cat3 = Settings::model()->findAll('category=:category', array( ':category' => 4 ));
+		
 		// Set info
 		Yii::app()->user->setFlash('information', Yii::t('adminsettings', 'Hover over the setting title to see a description if one exists.'));
 		
 		// Render
-		$this->render('index', array( 'cat1' => $cat1, 'cat2' => $cat2, 'cat3' => $cat3));
+		$this->render('index', array( 'cat1' => $cat1, 'cat2' => $cat2, 'cat3' => $cat3 ));
     }
 
 	/**
@@ -374,22 +387,14 @@ class SettingsController extends AdminBaseController {
 	public function parseSetting( $setting )
 	{
 		$name = 'setting_' . $setting->id;
-		$value = ($setting->value!='') ? $setting->value : $setting->default_value;
-        /*if(($setting->value =='')) {
-            $value =  $setting->default_value;
-        } else {
-            $value = $setting->value ;
-        }*/
-		switch($setting->type)
+		$value = $setting->value ? $setting->value : $setting->default_value;
+		
+		switch( $setting->type )
 		{
 			case 'textarea':
 			echo CHtml::textArea( $name, $value, array( 'rows' => 5, 'class' => 'text-input' ) );
 			break;
 			
-            case 'editor_full':
-			$this->createWidget('application.widgets.ckeditor.CKEditor', array( 'name' => $name, 'value' => $value, 'editorTemplate' => 'full' ))->run();
-			break;
-            
 			case 'dropdown':
 			echo CHtml::dropDownList( $name, $value, $this->convertExtraToArray( $setting->extra ), array( 'class' => 'text-input' ) );
 			break;
@@ -403,16 +408,20 @@ class SettingsController extends AdminBaseController {
 			break;
 			
 			case 'yesno':
-            if ( $name == "setting_46" && $value != 0 ) {
-			    echo CHtml::dropDownList( $name, $value, array( '0' => Yii::t('global', 'No'), '1' => Yii::t('global', 'Yes') ), array( 'class' => 'text-input', 'options'=> array( '1' => array('selected'=>true) ) ));
-                echo "<div class='delivery'><span class='delivery-insurance'>".Yii::t('global', 'Input Value Delivery insurance')." </span> <span> <input name='delivery_insurance' type='text' value='".$value."' > </span> </div>";
-            }
-            else
-                echo CHtml::dropDownList( $name, $value, array( '0' => Yii::t('global', 'No'), '1' => Yii::t('global', 'Yes') ), array( 'class' => 'text-input' ));
-            break;
+			echo CHtml::dropDownList( $name, $value, array( '0' => Yii::t('global', 'No'), '1' => Yii::t('global', 'Yes') ), array( 'class' => 'text-input' ) );
+			break;
 			
 			case 'editor':
 			$this->createWidget('application.widgets.ckeditor.CKEditor', array( 'name' => $name, 'value' => $value, 'editorTemplate' => 'basic' ))->run();
+			break;
+
+			case 'colorPicker':
+            $this->widget('ext.ColorPicker', array('name' => $name,'value' => $value,));
+			break;
+
+			case 'fileUpload':
+            echo CHtml::fileField($name,$value,array('class'=>'logo_site'));
+             echo (!empty($value))?"<img src='/uploads/logo/".$value."' width='300px' style='margin-top:10px' />":" ";
 			break;
 			
 			case 'text':

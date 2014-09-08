@@ -16,11 +16,10 @@
 <?php 
 
 $columns = array('id', 'title', 'alias');
-$allLang = Languages::model()->findAll();
-foreach( $allLang as $key => $value ) {
+foreach( Yii::app()->params['languages'] as $key => $value ){
     $columns[]  = array(
-        'header' => '<div align="center"><img src="/uploads/flag/'.$value->icon.'" /></div>',
-        'value' => '$data->languageButton("'.$value->region_code.'")' ,
+        'header' => '<div align="center"><img src="/assets/images/languages/'.$key.'.png" /></div>',
+        'value' => '$data->languageButton("'.$key.'")' ,
         'type' => 'raw',
         'htmlOptions'=>array( 'style'=>'text-align: center' )
     );
