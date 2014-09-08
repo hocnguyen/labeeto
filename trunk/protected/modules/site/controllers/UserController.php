@@ -51,10 +51,8 @@ class UserController extends SiteBaseController {
                 }
             }
         }
-
-        $this->render('login',array(
-            'model'=>$model,
-        ));
+        $pop_up = true;
+        $this->render('../index/index', compact('pop_up'));
     }
 
     public function actionLogout()

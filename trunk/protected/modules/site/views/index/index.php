@@ -343,7 +343,10 @@
         <?php  if(isset($_SESSION['User'])) { ?>
             window.location.assign("/my_feed");
         <?php }?>
-
+        <?php if(isset($pop_up)){ ?>
+        $.fancybox("#facebook-fancybox");
+        $('.message-login-error').append('<?php echo Yii::t("global","The username or password you entered is incorrect."); ?>');
+       <?php  } ?>
 
     });
 
