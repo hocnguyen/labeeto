@@ -167,6 +167,7 @@ body {
     border-radius: 2px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
+    behavior: url('../pie/PIE.htc');
     margin-right: -11px;
     color: #ffffff;
     text-align: center;
@@ -187,6 +188,7 @@ body {
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
+    behavior: url('../pie/PIE.htc');
     margin: 5px 10px;
     float: left;
 }
@@ -218,6 +220,7 @@ body {
      -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
      z-index: 999;
+     behavior: url(../pie/PIE.htc);
  }
  .profile-item {
      width: 100%;
@@ -321,6 +324,7 @@ body {
      border-radius: 5px;
      -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
+    behavior: url('../pie/PIE.htc');
  }
  .avatar-post {
      float: left;
@@ -381,6 +385,7 @@ body {
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
+    behavior: url('../pie/PIE.htc');
     margin-top: 20px;
 }
 .my-tabs{
@@ -390,6 +395,7 @@ body {
     border-radius: 5px 5px 0px 0px;
     -webkit-border-radius: 5px 5px 0px 0px;
     -moz-border-radius: 5px 5px 0px 0px;
+    behavior: url('../pie/PIE.htc');
 }
 .tabs .my-tabs ul.nav-tabs li a{
     text-transform: uppercase;
@@ -407,17 +413,20 @@ body {
     border-right:transparent;
     -webkit-border-radius: 0 5px 0 0 !important;
     -moz-border-radius: 0 5px 0 0 !important;
+    behavior: url('../pie/PIE.htc');
 }
 .tabs .my-tabs ul.nav-tabs li.active:first-child,
 .tabs .my-tabs ul.nav-tabs li:first-child a{
     border-radius: 5px 0 0 0 !important;
     -webkit-border-radius: 5px 0 0 0 !important;
     -moz-border-radius: 5px 0 0 0 !important;
+    behavior: url('../pie/PIE.htc');
 }
 .tabs .my-tabs ul.nav-tabs li a:hover{
     border-radius: 0px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
+    behavior: url('../pie/PIE.htc');
     background-color: #1f2a32;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#1f2a32', endColorstr='#1f2a32'); /* IE */
     border:none;padding: 10px 0;
@@ -428,6 +437,7 @@ body {
     border-radius: 0px !important;
     -webkit-border-radius: 0px !important;
     -moz-border-radius: 0px !important;
+    behavior: url('../pie/PIE.htc');
     text-align: center;
 }
 
@@ -465,6 +475,7 @@ body {
     border-radius: 0px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
+    behavior: url('../pie/PIE.htc');
     background-position: 4px 6px;
 }
 .my-tabs-footer{
@@ -474,6 +485,7 @@ body {
     border-radius: 0px 0px 5px 5px;
     -webkit-border-radius: 0px 0px 5px 5px;
     -moz-border-radius: 0px 0px 5px 5px;
+    behavior: url('../pie/PIE.htc');
     position: relative;
 }
 .my-tabs-footer p{
@@ -493,6 +505,7 @@ body {
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
+    behavior: url('../pie/PIE.htc');
     margin-top: 20px;
     padding-bottom: 20px;
 }
@@ -652,6 +665,7 @@ a.report-user:hover{
     border-radius: 100%; 
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
+    behavior: url('../pie/PIE.htc');
     float: left; 
     margin: 0px 10px 10px 0;
 }
@@ -851,6 +865,7 @@ span.minuten{
     border-radius: 100%;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
+    behavior: url('../pie/PIE.htc');
 }
 .agreed{
     float: left; 
@@ -1164,6 +1179,7 @@ span.my-btn input{
     border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
+    behavior: url('../pie/PIE.htc');
     border: transparent;
     color: #2a2722;
     font: normal 12pt/normal Myriad Pro;
@@ -1175,6 +1191,7 @@ span.my-btn button{
     border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
+    behavior: url('../pie/PIE.htc');
     padding: 4px 10px 2px 10px;
     text-transform: uppercase;
     margin-left: 10px;
@@ -1374,6 +1391,7 @@ span.my-btn button{
     border-radius: 100%;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
+    behavior: url('../pie/PIE.htc');
     border: 2px solid #ddd;
     padding: 2px;
     background-color: #ffffff;
@@ -1412,7 +1430,7 @@ span.my-btn button{
     border-radius: 15px; 
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
-    -khtml-border-radius: 15px;
+    behavior: url('../pie/PIE.htc');
     height: 9px;
 }
 ul li span.notification-header{
