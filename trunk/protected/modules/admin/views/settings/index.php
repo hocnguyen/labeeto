@@ -1,16 +1,23 @@
 
-<div class="page-header">
-	<h1><?php echo Yii::t('global', 'Configure')?> <small><?php echo Yii::t('global', 'Settings')?></small></h1>
-</div>
+<!--<div class="page-header">
+	<h1><?php /*echo Yii::t('global', 'Configure')*/?> <small><?php /*echo Yii::t('global', 'Settings')*/?></small></h1>
+</div>-->
 
 <!-- Start .notifications -->
 <?php $this->widget('widgets.admin.notifications'); ?>
 <!-- End .notifications -->
 
-<?php echo CHtml::form(); ?>
+<?php //echo CHtml::form(); ?>
+<?php $form=$this->beginWidget('CActiveForm', array(
+    'id'=>'settings-form',
+    'enableAjaxValidation'=>false,
+    'htmlOptions'=>array(
+        'enctype' => 'multipart/form-data',
+    ),
+)); ?>
 
 <div class="row-fluid">
-	<div class="span12">                    
+	<div class="col-lg-12">
 		<div class="head clearfix">
 			<div class="isw-settings"></div>
 			<h1><?php echo Yii::t('global', 'General Settings')?></h1>                   
@@ -19,13 +26,13 @@
 				<?php if( count($cat1) ): ?>
 					<?php foreach ($cat1 as $row): ?>
 						<div class="row-form clearfix">
-							<div class="span3">
+							<div class="col-lg-4">
 								<span<?php if( CHtml::encode($row->description) ): ?> class="tipb" data-original-title='<?php echo Yii::t('global', $row->description); ?>'<?php endif; ?>>
 									<?php echo Yii::t('global', $row->title); ?>
 								</span>
 								<?php if( $row->value && $row->default_value != $row->value ): ?><span style='color:red;'><?php echo Yii::t('adminsettings', '(Setting Changed)'); ?></span><?php endif; ?>
 							</div>
-							<div class="span7">
+							<div class="col-lg-6">
 								<?php $this->parseSetting( $row ); ?>
 							</div>
 						</div>
@@ -46,7 +53,7 @@
 </div>
 
 <div class="row-fluid">
-	<div class="span12">                    
+	<div class="col-lg-12">
 		<div class="head clearfix">
 			<div class="isw-settings"></div>
 			<h1><?php echo Yii::t('global', 'System Settings')?></h1>                   
@@ -56,13 +63,13 @@
 				<?php if( count($cat3) ): ?>
 					<?php foreach ($cat3 as $row): ?>
 						<div class="row-form clearfix">
-							<div class="span4">
+							<div class="col-lg-4">
 								<span<?php if( CHtml::encode($row->description)): ?> class="tipb" data-original-title='<?php echo CHtml::encode($row->description); ?>'<?php endif; ?>>
 									<?php echo Yii::t('global', $row->title); ?>
 								</span>
 								<?php if( $row->value && $row->default_value != $row->value ): ?><span style='color:red;'><?php echo Yii::t('adminsettings', '(Setting Changed)'); ?></span><?php endif; ?>
 							</div>
-							<div class="span6">
+							<div class="col-lg-6">
 								<?php $this->parseSetting( $row ); ?>
 							</div>
 						</div>
@@ -83,4 +90,7 @@
 </div>
 
 
+
 <?php echo CHtml::submitButton(Yii::t('adminglobal', 'Save'), array( 'name' => 'submit', 'class'=>'btn')); ?>
+<?php $this->endWidget(); ?>
+<?php //echo CHtml::endForm(); ?>

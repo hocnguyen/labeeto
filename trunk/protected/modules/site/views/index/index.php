@@ -8,7 +8,7 @@
 )); ?>
 <div id="signup-form" >
 <div class="form-wrapper" id="sign-up">
-    <div class="error"></div>
+    <!--<div class="error"></div>-->
     <input type="text" name="SignUp[username]" id="username" class="username-input validate[required,custom[space]] "  placeholder="Username"/>
     <input type="text" name="SignUp[email]" id="email" class="email-input validate[required,custom[email]" placeholder="Email"/>
     <input type="password"  name="SignUp[password]" id="password" class="password-input validate[required]" placeholder="Password"/>

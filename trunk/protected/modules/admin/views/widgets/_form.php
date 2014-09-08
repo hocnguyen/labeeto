@@ -33,8 +33,7 @@
             <?php echo $form->labelEx($model,'content'); ?>
         </div>
 		<div class="span9">
-            <?php $this->widget('application.widgets.ckeditor.CKEditor', array( 'name' => 'Widgets[content]', 'value' => isset($model->content) ? $model->content : '', 'editorTemplate' => 'full' )); ?>
-            <?php //echo $form->htmlArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
+            <?php echo $form->htmlArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
             <?php echo $form->error($model,'content'); ?>
         </div>
 	</div>

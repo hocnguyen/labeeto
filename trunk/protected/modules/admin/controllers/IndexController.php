@@ -17,7 +17,6 @@ class IndexController extends AdminBaseController {
 	 * Index action
 	 */
     public function actionIndex() {
-
         $this->render('index');
     }
 }

@@ -89,12 +89,18 @@ body{
     position: relative;
 }
 #wrapper{
-    width: 100%;
+    /*width: 100%;
     min-height: 100%;
     background-size: cover;
     background: url('../images/background.jpg') no-repeat;
+    background-size: cover;*/
+    width: 100%;
+    min-height: 100%;
+    background: url('../images/background.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-
 }
 #svg-image-blur{
     height: 1px;
@@ -303,7 +309,7 @@ p.copyright{
     border-radius: 2px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
-    border: 5px solid rgba(255, 255, 255, .12);
+    border: 5px solid #444444;
 }
 .registration-fancybox{
     display: none;
@@ -320,6 +326,7 @@ p.copyright{
 }
 .fancybox-heading{
     background-color: rgba(33, 39, 57, 0.6);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#242731', endColorstr='#242731'); /* IE */
     text-align: center;
     padding-top: 19px;
     padding-bottom: 19px;

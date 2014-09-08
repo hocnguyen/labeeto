@@ -7,13 +7,13 @@ $(document).ready(function(){
 
 
     $('#facebook').oauthpopup({
-        path: '/members/login',
+        path: '/user/login',
         width:600,
         height:300
     });
 
     $('#facebookPopup').oauthpopup({
-        path: '/members/login',
+        path: '/user/login',
         width:600,
         height:300
     });
@@ -40,7 +40,7 @@ $(document).ready(function(){
             $.ajax({
                 url: "http://maps.googleapis.com/maps/api/geocode/json",
                 cache: false,
-                dataType: "json",
+                dataType: "text",
                 type: "GET",
                 data: "address=" + zipcode,
                 success: function(result, success) {
@@ -105,7 +105,7 @@ $(document).ready(function(){
             variableGet+="goal="+goal+"&";
             variableGet+="smoke="+smoke+"&";
             variableGet+="drink="+drink;
-            $.get("/members/register?"+variableGet,function(){
+            $.get("/user/register?"+variableGet,function(){
                 $.session.clear();
                 $('.step-2').hide();
                 $('.step-3').show();
