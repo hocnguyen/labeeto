@@ -48,7 +48,7 @@
                     <h3>8</h3>
                 </div>
                 <div class="photo-private">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo.png" />
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/videos.png" />
                     <h6>Videos</h6>
                     <h3>15</h3>
                 </div>

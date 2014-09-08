@@ -14,6 +14,7 @@
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/validationEngine.jquery.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery.js"></script>
+      
 </head>
 <body >
 <div id="wrapper">
@@ -37,7 +38,7 @@
                     <!--<div class="notice-notify">45</div>-->
                 </div>
                 <div class="notify-request notify-active" id="toggle-notification">
-                    <div class="notice-notify">45</div>
+                    <div class="notice-notify clicked-notification">45</div>
                     <div class="menu-notification">
                         <span class="only-this-span"></span>
                         <ul>
@@ -48,9 +49,36 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_1.png">
-                                        <h6>SAORI TABATA <span class="active-infor">likes your</span><span class="content-infor">post prive photo in timeline</span></h6> 
+                                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/1_avarta.png">
+                                        <h6>SAORI TABATA <span class="active-infor">likes your</span><span class="content-infor">post</span></h6> 
                                         <span class="minuten">16 mins</span>
+                                </a>
+                                
+                            </li>
+                            
+                            <li>
+                                <a href="#">
+                                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/2_avata.png">
+                                        <h6>EMMA ROSE BUNTON <span class="active-infor">likes your</span><span class="content-infor">post</span></h6> 
+                                        <span class="minuten">18 mins</span>
+                                </a>
+                                
+                            </li>
+                            
+                            <li>
+                                <a href="#">
+                                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/3_avata.png">
+                                        <h6>MIRIAM REGALADO <span class="active-infor">likes your</span><span class="content-infor">ROFILE PICTURE</span></h6> 
+                                        <span class="minuten">2 hr</span>
+                                </a>
+                                
+                            </li>
+                            
+                            <li>
+                                <a href="#">
+                                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/3_avata.png">
+                                        <h6>MIRIAM REGALADO <span class="active-infor">wants access to your</span><span class="content-infor">pRIVATE PHOTOS</span></h6> 
+                                        <span class="minuten">2 hr</span>
                                 </a>
                                 <div class="content-active">
                                     <span class="delete-post"></span><span class="check-post"></span>
@@ -60,21 +88,18 @@
                             
                             <li>
                                 <a href="#">
-                                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_1.png">
-                                        <h6>SAORI TABATA <span class="active-infor">likes your</span><span class="content-infor">post prive photo in timeline</span></h6> 
-                                        <span class="minuten">16 mins</span>
+                                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/4_avata.png">
+                                        <h6>ASH PONCE <span class="active-infor">likes your</span><span class="content-infor">post</span></h6> 
+                                        <span class="minuten">2 hr</span>
                                 </a>
-                                <div class="content-active">
-                                    <span class="delete-post"></span><span class="check-post"></span>
-                                </div> 
                                 
                             </li>
                             
                             <li>
                                 <a href="#">
-                                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_1.png">
-                                        <h6>SAORI TABATA <span class="active-infor">likes your</span><span class="content-infor">post prive photo in timeline</span></h6> 
-                                        <span class="minuten">16 mins</span>
+                                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/3_avata.png">
+                                        <h6>MIRIAM REGALADO <span class="active-infor">wants to</span><span class="content-infor">CHAT</span></h6> 
+                                        <span class="minuten">2 hr</span>
                                 </a>
                                 <div class="content-active">
                                     <span class="delete-post"></span><span class="check-post"></span>
@@ -82,48 +107,25 @@
                                 
                             </li>
                             
-                            <li>
-                                <a href="#">
-                                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_1.png">
-                                        <h6>SAORI TABATA <span class="active-infor">likes your</span><span class="content-infor">post prive photo in timeline</span></h6> 
-                                        <span class="minuten">16 mins</span>
-                                </a>
-                                <div class="content-active">
-                                    <span class="delete-post"></span><span class="check-post"></span>
-                                </div> 
-                                
-                            </li>
-                            
-                            <li>
-                                <a href="#">
-                                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_1.png">
-                                        <h6>SAORI TABATA <span class="active-infor">likes your</span><span class="content-infor">post prive photo in timeline</span></h6> 
-                                        <span class="minuten">16 mins</span>
-                                </a>
-                                <div class="content-active">
-                                    <span class="delete-post"></span><span class="check-post"></span>
-                                </div> 
-                                
-                            </li>
-                            
-                        </ul>
+                        </ul>   
                     </div>
                 </div>
             </div>
             <div class="profile-nav">
-                <img class="avatar-nav" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatart-step2.png" />
-                <div class="username-nav">
-                <?php 
-                if(strlen(Yii::app()->user->username) > 8){
-                    echo substr(Yii::app()->user->username, 0, 5). '...';
-                }else{
-                    echo Yii::app()->user->username;
-                }
-                 
-                ?>
+                <div class="test-nav" style="width: 179px; float: right; height: 50px;">
+                    <img class="avatar-nav" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatart-step2.png" />
+                    <div class="username-nav">
+                    <?php 
+                    if(strlen(Yii::app()->user->username) > 8){
+                        echo substr(Yii::app()->user->username, 0, 5). '...';
+                    }else{
+                        echo Yii::app()->user->username;
+                    }
+                     
+                    ?>
+                    </div>
+                    <img class="arrow-nav" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/arrow_down.png" />
                 </div>
-                <img class="arrow-nav" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/arrow_down.png" />
-                
                 <div class="menu-profile">
                     <a href="#" class=" profile-item firt-profile"><span class="icon-profile your-profile"></span>YOUR PROFILE</a>
                     <a href="#" class=" profile-item"><span class="icon-profile favorite"></span>FAVORITE</a>
