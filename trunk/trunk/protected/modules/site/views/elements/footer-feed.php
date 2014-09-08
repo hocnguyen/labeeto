@@ -1,11 +1,12 @@
 <div class="clearfix footer-feed">
     <div class="content-footer">
-        <a href="#" class="logo-footer">
+        <a href="#" class="logo-footer" style="margin-left: -10px;">
             <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/logo-feed.png" alt="Logo"/>
         </a>
         <ul class="menu-footer">
             <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#" class="active">Terms Of Use</a></li>
+            <li><a href="#">Terms Of Use</a></li>
+		<!--<li><a href="#" class="active">Terms Of Use</a></li>-->
             <li><a href="#">Site Map</a></li>
             <li><a href="#">About Us</a></li>
             <li><a href="#">Blog</a></li>

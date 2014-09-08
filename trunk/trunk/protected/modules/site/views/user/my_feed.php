@@ -218,7 +218,8 @@ $(document).ready(function(){
    });
    
    $("#toggle-notification").click(function(){
-    $(".menu-notification").toggle();
+        $(".menu-notification").toggle();
+        $(".clicked-notification").hide();
    });
 
 });
