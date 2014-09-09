@@ -11,5 +11,8 @@ $(document).ready(function(){
 
     });
 
-
+    $('.photo-private').click(function(){
+        $('.content-profile').hide();
+        $('.content-photo').show();
+    });
 });
