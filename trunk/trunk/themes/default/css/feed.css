@@ -1360,6 +1360,8 @@ span.my-btn button{
     width: 33.333333%;
     height: 113px;
     position: relative;
+    cursor: pointer;
+    border-bottom: 2px solid red;
 }
 .photo-private img{
     width: 100%;
@@ -1493,4 +1495,91 @@ ul li.menu-nav{
     display: inline-block;
     color: #dddddd;
     font: normal 12.5px/normal Proxima Nova Semi Bold;
+}
+.looking-for p{
+    overflow: hidden;
+}
+.looking-for p span{
+    font: normal 1em/normal Arial;
+    width: 125px;
+    float: left;
+    
+}
+.looking-for p span.txt-gender{
+    text-align: right;    
+    color: #f0ddc7;
+    padding-right: 14px;    
+}
+.looking-for p span.txt-female{
+    text-align: left;
+    color: #ffffff;
+}
+.content-photo{}
+.content-photo .title-photo{
+    overflow:hidden;
+    background: #334551;
+    border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius:  5px 5px 0px 0px;
+    -moz-border-radius:  5px 5px 0px 0px;
+    behavior: url('../pie/PIE.htc');
+}
+.content-photo .title-photo h3{
+    width: 220px;
+    float: left;
+    padding:12px 17px;
+    text-transform: uppercase;
+    color: #e2d4c0;
+    font: normal 12pt/normal Arial;
+}
+.content-photo .title-photo h3 span{
+    color: #ffffff;
+    font: normal 10pt/normal Arial;
+}
+.content-photo .title-photo p{float:right;}
+.content-photo .title-photo p a{
+    border-left:1px solid #516b7c;
+    border-right:1px solid #162732;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding:14px 17px;
+    float:left;
+    color: #8a9eab;
+    font-family: Arial;
+}
+.content-photo .title-photo p a:hover{
+    text-decoration: none;
+}
+.content-photo ul{
+    overflow: hidden;
+    border: 1px solid #dddddd;
+    border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    behavior: url('../pie/PIE.htc');
+    padding: 8px 0px 5px 12px;
+}
+.content-photo ul li {
+    float: left;
+    width: 32%;
+    margin:0 5px 5px 0;
+}
+.content-photo {
+    margin-top: 20px;
+    position: relative;
+    margin-bottom: 20px;
+}
+.content-photo:after {
+    content: '';
+    position: absolute;
+    left: 260px;
+    top: -15px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #334551;
+}
+.content-photo .title-photo p a.close-icon{
+    background: url('../images/delete-icon.png') no-repeat 17px 10px;
+    padding: 42px 25px 0px 30px;
 }
