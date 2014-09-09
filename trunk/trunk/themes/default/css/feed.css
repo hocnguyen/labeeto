@@ -1,3 +1,28 @@
+   @font-face {
+        font-family: 'Proxima Nova Semi Bold';
+        src: url('../fonts/ProximaNova-Semibold.otf');
+        src: url('../fonts/ProximaNova-Semibold.otf?#iefix') format('embedded-opentype'),
+        url('../fonts/ProximaNova-Semibold.woff') format('woff'),
+        url('../fonts/ProximaNova-Semibold.ttf') format('truetype'),
+        url('../fonts/ProximaNova-Semibold.svg#proxima_nova_rgbold') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    
+    }
+    
+    @font-face {
+        font-family: 'Helvetica Neue LTPro Bd';
+        src: url('../fonts/HelveticaNeueLTPro-Bd.otf');
+        src: url('../fonts/HelveticaNeueLTPro-Bd.otf?#iefix') format('embedded-opentype'),
+        url('../fonts/HelveticaNeueLTPro-Bd.woff') format('woff'),
+        url('../fonts/HelveticaNeueLTPro-Bd.ttf') format('truetype'),
+        url('../fonts/HelveticaNeueLTPro-Bd.svg#proxima_nova_rgbold') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    
+    }
+    
+    
     /**
     * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
     * http://cssreset.com
@@ -224,13 +249,12 @@ body {
  .profile-item {
      width: 100%;
      float: left;
-     padding: 15px 15px 11px 15px;
+     padding: 14px 15px 11px 15px;
      color: #b9adad;
      background: url("../images/line-profile.png") no-repeat top;
      line-height: 25px;
-     font: normal 12pt/normal Myriad Pro;
  }
-.profile-item:hover {
+.profile-item:hover > span {
     color: #ff6476;
     text-decoration: none;
 }
@@ -471,9 +495,9 @@ body {
     background-image: url('../images/search.png');
     background-repeat: no-repeat;
     text-indent: 20px;
-    border-radius: 0px;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
     behavior: url('../pie/PIE.htc');
     background-position: 4px 6px;
 }
@@ -506,7 +530,7 @@ body {
     -moz-border-radius: 5px;
     behavior: url('../pie/PIE.htc');
     margin-top: 20px;
-    padding-bottom: 20px;
+    position: relative;
 }
 .post .profile-img{
     width: 15%;
@@ -540,7 +564,7 @@ a.report-user:hover{
 .content-post h3.h3-shot{
     color: #977c7c;
     padding: 10px;
-    font:normal 18pt/normal Myriad Pro; 
+    font:normal 23px/normal Arial; 
 }
 .content-post h3 span.link_1{
     color: #fc5b6e;
@@ -554,7 +578,7 @@ a.report-user:hover{
 }
 .content-post h3 span.link_3{
     color: #886969;
-    font:normal 20pt/normal Myriad Pro; 
+    font:normal 20px/normal Arial; 
     cursor: pointer;
 }
 
@@ -574,7 +598,7 @@ a.report-user:hover{
     width: 20px; 
     height: 11px; 
     top: -9px; 
-    right: 20px;
+    right: 10px;
 }
 .menu-slide{
     display:none;
@@ -586,6 +610,7 @@ a.report-user:hover{
     width:237px;
     border-radius:4px;
     overflow:inherit !important;
+    z-index: 999;
 }
 .menu-slide ul{
     list-style:none;
@@ -748,7 +773,7 @@ span.minuten{
 }
 .first-infor .profile{
     overflow: hidden;
-    width:80%;
+    width:88%;
     float:left;
 }
 .first-infor .profile img{
@@ -767,7 +792,10 @@ span.minuten{
     padding:0;
 }
 .first-infor .profile .crycle-img h2 span{
-    font:normal 14pt/normal Myriad Pro;
+    font: normal 14pt/normal Myriad Pro;
+}
+.first-infor .profile .crycle-img h2 span.dot-icon{
+    font:italic normal 14pt/normal Myriad Pro;
 }
 .first-infor .refesh{
     float: right;
@@ -870,7 +898,7 @@ span.minuten{
     float: left; 
     text-align: left; 
     width: 80%;
-    font: normal 12pt/normal Myriad Pro;
+    font: normal 14px/normal Arial;
     color: #9f9f9f;
 }
 .my-report{
@@ -891,12 +919,13 @@ span.minuten{
 .modal-content{
     width: 470px; 
     margin: 0px auto;
+    border: 5px solid #b2b2b2;
 }
 .footer-report{margin-top: 0px;}
 .report-title{
     background: url('../images/warning.png') no-repeat;
     padding: 0px 0px 0 31px;
-    font: normal 14pt/normal Myriad Pro;
+    font: normal 16px/normal Helvetica Neue LTPro Bd;
     color: #676b6d;
 }
 #ReportUser .header-report img{
@@ -1067,9 +1096,10 @@ ul.social li.insta:hover{
     padding: 10px;
     background-color: #ec5268;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ec5268', endColorstr='#ec5268'); /* IE */
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    /*border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;*/
     border-bottom: 1px solid #b7283d;
+    border-radius: 0 5px;
 }
 .content-bit-final span.note-span,
 .content-bit span.note-span, 
@@ -1457,4 +1487,10 @@ ul li.menu-nav{
 }
 .menu-notification ul li a h6{
     font: normal 12pt/normal Myriad Pro;
+}
+.content-pro-txt{
+    padding-top: 7px;
+    display: inline-block;
+    color: #dddddd;
+    font: normal 12.5px/normal Proxima Nova Semi Bold;
 }
