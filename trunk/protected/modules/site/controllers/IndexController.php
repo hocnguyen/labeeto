@@ -16,6 +16,8 @@ class IndexController extends SiteBaseController {
 	}
 
 	public function actionIndex() {
+        if( Yii::app()->user->id )
+            $this->redirect('/my_feed');
         $model =  new User();
         if(isset($_POST['SignUp'])) {
             /*$model->username= $_POST['SignUp']['username'];

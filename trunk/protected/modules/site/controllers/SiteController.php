@@ -3,7 +3,6 @@
 class SiteController extends SiteBaseController
 {
 	public function actionIndex(){
-
 		$this->render('index');
 	}
 
