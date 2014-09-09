@@ -83,8 +83,8 @@
                 <span class="refesh">10</span>
             </div>
             <div class="content-post">
-                <h3><span class="link_3">ICEBUCKET CHALLENGE</span> <span class="link_2">#ALSawareness #LOL</span></h3>
-                <iframe title="YouTube video player" class="youtube-player" type="text/html" style="padding-left: 10px;"
+                <h3><span class="link_3">ICEBUCKET CHALLENGE</span> <span class="link_2">#ALSawareness </span><span class="link_1">#LOL</span></h3>
+                <iframe title="YouTube video player" class="youtube-player" type="text/html" style="padding-left: 10px; padding-bottom: 10px;"
                 width="98%" height="390" src="http://www.youtube.com/embed/uIbkLjjlMV8"
                 frameborder="0" allowFullScreen></iframe>
             </div>
@@ -228,7 +228,7 @@ $(document).ready(function(){
 <!-- Modal Report-->
 <div class="modal fade" id="ReportUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content special-border">
       <div class="modal-header header-report">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title report-title">Is there something wrong with this profile? </h4>
@@ -245,7 +245,7 @@ $(document).ready(function(){
       </div>
       <div class="modal-footer footer-report">
         <div class="agreed">
-            <input type="checkbox" name=""/> <span>Would you also like to block this user from making contact with you?</span>
+            <input type="checkbox" name="" class="pull-left"/> <span>Would you also like to block this user from making contact with you?</span>
         </div>
         <a type="button" class="btn btn-primary my-report">Report</a>
       </div>
@@ -257,7 +257,7 @@ $(document).ready(function(){
 <div class="modal fade" id="SendaMessage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-          <div class="modal-header header-report">
+          <div class="modal-header header-report special-border">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             <span class="span-to">To</span> <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
             <span class="user-kaka">Ricky Martin</span>
