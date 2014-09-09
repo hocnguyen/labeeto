@@ -44,7 +44,6 @@ body {
 .head-feed {
     height: 50px;
     background-color: #2b3a44;
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#2b3a44', endColorstr='#2b3a44'); /* IE */
     outline:0;
 }
 .content-head{
