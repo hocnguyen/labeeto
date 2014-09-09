@@ -17,7 +17,8 @@
 
 </head>
 <body >
-<div id="wrapper">
+<div id="dvLoading"></div>
+<div id="wrapper" style="-ms-behavior: url('http://hoc.labeeto.com/backgroundsize.min.htc');">
     <header class="clearfix">
         <?php $this->renderPartial('../elements/header'); ?>
     </header>
@@ -40,7 +41,11 @@
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl . '/js/jquery.session.js' ?>"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl . '/js/oauthpopup.js' ?>"></script>
     <script type="text/javascript">
+        $(window).load(function(){
+            $('#dvLoading').fadeOut(3000);
+        });
         $('input').placeholder();
+
     </script>
 </body>
 

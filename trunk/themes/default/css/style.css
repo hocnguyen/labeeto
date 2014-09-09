@@ -88,19 +88,25 @@ body{
     min-width: 320px;
     position: relative;
 }
+#dvLoading
+{
+    background: url(../images/loading.gif) no-repeat center center #fff;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
 #wrapper{
-    /*width: 100%;
-    min-height: 100%;
-    background-size: cover;
-    background: url('../images/background.jpg') no-repeat;
-    background-size: cover;*/
     width: 100%;
     min-height: 100%;
+    position: absolute;
+    z-index: 0;
     background: url('../images/background.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
 }
 #svg-image-blur{
     height: 1px;

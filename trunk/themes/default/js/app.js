@@ -40,7 +40,7 @@ $(document).ready(function(){
             $.ajax({
                 url: "http://maps.googleapis.com/maps/api/geocode/json",
                 cache: false,
-                dataType: "text",
+                dataType: "jsonp",
                 type: "GET",
                 data: "address=" + zipcode,
                 success: function(result, success) {
