@@ -22,6 +22,8 @@
             <div class="checkbox-wrapper">
                 <input type="checkbox" id="remember-check"/>
                 <label for="remember-check">Remember me</label>
+                <input type="checkbox" id="remember-check"/>
+                <label for="remember-check">Keep Me Logged in</label>
             </div>
             <input type="submit" value="Log In"/>
             </form>

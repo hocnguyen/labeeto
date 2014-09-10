@@ -346,8 +346,10 @@
         <?php if(isset($pop_up)){ ?>
         $.fancybox("#facebook-fancybox");
         $('.message-login-error').append('<?php echo Yii::t("global","The username or password you entered is incorrect."); ?>');
-       <?php  } ?>
-
+        <?php  } ?>
+        $('#login-btn').click(function(){
+            $('.message-login-error').hide();
+        });
     });
 
 </script>
