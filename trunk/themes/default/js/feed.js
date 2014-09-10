@@ -12,6 +12,15 @@ $(document).ready(function(){
         }
 
     });
+    
+    $("#toggle").click(function(){
+        $(".menu-slide").toggle();
+    });
+   
+    $("#toggle-notification").click(function(){
+        $(".menu-notification").toggle();
+    });
+
 
     $('.photo-private').click(function(){
         $('.content-profile').hide();
