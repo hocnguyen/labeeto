@@ -391,6 +391,8 @@ input[type=submit]:hover{
 }
 .fancybox-skin{
     background: transparent;
+    box-shadow: none !important;
+    padding: 0px !important;
 }
 .wrapper-step {
     display: block;
