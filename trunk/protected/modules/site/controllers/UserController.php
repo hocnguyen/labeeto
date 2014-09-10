@@ -203,4 +203,14 @@ class UserController extends SiteBaseController {
         }
 
     }
+    
+    public function actionProfile_other(){
+        $this->layout = 'feed';
+        if(!Yii::app()->user->isGuest){
+            $this->render('profile_other');
+        } else {
+            $this->redirect('/');
+        }
+
+    }
 }
