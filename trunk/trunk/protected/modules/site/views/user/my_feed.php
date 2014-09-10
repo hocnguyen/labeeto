@@ -210,21 +210,6 @@
         </div>
     <?php } ?>
 </div>
-
-<script>
-$(document).ready(function(){
-   $("#toggle").click(function(){
-    $(".menu-slide").toggle();
-   });
-   
-   $("#toggle-notification").click(function(){
-        $(".menu-notification").toggle();
-        $(".clicked-notification").hide();
-   });
-
-});
-</script>
-
 <!-- Modal Report-->
 <div class="modal fade" id="ReportUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
