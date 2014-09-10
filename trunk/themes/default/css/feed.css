@@ -95,7 +95,7 @@ body {
     height: 50px;
     text-transform: uppercase;
     padding-right: 14px;
-    font: normal 12pt/normal Myriad Pro;
+    font: normal 12pt/normal Proxima Nova Semi Bold;
 }
 .search {
     background: url("../images/search.png") no-repeat right 10%;
@@ -218,7 +218,7 @@ body {
 }
 .username-nav {
     float: left;
-    color: #5dc1ea;
+    color: #c0c0c0;
     font-weight: bold;
     font-family: "Proxima Nova";
     text-transform: uppercase;
