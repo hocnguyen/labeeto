@@ -609,7 +609,7 @@ input[type=submit]:hover{
     font-size: 14px!important;
 }
 .text-ehtnicity {
-    width: 82%;
+    width: 90%;
     height: 30px;
     border: 2px;
 }
@@ -844,6 +844,16 @@ label.error-label {
     position: absolute;
     bottom: 58px;
 }
+.address-dt {
+    float: left;
+    width: 33%;
+}
+.address-drop{
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    height: 30px;
+    width: 90%;
+}
 #zipcode::-webkit-input-placeholder { font-size: 13px }
 #zipcode::-moz-placeholder{ font-size: 13px }
 @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
@@ -894,11 +904,17 @@ label.error-label {
         padding-top: 250px;
     }
 }
+@media screen and (min-width: 1900px){
+    #wrapper{
+        height: 890px;
+    }
+}
 
 .message-login-error{
     color:red;
     margin-bottom: 10px;
 }
+
 
 
 

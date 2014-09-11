@@ -5,7 +5,6 @@ $(document).ready(function(){
         'opacity': true
     });
 
-
     $('#facebook').oauthpopup({
         path: '/user/login',
         width:600,
@@ -270,6 +269,19 @@ $(document).ready(function(){
             $('.option-upload').slideToggle();
     });
 
+    $('#country').change(function(){
+        var country = $('#country').val();
+        $.get("/index/getState?country="+country,function(html){
+            $('#state').html(html);
+        });
+    });
+
+    $('#state').change(function(){
+        var state = $('#state').val();
+        $.get("/index/getCity?state="+state,function(html){
+            $('#city').html(html);
+        });
+    })
 
 
 });

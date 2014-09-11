@@ -141,12 +141,38 @@
                     </select>
                 </div>
                 <div class="address column-form">
+                    <div class="country address-dt ">
+                        <label>Country</label>
+                        <select name="country" id="country" class="address-drop country validate[required]">
+                            <option>- List of all Countries -</option>
+                            <?php
+                                $allCountries = Countries::model()->findAll();
+                                foreach( $allCountries as $country) {
+                                    echo "<option value='".$country->id."'>".$country->country_name."</option>";
+                                }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="state address-dt">
+                        <label>State</label>
+                        <select name="state" id="state" class="address-drop state validate[required]">
+                            <option>Select Country first </option>
+                        </select>
+                    </div>
+                    <div class="city address-dt">
+                        <label>City</label>
+                        <select name="city" id="city" class="address-drop city validate[required]">
+                            <option>Select State/Region first </option>
+                        </select>
+                    </div>
+                </div>
+                <!--<div class="address column-form">
                     <label>Zip Code/ Post Code</label>
                     <input type="text" placeholder="Zip code/ Post code" id="zipcode" name="zipcode" class="text-input validate[maxSize[4],minSize[4],required] "/>
                 </div>
                 <div class="error-zip">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/error-zip.png" />
-                </div>
+                    <img src="<?php /*echo Yii::app()->themeManager->baseUrl; */?>/images/error-zip.png" />
+                </div>-->
                 <div class="button-next">
                     <input type="submit" value="Next" class="btn-next btn-next-style">
                 </div>
