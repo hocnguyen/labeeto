@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" xmlns="http://www.w3.org/1999/html">
     <a href="/" id="logo">
         <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/top_logo.png" alt="Logo"/>
     </a>
@@ -27,7 +27,7 @@
             </div>
             <input type="submit" value="Log In"/>
             </form>
-            <p class="signup-text">Not a member? <a href="#">Sign Up</a></p>
+            <p class="signup-text"><?php echo Yii::t('global','Forgot Password'); ?> ? <a href="#forgot-password-fancybox" class="fancybox" ><?php echo Yii::t('global','Reset Now') ?></a></p>
         </div>
         <div id="or">
             <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/or_line.png" alt=""/>
@@ -36,6 +36,22 @@
             <a href="#">
                 <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/signin_fb.png" id="facebookPopup" alt="Sign In With Facebook"/>
             </a>
+        </div>
+    </div>
+</div>
+
+<!-- Fancybox come here -->
+<div id="forgot-password-fancybox" class="facebook-fancybox">
+    <div class="fancybox-heading fix-text-forgot">
+        Forgot Password!
+    </div>
+    <div class="inner-fancybox">
+        <div class="inner-wrapper">
+            <?php echo CHtml::form($this->createUrl('/user/loginUser'), 'post', array('class'=>'frmcontact', 'id'=>'fancybox-form')); ?>
+                <input type="text" class="username-input" placeholder="Email" name="ForgotPassword[email]"/>
+                <input type="submit" value="<?php echo Yii::t('global','Send'); ?>"/>
+            </form>
+
         </div>
     </div>
 </div>
