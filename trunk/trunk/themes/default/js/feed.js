@@ -22,8 +22,20 @@ $(document).ready(function(){
     });
 
 
-    $('.photo-private').click(function(){
+    $('#PhotoNomal').click(function(){
         $('.content-profile').hide();
+        $('.content-video').hide();
+        $('.line-green-video').hide();
         $('.content-photo').show();
+        $('.line-green-photo').show();
+        
+    });
+    
+    $('#VideosNormal').click(function(){
+        $('.content-profile').hide();
+        $('.content-photo').hide();
+        $('.line-green-photo').hide();
+        $('.content-video').show();
+        $('.line-green-video').show();
     });
 });

@@ -1542,7 +1542,7 @@ ul li.menu-nav{
     text-align: left;
     color: #ffffff;
 }
-.content-photo{}
+.content-video .title-photo,
 .content-photo .title-photo{
     overflow:hidden;
     background-color: #334551;
@@ -1552,6 +1552,7 @@ ul li.menu-nav{
     -moz-border-radius:  5px 5px 0px 0px;
     behavior: url('../pie/PIE.htc');
 }
+.content-video .title-photo h3,
 .content-photo .title-photo h3{
     width: 220px;
     float: left;
@@ -1560,12 +1561,15 @@ ul li.menu-nav{
     color: #e2d4c0;
     font: normal 12pt/normal Helvetica Neue LTPro Bd;
 }
+.content-video .title-photo h3 span,
 .content-photo .title-photo h3 span{
     color: #ffffff;
     font: normal 10pt/normal Helvetica Neue LTPro Bd;
     text-transform: initial;
+    padding-left: 5px;
 }
 .content-photo .title-photo p{float:right;}
+.content-video .title-photo p{float:right;}
 .content-photo .title-photo p a{
     border-left:1px solid #516b7c;
     border-right:1px solid #162732;
@@ -1576,6 +1580,17 @@ ul li.menu-nav{
     color: #8a9eab;
     font-family: Helvetica Neue LTPro Bd;
 }
+.content-video .title-photo p a{
+    border-left:1px solid #516b7c;
+    border-right:1px solid #162732;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding:14px 17px;
+    float:left;
+    color: #8a9eab;
+    font-family: Helvetica Neue LTPro Bd;
+}
+.content-video .title-photo p a:hover,
 .content-photo .title-photo p a:hover{
     text-decoration: none;
 }
@@ -1593,6 +1608,7 @@ ul li.menu-nav{
     width: 32%;
     margin:0 5px 5px 0;
 }
+.content-video,
 .content-photo {
     margin-top: 20px;
     position: relative;
@@ -1609,9 +1625,24 @@ ul li.menu-nav{
     border-right: 15px solid transparent;
     border-bottom: 15px solid #334551;
 }
+.content-video:after {
+    content: '';
+    position: absolute;
+    left: 475px;
+    top: -15px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #334551;
+}
 .content-photo .title-photo p a.close-icon{
-    background: url('../images/delete-icon.png') no-repeat 17px 10px;
-    padding: 42px 25px 0px 30px;
+    background: url('../images/delete-icon.png') no-repeat 10px 12px;
+    padding: 41px 18px 0px 24px;
+}
+.content-video .title-photo p a.close-icon{
+    background: url('../images/delete-icon.png') no-repeat 10px 13px;
+    padding: 25px 15px 18px 26px;
 }
 span.check-ok{
     float: right;
@@ -1649,12 +1680,66 @@ span.check-ok{
     width: 40px;
     height: 40px;
     border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    behavior: url('../pie/PIE.htc');
 }
 .request-romeo{
     position: relative;
     top: -15px;
     left: 10px;
     font: normal 16px/normal Helvetica Neue LTPro Bd;
+}
+.access-title{
+    background: url('../images/photo-icon.png') no-repeat;
+    padding: 0px 0px 0px 30px;
+    font: normal 16px/normal Helvetica Neue LTPro Bd;
+    color: #676b6d;
+}
+.post-video{
+    background-color: #f6f6f6;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#f6f6f6', endColorstr='#f6f6f6'); /* IE */
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding-top: 20px;
+}
+.post-video .content-post{
+    padding-bottom: 30px;
+}
+.video-border{
+    border-radius: 0px 0px 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    behavior: url('../pie/PIE.htc');
+}
+.post-video .title-video h2{
+    padding: 20px 20px 0px 10px;
+    font: normal 26px/normal Helvetica Neue LTPro Bd;
+    color: #886969;
+}
+.post-video .hour-post{
+    font-style: italic;
+    position: relative;
+    top: -10px;
+    left: 10px;
+    font-size: 14px;
+    color: #a39c9c;
+}
+.line-green-photo, .line-green-video{
+    background: url('../images/line-green.png') no-repeat;
+    position: relative;
+    padding: 6px 0px 0px 115px;
+    display: none;
+}
+.footer-upgarde{
+    text-align: center;
+}
+.upgarade-account{
+    background: url('../images/upgrade-account.png') no-repeat;
+    padding: 0px 0px 0px 30px;
+    font: normal 16px/normal Helvetica Neue LTPro Bd;
+    color: #676b6d;
 }
 input[type="range"] {height: 10px;border-radius: 5px;background: #420811;-webkit-appearance: none;cursor: pointer;border: 0;outline: none;padding: 0;margin: 0 0;}
 input[type="range"]::-moz-range-track {border: none;background: transparent;}
