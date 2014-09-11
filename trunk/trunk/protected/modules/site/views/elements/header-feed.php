@@ -106,8 +106,8 @@
                 <img class="arrow-nav" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/arrow_down.png" />
             </div>
             <div class="menu-profile">
-                <a href="#" class=" profile-item firt-profile"><span class="icon-profile your-profile"></span><span class="content-pro-txt">YOUR PROFILE</span></a>
-                <a href="#" class=" profile-item"><span class="icon-profile favorite"></span><span class="content-pro-txt">FAVORITE</span></a>
+                <a href="/profile" class=" profile-item firt-profile"><span class="icon-profile your-profile"></span><span class="content-pro-txt">YOUR PROFILE</span></a>
+                <a href="/profile_other" class=" profile-item"><span class="icon-profile favorite"></span><span class="content-pro-txt">PROFILE OTHER<!--FAVORITE--></span></a>
                 <a href="#" class=" profile-item"><span class="icon-profile post-an-achievement"></span><span class="content-pro-txt">POST AN ACHIEVEMENT</span></a>
                 <a href="#" class=" profile-item"><span class="icon-profile invite-friend"></span><span class="content-pro-txt">INVITE FRIEND</span></a>
                 <a href="#" class=" profile-item"><span class="icon-profile settings"></span><span class="content-pro-txt">SETTING</span></a>
