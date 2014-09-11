@@ -20,7 +20,7 @@
             <div class="menu-nav-infor">
                 <ul style="float: right;">
                     <li><a href="#" data-toggle="modal" data-target="#WantToChat"><span class="span-chat"></span>CHAT</a></li>
-                    <li><a href="#"><span class="span-message"></span>Message</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#SendaMessage"><span class="span-message"></span>Message</a></li>
                     <li><a href="#"><span class="span-favorite"></span>Favorite</a></li>
                     <li><a href="#"><span class="span-rate"></span>Rate</a></li>
                 </ul>
@@ -34,20 +34,24 @@
                 <div class="location"><span class="icon-location"></span>Metro Manila, Philipines</div>
             </div>
             <div class="img-photo-video">
-                <div class="photo-private">
+                <div class="photo-private" id="PhotoNomal">
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo.png" />
                     <h6>Photos</h6>
                     <h3>243</h3>
+                    <span class="line-green-photo"></span>
                 </div>
-                <div class="photo-private">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo.png" />
-                    <h6>Private Photo</h6>
-                    <h3>8</h3>
+                <div class="photo-private" >
+                    <a href="#" data-toggle="modal" data-target="#PrivatePhoto">
+                        <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo.png" />
+                        <h6>Private Photo</h6>
+                        <h3>8</h3>
+                    </a>
                 </div>
-                <div class="photo-private">
+                <div class="photo-private" id="VideosNormal">
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/videos.png" />
                     <h6>Videos</h6>
                     <h3>15</h3>
+                    <span class="line-green-video"></span>
                 </div>
                 
             </div>
@@ -60,7 +64,7 @@
         <div class="post" style="border: none; position: relative;" > 
             <div class="looking-for">
                 <span class="looking_img">LOOKING FOR</span>
-                <a href="#"><span class="check-ok"></span></a>
+                <!--<a href="#"><span class="check-ok"></span></a>-->
                 <p><span class="txt-gender">Gender: </span><span class="txt-female">Female</span><span class="stick-green"></span></p>
                 <p><span class="txt-gender">Relationship: </span><span class="txt-female">Casual</span><span class="stick-green"></span></p>
                 <p><span class="txt-gender">Age: </span><span class="txt-female">22-28</span></p>
@@ -161,7 +165,7 @@
     </div>
     <div class="right-profile">
     
-        <!--Video Page-->
+        <!--Photo Page-->
         <div class="content-photo" style="display: none;">
             <div class="title-photo">
                 <h3>Photos <span>(243 Photos)</span></h3>
@@ -188,6 +192,43 @@
             </ul>
         </div>
         
+        
+        <div class="content-video" style="display: none;">
+            <div class="title-photo">
+                <h3>Videos <span>(2 Videos)</span></h3>
+                <p>
+                    <a href="#" class="close-icon"></a>
+                </p>
+                
+            </div>
+            
+            <div class="post-video"> 
+                <!--<div class="title-video">
+                    <h2>This is my title</h2>
+                </div>-->
+                <div class="content-post">
+                    <h3><span class="link_3">ICEBUCKET CHALLENGE</span> <span class="link_2">#ALSawareness </span><span class="link_1">#LOL</span></h3>
+                    <span class="hour-post">1 hr</span>
+                    <iframe title="YouTube video player" class="youtube-player" type="text/html" style="padding-left: 10px; padding-bottom: 10px;"
+                    width="98%" height="390" src="http://www.youtube.com/embed/uIbkLjjlMV8"
+                    frameborder="0" allowFullScreen></iframe>
+                </div>
+            </div>
+            
+            <div class="post-video video-border"> 
+                <!--<div class="title-video">
+                    <h2>This is my title</h2>
+                </div>-->
+                <div class="content-post">
+                    <h3><span class="link_3">Workout like a pro in 3 minutes.</span></h3>
+                    <span class="hour-post">1 hr</span>
+                    <iframe title="YouTube video player" class="youtube-player" type="text/html" style="padding-left: 10px; padding-bottom: 10px;"
+                    width="98%" height="390" src="http://www.youtube.com/embed/uIbkLjjlMV8"
+                    frameborder="0" allowFullScreen></iframe>
+                </div>
+            </div>
+            
+        </div>
         <!--Home Page-->
         <div class="content-profile">
         <!--Post 1-->
@@ -314,6 +355,44 @@
         </div>
         <a type="button" class="btn btn-primary my-report">Send Chat Request</a>
       </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="PrivatePhoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content special-border">
+      <div class="modal-header header-report">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title access-title">Do you wish to access his private photos? </h4>
+        
+      </div>
+      <div class="modal-footer footer-report">
+        <div class="avatar-model">
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
+            <span class="request-romeo">Romeo</span>
+        </div>
+        <a type="button" class="btn btn-primary my-report">Ask for permission</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="SendaMessage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+          <div class="modal-header header-report special-border">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <span class="span-to">To</span> <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
+            <span class="user-kaka">Ricky Martin</span>
+          </div>
+          <div class="">
+            <textarea class="form-control" rows="4" cols="50" placeholder="Write a message"></textarea>
+          </div>
+          <div class="modal-footer footer-report">
+            <a type="button" class="btn btn-primary my-report">Send</a>
+          </div>
     </div>
   </div>
 </div>
