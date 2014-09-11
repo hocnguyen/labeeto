@@ -48,9 +48,11 @@
                     <h3>8</h3>
                 </div>
                 <div class="photo-private">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/videos.png" />
-                    <h6>Videos</h6>
-                    <h3>15</h3>
+                    <a href="#" data-toggle="modal" data-target="#PrivateVideo">
+                        <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/videos.png" />
+                        <h6>Videos</h6>
+                        <h3>15</h3>
+                    </a>
                 </div>
                 
             </div>
@@ -339,4 +341,21 @@
     <?php } ?>
 </div>
 
+
+<div class="modal fade" id="PrivateVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content special-border">
+      <div class="modal-header header-report">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title upgarade-account">
+        <span style="text-transform: uppercase;">UPGRADE YOUR ACCOUNT</span> <span>to be able to upload videos and</span> <span style="color: #ff6476;"><a href="#">more!</a></span>
+         </h4>
+        
+      </div>
+      <div class="modal-footer footer-report footer-upgarde">
+        <a type="button" class="btn btn-primary my-report">Upgrade Account</a>
+      </div>
+    </div>
+  </div>
+</div>
 
