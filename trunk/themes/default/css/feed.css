@@ -65,6 +65,10 @@
 body {
     background: url('../images/bg-feed.png');
 }
+.modal-open{
+    overflow: hidden;
+    clear: both;
+}
 #wrapper{overflow: hidden;}
 .head-feed {
     height: 50px;
