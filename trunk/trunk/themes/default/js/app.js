@@ -18,8 +18,9 @@ $(document).ready(function(){
     });
 
     $('.btn-next').click(function(){
+        var name_exists = document.getElementById("username-exists").value;
         var username = $('#username-step2').val();
-        var zipcode = $('#zipcode').val();
+        var address = $('#address').val();
         var days = document.getElementById("day");
         var day = days.options[days.selectedIndex].value;
         var months = document.getElementById("month");
@@ -34,37 +35,24 @@ $(document).ready(function(){
         var relation = relations.options[relations.selectedIndex].value;
         var ehtnicity = $('#ehtnicity').val();
         var gender = $( "input:radio[name=gender]:checked" ).val();
-        var validate = checkValidate(username,zipcode,day,month,year,ehtnicity,feet,inche);
+        var validate = checkValidate(name_exists,username,address,day,month,year,ehtnicity,feet,inche);
         if(validate ==0){
-            $.ajax({
-                url: "http://maps.googleapis.com/maps/api/geocode/json",
-                cache: false,
-                dataType: "jsonp",
-                type: "GET",
-                data: "address=" + zipcode,
-                success: function(result, success) {
-                    if(result['status'] =="OK"){
-                        $.session.set('address', result['results'][0]['formatted_address']);
-                        $.session.set('latitude', result['results'][0]['geometry']['location']['lat']);
-                        $.session.set('longtitude', result['results'][0]['geometry']['location']['lng']);
-                        $.session.set('username', username);
-                        $.session.set('zipcode', zipcode);
-                        $.session.set('birthday', year+"/"+month+"/"+day);
-                        $.session.set('ehtnicity', ehtnicity);
-                        $.session.set('height', feet+'.'+inche);
-                        $.session.set('gender', gender);
-                        $.session.set('relations', relation);
-                        setValueStep2();
-                        $('.step-1').hide();
-                        $('.step-2').show();
-                    } else {
-                        $(".error-zip").show('slider');
-                    }
+           /* $.get('user/checkUser?name='+username+'&email='+ $.session.get('email'),function(html){
+                if(html ==0){
 
+                } else {
+                    alert('Username or email exists, Please try again with other name!');
                 }
-
-            });
-
+            });*/
+            $.session.set('username', username);
+            $.session.set('birthday', year+"/"+month+"/"+day);
+            $.session.set('ehtnicity', ehtnicity);
+            $.session.set('height', feet+'.'+inche);
+            $.session.set('gender', gender);
+            $.session.set('relations', relation);
+            setValueStep2();
+            $('.step-1').hide();
+            $('.step-2').show();
             return false;
         }
     });
@@ -91,10 +79,9 @@ $(document).ready(function(){
             variableGet+="height="+ $.session.get('height')+"&";
             variableGet+="gender="+ $.session.get('gender')+"&";
             variableGet+="ehtnicity="+ $.session.get('ehtnicity')+"&";
-            variableGet+="zipcode="+ $.session.get('zipcode')+"&";
             variableGet+="address="+ $.session.get('address')+"&";
             variableGet+="latitude="+ $.session.get('latitude')+"&";
-            variableGet+="longtitude="+ $.session.get('longtitude')+"&";
+            variableGet+="longtitude="+ $.session.get('longitude')+"&";
             variableGet+="relations="+ $.session.get('relations')+"&";
             variableGet+="career="+career+"&";
             variableGet+="education="+education+"&";
@@ -137,30 +124,10 @@ $(document).ready(function(){
         var username = $("#username").val();
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
-         var result = checkValidateSignUp(username,email,password);
-         if(result ==0){
-             /*$.get('/members/checkUser?name='+username,function(data){
-                 if(data ==0){
-                     showMessageError(5);
-                 } else {
-                     $(".registrations").fancybox({
-                         'padding': 0,
-                         'opacity': true,
-                         'closeBtn'	: false,
-                         'closeClick'	: false,
-                         'width'		: 850,
-                         'height'		: 480,
-                         'autoSize'	: false,
-                         helpers : {
-                             overlay : {closeClick: false}
-                         }
-                     });
-                     $.session.set('username', username);
-                     $.session.set('email', email);
-                     $.session.set('password', password);
-                     $('#username-step2').val(username);
-                 }
-             })*/
+        var email_exists =document.getElementById("email-exists").value;
+        var name_exists = document.getElementById("username-exists").value;
+         var result = checkValidateSignUp(username,email,password,email_exists,name_exists);
+        if(result ==0){
              $(".registrations").fancybox({
                  'padding': 0,
                  'opacity': true,
@@ -177,17 +144,20 @@ $(document).ready(function(){
              $.session.set('email', email);
              $.session.set('password', password);
              $('#username-step2').val(username);
-
          }
     });
 
-    function checkValidate(username,zipcode,day,month,year,ehtnicity,feet,inche){
+    function checkValidate(name_exists,username,address,day,month,year,ehtnicity,feet,inche){
         var check =0;
+        if(name_exists ==1){
+            check=10;// Username not empty
+            return check;
+        }
         if(username ==''){
             check=1;// Username not empty
             return check;
         }
-        if(zipcode ==''){
+        if(address==''){
             check=6;// Address not empty
             return check;
         }
@@ -206,7 +176,7 @@ $(document).ready(function(){
         return check;
 
     }
-    function checkValidateSignUp(username, email, password){
+    function checkValidateSignUp(username, email, password,email_exists,name_exists){
         var check =0;
         if((/\s/g.test(username) == true) || (username == '')){
             check=1; // username incorrect
@@ -223,6 +193,14 @@ $(document).ready(function(){
             return check;
         }else if(password.length <=6) {
             check = 4 ;// Password must have maximum 6 character.
+            return check;
+        }
+        if (email_exists ==1) {
+            check = 5 ;// Email exists.
+            return check;
+        }
+        if (name_exists ==1) {
+            check = 6 ;// Username exists.
             return check;
         }
         return check;
@@ -242,7 +220,7 @@ $(document).ready(function(){
         }else if(error ==5) {
             $('.error').html('This username or email used to before, Please check again!');
         }else if(error ==6) {
-            $('.error').html('Address not empty!');
+            $('.error').html('Please choose address !');
         }else if(error ==7) {
             $('.error').html('Birthday not empty!');
         }else if(error ==8) {
@@ -261,10 +239,13 @@ $(document).ready(function(){
         $('.detail-temp-info').html(html);
 
     }
+
     /*function checkValidate(firstname,lastname,address,birthday,ehtnicity,feet,inches,gender){
         if(firstname =='' || lastname =='' || address =='' || birthday)
 
     }*/
+
+
     $('.profile-picture').click(function(){
             $('.option-upload').slideToggle();
     });

@@ -816,13 +816,19 @@ label.error-label {
 .fix-range {
     float: left;
     width: 100%;
+    height:35px;
 }
 .relationship {
     height: 51px;
 }
-
+#excrise,#smoke,#drink {
+    width:150px
+}
 #relations{
     height: 34px;
+}
+.post-a-day {
+    text-decoration: none;
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
@@ -853,6 +859,13 @@ label.error-label {
     border-radius: 2px;
     height: 30px;
     width: 90%;
+}
+.pac-container {
+    z-index: 999999!important;
+}
+.pac-container:after {  /* Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown */
+    background-image: none !important;
+    height: 0px;
 }
 #zipcode::-webkit-input-placeholder { font-size: 13px }
 #zipcode::-moz-placeholder{ font-size: 13px }

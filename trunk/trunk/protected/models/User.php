@@ -74,6 +74,7 @@ class User extends CActiveRecord
 			array('zipcode', 'length', 'max'=>5),
 			array('latitude, longtitude', 'length', 'max'=>50),
 			array('birthday, last_logged', 'safe'),
+            array('email', 'uniqueEmail'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, username, gender, career, email, password, joined, role, ehtnicity, fname, lname, birthday, photo, address, education, religion, height, excercise, passion, goal, smoke, relations, zipcode, latitude, longtitude, drink, status, last_logged', 'safe', 'on'=>'search'),
@@ -176,5 +177,10 @@ class User extends CActiveRecord
     public function hashPassword( $password )
     {
         return md5(sha1($password));
+    }
+    public function uniqueEmail($attribute, $params)
+    {
+        if($user = User::model()->exists('email=:email',array('email'=>$this->email)))
+            $this->addError($attribute, 'Email already exists!');
     }
 }

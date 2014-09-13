@@ -166,7 +166,6 @@ class UserController extends SiteBaseController {
         $model->smoke = $_GET['smoke'];
         $model->drink = $_GET['drink'];
         $model->relations = $_GET['relations'];
-        $model->zipcode = $_GET['zipcode'];
         $model->latitude = $_GET['latitude'];
         $model->longtitude = $_GET['longtitude'];
         if($model->save()){
@@ -179,17 +178,35 @@ class UserController extends SiteBaseController {
         }
     }
 
-    public function actionCheckUser(){
+    public function actionCheckEmail(){
         $this->layout = '';
         $record = User::model()->findByAttributes(array(),array(
-            'condition'=>'username=:name OR email=:name ',
-            'params'=>array('name'=>$_GET['name']),
+            'condition'=>'email=:email ',
+            'params'=>array('email'=>$_GET['email']),
 
         ));
         if($record===null){
-            echo 1;
+            $arrayToJs = true;
+            echo json_encode($arrayToJs);
         }else {
-            echo 0;
+            $arrayToJs = false;          // found user with that name
+            echo json_encode($arrayToJs);
+        }
+
+    }
+    public function actionCheckUser(){
+        $this->layout = '';
+        $record = User::model()->findByAttributes(array(),array(
+            'condition'=>'username=:username ',
+            'params'=>array('username'=>$_GET['username']),
+
+        ));
+        if($record===null){
+            $arrayToJs = true;
+            echo json_encode($arrayToJs);
+        }else {
+            $arrayToJs = false;          // found user with that name
+            echo json_encode($arrayToJs);
         }
 
     }

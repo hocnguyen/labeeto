@@ -4,18 +4,19 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
     'id'=>'signup-form',
 
-    'enableAjaxValidation'=>false,
+    'enableAjaxValidation'=>true,
 )); ?>
 <div id="signup-form" >
 <div class="form-wrapper" id="sign-up">
     <!--<div class="error"></div>-->
-    <input type="text" name="SignUp[username]" id="username" class="username-input validate[required,custom[space]] "  placeholder="Username"/>
-    <input type="text" name="SignUp[email]" id="email" class="email-input validate[required,custom[email]" placeholder="Email"/>
+    <input type="text" name="SignUp[username]" id="username" class="username-input validate[required,custom[space],funcCall[checkUsernameExists]] "  placeholder="Username"/>
+    <input type="text" name="SignUp[email]" id="email" class="email-input validate[required,custom[email,funcCall[checkEmailExists]]" placeholder="Email"/>
     <input type="password"  name="SignUp[password]" id="password" class="password-input validate[required]" placeholder="Password"/>
     <a href="#registration" class="registrations">
         <input type="submit" value="Sign Up" class="signup-home"/>
     </a>
-
+    <div class="email-exists"><input type="hidden" value="0" id="email-exists"/></div>
+    <div class="username-exists"><input type="hidden" value="0" id="username-exists"/></div>
 </div>
 </div>
 <?php $this->endWidget(); ?>
@@ -76,7 +77,7 @@
             <div class="wrapper-form">
                 <div class="username column-form">
                     <label>Username</label>
-                    <input type="text" id="username-step2" name="username-step2" class="text-input validate[required]"/>
+                    <input type="text" id="username-step2" name="username-step2" class="text-input validate[required],funcCall[checkUsernameExists]"/>
                 </div>
                 <div class="relationship column-form">
                     <label>Relation Status</label>
@@ -136,43 +137,25 @@
                 <div class="ethnicity column-form">
                     <label>Ethnicity</label>
                     <select name="ehtnicity" id="ehtnicity" class="text-ehtnicity validate[required]">
-                        <option>Pre-Fill</option>
-                        <option>Pre-Fill</option>
+                        <option value="">Select your ethnicity</option>
+                        <option value="1">Asian</option>
+                        <option value="2">Black</option>
+                        <option value="3">Indian</option>
+                        <option value="4">Hispanic/Latin</option>
+                        <option value="5">Middle Eastern</option>
+                        <option value="6">Native American</option>
+                        <option value="7">Pacific Islander</option>
+                        <option value="8">White</option>
+                        <option value="9">Other</option>
                     </select>
                 </div>
+
                 <div class="address column-form">
-                    <div class="country address-dt ">
-                        <label>Country</label>
-                        <select name="country" id="country" class="address-drop country validate[required]">
-                            <option>- List of all Countries -</option>
-                            <?php
-                                $allCountries = Countries::model()->findAll();
-                                foreach( $allCountries as $country) {
-                                    echo "<option value='".$country->id."'>".$country->country_name."</option>";
-                                }
-                            ?>
-                        </select>
-                    </div>
-                    <div class="state address-dt">
-                        <label>State</label>
-                        <select name="state" id="state" class="address-drop state validate[required]">
-                            <option>Select Country first </option>
-                        </select>
-                    </div>
-                    <div class="city address-dt">
-                        <label>City</label>
-                        <select name="city" id="city" class="address-drop city validate[required]">
-                            <option>Select State/Region first </option>
-                        </select>
-                    </div>
+                    <label>Address</label>
+                    <input id="address" class="controls text-input validate[required]" type="text"  placeholder="Enter a location">
+                    <div id="maps-test"></div>
                 </div>
-                <!--<div class="address column-form">
-                    <label>Zip Code/ Post Code</label>
-                    <input type="text" placeholder="Zip code/ Post code" id="zipcode" name="zipcode" class="text-input validate[maxSize[4],minSize[4],required] "/>
-                </div>
-                <div class="error-zip">
-                    <img src="<?php /*echo Yii::app()->themeManager->baseUrl; */?>/images/error-zip.png" />
-                </div>-->
+
                 <div class="button-next">
                     <input type="submit" value="Next" class="btn-next btn-next-style">
                 </div>
@@ -237,7 +220,7 @@
                     <!--<input name="excercise" id="excercise" class="text-input">-->
                     <div class="fix-range">
                         <label style="margin-right: 20px;">Never</label>
-                        <input type=range min=0 max=100 value=50 id="excrise" step=20 list=volsettings>
+                        <input data-type="range" type=range min=0 max=100 value=50 id="excrise" step=20 list=volsettings>
 
                         <datalist id=volsettings>
                             <option>0</option>
@@ -253,8 +236,17 @@
                 <div class="education column-form">
                     <label>Education</label>
                     <select name="education" id="education" class="text-input" style="height: 34px;">
-                        <option>Pre-Fill</option>
-                        <option>Pre-Fill</option>
+                        <option value="">Select your education</option>
+                        <option value="1">High School</option>
+                        <option value="10">Some College</option>
+                        <option value="2">2 Year College</option>
+                        <option value="3">College</option>
+                        <option value="4">Masters</option>
+                        <option value="5">MFA</option>
+                        <option selected="selected" value="6">Law School</option>
+                        <option value="7">Medical School</option>
+                        <option value="8">Business School</option>
+                        <option value="9">PhD</option>
                     </select>
                 </div>
                 <div class="religion column-form">
@@ -366,6 +358,7 @@
 </div>
 <script type="text/javascript">
     $(document).ready(function(){
+        $('input[data-type="range"]');
         <?php  if(isset($_SESSION['User'])) { ?>
             window.location.assign("/my_feed");
         <?php }?>
@@ -376,6 +369,55 @@
         $('#login-btn').click(function(){
             $('.message-login-error').hide();
         });
-    });
 
+    });
+    function checkEmailExists(field, rules, i, options){
+        var url = "/user/checkEmail";
+        var data = field.attr("id") + "=" + field.val();
+        var msg = undefined;
+        $.ajax({
+            type: "GET",
+            url: url,
+            cache: false,
+            dataType: "json",
+            data: data,
+            async: false,
+            success: function(json) {
+                if(json===false) {
+                    msg = "This email is available ";
+                }
+            }
+        });
+        if(msg != undefined) {
+            $('#email-exists').val('1');
+            return msg;
+        } else {
+            $('#email-exists').val('0');
+        }
+    }
+
+    function checkUsernameExists(field, rules, i, options){
+        var url = "/user/checkUser";
+        var data = "username=" + field.val();
+        var msg = undefined;
+        $.ajax({
+            type: "GET",
+            url: url,
+            cache: false,
+            dataType: "json",
+            data: data,
+            async: false,
+            success: function(json) {
+                if(json===false) {
+                    msg = "This username is available ";
+                }
+            }
+        });
+        if(msg != undefined) {
+            $('#username-exists').val('1');
+            return msg;
+        } else {
+            $('#username-exists').val('0');
+        }
+    }
 </script>
