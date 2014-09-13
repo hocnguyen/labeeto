@@ -220,7 +220,7 @@
                     <!--<input name="excercise" id="excercise" class="text-input">-->
                     <div class="fix-range">
                         <label style="margin-right: 20px;">Never</label>
-                        <input  type=range min=0 max=100  class="input-range " value=50 id="excrise" step=20 list=volsettings>
+                        <input type="range" value="20" max="100" class="input-range" />
 
                         <datalist id=volsettings>
                             <option>0</option>
@@ -267,7 +267,7 @@
                     <label>Do you smoke?</label>
                     <div class="fix-range">
                         <label style="margin-right: 20px;">Never</label>
-                        <input type=range min=0 max=100 value=50 id="smoke" step=20 list=volsettings>
+                        <input type="range" value="20" max="100" class="input-range" />
 
                         <datalist id=volsettings>
                             <option>0</option>
@@ -284,7 +284,7 @@
                     <label>Do you drink?</label>
                     <div class="fix-range">
                         <label style="margin-right: 20px;">Never</label>
-                        <input type=range min=0 max=100 value=50 id="drink" step=20 list=volsettings>
+                        <input type="range" value="20" max="100" class="input-range" />
                         <datalist id=volsettings>
                             <option>0</option>
                             <option>20</option>
