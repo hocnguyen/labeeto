@@ -2,6 +2,7 @@
 (function($){
     $.fn.validationEngineLanguage = function(){
     };
+
     $.validationEngineLanguage = {
         newLang: function(){
             $.validationEngineLanguage.allRules = {
@@ -149,7 +150,7 @@
                     "alertTextLoad": "* Validating, please wait"
                 },
 				"ajaxUserCallPhp": {
-                    "url": "phpajax/ajaxValidateFieldUser.php",
+                    "url": "user/checkUser",
                     // you may want to pass extra data on the ajax call
                     "extraData": "name=eric",
                     // if you provide an "alertTextOk", it will show as a green prompt when the field validates

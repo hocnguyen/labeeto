@@ -22,7 +22,7 @@
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery.placeholder.js"></script>
 
 </head>
-<body >
+<body>
 <div id="wrapper">
     <header class="clearfix ">
         <?php $this->renderPartial('../elements/header-feed'); ?>
