@@ -183,4 +183,22 @@ class User extends CActiveRecord
         if($user = User::model()->exists('email=:email',array('email'=>$this->email)))
             $this->addError($attribute, 'Email already exists!');
     }
+    
+    public function generatePassword($minLength=5, $maxLength=10)
+    {
+        $length=rand($minLength,$maxLength);
+
+        $letters='bcdfghjklmnpqrstvwxyz';
+        $vowels='aeiou';
+        $code='';
+        for($i=0;$i<$length;++$i)
+        {
+            if($i%2 && rand(0,10)>2 || !($i%2) && rand(0,10)>9)
+                $code.=$vowels[rand(0,4)];
+            else
+                $code.=$letters[rand(0,20)];
+        }
+
+        return $code;
+    }
 }
