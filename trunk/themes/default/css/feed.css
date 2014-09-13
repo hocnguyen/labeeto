@@ -1394,6 +1394,7 @@ span.my-btn button{
     /*border-image: url('../images/line-green.png') 0 0 27 0 stretch stretch;*/
 }
 .photo-private span.line-green-photo,
+.photo-private span.line-green-photo-pravite,
 .photo-private span.line-green-video {
     display: none;
     position: absolute;
@@ -1558,6 +1559,7 @@ ul li.menu-nav{
     text-align: left;
     color: #ffffff;
 }
+.content-photo-private .title-photo,
 .content-video .title-photo,
 .content-photo .title-photo{
     overflow:hidden;
@@ -1568,6 +1570,7 @@ ul li.menu-nav{
     -moz-border-radius:  5px 5px 0px 0px;
     behavior: url('../pie/PIE.htc');
 }
+.content-photo-private .title-photo h3,
 .content-video .title-photo h3,
 .content-photo .title-photo h3{
     width: 220px;
@@ -1577,6 +1580,7 @@ ul li.menu-nav{
     color: #e2d4c0;
     font: normal 12pt/normal Helvetica Neue LTPro Bd;
 }
+.content-photo-private .title-photo h3 span,
 .content-video .title-photo h3 span,
 .content-photo .title-photo h3 span{
     color: #ffffff;
@@ -1584,8 +1588,14 @@ ul li.menu-nav{
     text-transform: initial;
     padding-left: 5px;
 }
-.content-photo .title-photo p{float:right;}
-.content-video .title-photo p{float:right;}
+
+.content-photo .title-photo p,
+.content-photo-private .title-photo p,
+.content-video .title-photo p{
+    float:right;
+}
+.content-photo-private .title-photo p a,
+.content-video .title-photo p a,
 .content-photo .title-photo p a{
     border-left:1px solid #516b7c;
     border-right:1px solid #162732;
@@ -1596,20 +1606,12 @@ ul li.menu-nav{
     color: #8a9eab;
     font-family: Helvetica Neue LTPro Bd;
 }
-.content-video .title-photo p a{
-    border-left:1px solid #516b7c;
-    border-right:1px solid #162732;
-    text-transform: uppercase;
-    font-size: 14px;
-    padding:14px 17px;
-    float:left;
-    color: #8a9eab;
-    font-family: Helvetica Neue LTPro Bd;
-}
+.content-photo-private .title-photo p a:hover,
 .content-video .title-photo p a:hover,
 .content-photo .title-photo p a:hover{
     text-decoration: none;
 }
+.content-photo-private ul,
 .content-photo ul{
     overflow: hidden;
     border: 1px solid #dddddd;
@@ -1619,11 +1621,13 @@ ul li.menu-nav{
     behavior: url('../pie/PIE.htc');
     padding: 8px 0px 5px 12px;
 }
+.content-photo-private ul li,
 .content-photo ul li {
     float: left;
     width: 32%;
     margin:0 5px 5px 0;
 }
+.content-photo-private,
 .content-video,
 .content-photo {
     margin-top: 20px;
@@ -1634,6 +1638,17 @@ ul li.menu-nav{
     content: '';
     position: absolute;
     left: 260px;
+    top: -15px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #334551;
+}
+.content-photo-private:after {
+    content: '';
+    position: absolute;
+    left: 365px;
     top: -15px;
     width: 0;
     height: 0;
@@ -1652,6 +1667,7 @@ ul li.menu-nav{
     border-right: 15px solid transparent;
     border-bottom: 15px solid #334551;
 }
+.content-photo-private .title-photo p a.close-icon,
 .content-photo .title-photo p a.close-icon{
     background: url('../images/delete-icon.png') no-repeat 10px 12px;
     padding: 41px 18px 0px 24px;
