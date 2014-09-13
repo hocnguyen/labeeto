@@ -24,10 +24,11 @@ $(document).ready(function(){
 
 
     $('#PhotoNomal').click(function(){
-        console.log('HHHHH');
         $('.content-profile').hide();
         $('.content-video').hide();
         $('.line-green-video').hide();
+        $('.line-green-photo-pravite').hide();
+        $('.content-photo-private').hide();
         $('.content-photo').show();
         $('.line-green-photo').css('display','block');
         
@@ -39,5 +40,14 @@ $(document).ready(function(){
         $('.line-green-photo').hide();
         $('.content-video').show();
         $('.line-green-video').css('display','block');
+    });
+    
+    $('#PhotoPrivate').click(function(){
+        $('.content-profile').hide();
+        $('.content-photo').hide();
+        $('.line-green-photo').hide();
+        $('.content-photo-private').show();
+        $('.line-green-photo-pravite').css('display','block');
+        
     });
 });
