@@ -19,15 +19,17 @@ $(document).ready(function(){
    
     $("#toggle-notification").click(function(){
         $(".menu-notification").toggle();
+        $(".clicked-notification").hide();
     });
 
 
     $('#PhotoNomal').click(function(){
+        console.log('HHHHH');
         $('.content-profile').hide();
         $('.content-video').hide();
         $('.line-green-video').hide();
         $('.content-photo').show();
-        $('.line-green-photo').show();
+        $('.line-green-photo').css('display','block');
         
     });
     
@@ -36,6 +38,6 @@ $(document).ready(function(){
         $('.content-photo').hide();
         $('.line-green-photo').hide();
         $('.content-video').show();
-        $('.line-green-video').show();
+        $('.line-green-video').css('display','block');
     });
 });

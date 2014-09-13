@@ -65,6 +65,9 @@
 body {
     background: url('../images/bg-feed.png');
 }
+a{
+    outline: none;
+}
 .modal-open{
     overflow: hidden;
     clear: both;
@@ -1388,6 +1391,16 @@ span.my-btn button{
     height: 113px;
     position: relative;
     cursor: pointer;
+    /*border-image: url('../images/line-green.png') 0 0 27 0 stretch stretch;*/
+}
+.photo-private span.line-green-photo,
+.photo-private span.line-green-video {
+    display: none;
+    position: absolute;
+    height: 5px;
+    bottom: -1px;
+    width: 100%;
+    background-image: url('../images/line-green.png');
 }
 .photo-private img{
     width: 100%;
@@ -1729,12 +1742,12 @@ span.check-ok{
     font-size: 14px;
     color: #a39c9c;
 }
-.line-green-photo, .line-green-video{
+ /*.line-green-photo, .line-green-video{
     background: url('../images/line-green.png') no-repeat;
     position: relative;
     padding: 5px 0px 0px 114px;
     display: none;
-}
+}*/
 .footer-upgarde{
     text-align: center;
 }
