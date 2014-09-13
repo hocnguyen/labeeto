@@ -37,15 +37,17 @@
                 <div class="location"><span class="icon-location"></span>Metro Manila, Philipines</div>
             </div>
             <div class="img-photo-video">
-                <div class="photo-private">
+                <div class="photo-private"  id="PhotoNomal">
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo.png" />
                     <h6>Photos</h6>
                     <h3>243</h3>
+                    <span class="line-green-photo"></span>
                 </div>
-                <div class="photo-private">
+                <div class="photo-private" id="PhotoPrivate">
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo.png" />
                     <h6>Private Photo</h6>
                     <h3>8</h3>
+                    <span class="line-green-photo-pravite"></span>
                 </div>
                 <div class="photo-private">
                     <a href="#" data-toggle="modal" data-target="#PrivateVideo">
@@ -200,7 +202,35 @@
     </div>
     <div class="right-profile">
     
-        <!--Video Page-->
+        <!--Photo Pravite Page-->
+        <div class="content-photo-private" style="display: none;">
+            <div class="title-photo">
+                <h3>Photos <span>(243 Photos)</span></h3>
+                <p>
+                    <a href="#">Upload</a>
+                    <a href="#">delete</a>
+                    <a href="#" class="close-icon"></a>
+                </p>
+                
+            </div>
+            <ul>
+                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_6.png"></a></li>
+                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_5.png"></a></li>
+                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_4.png"></a></li>
+                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_3.png"></a></li>
+                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_2.png"></a></li>
+                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_1.png"></a></li>
+                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_1.png"></a></li>
+                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_2.png"></a></li>
+                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_3.png"></a></li>
+                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_4.png"></a></li>
+                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_5.png"></a></li>
+                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_6.png"></a></li>
+            </ul>
+        </div>
+        <!--End Photo Pravite Page-->
+        
+        <!--Photo Page-->
         <div class="content-photo" style="display: none;">
             <div class="title-photo">
                 <h3>Photos <span>(243 Photos)</span></h3>
@@ -226,6 +256,8 @@
                 <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_6.png"></a></li>
             </ul>
         </div>
+        
+        <!--End Photo Page-->
         
         <!--Home Page-->
         <div class="content-profile">
