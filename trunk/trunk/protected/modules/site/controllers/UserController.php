@@ -96,9 +96,9 @@ class UserController extends SiteBaseController {
     }
 
     public function actionLostPassword (){
-        $model =  new User();
-        if(isset($_POST['User'])){
-            $email=$_POST['User']['email'];
+        $model =  new LostPasswordForm;
+        if(isset($_POST['LostPasswordForm'])){
+            $email=$_POST['LostPasswordForm']['email'];
             $member = User::model()->findByAttributes(array('email' => $email));
             if($member){
                 $password = $member->generatePassword(5, 10);
