@@ -44,4 +44,4 @@ CKEDITOR.dialog.add("inserthtml",function(e){
 				}]
 			}
 		]
-	};});
+	};});

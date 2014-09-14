@@ -3,12 +3,20 @@ Yii::import('zii.widgets.CMenu');
 
 class NBADMenu extends CMenu
 {
-	protected function renderMenuRecursive($items)
+	protected function renderMenuRecursive($items,$sub=false)
 	{
-		$count=0;
-		$n=count($items);
+		error_reporting(0);
+        $count=0;
+		if($sub==false)
+			echo '<li class="collapseMenu"><a href="#"><i class="icon-double-angle-left"></i>hide menu<i class="icon-double-angle-right deCollapse"></i></a></li>
+			<li class="divider-vertical firstDivider"></li>';
+
 		foreach($items as $item)
 		{
+			$countSub=0;
+			if(isset($item['items']) && count($item['items']))
+				$countSub =count($item['items']);
+
 			$count++;
 			$options=isset($item['itemOptions']) ? $item['itemOptions'] : array();
 			$class=array();
@@ -25,24 +33,32 @@ class NBADMenu extends CMenu
 				else
 					$options['class'].=' '.implode(' ',$class);
 			}
+
 			echo CHtml::openTag('li', $options);
 			
+			$itemlabel = '' ;
+			if($sub==false){
+				$itemlabel = '<i';
+				if(isset($item['icon'])) $itemlabel .= ' class="' . $item['icon'] . '"';
+				$itemlabel .= '></i>';
+			}				
+			$itemlabel .= ' '.$item['label'] ;
+
 			if(isset($item['url']))
 			{
-				
-				//@Minh:
-				$itemlabel = '<span';
-				if(isset($item['icon'])) $itemlabel .= ' class="' . $item['icon'] . '"';
-				$itemlabel .= '></span>';
-				$itemlabel .= '<span class="text">' . $item['label'] . '</span>';
-				
+				//@Minh:				
 				$label=$this->linkLabelWrapper===null ? $itemlabel : '<'.$this->linkLabelWrapper.'>'.$itemlabel.'</'.$this->linkLabelWrapper.'>';
-				
-				
 				$menu=CHtml::link($label,$item['url'],isset($item['linkOptions']) ? $item['linkOptions'] : array());
 			}
-			else
-				$menu=CHtml::tag('a',isset($item['linkOptions']) ? $item['linkOptions'] : array(), $item['label']);
+			else{
+
+				if($countSub>0 && $sub==false)
+					$itemlabel .= '<span class="label label-pressed">'.$countSub.'</span>';
+				
+				$label=$this->linkLabelWrapper===null ? $itemlabel : '<'.$this->linkLabelWrapper.'>'.$itemlabel.'</'.$this->linkLabelWrapper.'>';
+				$menu=CHtml::link($label,'#',array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'));
+
+			}
 			
 			if(isset($this->itemTemplate) || isset($item['template']))
 			{
@@ -54,11 +70,16 @@ class NBADMenu extends CMenu
 			
 			if(isset($item['items']) && count($item['items']))
 			{
+				$this->submenuHtmlOptions['class'] = 'dropdown-menu';
 				echo "\n".CHtml::openTag('ul',$this->submenuHtmlOptions)."\n";
-				$this->renderMenuRecursive($item['items']);
+				$this->renderMenuRecursive($item['items'],true);
 				echo CHtml::closeTag('ul')."\n";
 			}
 			echo CHtml::closeTag('li')."\n";
+			if($sub==false){
+				echo "\n".CHtml::openTag('li',array('class'=>'divider-vertical'))."\n";
+				echo CHtml::closeTag('li')."\n";
+			}
 		}
 	}
 	
