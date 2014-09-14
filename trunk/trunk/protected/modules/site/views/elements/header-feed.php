@@ -1,6 +1,6 @@
 <div class="head-feed">
     <div class="content-head">
-        <a href="#" id="logo">
+        <a href="/my_feed" id="logo">
             <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/logo-feed.png" alt="Logo"/>
         </a>
         <div class="menu-nav">

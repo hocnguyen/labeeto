@@ -75,7 +75,7 @@
                 <div class="profile">
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
                     <div class="crycle-img">
-                        <h2>Robyn Rihanna Fenty <span class="time-location">18 F, CA,</span> <span class="dot-icon"> 2 hr</span></h2>
+                        <h2><a href="/profile_other">Robyn Rihanna Fenty</a><span class="time-location">18 F, CA,</span> <span class="dot-icon"> 2 hr</span></h2>
                         <a class="message" data-toggle="modal" data-target="#SendaMessage">Send a Message</a>
                         <a class="report-user" data-toggle="modal" data-target="#ReportUser">Report User</a>
                     </div>
@@ -85,7 +85,7 @@
             <div class="content-post">
                 <h3><span class="link_3">ICEBUCKET CHALLENGE</span> <span class="link_2">#ALSawareness </span><span class="link_1">#LOL</span></h3>
                 <iframe title="YouTube video player" class="youtube-player" type="text/html" style="padding-left: 10px; padding-bottom: 10px;"
-                width="98%" height="390" src="http://www.youtube.com/embed/uIbkLjjlMV8"
+                width="98%" height="340" src="http://www.youtube.com/embed/uIbkLjjlMV8"
                 frameborder="0" allowFullScreen></iframe>
             </div>
         </div>
@@ -98,7 +98,7 @@
                 <div class="profile">
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_3.png">
                     <div class="crycle-img">
-                        <h2>Robyn Rihanna Fenty <span class="time-location">18 F, CA,</span> <span class="dot-icon"> 2 hr</span></h2>
+                        <h2><a href="/profile_other">Robyn Rihanna Fenty</a> <span class="time-location">18 F, CA,</span> <span class="dot-icon"> 2 hr</span></h2>
                         <a class="message" data-toggle="modal" data-target="#SendaMessage">Send a Message</a>
                         <a class="report-user" data-toggle="modal" data-target="#ReportUser">Report User</a>
                     </div>
@@ -109,7 +109,7 @@
                 <h3><span class="link_3">yumMmm</span> <span class="link_2">#burger #7200cal</span><span class="link_1"> #LOL </span><span class="link_2">#depressed 
 
 </span></h3>
-                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/break.png">
+                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/break.png" style="height: 300px;">
             </div>
         </div>
         <!--End Post 2 -->
@@ -119,7 +119,7 @@
                 <div class="profile">
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_2.png">
                     <div class="crycle-img">
-                        <h2>William Leonard Roberts<span class="time-location">33 M, NY,</span> <span class="dot-icon">Yesterday</span></h2>
+                        <h2><a href="/profile_other">William Leonard Roberts</a><span class="time-location">33 M, NY,</span> <span class="dot-icon">Yesterday</span></h2>
                         <a class="message" data-toggle="modal" data-target="#SendaMessage">Send a Message</a>
                         <a class="report-user" data-toggle="modal" data-target="#ReportUser">Report User</a>
                     </div>
@@ -139,7 +139,7 @@
                 <div class="profile">
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_1.png">
                     <div class="crycle-img">
-                        <h2>Ricky Martin<span class="time-location">43 M, PI,</span><span class="dot-icon"> Aug 14</span></h2>
+                        <h2><a href="/profile_other">Ricky Martin</a><span class="time-location">43 M, PI,</span><span class="dot-icon"> Aug 14</span></h2>
                         <a class="message" data-toggle="modal" data-target="#SendaMessage">Send a Message</a>
                         <a class="report-user" data-toggle="modal" data-target="#ReportUser">Report User</a>
                     </div>
@@ -148,7 +148,7 @@
             </div>
             <div class="content-post">
                 <h3><span class="link_3">OUCH</span> <span class="link_1">#LOL</span> <span class="link_2">#legday</span></h3>
-                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/img_2.png">
+                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/img_2.png" style="height: 300px;">
             </div>
         </div>
         <!--End Post 4 -->
