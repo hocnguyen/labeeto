@@ -11,7 +11,7 @@
     <!--<div class="error"></div>-->
     <input type="text" name="SignUp[username]" id="username" class="username-input validate[required,custom[space],funcCall[checkUsernameExists]] "  placeholder="Username"/>
     <input type="text" name="SignUp[email]" id="email" class="email-input validate[required,custom[email,funcCall[checkEmailExists]]" placeholder="Email"/>
-    <input type="password"  name="SignUp[password]" id="password" class="password-input validate[required]" placeholder="Password"/>
+    <input type="password"  name="SignUp[password]" id="password" class="password-input validate[required,minSize[8]]" placeholder="Password"/>
     <a href="#registration" class="registrations">
         <input type="submit" value="Sign Up" class="signup-home"/>
     </a>
@@ -31,11 +31,7 @@
 </a>
 <div id="registration" class="registration-fancybox">
 <div class="step-1 ">
-    <?php $form=$this->beginWidget('CActiveForm', array(
-        'id'=>'signup-form-step2',
 
-        'enableAjaxValidation'=>false,
-    )); ?>
     <div class="registration-head">
         <div class="wrapper-step">
             <div class="step1">
@@ -69,10 +65,21 @@
             </div>
             <div class="profile-picture">Set Profile Picture</div>
             <div class="option-upload">
-                <a href="#" class="upload-from-file">Upload from file</a>
+                <a href="#" id="upload" class="upload-from-file">Upload from file</a>
                 <a href="#" class="upload-via-facebook">Upload via facebook</a>
             </div>
+            <div class="upload-avatar">
+                <form name="uploadAvatar" enctype="multipart/form-data" id="uploadAvatar" method="POST">
+                    <input type="file" accept="image/jpeg, image/png"  name="avatar" id="upload-avatar" class="file-avatar" />
+                    <input type="submit" class="btn-upload" value="Uploads"/>
+                </form>
+            </div>
         </div>
+        <?php $form=$this->beginWidget('CActiveForm', array(
+            'id'=>'signup-form-step2',
+
+            'enableAjaxValidation'=>false,
+        )); ?>
         <div class="center-content">
             <div class="wrapper-form">
                 <div class="username column-form">
@@ -80,7 +87,7 @@
                     <input type="text" id="username-step2" name="username-step2" class="text-input validate[required],funcCall[checkUsernameExists]"/>
                 </div>
                 <div class="relationship column-form">
-                    <label>Relation Status</label>
+                    <label>Relationship Status</label>
                     <select name="relations" id="relations" class="text-input validate[required]">
                         <option>Single</option>
                         <option>Married</option>
@@ -151,7 +158,7 @@
                 </div>
 
                 <div class="address column-form">
-                    <label>Address</label>
+                    <label>Suburb/City</label>
                     <input id="address" class="controls text-input validate[required]" type="text"  placeholder="Enter a location">
                     <div id="maps-test"></div>
                 </div>
@@ -161,8 +168,9 @@
                 </div>
             </div>
         </div>
+        <?php $this->endWidget(); ?>
     </div>
-    <?php $this->endWidget(); ?>
+
 </div>
 <div class="step-2">
     <?php $form=$this->beginWidget('CActiveForm', array(
@@ -220,7 +228,8 @@
                     <!--<input name="excercise" id="excercise" class="text-input">-->
                     <div class="fix-range">
                         <label style="margin-right: 20px;">Never</label>
-                        <input type="range" value="20" max="100" class="input-range" />
+                        <input  type=range min=0 max=100  class="input-range fix-rang-ie" value=50 id="excrise" step=20 list=volsettings>
+
 
                         <datalist id=volsettings>
                             <option>0</option>
@@ -235,15 +244,15 @@
                 </div>
                 <div class="education column-form">
                     <label>Education</label>
-                    <select name="education" id="education" class="text-input" style="height: 34px;">
+                    <select name="education" id="education" class="text-input " style="height: 34px;">
                         <option value="">Select your education</option>
-                        <option value="1">High School</option>
+                        <option selected="selected"  value="1">High School</option>
                         <option value="10">Some College</option>
                         <option value="2">2 Year College</option>
                         <option value="3">College</option>
                         <option value="4">Masters</option>
                         <option value="5">MFA</option>
-                        <option selected="selected" value="6">Law School</option>
+                        <option value="6">Law School</option>
                         <option value="7">Medical School</option>
                         <option value="8">Business School</option>
                         <option value="9">PhD</option>
@@ -251,7 +260,21 @@
                 </div>
                 <div class="religion column-form">
                     <label>Religion</label>
-                    <input type="text" name="religion" id="religion" class="text-input validate[required]" />
+                    <select name="religion" id="religion" class="text-input " style="height: 34px;">
+                        <option value="">Select your religion</option>
+                        <option selected="selected"  value="1">Agnostic</option>
+                        <option value="2">Atheist</option>
+                        <option value="3">Christian</option>
+                        <option value="4">Catholic</option>
+                        <option value="5">Buddhist</option>
+                        <option value="6">Hindu</option>
+                        <option value="7">Jewish</option>
+                        <option value="8">Muslim</option>
+                        <option value="12">Spiritual without affiliation</option>
+                        <option value="9">Other</option>
+                        <option value="10">None</option>
+                        <option value="11">No Comment</option>
+                    </select>
                 </div>
 
                 <div class="fitness-passion column-form">
@@ -384,7 +407,7 @@
             async: false,
             success: function(json) {
                 if(json===false) {
-                    msg = "This email is available ";
+                    msg = "This email is use ";
                 }
             }
         });
@@ -409,7 +432,7 @@
             async: false,
             success: function(json) {
                 if(json===false) {
-                    msg = "This username is available ";
+                    msg = "This username is use ";
                 }
             }
         });

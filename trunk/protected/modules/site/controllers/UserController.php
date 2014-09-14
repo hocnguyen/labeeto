@@ -266,4 +266,8 @@ class UserController extends SiteBaseController {
         $this->pageTitle[] = Yii::t('global', 'Login');
         $this->renderPartial('admin', array('model'=>$model));
     }
+
+    public function actionUploadAvatar(){
+        var_dump($_FILES['avatar']); exit;
+    }
 }
