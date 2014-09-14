@@ -245,7 +245,7 @@
         <!--Photo Pravite Page-->
         <div class="content-photo-private" style="display: none;">
             <div class="title-photo">
-                <h3>Privte Photos <span>(243 Photos)</span></h3>
+                <h3>Private Photos <span>(243 Photos)</span></h3>
                 <p>
                     <a href="#">Upload</a>
                     <a href="#">delete</a>
