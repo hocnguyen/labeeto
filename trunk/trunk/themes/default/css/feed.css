@@ -1569,8 +1569,7 @@ ul li.menu-nav{
     -webkit-border-radius:  5px 5px 0px 0px;
     -moz-border-radius:  5px 5px 0px 0px;
     behavior: url('../pie/PIE.htc');
-    border: 2px solid #162732;
-    box-shadow: 0 1px 0 red;
+    border-bottom: 2px solid #162732;
 }
 .content-photo-private .title-photo h3,
 .content-video .title-photo h3,
@@ -1581,9 +1580,6 @@ ul li.menu-nav{
     text-transform: uppercase;
     color: #e2d4c0;
     font: normal 12pt/normal Helvetica Neue LTPro Bd;
-    border-top: 2px solid #516b7c;
-    border-left: 2px solid #516b7c;
-    border-right: 2px solid #162732;
 }
 .content-photo-private .title-photo h3 span,
 .content-video .title-photo h3 span,
@@ -1603,7 +1599,6 @@ ul li.menu-nav{
 .content-video .title-photo p a,
 .content-photo .title-photo p a{
     border-left:2px solid #516b7c;
-    border-right:2px solid #162732;
     text-transform: uppercase;
     font-size: 14px;
     padding:15.5px 15px;
@@ -1682,7 +1677,6 @@ ul li.menu-nav{
 .content-video .title-photo p a.close-icon{
     background: url('../images/delete-icon.png') no-repeat 10px 13px;
     padding: 27px 15px 18px 26px;
-    border-right: none;
 }
 span.check-ok{
     float: right;
