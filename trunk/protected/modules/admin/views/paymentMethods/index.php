@@ -36,10 +36,10 @@
 		//'configuration',
 		array(
             'name'=>'is_active',
-            'value'=>'Press::getStatusPress( $data->is_active )',
+            'value'=>'PaymentMethods::getStatus( $data->is_active )',
             'filter'=>$active,
         ),
-    array(
+   array(
         'class'=>'ButtonColumn',
         'header' => Yii::t('global','Actions'),
         'template'=>'{view} {update} {delete}',

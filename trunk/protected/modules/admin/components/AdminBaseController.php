@@ -24,7 +24,7 @@ class AdminBaseController extends BaseController {
                 $app->language = $app->session['lang'];
         }
         else{
-            $app->language = isset(Yii::app()->user->language)?Yii::app()->user->language:'fr';
+            $app->language = isset(Yii::app()->user->language)?Yii::app()->user->language:'en';
         }
 	
 		// Add default page title which is the application name

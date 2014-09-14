@@ -66,101 +66,12 @@
 <div class="floatingBox table">
 <div class="container-fluid">
 
-    <?php
-        $Languages = array( 'fr'=>'French', 'en'=>'English' );
-        $this->widget('zii.widgets.grid.CGridView', array(
-        'id'=>'membersTable_form',
-        'htmlOptions' => array('class' => 'table table-bordered table-hover table-striped'),
-        'dataProvider'=>$model->search(),
-        'filter'=>$model,
-        'afterAjaxUpdate' => 'reinstallDatePicker',
-        'columns'=>array(
-            array(
-                'name'=>'id',
-                'value'=>'$data->id',
-                'htmlOptions'=>array('style'=>'width:35px;'),
-                //'filter'=>'',
-            ),
-            'username',
-            'email',
-            array(
-                'name'=>'language',
-                'value'=>'$data->getLanguage()',
-                'filter'=>$Languages,
-                'htmlOptions'=>array('style'=>'width:95px;'),
-            ),
-            array(
-                'name' => 'joined',
-                'header'=>Yii::t('global', 'Registered date'),
-                'htmlOptions'=> array('style' => 'text-align: center; width:135px;'),
-                'filter' => $this->widget('CJuiDateTimePicker', array(
-                            'model'=>$model,
-                            'attribute'=>'joined',
-                            'mode'=>'date',
-                            'options'=>array("dateFormat"=>Yii::app()->locale->getDateFormat('medium_js'), 'ampm' => false),
-                            'language' => Yii::app()->language=='en'?'':Yii::app()->language,
-                            'htmlOptions' => array(
-                                'id' => 'datepicker_for_due_date',
-                                'size' => '10',
-                                'style' => 'text-align: center'
-                            ),
-                        ),
-                        true)
-            ),
-            array(
-                'class'=>'ButtonColumn',
-                'template'=>'{view} {update} {delete}',
-                'buttons'=>array
-                (
-
-                    'view' => array
-                    (
-                        'label'=>'<span class="label cyan" ><i class="icon-info-sign info" title="'.Yii::t("adminlang", "View member").'"></i></span>',
-                        'url'=>'Yii::app()->createUrl("admin/members/view?id=$data->id ")',
-                        'options' => array(
-                            'class' => 'tipb view-icon-tooltip',
-                            'data-original-title' => Yii::t('adminlang', 'View'),
-                            'title'       => 'View',
-                        ),
-                    ),
-                    'update' => array
-                    (
-                        'label'=>'<span class="label green" ><i class="icon-pencil edit" title="'.Yii::t("adminlang", "Edit member").'"></i></span>',
-                        'url'=>'Yii::app()->createUrl("admin/members/update?id=$data->id ")',
-                        'options' => array( 'class' => 'tipb update-icon-tooltip',
-                            'data-original-title' => Yii::t('adminlang', 'Edit'),
-                            'title'       => 'Edit', ),
-                    ),
-                    'delete' => array
-                    (
-                        'label'=>'<span class="label red" ><i class="icon-trash delete" title="'.Yii::t("adminlang", "Delete member").'"></i></span>',
-                        'url'=>'Yii::app()->createUrl("admin/members/delete?id=$data->id ")',
-                        'options' => array( 'class' => 'tipb delete-icon-tooltip',
-                            'data-original-title' => Yii::t('adminlang', 'Delete'),
-                            'title'       => 'Delete', ),
-                    ),
-                ),
-            ),//
-        ),
-    )); ?>
 
 </div>
 </div>
-    <script>
-        $('.update-icon-tooltip').tooltip({
-        });
-        $('.view-icon-tooltip').tooltip({
-        });
-        $('.delete-icon-tooltip').tooltip({
-        });
-    </script>
+
 
 </div>
 </div>
 </div>
 
-<style>
-    select{
-        width:110px !important;
-    }
-</style>

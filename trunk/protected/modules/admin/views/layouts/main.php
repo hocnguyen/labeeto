@@ -12,15 +12,11 @@
 
 </head>
 <body class="dashboard">
-<?php
-    if ( isset( $_GET['lang'] ) )
-        Yii::app()->session['language'] = $_GET['lang'];
-    Yii::app()->language =  (isset( Yii::app()->session['language']  ))? Yii::app()->session['language'] : Yii::app()->user->language;
-   ?>
+
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container-fluid">
-            <a class="brand" href="<?php echo $this->createUrl('index/index', array('lang'=>false)); ?>"><strong class="brandBold">ANNUAIRE</strong>AUDITION</a>
+            <a class="brand" href="<?php echo $this->createUrl('index/index', array('lang'=>false)); ?>"><strong class="brandBold">LABEETO</strong>DATING</a>
             <div class="nav pull-right">
                 <form class="navbar-form">
                     <div class="input-append">
@@ -41,7 +37,7 @@
                             </a>
                             <div id="PopupLanguage" class="popup">
                                 <ul>
-                                    <?php 
+                                  <?php
                                     $params = $_GET;
                                     if (isset($params['lang'])) unset($params['lang']);
             
@@ -134,7 +130,7 @@
             <div class="profileInfo">
                 <p><i class="icon-map-marker"></i> <?php echo Yii::t('global','Role'); ?> : <?php echo Yii::app()->user->role; ?>  </p>
                 <p><i class="icon-envelope-alt"></i> <?php echo Yii::app()->user->email; ?></p>
-                <p><i class="icon-globe"></i> <?php echo Yii::app()->params->homeUrl; ?></p>
+                <p><i class="icon-globe"></i> <?php //echo Yii::app()->params->homeUrl; ?></p>
                 <p class="aboutMe">
                     <?php echo Yii::t('global','Last Visit').' : ';
                             echo isset(Yii::app()->user->last_visit)?Yii::app()->user->last_visit:'';
@@ -142,7 +138,7 @@
                     <br>
                     <?php
                         echo Yii::t('global','Language').' : ';
-                        echo Members::model()->getLanguageNew( Yii::app()->language );
+                        //echo Members::model()->getLanguageNew( Yii::app()->language );
                     ?>
                 </p>
             </div>
