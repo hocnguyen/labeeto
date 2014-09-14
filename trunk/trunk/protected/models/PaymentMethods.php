@@ -13,6 +13,7 @@ class PaymentMethods extends CActiveRecord
 {
     const PAYPAL = 1;
     const SYSTEM = 2;
+    const STATUS_YES = 1;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -108,4 +109,11 @@ class PaymentMethods extends CActiveRecord
         
         return $result;
     }
+
+    function getStatus( $status ){
+        if($status==self::STATUS_YES)
+            return Yii::t('global','Yes');
+        return Yii::t('global','No');
+    }
+
 }

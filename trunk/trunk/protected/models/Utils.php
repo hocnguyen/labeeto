@@ -78,5 +78,9 @@
         return $randomString;
     }
 
+    public function getStatusCommon(){
+        return array( Yii::t('global','No'), Yii::t('global','Yes') );
+    }
+
 }
 	
