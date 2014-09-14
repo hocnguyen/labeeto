@@ -106,7 +106,7 @@ class UserController extends SiteBaseController {
                 $message = Yii::t('global', "Dear {username},<br /><br />
     									We have reseted your password successfully.<br /><br />
     									You new password is: <b>{password}</b><br />",
-                    array( '{username}' => $member->firstname." ".$member->lastname, '{password}' => $password ));
+                    array( '{username}' => $member->username, '{password}' => $password ));
 
                 $message .= Yii::t('global', '<br /><br />----------------<br />Regards,<br />The {team} Team.<br />', array('{team}'=>Yii::app()->name));
                 Utils::sendMail(Yii::app()->params['emailout'], $member->email, Yii::t('global', 'Password Reset Completed'), $message);
