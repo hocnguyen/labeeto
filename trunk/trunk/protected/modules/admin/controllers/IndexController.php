@@ -17,14 +17,15 @@ class IndexController extends AdminBaseController {
 	 * Index action
 	 */
     public function actionIndex() {
-        
-        $model = new Members('Search');
+
+        $this->pageTitle[] = Yii::t('admin', 'Labeeto Dating');
+        $model = new User('Search');
         $model->unsetAttributes();
-        if(isset($_GET['Members'])){
+      /*  if(isset($_GET['Members'])){
             $model->id         = $_GET['Members']['id'];
             $model->joined     = $_GET['Members']['joined'];
             $model->attributes = $_GET['Members'];
-        }
+        }*/
         $this->render('index', compact('model'));
     }
 }
