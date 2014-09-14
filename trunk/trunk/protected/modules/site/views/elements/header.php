@@ -20,7 +20,7 @@
             <input type="text" class="username-input" placeholder="Username" name="LoginForm[email]"/>
             <input type="password" class="password-input" placeholder="Password" name="LoginForm[password]"/>
             <div class="checkbox-wrapper">
-                <input type="checkbox" name="LoginForm[rememberme]" id="remember-check"/>
+                <input type="checkbox" name="LoginForm[rememberme]" value="1" id="remember-check"/>
                 <label for="remember-check">Remember me</label>
                 <input type="checkbox" id="remember-check"/>
                 <label for="remember-check">Keep Me Logged in</label>
