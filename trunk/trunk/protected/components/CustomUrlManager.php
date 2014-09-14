@@ -21,7 +21,7 @@ class CustomUrlManager extends CUrlManager {
 			$this->rules = array(
 
 				//-----------------------ADMIN--------------
-				"/admin" => 'admin/user/index',
+				"/admin" => 'admin/index/index',
 				"/admin/<_c:([a-zA-z0-9-]+)>" => 'admin/<_c>/index',
 				"/admin/<_c:([a-zA-z0-9-]+)>/<_a:([a-zA-z0-9-]+)>" => 'admin/<_c>/<_a>',
 				"/admin/<_c:([a-zA-z0-9-]+)>/<_a:([a-zA-z0-9-]+)>//*" => 'admin/<_c>/<_a>/',
@@ -39,7 +39,7 @@ class CustomUrlManager extends CUrlManager {
                 "/profile" => 'site/user/profile/',
                 "/profile_other" => 'site/user/profile_other/',
 
-				"/admin-login" => 'site/user/login',
+				"/admin-login" => 'site/user/admin',
 				"/forgotpassword" => 'site/user/lostpassword',
 
 				"/" => 'site/index/index',
