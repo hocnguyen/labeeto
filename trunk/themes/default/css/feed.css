@@ -1080,8 +1080,8 @@ ul.social li.insta:hover{
     -webkit-border-radius: 5px 5px 0px 0px;
     -moz-border-radius: 5px 5px 0px 0px;
     behavior: url('../pie/PIE.htc');
-    padding: 18px 10px 18px 10px;
     color: #ffffff;
+    height: 40px;
 }
 .add_question{
     float: right;
@@ -1090,10 +1090,6 @@ ul.social li.insta:hover{
     border: transparent;
     padding: 5px 20px 5px 20px;
     font: normal 12pt/normal Myriad Pro;
-}
-.bit-and-bit span{
-    font: normal 14pt/normal Myriad Pro;
-    text-transform: uppercase;
 }
 .content-bit{
     padding: 10px;
@@ -1598,14 +1594,13 @@ ul li.menu-nav{
 .content-photo-private .title-photo p a,
 .content-video .title-photo p a,
 .content-photo .title-photo p a{
-    border-left:2px solid #516b7c;
+    border-left: 1px solid #1f2a32;
     text-transform: uppercase;
     font-size: 14px;
-    padding:15.5px 15px;
-    float:left;
+    padding: 15.5px 15px;
+    float: left;
     color: #8a9eab;
     font-family: Helvetica Neue LTPro Bd;
-    border-top: 2px solid #516b7c;
 }
 .content-photo-private .title-photo p a:hover,
 .content-video .title-photo p a:hover,
@@ -1777,6 +1772,24 @@ span.check-ok{
 }
 .profile .crycle-img h2 a{
     color: black;
+}
+.bit-and-bit span.add-question-1{
+    text-transform: uppercase;
+    float: right;
+    color: #8a9eab;
+    font: normal 14px/normal Helvetica Neue LTPro Bd;
+    padding-right: 30px;
+    border-left: 1px solid #1f2a32;
+    padding-left: 10px;
+    padding: 10px 30px 13px 10px;
+    cursor: pointer;
+}
+.bit-and-bit span.bit{
+    font: normal 14px/normal Helvetica Neue LTPro Bd;
+    text-transform: uppercase;
+    float: left;
+    padding: 10px 0px 0px 20px;
+    color: #f0ddc7;
 }
 input[type="range"] {height: 10px;border-radius: 5px;background: #420811;-webkit-appearance: none;cursor: pointer;border: 0;outline: none;padding: 0;margin: 0 0;}
 input[type="range"]::-moz-range-track {border: none;background: transparent;}
