@@ -45,7 +45,7 @@ $(document).ready(function(){
                 }
             });*/
             $.session.set('username', username);
-            $.session.set('birthday', year+"/"+month+"/"+day);
+            $.session.set('birthday', month+"/"+day+"/"+year);
             $.session.set('ehtnicity', ehtnicity);
             $.session.set('height', feet+'.'+inche);
             $.session.set('gender', gender);
@@ -118,8 +118,6 @@ $(document).ready(function(){
         window.location.assign('/my_feed');
     });
 
-
-
     $('.signup-home').click(function(){
         var username = $("#username").val();
         var email = document.getElementById("email").value;
@@ -147,6 +145,15 @@ $(document).ready(function(){
          }
     });
 
+    $('#upload').click(function(){
+        $('.option-upload').hide();
+        $('.upload-avatar').show();
+    });
+    $('#uploadAvatar').submit(function(e) {
+        var postData = $(this).serializeArray();
+        console.log(postData);
+        return false;
+    });
     function checkValidate(name_exists,username,address,day,month,year,ehtnicity,feet,inche){
         var check =0;
         if(name_exists ==1){
@@ -188,7 +195,7 @@ $(document).ready(function(){
             check=2; // email incorrect
             return check;
         }
-        if(password == ''){
+        if(password == '' || (password.length <8)){
             check = 3 ;// Password empty
             return check;
         }else if(password.length <=6) {
@@ -233,13 +240,20 @@ $(document).ready(function(){
     function setValueStep2(){
         var gender = ($.session.get('gender')==0?"Male":"Female");
         var html = $.session.get('username')+" <br/>";
-         html+= $.session.get('birthday')+" <br/>";
-         html+= $.session.get('height')+", "+gender+" <br/>";
+         html+= getFormattedDate($.session.get('birthday'))+" <br/>";
+         html+= $.session.get('height')+" ft, "+gender+"<br/>";
          html+= $.session.get('address');
         $('.detail-temp-info').html(html);
 
     }
-
+    function getFormattedDate(input){
+        var pattern=/(.*?)\/(.*?)\/(.*?)$/;
+        var result = input.replace(pattern,function(match,p1,p2,p3){
+            var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            return months[(p1-1)]+" "+(p2<10?"0"+p2:p2)+", "+p3;
+        });
+        return result;
+    }
     /*function checkValidate(firstname,lastname,address,birthday,ehtnicity,feet,inches,gender){
         if(firstname =='' || lastname =='' || address =='' || birthday)
 
