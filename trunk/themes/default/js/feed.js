@@ -38,6 +38,8 @@ $(document).ready(function(){
         $('.content-profile').hide();
         $('.content-photo').hide();
         $('.line-green-photo').hide();
+        $('.content-photo-private').hide();
+        $('.line-green-photo-pravite').hide();
         $('.content-video').show();
         $('.line-green-video').css('display','block');
     });
@@ -45,7 +47,10 @@ $(document).ready(function(){
     $('#PhotoPrivate').click(function(){
         $('.content-profile').hide();
         $('.content-photo').hide();
+        $('.content-video').hide();
         $('.line-green-photo').hide();
+        $('.line-green-photo-pravite').hide();
+        $('.line-green-video').hide();
         $('.content-photo-private').show();
         $('.line-green-photo-pravite').css('display','block');
         
