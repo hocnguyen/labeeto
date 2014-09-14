@@ -19,7 +19,7 @@
             </div>
             <div class="menu-nav-infor">
                 <ul style="float: right;">
-                    <li><a href="#">preview profile</a></li>
+                    <li><a href="/profile_other">preview profile</a></li>
                     <li><a href="#">verify profile</a></li>
                     <!--
                     <li><a href="#"><span class="span-chat"></span>CHAT</a></li>
