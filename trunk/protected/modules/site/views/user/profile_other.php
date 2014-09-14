@@ -197,8 +197,6 @@
             <div class="title-photo">
                 <h3>Videos <span>(2 Videos)</span></h3>
                 <p>
-                    <a href="#">Upload</a>
-                    <a href="#">delete</a>
                     <a href="#" class="close-icon"></a>
                 </p>
                 
