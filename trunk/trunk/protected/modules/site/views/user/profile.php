@@ -356,7 +356,8 @@
         <div class="post" style="padding-bottom: 0px;"> 
             <div class="bit-and-bit">
                 <span>BITS AND BITS</span>
-                <button class="add_question">Add a Custom Question</button>
+                <!--<button class="add_question">Add a Custom Question</button>-->
+                
             </div>
             <a href="#" class="link_question">
                 <div class="content-bit">
