@@ -36,6 +36,7 @@ class UserController extends SiteBaseController {
         if(isset($_POST['LoginForm']))
         {
             $model->attributes=$_POST['LoginForm'];
+           // var_dump($_POST['LoginForm']); exit;
             if( $model->validate() )
             {
                 // Login
@@ -44,6 +45,10 @@ class UserController extends SiteBaseController {
                 {
                     Yii::app()->user->setFlash('success', Yii::t('global', 'Thanks. You are now logged in.'));
                     Yii::app()->user->login($identity, (Yii::app()->params['loggedInDays'] * 60 * 60 * 24 ));
+                    if((isset($_POST['LoginForm']['rememberme']) && ($_POST['LoginForm']['rememberme'] == 1))){
+                       $duration = $model->rememberme ? 3600*24*0.5 : 0; //12 hours
+                       Yii::app()->user->login($identity, $duration);
+                    }
                     $this->redirect('/my_feed');
                 }
                 else{
