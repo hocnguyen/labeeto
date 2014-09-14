@@ -1482,7 +1482,7 @@ span.my-btn button{
     height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-bottom: 16px solid #2886ac;
+    border-bottom: 19px solid #2886ac;
 }
 
 .range-2{
@@ -1569,16 +1569,21 @@ ul li.menu-nav{
     -webkit-border-radius:  5px 5px 0px 0px;
     -moz-border-radius:  5px 5px 0px 0px;
     behavior: url('../pie/PIE.htc');
+    border: 2px solid #162732;
+    box-shadow: 0 1px 0 red;
 }
 .content-photo-private .title-photo h3,
 .content-video .title-photo h3,
 .content-photo .title-photo h3{
-    width: 220px;
+    width: 319px;
     float: left;
-    padding:12px 17px;
+    padding:13px 17px;
     text-transform: uppercase;
     color: #e2d4c0;
     font: normal 12pt/normal Helvetica Neue LTPro Bd;
+    border-top: 2px solid #516b7c;
+    border-left: 2px solid #516b7c;
+    border-right: 2px solid #162732;
 }
 .content-photo-private .title-photo h3 span,
 .content-video .title-photo h3 span,
@@ -1597,14 +1602,15 @@ ul li.menu-nav{
 .content-photo-private .title-photo p a,
 .content-video .title-photo p a,
 .content-photo .title-photo p a{
-    border-left:1px solid #516b7c;
-    border-right:1px solid #162732;
+    border-left:2px solid #516b7c;
+    border-right:2px solid #162732;
     text-transform: uppercase;
     font-size: 14px;
-    padding:14px 17px;
+    padding:15.5px 15px;
     float:left;
     color: #8a9eab;
     font-family: Helvetica Neue LTPro Bd;
+    border-top: 2px solid #516b7c;
 }
 .content-photo-private .title-photo p a:hover,
 .content-video .title-photo p a:hover,
@@ -1614,7 +1620,7 @@ ul li.menu-nav{
 .content-photo-private ul,
 .content-photo ul{
     overflow: hidden;
-    border: 1px solid #dddddd;
+    border: 2px solid #dddddd;
     border-radius: 0 0 5px 5px;
     -webkit-border-radius: 0 0 5px 5px;
     -moz-border-radius: 0 0 5px 5px;
@@ -1643,7 +1649,7 @@ ul li.menu-nav{
     height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-bottom: 15px solid #334551;
+    border-bottom: 19px solid #334551;
 }
 .content-photo-private:after {
     content: '';
@@ -1654,27 +1660,29 @@ ul li.menu-nav{
     height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-bottom: 15px solid #334551;
+    border-bottom: 19px solid #334551;
 }
 .content-video:after {
     content: '';
     position: absolute;
-    left: 475px;
+    left: 472px;
     top: -15px;
     width: 0;
     height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-bottom: 15px solid #334551;
+    border-bottom: 19px solid #334551;
 }
 .content-photo-private .title-photo p a.close-icon,
 .content-photo .title-photo p a.close-icon{
     background: url('../images/delete-icon.png') no-repeat 10px 12px;
-    padding: 41px 18px 0px 24px;
+    padding: 45px 18px 0px 24px;
+    border-right: none;
 }
 .content-video .title-photo p a.close-icon{
     background: url('../images/delete-icon.png') no-repeat 10px 13px;
-    padding: 25px 15px 18px 26px;
+    padding: 27px 15px 18px 26px;
+    border-right: none;
 }
 span.check-ok{
     float: right;
