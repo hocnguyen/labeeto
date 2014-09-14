@@ -1773,6 +1773,9 @@ span.check-ok{
     font: normal 16px/normal Helvetica Neue LTPro Bd;
     color: #676b6d;
 }
+.profile .crycle-img h2 a{
+    color: black;
+}
 input[type="range"] {height: 10px;border-radius: 5px;background: #420811;-webkit-appearance: none;cursor: pointer;border: 0;outline: none;padding: 0;margin: 0 0;}
 input[type="range"]::-moz-range-track {border: none;background: transparent;}
 input[type="range"]::-ms-tooltip {display: none;}
