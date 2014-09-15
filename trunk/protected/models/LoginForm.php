@@ -23,6 +23,11 @@ class LoginForm extends CFormModel
 	 * @var boolean - remember me
 	 */
 	public $rememberme = false;
+    
+    /**
+	 * @var boolean - remember me
+	 */
+	public $keepmelogged = false;
 	
 	/**
 	 * table data rules
@@ -36,7 +41,7 @@ class LoginForm extends CFormModel
 			
 			//array('password', 'length', 'min' => 3, 'max' => 32),
 			//array('email', 'length', 'min' => 3, 'max' => 55),
-			array('rememberme', 'boolean'),
+			array('rememberme, keepmelogged', 'boolean'),
 			array('password', 'authenticate'),
 			//array('verifyCode', 'captcha'),
 		);
@@ -70,6 +75,7 @@ class LoginForm extends CFormModel
 			'email' => Yii::t('members', 'Email'),
 			'password' => Yii::t('members', 'Password'),
             'rememberme' => Yii::t('mambers', 'Remember me'),
+            'keepmelogged' => Yii::t('mambers', 'Keep Me Logged'),
 			//'verifyCode' => Yii::t('members', 'Security Code'),
 		);
 	}

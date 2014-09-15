@@ -49,6 +49,11 @@ class UserController extends SiteBaseController {
                        $duration = $model->rememberme ? 3600*24*0.5 : 0; //12 hours
                        Yii::app()->user->login($identity, $duration);
                     }
+                    if((isset($_POST['LoginForm']['keepmelogged']) && ($_POST['LoginForm']['keepmelogged'] == 1))){
+                       $duration = $model->keepmelogged ? 3600*24*0.5 : 3600; //1 hours
+                       Yii::app()->user->login($identity, $duration);
+                    }
+                    
                     $this->redirect('/my_feed');
                 }
                 else{
