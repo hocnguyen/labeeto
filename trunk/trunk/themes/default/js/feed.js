@@ -55,4 +55,5 @@ $(document).ready(function(){
         $('.line-green-photo-pravite').css('display','block');
         
     });
+
 });

@@ -69,7 +69,7 @@ a{
     outline: none;
 }
 .modal-open{
-    overflow: hidden;
+    overflow:auto;
     clear: both;
 }
 #wrapper{overflow: hidden;}

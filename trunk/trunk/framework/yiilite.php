@@ -5693,7 +5693,7 @@ class CWidgetFactory extends CApplicationComponent implements IWidgetFactory
         if ($className == 'CActiveForm' && isset($properties['id'])){
             echo "<script type=\"text/javascript\">
                 \$(document).ready(function(){
-                    \$('#".$properties['id']."').validationEngine({promptPosition : \"bottomLeft\", scroll: true});
+                    \$('#".$properties['id']."').validationEngine({promptPosition : \"bottomLeft\", scroll: true,maxErrorsPerField:1});
                 })
             </script>";
         }
