@@ -91,6 +91,10 @@
                     "regex": /^[0-9]{6}|[0-9]{5}-[0-9]{4}$/,
                     "alertText": "* Enter Valid Zip Code (XXXXXX or XXXXX-XXXX)"
                 },
+                "pw": {
+                    "regex": /^.*(?=.{8,})(?=.*[A-Z])(?=.*[\d]).*$/,
+                    "alertText": "* Password must 8 characters long and contain atleast 1 uppercase letter and 1 number"
+                },
                 "space": {
                     "regex": /^([0-9a-z]+)$/,
                     "alertText": "* Invalid username"

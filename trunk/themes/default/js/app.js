@@ -195,11 +195,14 @@ $(document).ready(function(){
             check=2; // email incorrect
             return check;
         }
-        if(password == '' || (password.length <8)){
+        if(password == ''){
             check = 3 ;// Password empty
             return check;
-        }else if(password.length <=6) {
-            check = 4 ;// Password must have maximum 6 character.
+        }
+        var re = /^.*(?=.{8,})(?=.*[A-Z])(?=.*[\d]).*$/;
+        var pw = re.exec(password);
+        if (!pw) {
+            check = 4 ;// Password must 8 characters long and contain atleast 1 uppercase letter and 1 number
             return check;
         }
         if (email_exists ==1) {
