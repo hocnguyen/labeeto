@@ -297,5 +297,29 @@ $(document).ready(function(){
         });
     })
 
+    /*Forgot Password*/
+    $('#forgotPass-2').submit(function(e) {
+        console.log("success");
+        e.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+            type:'POST',
+            url: '/user/lostpassword',
+            data:formData,
+            cache:false,
+            contentType: false,
+            processData: false,
+            success:function(data){
+                $('#p-lostpassword').html('Thank You. Your password was reset. Please check your email for you new generated password.');
+                console.log("success");
+                console.log(data);
+            },
+            error: function(data){
+                console.log("error");
+                console.log(data);
+            }
+        });
+        return false;
+    });
 
 });
