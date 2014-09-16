@@ -123,7 +123,7 @@ class UserController extends SiteBaseController {
 
                 User::model()->updateByPk($member->id, array('password'=>$hashedPassword));
 
-                Yii::app()->user->setFlash('success', Yii::t('global', 'Thank You. Your password was reset. Please check your email for you new generated password.'));
+                //Yii::app()->user->setFlash('success', Yii::t('global', 'Thank You. Your password was reset. Please check your email for you new generated password.'));
 
             } else {
                 Yii::app()->user->setFlash('error', Yii::t('login', 'Not found this email. Please check again!'));
