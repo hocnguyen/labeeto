@@ -46,12 +46,12 @@
         Forgot Password!
     </div>
     <div class="inner-fancybox">
-        <div class="inner-wrapper">
+        <div class="inner-wrapper" id="p-lostpassword">
             <?php //echo CHtml::form($this->createUrl('/user/lostpassword'), 'post', array('class'=>'frmcontact', 'id'=>'fancybox-form')); ?>
-            <form class="frmcontact" id="fancybox-form" action="/user/lostpassword" method="post">            
+            <form class="frmcontact" id="fancybox-form" method="post">            
                 <div class="message-login-error"><?php $this->widget('widgets.admin.notifications'); ?></div>
                 <input type="text" class="username-input" placeholder="Email" name="LostPasswordForm[email]">
-                <input type="submit" value="<?php echo Yii::t('global','Send'); ?>"/>
+                <input type="submit" id="forgotPass-2" value="<?php echo Yii::t('global','Send'); ?>"/>
             </form>
 
         </div>
