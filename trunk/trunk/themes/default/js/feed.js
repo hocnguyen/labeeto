@@ -53,7 +53,6 @@ $(document).ready(function(){
         $('.line-green-video').hide();
         $('.content-photo-private').show();
         $('.line-green-photo-pravite').css('display','block');
-        
     });
 
 });
