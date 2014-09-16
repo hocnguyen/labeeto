@@ -295,11 +295,10 @@ $(document).ready(function(){
         $.get("/index/getCity?state="+state,function(html){
             $('#city').html(html);
         });
-    })
+    });
 
     /*Forgot Password*/
-    $('#forgotPass-2').submit(function(e) {
-        console.log("success");
+    $('.frmcontact').submit(function(e) {
         e.preventDefault();
         var formData = new FormData(this);
         $.ajax({
