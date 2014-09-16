@@ -309,7 +309,7 @@ $(document).ready(function(){
             contentType: false,
             processData: false,
             success:function(data){
-                $('#p-lostpassword').html('Thank You. Your password was reset. Please check your email for you new generated password.');
+                $('#p-lostpassword').html('<p style="padding-top: 10px;text-align: center;color: red;padding-bottom: 25px;">Thank You. Your password was reset. Please check your email for you new generated password.</p><a href="#facebook-fancybox" class="fancybox" style="padding: 10px 120px 5px 120px; background-color: #ff4056; text-decoration: none;border-bottom: 2px solid #711f28;color: #ffffff;">LOGIN</a>');
                 console.log("success");
                 console.log(data);
             },
