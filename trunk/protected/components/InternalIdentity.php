@@ -30,10 +30,15 @@ class InternalIdentity extends CUserIdentity
             $this->errorCode=self::ERROR_PASSWORD_INVALID;
 			$this->errorMessage = Yii::t('members', 'Sorry, But the password did not match the one in our records.');
 		}
-         else if($record->status ==1) {
+        else if($record->status ==1) {
              $this->errorCode=self::ERROR_BLOCKED;
              $this->errorMessage = Yii::t('members', 'Sorry, But the account is blocked.');
-         }else {
+        }
+        else if($record->role == 'admin') {
+             $this->errorCode=self::ERROR_BLOCKED;
+             $this->errorMessage = Yii::t('members', 'Sorry, You do not have permission.');
+        }
+        else {
             $this->_id = $record->id;
 
 			$auth=Yii::app()->authManager;
