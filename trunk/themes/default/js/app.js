@@ -150,8 +150,24 @@ $(document).ready(function(){
         $('.upload-avatar').show();
     });
     $('#uploadAvatar').submit(function(e) {
-        var postData = $(this).serializeArray();
-        console.log(postData);
+        e.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+            type:'POST',
+            url: '/user/UploadAvatar',
+            data:formData,
+            cache:false,
+            contentType: false,
+            processData: false,
+            success:function(data){
+                console.log("success");
+                console.log(data);
+            },
+            error: function(data){
+                console.log("error");
+                console.log(data);
+            }
+        });
         return false;
     });
     function checkValidate(name_exists,username,address,day,month,year,ehtnicity,feet,inche){

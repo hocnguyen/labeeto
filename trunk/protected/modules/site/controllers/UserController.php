@@ -273,6 +273,15 @@ class UserController extends SiteBaseController {
     }
 
     public function actionUploadAvatar(){
-        var_dump($_FILES['avatar']); exit;
+        if (isset($_FILES['avatar'])){
+            $folder = Yii::app()->basePath.'/../uploads/avatar/'.date('Ymd').'/';
+            if (!is_dir($folder)){
+                mkdir($folder, 0777);
+            }
+            $filename = date('Ymd').'/'.$_FILES['avatar']['name'];
+            if (move_uploaded_file($_FILES['avatar']['tmp_name'], $folder.$_FILES['avatar']['name'])){
+                return $filename;
+            }
+        }
     }
 }
