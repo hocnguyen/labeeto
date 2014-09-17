@@ -263,7 +263,12 @@ $(document).ready(function(){
          html+= getFormattedDate($.session.get('birthday'))+" <br/>";
          html+= $.session.get('height')+" ft, "+gender+"<br/>";
          html+= $.session.get('address');
-        var img_avatar = "<img src='/uploads/avatar/"+$.session.get("avatar")+"' />";
+        if($.session.get("avatar")){
+            var img_avatar = "<img src='/uploads/avatar/"+$.session.get("avatar")+"' />";
+        }else {
+            var img_avatar = "<img src='/themes/default/images/no-avatar.png' />";
+        }
+
         $('.avatar-step2').html(img_avatar);
         $('.detail-temp-info').html(html);
 

@@ -684,8 +684,8 @@ input[type=submit]:hover{
 }
 .avatar-step2 img {
     border-radius: 100px;
-    max-height: 50px;
-    max-width: 100px;
+    height: 70px;
+    width: 70px;
 }
 .detail-temp-info {
     padding: 0px 20px 5px 20px;
