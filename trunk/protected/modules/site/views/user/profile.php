@@ -11,16 +11,21 @@
         </div>
 
         <div class="avartar">
-            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post.png"/>
+            <?php if($this->user->photo ==''){ ?>
+                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/no-avatar.png">
+            <?php } else { ?>
+                <img src="/uploads/avatar/<?php echo $this->user->photo ?>" />
+            <?php } ?>
+            <!--<img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post.png"/>-->
         </div>
         <div class="content-infor-profile">
             <div class="name_user">
-                Romeo
+                <?php echo $this->user->username ?>
             </div>
             <div class="menu-nav-infor">
                 <ul style="float: right;">
-                    <li><a href="/profile_other">preview profile</a></li>
-                    <li><a href="#">verify profile</a></li>
+                    <li><a href="/profile_other"><?php echo Yii::t('global', 'preview profile') ?></a></li>
+                    <li><a href="#"><?php echo Yii::t('global', 'verify profile') ?></a></li>
                     <!--
                     <li><a href="#"><span class="span-chat"></span>CHAT</a></li>
                     <li><a href="#"><span class="span-message"></span>Message</a></li>
@@ -33,26 +38,26 @@
         <div class="content-img">
             <div style="float: left; width: 60%; padding-left: 14%;">
                 <div class="street"><span class="icon-people"></span>24, M, Straight</div>
-                <div class="businuess"><span class="icon-vali"></span>FREELANCE UI/UX DESIGNER</div>
-                <div class="location"><span class="icon-location"></span>Metro Manila, Philipines</div>
+                <div class="businuess"><span class="icon-vali"></span><?php if($this->user->career) echo $this->user->career; ?></div>
+                <div class="location"><span class="icon-location"></span><?php if($this->user->address) echo $this->user->address; ?></div>
             </div>
             <div class="img-photo-video">
                 <div class="photo-private"  id="PhotoNomal">
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo.png" />
-                    <h6>Photos</h6>
+                    <h6><?php echo Yii::t('global', 'Photos') ?></h6>
                     <h3>243</h3>
                     <span class="line-green-photo"></span>
                 </div>
                 <div class="photo-private" id="PhotoPrivate">
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo.png" />
-                    <h6>Private Photo</h6>
+                    <h6><?php echo Yii::t('global', 'Private Photo') ?></h6>
                     <h3>8</h3>
                     <span class="line-green-photo-pravite"></span>
                 </div>
                 <div class="photo-private" id="VideosNormal">
                     <!--<a href="#" data-toggle="modal" data-target="#PrivateVideo">-->
                         <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/videos.png" />
-                        <h6>Videos</h6>
+                        <h6><?php echo Yii::t('global', 'Videos') ?></h6>
                         <h3>15</h3>
                     <span class="line-green-video"></span>
                     <!--</a>-->
@@ -67,33 +72,33 @@
         <!--<span class="arrow-up"></span>-->
         <div class="post" style="border: none; position: relative;" > 
             <div class="looking-for">
-                <span class="looking_img">LOOKING FOR</span>
+                <span class="looking_img"><?php echo Yii::t('global', 'LOOKING FOR') ?></span>
                 <a href="#"><span class="note-span"></span></a>
-                <p><span class="txt-gender">Gender: </span><span class="txt-female">Female</span></p>
-                <p><span class="txt-gender">Relationship: </span><span class="txt-female">Casual</span></p>
-                <p><span class="txt-gender">Age: </span><span class="txt-female">22-28</span></p>
-                <p><span class="txt-gender">Training: </span><span class="txt-female">Yes</span></p>
+                <p><span class="txt-gender"><?php echo Yii::t('global', 'Gender: ') ?></span><span class="txt-female"><?php if( $this->user->address ) { echo ($this->user->gender == 1) ? 'Female' : 'Male';} ?></span></p>
+                <p><span class="txt-gender"><?php echo Yii::t('global', 'Relationship: ') ?> </span><span class="txt-female"><?php if($this->user->relations) echo $this->user->relations; ?></span></p>
+                <p><span class="txt-gender"><?php echo Yii::t('global', 'Age: ')?> </span><span class="txt-female">22-28</span></p>
+                <p><span class="txt-gender"><?php echo Yii::t('global', 'Training:') ?> </span><span class="txt-female">Yes</span></p>
             </div>
             <div class="looking-about">
-                <span class="looking_about">about</span>
+                <span class="looking_about"><?php echo Yii::t('global', 'about') ?></span>
                 <a href="#"><span class="note-span"></span></a>
                 <p>I so love writing poems and having tea with people who also lov</p>
             </div>
             
             <div class="education">
-                <span class="education-span">education</span>
+                <span class="education-span"><?php echo Yii::t('global', 'education') ?></span>
                 <a href="#"><span class="note-span"></span></a>
-                <span class="bachelor">Bachelor</span>
+                <span class="bachelor"><?php if($this->user->education) echo $this->user->education; ?></span>
             </div>
             
             <div class="education">
-                <span class="education-span">RELIGION</span>
+                <span class="education-span"><?php echo Yii::t('global', 'RELIGION') ?></span>
                 <a href="#"><span class="note-span"></span></a>
-                <span class="bachelor">Roman Catholic</span>
+                <span class="bachelor"><?php if($this->user->religion) echo $this->user->religion ?></span>
             </div>
             
             <div class="education">
-                <span class="education-span">ETHNICITY</span>
+                <span class="education-span"><?php echo Yii::t('global', 'ETHNICITY')?></span>
                 <form>
                     <input class="search-pre" type="text" placeholder="Pre-Fill" />
                     <span class="my-btn"><input type="submit" value="Save"/><button>Cancel</button></span>
@@ -101,65 +106,65 @@
             </div>
             
             <div class="education">
-                <span class="education-span">HEIGHT</span>
+                <span class="education-span"><?php echo Yii::t('global', 'HEIGHT') ?></span>
                 <a href="#"><span class="note-span"></span></a>
-                <span class="bachelor">5'5 FEET</span>
+                <span class="bachelor"><?php if($this->user->height) echo $this->user->height . Yii::t('global', ' FEET')?> </span>
             </div>
             
             <div class="education">
-                <span class="education-span">CHILDREN</span>
+                <span class="education-span"><?php echo Yii::t('global', 'CHILDREN') ?></span>
                 <a href="#"><span class="note-span"></span></a>
                 <span class="bachelor">17, all boys</span>
             </div>
             
             <div class="education">
-                <span class="education-span">HOW OFTEN DO YOU EXCERCISE?</span>
+                <span class="education-span"><?php echo Yii::t('global', 'HOW OFTEN DO YOU EXCERCISE?') ?></span>
                 <a href="#"><span class="note-span"></span></a>
-                <span class="bachelor">17, all boys</span>
+                <span class="bachelor"><?php if($this->user->excercise) echo $this->user->excercise ?></span>
             </div>
             
             <div class="education">
-                <span class="education-span">DO YOU DRINK?</span>
+                <span class="education-span"><?php echo Yii::t('global', 'DO YOU DRINK?') ?></span>
                 <a href="#"><span class="note-span"></span></a>
-                <span class="bachelor">17, all boys</span>
+                <span class="bachelor"><?php if($this->user->drink) echo $this->user->drink?></span>
             </div>
             
             <div class="education">
-                <span class="education-span">DO YOU SMOKE?</span>
+                <span class="education-span"><?php echo Yii::t('global', 'DO YOU SMOKE?') ?></span>
                 <a href="#"><span class="note-span"></span></a>
-                <span class="bachelor">17, all boys</span>
+                <span class="bachelor"><?php if($this->user->smoke) echo $this->user->smoke ?></span>
             </div>
             
             <div class="content-bit favorite_a">
-                <span class="what">FAVORITE SPORT</span>
+                <span class="what"><?php echo Yii::t('global','FAVORITE SPORT') ?></span>
                 <a href="#"><span class="note-span"></span></a>
-                <span class="godfather">Cricket, Basketball, Poker</span>
+                <span class="godfather"><?php if($this->user->passion) echo $this->user->passion?></span>
             </div>
             
             <div class="content-bit favorite_a">
-                <span class="what">FAVORITE EXERCISE</span>
+                <span class="what"><?php echo Yii::t('global', 'FAVORITE EXERCISE') ?></span>
                 <a href="#"><span class="note-span"></span></a>
                 <span class="godfather">Push Ups</span>
             </div>
             
             <div class="content-bit favorite_a">
-                <span class="what">GYM MEMBERSHIP</span>
+                <span class="what"><?php Yii::t('global', 'GYM MEMBERSHIP') ?></span>
                 <a href="#"><span class="note-span"></span></a>
                 <span class="godfather">Gold's Gym</span>
             </div>
             
             <div class="content-bit favorite_a">
-                <span class="what">DIET</span>
+                <span class="what"><?php echo Yii::t('global', 'DIET') ?></span>
                 <a href="#"><span class="note-span"></span></a>
                 <span class="godfather">Vegan</span>
             </div>
             
             <div class="content-bit favorite_a">
-                <span class="what">HOW OFTEN DO YOU EXCERCISE?</span>
+                <span class="what"><?php echo Yii::t('global',  'HOW OFTEN DO YOU EXCERCISE?') ?></span>
                 <a href="#"><span class="note-span"></span></a>
                 <div style="position: relative;">
                     
-                    <span class="godfather">Nope</span>
+                    <span class="godfather"><?php echo Yii::t('global', 'Nope') ?></span>
                     <p class="range-2">
                         <span class="ws-range" role="slider" aria-readonly="false" tabindex="0" aria-disabled="false" aria-valuenow="41" aria-valuetext="41">
                             <span class="ws-range-min ws-range-progress" style="margin-top: 0px; width: 41%;"></span>'
@@ -170,16 +175,16 @@
                             </span>
                         </span>
                     </p>
-                    <span class="often">Often</span>
+                    <span class="often"><?php echo Yii::t('global', 'Often') ?></span>
                 </div>
             </div>
             
             <div class="content-bit favorite_a">
-                <span class="what">DO YOU DRINK?</span>
+                <span class="what"><?php echo Yii::t('global', 'DO YOU DRINK?') ?></span>
                 <a href="#"><span class="note-span"></span></a>
                 <div style="position: relative;">
                     
-                    <span class="godfather">Nope</span>
+                    <span class="godfather"><?php echo Yii::t('global', 'Nope') ?></span>
                     <p class="range-2">
                         <!--<input type="range" value="20" max="100" class="input-range" />-->
                         <span class="ws-range" role="slider" aria-readonly="false" tabindex="0" aria-disabled="false" aria-valuenow="41" aria-valuetext="41">
@@ -191,16 +196,16 @@
                             </span>
                         </span>
                     </p>
-                    <span class="often">Often</span>
+                    <span class="often"><?php echo Yii::t('global', 'Often') ?></span>
                 </div>
             </div>
             
             <div class="content-bit favorite_a">
-                <span class="what">DO YOU SMOKE?</span>
+                <span class="what"><?php echo Yii::t('global', 'DO YOU SMOKE?') ?></span>
                 <a href="#"><span class="note-span"></span></a>
                 <div style="position: relative;">
                     
-                    <span class="godfather">Nope</span>
+                    <span class="godfather"><?php echo Yii::t('global', 'Nope') ?></span>
                     <p class="range-2">
                         <span class="ws-range" role="slider" aria-readonly="false" tabindex="0" aria-disabled="false" aria-valuenow="41" aria-valuetext="41">
                             <span class="ws-range-min ws-range-progress" style="margin-top: 0px; width: 41%;"></span>'
@@ -211,14 +216,14 @@
                             </span>
                         </span>
                     </p>
-                    <span class="often">Often</span>
+                    <span class="often"><?php echo Yii::t('global', 'Often') ?></span>
                 </div>
             </div>
             
             <div class="content-bit-final favorite_a">
-                <span class="what">Goals</span>
+                <span class="what"><?php echo Yii::t('global', 'Goals') ?></span>
                 <a href="#"><span class="note-span"></span></a>
-                <span class="godfather">WEIGHT LOSS</span>
+                <span class="godfather"><?php if($this->user->goal) echo $this->user->goal ?></span>
             </div>
         </div>
         <!--End Post 1 -->
