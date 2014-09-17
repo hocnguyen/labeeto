@@ -34,10 +34,10 @@ class InternalIdentity extends CUserIdentity
              $this->errorCode=self::ERROR_BLOCKED;
              $this->errorMessage = Yii::t('members', 'Sorry, But the account is blocked.');
         }
-        else if($record->role == 'admin') {
+        /*else if($record->role == 'admin') {
              $this->errorCode=self::ERROR_BLOCKED;
              $this->errorMessage = Yii::t('members', 'Sorry, You do not have permission.');
-        }
+        }*/
         else {
             $this->_id = $record->id;
 
