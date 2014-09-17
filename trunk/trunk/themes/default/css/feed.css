@@ -1874,6 +1874,9 @@ input[type="range"]::-ms-fill-lower {display: block;height: 100%;background: #c2
     float: left;
     border-radius: 100%;
     margin: 5px 12px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    behavior: url('../pie/PIE.htc');
 }
 /*input[type="range"] {height: 10px;border-radius: 5px;background: #420811;-webkit-appearance: none;cursor: pointer;border: 0;outline: none;padding: 0;margin: 0 0;}
 input[type="range"]::-moz-range-track {border: none;background: transparent;}
