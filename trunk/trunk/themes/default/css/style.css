@@ -57,14 +57,14 @@
 
 :-moz-placeholder { /* Firefox 18- */
     color: #a4a4a4;
-    font-size: 16px;
+    /*font-size: 16px;*/
     font-family: "Open Sans", Helvetica, sans-serif;
     font-weight: 300;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
     color: #a4a4a4;
-    font-size: 16px;
+    /*font-size: 16px;*/
     font-family: "Open Sans", Helvetica, sans-serif;
     font-weight: 300;
 }
@@ -516,7 +516,8 @@ input[type=submit]:hover{
     border: 1px solid #DDDDDD;
     border-radius: 5px;
     padding: 5px;
-    width: 120px;
+    max-height: 100px;
+    max-width: 120px;
 }
 .profile-picture {
     height: 28px;
@@ -683,6 +684,8 @@ input[type=submit]:hover{
 }
 .avatar-step2 img {
     border-radius: 100px;
+    max-height: 50px;
+    max-width: 100px;
 }
 .detail-temp-info {
     padding: 0px 20px 5px 20px;

@@ -2,6 +2,7 @@
 
 class UserController extends SiteBaseController {
     public $text;
+    public $user;
     public function init()
 	{
 		parent::init();
@@ -138,6 +139,7 @@ class UserController extends SiteBaseController {
     public function actionMy_feed(){
         $this->layout = 'feed';
         if(!Yii::app()->user->isGuest){
+            $this->user = User::model()->findByPk(Yii::app()->user->id);
             $this->render('my_feed');
         } else {
             $this->redirect('/');
@@ -178,6 +180,7 @@ class UserController extends SiteBaseController {
         $model->relations = $_GET['relations'];
         $model->latitude = $_GET['latitude'];
         $model->longtitude = $_GET['longtitude'];
+        $model->photo = $_GET['photo'];
         if($model->save()){
             $identity = new InternalIdentity($_GET['username'],$_GET['password']);
             if($identity->authenticate())
@@ -274,14 +277,15 @@ class UserController extends SiteBaseController {
 
     public function actionUploadAvatar(){
         if (isset($_FILES['avatar'])){
-            $folder = Yii::app()->basePath.'/../uploads/avatar/'.date('Ymd').'/';
-            if (!is_dir($folder)){
-                mkdir($folder, 0777);
-            }
-            $filename = date('Ymd').'/'.$_FILES['avatar']['name'];
-            if (move_uploaded_file($_FILES['avatar']['tmp_name'], $folder.$_FILES['avatar']['name'])){
-                return $filename;
+            $folder = Yii::app()->basePath.'/../uploads/avatar/';
+
+            $filename = $this->generateRandomString().$_FILES['avatar']['name'];
+            if (move_uploaded_file($_FILES['avatar']['tmp_name'], $folder.$filename)){
+                echo $filename;
             }
         }
+    }
+    function generateRandomString($length = 10) {
+        return substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
     }
 }
