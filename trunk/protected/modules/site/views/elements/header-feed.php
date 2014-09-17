@@ -92,7 +92,11 @@
         </div>
         <div class="profile-nav">
             <div class="test-nav" style="width: 179px; float: right; height: 50px;">
-                <img class="avatar-nav" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatart-step2.png" />
+                <?php if($this->user->photo ==''){ ?>
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/no-avatar.png">
+               <?php } else { ?>
+                <img class="avatar-nav" src="/uploads/avatar/<?php echo $this->user->photo ?>" />
+                <?php } ?>
                 <div class="username-nav">
                     <?php
                     if(strlen(Yii::app()->user->username) > 8){

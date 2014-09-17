@@ -90,7 +90,8 @@ $(document).ready(function(){
             variableGet+="passion="+passion+"&";
             variableGet+="goal="+goal+"&";
             variableGet+="smoke="+smoke+"&";
-            variableGet+="drink="+drink;
+            variableGet+="drink="+drink+"&";
+            variableGet+="photo="+$.session.get("avatar");
             $.get("/user/register?"+variableGet,function(){
                 $.session.clear();
                 $('.step-2').hide();
@@ -160,12 +161,12 @@ $(document).ready(function(){
             contentType: false,
             processData: false,
             success:function(data){
-                console.log("success");
-                console.log(data);
+                $('.avatar').html('<img src="/uploads/avatar/'+data+'"/>');
+                $('.upload-avatar').hide();
+                $.session.set('avatar',data);
             },
             error: function(data){
                 console.log("error");
-                console.log(data);
             }
         });
         return false;
@@ -262,6 +263,8 @@ $(document).ready(function(){
          html+= getFormattedDate($.session.get('birthday'))+" <br/>";
          html+= $.session.get('height')+" ft, "+gender+"<br/>";
          html+= $.session.get('address');
+        var img_avatar = "<img src='/uploads/avatar/"+$.session.get("avatar")+"' />";
+        $('.avatar-step2').html(img_avatar);
         $('.detail-temp-info').html(html);
 
     }
@@ -280,7 +283,9 @@ $(document).ready(function(){
 
 
     $('.profile-picture').click(function(){
-            $('.option-upload').slideToggle();
+        $('.option-upload').slideToggle();
+        $('.upload-avatar').hide();
+
     });
 
     $('#country').change(function(){
