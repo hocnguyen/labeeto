@@ -161,7 +161,14 @@
                     
                     <span class="godfather">Nope</span>
                     <p class="range-2">
-                        <input type="range" value="20" max="100" class="input-range" />
+                        <span class="ws-range" role="slider" aria-readonly="false" tabindex="0" aria-disabled="false" aria-valuenow="41" aria-valuetext="41">
+                            <span class="ws-range-min ws-range-progress" style="margin-top: 0px; width: 41%;"></span>'
+                            <span class="ws-range-rail ws-range-track" style="left: 11px; right: 11px;">
+                                <span class="ws-range-thumb" style="margin-left: -11px; margin-top: -6px; left: 41%;">
+                                    <span data-value="41" data-valuetext="41"></span>
+                                </span>
+                            </span>
+                        </span>
                     </p>
                     <span class="often">Often</span>
                 </div>
@@ -174,7 +181,15 @@
                     
                     <span class="godfather">Nope</span>
                     <p class="range-2">
-                        <input type="range" value="20" max="100" class="input-range" />
+                        <!--<input type="range" value="20" max="100" class="input-range" />-->
+                        <span class="ws-range" role="slider" aria-readonly="false" tabindex="0" aria-disabled="false" aria-valuenow="41" aria-valuetext="41">
+                            <span class="ws-range-min ws-range-progress" style="margin-top: 0px; width: 41%;"></span>'
+                            <span class="ws-range-rail ws-range-track" style="left: 11px; right: 11px;">
+                                <span class="ws-range-thumb" style="margin-left: -11px; margin-top: -6px; left: 41%;">
+                                    <span data-value="41" data-valuetext="41"></span>
+                                </span>
+                            </span>
+                        </span>
                     </p>
                     <span class="often">Often</span>
                 </div>
@@ -187,7 +202,14 @@
                     
                     <span class="godfather">Nope</span>
                     <p class="range-2">
-                        <input type="range" value="20" max="100" class="input-range" />
+                        <span class="ws-range" role="slider" aria-readonly="false" tabindex="0" aria-disabled="false" aria-valuenow="41" aria-valuetext="41">
+                            <span class="ws-range-min ws-range-progress" style="margin-top: 0px; width: 41%;"></span>'
+                            <span class="ws-range-rail ws-range-track" style="left: 11px; right: 11px;">
+                                <span class="ws-range-thumb" style="margin-left: -11px; margin-top: -6px; left: 41%;">
+                                    <span data-value="41" data-valuetext="41"></span>
+                                </span>
+                            </span>
+                        </span>
                     </p>
                     <span class="often">Often</span>
                 </div>
