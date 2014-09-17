@@ -683,9 +683,12 @@ input[type=submit]:hover{
     margin-left: 20px;
 }
 .avatar-step2 img {
-    border-radius: 100px;
+    border-radius: 100%;
     height: 70px;
     width: 70px;
+	-webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    behavior: url('../pie/PIE.htc');
 }
 .detail-temp-info {
     padding: 0px 20px 5px 20px;
