@@ -40,6 +40,7 @@ class User extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return User the static model class
 	 */
+    const STATUS_ACTIVE = 0;
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -151,7 +152,8 @@ class User extends CActiveRecord
 		$criteria->compare('ehtnicity',$this->ehtnicity,true);
 		$criteria->compare('fname',$this->fname,true);
 		$criteria->compare('lname',$this->lname,true);
-		$criteria->compare('birthday',$this->birthday,true);
+        if ($this->birthday)
+            $criteria->compare('t.birthday', date('Y-m-d ', $this->birthday), true);
 		$criteria->compare('photo',$this->photo,true);
 		$criteria->compare('address',$this->address,true);
 		$criteria->compare('education',$this->education,true);
@@ -171,6 +173,9 @@ class User extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+            'sort'=>array(
+                'defaultOrder'=>'t.id DESC',
+            )
 		));
 	}
 
@@ -201,4 +206,19 @@ class User extends CActiveRecord
 
         return $code;
     }
+
+    function getActiveMember(){
+        $active_member = array(
+            Yii::t('global','active'),
+            Yii::t('global','Inactive')
+        );
+        return $active_member;
+    }
+
+    function getStatusMember($status){
+        if($status==self::STATUS_ACTIVE)
+            return Yii::t('global','active');
+        return Yii::t('global','Inactive');
+    }
+
 }

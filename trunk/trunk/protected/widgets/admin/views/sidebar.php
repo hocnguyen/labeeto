@@ -36,11 +36,11 @@ $this->widget('widgets.NBADMenu', array(
 							'items' => array(
 								array(
 									'label' => Yii::t('global', 'Admin Accounts'),
-									'url' => array('members/admin'),
+									'url' => array('user/admin'),
 								),
 								array(
 									'label' => Yii::t('global', 'Manage Members'),
-									'url' => array('members/index'),
+									'url' => array('user/index'),
 								),
 							),
 						),
