@@ -26,7 +26,7 @@
 								<label <?php if( CHtml::encode($row->description) ): ?> class="tipb" data-original-title='<?php echo Yii::t('global', $row->description); ?>'<?php endif; ?>>
 									<?php echo Yii::t('global', $row->title); ?>
 									<?php if( $row->value && $row->default_value != $row->value ): ?><span style='color:red;'><?php echo Yii::t('adminsettings', '(Setting Changed)'); ?></span><?php endif; ?>
-								</label>	
+								</label>
 							</div>
 							<div class="span9">
 								<?php $this->parseSetting( $row );?>
@@ -40,12 +40,12 @@
 				<?php endif; ?>
 			<?php if( count($cat1) ): ?>
 			<div class="footer tar">
-				
+
 			</div>
 			<?php endif; ?>
 			</div>
 		</div>
-	</div>                                
+	</div>
 </div>
 
 <div class="row-fluid  form-seting-site">
@@ -57,14 +57,14 @@
         </div>
         <div class="floatingBox">
             <div class="container-fluid">
-			
+
 				<?php if( count($cat3) ): ?>
 					<?php foreach ($cat3 as $row): ?>
 						<div class="row-form clearfix">
 							<div class="span3">
 								<label<?php if( CHtml::encode($row->description)): ?> class="tipb" data-original-title='<?php echo CHtml::encode($row->description); ?>'<?php endif; ?>>
 									<?php echo Yii::t('global', $row->title); ?>
-								
+
 									<?php if( $row->value && $row->default_value != $row->value ): ?><span style='color:red;'><?php echo Yii::t('adminsettings', '(Setting Changed)'); ?></span><?php endif; ?>
 								</label>
 							</div>
@@ -80,12 +80,12 @@
 				<?php endif; ?>
 			<?php if( count($cat1) ): ?>
 			<div class="footer tar">
-				
+
 			</div>
 			<?php endif; ?>
 			</div>
 		</div>
-	</div>                                
+	</div>
 </div>
     <div class="control-group"><?php echo CHtml::submitButton(Yii::t('adminglobal', 'Save'), array( 'name' => 'submit', 'class'=>'btn btn-primary')); ?></div>
 </div>
@@ -93,14 +93,4 @@
 
 
 <?php echo CHtml::endForm();
-    $val_delivery   = isset( Yii::app()->settings->delivery_insurance )?Yii::app()->settings->delivery_insurance:'';
 ?>
-<script>
-    $('#setting_46').change(function(){
-        var delivery = $('#setting_46').val();
-        if ( delivery == 1 )
-            $('#setting_46').after('<div class="delivery"><span class="delivery-insurance"> <?php echo Yii::t('global', 'Input Value Delivery insurance'); ?> </span> <span> <input name="delivery_insurance" type="text" value="<?php echo $val_delivery; ?>"> </span> </div>');
-        else
-            $('.delivery').remove();
-    });
-</script>

@@ -23,12 +23,7 @@ class SettingsController extends AdminBaseController {
 		{
 			if( count( $_POST ) )
 			{
-                   /* $shipping_clause = ShippingClause::model()->findByAttributes(array('alias'=>'shipping_clause')) ;
-                    $shipping_clause->shipping_fee_clause_inside = $_POST['shipping_fee_inside'];
-                    $shipping_clause->shipping_fee_clause_outside = $_POST['shipping_fee_outside'];
-                    $shipping_clause->save();*/
-                $_POST['setting_46'] = isset($_POST['delivery_insurance'])?$_POST['delivery_insurance']:0;
-                unset( $_POST['delivery_insurance'] );
+
                 foreach( $_POST as $key => $value )
 				{
 
@@ -57,13 +52,11 @@ class SettingsController extends AdminBaseController {
 		$cat1 = Settings::model()->findAll('category=:category', array( ':category' => 2 ));
 		$cat2 = Settings::model()->findAll('category=:category', array( ':category' => 3 ));
         $cat3 = Settings::model()->findAll('category=:category', array( ':category' => 4 ));
-		// Get info Shipping clause
-            $shipping_clause = ShippingClause::model()->findByAttributes(array('alias'=>'shipping_clause')) ;
-		// Set info
+
 		Yii::app()->user->setFlash('information', Yii::t('adminsettings', 'Hover over the setting title to see a description if one exists.'));
 		
 		// Render
-		$this->render('index', array( 'cat1' => $cat1, 'cat2' => $cat2, 'cat3' => $cat3,'shipping_clause'=>$shipping_clause ));
+		$this->render('index', array( 'cat1' => $cat1, 'cat2' => $cat2, 'cat3' => $cat3 ));
     }
 
 	/**
