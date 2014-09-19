@@ -191,7 +191,6 @@ $(document).ready(function(){
     
     /*Excercise*/
     $('#id-excercise').click(function(){
-        console.log('2222222');
         if ($('#form-excercise').is(':hidden')) {
             $('#form-excercise').show();
             $('#value-excercise').hide();
@@ -206,5 +205,84 @@ $(document).ready(function(){
         $('#value-excercise').show();
     })
     
+    /*Children*/
+    $('#id-children').click(function(){
+        if ($('#form-children').is(':hidden')) {
+            $('#form-children').show();
+            $('#value-children').hide();
+        }else{
+            $('#form-children').hide();
+            $('#value-children').show();
+        }
+    })
+    
+    $('#cancel-children').click(function(){
+        $('#form-children').hide();
+        $('#value-children').show();
+    })
+    
+    /*about*/
+    $('#id-about').click(function(){
+        if ($('#form-about').is(':hidden')) {
+            $('#form-about').show();
+            $('#value-about').hide();
+        }else{
+            $('#form-about').hide();
+            $('#value-about').show();
+        }
+    })
+    
+    $('#cancel-about').click(function(){
+        $('#form-about').hide();
+        $('#value-about').show(); 
+    })
+    
+    /*diet*/
+    $('#id-diet').click(function(){
+        if ($('#form-diet').is(':hidden')) {
+            $('#form-diet').show();
+            $('#value-diet').hide();
+        }else{
+            $('#form-diet').hide();
+            $('#value-diet').show();
+        }
+    })
+    
+    $('#cancel-diet').click(function(){
+        $('#form-diet').hide();
+        $('#value-diet').show(); 
+    })
+    
+    /*Gym*/
+    $('#id-gym').click(function(){
+        if ($('#form-gym').is(':hidden')) {
+            $('#form-gym').show();
+            $('#value-gym').hide();
+        }else{
+            $('#form-gym').hide();
+            $('#value-gym').show();
+        }
+    })
+    
+    $('#cancel-gym').click(function(){
+        $('#form-gym').hide();
+        $('#value-gym').show(); 
+    })
+    
+    /*All header*/
+    $('#id-gender').click(function(){
+        if ($('#form-gender').is(':hidden')) {
+            $('#form-gender').show();
+            $('#value-gender').hide();
+        }else{
+            $('#form-gender').hide();
+            $('#value-gender').show();
+        }
+    })
+    
+    $('#cancel-gender').click(function(){
+        $('#form-gender').hide();
+        $('#value-gender').show(); 
+    })
     /*********************************************************************************************/
 });
