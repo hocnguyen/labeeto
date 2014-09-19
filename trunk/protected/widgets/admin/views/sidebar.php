@@ -66,6 +66,10 @@ $this->widget('widgets.NBADMenu', array(
                                     'label' => Yii::t('global', 'Manage Contact'),
                                     'url' => array('contactus/index'),
                                 ),
+                                array(
+                                    'label' => Yii::t('global', 'Manage Achievements'),
+                                    'url' => array('achievements/index'),
+                                ),
                             ),
                         ),
 
