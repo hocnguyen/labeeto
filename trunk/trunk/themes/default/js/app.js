@@ -306,5 +306,26 @@ $(document).ready(function(){
             $('#city').html(html);
         });
     });
+    
+    $('#form-education').submit(function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+            type:'POST',
+            url: '/user/SaveEducation',
+            data:formData,
+            cache:false,
+            contentType: false,
+            processData: false,
+            success:function(data){
+                console.log(data);
+                $.session.set('avatar',data);
+            },
+            error: function(data){
+                console.log("error");
+            }
+        });
+        return false;
+    });
 
 });
