@@ -204,7 +204,7 @@ a{
     color: #ffffff;
     text-align: center;
     font-size: 12px;
-    font-family: "Proxima Nova";
+    font-family: Proxima Nova Semi Bold;
     padding-top: 3px;
 }
 .profile-nav {
@@ -228,7 +228,7 @@ a{
     float: left;
     color: #c0c0c0;
     font-weight: bold;
-    font-family: "Proxima Nova";
+    font-family: Proxima Nova Semi Bold;
     text-transform: uppercase;
     position: relative;
     top: 15px;
@@ -1131,6 +1131,10 @@ span.note-span{
     float: right;
     background: url('../images/note.png') no-repeat;
     padding: 10px;
+    cursor: pointer;
+}
+span.note-span{
+    margin-top: -7px;
 }
 ul li.content-bit{
     list-style: none;
@@ -1223,9 +1227,6 @@ ul li.content-bit{
     top: -17px;
     right: 0px;
 }
-span.my-btn{
-    
-}
 span.my-btn input{
     background-color: #e2d1bd;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#e2d1bd', endColorstr='#e2d1bd'); /* IE */
@@ -1238,8 +1239,9 @@ span.my-btn input{
     border: transparent;
     color: #2a2722;
     font: normal 11pt/normal Proxima Nova Semi bold;
+    margin-top: 10px;
 }
-span.my-btn button{
+span.text-cancel{
     background-color: #282727;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#282727', endColorstr='#282727'); /* IE */
     color: #ffffff;
@@ -1247,12 +1249,13 @@ span.my-btn button{
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     behavior: url('../pie/PIE.htc');
-    padding: 5px 10px 5px 10px;
+    padding: 5px 10px 6px 10px;
     text-transform: uppercase;
     margin-left: 10px;
     border: transparent;
     font: normal 11pt/normal Proxima Nova Semi bold;
     margin-top: 10px;
+    cursor: pointer;
 }
 .content-infor-profile{
     height: 50px;
@@ -1877,6 +1880,24 @@ input[type="range"]::-ms-fill-lower {display: block;height: 100%;background: #c2
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     behavior: url('../pie/PIE.htc');
+}
+.skinny{
+    font-size: 18px;
+    padding: 8px 10px 8px 10px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    background-color: #30bee6;
+    border: 1px solid #15abcd;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+.button-black{
+    background-color: #302f32;
+    border: 1px solid #000;
+    margin-left: 5px;
 }
 /*input[type="range"] {height: 10px;border-radius: 5px;background: #420811;-webkit-appearance: none;cursor: pointer;border: 0;outline: none;padding: 0;margin: 0 0;}
 input[type="range"]::-moz-range-track {border: none;background: transparent;}

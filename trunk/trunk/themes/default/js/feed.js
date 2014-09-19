@@ -54,5 +54,157 @@ $(document).ready(function(){
         $('.content-photo-private').show();
         $('.line-green-photo-pravite').css('display','block');
     });
-
+    
+    /*******************************************Update Profile******************************************************/
+    
+    /*Education*/
+    $('#id-education').click(function(){
+        if ($('#form-education').is(':hidden')) {
+            $('#form-education').show();
+            $('#value-education').hide();
+        }else{
+            $('#form-education').hide();
+            $('#value-education').show();
+        }
+    })
+    
+    $('#cancel-education').click(function(){
+        $('#form-education').hide();
+        $('#value-education').show();
+    })
+    
+    /*Religion*/
+    $('#id-religion').click(function(){
+        if ($('#form-religion').is(':hidden')) {
+            $('#form-religion').show();
+            $('#value-religion').hide();
+        }else{
+            $('#form-religion').hide();
+            $('#value-religion').show();
+        }
+    })
+    
+    $('#cancel-religion').click(function(){
+        $('#form-religion').hide();
+        $('#value-religion').show();
+    })
+    
+    /*Ethnicity*/
+    $('#id-ehtnicity').click(function(){
+        if ($('#form-ehtnicity').is(':hidden')) {
+            $('#form-ehtnicity').show();
+            $('#value-ehtnicity').hide();
+        }else{
+            $('#form-ehtnicity').hide();
+            $('#value-ehtnicity').show();
+        }
+    })
+    
+    $('#cancel-ehtnicity').click(function(){
+        $('#form-ehtnicity').hide();
+        $('#value-ehtnicity').show();
+    })
+    
+    /*Height*/
+    $('#id-height').click(function(){
+        if ($('#form-height').is(':hidden')) {
+            $('#form-height').show();
+            $('#value-height').hide();
+        }else{
+            $('#form-height').hide();
+            $('#value-height').show();
+        }
+    })
+    
+    $('#cancel-height').click(function(){
+        $('#form-height').hide();
+        $('#value-height').show();
+    })
+    
+    
+    
+    
+    /*Passion*/
+    $('#id-passion').click(function(){
+        if ($('#form-passion').is(':hidden')) {
+            $('#form-passion').show();
+            $('#value-passion').hide();
+        }else{
+            $('#form-passion').hide();
+            $('#value-passion').show();
+        }
+    })
+    
+    $('#cancel-passion').click(function(){
+        $('#form-passion').hide();
+        $('#value-passion').show();
+    })
+    
+    /*Goal*/
+    $('#id-goal').click(function(){
+        if ($('#form-goal').is(':hidden')) {
+            $('#form-goal').show();
+            $('#value-goal').hide();
+        }else{
+            $('#form-goal').hide();
+            $('#value-goal').show();
+        }
+    })
+    
+    $('#cancel-goal').click(function(){
+        $('#form-goal').hide();
+        $('#value-goal').show();
+    })
+    
+    /*Smoke*/
+    $('#id-smoke').click(function(){
+        if ($('#form-smoke').is(':hidden')) {
+            $('#form-smoke').show();
+            $('#value-smoke').hide();
+        }else{
+            $('#form-smoke').hide();
+            $('#value-smoke').show();
+        }
+    })
+    
+    $('#cancel-smoke').click(function(){
+        $('#form-smoke').hide();
+        $('#value-smoke').show();
+    })
+    
+    /*Drink*/
+    $('#id-drink').click(function(){
+        if ($('#form-drink').is(':hidden')) {
+            $('#form-drink').show();
+            $('#value-drink').hide();
+        }else{
+            $('#form-drink').hide();
+            $('#value-drink').show();
+        }
+    })
+    
+    $('#cancel-drink').click(function(){
+        $('#form-drink').hide();
+        $('#value-drink').show();
+    })
+    
+    
+    /*Excercise*/
+    $('#id-excercise').click(function(){
+        console.log('2222222');
+        if ($('#form-excercise').is(':hidden')) {
+            $('#form-excercise').show();
+            $('#value-excercise').hide();
+        }else{
+            $('#form-excercise').hide();
+            $('#value-excercise').show();
+        }
+    })
+    
+    $('#cancel-excercise').click(function(){
+        $('#form-excercise').hide();
+        $('#value-excercise').show();
+    })
+    
+    /*********************************************************************************************/
 });
