@@ -288,4 +288,169 @@ class UserController extends SiteBaseController {
     function generateRandomString($length = 10) {
         return substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
     }
+    
+    public function actionSetting(){
+        $this->layout = 'feed';
+        if(!Yii::app()->user->isGuest){
+            $this->render('setting');
+        } else {
+            $this->redirect('/');
+        }
+
+    }
+    
+    public function actionSaveEducation(){
+        if (isset($_POST['education'])){
+            User::model()->updateByPk(Yii::app()->user->id, array('education'=>$_POST['education']));
+            echo Education::model()->getNameEducation($_POST['education']);
+        }
+    }
+    
+    public function actionSaveReligion(){
+        if (isset($_POST['religion'])){
+            User::model()->updateByPk(Yii::app()->user->id, array('religion'=>$_POST['religion']));
+            echo Religion::model()->getNameReligion($_POST['religion']);
+        }
+    }
+    
+    public function actionSaveEthnicity(){
+        if (isset($_POST['ehtnicity'])){
+            User::model()->updateByPk(Yii::app()->user->id, array('ehtnicity'=>$_POST['ehtnicity']));
+            echo Ethnicity::model()->getNameEthnicity($_POST['ehtnicity']);
+        }
+    }
+    
+    public function actionSavePassion(){
+        if (isset($_POST['passion'])){
+            User::model()->updateByPk(Yii::app()->user->id, array('passion'=>$_POST['passion']));
+            echo $_POST['passion'];
+        }
+    }
+    
+    public function actionSaveGoal(){
+        if (isset($_POST['goal'])){
+            User::model()->updateByPk(Yii::app()->user->id, array('goal'=>$_POST['goal']));
+            echo $_POST['goal'];
+        }
+    }
+    
+    public function actionSaveChildren(){
+        if (isset($_POST['children'])){
+            User::model()->updateByPk(Yii::app()->user->id, array('children'=>$_POST['children']));
+            echo $_POST['children'] . ' all boy';
+        }
+    }
+    
+    public function actionSaveHeight(){
+        if ((isset($_POST['feet'])) && (isset($_POST['inches']))){
+            $height = $_POST['feet'] . '.' . $_POST['inches'];
+            User::model()->updateByPk(Yii::app()->user->id, array('height'=>$height));
+            echo $height . ' FEET';
+        }
+    }
+    
+    public function actionSaveAbout(){
+        if (isset($_POST['about'])){
+            User::model()->updateByPk(Yii::app()->user->id, array('about'=>$_POST['about']));
+            echo $_POST['about'] ;
+        }
+    }
+    
+    public function actionSaveExcercise(){
+        if (isset($_POST['excercise'])){
+            User::model()->updateByPk(Yii::app()->user->id, array('excercise'=>$_POST['excercise']));
+            $t = '';
+            $t.= '<span class="ws-range" role="slider" aria-readonly="false" tabindex="0" aria-disabled="false" aria-valuenow="'. $_POST['excercise'] .'" aria-valuetext="'. $_POST['excercise'] .'">';
+            $t.= '<span class="ws-range-min ws-range-progress" style="margin-top: 0px; width: '. $_POST['excercise'] .'%;"></span>';
+            $t.= '<span class="ws-range-rail ws-range-track" style="left: 11px; right: 9px;">';
+            $t.= '<span class="ws-range-thumb" style="margin-left: -11px; margin-top: -6px; left: '. $_POST['excercise'] .'%;">';
+            $t.= '</span></span></span>';
+            echo $t;
+        }
+    }
+    
+    public function actionSaveDrink(){
+        if (isset($_POST['drink'])){
+            User::model()->updateByPk(Yii::app()->user->id, array('drink'=>$_POST['drink']));
+            $t = '';
+            $t.= '<span class="ws-range" role="slider" aria-readonly="false" tabindex="0" aria-disabled="false" aria-valuenow="'. $_POST['drink'] .'" aria-valuetext="'. $_POST['drink'] .'">';
+            $t.= '<span class="ws-range-min ws-range-progress" style="margin-top: 0px; width: '. $_POST['drink'] .'%;"></span>';
+            $t.= '<span class="ws-range-rail ws-range-track" style="left: 11px; right: 9px;">';
+            $t.= '<span class="ws-range-thumb" style="margin-left: -11px; margin-top: -6px; left: '. $_POST['drink'] .'%;">';
+            $t.= '</span></span></span>';
+            echo $t;
+            
+        }
+    }
+    
+    public function actionSaveSmoke(){
+        if (isset($_POST['smoke'])){
+            User::model()->updateByPk(Yii::app()->user->id, array('smoke'=>$_POST['smoke']));
+            $t = '';
+            $t.= '<span class="ws-range" role="slider" aria-readonly="false" tabindex="0" aria-disabled="false" aria-valuenow="'. $_POST['smoke'] .'" aria-valuetext="'. $_POST['smoke'] .'">';
+            $t.= '<span class="ws-range-min ws-range-progress" style="margin-top: 0px; width: '. $_POST['smoke'] .'%;"></span>';
+            $t.= '<span class="ws-range-rail ws-range-track" style="left: 11px; right: 9px;">';
+            $t.= '<span class="ws-range-thumb" style="margin-left: -11px; margin-top: -6px; left: '. $_POST['smoke'] .'%;">';
+            $t.= '</span></span></span>';
+            echo $t;
+        }
+    }
+    
+    public function actionSaveDiet(){
+        if (isset($_POST['diet'])){
+            User::model()->updateByPk(Yii::app()->user->id, array('diet'=>$_POST['diet']));
+            echo $_POST['diet'];
+        }
+    }
+    
+    
+    public function actionSaveGym(){
+        if (isset($_POST['gym'])){
+            User::model()->updateByPk(Yii::app()->user->id, array('gym'=>$_POST['gym']));
+            echo $_POST['gym'];
+        }
+    }
+    
+    public function actionSaveGender(){
+        $user = User::model()->findByPk(Yii::app()->user->id);
+        $t = '';
+        if(isset($_POST['gender'])){
+            User::model()->updateByPk(Yii::app()->user->id, array('gender'=>$_POST['gender']));
+            if($_POST['gender'] == 1) 
+                $gender = 'Female'; 
+            else 
+                $gender = 'Male';
+            $t.= '<p>
+                    <span class="txt-gender">'. Yii::t('global', 'Gender: ') .'</span>
+                    <span class="txt-female">'. $gender .'</span>
+                </p>';
+        }
+        
+        
+        if(isset($_POST['relationship'])){
+            User::model()->updateByPk(Yii::app()->user->id, array('relations'=>$_POST['relationship']));
+            $t.= '<p>
+                    <span class="txt-gender">'.Yii::t('global', 'Relationship: ').'</span>
+                    <span class="txt-female">'. $_POST['relationship']. '</span>
+                 </p>';
+        }
+        
+        $t.= '<p>
+                <span class="txt-gender">'.Yii::t('global', 'Age: ').' </span>
+                <span class="txt-female">22-28</span>
+             </p>';
+        if(isset($_POST['training'])){
+            User::model()->updateByPk(Yii::app()->user->id, array('training'=>$_POST['training']));
+            if($_POST['training'] == 1) 
+                $l = 'Yes';
+            else
+                $l = 'No';
+            $t.= '<p>
+                    <span class="txt-gender">'.Yii::t('global', 'Training:').'</span>
+                    <span class="txt-female">'. $l .'</span>
+                 </p>';
+        }
+        echo $t;
+    }
+       
 }
