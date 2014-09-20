@@ -32,6 +32,8 @@
  * @property string $drink
  * @property integer $status
  * @property string $last_logged
+ * @property string $created
+ * @property string $updated
  */
 class User extends CActiveRecord
 {
@@ -40,7 +42,12 @@ class User extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return User the static model class
 	 */
-    const STATUS_ACTIVE = 0;
+    const STATUS_ACTIVE     = 0;
+    const STATUS_INACTIVE   = 1;
+    const STATUS_UNVERIFIED = 2;
+    const STATUS_SUSPENDED  = 3;
+    const STATUS_REPORTED   = 4;
+    const STATUS_PREMIUM    = 5;
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -66,6 +73,7 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+            array('username','required'),
 			array('gender, joined, status', 'numerical', 'integerOnly'=>true),
 			array('username, email, photo, address', 'length', 'max'=>155),
 			array('career, height, smoke', 'length', 'max'=>100),
@@ -75,10 +83,10 @@ class User extends CActiveRecord
 			array('zipcode', 'length', 'max'=>5),
 			array('latitude, longtitude', 'length', 'max'=>50),
 			array('birthday, last_logged', 'safe'),
-            array('email', 'uniqueEmail'),
+            array('email', 'uniqueEmail','on'=>'create'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, gender, career, email, password, joined, role, ehtnicity, fname, lname, birthday, photo, address, education, religion, height, excercise, passion, goal, smoke, relations, zipcode, latitude, longtitude, drink, status, last_logged', 'safe', 'on'=>'search'),
+			array('id, username, gender, career, email, password, joined, role, ehtnicity, fname, lname, birthday, photo, address, education, religion, height, excercise, passion, goal, smoke, relations, zipcode, latitude, longtitude, drink, status, last_logged, , created, updated', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -127,6 +135,8 @@ class User extends CActiveRecord
 			'drink' => Yii::t('global', 'Drink'),
 			'status' => Yii::t('global', 'Status'),
 			'last_logged' => Yii::t('global', 'Last Logged'),
+            'created' => Yii::t('global', 'Created'),
+            'updated' => Yii::t('global', 'Updated'),
 		);
 	}
 
@@ -170,6 +180,9 @@ class User extends CActiveRecord
 		$criteria->compare('drink',$this->drink,true);
 		$criteria->compare('status',$this->status);
 		$criteria->compare('last_logged',$this->last_logged,true);
+        if ($this->created)
+            $criteria->compare('t.created', date('Y-m-d ', strtotime($this->created)), true);
+        $criteria->compare('updated',$this->updated,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -209,7 +222,7 @@ class User extends CActiveRecord
 
     function getActiveMember(){
         $active_member = array(
-            Yii::t('global','active'),
+            Yii::t('global','Active'),
             Yii::t('global','Inactive')
         );
         return $active_member;
@@ -217,8 +230,45 @@ class User extends CActiveRecord
 
     function getStatusMember($status){
         if($status==self::STATUS_ACTIVE)
-            return Yii::t('global','active');
+            return Yii::t('global','Active');
         return Yii::t('global','Inactive');
+    }
+
+    function showAdminImage(){
+        $image = ($this->photo !='')?$this->photo:'no_image.png';
+            return '<a class="fancybox" href="/uploads/avatar/'.$image.'" rel="group">
+						<img class="img-polaroid fix_image_products" src="/uploads/avatar/'.$image.'" style="height: 40px;"/>
+					</a>';
+
+
+    }
+
+    function showAdminImageNew( $image ){
+        $image = ($image !='')?$image:'no_image.png';
+            return '<a class="fancybox" href="/uploads/avatar/'.$image.'" rel="group">
+					<img class="img-polaroid fix_image_products" src="/uploads/avatar/'.$image.'" style="height: 40px;"/>
+				</a>';
+
+    }
+
+    public function getEmails($id){
+        $result = User::model()->find(array(
+                'select'=>'email',
+                'condition'=>'id=:id',
+                'params'=>array( ':id'=>$id ) )
+        );
+
+        return  $result['email'];
+    }
+
+    public function getUser($id){
+        $result = User::model()->find(array(
+                'select'=>'username',
+                'condition'=>'id=:id',
+                'params'=>array( ':id'=>$id ) )
+        );
+
+        return  $result['username'];
     }
 
 }
