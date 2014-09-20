@@ -33,9 +33,22 @@ class UserController extends AdminBaseController {
 
 		if(isset($_POST['User']))
 		{
-			$model->attributes=$_POST['User'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+            $model->attributes=$_POST['User'];
+            $uploadedFile=CUploadedFile::getInstance($model,'photo');
+            if(!empty($uploadedFile)) {
+                $rnd = rand(0,9999);
+                $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
+                $model->photo = $fileName;
+            }
+            else{
+                $fileName = '';
+            }
+			if($model->save()){
+                if(!empty($uploadedFile)) {
+                    $uploadedFile->saveAs(Yii::app()->basePath.'/../uploads/avatar/'.$fileName);
+                }
+                $this->redirect(array('view','id'=>$model->id));
+            }
 		}
 
 		$this->render('create',array(
@@ -58,8 +71,23 @@ class UserController extends AdminBaseController {
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
-			if($model->save())
+            $uploadedFile=CUploadedFile::getInstance($model,'photo');
+
+            if(!empty($uploadedFile)) {
+                $rnd = rand(0,9999);
+                $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
+                $model->photo = $fileName;
+            }
+            else{
+                $modelold       = $this->loadModel($id);
+                $model->photo   = $modelold->photo ;
+            }
+			if($model->save()){
+                if(!empty($uploadedFile)) {
+                    $uploadedFile->saveAs(Yii::app()->basePath.'/../uploads/avatar/'.$model->photo);
+                }
 				$this->redirect(array('view','id'=>$model->id));
+            }
 		}
 
 		$this->render('update',array(
@@ -94,11 +122,12 @@ class UserController extends AdminBaseController {
 	{
 		$model=new User('search');
 		$model->unsetAttributes();  // clear any default values
+        $model->role = 'user';
 		if(isset($_GET['User']))
 			$model->attributes=$_GET['User'];
 
 		$this->render('index',array(
-			'model'=>$model,
+			'model'=>$model,'type'=>'Users'
 		));
 	}
 
@@ -111,7 +140,7 @@ class UserController extends AdminBaseController {
             $model->attributes=$_GET['User'];
 
         $this->render('index',array(
-            'model'=>$model,
+            'model'=>$model,'type'=>'Admin'
         ));
        }
 	/**
@@ -150,4 +179,42 @@ class UserController extends AdminBaseController {
 			Yii::app()->end();
 		}
 	}
+
+    public function actionChangepass($id)
+    {
+        $my = User::model()->findByPk($id);
+        $password = new PasswordFormAdmin;
+        if( isset($_POST['PasswordFormAdmin']) )
+        {
+            $password->attributes = $_POST['PasswordFormAdmin'];
+            if( $password->validate() )
+            {
+                // Save changes
+                User::model()->updateByPk($my->id, array( 'password' => $my->hashPassword($password->npassword, '') ));
+
+                // Redirect
+                Yii::app()->user->setFlash('success', Yii::t('global', 'Changed password.'));
+                $username = User::model()->getUser($id);
+                $email = User::model()->getEmails($id);
+                $newpass = $_POST['PasswordFormAdmin']['npassword2'];
+                $subject = Yii::t('global', 'Reset Password');
+                $content =  Yii::t('global', 'Dear Mr/Ms '). $username . '<br>'. Yii::t('global', 'We have reset your password successfully.') . '<br>' . Yii::t('global', 'Your new password is: '). $newpass;
+                Utils::sendMail(Yii::app()->params['emailout'], $email, $subject, $content);
+                $this->redirect($_POST['from_action']);
+            }
+            else
+            {
+                //$password->password = '';
+                $password->npassword = '';
+                $password->npassword2 = '';
+            }
+        }
+        $member   = User::model()->findByPk($id);
+        // Add page breadcrumb and title
+        $this->pageTitle[] = Yii::t('global', 'Change Password');
+        $this->breadcrumbs[Yii::t('global', 'Change Password') ] = '';
+
+        $this->render('changepass', array('password'=>$password,'member'=>$member));
+    }
+
 }

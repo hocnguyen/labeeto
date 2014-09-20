@@ -26,19 +26,18 @@
                     'data'=>$model,
                     'attributes'=>array(
                         array('name'=>'username'),
-                        array('name'=>'gender'),
+                        array('name'=>'gender','value'=>Lookup::item( "Gender", $model->gender) ),
                         array('name'=>'career'),
                         array('name'=>'email'),
-                        array('name'=>'joined'),
                         array('name'=>'role'),
-                        array('name'=>'ehtnicity'),
+                        array('name'=>'ehtnicity','value'=>Ethnicity::model()->getNameEthnicity($model->ehtnicity), 'type'=>'raw'),
                         array('name'=>'fname'),
                         array('name'=>'lname'),
                         array('name'=>'birthday'),
-                        array('name'=>'photo'),
+                        array('name'=>'photo', 'value'=>User::model()->showAdminImageNew($model->photo), 'type'=>'raw'),
                         array('name'=>'address'),
-                        array('name'=>'education'),
-                        array('name'=>'religion'),
+                        array('name'=>'education','value'=>Education::model()->getNameEducation($model->education), 'type'=>'raw' ),
+                        array('name'=>'religion','value'=>Religion::model()->getNameReligion($model->religion), 'type'=>'raw'),
                         array('name'=>'height'),
                         array('name'=>'excercise'),
                         array('name'=>'passion'),
@@ -49,10 +48,10 @@
                         array('name'=>'latitude'),
                         array('name'=>'longtitude'),
                         array('name'=>'drink'),
-                        array('name'=>'status'),
-                        array('name'=>'last_logged'),
-                    ),
-                    )); ?>
+                        array('name'=>'status','value'=>Lookup::item( "StatusUser", $model->status) ),
+                        array('name'=>'created'),
+                        array('name'=>'updated'),
+                    ))); ?>
 
                 </div>
             </div>

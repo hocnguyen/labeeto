@@ -16,6 +16,7 @@
                     'htmlOptions'=>array(
                                 'class'=>'form-horizontal contentForm',
                                 'data-validate'=>'parsley',
+                                'enctype' => 'multipart/form-data',
                                 )
                 )); ?>
 
@@ -24,14 +25,14 @@
                     <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'username'); ?>
 </label>
                     <div class="controls">
-                        <?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>155, 'class'=>'span10')); ?>
+                        <?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>155, 'class'=>'span10', 'data-required'=>'true')); ?>
                     </div>
                 </div>
                             <div class="control-group">
                     <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'gender'); ?>
 </label>
                     <div class="controls">
-                        <?php echo $form->textField($model,'gender', array('class'=>'span10')); ?>
+                        <?php echo $form->dropDownList($model,'gender', Lookup::items('Gender') ); ?>
                     </div>
                 </div>
                             <div class="control-group">
@@ -48,32 +49,13 @@
                         <?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>155, 'class'=>'span10')); ?>
                     </div>
                 </div>
-                            <div class="control-group">
-                    <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'password'); ?>
-</label>
+
+                <div class="control-group">
+                    <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'ehtnicity'); ?></label>
                     <div class="controls">
-                        <?php echo $form->passwordField($model,'password',array('size'=>40,'maxlength'=>40, 'class'=>'span10')); ?>
-                    </div>
-                </div>
-                            <div class="control-group">
-                    <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'joined'); ?>
-</label>
-                    <div class="controls">
-                        <?php echo $form->textField($model,'joined', array('class'=>'span10')); ?>
-                    </div>
-                </div>
-                            <div class="control-group">
-                    <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'role'); ?>
-</label>
-                    <div class="controls">
-                        <?php echo $form->textField($model,'role',array('size'=>30,'maxlength'=>30, 'class'=>'span10')); ?>
-                    </div>
-                </div>
-                            <div class="control-group">
-                    <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'ehtnicity'); ?>
-</label>
-                    <div class="controls">
-                        <?php echo $form->textField($model,'ehtnicity',array('size'=>30,'maxlength'=>30, 'class'=>'span10')); ?>
+                        <?php
+                        $ehtnicity = CHtml::listData(Ethnicity::model()->findAll(''),'id','name');
+                        echo $form->dropDownList($model,'ehtnicity',$ehtnicity); ?>
                     </div>
                 </div>
                             <div class="control-group">
@@ -90,18 +72,17 @@
                         <?php echo $form->textField($model,'lname',array('size'=>40,'maxlength'=>40, 'class'=>'span10')); ?>
                     </div>
                 </div>
-                            <div class="control-group">
-                    <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'birthday'); ?>
-</label>
-                    <div class="controls">
-                        <?php echo $form->textField($model,'birthday', array('class'=>'span10')); ?>
-                    </div>
-                </div>
+
                             <div class="control-group">
                     <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'photo'); ?>
 </label>
                     <div class="controls">
-                        <?php echo $form->textField($model,'photo',array('size'=>60,'maxlength'=>155, 'class'=>'span10')); ?>
+                        <?php echo $form->fileField($model,'photo'); ?>
+                        <?php if ($model->photo):?>
+                            <div style="margin:10px;"><a class="fancybox" <?php echo 'href="/uploads/avatar/'.$model->photo.'"'?> rel="group">
+                                    <img class="img-polaroid" <?php echo 'src="/uploads/avatar/'.$model->photo.'"'?> style="height: 65px;"/>
+                                </a></div>
+                        <?php endif;?>
                     </div>
                 </div>
                             <div class="control-group">
@@ -115,14 +96,18 @@
                     <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'education'); ?>
 </label>
                     <div class="controls">
-                        <?php echo $form->textField($model,'education',array('size'=>40,'maxlength'=>40, 'class'=>'span10')); ?>
+                        <?php
+                        $education = CHtml::listData(Education::model()->findAll(''),'id','name');
+                        echo $form->dropDownList( $model, 'education', $education ); ?>
                     </div>
                 </div>
                             <div class="control-group">
                     <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'religion'); ?>
 </label>
                     <div class="controls">
-                        <?php echo $form->textField($model,'religion',array('size'=>40,'maxlength'=>40, 'class'=>'span10')); ?>
+                        <?php
+                        $religion = CHtml::listData(Religion::model()->findAll(''),'id','name');
+                        echo $form->dropDownList( $model, 'religion', $religion); ?>
                     </div>
                 </div>
                             <div class="control-group">
@@ -199,23 +184,10 @@
                     <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'status'); ?>
 </label>
                     <div class="controls">
-                        <?php echo $form->textField($model,'status', array('class'=>'span10')); ?>
+                        <?php echo $form->dropDownList($model,'status', Lookup::items('StatusUser') ); ?>
                     </div>
                 </div>
-                            <div class="control-group">
-                    <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'last_logged'); ?>
-</label>
-                    <div class="controls">
-                        <?php echo $form->textField($model,'last_logged', array('class'=>'span10')); ?>
-                    </div>
-                </div>
-                            <div class="control-group">
-                    <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'language'); ?>
-</label>
-                    <div class="controls">
-                        <?php echo $form->textField($model,'language',array('size'=>10,'maxlength'=>10, 'class'=>'span10')); ?>
-                    </div>
-                </div>
+
                             <div class="control-group">
                     <div class="controls">
                         <?php echo CHtml::submitButton($model->isNewRecord ? Yii::t('global','Create') : Yii::t('global','Save'), array('class'=>'btn btn-primary')); ?>
