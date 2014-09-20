@@ -9,24 +9,6 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
     <?php Yii::app()->clientScript->registerCssFile( Yii::app()->themeManager->baseUrl . '/css/styles.css' ); ?>
-    <?php Yii::app()->clientScript->registerCssFile( Yii::app()->themeManager->baseUrl . '/css/bootstrap.min.css' ); ?>
-    <?php Yii::app()->clientScript->registerCssFile( Yii::app()->themeManager->baseUrl . '/css/font-awesome.min.css' ); ?>
-    <?php Yii::app()->clientScript->registerCssFile( Yii::app()->themeManager->baseUrl . '/css/slider.css' ); ?>
-    <?php Yii::app()->clientScript->registerCssFile( Yii::app()->themeManager->baseUrl . '/css/toggle-switch.css' ); ?>
-    <?php Yii::app()->clientScript->registerCssFile( Yii::app()->themeManager->baseUrl . '/css/bootstrap-wysihtml5-0.0.2.css' ); ?>
-    <?php Yii::app()->clientScript->registerCssFile( Yii::app()->themeManager->baseUrl . '/css/theme.default.css' ); ?>
-    <?php Yii::app()->clientScript->registerCssFile( Yii::app()->themeManager->baseUrl . '/css/bootstrap-editable.css' ); ?>
-    <?php Yii::app()->clientScript->registerCssFile( Yii::app()->themeManager->baseUrl . '/css/jquery.selectBoxIt.css' ); ?>
-    <?php Yii::app()->clientScript->registerCssFile( Yii::app()->themeManager->baseUrl . '/css/colorpicker.css' ); ?>
-    <?php Yii::app()->clientScript->registerCssFile( Yii::app()->themeManager->baseUrl . '/css/datepicker.css' ); ?>
-    <?php Yii::app()->clientScript->registerCssFile( Yii::app()->themeManager->baseUrl . '/css/jquery.jgrowl.min.css' ); ?>
-    <?php Yii::app()->clientScript->registerCssFile( Yii::app()->themeManager->baseUrl . '/css/bootstrap-tags.css' ); ?>
-    <?php Yii::app()->clientScript->registerCssFile( Yii::app()->themeManager->baseUrl . '/css/colorbox.css' ); ?>
-    <?php Yii::app()->clientScript->registerCssFile( Yii::app()->themeManager->baseUrl . '/css/jquery-jvectormap-1.2.2.css' ); ?>
-    <?php Yii::app()->clientScript->registerCssFile( Yii::app()->themeManager->baseUrl . '/css/thekamarel.css' ); ?>
-    <?php Yii::app()->clientScript->registerCssFile( Yii::app()->themeManager->baseUrl . '/css/thekamarel-responsive.css' ); ?>
-    <?php Yii::app()->clientScript->registerCssFile( Yii::app()->themeManager->baseUrl . '../js/plugins/plupload/jquery.plupload.queue/css/jquery.plupload.queue.css' ); ?>
-    <?php Yii::app()->clientScript->registerCssFile( Yii::app()->themeManager->baseUrl . '/css/admin-styles.css' ); ?>
 
 </head>
 <body class="dashboard">
