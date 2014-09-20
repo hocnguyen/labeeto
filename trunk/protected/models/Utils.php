@@ -82,5 +82,9 @@
         return array( Yii::t('global','No'), Yii::t('global','Yes') );
     }
 
+    public function getStatusActive(){
+        return array( Yii::t('global','Inactive'), Yii::t('global','Active') );
+    }
+
 }
 	
