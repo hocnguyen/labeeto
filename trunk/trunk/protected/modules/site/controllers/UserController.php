@@ -337,7 +337,7 @@ class UserController extends SiteBaseController {
     public function actionSaveChildren(){
         if (isset($_POST['children'])){
             User::model()->updateByPk(Yii::app()->user->id, array('children'=>$_POST['children']));
-            echo $_POST['children'] . ' all boy';
+            echo Children::model()->getNameChildren($_POST['children']);
         }
     }
     
@@ -452,5 +452,5 @@ class UserController extends SiteBaseController {
         }
         echo $t;
     }
-       
+    
 }
