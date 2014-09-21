@@ -23,6 +23,7 @@
                 <a href="#" class="add-location" style="margin-top: 10px;">
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/icon-location.png" />
                     Add Location
+
                 </a>
                 <a href="#" class="post-btn">
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/post-home.png" />

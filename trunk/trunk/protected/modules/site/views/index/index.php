@@ -365,8 +365,9 @@
                 </div>
 
             </div>
+            <form id="form-achievement" class="post-home" method="post" name="" action="/achievement">
             <div class="post-content-step3">
-                <textarea class="textarea-step3"> What did you achieved today?</textarea>
+                <textarea class="textarea-step3" name="content" placeholder="What did you achieved today?"> </textarea>
             </div>
             <div class="footer-step3">
                 <div class="icon-step3">
@@ -374,8 +375,9 @@
                     <a class="icon-location" href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/icon-location.png"/>Add Location</a>
                 </div>
                 <input type="button" class="btn-skip" value="SKIP"/>
-                <input type="submit"  value="" class="btn-post btn-post-style"/>
+                <input type="submit"  value="" class="btn-post btn-post-style btn-post-achievement"/>
             </div>
+            </form>
         </div>
     </div>
 </div>
@@ -391,6 +393,12 @@
         <?php  } ?>
         $('#login-btn').click(function(){
             $('.message-login-error').hide();
+        });
+
+        $('.btn-post-achievement').click(function(){
+            content = $('.textarea-step3').val();
+            if( content != '')
+                $('#form-achievement').submit();
         });
 
     });
