@@ -54,3 +54,21 @@ INSERT INTO `religion` (`id`, `name`) VALUES
 (7, 'Jewish'),
 (8, 'Muslim'),
 (9, 'Spiritual without affiliation');
+
+
+CREATE TABLE IF NOT EXISTS `children` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `children`
+--
+
+INSERT INTO `children` (`id`, `name`) VALUES
+(1, 'Have ''em and they live with me'),
+(2, 'Have ''em and they dont live with me'),
+(3, 'Want ''em now'),
+(4, 'Want ''em someday'),
+(5, 'Not for me');
