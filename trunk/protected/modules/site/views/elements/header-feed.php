@@ -114,7 +114,7 @@
                 <a href="#" class=" profile-item"><span class="icon-profile favorite"></span><span class="content-pro-txt">FAVORITE</span></a>
                 <a href="#" class=" profile-item"><span class="icon-profile post-an-achievement"></span><span class="content-pro-txt">POST AN ACHIEVEMENT</span></a>
                 <a href="#" class=" profile-item"><span class="icon-profile invite-friend"></span><span class="content-pro-txt">INVITE FRIEND</span></a>
-                <a href="#" class=" profile-item"><span class="icon-profile settings"></span><span class="content-pro-txt">SETTING</span></a>
+                <a href="/settings" class=" profile-item"><span class="icon-profile settings"></span><span class="content-pro-txt">SETTING</span></a>
                 <a href="#" class=" profile-item"><span class="icon-profile post-an-ad"></span><span class="content-pro-txt">POST AN AD</span></a>
                 <a href="#" class=" profile-item"><span class="icon-profile upgrade-account"></span><span class="content-pro-txt">UPGRADE ACCOUNT</span></a>
                 <a href="<?php echo $this->createUrl('/user/logout'); ?>" class=" profile-item"><span class="icon-profile logout"></span><span class="content-pro-txt">LOGOUT</span></a>

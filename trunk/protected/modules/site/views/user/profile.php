@@ -294,18 +294,6 @@
                 </form>
             </div>
             
-            <div class="content-bit-final favorite_a">
-                <span class="what"><?php echo Yii::t('global', 'Goals') ?></span>
-                <span class="note-span" id="id-goal"></span>
-                <span class="godfather" id="value-goal"><?php if($this->user->goal) echo $this->user->goal ?> </span>
-                <form method="post" style="display: none;" id="form-goal">
-                    <input type="text" name="goal" class="form-control" value="<?php if($this->user->goal) echo $this->user->goal; ?>"/>
-                    <span class="my-btn">
-                        <input type="submit" value="Save"/>
-                        <span class="text-cancel" id="cancel-goal">Cancel</span>
-                    </span>
-                </form>
-            </div>
             
             <div class="content-bit favorite_a">
                 <span class="what"><?php echo Yii::t('global', 'DIET') ?></span>
@@ -316,6 +304,19 @@
                     <span class="my-btn">
                         <input type="submit" value="Save"/>
                         <span class="text-cancel" id="cancel-diet">Cancel</span>
+                    </span>
+                </form>
+            </div>
+            
+            <div class="content-bit favorite_a">
+                <span class="what"><?php echo Yii::t('global', 'Goals') ?></span>
+                <span class="note-span" id="id-goal"></span>
+                <span class="godfather" id="value-goal"><?php if($this->user->goal) echo $this->user->goal ?> </span>
+                <form method="post" style="display: none;" id="form-goal">
+                    <input type="text" name="goal" class="form-control" value="<?php if($this->user->goal) echo $this->user->goal; ?>"/>
+                    <span class="my-btn">
+                        <input type="submit" value="Save"/>
+                        <span class="text-cancel" id="cancel-goal">Cancel</span>
                     </span>
                 </form>
             </div>
@@ -374,7 +375,7 @@
                 </form>
             </div>
             
-            <div class="content-bit favorite_a">
+            <div class="content-bit-final favorite_a">
                 <span class="what"><?php echo Yii::t('global', 'DO YOU SMOKE?') ?></span>
                 <span class="note-span" id="id-smoke"></span>
                 <div style="position: relative;">
@@ -558,7 +559,7 @@
         </div>
         <div class="post" style="padding-bottom: 0px;"> 
             <div class="bit-and-bit">
-                <span class="bit">BITS AND BITS</span>
+                <span class="bit">Detailed About Me</span>
                 <!--<button class="add_question">Add a Custom Question</button>-->
                 <span class="add-question-1">Add Custom Question</span>
             </div>
