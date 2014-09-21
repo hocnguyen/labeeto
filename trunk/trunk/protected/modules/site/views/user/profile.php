@@ -85,7 +85,7 @@
                     </p>
                     <p>
                         <span class="txt-gender"><?php echo Yii::t('global', 'Age: ')?> </span>
-                        <span class="txt-female">22-28</span>
+                        <span class="txt-female"><?php if($this->user->age) echo $this->user->age; ?></span>
                     </p>
                     <p>
                         <span class="txt-gender"><?php echo Yii::t('global', 'Training Buddy:') ?> </span>
@@ -104,14 +104,38 @@
                         <span class="txt-gender"><?php echo Yii::t('global', 'Relationship: ') ?> </span>
                         <span class="txt-female">
                             <select name="relationship" class="form-control">
-                                <option <?php if($this->user->relations == 'Single') echo 'selected'; ?> value="">Single</option>
+                                <option <?php if($this->user->relations == 'Single') echo 'selected'; ?> value="Single">Single</option>
                                 <option <?php if($this->user->relations == 'Married') echo 'selected'; ?> value="Married">Married</option>
                             </select>
                         </span>
                     </p>
                     <p>
                         <span class="txt-gender"><?php echo Yii::t('global', 'Age: ')?> </span>
-                        <span class="txt-female">22-28</span>
+                        <?php $arr_age = explode("-",$this->user->age);?>
+                        <span class="txt-female">
+                            <select name="age-from" class="form-control" style="width: 75px; float: left;">
+                                <?php 
+                                
+                                for($i=1; $i<=50; $i++) {
+                                    if($arr_age[0] == $i)
+                                        $l = 'selected';
+                                    else
+                                        $l = '';
+                                    echo "<option ". $l ." value='".$i."'>".$i."</option>";
+                                }?>
+                            </select>
+                            <select name="age-to" class="form-control" style="width: 75px;">
+                                <?php 
+                                
+                                for($i=1; $i<=50; $i++) {
+                                    if($arr_age[1] == $i)
+                                        $l = 'selected';
+                                    else
+                                        $l = '';
+                                    echo "<option ". $l ." value='".$i."'>".$i."</option>";
+                                }?>
+                            </select>
+                        </span>
                     </p>
                     <p>
                         <span class="txt-gender"><?php echo Yii::t('global', 'Training Buddy:') ?> </span>
