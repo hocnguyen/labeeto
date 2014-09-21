@@ -237,25 +237,25 @@ return array (
       1 => 'ap. J.-C.',
     ),
   ),
-  'dateFormats' =>
-        array (
-            'full' => 'EEEE, MMMM d, y',
-            'long' => 'MMMM d, y',
-            'medium' => 'dd.MM.yyyy',
-            'medium_js' => 'dd.mm.yy',
-            'short' => 'M/d/yy',
-        ),
-  'timeFormats' =>
-        array (
-            'full' => 'h:mm:ss a zzzz',
-            'long' => 'h:mm:ss a z',
-            'medium' => 'h:mm a',
-            'short' => 'h:mm a',
-        ),
-    'dateTimeFormat' => '{1} {0}',
-    'amName' => 'AM',
-    'pmName' => 'PM',
-    'orientation' => 'ltr',
+  'dateFormats' => 
+  array (
+    'full' => 'EEEE d MMMM y',
+    'long' => 'd MMMM y',
+    'medium' => 'd MMM y',
+      'medium_js' => 'dd mm yy',
+    'short' => 'dd/MM/yy',
+  ),
+  'timeFormats' => 
+  array (
+    'full' => 'HH:mm:ss zzzz',
+    'long' => 'HH:mm:ss z',
+    'medium' => 'HH:mm:ss',
+    'short' => 'HH:mm',
+  ),
+  'dateTimeFormat' => '{1} {0}',
+  'amName' => 'AM',
+  'pmName' => 'PM',
+  'orientation' => 'ltr',
   'languages' => 
   array (
     'aa' => 'afar',

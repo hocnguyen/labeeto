@@ -449,7 +449,7 @@ class CGridView extends CBaseListView
 	{
 		if($this->dataProvider->getItemCount()>0 || $this->showTableOnEmpty)
 		{
-			echo "<table class=\"{$this->itemsCssClass} table tablesorter\">\n";
+			echo "<table class=\"{$this->itemsCssClass} table\">\n";
 			$this->renderTableHeader();
 			ob_start();
 			$this->renderTableBody();

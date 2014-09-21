@@ -4,7 +4,7 @@
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
+ * @copyright Copyright &copy; 2008-2011 Yii Software LLC
  * @license http://www.yiiframework.com/license/
  */
 
@@ -98,24 +98,24 @@ class CDetailView extends CWidget
 	 * If set to null, no tag will be rendered.
 	 * @see itemTemplate
 	 */
-	public $tagName='table';
+	public $tagName='ul';
 	/**
 	 * @var string the template used to render a single attribute. Defaults to a table row.
 	 * These tokens are recognized: "{class}", "{label}" and "{value}". They will be replaced
 	 * with the CSS class name for the item, the label and the attribute value, respectively.
 	 * @see itemCssClass
 	 */
-	public $itemTemplate="<tr class=\"{class}\"><th>{label}</th><td>{value}</td></tr>\n";
+	public $itemTemplate="<li class=\"{class}\"><div class=\"title\">{label}</div><div class=\"text\">{value}</text></li>\n";
 	/**
 	 * @var array the CSS class names for the items displaying attribute values. If multiple CSS class names are given,
 	 * they will be assigned to the items sequentially and repeatedly.
 	 * Defaults to <code>array('odd', 'even')</code>.
 	 */
-	public $itemCssClass=array('odd','even');
+	public $itemCssClass=array('','');
 	/**
 	 * @var array the HTML options used for {@link tagName}
 	 */
-	public $htmlOptions=array('class'=>'table');
+	public $htmlOptions=array('class'=>'rows');
 	/**
 	 * @var string the base script URL for all detail view resources (e.g. javascript, CSS file, images).
 	 * Defaults to null, meaning using the integrated detail view resources (which are published as assets).
@@ -146,10 +146,7 @@ class CDetailView extends CWidget
 		}
 		if($this->nullDisplay===null)
 			$this->nullDisplay='<span class="null">'.Yii::t('zii','Not set').'</span>';
-		if(isset($this->htmlOptions['id']))
-			$this->id=$this->htmlOptions['id'];
-		else
-			$this->htmlOptions['id']=$this->id;
+		$this->htmlOptions['id']=$this->getId();
 
 		if($this->baseScriptUrl===null)
 			$this->baseScriptUrl=Yii::app()->getAssetManager()->publish(Yii::getPathOfAlias('zii.widgets.assets')).'/detailview';
@@ -209,7 +206,7 @@ class CDetailView extends CWidget
 			if(!isset($attribute['type']))
 				$attribute['type']='text';
 			if(isset($attribute['value']))
-				$value=is_callable($attribute['value']) ? call_user_func($attribute['value'],$this->data) : $attribute['value'];
+				$value=$attribute['value'];
 			elseif(isset($attribute['name']))
 				$value=CHtml::value($this->data,$attribute['name']);
 			else
