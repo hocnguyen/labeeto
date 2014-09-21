@@ -1,9 +1,10 @@
+<?php $user = User::model()->findByPk($data->user_id); ?>
 <div class="post">
     <div class="first-infor">
         <div class="profile">
-            <img src="../uploads/avatar/<?php echo Utils::getAvatar($infor->photo); ?>">
+            <img src="../uploads/avatar/<?php echo Utils::getAvatar($user->photo); ?>">
             <div class="crycle-img">
-                <h2><a href="/profile_other"><?php echo $infor->username; ?></a><span class="time-location">18 F, CA,</span> <span class="dot-icon"> <?php echo $data->created; ?></span></h2>
+                <h2><a href="/profile_other"><?php echo $user->username; ?></a><span class="time-location">18 F, CA,</span> <span class="dot-icon"> <?php echo $data->created; ?></span></h2>
                 <a class="message" data-toggle="modal" data-target="#SendaMessage">Send a Message</a>
                 <a class="report-user" data-toggle="modal" data-target="#ReportUser">Report User</a>
             </div>
