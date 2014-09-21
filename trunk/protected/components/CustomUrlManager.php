@@ -36,6 +36,7 @@ class CustomUrlManager extends CUrlManager {
 
                 "/register" => 'site/user/create/',
                 "/my_feed" => 'site/user/My_feed/',
+                "/achievement" => 'site/user/achievement/',
                 "/profile" => 'site/user/profile/',
                 "/settings" => 'site/user/setting/',
                 "/profile_other" => 'site/user/profile_other/',

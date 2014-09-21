@@ -6,14 +6,14 @@
      <!-- Content Left  -->
     <div class="left-content">
         <!-- Form first -->
-        <form class="post-home" method="post" name="" action="#">
+        <form id="form-achievement" class="post-home" method="post" name="" action="/achievement">
             <div class="content-avatar">
                 <div class="avatar-post">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post.png">
+                    <img src="../uploads/avatar/<?php echo Utils::getAvatar($info_user->photo); ?>" class="new-photo-achievement">
                 </div>
             </div>
             <div class="content-textarea">
-                <textarea class="post-textarea" placeholder="Post an achievement..."></textarea>
+                <textarea class="post-textarea" placeholder="Post an achievement..." name="content"></textarea>
             </div>
             <div class="footer-post">
                 <a href="#" class="add-media">
@@ -69,103 +69,14 @@
         </div>
         <!--End Form Search -->
         
-        <!--Post 1-->
-        <div class="post"> 
-            <div class="first-infor">
-                <div class="profile">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
-                    <div class="crycle-img">
-                        <h2><a href="/profile_other">Robyn Rihanna Fenty</a><span class="time-location">18 F, CA,</span> <span class="dot-icon"> 2 hr</span></h2>
-                        <a class="message" data-toggle="modal" data-target="#SendaMessage">Send a Message</a>
-                        <a class="report-user" data-toggle="modal" data-target="#ReportUser">Report User</a>
-                    </div>
-                </div>
-                <span class="refesh">10</span>
-            </div>
-            <div class="content-post">
-                <h3><span class="link_3">ICEBUCKET CHALLENGE</span> <span class="link_2">#ALSawareness </span><span class="link_1">#LOL</span></h3>
-                <iframe title="YouTube video player" class="youtube-player" type="text/html" style="padding-left: 10px; padding-bottom: 10px;"
-                width="98%" height="340" src="http://www.youtube.com/embed/uIbkLjjlMV8"
-                frameborder="0" allowFullScreen></iframe>
-            </div>
-        </div>
-        <!--End Post 1 -->
-        
-        
-        <!--Post 2-->
-        <div class="post"> 
-            <div class="first-infor">
-                <div class="profile">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_3.png">
-                    <div class="crycle-img">
-                        <h2><a href="/profile_other">Robyn Rihanna Fenty</a> <span class="time-location">18 F, CA,</span> <span class="dot-icon"> 2 hr</span></h2>
-                        <a class="message" data-toggle="modal" data-target="#SendaMessage">Send a Message</a>
-                        <a class="report-user" data-toggle="modal" data-target="#ReportUser">Report User</a>
-                    </div>
-                </div>
-                <span class="refesh">10</span>
-            </div>
-            <div class="content-post">
-                <h3><span class="link_3">yumMmm</span> <span class="link_2">#burger #7200cal</span><span class="link_1"> #LOL </span><span class="link_2">#depressed 
-
-</span></h3>
-                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/break.png" style="height: 300px;">
-            </div>
-        </div>
-        <!--End Post 2 -->
-        <!--Post 3-->
-        <div class="post"> 
-            <div class="first-infor">
-                <div class="profile">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_2.png">
-                    <div class="crycle-img">
-                        <h2><a href="/profile_other">William Leonard Roberts</a><span class="time-location">33 M, NY,</span> <span class="dot-icon">Yesterday</span></h2>
-                        <a class="message" data-toggle="modal" data-target="#SendaMessage">Send a Message</a>
-                        <a class="report-user" data-toggle="modal" data-target="#ReportUser">Report User</a>
-                    </div>
-                </div>
-                <div class="refesh">15</div>
-            </div>
-            <div class="content-post">
-                <h3 class="h3-shot">Shoutout to my nigga Manny Pacman Pacquiao for
-                    helping in my weight-loss programme. <span class="link_1">#LOL</span></h3>
-            </div>
-        </div>
-        <!--End Post 3 -->
-        
-        <!--Post 4-->
-        <div class="post"> 
-            <div class="first-infor">
-                <div class="profile">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avarta_1.png">
-                    <div class="crycle-img">
-                        <h2><a href="/profile_other">Ricky Martin</a><span class="time-location">43 M, PI,</span><span class="dot-icon"> Aug 14</span></h2>
-                        <a class="message" data-toggle="modal" data-target="#SendaMessage">Send a Message</a>
-                        <a class="report-user" data-toggle="modal" data-target="#ReportUser">Report User</a>
-                    </div>
-                </div>
-                <div class="refesh">12</div>
-            </div>
-            <div class="content-post">
-                <h3><span class="link_3">OUCH</span> <span class="link_1">#LOL</span> <span class="link_2">#legday</span></h3>
-                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/img_2.png" style="height: 300px;">
-            </div>
-        </div>
-        <!--End Post 4 -->
-        
-        <div class="pagination-post">
-            <ul>
-                <li><a href="#" class="prev-post"><</a></li>
-                <li><a href="#" class="normal-pag">1</a></li>
-                <li><a href="#" class="special-pag">2</a></li>
-                <li><a href="#" class="normal-pag">3</a></li>
-                <li><a href="#" class="normal-pag">4</a></li>
-                <li><a href="#">....</a></li>
-                <li><a href="#" class="normal-pag">9</a></li>
-                <li><a href="#" class="normal-pag">10</a></li>
-                <li><a href="#" class="next-post">></a></li>
-            </ul>
-        </div>
+      <?php
+      $this->widget('zii.widgets.CListView', array(
+          'dataProvider'=>$achievement,
+          'itemView'=>'../elements/achievement_view',
+          'summaryText'=>'',
+          'viewData'=>array('infor'=>$info_user)
+      ));
+      ?>
         
         
     </div>
@@ -256,4 +167,10 @@
     </div>
   </div>
 </div>
-
+<script>
+    $('.post-btn').click(function(){
+        content = $('.post-textarea').val();
+        if( content != '')
+            $('#form-achievement').submit();
+    });
+</script>
