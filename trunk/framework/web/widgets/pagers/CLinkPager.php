@@ -119,7 +119,7 @@ class CLinkPager extends CBasePager
 		if(!isset($this->htmlOptions['id']))
 			$this->htmlOptions['id']=$this->getId();
 		if(!isset($this->htmlOptions['class']))
-			$this->htmlOptions['class']='pagination pagination-right';
+			$this->htmlOptions['class']='dataTables_paginate paging_full_numbers';
 	}
 
 	/**
@@ -129,11 +129,11 @@ class CLinkPager extends CBasePager
 	public function run()
 	{
 		$this->registerClientScript();
-		$buttons= $this->createPageButtons();
+		$buttons=$this->createPageButtons();
 		if(empty($buttons))
 			return;
 		echo $this->header;
-		echo CHtml::tag('ul',$this->htmlOptions,implode("\n",$buttons));
+		echo CHtml::tag('div',$this->htmlOptions,implode("\n",$buttons));
 		echo $this->footer;
 	}
 
@@ -188,7 +188,7 @@ class CLinkPager extends CBasePager
 		if($hidden || $selected)
 			$class.=' '.($hidden ? self::CSS_HIDDEN_PAGE : self::CSS_SELECTED_PAGE);
         else $class = 'paginate_button';
-		return '<li class="'.$class.'">'.CHtml::link($label,$this->createPageUrl($page)).'</li>';
+		return CHtml::link($label,$this->createPageUrl($page), array('class' => $class));
 	}
 
 	/**

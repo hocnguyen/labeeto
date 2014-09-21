@@ -295,7 +295,7 @@ class YiiBase
 	}
 	public static function powered()
 	{
-		return Yii::t('yii','Powered by {yii}.', array('{yii}'=>'<a href="http://netbiz.vn/" rel="external">NetBiz consulting</a>'));
+		return Yii::t('yii','Powered by {yii}.', array('{yii}'=>'<a href="" rel="external">Viet Nam Central Team</a>'));
 	}
 	public static function t($category,$message,$params=array(),$source=null,$language=null)
 	{
@@ -5691,11 +5691,11 @@ class CWidgetFactory extends CApplicationComponent implements IWidgetFactory
 			$widget->$name=$value;
             
         if ($className == 'CActiveForm' && isset($properties['id'])){
-            /*echo "<script type=\"text/javascript\">
+            echo "<script type=\"text/javascript\">
                 \$(document).ready(function(){
-                    \$('#".$properties['id']."').validationEngine({promptPosition : \"bottomLeft\", scroll: true});
+                    \$('#".$properties['id']."').validationEngine({promptPosition : \"bottomLeft\", scroll: true,maxErrorsPerField:1});
                 })
-            </script>";*/
+            </script>";
         }
 		return $widget;
 	}
