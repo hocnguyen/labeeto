@@ -22,7 +22,17 @@
     
     }
     
+    @font-face {
+        font-family: 'Proxima Nova Bold';
+        src: url('../fonts/proximanova-bold-webfont.eot');
+        src: url('../fonts/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/proximanova-bold-webfont.woff') format('woff'),
+        url('../fonts/proximanova-bold-webfont.ttf') format('truetype'),
+        url('../fonts/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
+        font-weight: normal;
+        font-style: normal;
     
+    }
     /**
     * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
     * http://cssreset.com
@@ -1887,6 +1897,7 @@ input[type="range"]::-ms-fill-lower {display: block;height: 100%;background: #c2
     border-radius: 3px;
     text-transform: uppercase;
     background-color: #30bee6;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#30bee6', endColorstr='#30bee6'); /* IE */
     border: 1px solid #15abcd;
     color: #fff;
     cursor: pointer;
@@ -1896,11 +1907,166 @@ input[type="range"]::-ms-fill-lower {display: block;height: 100%;background: #c2
 }
 .button-black{
     background-color: #302f32;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#302f32', endColorstr='#302f32'); /* IE */
     border: 1px solid #000;
     margin-left: 5px;
 }
 .width-range{
     width: 100% !important;
+}
+.menu-nav-setting{
+    background-color: #2d3c46;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#2d3c46', endColorstr='#2d3c46');
+    width: 100%;
+    border-radius: 5px 5px 0px 0px;
+}
+.menu-nav-setting ul li{
+    list-style: none;
+    float: left;
+    padding: 17px 40px 0px 40px;
+    border-left: 1px solid #1f2a32;
+    height: 50px;
+}
+.menu-nav-setting ul li a{
+    text-transform: uppercase;
+    color: #ffffff;
+    font: normal 12pt/normal Myriad Pro;
+}
+.menu-nav-setting ul li a:hover{
+    text-decoration: none;
+}
+.menu-nav-setting ul li:first-child{
+    text-transform: uppercase;
+    font: normal 18pt/normal Myriad Pro;
+    color: #e2d4c0;
+     background: url('../images/setting-2.png') no-repeat 10px 15px;
+    border-left: none !important;
+    float: left !important;
+    padding-right: 90px;
+    margin-top: -3px;
+}
+
+.menu-nav-setting{
+    display: inline-block;
+}
+.setting-header{
+    border: 1px solid #ddd;
+    border-top: none !important;
+    padding: 10px 20px 10px;
+    color: #676b6d;
+    font: normal 16pt/normal Myriad Pro;
+}
+.setting-detail{
+    border: 1px solid #ddd;
+    border-top: none !important;
+    padding: 10px 20px 10px;
+    color: #676b6d;
+}
+.setting-detail .form-setting{
+    padding-left: 30px;
+}
+.setting-detail .content-blocklist, 
+.setting-detail .content-notification,
+.setting-detail .content-references{
+    padding-left: 20px;
+}
+.label-text{
+    font: normal 14px/normal Proxima Nova Bold;
+    color: #7b7777;
+    padding-bottom: 5px;
+    width: 100%;
+}
+.btn-save-st{
+    background: url('../images/save.png') no-repeat;
+}
+.btn-cancel-st{
+    background: url('../images/cancel.png') no-repeat;
+    margin-left: 5px;
+}
+.btn-save-st,
+.btn-cancel-st{
+    width: 125px;
+    height: 45px;
+    border: none;
+    color: #ffffff;
+    font: normal 18px/normal Proxima Nova Bold;
+}
+.btn-block-list{
+    background: url('../images/cancel.png') no-repeat;
+    width: 125px;
+    height: 45px;
+    margin-left: 5px;
+    border: none;
+    font: normal 18px/normal Proxima Nova Bold;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.add-name{
+    height: 45px;
+    width: 350px !important;
+    padding: 10px;
+}
+.content-blocklist span.block{
+    text-transform: uppercase;
+    font: normal 16px/normal Proxima Nova Bold;
+    color: #474646;
+    margin-top: 10px;
+}
+.locklist{
+    padding-left: 20px; 
+    padding-top: 20px;
+}
+.locklist ul li img{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.locklist ul li{
+    padding-bottom: 7px;
+}
+.locklist ul li span{
+    color: #4d5a63;
+    font: normal 16px/normal Helvetica Neue LTPro Bd;
+    padding-left: 20px;
+}
+.locklist ul li span a{
+    color: #ff4056;
+}
+.locklist ul li span a:hover{
+    text-decoration: none;   
+}
+.content-notification .col-sm-12 .checkbox{
+    font: normal 14px/normal Proxima Nova Bold;
+    color: #7b7777;
+    padding-bottom: 6px;
+}
+.content-notification .col-sm-12 .checkbox label{
+    padding-left: 10px;
+}
+
+.label-gender{
+    display: block;
+    font: normal 14px/normal Proxima Nova Bold;
+    color: #7b7777;
+    padding-bottom: 15px;
+}
+.content-references .radio-inline label{
+    font: normal 18px/normal Proxima Nova Bold;
+    color: #7b7777;
+}
+.contennt-btn-form{
+    padding: 40px 30px 30px 0px;
+}
+.li-GeneralSettings{
+    border-bottom: 3px solid #5dc1ea;
+}
+.check-block{
+    background: url('../images/check_ok.png') no-repeat 10px 10px;
+    height: 40px;
+    width: 40px;
+    float: left;
 }
 /*input[type="range"] {height: 10px;border-radius: 5px;background: #420811;-webkit-appearance: none;cursor: pointer;border: 0;outline: none;padding: 0;margin: 0 0;}
 input[type="range"]::-moz-range-track {border: none;background: transparent;}

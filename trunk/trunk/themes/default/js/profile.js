@@ -324,4 +324,55 @@ $(document).ready(function(){
         return false;
     });
     
+    /***********************************************************************/
+                    /*******Menu Setting*******/
+    $('.link-GeneralSettings').click(function(){
+        $('.li-GeneralSettings').css('border-bottom', '3px solid #5dc1ea');
+        $('.li-SearchReferences').css('border-bottom', 'none');
+        $('.li-Notifications').css('border-bottom', 'none');
+        $('.li-Blocklist').css('border-bottom', 'none');
+        $('#SearchReferences').hide();
+        $('#Notifications').hide();
+        $('#Blocklist').hide();
+        $('#GeneralSettings').show();
+        
+    });
+    
+    $('.link-SearchReferences').click(function(){
+        $('.li-SearchReferences').css('border-bottom', '3px solid #5dc1ea');
+        $('.li-GeneralSettings').css('border-bottom', 'none');
+        $('.li-Notifications').css('border-bottom', 'none');
+        $('.li-Blocklist').css('border-bottom', 'none');
+        $('#GeneralSettings').hide();
+        $('#Notifications').hide();
+        $('#Blocklist').hide();
+        $('#SearchReferences').show();
+        
+    });
+    
+    $('.link-Notifications').click(function(){
+        $('.li-Notifications').css('border-bottom', '3px solid #5dc1ea');
+        $('.li-SearchReferences').css('border-bottom', 'none');
+        $('.li-GeneralSettings').css('border-bottom', 'none');
+        $('.li-Blocklist').css('border-bottom', 'none');
+        $('#SearchReferences').hide();
+        $('#GeneralSettings').hide();
+        $('#Blocklist').hide();
+        $('#Notifications').show();
+        
+    });
+    
+    $('.link-Blocklist').click(function(){
+        $('.li-Blocklist').css('border-bottom', '3px solid #5dc1ea');
+        $('.li-SearchReferences').css('border-bottom', 'none');
+        $('.li-GeneralSettings').css('border-bottom', 'none');
+        $('.li-Notifications').css('border-bottom', 'none');
+        $('#SearchReferences').hide();
+        $('#Notifications').hide();
+        $('#GeneralSettings').hide();
+        $('#Blocklist').show();
+        
+    });
+    /***********************************************************************/
+    
 });
