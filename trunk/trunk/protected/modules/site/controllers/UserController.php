@@ -435,10 +435,15 @@ class UserController extends SiteBaseController {
                  </p>';
         }
         
-        $t.= '<p>
+        if ((isset($_POST['age-from'])) && (isset($_POST['age-to']))){
+            $age = $_POST['age-from'] . '-' . $_POST['age-to'];
+            User::model()->updateByPk(Yii::app()->user->id, array('age'=>$age));
+            $t.= '<p>
                 <span class="txt-gender">'.Yii::t('global', 'Age: ').' </span>
-                <span class="txt-female">22-28</span>
+                <span class="txt-female">'. $age .'</span>
              </p>';
+        }
+        
         if(isset($_POST['training'])){
             User::model()->updateByPk(Yii::app()->user->id, array('training'=>$_POST['training']));
             if($_POST['training'] == 1) 
@@ -452,5 +457,4 @@ class UserController extends SiteBaseController {
         }
         echo $t;
     }
-    
 }
