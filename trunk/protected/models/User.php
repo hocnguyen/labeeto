@@ -179,7 +179,8 @@ class User extends CActiveRecord
 		$criteria->compare('longtitude',$this->longtitude,true);
 		$criteria->compare('drink',$this->drink,true);
 		$criteria->compare('status',$this->status);
-		$criteria->compare('last_logged',$this->last_logged,true);
+        if ($this->last_logged)
+            $criteria->compare('t.last_logged', date('Y-m-d ', strtotime($this->last_logged)), true);
         if ($this->created)
             $criteria->compare('t.created', date('Y-m-d ', strtotime($this->created)), true);
         $criteria->compare('updated',$this->updated,true);
@@ -230,8 +231,17 @@ class User extends CActiveRecord
 
     function getStatusMember($status){
         if($status==self::STATUS_ACTIVE)
-            return Yii::t('global','Active');
-        return Yii::t('global','Inactive');
+            return Yii::t('global','Online');
+        else if( $status == self::STATUS_INACTIVE )
+            Yii::t('global','Offline');
+        else if( $status == self::STATUS_UNVERIFIED )
+            Yii::t('global','Unverified');
+        else if( $status == self::STATUS_SUSPENDED )
+            Yii::t('global','Suspended');
+        else if( $status == self::STATUS_REPORTED )
+            Yii::t('global','Reported');
+        else if( $status == self::STATUS_PREMIUM )
+            Yii::t('global','Premium');
     }
 
     function showAdminImage(){
