@@ -8,7 +8,7 @@ class UserController extends SiteBaseController {
 		parent::init();
 		
 		$this->breadcrumbs[ Yii::t('global', 'Users') ] = array('user/index');
-		$this->pageTitle[] = Yii::t('global', 'Users');
+		//$this->pageTitle[] = Yii::t('global', 'Users');
 	}
     
 	/**
