@@ -2,46 +2,226 @@
     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/ads-top.png" />
 </div>
 <div class="content-main">
-    <?php //$this->widget('widgets.admin.notifications'); ?>
-    <hr class="hr-line" />
+    <hr class="hr-line"/>
     
-    <div class="infor-user">
-       
-        
-        <div class="content-infor-profile">
-            <div class="name_user">
-                <?php echo $this->user->username ?>
+    <div >
+        <div class="menu-nav-setting">
+            <ul style="float: right;">
+                <li>Settings</li>
+                <li class="li-GeneralSettings"><a href="#" class="link-GeneralSettings"><?php echo Yii::t('global', 'GENERAL') ?></a>
+                <li class="li-SearchReferences"><a href="#" class="link-SearchReferences"><?php echo Yii::t('global', 'SEARCH PREFERENCES') ?></a>
+                <li class="li-Notifications"><a href="#" class="link-Notifications"><?php echo Yii::t('global', 'NOTIFICATIONS') ?></a></li>
+                <li class="li-Blocklist"><a href="#" class="link-Blocklist"><?php echo Yii::t('global', 'BLOCKLIST') ?></a></li>
+            </ul>
+        </div>
+        <!-- General Settings -->
+        <div id="GeneralSettings">
+            <div class="setting-header">General Settings</div>
+            <div class="setting-detail">
+                <form role="form" class="form-setting">
+                    <div class="form-group">
+                    <label for="exampleInputEmail1" class="label-text">Birthday</label>
+                        <select class="form-control" style="width: 80px; float: left;">
+                            <option>Day</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <select class="form-control" style="width: 90px; float: left; margin-left: 10px">
+                            <option>Month</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <select class="form-control" style="width: 90px; float: left; margin-left: 10px">
+                            <option>Year</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1" class="label-text" style="padding-top: 15px;">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" style="width: 350px; display: inline-block; float: left; height: 43px;"><span class="check-block"></span>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1" class="label-text">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1"  style="width: 350px; display: inline-block; float: left; height: 43px;"><span class="check-block"></span>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1" class="label-text"> New Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1"  style="width: 350px; height: 43px;">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1" class="label-text">New Password(Confirm)</label>
+                        <input type="password" class="form-control" id="exampleInputEmail1"  style="width: 350px; height: 43px;">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1" class="label-text">Zip code </label>
+                        <input type="text" class="form-control" id="exampleInputPassword1"  style="width: 220px; height: 43px;">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1" class="label-text">Timezone</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" style="width: 230px; height: 43px; ">
+                      </div>
+                      <div style="padding: 20px 0px;">
+                            <button type="submit" class="btn btn-default btn-save-st">SAVE</button>
+                            <button type="submit" class="btn btn-default btn-cancel-st">CANCEL</button>
+                      </div>
+                </form>
             </div>
-            <div class="menu-nav-infor">
-                <ul style="float: right;">
-                    <li><a href="/profile_other"><?php echo Yii::t('global', 'preview profile') ?></a></li>
-                    <li><a href="#"><?php echo Yii::t('global', 'verify profile') ?></a></li>
-                </ul>
+        </div>
+        <!--End General Settings--!>
+        
+        <!-- Blocklist -->
+        <div id="Blocklist" style="display: none;">
+            <div class="setting-header">Blocklist</div>
+            <div class="setting-detail">
+                <div class="content-blocklist">
+                    <span class="block">Block Users</span>
+                    <form class="form-inline" role="form">
+                          <div class="form-group">
+                            <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                            <input type="email" class="form-control add-name" id="exampleInputEmail2" placeholder="Add Name or Email">
+                          </div>
+                           <button type="submit" class="btn btn-default btn-block-list">Block</button>
+                    </form>
+                    
+                    <div class="locklist">
+                        <ul>
+                            <li><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post.png" /><span>Romeo <a href="#"> Unlock</a></span></li>
+                            <li><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post.png" /><span>Romeo <a href="#"> Unlock</a></span></li>
+                            <li><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post.png" /><span>Romeo <a href="#"> Unlock</a></span></li>
+                            <li><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post.png" /><span>Romeo <a href="#"> Unlock</a></span></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-       
-        <div class="content-img">
+        <!--End Blocklist--!>
+        
+        <!-- Notifications -->
+        <div id="Notifications" style="display: none;">
+            <div class="setting-header">Notifications</div>
+            <div class="setting-detail">
+                <div class="content-notification">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Email me new messages that go to my inbox
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Email me news and special offers from Labeeto
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Email me when other users have viewed my profile
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Email me when users like my achievements
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Email me when users like my achievements
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Email me about other users in my area I may be interested in
+                                </label>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="contennt-btn-form" style="padding-top: 40px;">
+                        <button type="submit" class="btn btn-default btn-save-st">SAVE</button>
+                        <button type="submit" class="btn btn-default btn-cancel-st">CANCEL</button>
+                      </div>
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="left-profile">
-        <!--Post 1-->
-           
+        <!--End Notifications--!>
+    
+        <!-- SearchReferences -->
+        <div id="SearchReferences" style="display: none;">
+            <div class="setting-header">Search References</div>
+            <div class="setting-detail">
+                <div class="content-references row">
+                    <form action="#">
+                        <div>
+                            <label class="col-md-12 label-gender">I am a</label>
+                            <label class="radio-inline" style="font: normal 18px/normal Proxima Nova Bold;">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" style="margin: 0; height: 20px; width: 30px;"> Man
+                            </label>
+                            <label class="radio-inline" style="font: normal 18px/normal Proxima Nova Bold;">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" style="margin: 0;height: 20px; width: 30px;"> Woman
+                            </label>
+                            <label class="radio-inline" style="font: normal 18px/normal Proxima Nova Bold;">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" style="margin: 0; height: 20px; width: 30px;"> Couple
+                            </label>
+                        </div>
+                        
+                        <div style="margin-top: 40px;">
+                            <label class="col-md-12 label-gender">I am looking for</label>
+                            <label class="radio-inline" style="font: normal 18px/normal Proxima Nova Bold;">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" style="margin: 0;height: 20px; width: 30px;"> Friendship
+                            </label>
+                            <label class="radio-inline" style="font: normal 18px/normal Proxima Nova Bold;">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" style="margin: 0;height: 20px; width: 30px;"> Something Serious
+                            </label>
+                            <label class="radio-inline" style="font: normal 18px/normal Proxima Nova Bold;">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" style="margin: 0;height: 20px; width: 30px;"> Casual
+                            </label>
+                            <label class="radio-inline" style="font: normal 18px/normal Proxima Nova Bold;">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" style="margin: 0;height: 20px; width: 30px;"> Long Term
+                            </label>
+                        </div>
+                        
+                        <div style="margin-top: 40px;">
+                            <label class="col-md-12 label-gender">I am interested for a training partner</label>
+                            <label class="radio-inline" style="font: normal 18px/normal Proxima Nova Bold;">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" style="margin: 0;height: 20px; width: 30px;"> Yes
+                            </label>
+                            <label class="radio-inline" style="font: normal 18px/normal Proxima Nova Bold;">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" style="margin: 0;height: 20px; width: 30px;"> No
+                            </label>
+                        </div>
+                        
+                        <div class="contennt-btn-form">
+                            <button type="submit" class="btn btn-default btn-save-st">SAVE</button>
+                            <button type="submit" class="btn btn-default btn-cancel-st">CANCEL</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <!--End Post 1 -->
+        <!--End Search References--!>
     </div>
-    <div class="right-profile">
-        
-        
-        <div class="content-profile">
-            
-            
-        </div>
-        
-        
-    </div>
- 
-
+    
 </div>
+ 
+<br />
 <div class="">
     <?php    if(isset($_SESSION['User'])) {    ?>
         <div class="col-lg-12">

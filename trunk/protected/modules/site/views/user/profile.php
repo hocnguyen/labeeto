@@ -88,7 +88,7 @@
                         <span class="txt-female">22-28</span>
                     </p>
                     <p>
-                        <span class="txt-gender"><?php echo Yii::t('global', 'Training:') ?> </span>
+                        <span class="txt-gender"><?php echo Yii::t('global', 'Training Buddy:') ?> </span>
                         <span class="txt-female"><?php if($this->user->training == 0) echo 'No'; else echo "Yes"; ?></span>
                     </p>
                 </div>
@@ -114,7 +114,7 @@
                         <span class="txt-female">22-28</span>
                     </p>
                     <p>
-                        <span class="txt-gender"><?php echo Yii::t('global', 'Training:') ?> </span>
+                        <span class="txt-gender"><?php echo Yii::t('global', 'Training Buddy:') ?> </span>
                         <span class="txt-female">
                             <select name="training" class="form-control">
                                 <option <?php if($this->user->training == 1) echo 'selected'; ?> value="1">Yes</option>
@@ -249,15 +249,17 @@
             <div class="education">
                 <span class="education-span"><?php echo Yii::t('global', 'CHILDREN') ?></span>
                 <span class="note-span" id="id-children"></span>
-                <span class="bachelor" id="value-children"><?php if($this->user->children) echo $this->user->children . Yii::t('global', ' all boy')?> </span>
+                <span class="bachelor" id="value-children"><?php if($this->user->children) echo Children::model()->getNameChildren($this->user->children) ?> </span>
                 <form method="post" style="display: none;" id="form-children">
                    <select class="form-control" name="children">
-                        <?php for($i=0; $i<=10; $i++) {
-                            $l = '';
-                            if($this->user->children == $i)
-                                $l = "selected";
-                                echo "<option ". $l ." value='".$i."'>".$i."</option>";
-                        }?>
+                        <?php $religion = Children::model()->findAll(); 
+                            foreach($religion as $value){
+                                $l = '';
+                                if($value->id == $this->user->religion)
+                                    $l = 'selected'; 
+                                    echo "<option ". $l ." value='".$value->id."'>".$value->name."</option>"; 
+                                }
+                        ?>
                     </select>
                     <span class="my-btn">
                         <input type="submit" value="Save"/>
@@ -292,6 +294,19 @@
                 </form>
             </div>
             
+            <div class="content-bit-final favorite_a">
+                <span class="what"><?php echo Yii::t('global', 'Goals') ?></span>
+                <span class="note-span" id="id-goal"></span>
+                <span class="godfather" id="value-goal"><?php if($this->user->goal) echo $this->user->goal ?> </span>
+                <form method="post" style="display: none;" id="form-goal">
+                    <input type="text" name="goal" class="form-control" value="<?php if($this->user->goal) echo $this->user->goal; ?>"/>
+                    <span class="my-btn">
+                        <input type="submit" value="Save"/>
+                        <span class="text-cancel" id="cancel-goal">Cancel</span>
+                    </span>
+                </form>
+            </div>
+            
             <div class="content-bit favorite_a">
                 <span class="what"><?php echo Yii::t('global', 'DIET') ?></span>
                 <span class="note-span" id="id-diet"></span>
@@ -310,7 +325,7 @@
                 <span class="note-span" id="id-excercise"></span>
                 <div style="position: relative;" >
                     
-                    <span class="godfather"><?php echo Yii::t('global', 'Nope') ?></span>
+                    <span class="godfather"><?php echo Yii::t('global', 'Never') ?></span>
                     <p class="range-2" id="value-excercise">
                         <span class="ws-range" role="slider" aria-readonly="false" tabindex="0" aria-disabled="false" aria-valuenow="<?php if($this->user->excercise) echo $this->user->excercise; ?>" aria-valuetext="<?php if($this->user->excercise) echo $this->user->excercise; ?>">
                             <span class="ws-range-min ws-range-progress" style="margin-top: 0px; width: <?php if($this->user->excercise) echo $this->user->excercise; ?>%;"></span>
@@ -336,7 +351,7 @@
                 <span class="note-span" id="id-drink"></span>
                 <div style="position: relative;">
                     
-                    <span class="godfather"><?php echo Yii::t('global', 'Nope') ?></span>
+                    <span class="godfather"><?php echo Yii::t('global', 'Never') ?></span>
                     <p class="range-2" id="value-drink">
                         <!--<input type="range" value="20" max="100" class="input-range" />-->
                         <span class="ws-range" role="slider" aria-readonly="false" tabindex="0" aria-disabled="false" aria-valuenow="<?php if($this->user->drink) echo $this->user->drink; ?>" aria-valuetext="<?php if($this->user->drink) echo $this->user->drink; ?>">
@@ -364,7 +379,7 @@
                 <span class="note-span" id="id-smoke"></span>
                 <div style="position: relative;">
                     
-                    <span class="godfather"><?php echo Yii::t('global', 'Nope') ?></span>
+                    <span class="godfather"><?php echo Yii::t('global', 'Never') ?></span>
                     <p class="range-2" id="value-smoke">
                         <span class="ws-range" role="slider" aria-readonly="false" tabindex="0" aria-disabled="false" aria-valuenow="<?php if($this->user->smoke) echo $this->user->smoke; ?>" aria-valuetext="<?php if($this->user->smoke) echo $this->user->smoke; ?>">
                             <span class="ws-range-min ws-range-progress" style="margin-top: 0px; width: <?php if($this->user->smoke) echo $this->user->smoke; ?>%;"></span>
@@ -386,18 +401,6 @@
                 </form>
             </div>
             
-            <div class="content-bit-final favorite_a">
-                <span class="what"><?php echo Yii::t('global', 'Goals') ?></span>
-                <span class="note-span" id="id-goal"></span>
-                <span class="godfather" id="value-goal"><?php if($this->user->goal) echo $this->user->goal ?> </span>
-                <form method="post" style="display: none;" id="form-goal">
-                    <input type="text" name="goal" class="form-control" value="<?php if($this->user->goal) echo $this->user->goal; ?>"/>
-                    <span class="my-btn">
-                        <input type="submit" value="Save"/>
-                        <span class="text-cancel" id="cancel-goal">Cancel</span>
-                    </span>
-                </form>
-            </div>
         </div>
         <!--End Post 1 -->
     </div>
