@@ -2084,3 +2084,7 @@ input[type="range"]:active::-ms-thumb {border-color: #000000;background: #ffffff
 input[type="range"]::-moz-range-progress {display: none;height: 100%;background: tranparent;}
 input[type="range"]::-ms-fill-lower {display: none;height: 100%;background: tranparent;}
 .no-cssrangeinput input[type="range"] {background: transparent;margin: 0;border: 0;min-height: 22px;}*/
+.new-photo-achievement{
+    width:107px;
+    height:107px;
+}
