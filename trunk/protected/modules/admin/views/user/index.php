@@ -39,7 +39,6 @@
             'htmlOptions'=>array('style'=>'width:80px;')
         ),
 		'username',
-		'career',
 		'email',
         array(
             'name'=>'status',
@@ -48,6 +47,24 @@
             'filter'=>$active_product,
             'value' => '$data->getStatusMember($data->status)',
             'htmlOptions'=>array('style'=>'width:30px;')
+        ),
+        array(
+            'name' => 'last_logged',
+            'header'=>Yii::t('global', 'Last Logged'),
+            'htmlOptions'=> array('style' => 'text-align: center; width:135px;'),
+            'filter' => $this->widget('CJuiDateTimePicker', array(
+                        'model'=>$model,
+                        'attribute'=>'last_logged',
+                        'mode'=>'date',
+                        'options'=>array("dateFormat"=>Yii::app()->locale->getDateFormat('medium_js'), 'ampm' => false),
+                        'language' => Yii::app()->language=='en'?'':Yii::app()->language,
+                        'htmlOptions' => array(
+                            'id' => 'datepicker_for_due_date_last',
+                            'size' => '10',
+                            'style' => 'text-align: center'
+                        ),
+                    ),
+                    true)
         ),
         array(
             'name' => 'created',
