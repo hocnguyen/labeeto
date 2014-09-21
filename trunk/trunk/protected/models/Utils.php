@@ -86,5 +86,10 @@
         return array( Yii::t('global','Inactive'), Yii::t('global','Active') );
     }
 
+    public function getAvatar( $photo ){
+        $image = ( $photo != '' )?$photo:'no_image.png';
+        return $image;
+    }
+
 }
 	

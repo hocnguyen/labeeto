@@ -253,13 +253,13 @@
                         <select class="form-control" id="inches" name="inches">
                             <?php 
                             
-                            for($i=0; $i<=9; $i++) {
+                            /*for($i=0; $i<=9; $i++) {
                                 if($arr[1] == $i)
                                     $h = 'selected';
                                 else
                                     $h = '';
                                 echo "<option ". $h ." value='".$i."'>".$i."</option>";
-                            }?>
+                            }*/?>
                         </select>
                     </div>
                         

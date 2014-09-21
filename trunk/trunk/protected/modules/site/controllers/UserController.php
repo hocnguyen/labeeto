@@ -3,6 +3,7 @@
 class UserController extends SiteBaseController {
     public $text;
     public $user;
+    const PAGE_SIZE     = 10;
     public function init()
 	{
 		parent::init();
@@ -138,11 +139,35 @@ class UserController extends SiteBaseController {
     public function actionMy_feed(){
         $this->layout = 'feed';
         if(!Yii::app()->user->isGuest){
+            $info_user = User::model()->findByPk(Yii::app()->user->id);
+            $achievement = new CActiveDataProvider('Achievements', array(
+                'criteria' => array(
+                    'condition' => "status = ".Achievements::STATUS_ACTIVE,
+                    'order' => 'id DESC ',
+                ),
+                'pagination'=>array(
+                    'pageSize'=> self::PAGE_SIZE,
+                )
+            ));
             $this->user = User::model()->findByPk(Yii::app()->user->id);
-            $this->render('my_feed');
+            $this->render('my_feed', compact('achievement', 'info_user'));
         } else {
             $this->redirect('/');
         }
+
+    }
+
+    public function actionAchievement(){
+        if(Yii::app()->user->isGuest){
+            $this->redirect('/');
+        }
+        $this->user     = User::model()->findByPk(Yii::app()->user->id);
+        $content        = $_POST['content'];
+        $achievement    = new Achievements();
+        $achievement->content = $content;
+        $achievement->user_id = Yii::app()->user->id;
+        $achievement->save();
+        $this->redirect('/my_feed');
 
     }
 
@@ -237,6 +262,7 @@ class UserController extends SiteBaseController {
     public function actionProfile_other(){
         $this->layout = 'feed';
         if(!Yii::app()->user->isGuest){
+            $this->user = User::model()->findByPk(Yii::app()->user->id);
             $this->render('profile_other');
         } else {
             $this->redirect('/');
