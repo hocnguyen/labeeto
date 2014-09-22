@@ -1062,11 +1062,11 @@ ul.social li.insta:hover{
 }
 .left-profile{
     float: left;
-    width: 40%;
+    width: 38%;
 }
 .right-profile{
     float: left;
-    width: 60%;
+    width: 62%;
     padding: 0 0 0 20px;
 }
 .h2-name{
@@ -1234,8 +1234,8 @@ ul li.content-bit{
     font: normal 12pt/normal Myriad Pro;
     float: right;
     position: relative;
-    top: -17px;
-    right: 0px;
+    top: -19px;
+    right: 12px;
 }
 span.my-btn input{
     background-color: #e2d1bd;
@@ -1500,7 +1500,7 @@ span.text-cancel{
     position: absolute;
     width: 100%;
     top: 10px;
-    left: 60px;
+    left: 55px;
 }
 .input-range{
     width: 60% !important; 
