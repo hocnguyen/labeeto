@@ -20,9 +20,9 @@
             <input type="text" class="username-input" placeholder="Username" name="LoginForm[email]"/>
             <input type="password" class="password-input" placeholder="Password" name="LoginForm[password]"/>
             <div class="checkbox-wrapper">
-                <input type="checkbox" name="LoginForm[rememberme]" value="1" id="remember-check"/>
-                <label for="remember-check">Remember me</label>
-                <input type="checkbox" name="LoginForm[keepmelogged]" value="1" id="keep-me-logged"/>
+                <!--<input type="checkbox" name="LoginForm[rememberme]" value="1" id="remember-check"/>
+                <label for="remember-check">Remember me</label>-->
+                <input type="checkbox" name="LoginForm[keepmelogged]" value="1" id="keep-me-logged"  checked/>
                 <label for="keep-me-logged">Keep Me Logged in</label>
             </div>
             <input type="submit" value="Log In"/>
