@@ -11,12 +11,14 @@
         </div>
 
         <div class="avartar">
+            
             <?php if($this->user->photo ==''){ ?>
                 <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/no-avatar.png">
             <?php } else { ?>
                 <img src="/uploads/avatar/<?php echo $this->user->photo ?>" />
             <?php } ?>
             <!--<img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post.png"/>-->
+            <div style="height: 30px; width: 60px; border: 1px solid red;"></div>
         </div>
         <div class="content-infor-profile">
             <div class="name_user">
@@ -116,7 +118,7 @@
                             <select name="age-from" class="form-control" style="width: 75px; float: left;">
                                 <?php 
                                 
-                                for($i=1; $i<=50; $i++) {
+                                for($i=18; $i<=50; $i++) {
                                     if($arr_age[0] == $i)
                                         $l = 'selected';
                                     else
@@ -127,7 +129,7 @@
                             <select name="age-to" class="form-control" style="width: 75px;">
                                 <?php 
                                 
-                                for($i=1; $i<=50; $i++) {
+                                for($i=19; $i<=50; $i++) {
                                     if($arr_age[1] == $i)
                                         $l = 'selected';
                                     else

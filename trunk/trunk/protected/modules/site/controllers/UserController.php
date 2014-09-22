@@ -205,6 +205,7 @@ class UserController extends SiteBaseController {
         $model->latitude = $_GET['latitude'];
         $model->longtitude = $_GET['longtitude'];
         $model->photo = $_GET['photo'];
+        $model->age = '18-19';
         if($model->save()){
             $identity = new InternalIdentity($_GET['username'],$_GET['password']);
             if($identity->authenticate())
