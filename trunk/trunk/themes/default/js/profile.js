@@ -375,4 +375,44 @@ $(document).ready(function(){
     });
     /***********************************************************************/
     
+    
+    /*******************************Question custom****************************************/
+    $('#question-custom').click(function(){
+        if ($('#question-custom-form').is(':hidden')) {
+            $('#question-custom-form').show();
+        }else{
+            $('#question-custom-form').hide();
+        }
+    });
+    
+    $('#cancel-question-custom').click(function(){
+        $('#question-custom-form').hide();
+    });
+    
+    
+    /*All header*/
+    $('#question-custom-form').submit(function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+            type:'POST',
+            url: '/question/create',
+            data:formData,
+            cache:false,
+            contentType: false,
+            processData: false,
+            success:function(data){
+                $('#form-gender').hide();
+                $('#value-gender').html(data);
+                $('#value-gender').show();
+            },
+            error: function(data){
+                console.log("error");
+            }
+        });
+        return false;
+    });
+    /***********************************************************************/
+    
+    
 });

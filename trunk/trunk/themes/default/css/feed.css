@@ -2068,6 +2068,11 @@ input[type="range"]::-ms-fill-lower {display: block;height: 100%;background: #c2
     width: 40px;
     float: left;
 }
+.content-form-question{
+    display: none; 
+    background-color: #ec5268;
+    padding: 10px;
+}
 /*input[type="range"] {height: 10px;border-radius: 5px;background: #420811;-webkit-appearance: none;cursor: pointer;border: 0;outline: none;padding: 0;margin: 0 0;}
 input[type="range"]::-moz-range-track {border: none;background: transparent;}
 input[type="range"]::-ms-tooltip {display: none;}
