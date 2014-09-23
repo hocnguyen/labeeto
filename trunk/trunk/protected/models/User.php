@@ -34,6 +34,9 @@
  * @property string $last_logged
  * @property string $created
  * @property string $updated
+ *
+ * The followings are the available model relations:
+ * @property Achievements[] $achievements
  */
 class User extends CActiveRecord
 {
@@ -98,6 +101,7 @@ class User extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+            'achievements' => array(self::HAS_MANY, 'Achievements', 'user_id'),
 		);
 	}
 
