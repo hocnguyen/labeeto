@@ -497,20 +497,7 @@ class UserController extends SiteBaseController {
         $answer->answer = $_GET['answer'];
         $answer->question_id = $question->id;
         $answer->save();
-        $t = '<div class="content-bit">
-                        <span class="what">'. $question->question .'</span>
-                        <span class="note-span" id="note_'. $question->id .'"></span>
-                        <span class="godfather" id="answer_'.$question->id.'" >'.$question->id.'</span>
-                        <div id="question_' .$question->id. '">
-                            <input type="text" value="'.$question->id.'" class="form-control"/>
-                            <span class="my-btn">
-                                <input type="submit" value="Save" id="submit_'. $question->id .'" />
-                                <span class="text-cancel" id="delete_'. $question->id .'">Delete</span>
-                                <span class="text-cancel" id="cancel_'. $question->id .'">Cancel</span>
-                            </span>
-                        </div>
-                    </div>';
-        echo $t;
+        echo $question->id;
         
     }
 }
