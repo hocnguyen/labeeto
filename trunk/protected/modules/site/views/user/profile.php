@@ -609,14 +609,15 @@
                     <span class="text-cancel" id="cancel-question-custom">Cancel</span>
                 </span>
             </div>
+            <div class="all-question">
             <?php if($this->question){
                 foreach($this->question as $value){ ?>
                     <div class="content-bit">
                         <span class="what"><?php echo $value->question ?></span>
                         <span class="note-span" id="note_<?php echo $value->id; ?>"></span>
-                        <span class="godfather" id="answer_<?php echo $value->id; ?>" ><?php echo $value->answer ?></span>
+                        <span class="godfather" id="answer_<?php echo $value->id; ?>" ><?php echo $value->default ?></span>
                         <div id="question_<?php echo $value->id; ?>">
-                            <input type="text" value="<?php echo $value->answer ?>" class="form-control"/>
+                            <input type="text" value="<?php echo $value->default ?>" class="form-control"/>
                             <span class="my-btn">
                                 <input type="submit" value="Save" id="submit_<?php echo $value->id; ?>" />
                                 <span class="text-cancel" id="delete_<?php echo $value->id; ?>">Delete</span>
@@ -626,7 +627,7 @@
                     </div>
                 <?php }
             } ?>
-            
+            </div>
         </div>
         
     </div>
