@@ -12,7 +12,7 @@
 
         <div class="avartar">
             
-            <?php if($this->user->photo ==''){ ?>
+            <?php if($this->user->photo =='undefined'){ ?>
                 <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/no-avatar.png">
             <?php } else { ?>
                 <img src="/uploads/avatar/<?php echo $this->user->photo ?>" />
@@ -586,45 +586,43 @@
         <div class="post" style="padding-bottom: 0px;"> 
             <div class="bit-and-bit">
                 <span class="bit">Detailed About Me</span>
-                <!--<button class="add_question">Add a Custom Question</button>-->
-                <span class="add-question-1">Add Custom Question</span>
+                <span class="add-question-1" id="question-custom">Add Custom Question</span>
             </div>
-            <a href="#" class="link_question">
-                <div class="content-bit">
-                    <span class="what">WHAT IS THE LAST MOVIE YOU WATCHED?</span>
-                    <span class="note-span"></span>
-                    <span class="godfather">The Godfather Trilogy</span>
-                </div>
-            </a>
-            <a href="#" class="link_question">
-                <div class="content-bit">
-                    <span class="what">WHO IS YOUR CELEBRITY CRUSH?</span>
-                    <span class="note-span"></span>
-                    <span class="godfather">Jennifer Lawrence</span>
-                </div>
-            </a>
-            <a href="#" class="link_question">
-                <div class="content-bit">
-                    <span class="what">WHAT IS YOUR CAR MAKE?</span>
-                    <span class="note-span"></span>
-                    <span class="godfather">HOnda</span>
-                </div>
-            </a>
+            <div id="question-custom-form" class="content-form-question">
+                <form id="" role="form" method="post">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="question" placeholder="Enter a question" />
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="answer" placeholder="And now answer it!"></textarea>
+                    </div>
+                    <input type="hidden" name="user_id" value="<?php echo Yii::app()->user->id ?>" />
+                    <input type="hidden" name="date" value="<?php echo date("Y-m-d H:i:s"); ?>"/>
+                    <span class="my-btn">
+                        <input type="submit" value="Save"/>
+                        <span class="text-cancel" id="cancel-question-custom">Cancel</span>
+                    </span>
+                    
+                </form>
+            </div>
+            <?php if($this->question){
+                foreach($this->question as $value){ ?>
+                    <div class="content-bit">
+                        <span class="what"><?php echo $value->question ?></span>
+                        <span class="note-span" id="note_<?php echo $value->id; ?>"></span>
+                        <span class="godfather" id="answer_<?php echo $value->id; ?>" ><?php echo $value->answer ?></span>
+                        <div id="question_<?php echo $value->id; ?>">
+                            <input type="text" value="<?php echo $value->answer ?>" class="form-control"/>
+                            <span class="my-btn">
+                                <input type="submit" value="Save" id="submit_<?php echo $value->id; ?>" />
+                                <span class="text-cancel" id="delete_<?php echo $value->id; ?>">Delete</span>
+                                <span class="text-cancel" id="cancel_<?php echo $value->id; ?>">Cancel</span>
+                            </span>
+                        </div>
+                    </div>
+                <?php }
+            } ?>
             
-            <a href="#" class="link_question">
-                <div class="content-bit">
-                    <span class="what">MY PERFECT SUNDAY</span>
-                    <span class="note-span"></span>
-                    <span class="godfather">DARK</span>
-                </div>
-            </a>
-            <a href="#" class="link_question">
-                <div class="content-bit-final">
-                    <span class="what">WHAT IS THE LAST MOVIE YOU WATCHED?</span>
-                    <span class="note-span"></span>
-                    <span class="godfather">The Godfather Trilogy</span>
-                </div>
-            </a>
         </div>
         
     </div>

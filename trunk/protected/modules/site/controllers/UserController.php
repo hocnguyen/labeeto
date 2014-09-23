@@ -2,7 +2,7 @@
 
 class UserController extends SiteBaseController {
     public $text;
-    public $user;
+    public $user, $question;
     const PAGE_SIZE     = 10;
     public function init()
 	{
@@ -253,6 +253,7 @@ class UserController extends SiteBaseController {
         $this->layout = 'feed';
         if(!Yii::app()->user->isGuest){
             $this->user = User::model()->findByPk(Yii::app()->user->id);
+            $this->question = Question::model()->findAllByAttributes(array('user_id'=>Yii::app()->user->id));
             $this->render('profile');
         } else {
             $this->redirect('/');
