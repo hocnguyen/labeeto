@@ -299,7 +299,7 @@ class UserController extends SiteBaseController {
             }
         }
 
-        $this->pageTitle[] = Yii::t('global', 'Login');
+        //$this->pageTitle[] = Yii::t('global', 'Login');
         $this->renderPartial('admin', array('model'=>$model));
     }
 
@@ -484,5 +484,15 @@ class UserController extends SiteBaseController {
                  </p>';
         }
         echo $t;
+    }
+
+    public function actionAddQuestions(){
+        $question = new Question();
+        $question->question = $_GET['question'];
+        $question->answer = $_GET['answer'];
+        $question->user_id = Yii::app()->user->id;
+        $question->date = date('y-m-d h:s');
+        $question->save();
+        echo $question->id;
     }
 }

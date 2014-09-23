@@ -283,6 +283,19 @@ $(document).ready(function(){
     $('#cancel-gender').click(function(){
         $('#form-gender').hide();
         $('#value-gender').show(); 
-    })
-    /*********************************************************************************************/
+    });
+    /* Post custom questions */
+    $('.post-question').click(function(){
+
+        var answer = $('#answer').val();
+        var question = $('#question').val();
+        if(answer =='' || question ==''){
+            alert('Phuoc custom validate cho ni nge');
+        }else {
+            $.get('/user/addQuestions?question='+question+'&answer='+answer,function(data){
+                alert(data); // data nay la id cua question vua moi dc saved.
+                // cho nay cho hien ra question va cau tra loi kem theo id o tren.
+            });
+        }
+    });
 });
