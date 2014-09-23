@@ -283,6 +283,23 @@ $(document).ready(function(){
     $('#cancel-gender').click(function(){
         $('#form-gender').hide();
         $('#value-gender').show(); 
+<<<<<<< .mine
+    })
+
+    setInterval(function(){
+        $.get('/index/checkTimeout', function(result) {
+            if (result == lastest_visit) {
+                 /*$('#messLogout').modal('show');
+                 $('#messLogout').modal();*/
+                setTimeout(function(){window.location.href="/user/logout"},10000);
+            }
+            else
+                lastest_visit = result;
+        });
+    },600000)
+
+    /*********************************************************************************************/
+=======
     });
     /* Post custom questions */
     $('.post-question').click(function(){
@@ -299,4 +316,5 @@ $(document).ready(function(){
             });
         }
     });
+>>>>>>> .r212
 });
