@@ -54,6 +54,8 @@ class InternalIdentity extends CUserIdentity
 			$this->setState('email', $record->email);
 			$this->setState('role', $record->role);
             $this->errorCode = self::ERROR_NONE;
+            $record->last_logged = date('Y-m-d H:i:s');
+            $record->save();
         }
         return !$this->errorCode;
     }
