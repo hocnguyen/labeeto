@@ -363,14 +363,17 @@
                         </span>
                     </p>
                     <span class="often"><?php echo Yii::t('global', 'Often') ?></span>
-                </div>
-                  <form method="post" style="display: none;" id="form-excercise">
-                        <input type="range" min="1" max="100" step="1" value="<?php echo $this->user->excercise ?>" name="excercise" class="width-range"/>
+                    <form method="post" style="display: none;" id="form-excercise">
+                        <p class="range-2">
+                            <input type="range" min="1" max="100" step="1" value="<?php echo $this->user->excercise ?>" name="excercise" class="width-range"/>
+                        </p>
                         <span class="my-btn">
                             <input type="submit" value="Save"/>
                             <span class="text-cancel" id="cancel-excercise">Cancel</span>
                         </span>
                     </form>
+                </div>
+                  
             </div>
             
             <div class="content-bit favorite_a">
@@ -391,14 +394,17 @@
                         </span>
                     </p>
                     <span class="often"><?php echo Yii::t('global', 'Often') ?></span>
+                    <form method="post" style="display: none;" id="form-drink">
+                        <p class="range-2">
+                            <input type="range" min="1" max="100" step="1" value="<?php echo $this->user->drink ?>" name="drink" class="width-range"/>
+                        </p>
+                        <span class="my-btn">
+                            <input type="submit" value="Save"/>
+                            <span class="text-cancel" id="cancel-drink">Cancel</span>
+                        </span>
+                    </form>
                 </div>
-                <form method="post" style="display: none;" id="form-drink">
-                    <input type="range" min="1" max="100" step="1" value="<?php echo $this->user->drink ?>" name="drink" class="width-range"/>
-                    <span class="my-btn">
-                        <input type="submit" value="Save"/>
-                        <span class="text-cancel" id="cancel-drink">Cancel</span>
-                    </span>
-                </form>
+                
             </div>
             
             <div class="content-bit-final favorite_a">
@@ -418,14 +424,17 @@
                         </span>
                     </p>
                     <span class="often"><?php echo Yii::t('global', 'Often') ?></span>
+                    <form method="post" style="display: none;" id="form-smoke">
+                        <p class="range-2">
+                            <input type="range" min="1" max="100" step="1" value="<?php echo $this->user->smoke ?>" name="smoke" class="width-range"/>
+                        </p>
+                        <span class="my-btn">
+                            <input type="submit" value="Save"/>
+                            <span class="text-cancel" id="cancel-smoke">Cancel</span>
+                        </span>
+                    </form>
                 </div>
-                <form method="post" style="display: none;" id="form-smoke">
-                    <input type="range" min="1" max="100" step="1" value="<?php echo $this->user->smoke ?>" name="smoke" class="width-range"/>
-                    <span class="my-btn">
-                        <input type="submit" value="Save"/>
-                        <span class="text-cancel" id="cancel-smoke">Cancel</span>
-                    </span>
-                </form>
+                
             </div>
             
         </div>
