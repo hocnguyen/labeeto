@@ -72,3 +72,5 @@ INSERT INTO `children` (`id`, `name`) VALUES
 (3, 'Want ''em now'),
 (4, 'Want ''em someday'),
 (5, 'Not for me');
+
+ALTER TABLE  `users` ADD  `age` VARCHAR( 255 ) NOT NULL AFTER  `smoke`
