@@ -71,4 +71,7 @@ class IndexController extends SiteBaseController {
         echo $cities;
 
     }
+    function actionCheckTimeout(){
+        echo Yii::app()->session['lastest_visit'];
+    }
 }
