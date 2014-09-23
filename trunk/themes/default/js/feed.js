@@ -293,8 +293,9 @@ $(document).ready(function(){
             alert('Phuoc custom validate cho ni nge');
         }else {
             $.get('/user/addQuestions?question='+question+'&answer='+answer,function(data){
-                alert(data); // data nay la id cua question vua moi dc saved.
-                // cho nay cho hien ra question va cau tra loi kem theo id o tren.
+               // alert(data);
+                var html = ' question is '+question+ 'answer is'+ answer;
+                $('.all-question').append(html);
             });
         }
     });
