@@ -8,9 +8,14 @@
  * @property string $name
  * @property string $alias
  * @property string $content
+ * @property string $location
  * @property integer $status
+ * @property integer $user_id
  * @property string $created
  * @property string $updated
+ *
+ * The followings are the available model relations:
+ * @property Users $user
  */
 class Achievements extends CActiveRecord
 {
@@ -20,6 +25,7 @@ class Achievements extends CActiveRecord
 	 * @return Achievements the static model class
 	 */
     const STATUS_ACTIVE = 1;
+    public $users;
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -45,12 +51,12 @@ class Achievements extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('status', 'numerical', 'integerOnly'=>true),
+			array('status, user_id', 'numerical', 'integerOnly'=>true),
 			array('name, alias', 'length', 'max'=>255),
 			array('content, created, updated', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, alias, content, status, created, updated', 'safe', 'on'=>'search'),
+			array('id, name, alias, content, location, status, user_id, created, updated, users', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,6 +68,7 @@ class Achievements extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+          'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
 		);
 	}
 
@@ -75,7 +82,9 @@ class Achievements extends CActiveRecord
 			'name' => Yii::t('global', 'Name'),
 			'alias' => Yii::t('global', 'Alias'),
 			'content' => Yii::t('global', 'Content'),
-			'status' => Yii::t('global', 'Status'),
+            'location' => Yii::t('global', 'Location'),
+            'status' => Yii::t('global', 'Status'),
+            'user_id' => Yii::t('global', 'User'),
 			'created' => Yii::t('global', 'Created'),
 			'updated' => Yii::t('global', 'Updated'),
 		);
@@ -91,20 +100,32 @@ class Achievements extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
+        $criteria->together = true;
+        $criteria->with = array('user');
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('alias',$this->alias,true);
-		$criteria->compare('content',$this->content,true);
-		$criteria->compare('status',$this->status);
+		$criteria->compare('t.id',$this->id);
+		$criteria->compare('t.name',$this->name,true);
+		$criteria->compare('t.alias',$this->alias,true);
+		$criteria->compare('t.content',$this->content,true);
+        $criteria->compare('t.location',$this->location,true);
+		$criteria->compare('t.status',$this->status);
+        $criteria->compare('t.user_id',$this->user_id);
         if ($this->created)
             $criteria->compare('t.created', date('Y-m-d ', strtotime($this->created)), true);
-		$criteria->compare('updated',$this->updated,true);
+		$criteria->compare('t.updated',$this->updated,true);
+        $criteria->compare('user.id',$this->users);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
             'sort'=>array(
                 'defaultOrder'=>'t.id DESC',
+                'attributes'=>array(
+                    'usernames'=>array(
+                        'asc'=>'users.username',
+                        'desc'=>'users.username DESC',
+                    ),
+                    '*',
+                ),
             )
 		));
 	}
