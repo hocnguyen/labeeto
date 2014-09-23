@@ -598,21 +598,16 @@
                 <span class="add-question-1" id="question-custom">Add Custom Question</span>
             </div>
             <div id="question-custom-form" class="content-form-question">
-                <form id="" role="form" method="post">
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="question" placeholder="Enter a question" />
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" name="answer" placeholder="And now answer it!"></textarea>
-                    </div>
-                    <input type="hidden" name="user_id" value="<?php echo Yii::app()->user->id ?>" />
-                    <input type="hidden" name="date" value="<?php echo date("Y-m-d H:i:s"); ?>"/>
-                    <span class="my-btn">
-                        <input type="submit" value="Save"/>
-                        <span class="text-cancel" id="cancel-question-custom">Cancel</span>
-                    </span>
-                    
-                </form>
+                <div class="form-group">
+                    <input type="text" id="question" class="form-control" name="question" placeholder="Enter a question" />
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" id="answer" name="answer" placeholder="And now answer it!"></textarea>
+                </div>
+                <span class="my-btn">
+                    <input type="submit" value="Save" class="post-question"/>
+                    <span class="text-cancel" id="cancel-question-custom">Cancel</span>
+                </span>
             </div>
             <?php if($this->question){
                 foreach($this->question as $value){ ?>
