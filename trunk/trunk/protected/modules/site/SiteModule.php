@@ -9,6 +9,9 @@ class SiteModule extends MasterModule {
      * @author vadim
      */
     public function init() {
+
+        if (!Yii::app()->request->isAjaxRequest)
+            Yii::app()->session['lastest_visit'] = time();
     
         // Set theme url
         Yii::app()->themeManager->setBaseUrl( Yii::app()->theme->baseUrl );

@@ -46,6 +46,9 @@
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl . '/js/bootstrap.min.js' ?>"></script>
     <script type="text/javascript">
         $('textarea').placeholder();
+        <?php if(!Yii::app()->user->isGuest){ ?>
+        var lastest_visit = '<?php echo Yii::app()->session['lastest_visit']; ?>'
+        <?php } ?>
     </script>
 </body>
 
