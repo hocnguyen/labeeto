@@ -54,11 +54,11 @@ $this->widget('widgets.NBADMenu', array(
                                     'label' => Yii::t('global', 'Manage Banners'),
                                     'url' => array('banners/index'),
                                 ),
-                               /* array(
+                                 array(
                                     'label' => Yii::t('global', 'Manage Newsletters'),
                                     'url' => array('newsletter/index'),
                                 ),
-                                array(
+                               /* array(
                                     'label' => Yii::t('global', 'Manage Pages'),
                                     'url' => array('custompages/index'),
                                 ),*/
