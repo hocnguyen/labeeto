@@ -291,18 +291,28 @@ $(document).ready(function(){
                 lastest_visit = result;
         });
     },600000);
-
     /* Post custom questions */
     $('.post-question').click(function(){
 
         var answer = $('#answer').val();
         var question = $('#question').val();
         if(answer =='' || question ==''){
-            alert('Phuoc custom validate cho ni nge');
+            alert('Please ensure the question and answer is filled out.');
         }else {
+            $('#question-custom-form').hide();
             $.get('/user/addQuestions?question='+question+'&answer='+answer,function(data){
-               // alert(data);
-                var html = ' question is '+question+ 'answer is'+ answer;
+                var html = '<div class="content-bit">';
+                    html+= '<span class="what">'+ question +'</span>';
+                    html+= '    <span class="note-span" id="note_'+ data +'"></span>';
+                    html+= '    <span class="godfather" id="answer_'+ data +'" >'+ answer +'</span>';
+                    html+= '   <div id="question_'+ data +'" style="display: none;">';
+                    html+= '        <input type="text" value="'+ answer +'" class="form-control"/>';
+                    html+= '        <span class="my-btn">';
+                    html+= '            <input type="submit" value="Save" id="submit_'+ data +'" />';
+                    html+= '            <span class="text-cancel" id="delete_'+ data +'">Delete</span>';
+                    html+= '            <span class="text-cancel" id="cancel_'+ data +'">Cancel</span>';
+                    html+= '</span></div></div>';
+                
                 $('.all-question').append(html);
             });
         }
