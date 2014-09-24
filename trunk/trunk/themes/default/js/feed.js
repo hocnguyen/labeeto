@@ -55,7 +55,7 @@ $(document).ready(function(){
         $('.line-green-photo-pravite').css('display','block');
     });
     
-    /*******************************************Update Profile******************************************************/
+    /***Update Profile****/
     
     /*Education*/
     $('#id-education').click(function(){
@@ -66,12 +66,12 @@ $(document).ready(function(){
             $('#form-education').hide();
             $('#value-education').show();
         }
-    })
+    });
     
     $('#cancel-education').click(function(){
         $('#form-education').hide();
         $('#value-education').show();
-    })
+    });
     
     /*Religion*/
     $('#id-religion').click(function(){
@@ -82,12 +82,12 @@ $(document).ready(function(){
             $('#form-religion').hide();
             $('#value-religion').show();
         }
-    })
+    });
     
     $('#cancel-religion').click(function(){
         $('#form-religion').hide();
         $('#value-religion').show();
-    })
+    });
     
     /*Ethnicity*/
     $('#id-ehtnicity').click(function(){
@@ -98,12 +98,12 @@ $(document).ready(function(){
             $('#form-ehtnicity').hide();
             $('#value-ehtnicity').show();
         }
-    })
+    });
     
     $('#cancel-ehtnicity').click(function(){
         $('#form-ehtnicity').hide();
         $('#value-ehtnicity').show();
-    })
+    });
     
     /*Height*/
     $('#id-height').click(function(){
@@ -114,15 +114,12 @@ $(document).ready(function(){
             $('#form-height').hide();
             $('#value-height').show();
         }
-    })
+    });
     
     $('#cancel-height').click(function(){
         $('#form-height').hide();
         $('#value-height').show();
-    })
-    
-    
-    
+    });
     
     /*Passion*/
     $('#id-passion').click(function(){
@@ -133,12 +130,12 @@ $(document).ready(function(){
             $('#form-passion').hide();
             $('#value-passion').show();
         }
-    })
+    });
     
     $('#cancel-passion').click(function(){
         $('#form-passion').hide();
         $('#value-passion').show();
-    })
+    });
     
     /*Goal*/
     $('#id-goal').click(function(){
@@ -149,12 +146,12 @@ $(document).ready(function(){
             $('#form-goal').hide();
             $('#value-goal').show();
         }
-    })
+    });
     
     $('#cancel-goal').click(function(){
         $('#form-goal').hide();
         $('#value-goal').show();
-    })
+    });
     
     /*Smoke*/
     $('#id-smoke').click(function(){
@@ -165,12 +162,12 @@ $(document).ready(function(){
             $('#form-smoke').hide();
             $('#value-smoke').show();
         }
-    })
+    });
     
     $('#cancel-smoke').click(function(){
         $('#form-smoke').hide();
         $('#value-smoke').show();
-    })
+    });
     
     /*Drink*/
     $('#id-drink').click(function(){
@@ -181,14 +178,12 @@ $(document).ready(function(){
             $('#form-drink').hide();
             $('#value-drink').show();
         }
-    })
+    });
     
     $('#cancel-drink').click(function(){
         $('#form-drink').hide();
         $('#value-drink').show();
-    })
-    
-    
+    });
     /*Excercise*/
     $('#id-excercise').click(function(){
         if ($('#form-excercise').is(':hidden')) {
@@ -198,12 +193,12 @@ $(document).ready(function(){
             $('#form-excercise').hide();
             $('#value-excercise').show();
         }
-    })
+    });
     
     $('#cancel-excercise').click(function(){
         $('#form-excercise').hide();
         $('#value-excercise').show();
-    })
+    });
     
     /*Children*/
     $('#id-children').click(function(){
@@ -214,12 +209,12 @@ $(document).ready(function(){
             $('#form-children').hide();
             $('#value-children').show();
         }
-    })
+    });
     
     $('#cancel-children').click(function(){
         $('#form-children').hide();
         $('#value-children').show();
-    })
+    });
     
     /*about*/
     $('#id-about').click(function(){
@@ -230,12 +225,12 @@ $(document).ready(function(){
             $('#form-about').hide();
             $('#value-about').show();
         }
-    })
+    });
     
     $('#cancel-about').click(function(){
         $('#form-about').hide();
         $('#value-about').show(); 
-    })
+    });
     
     /*diet*/
     $('#id-diet').click(function(){
@@ -246,12 +241,12 @@ $(document).ready(function(){
             $('#form-diet').hide();
             $('#value-diet').show();
         }
-    })
+    });
     
     $('#cancel-diet').click(function(){
         $('#form-diet').hide();
         $('#value-diet').show(); 
-    })
+    });
     
     /*Gym*/
     $('#id-gym').click(function(){
@@ -262,12 +257,12 @@ $(document).ready(function(){
             $('#form-gym').hide();
             $('#value-gym').show();
         }
-    })
+    });
     
     $('#cancel-gym').click(function(){
         $('#form-gym').hide();
         $('#value-gym').show(); 
-    })
+    });
     
     /*All header*/
     $('#id-gender').click(function(){
@@ -278,13 +273,12 @@ $(document).ready(function(){
             $('#form-gender').hide();
             $('#value-gender').show();
         }
-    })
+    });
     
     $('#cancel-gender').click(function(){
         $('#form-gender').hide();
-        $('#value-gender').show(); 
-<<<<<<< .mine
-    })
+        $('#value-gender').show();
+    });
 
     setInterval(function(){
         $.get('/index/checkTimeout', function(result) {
@@ -296,11 +290,8 @@ $(document).ready(function(){
             else
                 lastest_visit = result;
         });
-    },600000)
+    },600000);
 
-    /*********************************************************************************************/
-=======
-    });
     /* Post custom questions */
     $('.post-question').click(function(){
 
@@ -316,5 +307,4 @@ $(document).ready(function(){
             });
         }
     });
->>>>>>> .r212
 });
