@@ -18,7 +18,11 @@
                 <img src="/uploads/avatar/<?php echo $this->user->photo ?>" />
             <?php } ?>
             <!--<img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post.png"/>-->
-            <div style="height: 30px; width: 60px; border: 1px solid red;"></div>
+            <div class="popup_avavtar">
+                <a href="#" data-toggle="modal" data-target="#ChangeAvatar">
+                    <span style="display: inline-block;">Upload Photo</span>
+                </a>
+            </div>
         </div>
         <div class="content-infor-profile">
             <div class="name_user">
@@ -609,26 +613,39 @@
                     <span class="text-cancel" id="cancel-question-custom">Cancel</span>
                 </span>
             </div>
-            <div class="all-question">
+            
+            <div class="all-question"></div>
+            
             <?php if($this->question){
-                foreach($this->question as $value){ ?>
+                foreach($this->question as $value){ 
+                    $check = Question::model()->checkQuestion($value['id']);
+                ?>
                     <div class="content-bit">
-                        <span class="what"><?php echo $value->question ?></span>
-                        <span class="note-span" id="note_<?php echo $value->id; ?>"></span>
-                        <span class="godfather" id="answer_<?php echo $value->id; ?>" ><?php echo $value->default ?></span>
-                        <div id="question_<?php echo $value->id; ?>">
-                            <input type="text" value="<?php echo $value->default ?>" class="form-control"/>
+                        <?php if($check == 0) { ?>
+                            <span class="what" id="sentence_question_<?php echo $value['id']; ?>"><?php echo Question::model()->getQuestion($value['question_id']); ?></span>
+                        <?php }else{ ?>
+                            <span class="what"><?php echo Question::model()->getQuestion($value['question_id']); ?></span>
+                        <?php } ?>
+                        <span class="note-span note_default_question" data-id="<?php echo $value['id']; ?>"></span>
+                        <span class="godfather answer_<?php echo $value['id']; ?>" ><?php echo $value['answer']; ?></span>
+                        <form id="question_<?php echo $value['id']; ?>" style="display: none;" method="post">
+                            <?php if($check == 0) { ?>
+                                <input type="text" id="user_question_<?php echo $value['id']; ?>" name="question" class="form-control" value="<?php echo Question::model()->getQuestion($value['question_id']); ?>" />
+                                <br />
+                            <?php } ?>
+                            <textarea class="form-control" name="answer"> <?php echo $value['answer']; ?> </textarea>
                             <span class="my-btn">
-                                <input type="submit" value="Save" id="submit_<?php echo $value->id; ?>" />
-                                <span class="text-cancel" id="delete_<?php echo $value->id; ?>">Delete</span>
-                                <span class="text-cancel" id="cancel_<?php echo $value->id; ?>">Cancel</span>
+                                <input type="button" value="Save" class="submit_answer_question" data-id="<?php echo $value['id'];; ?>" />
+                                <?php if($check == 0) { ?>
+                                    <span class="text-cancel q_default_delete" data-id="<?php echo $value['id']; ?>">Delete</span>
+                                <?php } ?>
+                                <span class="text-cancel q_default_cancel" data-id="<?php echo $value['id']; ?>">Cancel</span>
                             </span>
-                        </div>
+                        </form>
                     </div>
                 <?php }
             } ?>
-
-            </div>
+            
         </div>
         
     </div>
@@ -661,6 +678,32 @@
       </div>
       <div class="modal-footer footer-report footer-upgarde">
         <a type="button" class="btn btn-primary my-report">Upgrade Account</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Upload Avartar--->
+<div class="modal fade" id="ChangeAvatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content special-border">
+      <div class="modal-header header-report">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <span>Upload Photo</span>
+        
+      </div>
+      <div class="modal-footer footer-report footer-upgarde">
+        <form method="post" id="form-change-avatar">
+            <div style="width: 50%; float: left;">
+                <input type="file" id="photo-new" name="photo-change" style="display: none;">
+                <label for="photo-new" class="btn btn-primary my-report-1">From My Computer </label>
+            </div>
+            <input type="submit" value="OK" />
+        </form>
+            <div style="width: 50%; float: left;">
+                <a type="button" class="btn btn-primary my-report-1">From Facbook</a>
+            </div>
+        
       </div>
     </div>
   </div>
