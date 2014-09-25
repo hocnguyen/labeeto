@@ -628,20 +628,20 @@
                         <?php } ?>
                         <span class="note-span note_default_question" data-id="<?php echo $value['id']; ?>"></span>
                         <span class="godfather answer_<?php echo $value['id']; ?>" ><?php echo $value['answer']; ?></span>
-                        <form id="question_<?php echo $value['id']; ?>" style="display: none;" method="post">
+                        <div id="question_<?php echo $value['id']; ?>" style="display: none;" method="post">
                             <?php if($check == 0) { ?>
                                 <input type="text" id="user_question_<?php echo $value['id']; ?>" name="question" class="form-control" value="<?php echo Question::model()->getQuestion($value['question_id']); ?>" />
                                 <br />
                             <?php } ?>
-                            <textarea class="form-control" name="answer"> <?php echo $value['answer']; ?> </textarea>
+                            <textarea class="form-control" id="user_answer_<?php echo $value['id']; ?>" name="answer"> <?php echo $value['answer']; ?> </textarea>
                             <span class="my-btn">
-                                <input type="button" value="Save" class="submit_answer_question" data-id="<?php echo $value['id'];; ?>" />
+                                <input type="button" value="Save" class="saveAnswer" data-id="<?php echo $value['id'];; ?>" />
                                 <?php if($check == 0) { ?>
                                     <span class="text-cancel q_default_delete" data-id="<?php echo $value['id']; ?>">Delete</span>
                                 <?php } ?>
                                 <span class="text-cancel q_default_cancel" data-id="<?php echo $value['id']; ?>">Cancel</span>
                             </span>
-                        </form>
+                        </div>
                     </div>
                 <?php }
             } ?>

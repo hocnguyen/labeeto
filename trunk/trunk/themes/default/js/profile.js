@@ -464,8 +464,31 @@ $(document).ready(function(){
                 }
             });
         return false;
-    })
-    
+    });
+
+    /* Start Update question answer */
+        $('.saveAnswer').click(function(){
+            var id_question = $(this).attr('data-id');
+            var question = $('#user_question_'+id_question).val();
+            var answer = $('#user_answer_'+id_question).val();
+            if(answer =='' || question ==''){
+                alert('Please ensure the question and answer is filled out.');
+            }else {
+                $.get('/user/updateQuestions?question='+question+'&answer='+answer+'&id='+id_question,function(data){
+                    if(data!=0){
+                        alert('update OK');
+                        // E lam tiep de show ra ket qua vua moi update.
+                    } else {
+                        alert('No ok');
+                        // em thong bao thong tin nhap vao khong chinh xac, vui long kiem tra lai.
+                    }
+
+                });
+            }
+        });
+
+    /* End Update question answer */
+
     function showModalTemp(name_image){
         if ($('.avartar img').attr('src') == ''){
                 $('.avartar img').attr('src', '/uploads/avatar/'+ name_image);
