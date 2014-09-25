@@ -357,15 +357,17 @@
                 <div style="position: relative;" >
                     
                     <span class="godfather"><?php echo Yii::t('global', 'Never') ?></span>
-                    <p class="range-2" id="value-excercise">
-                        <span class="ws-range" role="slider" aria-readonly="false" tabindex="0" aria-disabled="false" aria-valuenow="<?php if($this->user->excercise) echo $this->user->excercise; ?>" aria-valuetext="<?php if($this->user->excercise) echo $this->user->excercise; ?>">
-                            <span class="ws-range-min ws-range-progress" style="margin-top: 0px; width: <?php if($this->user->excercise) echo $this->user->excercise; ?>%;"></span>
+                    <!--<p class="range-2" id="value-excercise">
+                        <span class="ws-range" role="slider" aria-readonly="false" tabindex="0" aria-disabled="false" aria-valuenow="<?php /*if($this->user->excercise) echo $this->user->excercise; */?>" aria-valuetext="<?php /*if($this->user->excercise) echo $this->user->excercise; */?>">
+                            <span class="ws-range-min ws-range-progress" style="margin-top: 0px; width: <?php /*if($this->user->excercise) echo $this->user->excercise; */?>%;"></span>
                             <span class="ws-range-rail ws-range-track" style="left: 11px; right: 9px;">
-                                <span class="ws-range-thumb" style="margin-left: -11px; margin-top: -6px; left: <?php if($this->user->excercise) echo $this->user->excercise; ?>%;">
+                                <span class="ws-range-thumb" style="margin-left: -11px; margin-top: -6px; left: <?php /*if($this->user->excercise) echo $this->user->excercise; */?>%;">
                                      </span>
                             </span>
                         </span>
-                    </p>
+                    </p>-->
+                    <input type="range" min="10" value="<?php if($this->user->excercise) echo $this->user->excercise; ?>" max="100" data-rangeslider>
+                    <output style="display: none"></output>
                     <span class="often"><?php echo Yii::t('global', 'Often') ?></span>
                     <form method="post" style="display: none;" id="form-excercise">
                         <p class="range-2">

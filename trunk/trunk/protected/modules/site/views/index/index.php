@@ -82,6 +82,7 @@
         )); ?>
         <div class="center-content">
             <div class="wrapper-form">
+
                 <div class="username column-form">
                     <label>Username</label>
                     <input type="text" id="username-step2" name="username-step2" class="text-input validate[required],funcCall[checkUsernameExists]"/>
@@ -229,8 +230,6 @@
                     <div class="fix-range">
                         <label style="margin-right: 20px;">Never</label>
                         <input  type=range min=0 max=100  class="input-range fix-rang-ie" value=50 id="excrise" step=20 list=volsettings>
-
-
                         <datalist id=volsettings>
                             <option>0</option>
                             <option>20</option>
@@ -239,6 +238,7 @@
                             <option>80</option>
                             <option>100</option>
                         </datalist>
+
                         <label style="float: right;margin-right: 40px;">Often</label>
                     </div>
                 </div>
@@ -290,7 +290,7 @@
                     <label>Do you smoke?</label>
                     <div class="fix-range">
                         <label style="margin-right: 20px;">Never</label>
-                        <input type="range" value="20" max="100" class="input-range" />
+                        <input type="range" value="20" max="100" list="volsettings" class="input-range" />
 
                         <datalist id=volsettings>
                             <option>0</option>
@@ -307,7 +307,7 @@
                     <label>Do you drink?</label>
                     <div class="fix-range">
                         <label style="margin-right: 20px;">Never</label>
-                        <input type="range" value="20" max="100" class="input-range" />
+                        <input type="range" value="20" max="100" list=volsettings class="input-range" />
                         <datalist id=volsettings>
                             <option>0</option>
                             <option>20</option>
