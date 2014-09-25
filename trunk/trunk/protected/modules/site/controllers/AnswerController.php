@@ -138,10 +138,4 @@ class AnswerController extends SiteBaseController {
 			Yii::app()->end();
 		}
 	}
-    
-    public function actionSaveAnswer($id){
-        if (isset($_POST['answer'])){
-             echo $_POST['answer'];
-        }
-    }
 }

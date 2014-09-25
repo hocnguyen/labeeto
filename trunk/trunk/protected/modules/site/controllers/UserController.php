@@ -496,6 +496,7 @@ class UserController extends SiteBaseController {
         $answer = new Answer();
         $answer->answer = $_GET['answer'];
         $answer->question_id = $question->id;
+        $answer->user_id = Yii::app()->user->id;
         $answer->save();
         echo $question->id;
         
@@ -532,6 +533,24 @@ class UserController extends SiteBaseController {
             }
             echo $checkQuestion->id;
         }else {
+            echo 0;
+        }
+    }
+    
+    public function actionDeleteQuestions(){
+        $id_question = $_GET['id'];
+        $question = Question::model()->findByPk($id_question);
+        if($question){
+            Question::model()->deleteByPk($id_question);
+            $answer =  Answer::model()->findByAttributes(array('user_id'=>Yii::app()->user->id, 'question_id'=>$id_question));
+            if($answer){
+                Answer::model()->deleteByPk($answer->id);
+                echo $id_question;
+            }else{
+                echo 0;
+            }
+            
+        }else{
             echo 0;
         }
     }
