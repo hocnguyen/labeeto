@@ -1,20 +1,20 @@
 <?php
 
 /**
- * This is the model class for table "question".
+ * This is the model class for table "answer".
  *
- * The followings are the available columns in table 'question':
+ * The followings are the available columns in table 'answer':
  * @property integer $id
- * @property string $question
+ * @property string $answer
+ * @property integer $question_id
  * @property integer $user_id
- * @property integer $default
  */
-class Question extends CActiveRecord
+class Answer extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Question the static model class
+	 * @return Answer the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -26,7 +26,7 @@ class Question extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'question';
+		return 'answer';
 	}
     public function behaviors()
     {
@@ -41,11 +41,11 @@ class Question extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('question, user_id, default', 'required'),
-			array('user_id, default', 'numerical', 'integerOnly'=>true),
+			array('question_id, user_id', 'numerical', 'integerOnly'=>true),
+			array('answer', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, question, user_id, default', 'safe', 'on'=>'search'),
+			array('id, answer, question_id, user_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,9 +67,9 @@ class Question extends CActiveRecord
 	{
 		return array(
 			'id' => Yii::t('global', 'ID'),
-			'question' => Yii::t('global', 'Question'),
+			'answer' => Yii::t('global', 'Answer'),
+			'question_id' => Yii::t('global', 'Question'),
 			'user_id' => Yii::t('global', 'User'),
-			'default' => Yii::t('global', 'Default'),
 		);
 	}
 
@@ -85,40 +85,36 @@ class Question extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('question',$this->question,true);
+		$criteria->compare('answer',$this->answer,true);
+		$criteria->compare('question_id',$this->question_id);
 		$criteria->compare('user_id',$this->user_id);
-		$criteria->compare('default',$this->default);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
     
-    public function getIdOfQuestion(){
-        $sql = "SELECT * FROM question WHERE user_id = ". Yii::app()->user->id ." OR user_id = '' ORDER BY question.default ASC";
-        $result = Question::model()->findAllBySql($sql);
+    public function getAnswer(){
+        $arr = Question::model()->getIdOfQuestion();
+        if($arr == NULL)
+            return false;
+        else{
+            $sql = 'SELECT * FROM answer WHERE question_id IN ('. implode(", ",$arr). ') AND answer.user_id = '. Yii::app()->user->id;
+            $answer = Yii::app()->db->createCommand($sql)->queryAll();
+            if($answer)
+                return $answer;
+            else
+                return false;
+        }
+    }
+    
+    public function getIdOfAnswer(){
+        $result = Answer::model()->findAllByAttributes(array('user_id'=>Yii::app()->user->id));
         $arr = array();
         foreach ($result as $key => $item) {
 			$arr[]=$item['id'];
 		}
-		return $arr;
+		return $arr; 
     }
     
-    public function getQuestion($id){
-        $result = Question::model()->find(array(
-            'select'=>'question',
-            'condition'=>'id=:id',
-            'params'=>array(':id'=>$id)
-        ));
-        return $result['question'];
-    }
-    
-    public function checkQuestion($id){
-        $result = Question::model()->find(array(
-            'select'=>'*',
-            'condition'=>'id=:id',
-            'params'=>array(':id'=>$id)
-        ));
-        return $result['default'];
-    }
 }

@@ -253,7 +253,7 @@ class UserController extends SiteBaseController {
         $this->layout = 'feed';
         if(!Yii::app()->user->isGuest){
             $this->user = User::model()->findByPk(Yii::app()->user->id);
-            $this->question = Question::model()->findAllByAttributes(array('user_id'=>Yii::app()->user->id));
+            $this->question = Answer::model()->getAnswer();
             $this->render('profile');
         } else {
             $this->redirect('/');
@@ -499,5 +499,17 @@ class UserController extends SiteBaseController {
         $answer->save();
         echo $question->id;
         
+    }
+    
+    public function actionChangeAvatar(){
+        if (isset($_FILES['photo-change'])){
+            $folder = Yii::app()->basePath.'/../uploads/avatar/';
+
+            $filename = $this->generateRandomString().$_FILES['photo-change']['name'];
+            if (move_uploaded_file($_FILES['photo-change']['tmp_name'], $folder.$filename)){
+                User::model()->updateByPk(Yii::app()->user->id, array('photo'=>$filename));
+                echo $filename;
+            }
+        }
     }
 }
