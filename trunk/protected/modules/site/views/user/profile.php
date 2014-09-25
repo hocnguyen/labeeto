@@ -17,7 +17,7 @@
             <?php } else { ?>
                 <img src="/uploads/avatar/<?php echo $this->user->photo ?>" />
             <?php } ?>
-            <!--<img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post.png"/>-->
+            <span class="double-spans"></span>
             <div class="popup_avavtar">
                 <a href="#" data-toggle="modal" data-target="#ChangeAvatar">
                     <span style="display: inline-block;">Upload Photo</span>
@@ -366,7 +366,9 @@
                             </span>
                         </span>
                     </p>-->
+                    
                     <input type="range" min="10" value="<?php if($this->user->excercise) echo $this->user->excercise; ?>" max="100" data-rangeslider>
+                    
                     <output style="display: none"></output>
                     <span class="often"><?php echo Yii::t('global', 'Often') ?></span>
                     <form method="post" style="display: none;" id="form-excercise">
@@ -618,34 +620,38 @@
             
             <div class="all-question"></div>
             
-            <?php if($this->question){
-                foreach($this->question as $value){ 
-                    $check = Question::model()->checkQuestion($value['id']);
+            <?php if($this->question){ 
+                $i = 0;
+                foreach($this->question as $value){                     
+                    $check = Question::model()->checkQuestion($value['question_id']);
                 ?>
-                    <div class="content-bit">
-                        <?php if($check == 0) { ?>
-                            <span class="what" id="sentence_question_<?php echo $value['id']; ?>"><?php echo Question::model()->getQuestion($value['question_id']); ?></span>
+                <?php if($check == 0) { ?>
+                        <div <?php if($i == (count($this->question) - 1)) echo 'class="content-bit-final"'; else echo 'class="content-bit"'; ?> id="content-question-default_<?php echo $value['question_id'];?>">
+                            <span class="what" id="sentence_question_<?php echo $value['question_id']; ?>"><?php echo Question::model()->getQuestion($value['question_id']); ?></span>
                         <?php }else{ ?>
+                        <div <?php if($i == (count($this->question) - 1)) echo 'class="content-bit-final"'; else echo 'class="content-bit"'; ?> >
                             <span class="what"><?php echo Question::model()->getQuestion($value['question_id']); ?></span>
                         <?php } ?>
-                        <span class="note-span note_default_question" data-id="<?php echo $value['id']; ?>"></span>
-                        <span class="godfather answer_<?php echo $value['id']; ?>" ><?php echo $value['answer']; ?></span>
-                        <div id="question_<?php echo $value['id']; ?>" style="display: none;" method="post">
+                        <span class="note-span note_default_question" data-id="<?php echo $value['question_id']; ?>"></span>
+                        <span class="godfather answer_<?php echo $value['question_id']; ?>" ><?php echo $value['answer']; ?></span>
+                        <div id="question_<?php echo $value['question_id']; ?>" style="display: none;" method="post">
                             <?php if($check == 0) { ?>
-                                <input type="text" id="user_question_<?php echo $value['id']; ?>" name="question" class="form-control" value="<?php echo Question::model()->getQuestion($value['question_id']); ?>" />
+                                <input type="text" id="user_question_<?php echo $value['question_id']; ?>" name="question" class="form-control" value="<?php echo Question::model()->getQuestion($value['question_id']); ?>" />
                                 <br />
+                            <?php }else{ ?>
+                                <input type="hidden" id="user_question_<?php echo $value['question_id']; ?>" name="question" class="form-control" value="<?php echo Question::model()->getQuestion($value['question_id']); ?>" />
                             <?php } ?>
-                            <textarea class="form-control" id="user_answer_<?php echo $value['id']; ?>" name="answer"> <?php echo $value['answer']; ?> </textarea>
+                            <textarea class="form-control" id="user_answer_<?php echo $value['question_id']; ?>" name="answer"> <?php echo $value['answer']; ?> </textarea>
                             <span class="my-btn">
-                                <input type="button" value="Save" class="saveAnswer" data-id="<?php echo $value['id'];; ?>" />
+                                <input type="button" value="Save" class="saveAnswer" data-id="<?php echo $value['question_id'];; ?>" />
                                 <?php if($check == 0) { ?>
-                                    <span class="text-cancel q_default_delete" data-id="<?php echo $value['id']; ?>">Delete</span>
+                                    <span class="text-cancel q_default_delete deleteAnswer" data-id="<?php echo $value['question_id']; ?>">Delete</span>
                                 <?php } ?>
-                                <span class="text-cancel q_default_cancel" data-id="<?php echo $value['id']; ?>">Cancel</span>
+                                <span class="text-cancel q_default_cancel" data-id="<?php echo $value['question_id']; ?>">Cancel</span>
                             </span>
                         </div>
                     </div>
-                <?php }
+                <?php $i++; } 
             } ?>
             
         </div>
