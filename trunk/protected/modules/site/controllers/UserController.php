@@ -512,4 +512,27 @@ class UserController extends SiteBaseController {
             }
         }
     }
+
+    public function actionUpdateQuestions(){
+        $id_question = $_GET['id'];
+        $checkQuestion = Question::model()->findByPk($id_question);
+        if($checkQuestion){
+            $checkQuestion->question = $_GET['question'];
+            $checkQuestion->save();
+            $checkAnswer = Answer::model()->findByAttributes(array("question_id"=>$id_question,'user_id'=>Yii::app()->user->id));
+            if($checkAnswer){
+                $checkAnswer->answer = $_GET['answer'];
+                $checkAnswer->save();
+            }else {
+                $answer =  new Answer();
+                $answer->question_id = $id_question;
+                $answer->answer = $_GET['answer'];
+                $answer->user_id = Yii::app()->user->id;
+                $answer->save();
+            }
+            echo $checkQuestion->id;
+        }else {
+            echo 0;
+        }
+    }
 }
