@@ -389,22 +389,35 @@ $(document).ready(function(){
         $('#question-custom-form').hide();
     });
     
+    /***********************************************************************/
     
-    /*All header*/
-    $('#question-custom-form').submit(function(e) {
+    $('.note_default_question').click(function(){
+        var id = $(this).attr("data-id")
+        if ($('#question_'+ id).is(':hidden')) {
+            $('.answer_'+ id).hide();
+            $('#sentence_question_'+ id).hide();
+            $('#question_'+ id).show();
+        }else{
+            $('#sentence_question_'+ id).show();
+            $('.answer_'+ id).show();
+            $('#question_'+ id).hide();
+        }
+        
+    });
+    
+    $('.submit_answer_question').click(function(e){
+        var id = $(this).attr("data-id");
         e.preventDefault();
         var formData = new FormData(this);
         $.ajax({
             type:'POST',
-            url: '/question/create',
+            url: '/answer/SaveAnswer/'+ id,
             data:formData,
             cache:false,
             contentType: false,
             processData: false,
             success:function(data){
-                $('#form-gender').hide();
-                $('#value-gender').html(data);
-                $('#value-gender').show();
+                console.log(data);
             },
             error: function(data){
                 console.log("error");
@@ -412,7 +425,53 @@ $(document).ready(function(){
         });
         return false;
     });
-    /***********************************************************************/
     
     
+    $('.q_default_cancel').click(function(){
+        var id = $(this).attr("data-id");
+        $('.answer_'+ id).show();
+        $('#question_'+ id).hide();
+    });
+    
+    $('.avartar img').mouseover(function(){
+        if ($('.popup_avavtar').is(':hidden')) {
+            $('.popup_avavtar').css('display', 'block');
+        }else{
+            $('.popup_avavtar').hide();
+        }
+    })
+    $('.avartar img').mouseout(function(){
+        $('.popup_avavtar').hide();
+    });
+    
+    $('#form-change-avatar').submit(function(e){
+            e.preventDefault();
+            var formData = new FormData(this);
+            $.ajax({
+                type:'POST',
+                url: '/user/ChangeAvatar',
+                data:formData,
+                cache:false,
+                contentType: false,
+                processData: false,
+                success:function(data){
+                    console.log(data);
+                    $('#ChangeAvatar').modal('hide')
+                    showModalTemp(data);
+                },
+                error: function(data){
+                    console.log("error");
+                }
+            });
+        return false;
+    })
+    
+    function showModalTemp(name_image){
+        if ($('.avartar img').attr('src') == ''){
+                $('.avartar img').attr('src', '/uploads/avatar/'+ name_image);
+        }else{
+            $('.avartar img').attr('src', '');
+            $('.avartar img').attr('src', '/uploads/avatar/'+ name_image);
+        }
+     }
 });

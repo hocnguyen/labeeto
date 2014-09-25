@@ -1464,6 +1464,12 @@ span.text-cancel{
     position: absolute;
     top: 11px;
     left: 0px;
+    transition:         width 200ms, height 200ms, border-radius 200ms,left 200ms, top 200ms;
+    -moz-transition:    width 200ms, height 200ms, border-radius 200ms,left 200ms, top 200ms;
+    -ms-transition:     width 200ms, height 200ms, border-radius 200ms,left 200ms, top 200ms;
+    -o-transition:      width 200ms, height 200ms, border-radius 200ms,left 200ms, top 200ms;
+    -webkit-transition: width 200ms, height 200ms, border-radius 200ms,left 200ms, top 200ms;
+    position: absolute;
 }
 .avartar img{
     width: 185px;
@@ -2072,6 +2078,32 @@ input[type="range"]::-ms-fill-lower {display: block;height: 100%;background: #c2
     display: none; 
     background-color: #ec5268;
     padding: 10px;
+}
+.popup_avavtar{
+    height: 40px;
+    width: 130px;
+    border: 1px solid #334551;
+    position: absolute;
+    top: 70px;
+    left: 28px;
+    background-color: #334551;
+    z-index: 999;
+    opacity: 0.4;
+    border-radius: 5px;
+    display: none;
+}
+.popup_avavtar a span{
+    padding: 12px;
+    font: normal 15px/normal Myriad Pro;
+    text-transform: uppercase;
+    color: white;
+}
+.my-report-1 {
+    border: none;
+    font: normal 16px/normal Helvetica Neue LTPro Bd;
+    width: 170px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 /*input[type="range"] {height: 10px;border-radius: 5px;background: #420811;-webkit-appearance: none;cursor: pointer;border: 0;outline: none;padding: 0;margin: 0 0;}
 input[type="range"]::-moz-range-track {border: none;background: transparent;}
