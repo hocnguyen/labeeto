@@ -1134,6 +1134,9 @@ ul.social li.insta:hover{
     -webkit-border-radius: 0 0 5px 5px;
     -moz-border-radius: 0 0 5px 5px;
     behavior: url('../pie/PIE.htc');
+    border-left: 1px solid #ff94a3;
+    border-top: 1px solid #ff94a3;
+    border-right: 1px solid #ff94a3;
 }
 .content-bit-final span.note-span,
 .content-bit span.note-span, 
@@ -1464,12 +1467,12 @@ span.text-cancel{
     position: absolute;
     top: 11px;
     left: 0px;
-    transition:         width 200ms, height 200ms, border-radius 200ms,left 200ms, top 200ms;
-    -moz-transition:    width 200ms, height 200ms, border-radius 200ms,left 200ms, top 200ms;
-    -ms-transition:     width 200ms, height 200ms, border-radius 200ms,left 200ms, top 200ms;
-    -o-transition:      width 200ms, height 200ms, border-radius 200ms,left 200ms, top 200ms;
-    -webkit-transition: width 200ms, height 200ms, border-radius 200ms,left 200ms, top 200ms;
-    position: absolute;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    width: 185px;
+    height: 183px;
+    overflow: hidden;
 }
 .avartar img{
     width: 185px;
@@ -1482,6 +1485,18 @@ span.text-cancel{
     padding: 2px;
     background-color: #ffffff;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#ffffff'); /* IE */
+}
+.double-spans{
+    width: 185px;
+    height: 183px;
+    display: inline-block;
+    position: relative;
+    top: -185px;
+    left: 0px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    cursor: pointer;
 }
 .infor-user{
     position: relative;
@@ -1901,6 +1916,8 @@ input[type="range"]::-ms-fill-lower {display: block;height: 100%;background: #c2
     font-size: 18px;
     padding: 8px 10px 8px 10px;
     border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
     text-transform: uppercase;
     background-color: #30bee6;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#30bee6', endColorstr='#30bee6'); /* IE */
@@ -1925,6 +1942,8 @@ input[type="range"]::-ms-fill-lower {display: block;height: 100%;background: #c2
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#2d3c46', endColorstr='#2d3c46');
     width: 100%;
     border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
 }
 .menu-nav-setting ul li{
     list-style: none;
@@ -2026,6 +2045,8 @@ input[type="range"]::-ms-fill-lower {display: block;height: 100%;background: #c2
     height: 40px;
     width: 40px;
     border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     display: inline-block;
     vertical-align: middle;
 }
@@ -2087,9 +2108,12 @@ input[type="range"]::-ms-fill-lower {display: block;height: 100%;background: #c2
     top: 70px;
     left: 28px;
     background-color: #334551;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#334551', endColorstr='#334551'); /* IE */
     z-index: 999;
     opacity: 0.4;
     border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     display: none;
 }
 .popup_avavtar a span{

@@ -392,7 +392,8 @@ $(document).ready(function(){
     /***********************************************************************/
     
     $('.note_default_question').click(function(){
-        var id = $(this).attr("data-id")
+        var id = $(this).attr("data-id");
+        console.log(id);
         if ($('#question_'+ id).is(':hidden')) {
             $('.answer_'+ id).hide();
             $('#sentence_question_'+ id).hide();
@@ -430,18 +431,22 @@ $(document).ready(function(){
     $('.q_default_cancel').click(function(){
         var id = $(this).attr("data-id");
         $('.answer_'+ id).show();
+        $('#sentence_question_'+ id).show();
         $('#question_'+ id).hide();
     });
     
-    $('.avartar img').mouseover(function(){
+    $('.double-spans').mouseover(function(){
         if ($('.popup_avavtar').is(':hidden')) {
             $('.popup_avavtar').css('display', 'block');
         }else{
             $('.popup_avavtar').hide();
         }
     })
-    $('.avartar img').mouseout(function(){
+    $('.double-spans').mouseout(function(){
         $('.popup_avavtar').hide();
+    });
+    $('.popup_avavtar').hover(function(){
+        $(this).css('display', 'block');
     });
     
     $('#form-change-avatar').submit(function(e){
@@ -469,6 +474,7 @@ $(document).ready(function(){
     /* Start Update question answer */
         $('.saveAnswer').click(function(){
             var id_question = $(this).attr('data-id');
+            console.log(id_question);
             var question = $('#user_question_'+id_question).val();
             var answer = $('#user_answer_'+id_question).val();
             if(answer =='' || question ==''){
@@ -476,11 +482,13 @@ $(document).ready(function(){
             }else {
                 $.get('/user/updateQuestions?question='+question+'&answer='+answer+'&id='+id_question,function(data){
                     if(data!=0){
-                        alert('update OK');
-                        // E lam tiep de show ra ket qua vua moi update.
+                        $('#question_' + id_question).hide();
+                        $('.answer_'+ id_question).html(answer);
+                        $('#sentence_question_'+id_question).html(question);
+                        $('.answer_'+ id_question).show();
+                        $('#sentence_question_'+id_question).show();
                     } else {
-                        alert('No ok');
-                        // em thong bao thong tin nhap vao khong chinh xac, vui long kiem tra lai.
+                        alert('Can not save ansswer. Please try again later');
                     }
 
                 });
@@ -488,6 +496,23 @@ $(document).ready(function(){
         });
 
     /* End Update question answer */
+    
+    /* Start Delete question answer */
+        $('.deleteAnswer').click(function(){
+            var id_question = $(this).attr('data-id');
+            console.log(id_question);
+            $.get('/user/deleteQuestions?id='+id_question,function(data){
+                if(data!=0){
+                    $('#content-question-default_' + id_question).hide();
+                } else {
+                    alert('Delete question not successful. Please try again later');
+                }
+
+            });
+        });
+
+    /* End Delete question answer */
+    
 
     function showModalTemp(name_image){
         if ($('.avartar img').attr('src') == ''){

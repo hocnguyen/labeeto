@@ -301,16 +301,16 @@ $(document).ready(function(){
         }else {
             $('#question-custom-form').hide();
             $.get('/user/addQuestions?question='+question+'&answer='+answer,function(data){
-                var html = '<div class="content-bit">';
-                    html+= '<span class="what">'+ question +'</span>';
-                    html+= '    <span class="note-span" id="note_'+ data +'"></span>';
-                    html+= '    <span class="godfather" id="answer_'+ data +'" >'+ answer +'</span>';
+                var html = '<div class="content-bit" id="content-question-default_' + data + '">';
+                    html+= '<span class="what" id="sentence_question_'+ data +'">'+ question +'</span>';
+                    html+= '    <span class="note-span note_default_question" data-id="'+ data +'"></span>';
+                    html+= '    <span class="godfather answer_'+ data +'" data-id="'+ data +'" >'+ answer +'</span>';
                     html+= '   <div id="question_'+ data +'" style="display: none;">';
-                    html+= '        <input type="text" value="'+ answer +'" class="form-control"/>';
+                    html+= '        <input type="text" value="'+ answer +'" class="form-control" id="user_question_'+ data +'"/>';
                     html+= '        <span class="my-btn">';
-                    html+= '            <input type="submit" value="Save" id="submit_'+ data +'" />';
-                    html+= '            <span class="text-cancel" id="delete_'+ data +'">Delete</span>';
-                    html+= '            <span class="text-cancel" id="cancel_'+ data +'">Cancel</span>';
+                    html+= '            <input type="submit" value="Save" class="saveAnswer" data-id="'+ data +'" />';
+                    html+= '            <span class="text-cancel q_default_delete deleteAnswer" data-id="'+ data +'">Delete</span>';
+                    html+= '            <span class="text-cancel q_default_cancel" data-id="'+ data +'">Cancel</span>';
                     html+= '</span></div></div>';
                 
                 $('.all-question').append(html);
