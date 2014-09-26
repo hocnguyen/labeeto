@@ -391,7 +391,7 @@ $(document).ready(function(){
     
     /***********************************************************************/
     
-    $('.note_default_question').click(function(){
+    $('.note_default_question').live("click", function(){
         var id = $(this).attr("data-id");
         console.log(id);
         if ($('#question_'+ id).is(':hidden')) {
@@ -428,7 +428,7 @@ $(document).ready(function(){
     });
     
     
-    $('.q_default_cancel').click(function(){
+    $('.q_default_cancel').live("click",function(){
         var id = $(this).attr("data-id");
         $('.answer_'+ id).show();
         $('#sentence_question_'+ id).show();
@@ -447,6 +447,10 @@ $(document).ready(function(){
     });
     $('.popup_avavtar').hover(function(){
         $(this).css('display', 'block');
+    });
+    
+    $('#photo-new').change(function(e){
+        $('#form-change-avatar').submit();
     });
     
     $('#form-change-avatar').submit(function(e){
@@ -474,7 +478,6 @@ $(document).ready(function(){
     /* Start Update question answer */
         $('.saveAnswer').click(function(){
             var id_question = $(this).attr('data-id');
-            console.log(id_question);
             var question = $('#user_question_'+id_question).val();
             var answer = $('#user_answer_'+id_question).val();
             if(answer =='' || question ==''){
@@ -488,7 +491,7 @@ $(document).ready(function(){
                         $('.answer_'+ id_question).show();
                         $('#sentence_question_'+id_question).show();
                     } else {
-                        alert('Can not save ansswer. Please try again later');
+                        alert('Can not save answer. Please try again later');
                     }
 
                 });
@@ -498,7 +501,7 @@ $(document).ready(function(){
     /* End Update question answer */
     
     /* Start Delete question answer */
-        $('.deleteAnswer').click(function(){
+        $('.deleteAnswer').live("click",function(){
             var id_question = $(this).attr('data-id');
             console.log(id_question);
             $.get('/user/deleteQuestions?id='+id_question,function(data){
