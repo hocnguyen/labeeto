@@ -20,26 +20,45 @@
 
 
     <?php
-        $columns = array('id', 'title', 'alias');
-        foreach( Yii::app()->params['languages'] as $key => $value ){
+        $columns = array(array(
+            'name'=>'id',
+            'value'=>'$data->id',
+            'htmlOptions'=>array('style'=>'width:35px;')
+        ), 'title', 'alias');
+        /*foreach( Yii::app()->params['languages'] as $key => $value ){
         $columns[]  = array(
         'header' => '<div align="center"><img src="/uploads/flag/'.$key.'.png" /></div>',
         'value' => '$data->languageButton("'.$key.'")' ,
         'type' => 'raw',
         'htmlOptions'=>array( 'style'=>'text-align: center' )
         );
-        }
+        }*/
         $columns[] = array(
         'class'=>'ButtonColumn',
-        'template'=>'{delete}',
+        'header' => Yii::t('global','Actions'),
+        'template'=>'{view}{update}{delete}',
         'buttons'=>array(
-                'delete' => array
-                (
-                    'label'=>'<span class="label red" ><i class="icon-trash delete" title="'.Yii::t('adminlang', 'Delete').'"></i></span>',
-                    'options' => array( 'class' => 'tipb delete-icon-tooltip',
-                        'data-original-title' => Yii::t('adminlang', 'Delete'),
-                        'title'       => Yii::t('adminlang', 'Delete') , ),
-                ),
+                    'view' => array
+                    (
+                        'label'=>'<span class="label cyan" ><i class="icon-info-sign info" title="'.Yii::t('adminlang', 'View').'"></i></span>',
+                        'options' => array( 'class' => 'tipb view-icon-tooltip',
+                            'data-original-title' => Yii::t('adminlang', 'View'),
+                            'title'       => Yii::t('adminlang', 'View'), ),
+                    ),
+                    'update' => array
+                    (
+                        'label'=>'<span class="label green" ><i class="icon-pencil edit" title="'.Yii::t('adminlang', 'Edit').'"></i></span>',
+                        'options' => array( 'class' => 'tipb update-icon-tooltip',
+                            'data-original-title' => Yii::t('adminlang', 'Edit'),
+                            'title'       => Yii::t('adminlang', 'Edit'), ),
+                    ),
+                    'delete' => array
+                    (
+                        'label'=>'<span class="label red" ><i class="icon-trash delete" title="'.Yii::t('adminlang', 'Delete').'"></i></span>',
+                        'options' => array( 'class' => 'tipb delete-icon-tooltip',
+                            'data-original-title' => Yii::t('adminlang', 'Delete'),
+                            'title'       => Yii::t('adminlang', 'Delete') , ),
+                    ),
             ),
         );
         $this->widget('zii.widgets.grid.CGridView', array(
