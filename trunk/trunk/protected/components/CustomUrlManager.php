@@ -40,7 +40,8 @@ class CustomUrlManager extends CUrlManager {
                 "/profile" => 'site/user/profile/',
                 "/settings" => 'site/user/setting/',
                 "/profile_other" => 'site/user/profile_other/',
-
+                "/answer/SaveAnswer/<id:([a-zA-z0-9-_]+)?>" => 'site/answer/SaveAnswer/',
+                
 				"/admin-login" => 'site/user/admin',
 				"/forgotpassword" => 'site/user/lostpassword',
 
