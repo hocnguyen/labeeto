@@ -23,33 +23,30 @@
                     <label for="exampleInputEmail1" class="label-text">Birthday</label>
                         <select class="form-control" style="width: 80px; float: left;">
                             <option>Day</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <?php for($i = 1; $i < 32; $i++ ){
+                                echo "<option> " . $i . "</option>";
+                            } ?>
                         </select>
                         <select class="form-control" style="width: 90px; float: left; margin-left: 10px">
                             <option>Month</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <?php for($i = 1; $i < 13; $i++ ){
+                                echo "<option> " . $i . "</option>";
+                            } ?>
                         </select>
                         <select class="form-control" style="width: 90px; float: left; margin-left: 10px">
                             <option>Year</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <?php for($i = 1970; $i < 2015; $i++ ){
+                                echo "<option> " . $i . "</option>";
+                            } ?>
                         </select>
                     </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1" class="label-text" style="padding-top: 15px;">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" style="width: 350px; display: inline-block; float: left; height: 43px;"><span class="check-block"></span>
+                        <input type="email" class="form-control" id="exampleInputEmail1" style="width: 350px; display: inline-block; float: left; height: 43px; margin-bottom: 10px;"><span class="check-block"></span>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1" class="label-text">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1"  style="width: 350px; display: inline-block; float: left; height: 43px;"><span class="check-block"></span>
+                        <input type="password" class="form-control" id="exampleInputPassword1"  style="width: 350px; display: inline-block; float: left; height: 43px; margin-bottom: 10px;"><span class="check-block"></span>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1" class="label-text"> New Password</label>
