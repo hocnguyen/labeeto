@@ -357,24 +357,24 @@
                 <div style="position: relative;" >
                     
                     <span class="godfather"><?php echo Yii::t('global', 'Never') ?></span>
-                    <!--<p class="range-2" id="value-excercise">
-                        <span class="ws-range" role="slider" aria-readonly="false" tabindex="0" aria-disabled="false" aria-valuenow="<?php /*if($this->user->excercise) echo $this->user->excercise; */?>" aria-valuetext="<?php /*if($this->user->excercise) echo $this->user->excercise; */?>">
-                            <span class="ws-range-min ws-range-progress" style="margin-top: 0px; width: <?php /*if($this->user->excercise) echo $this->user->excercise; */?>%;"></span>
+                    <p class="range-2" id="value-excercise">
+                        <span class="ws-range" role="slider" aria-readonly="false" tabindex="0" aria-disabled="false" aria-valuenow="<?php if($this->user->excercise) echo $this->user->excercise; ?>" aria-valuetext="<?php /*if($this->user->excercise) echo $this->user->excercise; */?>">
+                            <span class="ws-range-min ws-range-progress" style="margin-top: 0px; width: <?php if($this->user->excercise) echo $this->user->excercise; ?>%;"></span>
                             <span class="ws-range-rail ws-range-track" style="left: 11px; right: 9px;">
-                                <span class="ws-range-thumb" style="margin-left: -11px; margin-top: -6px; left: <?php /*if($this->user->excercise) echo $this->user->excercise; */?>%;">
+                                <span class="ws-range-thumb" style="margin-left: -11px; margin-top: -6px; left: <?php if($this->user->excercise) echo $this->user->excercise; ?>%;">
                                      </span>
                             </span>
                         </span>
-                    </p>-->
+                    </p>
                     
-                    <input type="range" min="10" value="<?php if($this->user->excercise) echo $this->user->excercise; ?>" max="100" data-rangeslider>
                     
-                    <output style="display: none"></output>
                     <span class="often"><?php echo Yii::t('global', 'Often') ?></span>
                     <form method="post" style="display: none;" id="form-excercise">
-                        <p class="range-2">
-                            <input type="range" min="1" max="100" step="1" value="<?php echo $this->user->excercise ?>" name="excercise" class="width-range"/>
-                        </p>
+                        <input name="excercise" type="range" min="0" value="<?php if($this->user->excercise) echo $this->user->excercise; ?>" max="100" data-rangeslider>
+                        <output style="display: none"></output>
+                        <!--<p class="range-2">
+                            <input type="range" min="1" max="100" step="1" value="<?php //echo $this->user->excercise ?>" name="excercise" class="width-range"/>
+                        </p>-->
                         <span class="my-btn">
                             <input type="submit" value="Save"/>
                             <span class="text-cancel" id="cancel-excercise">Cancel</span>
@@ -403,9 +403,11 @@
                     </p>
                     <span class="often"><?php echo Yii::t('global', 'Often') ?></span>
                     <form method="post" style="display: none;" id="form-drink">
-                        <p class="range-2">
-                            <input type="range" min="1" max="100" step="1" value="<?php echo $this->user->drink ?>" name="drink" class="width-range"/>
-                        </p>
+                        <input name="drink" type="range" min="0" value="<?php if($this->user->drink) echo $this->user->drink; ?>" max="100" data-rangeslider>
+                        <output style="display: none"></output>
+                        <!--<p class="range-2">
+                            <input type="range" min="1" max="100" step="1" value="<?php //echo $this->user->drink ?>" name="drink" class="width-range"/>
+                        </p>-->
                         <span class="my-btn">
                             <input type="submit" value="Save"/>
                             <span class="text-cancel" id="cancel-drink">Cancel</span>
@@ -433,9 +435,11 @@
                     </p>
                     <span class="often"><?php echo Yii::t('global', 'Often') ?></span>
                     <form method="post" style="display: none;" id="form-smoke">
-                        <p class="range-2">
-                            <input type="range" min="1" max="100" step="1" value="<?php echo $this->user->smoke ?>" name="smoke" class="width-range"/>
-                        </p>
+                        <input name="smoke" type="range" min="0" value="<?php if($this->user->smoke) echo $this->user->smoke; ?>" max="100" data-rangeslider>
+                        <output style="display: none"></output>
+                        <!--<p class="range-2">
+                            <input type="range" min="1" max="100" step="1" value="<?php //echo $this->user->smoke ?>" name="smoke" class="width-range"/>
+                        </p>-->
                         <span class="my-btn">
                             <input type="submit" value="Save"/>
                             <span class="text-cancel" id="cancel-smoke">Cancel</span>
