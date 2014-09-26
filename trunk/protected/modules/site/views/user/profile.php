@@ -706,7 +706,6 @@
                 <input type="file" id="photo-new" name="photo-change" style="display: none;">
                 <label for="photo-new" class="btn btn-primary my-report-1">From My Computer </label>
             </div>
-            <input type="submit" value="OK" />
         </form>
             <div style="width: 50%; float: left;">
                 <a type="button" class="btn btn-primary my-report-1">From Facbook</a>
