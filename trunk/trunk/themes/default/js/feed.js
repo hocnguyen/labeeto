@@ -301,17 +301,23 @@ $(document).ready(function(){
         }else {
             $('#question-custom-form').hide();
             $.get('/user/addQuestions?question='+question+'&answer='+answer,function(data){
+                /**Reset Form Add New**/
+                $('#question').attr('value', '');
+                $('#answer').attr('value', '');
+                /**Appen html**/
                 var html = '<div class="content-bit" id="content-question-default_' + data + '">';
-                    html+= '<span class="what" id="sentence_question_'+ data +'">'+ question +'</span>';
+                    html+= '    <span class="what" id="sentence_question_'+ data +'">'+ question +'</span>';
                     html+= '    <span class="note-span note_default_question" data-id="'+ data +'"></span>';
                     html+= '    <span class="godfather answer_'+ data +'" data-id="'+ data +'" >'+ answer +'</span>';
-                    html+= '   <div id="question_'+ data +'" style="display: none;">';
-                    html+= '        <input type="text" value="'+ answer +'" class="form-control" id="user_question_'+ data +'"/>';
-                    html+= '        <span class="my-btn">';
-                    html+= '            <input type="submit" value="Save" class="saveAnswer" data-id="'+ data +'" />';
-                    html+= '            <span class="text-cancel q_default_delete deleteAnswer" data-id="'+ data +'">Delete</span>';
-                    html+= '            <span class="text-cancel q_default_cancel" data-id="'+ data +'">Cancel</span>';
-                    html+= '</span></div></div>';
+                    html+= '    <div id="question_'+ data +'" style="display: none;">';
+                    html+= '    <input type="text" value="'+ question +'" class="form-control" id="user_question_'+ data +'"/>';
+                    html+= '    <br>';
+                    html+= '    <textarea class="form-control" id="user_answer_'+ data +'" name="answer"> '+ answer +' </textarea>';
+                    html+= '    <span class="my-btn">';
+                    html+= '    <input type="submit" value="Save" class="saveAnswer" data-id="'+ data +'" />';
+                    html+= '    <span class="text-cancel q_default_delete deleteAnswer" data-id="'+ data +'">Delete</span>';
+                    html+= '    <span class="text-cancel q_default_cancel" data-id="'+ data +'">Cancel</span>';
+                    html+= '    </span></div></div>';
                 
                 $('.all-question').append(html);
             });
