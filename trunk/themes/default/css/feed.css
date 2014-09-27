@@ -2252,6 +2252,43 @@ input[type="range"]::-ms-fill-lower {display: block;height: 100%;background: #c2
 .per-photo:hover a {
     display: block;
 }
+.select-day{
+    width: 80px; 
+    float: left;
+}
+.select-month{
+    width: 90px; 
+    float: left; 
+    margin-left: 10px;
+}
+.input-text{
+    width: 350px; 
+    display: inline-block; 
+    float: left; 
+    height: 43px; 
+    margin-bottom: 10px;
+}
+.input-pass{
+    width: 350px; 
+    height: 43px;
+}
+.settings-header{
+    width: 100%; 
+    padding: 0 30px;
+}
+.radio-inl{
+    margin: 0 !important;
+    height: 20px; 
+    width: 30px;
+}
+.special-label{
+    font: normal 18px/normal Proxima Nova Regular;
+    padding-left: 10px !important;
+}
+.yes-no{
+    font: normal 18px/normal Proxima Nova Regular; 
+    padding-left: 10px;
+}
 /*input[type="range"] {height: 10px;border-radius: 5px;background: #420811;-webkit-appearance: none;cursor: pointer;border: 0;outline: none;padding: 0;margin: 0 0;}
 input[type="range"]::-moz-range-track {border: none;background: transparent;}
 input[type="range"]::-ms-tooltip {display: none;}
