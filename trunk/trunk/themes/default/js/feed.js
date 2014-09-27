@@ -33,6 +33,17 @@ $(document).ready(function(){
         $('.line-green-photo').css('display','block');
         
     });
+
+    $('.close-photo').click(function(){
+        $('.content-profile').show();
+        $('.content-video').hide();
+        $('.line-green-video').hide();
+        $('.line-green-photo-pravite').hide();
+        $('.content-photo-private').hide();
+        $('.content-photo').hide();
+        $('.line-green-photo').css('display','none');
+
+    });
     
     $('#VideosNormal').click(function(){
         $('.content-profile').hide();
@@ -155,48 +166,57 @@ $(document).ready(function(){
     
     /*Smoke*/
     $('#id-smoke').click(function(){
-        if ($('#form-smoke').is(':hidden')) {
-            $('#form-smoke').show();
+        if($('#form-smoke .rangeslider').css('opacity') == 0) {
+            $('#form-smoke .rangeslider').css('opacity','1');
+            $('.btn-ranges-sm').show();
             $('#value-smoke').hide();
         }else{
-            $('#form-smoke').hide();
+            $('#form-smoke .rangeslider').css('opacity','0');
+            $('.btn-ranges-sm').hide();
             $('#value-smoke').show();
         }
     });
     
     $('#cancel-smoke').click(function(){
-        $('#form-smoke').hide();
+        $('#form-smoke .rangeslider').css('opacity','0');
+        $('.btn-ranges-sm').hide();
         $('#value-smoke').show();
     });
     
     /*Drink*/
     $('#id-drink').click(function(){
-        if ($('#form-drink').is(':hidden')) {
-            $('#form-drink').show();
+        if($('#form-drink .rangeslider').css('opacity') == 0) {
+            $('#form-drink .rangeslider').css('opacity','1');
+            $('.btn-ranges-dr').show();
             $('#value-drink').hide();
         }else{
-            $('#form-drink').hide();
+            $('#form-drink .rangeslider').css('opacity','0');
+            $('.btn-ranges-dr').hide();
             $('#value-drink').show();
         }
     });
     
     $('#cancel-drink').click(function(){
-        $('#form-drink').hide();
+        $('#form-drink .rangeslider').css('opacity','0');
+        $('.btn-ranges-dr').hide();
         $('#value-drink').show();
     });
     /*Excercise*/
-    $('#id-excercise').click(function(){
-        if ($('#form-excercise').is(':hidden')) {
-            $('#form-excercise').show();
+    $('#id-excercise').live('click',function(){
+        if($('#form-excercise .rangeslider').css('opacity') == 0) {
+            $('#form-excercise .rangeslider').css('opacity','1');
+            $('.btn-ranges-ex').show();
             $('#value-excercise').hide();
         }else{
-            $('#form-excercise').hide();
+            $('#form-excercise .rangeslider').css('opacity','0');
+            $('.btn-ranges-ex').hide();
             $('#value-excercise').show();
         }
     });
     
     $('#cancel-excercise').click(function(){
-        $('#form-excercise').hide();
+        $('#form-excercise .rangeslider').css('opacity','0');
+        $('.btn-ranges-ex').hide();
         $('#value-excercise').show();
     });
     
@@ -323,4 +343,13 @@ $(document).ready(function(){
             });
         }
     });
+
+    /*Upload public photo*/
+    $('.public-photo').click(function(){
+       $('#public_photo').modal('show');
+    })
+    /*Upload Private photo*/
+    $('.private-photo').click(function(){
+        $('#private_photo').modal('show');
+    })
 });

@@ -125,7 +125,7 @@
         <h1><?php echo Yii::t('global','My account'); ?></h1>
         <div class="profileBlock">
             <div class="">
-                <div class="usernameHolder"><?php echo Yii::app()->user->name; ?></div>
+                <div class="usernameHolder"><?php echo Yii::app()->user->username; ?></div>
             </div>
             <div class="profileInfo">
                 <p><i class="icon-map-marker"></i> <?php echo Yii::t('global','Role'); ?> : <?php echo Yii::app()->user->role; ?>  </p>

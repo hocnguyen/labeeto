@@ -69,7 +69,7 @@ return array(
         'language' => 'en',
         'params' => array( 
 							'fastcache' => $fastCache, 
-							'languages' => array( 'en' => 'English', 'de' => 'Germany'),
+							'languages' => array( 'en' => 'English'),
 							'subdomain_languages' => false,
 							'loggedInDays' => 10,
 							'default_group' => 'user',
