@@ -1,3 +1,4 @@
+
 <div class="banner-ad-top">
     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/ads-top.png" />
 </div>
@@ -51,13 +52,13 @@
                 <div class="photo-private"  id="PhotoNomal">
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo.png" />
                     <h6><?php echo Yii::t('global', 'Photos') ?></h6>
-                    <h3>243</h3>
+                    <h3><?php echo count($photos)?></h3>
                     <span class="line-green-photo"></span>
                 </div>
                 <div class="photo-private" id="PhotoPrivate">
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo.png" />
                     <h6><?php echo Yii::t('global', 'Private Photo') ?></h6>
-                    <h3>8</h3>
+                    <h3><?php echo count($private)?></h3>
                     <span class="line-green-photo-pravite"></span>
                 </div>
                 <div class="photo-private" id="VideosNormal">
@@ -353,7 +354,7 @@
             
             <div class="content-bit favorite_a">
                 <span class="what"><?php echo Yii::t('global',  'HOW OFTEN DO YOU EXCERCISE?') ?></span>
-                <span class="note-span" id="id-excercise"></span>
+                <span class="note-span rangesUpdate" id="id-excercise" ></span>
                 <div style="position: relative;" >
                     
                     <span class="godfather"><?php echo Yii::t('global', 'Never') ?></span>
@@ -369,16 +370,18 @@
                     
                     
                     <span class="often"><?php echo Yii::t('global', 'Often') ?></span>
-                    <form method="post" style="display: none;" id="form-excercise">
-                        <input name="excercise" type="range" min="0" value="<?php if($this->user->excercise) echo $this->user->excercise; ?>" max="100" data-rangeslider>
+                    <form method="post"  class="rangetype" id="form-excercise">
+                        <input class="rangeOpacity" name="excercise" type="range" min="0" value="<?php if($this->user->excercise) echo $this->user->excercise; ?>" max="100" data-rangeslider>
                         <output style="display: none"></output>
                         <!--<p class="range-2">
                             <input type="range" min="1" max="100" step="1" value="<?php //echo $this->user->excercise ?>" name="excercise" class="width-range"/>
                         </p>-->
-                        <span class="my-btn">
+                        <span class="my-btn btn-ranges btn-ranges-ex" >
                             <input type="submit" value="Save"/>
                             <span class="text-cancel" id="cancel-excercise">Cancel</span>
+                            <div class="ajaxloader"></div>
                         </span>
+
                     </form>
                 </div>
                   
@@ -386,7 +389,7 @@
             
             <div class="content-bit favorite_a">
                 <span class="what"><?php echo Yii::t('global', 'DO YOU DRINK?') ?></span>
-                <span class="note-span" id="id-drink"></span>
+                <span class="note-span rangesUpdate" id="id-drink"></span>
                 <div style="position: relative;">
                     
                     <span class="godfather"><?php echo Yii::t('global', 'Never') ?></span>
@@ -402,15 +405,16 @@
                         </span>
                     </p>
                     <span class="often"><?php echo Yii::t('global', 'Often') ?></span>
-                    <form method="post" style="display: none;" id="form-drink">
+                    <form method="post"  class="rangetype" id="form-drink">
                         <input name="drink" type="range" min="0" value="<?php if($this->user->drink) echo $this->user->drink; ?>" max="100" data-rangeslider>
                         <output style="display: none"></output>
                         <!--<p class="range-2">
                             <input type="range" min="1" max="100" step="1" value="<?php //echo $this->user->drink ?>" name="drink" class="width-range"/>
                         </p>-->
-                        <span class="my-btn">
+                        <span class="my-btn btn-ranges btn-ranges-dr">
                             <input type="submit" value="Save"/>
                             <span class="text-cancel" id="cancel-drink">Cancel</span>
+                            <div class="ajaxloader"></div>
                         </span>
                     </form>
                 </div>
@@ -419,7 +423,7 @@
             
             <div class="content-bit-final favorite_a">
                 <span class="what"><?php echo Yii::t('global', 'DO YOU SMOKE?') ?></span>
-                <span class="note-span" id="id-smoke"></span>
+                <span class="note-span rangesUpdate" id="id-smoke"></span>
                 <div style="position: relative;">
                     
                     <span class="godfather"><?php echo Yii::t('global', 'Never') ?></span>
@@ -434,15 +438,16 @@
                         </span>
                     </p>
                     <span class="often"><?php echo Yii::t('global', 'Often') ?></span>
-                    <form method="post" style="display: none;" id="form-smoke">
+                    <form method="post"  class="rangetype" id="form-smoke">
                         <input name="smoke" type="range" min="0" value="<?php if($this->user->smoke) echo $this->user->smoke; ?>" max="100" data-rangeslider>
                         <output style="display: none"></output>
                         <!--<p class="range-2">
                             <input type="range" min="1" max="100" step="1" value="<?php //echo $this->user->smoke ?>" name="smoke" class="width-range"/>
                         </p>-->
-                        <span class="my-btn">
+                        <span class="my-btn btn-ranges btn-ranges-sm ">
                             <input type="submit" value="Save"/>
                             <span class="text-cancel" id="cancel-smoke">Cancel</span>
+                            <div class="ajaxloader"></div>
                         </span>
                     </form>
                 </div>
@@ -493,62 +498,7 @@
             
         </div>
         
-        <!--Photo Pravite Page-->
-        <div class="content-photo-private" style="display: none;">
-            <div class="title-photo">
-                <h3>Private Photos <span>(243 Photos)</span></h3>
-                <p>
-                    <a href="#">Upload</a>
-                    <a href="#">delete</a>
-                    <a href="#" class="close-icon"></a>
-                </p>
-                
-            </div>
-            <ul>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_6.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_5.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_4.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_3.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_2.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_1.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_1.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_2.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_3.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_4.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_5.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_6.png"></a></li>
-            </ul>
-        </div>
-        <!--End Photo Pravite Page-->
-        
-        <!--Photo Page-->
-        <div class="content-photo" style="display: none;">
-            <div class="title-photo">
-                <h3>Photos <span>(243 Photos)</span></h3>
-                <p>
-                    <a href="#">Upload</a>
-                    <a href="#">delete</a>
-                    <a href="#" class="close-icon"></a>
-                </p>
-                
-            </div>
-            <ul>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_1.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_2.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_3.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_4.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_5.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_6.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_1.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_2.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_3.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_4.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_5.png"></a></li>
-                <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/photo_6.png"></a></li>
-            </ul>
-        </div>
-        
-        <!--End Photo Page-->
+        <?php $this->renderPartial('/user/photo',compact('photos','private')) ?>
         
         <!--Home Page-->
         <div class="content-profile">
@@ -719,3 +669,33 @@
     </div>
   </div>
 </div>
+
+<script>
+    var type = '<?php echo isset($_GET['type'])?$_GET['type']:'' ?>';
+    if(type=='photos'){
+        $('.content-profile').hide();
+        $('.content-video').hide();
+        $('.line-green-video').hide();
+        $('.line-green-photo-pravite').hide();
+        $('.content-photo-private').hide();
+        $('.content-photo').show();
+        $('.line-green-photo').css('display','block');
+    }else if(type=='private'){
+        $('.content-profile').hide();
+        $('.content-photo').hide();
+        $('.content-video').hide();
+        $('.line-green-photo').hide();
+        $('.line-green-photo-pravite').hide();
+        $('.line-green-video').hide();
+        $('.content-photo-private').show();
+        $('.line-green-photo-pravite').css('display','block');
+    }else if(type == 'video'){
+        $('.content-profile').hide();
+        $('.content-photo').hide();
+        $('.line-green-photo').hide();
+        $('.content-photo-private').hide();
+        $('.line-green-photo-pravite').hide();
+        $('.content-video').show();
+        $('.line-green-video').css('display','block');
+    }
+</script>

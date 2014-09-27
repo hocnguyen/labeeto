@@ -254,12 +254,15 @@ class UserController extends SiteBaseController {
         if(!Yii::app()->user->isGuest){
             $this->user = User::model()->findByPk(Yii::app()->user->id);
             $this->question = Answer::model()->getAnswer();
-            $this->render('profile');
+            $photos = Photo::model()->findAll('is_public=1');
+            $private = Photo::model()->findAll('is_public=0');
+            $this->render('profile',compact('photos','private'));
         } else {
             $this->redirect('/');
         }
 
     }
+
     
     public function actionProfile_other(){
         $this->layout = 'feed';
@@ -553,5 +556,42 @@ class UserController extends SiteBaseController {
         }else{
             echo 0;
         }
+    }
+
+    public function actionUploadPhoto(){
+        if (isset($_FILES['photos'])){
+            $folder = Yii::app()->basePath.'/../uploads/photo/';
+            $filename = $this->generateRandomString().$_FILES['photos']['name'];
+            if (move_uploaded_file($_FILES['photos']['tmp_name'], $folder.$filename)){
+                $photo = new Photo();
+                $photo->photo = $filename;
+                $photo->is_public = 1;
+                $photo->date = date('Y-m-d h:s');
+                $photo->user_id = Yii::app()->user->id;
+                $photo->save();
+            }
+        }
+    }
+    public function actionUploadPrivate(){
+        if (isset($_FILES['photos'])){
+            $folder = Yii::app()->basePath.'/../uploads/photo/';
+            $filename = $this->generateRandomString().$_FILES['photos']['name'];
+            if (move_uploaded_file($_FILES['photos']['tmp_name'], $folder.$filename)){
+                $photo = new Photo();
+                $photo->photo = $filename;
+                $photo->is_public = 0;
+                $photo->date = date('Y-m-d h:s');
+                $photo->user_id = Yii::app()->user->id;
+                $photo->save();
+            }
+        }
+    }
+    public function actionDeletePhoto(){
+        $idPhoto = $_GET['id'];
+        $photo = Photo::model()->findByPk($idPhoto);
+        if($photo){
+            Photo::model()->deleteByPk($idPhoto);
+        }
+
     }
 }

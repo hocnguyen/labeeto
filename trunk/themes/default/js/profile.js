@@ -210,6 +210,7 @@ $(document).ready(function(){
     
      /*Excercise*/
     $('#form-excercise').submit(function(e) {
+        $('.ajaxloader').show();
         e.preventDefault();
         var formData = new FormData(this);
         $.ajax({
@@ -220,7 +221,9 @@ $(document).ready(function(){
             contentType: false,
             processData: false,
             success:function(data){
-                $('#form-excercise').hide();
+                $('#form-excercise .rangeslider').css('opacity','0');
+                $('.btn-ranges-ex').hide();
+                $('.ajaxloader').hide();
                 $('#value-excercise').html(data);
                 $('#value-excercise').show();
             },
@@ -233,6 +236,7 @@ $(document).ready(function(){
     
      /*Drink*/
     $('#form-drink').submit(function(e) {
+        $('.ajaxloader').show();
         e.preventDefault();
         var formData = new FormData(this);
         $.ajax({
@@ -243,7 +247,9 @@ $(document).ready(function(){
             contentType: false,
             processData: false,
             success:function(data){
-                $('#form-drink').hide();
+                $('#form-drink .rangeslider').css('opacity','0');
+                $('.btn-ranges-dr').hide();
+                $('.ajaxloader').hide();
                 $('#value-drink').html(data);
                 $('#value-drink').show();
             },
@@ -256,6 +262,7 @@ $(document).ready(function(){
     
     /*Smoke*/
     $('#form-smoke').submit(function(e) {
+        $('.ajaxloader').show();
         e.preventDefault();
         var formData = new FormData(this);
         $.ajax({
@@ -266,7 +273,9 @@ $(document).ready(function(){
             contentType: false,
             processData: false,
             success:function(data){
-                $('#form-smoke').hide();
+                $('#form-smoke .rangeslider').css('opacity','0');
+                $('.btn-ranges-sm').hide();
+                $('.ajaxloader').hide();
                 $('#value-smoke').html(data);
                 $('#value-smoke').show();
             },
@@ -465,13 +474,64 @@ $(document).ready(function(){
                 processData: false,
                 success:function(data){
                     console.log(data);
-                    $('#ChangeAvatar').modal('hide')
+                    $('#ChangeAvatar').modal('hide');
                     showModalTemp(data);
                 },
                 error: function(data){
                     console.log("error");
                 }
             });
+        return false;
+    });
+    $('#photos').change(function(e){
+        $('#form-photo').submit();
+    });
+
+    $('#form-photo').submit(function(e){
+        e.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+            type:'POST',
+            url: '/user/UploadPhoto',
+            data:formData,
+            cache:false,
+            contentType: false,
+            processData: false,
+            success:function(data){
+                console.log(data);
+                $('#public_photo').modal('hide');
+                location.assign('/profile?type=photos');
+            },
+            error: function(data){
+                console.log("error");
+            }
+        });
+        return false;
+    });
+
+    $('#private').change(function(e){
+        $('#form-private').submit();
+    });
+
+    $('#form-private').submit(function(e){
+        e.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+            type:'POST',
+            url: '/user/UploadPrivate',
+            data:formData,
+            cache:false,
+            contentType: false,
+            processData: false,
+            success:function(data){
+                console.log(data);
+                $('#private_photo').modal('hide');
+                location.assign('/profile?type=private');
+            },
+            error: function(data){
+                console.log("error");
+            }
+        });
         return false;
     });
 
@@ -516,7 +576,16 @@ $(document).ready(function(){
 
     /* End Delete question answer */
     
-
+    $('.del-photo').live('click',function(){
+        var photoID = $(this).attr('href');
+        var type = $(this).attr('data-items');
+        if (confirm('Are you sure you want to delete this photo?')){
+            $.get('user/deletePhoto?id='+photoID,function(){
+                location.assign('/profile?type='+type);
+            })
+        }
+        return false;
+    });
     function showModalTemp(name_image){
         if ($('.avartar img').attr('src') == ''){
                 $('.avartar img').attr('src', '/uploads/avatar/'+ name_image);
