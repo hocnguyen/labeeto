@@ -2,10 +2,8 @@
     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/ads-top.png" />
 </div>
 <div class="content-main">
-    <hr class="hr-line"/>
     
-    <div >
-        <div class="menu-nav-setting">
+    <div class="menu-nav-setting">
             <ul style="float: right;">
                 <li>Settings</li>
                 <li class="li-GeneralSettings"><a href="#" class="link-GeneralSettings"><?php echo Yii::t('global', 'GENERAL') ?></a>
@@ -14,6 +12,8 @@
                 <li class="li-Blocklist"><a href="#" class="link-Blocklist"><?php echo Yii::t('global', 'BLOCKLIST') ?></a></li>
             </ul>
         </div>
+    <div class="settings-header">
+        
         <!-- General Settings -->
         <div id="GeneralSettings">
             <div class="setting-header">General Settings</div>
@@ -21,19 +21,19 @@
                 <form role="form" class="form-setting">
                     <div class="form-group">
                     <label for="exampleInputEmail1" class="label-text">Birthday</label>
-                        <select class="form-control" style="width: 80px; float: left;">
+                        <select class="form-control select-day">
                             <option>Day</option>
                             <?php for($i = 1; $i < 32; $i++ ){
                                 echo "<option> " . $i . "</option>";
                             } ?>
                         </select>
-                        <select class="form-control" style="width: 90px; float: left; margin-left: 10px">
+                        <select class="form-control select-month">
                             <option>Month</option>
                             <?php for($i = 1; $i < 13; $i++ ){
                                 echo "<option> " . $i . "</option>";
                             } ?>
                         </select>
-                        <select class="form-control" style="width: 90px; float: left; margin-left: 10px">
+                        <select class="form-control select-month">
                             <option>Year</option>
                             <?php for($i = 1970; $i < 2015; $i++ ){
                                 echo "<option> " . $i . "</option>";
@@ -42,19 +42,19 @@
                     </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1" class="label-text" style="padding-top: 15px;">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" style="width: 350px; display: inline-block; float: left; height: 43px; margin-bottom: 10px;"><span class="check-block"></span>
+                        <input type="email" class="form-control input-text" id="exampleInputEmail1"><span class="check-block"></span>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1" class="label-text">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1"  style="width: 350px; display: inline-block; float: left; height: 43px; margin-bottom: 10px;"><span class="check-block"></span>
+                        <input type="password" class="form-control input-text" id="exampleInputPassword1"><span class="check-block"></span>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1" class="label-text"> New Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1"  style="width: 350px; height: 43px;">
+                        <input type="password" class="form-control input-pass" id="exampleInputPassword1">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1" class="label-text">New Password(Confirm)</label>
-                        <input type="password" class="form-control" id="exampleInputEmail1"  style="width: 350px; height: 43px;">
+                        <input type="password" class="form-control input-pass" id="exampleInputEmail1">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1" class="label-text">Zip code </label>
@@ -62,7 +62,7 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1" class="label-text">Timezone</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" style="width: 230px; height: 43px; ">
+                        <input type="number" class="form-control" value="check" id="exampleInputEmail1" style="width: 230px; height: 43px; ">
                       </div>
                       <div style="padding: 20px 0px;">
                             <button type="submit" class="btn btn-default btn-save-st">SAVE</button>
@@ -150,7 +150,7 @@
                             </div>
                         </div>
                       </div>
-                      <div class="contennt-btn-form" style="padding-top: 40px;">
+                      <div class="contennt-btn-form" style="padding-top: 100px;">
                         <button type="submit" class="btn btn-default btn-save-st">SAVE</button>
                         <button type="submit" class="btn btn-default btn-cancel-st">CANCEL</button>
                       </div>
@@ -168,40 +168,40 @@
                     <form action="#">
                         <div>
                             <label class="col-md-12 label-gender">I am a</label>
-                            <label class="radio-inline" style="font: normal 18px/normal Proxima Nova Bold;">
-                              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" style="margin: 0; height: 20px; width: 30px;"> Man
+                            <label class="radio-inline special-label">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" class="radio-inl"> Man
                             </label>
-                            <label class="radio-inline" style="font: normal 18px/normal Proxima Nova Bold;">
-                              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" style="margin: 0;height: 20px; width: 30px;"> Woman
+                            <label class="radio-inline special-label">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" class="radio-inl"> Woman
                             </label>
-                            <label class="radio-inline" style="font: normal 18px/normal Proxima Nova Bold;">
-                              <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" style="margin: 0; height: 20px; width: 30px;"> Couple
+                            <label class="radio-inline special-label">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" class="radio-inl"> Couple
                             </label>
                         </div>
                         
                         <div style="margin-top: 40px;">
                             <label class="col-md-12 label-gender">I am looking for</label>
-                            <label class="radio-inline" style="font: normal 18px/normal Proxima Nova Bold;">
-                              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" style="margin: 0;height: 20px; width: 30px;"> Friendship
+                            <label class="radio-inline special-label">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" class="radio-inl"> Friendship
                             </label>
-                            <label class="radio-inline" style="font: normal 18px/normal Proxima Nova Bold;">
-                              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" style="margin: 0;height: 20px; width: 30px;"> Something Serious
+                            <label class="radio-inline special-label">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" class="radio-inl"> Something Serious
                             </label>
-                            <label class="radio-inline" style="font: normal 18px/normal Proxima Nova Bold;">
-                              <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" style="margin: 0;height: 20px; width: 30px;"> Casual
+                            <label class="radio-inline special-label">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" class="radio-inl"> Casual
                             </label>
-                            <label class="radio-inline" style="font: normal 18px/normal Proxima Nova Bold;">
-                              <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" style="margin: 0;height: 20px; width: 30px;"> Long Term
+                            <label class="radio-inline special-label">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" class="radio-inl"> Long Term
                             </label>
                         </div>
                         
                         <div style="margin-top: 40px;">
                             <label class="col-md-12 label-gender">I am interested for a training partner</label>
-                            <label class="radio-inline" style="font: normal 18px/normal Proxima Nova Bold;">
-                              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" style="margin: 0;height: 20px; width: 30px;"> Yes
+                            <label class="radio-inline yes-no">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" style="margin: 0;height: 20px; width: 30px; padding-left: 10px;"> Yes
                             </label>
-                            <label class="radio-inline" style="font: normal 18px/normal Proxima Nova Bold;">
-                              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" style="margin: 0;height: 20px; width: 30px;"> No
+                            <label class="radio-inline yes-no" style="padding-left: 30px;" >
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" style="margin: 0;height: 20px; width: 30px; padding-left: 10px;"> No
                             </label>
                         </div>
                         
