@@ -409,8 +409,9 @@ a{
      border-top: none;
      /*width: 80%;*/
      margin: 0px auto;
-     padding-bottom: 50px;
+     /*padding-bottom: 50px;*/
      width: 980px;
+     padding: 0 0 50px;
  }
  .content-main {
      float: left;
@@ -2003,9 +2004,15 @@ input[type="range"]::-ms-fill-lower {display: block;height: 100%;background: #c2
     width: 100% !important;
 }
 .menu-nav-setting{
-    background-color: #2d3c46;
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#2d3c46', endColorstr='#2d3c46');
-    width: 100%;
+    display: inline-block;
+    padding: 55px 30px 0;
+    border-top: 1px solid #cbcbcb;
+    border-bottom: 1px solid #cbcbcb;
+    border-radius: 0 !important;
+}
+.menu-nav-setting ul{
+    float: right;
+    background: #2d3c46;
     border-radius: 5px 5px 0px 0px;
     -webkit-border-radius: 5px 5px 0px 0px;
     -moz-border-radius: 5px 5px 0px 0px;
@@ -2013,7 +2020,7 @@ input[type="range"]::-ms-fill-lower {display: block;height: 100%;background: #c2
 .menu-nav-setting ul li{
     list-style: none;
     float: left;
-    padding: 17px 35px 0px 35px;
+    padding: 17px 31px 0px;
     border-left: 1px solid #1f2a32;
     height: 50px;
 }
@@ -2034,6 +2041,7 @@ input[type="range"]::-ms-fill-lower {display: block;height: 100%;background: #c2
     float: left !important;
     padding-right: 90px;
     margin-top: -3px;
+    text-indent: 10px;
 }
 
 .menu-nav-setting{
@@ -2042,7 +2050,7 @@ input[type="range"]::-ms-fill-lower {display: block;height: 100%;background: #c2
 .setting-header{
     border: 1px solid #ddd;
     border-top: none !important;
-    padding: 10px 20px 10px;
+    padding: 13px 20px 17px;
     color: #676b6d;
     font: normal 16px/normal Helvetica Neue LTPro Bd;
     font-weight: bold;
@@ -2050,7 +2058,7 @@ input[type="range"]::-ms-fill-lower {display: block;height: 100%;background: #c2
 .setting-detail{
     border: 1px solid #ddd;
     border-top: none !important;
-    padding: 10px 20px 10px;
+    padding: 20px 20px 25px;
     color: #676b6d;
 }
 .setting-detail .form-setting{
@@ -2060,6 +2068,7 @@ input[type="range"]::-ms-fill-lower {display: block;height: 100%;background: #c2
 .setting-detail .content-notification,
 .setting-detail .content-references{
     padding-left: 20px;
+    padding-top: 10px;
 }
 .label-text{
     font: normal 14px/normal Proxima Nova Bold;
@@ -2082,26 +2091,36 @@ input[type="range"]::-ms-fill-lower {display: block;height: 100%;background: #c2
     color: #ffffff;
     font: normal 18px/normal Proxima Nova Bold;
 }
+.btn-save-st:hover,
+.btn-cancel-st:hover{
+    color: #ffffff;
+    font: normal 18px/normal Proxima Nova Bold;
+}
 .btn-block-list{
     background: url('../images/cancel.png') no-repeat;
     width: 125px;
     height: 45px;
-    margin-left: 5px;
+    margin-left: 10px;
     border: none;
     font: normal 18px/normal Proxima Nova Bold;
     color: #ffffff;
     text-transform: uppercase;
 }
+.btn-block-list:hover{
+    color: #ffffff;
+}
 .add-name{
     height: 45px;
     width: 350px !important;
     padding: 10px;
+    font: normal 14px/normal Proxima Nova Regular;
 }
 .content-blocklist span.block{
     text-transform: uppercase;
     font: normal 16px/normal Proxima Nova Bold;
     color: #474646;
-    margin-top: 10px;
+    padding: 10px 0px;
+    display: block;
 }
 .locklist{
     padding-left: 20px; 
@@ -2122,7 +2141,7 @@ input[type="range"]::-ms-fill-lower {display: block;height: 100%;background: #c2
 .locklist ul li span{
     color: #4d5a63;
     font: normal 16px/normal Helvetica Neue LTPro Bd;
-    padding-left: 20px;
+    padding-left: 10px;
 }
 .locklist ul li span a{
     color: #ff4056;
