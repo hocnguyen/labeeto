@@ -6,7 +6,7 @@
      <!-- Content Left  -->
     <div class="left-content">
         <!-- Form first -->
-        <form id="form-achievement" class="post-home" method="post" name="" action="/achievement">
+        <form id="form-achievement" class="post-home" method="post" action="/achievement" enctype="multipart/form-data">
             <div class="content-avatar">
                 <div class="avatar-post">
                     <img src="../uploads/avatar/<?php echo Utils::getAvatar($info_user->photo); ?>" class="new-photo-achievement">
@@ -16,18 +16,15 @@
                 <textarea class="post-textarea" placeholder="Post an achievement..." name="content"></textarea>
             </div>
             <div class="footer-post">
-                <a href="#" class="add-media">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/icon-upload.png" />
-                    Add Media
-                </a>
-                <a href="#" class="add-location" style="margin-top: 10px;">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/icon-location.png" />
-                    Add Location
-
-                </a>
-                <a href="#" class="post-btn">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/post-home.png" />
-                </a>
+                <span class="add-media">
+                    <input type="file" name="media_post" id="media" style="display: none;" />
+                    <label for="media">Add Media</label>
+                </span>
+                <span class="add-location" style="margin-top: 10px;">
+                    <input type="file" name="location" id="location" style="display: none;" />
+                    <label for="location" style="margin-top: 5px;">Add Location</label>
+                </span>
+                <input type="submit" class="post-btn" value="Post" />
             </div>
         </form>
 
