@@ -21,11 +21,14 @@ class IndexController extends AdminBaseController {
         $this->pageTitle[] = Yii::t('admin', 'Labeeto Dating');
         $model = new User('Search');
         $model->unsetAttributes();
-      /*  if(isset($_GET['Members'])){
-            $model->id         = $_GET['Members']['id'];
-            $model->joined     = $_GET['Members']['joined'];
-            $model->attributes = $_GET['Members'];
-        }*/
+        if(isset($_GET['User'])){
+            $model->id              = $_GET['User']['id'];
+            $model->username        = $_GET['User']['username'];
+            $model->status          = $_GET['User']['status'];
+            $model->last_logged     = $_GET['User']['last_logged'];
+            $model->created         = $_GET['User']['created'];
+            $model->attributes      = $_GET['User'];
+        }
         $this->render('index', compact('model'));
     }
 }
