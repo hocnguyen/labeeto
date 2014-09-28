@@ -1,7 +1,7 @@
 <div class="banner-ad-top">
     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/ads-top.png" />
 </div>
-<div class="content-main">
+<div class="content-main-setting">
     
     <div class="menu-nav-setting">
             <ul style="float: right;">
@@ -62,7 +62,7 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1" class="label-text">Timezone</label>
-                        <input type="number" class="form-control" value="check" id="exampleInputEmail1" style="width: 230px; height: 43px; ">
+                        <input type="number" class="form-control pre-fill-text" value="check" id="exampleInputEmail1" placeholder="Pre-Fill">
                       </div>
                       <div style="padding: 20px 0px;">
                             <button type="submit" class="btn btn-default btn-save-st">SAVE</button>
