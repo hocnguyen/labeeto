@@ -352,4 +352,7 @@ $(document).ready(function(){
     $('.private-photo').click(function(){
         $('#private_photo').modal('show');
     })
+    
+    
+    
 });
