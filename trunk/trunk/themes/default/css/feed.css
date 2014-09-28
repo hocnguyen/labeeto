@@ -106,6 +106,18 @@
     
     }
     
+    @font-face {
+        font-family: 'Helvetica Neue Light';
+        src: url('../fonts/HelveticaNeue-Light.eot');
+        src: url('../fonts/HelveticaNeue-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/HelveticaNeue-Light.woff') format('woff'),
+        url('../fonts/HelveticaNeue-Light.ttf') format('truetype'),
+        url('../fonts/HelveticaNeue-Light.svg#proxima_nova_rgbold') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    
+    }
+    
     /**
     * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
     * http://cssreset.com
@@ -477,24 +489,40 @@ a{
     behavior: url('../pie/PIE.htc');
      padding-left: 115px;
  }
-.footer-post a {
+.footer-post span.add-media {
     color: #b9adad;
     margin: 15px;
     float: left;
-    font: normal 11pt/normal Arial;
+    font: normal 13px/normal Helvetica Neue Light;
+    cursor: pointer;
+    background: url(../images/icon-upload.png) no-repeat;
+    text-indent: 20px;
+    height: 20px;
 }
-.footer-post a:hover {
-    text-decoration: none;
-}
-.add-media img{
-    margin-right: 10px;
-}
-.add-location img {
 
+.footer-post span.add-location {
+    color: #b9adad;
+    margin: 15px;
+    float: left;
+    font: normal 13px/normal Helvetica Neue Light;
+    cursor: pointer;
+    background: url(../images/icon-location.png) no-repeat;
+    text-indent: 15px;
+    height: 20px;
+}
+.seach-tab:focus{
+    border: none;
 }
 .post-btn {
-    float: right!important;
-    margin-top: 10px!important;
+    float: right;
+    margin-top: 10px;
+    background: url(../images/post-feed.png) no-repeat;
+    height: 30px;
+    width: 63px;
+    border: none;
+    color: #ffffff;
+    font: normal 16px/normal Proxima Nova Bold;
+    margin-right: 10px;
 }
 .tabs {
     float: left;

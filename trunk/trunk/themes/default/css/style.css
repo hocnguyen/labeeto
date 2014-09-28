@@ -958,6 +958,26 @@ label.error-label {
     color:red;
     margin-bottom: 10px;
 }
+span.add-media {
+    color: #b9adad;
+    margin: 10px;
+    float: left;
+    font: normal 16px/normal Helvetica Neue Light;
+    cursor: pointer;
+    background: url(../images/icon-upload.png) no-repeat;
+    text-indent: 30px;
+    height: 20px;
+}
+
+span.add-location {
+    color: #b9adad;
+    float: left;
+    font: normal 16px/normal Helvetica Neue Light;
+    cursor: pointer;
+    background: url(../images/icon-location.png) no-repeat;
+    text-indent: 25px;
+    height: 20px;
+}
 
 /* Fix type range on IE8 */
 /*
