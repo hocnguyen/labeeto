@@ -161,9 +161,17 @@ class UserController extends SiteBaseController {
         if(Yii::app()->user->isGuest){
             $this->redirect('/');
         }
+        $achievement    = new Achievements();
+        if(isset($_POST['media_post'])){
+            $folder = Yii::app()->basePath.'/../uploads/photo/';
+
+            $filename = $this->generateRandomString().$_FILES['media_post']['name'];
+            if (move_uploaded_file($_FILES['media_post']['tmp_name'], $folder.$filename)){
+                $achievement->media = $filename;
+            }
+        }
         $this->user     = User::model()->findByPk(Yii::app()->user->id);
         $content        = $_POST['content'];
-        $achievement    = new Achievements();
         $achievement->content = $content;
         $achievement->user_id = Yii::app()->user->id;
         $achievement->save();

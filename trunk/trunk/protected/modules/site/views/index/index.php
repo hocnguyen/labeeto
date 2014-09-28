@@ -365,14 +365,22 @@
                 </div>
 
             </div>
-            <form id="form-achievement" class="post-home" method="post" name="" action="/achievement">
+            <form id="form-achievement" class="post-home" method="post" name="" enctype="multipart/form-data" action="/achievement">
             <div class="post-content-step3">
                 <textarea class="textarea-step3" name="content" placeholder="What did you achieved today?"> </textarea>
             </div>
             <div class="footer-step3">
                 <div class="icon-step3">
-                    <a class="icon-images" href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/icon-upload.png"/>Add Media</a>
-                    <a class="icon-location" href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/icon-location.png"/>Add Location</a>
+                    <!--<a class="icon-images" href="#"><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/icon-upload.png"/>Add Media</a>
+                    <a class="icon-location" href="#"><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/icon-location.png"/>Add Location</a>-->
+                    <span class="add-media">
+                        <input type="file" name="media_post" id="media" style="display: none;" />
+                        <label for="media">Add Media</label>
+                    </span>
+                    <span class="add-location" style="margin-top: 10px;">
+                        <input type="file" name="location" id="location" style="display: none;" />
+                        <label for="location" style="margin-top: 5px;">Add Location</label>
+                    </span>
                 </div>
                 <input type="button" class="btn-skip" value="SKIP"/>
                 <input type="submit"  value="" class="btn-post btn-post-style btn-post-achievement"/>
