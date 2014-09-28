@@ -1,0 +1,1 @@
+ALTER TABLE `newsletter` ADD `user_id` INT(11) NOT NULL AFTER `joined`, ADD `created` DATETIME NOT NULL AFTER `user_id`, ADD `updated` DATETIME NOT NULL AFTER `created`;
