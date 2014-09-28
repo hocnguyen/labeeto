@@ -28,10 +28,15 @@ class NewsletterController extends AdminBaseController {
 		if( isset($_POST['Newsletter']) )
 		{
 			$model->attributes = $_POST['Newsletter'];
-			if( $model->save() )
-			{
-				Yii::app()->user->setFlash('success', Yii::t('global', 'Email Added.'));
-			}
+
+            if($user = Newsletter::model()->exists('email=:email',array('email'=>$_POST['Newsletter']['email'])))
+                Yii::app()->user->setFlash('error', Yii::t('global', 'Email already exists!'));
+            else {
+                if( $model->save() )
+                {
+                    Yii::app()->user->setFlash('success', Yii::t('global', 'Email Added.'));
+                }
+            }
 		}
 		
 		// Send newsletter

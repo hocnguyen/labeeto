@@ -37,7 +37,7 @@
 								<td class="tipb"><span><?php echo Yii::app()->dateFormatter->formatDateTime($row->joined, 'long', 'short'); ?></span></td>
 								<td>
 									<a href="<?php echo $this->createUrl('newsletter/delete', array( 'id' => $row->id )); ?>" class="tipb" data-original-title="<?php echo Yii::t('adminglobal', 'Delete this newsletter!'); ?>">
-                                        <span class="label red" ><i class="icon-trash delete" title="'.Yii::t('adminlang', 'Delete news').'"></i></span>
+                                        <span class="label red" ><i class="icon-trash delete" title="<?php echo Yii::t('adminlang', 'Delete'); ?>"></i></span>
 
 									</a>
 								</td>
