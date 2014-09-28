@@ -2411,6 +2411,9 @@ input[type="range"]::-ms-fill-lower {
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ddd', endColorstr='#ddd'); /* IE */
     margin-right: 8.5px;
 }
+.main-search .search-block button.btn-all:focus{
+	outline: none;
+}
 .main-search .search-block button#any-btn{
     color: #30373c;
 }
@@ -2660,6 +2663,9 @@ input[type="range"]::-ms-fill-lower {
 }
 .text-search-01{
     color: #c8c8c8 !important;
+}
+textarea:focus, input:focus{
+    outline: none;
 }
 /*input[type="range"] {height: 10px;border-radius: 5px;background: #420811;-webkit-appearance: none;cursor: pointer;border: 0;outline: none;padding: 0;margin: 0 0;}
 input[type="range"]::-moz-range-track {border: none;background: transparent;}
