@@ -7,6 +7,9 @@
  * @property integer $id
  * @property string $email
  * @property integer $joined
+ * @property integer $user_id
+ * @property string $created
+ * @property string $updated
  */
 class Newsletter extends CActiveRecord
 {
@@ -42,11 +45,12 @@ class Newsletter extends CActiveRecord
         return array(
         	array('email', 'required'),
             array('email', 'email'),
-            array('joined', 'numerical', 'integerOnly'=>true),
+            array('joined, user_id', 'numerical', 'integerOnly'=>true),
             array('email', 'length', 'max'=>125),
+            array('created, updated', 'safe'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, email, joined', 'safe', 'on'=>'search'),
+            array('id, email, joined, user_id, created, updated', 'safe', 'on'=>'search'),
         );
     }
 
@@ -70,6 +74,9 @@ class Newsletter extends CActiveRecord
             'id' => Yii::t('global', 'ID'),
             'email' => Yii::t('global', 'Email'),
             'joined' => Yii::t('global', 'Joined'),
+            'user_id' => Yii::t('global', 'User'),
+            'created' => Yii::t('global', 'Created'),
+            'updated' => Yii::t('global', 'Updated'),
         );
     }
 
@@ -87,6 +94,9 @@ class Newsletter extends CActiveRecord
         $criteria->compare('id',$this->id);
         $criteria->compare('email',$this->email,true);
         $criteria->compare('joined',$this->joined);
+        $criteria->compare('user_id',$this->user_id);
+        $criteria->compare('created',$this->created,true);
+        $criteria->compare('updated',$this->updated,true);
 
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,
