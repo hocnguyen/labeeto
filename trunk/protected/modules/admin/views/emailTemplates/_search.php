@@ -7,32 +7,32 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
+		<?php echo $form->textField($model,'id', array('class'=>'span10')); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>512)); ?>
+		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>512, 'class'=>'span10')); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'alias'); ?>
-		<?php echo $form->textField($model,'alias',array('size'=>60,'maxlength'=>512)); ?>
+		<?php echo $form->textField($model,'alias',array('size'=>60,'maxlength'=>512, 'class'=>'span10')); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'language'); ?>
-		<?php echo $form->textField($model,'language',array('size'=>3,'maxlength'=>3)); ?>
+		<?php echo $form->textField($model,'language',array('size'=>3,'maxlength'=>3, 'class'=>'span10')); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'email_subject'); ?>
-		<?php echo $form->textField($model,'email_subject',array('size'=>60,'maxlength'=>512)); ?>
+		<?php echo $form->textField($model,'email_subject',array('size'=>60,'maxlength'=>512, 'class'=>'span10')); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'email_content'); ?>
-		<?php echo $form->textArea($model,'email_content',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textArea($model,'email_content',array('rows'=>6, 'cols'=>50, 'class'=>'span10')); ?>
 	</div>
 
 	<div class="row buttons">
