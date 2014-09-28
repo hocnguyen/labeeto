@@ -39,11 +39,7 @@ class EmailTemplatesController extends AdminBaseController {
 		// $this->performAjaxValidation($model);
         
         //need copy
-        if (isset($_GET['language'])) 
-            $model->language = $_GET['language'];
-        else
-            $model->language = Yii::app()->language;            
-        if (isset($_GET['alias'])) $model->alias = $_GET['alias'];
+            $model->language = Yii::app()->language;
         //end copy
 
 		if(isset($_POST['EmailTemplates']))
