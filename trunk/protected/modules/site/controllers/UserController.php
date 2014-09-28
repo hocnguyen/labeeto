@@ -594,4 +594,26 @@ class UserController extends SiteBaseController {
         }
 
     }
+    
+    public function actionSearch(){
+        $this->layout = 'feed';
+        if(!Yii::app()->user->isGuest){
+            $this->user = User::model()->findByPk(Yii::app()->user->id);
+            $this->render('search');
+        } else {
+            $this->redirect('/');
+        }
+
+    }
+    
+    public function actionAdvanceSearch(){
+        $this->layout = 'feed';
+        if(!Yii::app()->user->isGuest){
+            $this->user = User::model()->findByPk(Yii::app()->user->id);
+            $this->render('advance_search');
+        } else {
+            $this->redirect('/');
+        }
+
+    }
 }
