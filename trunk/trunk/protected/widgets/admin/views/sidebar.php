@@ -14,14 +14,15 @@ $this->widget('widgets.NBADMenu', array(
 									'label' => Yii::t('global', 'Manage Settings'),
 									'url' => array('settings/index'),
 								),
+                                array(
+                                    'label' => Yii::t('global', 'Manage Email Template'),
+                                    'url' => array('emailTemplates/index'),
+                                ),
 								/*array(
 									'label' => Yii::t('global', 'Manage Languages'),
 									'url' => array('languages/index'),
 								),
-                                array(
-                                    'label' => Yii::t('global', 'Manage Animation Home'),
-                                    'url' => array('slidershow/index'),
-                                ),*/
+                                */
                                 array(
                                     'label' => Yii::t('global', 'Payment Method'),
                                     'url' => array('paymentMethods/index'),
