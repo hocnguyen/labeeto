@@ -113,7 +113,7 @@ class UserController extends SiteBaseController {
             $email=$_POST['LostPasswordForm']['email'];
             $member = User::model()->findByAttributes(array('email' => $email));
             if($member){
-                $password = $member->generatePassword(5, 10);
+                $password = $member->generatePassword(8);
                 $hashedPassword = $member->hashPassword( $password);
                 $message = Yii::t('global', "Dear {username},<br /><br />
     									We have reseted your password successfully.<br /><br />
@@ -121,6 +121,7 @@ class UserController extends SiteBaseController {
                     array( '{username}' => $member->username, '{password}' => $password ));
 
                 $message .= Yii::t('global', '<br /><br />----------------<br />Regards,<br />The {team} Team.<br />', array('{team}'=>Yii::app()->name));
+
                 Utils::sendMail(Yii::app()->params['emailout'], $member->email, Yii::t('global', 'Password Reset Completed'), $message);
 
                 User::model()->updateByPk($member->id, array('password'=>$hashedPassword));

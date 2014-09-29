@@ -1762,7 +1762,8 @@ ul li.menu-nav{
 .content-photo-private ul li,
 .content-photo ul li {
     float: left;
-    width: 32%;
+    width: 170px;
+    height: 170px;
     margin:0 5px 5px 0;
 }
 .content-photo-private,
@@ -2296,6 +2297,7 @@ input[type="range"]::-ms-fill-lower {
     width: 50px;
 }
 .img-photo {
+    height: 100%;
     width: 100%;
 }
 .del-photo {
@@ -2316,7 +2318,7 @@ input[type="range"]::-ms-fill-lower {
     color: #ffffff;
     text-decoration: none;
 }
-.per-photo:hover a {
+.per-photo:hover .del-photo {
     display: block;
 }
 .select-day{

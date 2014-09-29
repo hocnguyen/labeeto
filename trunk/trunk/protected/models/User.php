@@ -207,7 +207,7 @@ class User extends CActiveRecord
             $this->addError($attribute, 'Email already exists!');
     }
     
-    public function generatePassword($minLength=5, $maxLength=10)
+    /*public function generatePassword($minLength=5, $maxLength=10)
     {
         $length=rand($minLength,$maxLength);
 
@@ -223,8 +223,18 @@ class User extends CActiveRecord
         }
 
         return $code;
-    }
+    }*/
 
+    function generatePassword($length = 8) {
+        $str = "";
+        $characters = array_merge(range('A','Z'), range('a','z'), range('0','9'));
+        $max = count($characters) - 1;
+        for ($i = 0; $i < $length; $i++) {
+            $rand = mt_rand(0, $max);
+            $str .= $characters[$rand];
+        }
+        return $str;
+    }
     function getActiveMember(){
         $active_member = array(
             Yii::t('global','Active'),
