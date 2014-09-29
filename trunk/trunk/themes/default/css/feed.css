@@ -1757,7 +1757,7 @@ ul li.menu-nav{
     -webkit-border-radius: 0 0 5px 5px;
     -moz-border-radius: 0 0 5px 5px;
     behavior: url('../pie/PIE.htc');
-    padding: 8px 0px 5px 12px;
+    padding: 8px 0px 5px 8px;
 }
 .content-photo-private ul li,
 .content-photo ul li {
@@ -2717,3 +2717,4 @@ input[type="range"]::-ms-fill-lower {display: none;height: 100%;background: tran
     width:107px;
     height:107px;
 }
+
