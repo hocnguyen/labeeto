@@ -53,7 +53,7 @@ class UserController extends SiteBaseController {
                     }
                     if((isset($_POST['LoginForm']['keepmelogged']) && ($_POST['LoginForm']['keepmelogged'] == 1))){
                        //$duration = $model->keepmelogged ? 3600*24*0.5 : 3600; //1 hours
-                        $duration  = 3600*24*0.5;
+                        $duration  = $model->keepmelogged = 3600*24*0.5;
                        Yii::app()->user->login($identity, $duration);
                     }
                     
