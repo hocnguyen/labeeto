@@ -15,7 +15,9 @@
                     <button id="serious-btn" class="btn-all">somethings serious</button>
                     <button id="friend-btn" class="btn-all btn-all-01">friendship</button>
                     <div class="btn-training">
-                        <span></span>
+                        <span class="premium">
+                            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/search-premium.png" alt="" />
+                        </span>
                         <button id="training" class="btn-all">training</button>
                     </div>
                     <div class="clear"></div>
