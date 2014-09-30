@@ -51,10 +51,9 @@
 
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery.colorbox.js"></script>
 <script type="text/javascript">
-    $(document).ready(function(){
-                //Examples of how to assign the Colorbox event to elements
-                $(".avartar").colorbox({rel:'avartar'});
-    });
+                $(".avartar").click(function(){
+                    $(#PopupImg).modal('show');
+                });
 </script>
     <script type="text/javascript">
         $(function() {
