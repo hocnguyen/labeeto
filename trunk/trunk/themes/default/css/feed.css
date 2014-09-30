@@ -1059,7 +1059,7 @@ span.minuten{
     font: normal 16px/normal Helvetica Neue LTPro Bd;
 }
 .modal-content{
-    width: 270px; 
+    width: 540px; 
     margin: 0px auto;
     border: 5px solid #b2b2b2;
 }
@@ -2727,4 +2727,3 @@ input[type="range"]::-ms-fill-lower {display: none;height: 100%;background: tran
     width:107px;
     height:107px;
 }
-
