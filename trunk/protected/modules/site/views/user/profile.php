@@ -646,7 +646,20 @@ r
   </div>
 </div>
 
-<!-- Modal Upload Avartar--->
+<div class="modal fade" id="PopupImg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content special-border">
+       <img src="/uploads/avatar/<?php echo $this->user->photo ?>" /> 
+      
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+                $(".avartar").click(function(){
+                    $("#PopupImg").modal('show');
+                });
+</script>
+
 <div class="modal fade" id="ChangeAvatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content special-border">
