@@ -2402,11 +2402,11 @@ input[type="range"]::-ms-fill-lower {
 .main-search .search-block{
     border-top:1px solid #1f2a32;
     border-bottom:1px solid #354957;
-    padding: 20px;
+    padding: 20px 20px 20px 20px;
 }
 
 .main-search .search-block-special{
-    padding: 20px 20px 0px 20px;
+    padding: 15px 20px 0px 20px;
 }
 
 .main-search .search-block .text-explore{
@@ -2415,8 +2415,8 @@ input[type="range"]::-ms-fill-lower {
     margin-right: 20px;
 }
 .main-search .search-block .text-explore input{
-    height: 45px;
-    background:#fff url('../images/search.png') no-repeat 12px 12px;
+    height: 35px;
+    background:#fff url('../images/search.png') no-repeat 12px 8px;
     border: 1px solid #1f2a32;
     padding: 0 10px 0 35px;
     border-radius: 5px;
@@ -2428,7 +2428,7 @@ input[type="range"]::-ms-fill-lower {
 }
 .main-search .search-block button.btn-all{
     text-transform: uppercase;
-    height: 45px;
+    height: 35px;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -2474,7 +2474,7 @@ input[type="range"]::-ms-fill-lower {
     margin-right: 24px;
 }
 .search-block-03 #gender, .search-block-02 #gender{
-    height: 40px;
+    height: 35px;
     padding: 5px 3px 5px 10px;
     color: #a4a4a4;
     width: 248px;
@@ -2486,7 +2486,7 @@ input[type="range"]::-ms-fill-lower {
     font-size:14px;
 }
 .search-block-03 #race, .search-block-02 #race{
-    height: 40px;
+    height: 35px;
     padding: 5px 3px 5px 10px;
     color: #a4a4a4;
     width: 185px;
@@ -2511,6 +2511,8 @@ input[type="range"]::-ms-fill-lower {
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#1f2a32', endColorstr='#1f2a32'); /* IE */
     overflow: hidden;
     /*padding: 1px;*/
+    height: 35px;
+    border-radius: 4px;
 }
 .search-block-03 .list-age span,
 .search-block-02 .list-age span{
@@ -2534,6 +2536,7 @@ input[type="range"]::-ms-fill-lower {
     -moz-border-radius: 4px;
     behavior: url('../pie/PIE.htc');
     text-align: center;
+    height: 35px;
 }
 .search-block ul{
     overflow: hidden;
@@ -2690,6 +2693,7 @@ input[type="range"]::-ms-fill-lower {
     background: url('../images/search-chat.png') no-repeat 0px 0px;
     padding-left: 30px;
     cursor: pointer;
+    color: #5c7789;
 }
 .text-search-01{
     color: #c8c8c8 !important;
@@ -2697,6 +2701,12 @@ input[type="range"]::-ms-fill-lower {
 textarea:focus, input:focus{
     outline: none;
 }
+.premium{
+    position: absolute;
+    top: -7px;
+    left: 15px;
+}
+
 /*input[type="range"] {height: 10px;border-radius: 5px;background: #420811;-webkit-appearance: none;cursor: pointer;border: 0;outline: none;padding: 0;margin: 0 0;}
 input[type="range"]::-moz-range-track {border: none;background: transparent;}
 input[type="range"]::-ms-tooltip {display: none;}
