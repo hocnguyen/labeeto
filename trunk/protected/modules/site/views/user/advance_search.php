@@ -54,29 +54,36 @@
                 
                 <div class="search-block-special">
                     <div class="search-block-02">
-                        <input type="number" placeholder="Gender" id="gender">
+                        <label>Education</label>
+                        <input type="number" placeholder="Pre-filled" id="gender">
                     </div>
                     <div class="search-block-02">
-                        <input type="number" placeholder="Race" id="race">
+                        <label>Race</label>
+                        <input type="number" placeholder="Pre-filled" id="race">
                     </div>
                     <div class="search-block-02">
-                        <input type="number" placeholder="Faith" id="race">
+                        <label>Faith</label>
+                        <input type="number" placeholder="Pre-filled" id="race">
                     </div>
                     <div class="search-block-02" style="margin-right: 0px; float: right;">
-                        <input type="number" placeholder="Kids" id="race">
+                        <label>Kids</label>
+                        <input type="number" placeholder="Pre-filled" id="race">
                     </div>
                     <div class="clear"></div>
                 </div>
                 
                 <div class="search-block-special">
                     <div class="search-block-02">
-                        <input type="number" placeholder="Exercise Level" id="gender">
+                        <label>Exercise Level</label>
+                        <input type="number" placeholder="Pre-filled" id="gender">
                     </div>
                     <div class="search-block-02">
-                        <input type="number" placeholder="Drinking Level" id="gender">
+                        <label>Drinking Level</label>
+                        <input type="number" placeholder="Pre-filled" id="gender">
                     </div>
                     <div class="search-block-02">
-                        <input type="number" placeholder="Smoking Level" id="gender">
+                        <label>Smoking Level</label>
+                        <input type="number" placeholder="Pre-filled" id="gender">
                     </div>
                     <div class="search-block-02">
                         <div style="margin-top: 20px;">
