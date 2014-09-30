@@ -451,6 +451,10 @@ $(document).ready(function(){
             $('.popup_avavtar').hide();
         }
     })
+    $('.double-spans').hover(function(){
+        $('.popup_avavtar').css('display', 'block');
+    });
+    
     $('.double-spans').mouseout(function(){
         $('.popup_avavtar').hide();
     });
