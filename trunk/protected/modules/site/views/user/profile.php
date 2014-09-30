@@ -13,7 +13,7 @@ r
         </div>
 
         <div class="avartar">
-             
+            
             <?php if($this->user->photo =='undefined'){ ?>
                 <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/no-avatar.png">
             <?php } else { ?>
