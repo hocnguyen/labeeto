@@ -11,6 +11,8 @@
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/bootstrap.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/feed.css" rel="stylesheet">
+
+    <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/colorbox.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/validationEngine.jquery.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/rangejs/rangeslider.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
@@ -46,6 +48,14 @@
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl . '/js/jquery.validationEngine-en.js' ?>"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl . '/js/bootstrap.min.js' ?>"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl . '/rangejs/rangeslider.min.js' ?>"></script>
+
+<script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery.colorbox.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+                //Examples of how to assign the Colorbox event to elements
+                $(".avartar").colorbox({rel:'avartar'});
+    });
+</script>
     <script type="text/javascript">
         $(function() {
 
