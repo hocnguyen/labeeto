@@ -52,7 +52,8 @@ class UserController extends SiteBaseController {
                        Yii::app()->user->login($identity, $duration);
                     }
                     if((isset($_POST['LoginForm']['keepmelogged']) && ($_POST['LoginForm']['keepmelogged'] == 1))){
-                       $duration = $model->keepmelogged ? 3600*24*0.5 : 3600; //1 hours
+                       //$duration = $model->keepmelogged ? 3600*24*0.5 : 3600; //1 hours
+                        $duration  = 3600*24*0.5;
                        Yii::app()->user->login($identity, $duration);
                     }
                     
@@ -216,6 +217,12 @@ class UserController extends SiteBaseController {
         $model->photo = $_GET['photo'];
         $model->age = '18-19';
         if($model->save()){
+            //Register Newletters
+            $newletters = new Newsletter();
+            $newletters->email = $_GET['email'];
+            $newletters->user_id = $model->id;
+            $newletters->save();
+
             $identity = new InternalIdentity($_GET['username'],$_GET['password']);
             if($identity->authenticate())
             {
