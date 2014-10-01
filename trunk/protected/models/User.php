@@ -34,6 +34,7 @@
  * @property string $last_logged
  * @property string $created
  * @property string $updated
+ * @property string $verify_profile
  *
  * The followings are the available model relations:
  * @property Achievements[] $achievements
@@ -51,6 +52,9 @@ class User extends CActiveRecord
     const STATUS_SUSPENDED  = 3;
     const STATUS_REPORTED   = 4;
     const STATUS_PREMIUM    = 5;
+    const WAIT_VERIFY    = 1;
+    const VERIFIED    = 2;
+    const NO_VERIFY    = 0;
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
