@@ -630,6 +630,21 @@ class UserController extends SiteBaseController {
     public function actionVerify(){
         $this->layout = 'feed';
         if(!Yii::app()->user->isGuest){
+            if (isset($_FILES['verifyPhoto'])){
+                $folder = Yii::app()->basePath.'/../uploads/photoVerify/';
+                $filename = $this->generateRandomString().$_FILES['verifyPhoto']['name'];
+                if (move_uploaded_file($_FILES['verifyPhoto']['tmp_name'], $folder.$filename)){
+                    $verify = new VerifyProfile();
+                    $verify->photo = $filename;
+                    $verify->date = date('Y-m-d h:s');
+                    $verify->code = $_POST['code'];
+                    $verify->user_id = Yii::app()->user->id;
+                    $verify->save();
+                    $user = User::model()->findByPk(Yii::app()->user->id);
+                    $user->verifyPhoto = User::WAIT_VERIFY;
+                    $user->save();
+                }
+            }
             $this->user = User::model()->findByPk(Yii::app()->user->id);
             $this->render('verifyPhoto');
         } else {
