@@ -1,4 +1,4 @@
-<?php $code =$this->generateRandomString(5); ?>
+<?php $code =strtoupper($this->generateRandomString(5)); ?>
 <div class="wrapper-verify">
     <div class="head-verify">
         <h2>Verify Profile</h2>
