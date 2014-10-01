@@ -469,6 +469,8 @@ $(document).ready(function(){
     $('#form-change-avatar').submit(function(e){
             e.preventDefault();
             var formData = new FormData(this);
+        $('.avatar-up').addClass('loading');
+        $('.avatar-up').html('');
             $.ajax({
                 type:'POST',
                 url: '/user/ChangeAvatar',
@@ -479,7 +481,8 @@ $(document).ready(function(){
                 success:function(data){
                     console.log(data);
                     $('#ChangeAvatar').modal('hide');
-                    showModalTemp(data);
+                    //showModalTemp(data);
+                    location.assign('/profile');
                 },
                 error: function(data){
                     console.log("error");
@@ -492,8 +495,12 @@ $(document).ready(function(){
     });
 
     $('#form-photo').submit(function(e){
+
         e.preventDefault();
         var formData = new FormData(this);
+        $('.photo-up').addClass('loading');
+        $('.photo-up').html('');
+
         $.ajax({
             type:'POST',
             url: '/user/UploadPhoto',
@@ -520,6 +527,8 @@ $(document).ready(function(){
     $('#form-private').submit(function(e){
         e.preventDefault();
         var formData = new FormData(this);
+        $('.private-up').addClass('loading');
+        $('.private-up').html('');
         $.ajax({
             type:'POST',
             url: '/user/UploadPrivate',

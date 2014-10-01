@@ -63,7 +63,7 @@
 
             </div>
 
-            <div class="modal-footer footer-report footer-upgarde">
+            <div class="modal-footer footer-report footer-upgarde photo-up">
                 <form method="post" id="form-photo">
                     <div style="width: 50%; float: left;">
                         <input type="file" id="photos" name="photos" style="display: none;">
@@ -89,7 +89,7 @@
 
             </div>
 
-            <div class="modal-footer footer-report footer-upgarde">
+            <div class="modal-footer footer-report footer-upgarde private-up">
                 <form method="post" id="form-private">
                     <div style="width: 50%; float: left;">
                         <input type="file" id="private" name="photos" style="display: none;">

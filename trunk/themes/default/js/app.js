@@ -125,7 +125,7 @@ $(document).ready(function(){
         var password = document.getElementById("password").value;
         var email_exists =document.getElementById("email-exists").value;
         var name_exists = document.getElementById("username-exists").value;
-         var result = checkValidateSignUp(username,email,password,email_exists,name_exists);
+        var result = checkValidateSignUp(username,email,password,email_exists,name_exists);
         if(result ==0){
              $(".registrations").fancybox({
                  'padding': 0,
@@ -143,7 +143,9 @@ $(document).ready(function(){
              $.session.set('email', email);
              $.session.set('password', password);
              $('#username-step2').val(username);
+            return true;
          }
+        return false;
     });
 
     $('#upload').click(function(){
@@ -327,4 +329,19 @@ $(document).ready(function(){
         });
         return false;
     });
+
+    $('.resetpw').live('click',function(){
+        var email =$('.email-pw').val();
+        if(email !=''){
+            $('.content-lost').html('');
+            $('.content-lost').addClass('loading');
+            $.get('/user/lostPassword?email='+email,function(data){
+                $('.content-lost').html(data);
+                $('.content-lost').css('padding','25px');
+                $('.content-lost').removeClass('loading');
+            });
+        } else {
+            alert('Please fill your email!');
+        }
+    })
 });

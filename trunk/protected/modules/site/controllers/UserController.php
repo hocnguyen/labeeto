@@ -109,10 +109,9 @@ class UserController extends SiteBaseController {
     }
 
     public function actionLostPassword (){
+        $email =$_GET['email'];
         $model =  new LostPasswordForm;
-        if(isset($_POST['LostPasswordForm'])){
-            $email=$_POST['LostPasswordForm']['email'];
-            $member = User::model()->findByAttributes(array('email' => $email));
+        $member = User::model()->findByAttributes(array('email' => $email));
             if($member){
                 $password = $member->generatePassword(8);
                 $hashedPassword = $member->hashPassword( $password);
@@ -127,15 +126,10 @@ class UserController extends SiteBaseController {
 
                 User::model()->updateByPk($member->id, array('password'=>$hashedPassword));
 
-                Yii::app()->user->setFlash('success', Yii::t('global', 'Thank You. Your password was reset. Please check your email for you new generated password.'));
-
-            } else {
-                Yii::app()->user->setFlash('error', Yii::t('login', 'Not found this email. Please check again!'));
+                echo Yii::t('global', 'Thank You. Your password was reset. Please check your email for you new generated password.');
+            }else {
+                echo Yii::t('global', 'Your email not correct, Please check again!');
             }
-        }
-        $this->render('forgot_password',array(
-            'model'=>$model,
-        ));
     }
 
     public function actionMy_feed(){
@@ -270,8 +264,8 @@ class UserController extends SiteBaseController {
         if(!Yii::app()->user->isGuest){
             $this->user = User::model()->findByPk(Yii::app()->user->id);
             $this->question = Answer::model()->getAnswer();
-            $photos = Photo::model()->findAll('is_public=1');
-            $private = Photo::model()->findAll('is_public=0');
+            $photos = Photo::model()->findAll('is_public=1 AND user_id='.Yii::app()->user->id);
+            $private = Photo::model()->findAll('is_public=0 AND user_id='.Yii::app()->user->id);
             $this->render('profile',compact('photos','private'));
         } else {
             $this->redirect('/');
@@ -627,6 +621,17 @@ class UserController extends SiteBaseController {
         if(!Yii::app()->user->isGuest){
             $this->user = User::model()->findByPk(Yii::app()->user->id);
             $this->render('advance_search');
+        } else {
+            $this->redirect('/');
+        }
+
+    }
+
+    public function actionVerify(){
+        $this->layout = 'feed';
+        if(!Yii::app()->user->isGuest){
+            $this->user = User::model()->findByPk(Yii::app()->user->id);
+            $this->render('verifyPhoto');
         } else {
             $this->redirect('/');
         }
