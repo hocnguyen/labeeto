@@ -14,7 +14,7 @@
             foreach($private as $photo){ ?>
                 <li class="per-photo">
                     <a href="<?php echo $photo->id?>" data-items="private" class="del-photo">X</a>
-                    <a href="#">
+                    <a href="/uploads/photo/<?php echo $photo->photo ?>" rel="content-photo-private" class="photo">
                         <img class="img-photo" src="/uploads/photo/<?php echo $photo->photo ?>">
                     </a>
                 </li>
@@ -40,17 +40,20 @@
             foreach($photos as $photo){ ?>
                 <li class="per-photo">
                     <a href="<?php echo $photo->id?>" data-items="photos" class="del-photo">X</a>
-                    <a href="#">
-                        <img class="img-photo" src="/uploads/photo/<?php echo $photo->photo ?>">
+                    <a href="/uploads/photo/<?php echo $photo->photo ?>" rel="content-photo" class="photo">
+                        <img class="img-photo" src="/uploads/photo/<?php echo $photo->photo ?>" />
                     </a>
                 </li>
            <?php }
 
         } ?>
-
-
     </ul>
 </div>
+<script type="text/javascript">
+    $(function(){
+        $('.photo').fancybox();
+    });
+</script>
 
 <!--End Photo Page-->
 <!-- Modal Upload Public Photo--->

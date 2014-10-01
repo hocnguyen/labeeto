@@ -12,7 +12,7 @@
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/feed.css" rel="stylesheet">
 
-    <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/colorbox.css" rel="stylesheet">
+<!--    <link type="text/css" href="--><?php //echo Yii::app()->themeManager->baseUrl; ?><!--/css/colorbox.css" rel="stylesheet">-->
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/validationEngine.jquery.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/rangejs/rangeslider.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
@@ -22,8 +22,10 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
+    <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/fancybox/jquery.fancybox.css" rel="stylesheet">
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/fancybox/jquery.fancybox.pack.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -49,11 +51,11 @@
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl . '/js/bootstrap.min.js' ?>"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl . '/rangejs/rangeslider.min.js' ?>"></script>
 
-<script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery.colorbox.js"></script>
+<!--<script type="text/javascript" src="--><?php //echo Yii::app()->themeManager->baseUrl; ?><!--/js/jquery.colorbox.js"></script>-->
 <script type="text/javascript">
-                $(".avartar").click(function(){
-                    $(#PopupImg).modal('show');
-                });
+    $(".avartar").click(function(){
+        $('#PopupImg').modal('show');
+    });
 </script>
     <script type="text/javascript">
         $(function() {
