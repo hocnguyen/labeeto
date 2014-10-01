@@ -647,7 +647,6 @@ r
 </div>
 
 
-
 <div class="modal fade" id="ChangeAvatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content special-border">
@@ -656,7 +655,7 @@ r
         <span>Upload Photo</span>
         
       </div>
-      <div class="modal-footer footer-report footer-upgarde avatar-up">
+      <div class="modal-footer footer-report footer-upgarde">
         <form method="post" id="form-change-avatar">
             <div style="width: 50%; float: left;">
                 <input type="file" id="photo-new" name="photo-change" style="display: none;">
@@ -664,7 +663,7 @@ r
             </div>
         </form>
             <div style="width: 50%; float: left;">
-                <a type="button" class="btn btn-primary my-report-1">From Facbook</a>
+                <a type="button" class="btn btn-primary my-report-1">From Facebook</a>
             </div>
         
       </div>
