@@ -656,7 +656,7 @@ r
         <span>Upload Photo</span>
         
       </div>
-      <div class="modal-footer footer-report footer-upgarde">
+      <div class="modal-footer footer-report footer-upgarde avatar-up">
         <form method="post" id="form-change-avatar">
             <div style="width: 50%; float: left;">
                 <input type="file" id="photo-new" name="photo-change" style="display: none;">
