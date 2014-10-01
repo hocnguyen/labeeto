@@ -51,7 +51,10 @@
 </div>
 <script type="text/javascript">
     $(function(){
-        $('.photo').fancybox();
+        $('.photo').fancybox({
+            nextEffect	: 'fade',
+            prevEffect	: 'fade'
+        });
     });
 </script>
 
