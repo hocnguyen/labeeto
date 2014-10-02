@@ -13,7 +13,7 @@
     <h2><?php echo "<?php echo Yii::t('global', '".$this->pluralize($this->class2name($this->modelClass))."'); ?>"; ?></h2>
     <form>
         <div class="input-append">
-            <span class="add-on add-on-middle add-on-mini" onclick="window.location.href='<?php echo "<?php echo \$this->createUrl('".$this->class2id($this->modelClass)."/create') ?>" ?>'"><i class="icon-plus-sign" title="<?php echo Yii::t('adminlang', 'Create'); ?>"></i></span>
+            <span class="add-on add-on-middle add-on-mini" onclick="window.location.href='<?php echo "<?php echo \$this->createUrl('".$this->class2id($this->modelClass)."/create') ?>" ?>'"><i class="icon-plus-sign" title="<?php echo "<?php echo Yii::t('adminlang', 'Create'); ?>"; ?>" ></i></span>
             <span class="add-on add-on-middle add-on-mini minimizeTable"><i class="icon-caret-down"></i></span>
             <span class="add-on add-on-last add-on-mini removeTable"><i class="icon-remove"></i></span>
         </div>
