@@ -125,24 +125,31 @@
     <div class="modal-content special-border">
       <div class="modal-header header-report">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title report-title">Is there something wrong with this profile? </h4>
+        <h4 class="modal-title report-title">Are you sure you want to block this user? </h4>
         <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
         <span class="user-kaka user-ricky">Ricky Martin</span>
       </div>
-      <div class="">
-        <select class="form-control" style="border-radius: 0;">
-            <option>Test</option>
-            <option>Test</option>
-            <option>Test</option>
-            <option>Test</option>
+      <form method="post">
+        <input type="hidden" value="0" id="IdOfUser" />
+        <select class="form-control" style="border-radius: 0;" id="type_report">
+            <option value="Offensive Messaging">Offensive Messaging</option>
+            <option value="Offensive Profile">Offensive Profile</option>
+            <option value="Offensive Image">Offensive Image</option>
+            <option value="Spamming/Scamming">Spamming/Scamming</option>
         </select>
-      </div>
+        <br />
+        <textarea name="comment" id="comment_report" class="form-control" placeholder="Add comment here..." rows="4">
+            
+        </textarea>
+      
       <div class="modal-footer footer-report">
         <div class="agreed">
-            <input type="checkbox" name="" class="pull-left"/> <span>Would you also like to block this user from making contact with you?</span>
+            <input type="checkbox" name="" class="pull-left"/> 
+            <span>Would you also like to block this user from making contact with you?</span>
         </div>
-        <a type="button" class="btn btn-primary my-report">Report</a>
+        <button type="button" class="btn btn-primary my-report" id="ReportedUser" >Report</button> 
       </div>
+      </form>
     </div>
   </div>
 </div>
