@@ -354,5 +354,63 @@ $(document).ready(function(){
     })
     
     
+    /**Report user**/
+    $('.report-user').click(function(){
+        var id = $(this).attr("data-id");
+        var avatar = $('#avatar_hidien_'+id).val();
+        $('#IdOfUser').val(id);
+        $('#ReportUser textarea').val('');
+        showImageReport(avatar);
+    })
     
+    
+    function showImageReport(name_image){
+        if ($('#ReportUser img').attr('src') == ''){
+                $('#ReportUser img').attr('src', '/uploads/avatar/'+ name_image);
+        }else{
+            $('#ReportUser img').attr('src', '');
+            $('#ReportUser img').attr('src', '/uploads/avatar/'+ name_image);
+        }
+     }
+     
+     $('#ReportedUser').live('click',function(){
+        var type_report = $('#type_report').val();
+        var user = $('#IdOfUser').val();
+        var comment_report = $('#comment_report').val();
+        if(type_report =='' || comment_report ==''){
+            alert('Please ensure the comment is filled out.');
+        }else if(type_report.length == null){
+            alert('Please ensure the type report is selected.');
+        }else if(comment_report.length > 25){
+            alert('Please ensure the comment is sorter 25 character.');
+        }else {
+            $('#ReportUser').modal('hide');
+            $.get('/user/reportUser?type='+type_report+'&comment='+comment_report+'&user='+user ,function(data){
+                /**Reset Form Add New**/
+                $('#type_report').attr('value', '');
+                $('#comment_report').attr('value', '');
+                $('#IdOfUser').attr('value', '');
+                location.reload();
+            });
+        }
+     })
+     
+     $('.UnlockUser').live('click', function(){
+        var id = $(this).attr("data-id");
+        $.get('/user/unlockUser?id='+id ,function(data){
+            $('#unlock_'+id).hide();
+        });
+     });
+     
+     $('.setting-detail .btn-block-list').live('click', function(){
+        var text = $('.ui-autocomplete-input').val();
+        if(text == ''){
+            alert('Please ensure the user name is filled out.');
+        }else{
+            $.get('/user/addBlocked?user='+text, function(data){
+                var text = $('.ui-autocomplete-input').val('');
+                $('.locklist ul').append(data);
+            });
+        }
+     });
 });
