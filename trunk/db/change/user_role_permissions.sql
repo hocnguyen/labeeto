@@ -10,11 +10,15 @@ CREATE TABLE `role_user` (
 CREATE TABLE `permissions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `parent_id` int(11) DEFAULT NULL,
   `description` text COLLATE utf8_unicode_ci,
   `created` datetime DEFAULT NULL,
   `updated` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `FK_permissions` (`parent_id`),
+  CONSTRAINT `FK_permissions` FOREIGN KEY (`parent_id`) REFERENCES `permissions` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
+
 
 CREATE TABLE `role_permissions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
