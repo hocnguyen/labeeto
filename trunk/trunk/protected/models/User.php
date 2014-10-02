@@ -106,6 +106,7 @@ class User extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
             'achievements' => array(self::HAS_MANY, 'Achievements', 'user_id'),
+            'reportuser' => array(self::HAS_MANY, 'ReportUser', 'user_id'),
 		);
 	}
 
@@ -297,6 +298,18 @@ class User extends CActiveRecord
         );
 
         return  $result['username'];
+    }
+    
+    public function showAvatar($id){
+        $result = User::model()->find(array(
+                'select'=>'photo',
+                'condition'=>'id=:id',
+                'params'=>array( ':id'=>$id ) )
+        );
+        if($result)
+            return  $result['photo'];
+        else
+            return 'no_image.png';
     }
 
 }
