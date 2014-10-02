@@ -2209,6 +2209,7 @@ input[type="range"]::-ms-fill-lower {
 }
 .locklist ul li span a{
     color: #ff4056;
+    cursor: pointer;
 }
 .locklist ul li span a:hover{
     text-decoration: none;   
@@ -2714,7 +2715,10 @@ textarea:focus, input:focus{
     top: -7px;
     left: 15px;
 }
-
+.form-control:focus{
+    border: 0 !important;
+    outline: 0 !important;
+}
 .new-photo-achievement{
     width:107px;
     height:107px;
@@ -2821,4 +2825,8 @@ textarea:focus, input:focus{
     margin-top: -22px;
     font-size: 13px;
     margin-left: 430px;
+}
+.btn-block-list:focus{
+    outline: 0;
+    border: 0;
 }
