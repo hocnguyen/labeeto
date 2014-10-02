@@ -15,7 +15,7 @@
     <div class="settings-header">
         
         <!-- General Settings -->
-        <div id="GeneralSettings">
+        <div id="GeneralSettings" style="display: none;">
             <div class="setting-header">General Settings</div>
             <div class="setting-detail">
                 <form role="form" class="form-setting">
@@ -74,25 +74,66 @@
         <!--End General Settings--!>
         
         <!-- Blocklist -->
-        <div id="Blocklist" style="display: none;">
+        <div id="Blocklist" style="display: block;">
+        <?php /*if($report){
+                $arr = array();
+                $arr = explode(",",$report->blocked_user);
+                $arr = array_slice($arr, 0, -1);
+        }*/ ?>
             <div class="setting-header">Blocklist</div>
             <div class="setting-detail">
                 <div class="content-blocklist">
                     <span class="block">Block Users</span>
-                    <form class="form-inline" role="form">
+                    <form class="form-inline" role="form" method="post">
+                        <div class="form-group">
+                            <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                <?php 
+                                    $this->widget('zii.widgets.jui.CJuiAutoComplete',array(
+                                	    'name'=>'q',
+                                        'value'=>isset($username)?$username:'',
+                                	    'source'=>'js: function(request, response) {
+                                                $.ajax({
+                                                    url: "'.$this->createUrl('/user/ajaxUser').'",
+                                                    dataType: "json",
+                                                    data: {
+                                                        term: request.term,
+                                                        brand: $("#type").val()
+                                                    },
+                                                    success: function (data) {
+                                                        response(data);
+                                                    }
+                                                })
+                                            }',
+                                            'options' => array(
+                                                'minLength'=>'1',
+                                            ),
+                                            'htmlOptions' => array(
+                                                'class'=>'form-control add-name',
+                                                'placeholder'=>'Add Name or Email',           
+                                            ),
+                            	    ));
+                                ?>
+                            </div>
+                        <button type="button" class="btn btn-default btn-block-list">Block</button>
+                        <!--<div id="autocomple"></div>-->
+                    </form>
+                    <!--<form class="form-inline" role="form">
                           <div class="form-group">
                             <label class="sr-only" for="exampleInputEmail2">Email address</label>
                             <input type="email" class="form-control add-name" id="exampleInputEmail2" placeholder="Add Name or Email">
                           </div>
                            <button type="submit" class="btn btn-default btn-block-list">Block</button>
-                    </form>
+                    </form>-->
                     
                     <div class="locklist">
                         <ul>
-                            <li><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post.png" /><span>Romeo <a href="#"> Unlock</a></span></li>
-                            <li><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post.png" /><span>Romeo <a href="#"> Unlock</a></span></li>
-                            <li><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post.png" /><span>Romeo <a href="#"> Unlock</a></span></li>
-                            <li><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post.png" /><span>Romeo <a href="#"> Unlock</a></span></li>
+                        <?php
+                              $this->widget('zii.widgets.CListView', array(
+                                  'dataProvider'=>$report,
+                                  'itemView'=>'../elements/blocked_user',
+                                  'summaryText'=>'',
+                              ));
+                        ?>
                         </ul>
                     </div>
                 </div>
