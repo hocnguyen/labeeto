@@ -14,6 +14,7 @@
                 <h2><?php echo "<?php echo Yii::t('global', '".$this->modelClass."'); ?> "; ?></h2>
                 <form class="header-tab-view not-bor">
                     <div class="input-append">
+                        <span class="add-on add-on-middle add-on-mini" onclick="window.location.href='<?php echo "<?php echo \$this->createUrl('".$this->class2id($this->modelClass)."/update?id=\$model->".$this->tableSchema->primaryKey."') ?>" ?>'"><i class="icon-edit" title="<?php echo "<?php echo Yii::t('adminlang', 'Edit'); ?>"; ?>"></i></span>
                         <div class="add-on add-on-middle add-on-mini minimizeTable "><i class="icon-caret-down"></i></div>
                         <div class="add-on add-on-last add-on-mini removeTable"><i class="icon-remove"></i></div>
                     </div>
