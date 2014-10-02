@@ -43,6 +43,10 @@ $this->widget('widgets.NBADMenu', array(
 									'label' => Yii::t('global', 'Manage Members'),
 									'url' => array('user/index'),
 								),
+                                array(
+                                    'label' => Yii::t('global', 'Manage User Role'),
+                                    'url' => array('roleUser/index'),
+                                ),
 							),
 						),
 
@@ -74,8 +78,20 @@ $this->widget('widgets.NBADMenu', array(
                             ),
                         ),
 
+                        array(
+                            'label' => Yii::t('global', 'Privacy & Permissions'),
+                            'itemOptions' => array( 'class' => 'dropdown' ),
+                            'items' => array(
+                                array(
+                                    'label' => Yii::t('global', 'Manage Roles'),
+                                    'url' => array('user/admin'),
+                                ),
+                            ),
+                        ),
 
 
-				)
+
+
+    )
 ));
 ?>

@@ -7,12 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta charset="UTF-8">
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <!-- Bootstrap -->
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/bootstrap.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/feed.css" rel="stylesheet">
 
-<!--    <link type="text/css" href="--><?php //echo Yii::app()->themeManager->baseUrl; ?><!--/css/colorbox.css" rel="stylesheet">-->
+
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/validationEngine.jquery.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/rangejs/rangeslider.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
@@ -26,6 +27,7 @@
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery.placeholder.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -51,7 +53,6 @@
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl . '/js/bootstrap.min.js' ?>"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl . '/rangejs/rangeslider.min.js' ?>"></script>
 
-<!--<script type="text/javascript" src="--><?php //echo Yii::app()->themeManager->baseUrl; ?><!--/js/jquery.colorbox.js"></script>-->
 <script type="text/javascript">
     $(".avartar").click(function(){
         $('#PopupImg').modal('show');
@@ -134,6 +135,32 @@
         <?php if(!Yii::app()->user->isGuest){ ?>
         var lastest_visit = '<?php echo Yii::app()->session['lastest_visit']; ?>'
         <?php } ?>
+
+        function initialize() {
+            $.session.clear();
+            var options = {
+                types: ['(cities)']
+            };
+            var map = new google.maps.Map(document.getElementById('maps-test-location'));
+            var input = /** @type {HTMLInputElement} */(
+                document.getElementById('address'));
+            var autocomplete = new google.maps.places.Autocomplete(input,options);
+            autocomplete.bindTo('bounds',map);
+            google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                var place = autocomplete.getPlace();
+                if (!place.geometry) {
+                    return;
+                }
+                // If the place has a geometry, then present it on a map.
+                $.session.set('address',place.formatted_address);
+                $.session.set('latitude',place.geometry.location.k);
+                $.session.set('longitude',place.geometry.location.B);
+
+            });
+
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+
     </script>
 </body>
 
