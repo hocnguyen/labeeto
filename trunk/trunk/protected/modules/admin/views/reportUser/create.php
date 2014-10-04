@@ -2,7 +2,8 @@
 <div class="container-fluid">
     <div class="page-header" style="border-bottom: 0px solid !important;">
         <h1>
-            <?php echo Yii::t('global', 'Create'); ?>            <small><?php echo Yii::t('global', 'ReportUser'); ?></small>
+            <?php echo Yii::t('global', 'Create'); ?>            
+            <small><?php echo Yii::t('global', 'ReportUser'); ?></small>
         </h1>
     </div>
     <div class="row-fluid">
