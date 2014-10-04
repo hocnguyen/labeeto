@@ -6,7 +6,6 @@
  * The followings are the available columns in table 'report_user':
  * @property integer $id
  * @property integer $user_id
- * @property string $reported_user
  * @property string $blocked_user
  */
 class ReportUser extends CActiveRecord
@@ -41,12 +40,12 @@ class ReportUser extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_id, reported_user', 'required'),
+			array('user_id, blocked_user', 'required'),
 			array('user_id', 'numerical', 'integerOnly'=>true),
 			array('blocked_user', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, user_id, reported_user, blocked_user', 'safe', 'on'=>'search'),
+			array('id, user_id, , blocked_user', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,7 +69,6 @@ class ReportUser extends CActiveRecord
 		return array(
 			'id' => Yii::t('global', 'ID'),
 			'user_id' => Yii::t('global', 'User'),
-			'reported_user' => Yii::t('global', 'Reported User'),
 			'blocked_user' => Yii::t('global', 'Blocked User'),
 		);
 	}
@@ -88,7 +86,6 @@ class ReportUser extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('user_id',$this->user_id);
-		$criteria->compare('reported_user',$this->reported_user,true);
 		$criteria->compare('blocked_user',$this->blocked_user,true);
 
 		return new CActiveDataProvider($this, array(
@@ -96,21 +93,16 @@ class ReportUser extends CActiveRecord
 		));
 	}
     
-    public function getReported(){
-        $result = self::model()->findByAttributes(array('user_id'=>Yii::app()->user->id));
-        if($result){
-            return substr($result->reported_user,0, -1);
-        }else{
-            return '';
-        }
-    }
-    
     public function getBlockedUser(){
         $result = self::model()->findByAttributes(array('user_id'=>Yii::app()->user->id));
         if($result){
-            return substr($result->blocked_user,0, -1);
+            if(strlen($result->blocked_user) > 0){
+                return substr($result->blocked_user,0, -1);
+            }else{
+                return 0;
+            }
         }else{
-            return '';
+            return 0;
         }
     }
 }
