@@ -15,7 +15,7 @@
                     'enableAjaxValidation'=>false,
                     'htmlOptions'=>array(
                                 'class'=>'form-horizontal contentForm',
-                                'data-validate'=>'parsley',
+                                'data-validate'=>'parsley'
                                 )
                 )); ?>
 
@@ -26,15 +26,16 @@
                     <div class="controls">
                         <?php
                         $user = CHtml::listData(User::model()->findAll(''),'id','username');
-                        echo $form->dropDownList($model,'user_id',$user); ?>
+                        echo $form->dropDownList($model,'user_id',$user); 
+                        ?>
                     </div>
                 </div>
-                            <div class="control-group">
-                    <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'reported_user'); ?>
-</label>
-                    <div class="controls">
-                        <?php echo $form->textField($model,'reported_user', array('class'=>'span10')); ?>
-                    </div>
+                    <div class="control-group">
+                        <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'reported_user'); ?>
+    </label>
+                        <div class="controls">
+                            <?php echo $form->textField($model,'reported_user', array('class'=>'span10')); ?>
+                        </div>
                 </div>
                             <div class="control-group">
                     <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'blocked_user'); ?>
