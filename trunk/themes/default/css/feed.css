@@ -2133,6 +2133,20 @@ input[type="range"]::-ms-fill-lower {
     text-indent: 10px;
 }
 
+.label-add-media{
+    cursor: pointer;
+}
+.lable-add-location{
+    cursor: pointer;
+}
+.fix-input-location{
+    width:95% !important;
+    margin: 10px !important;
+    text-transform: none !important;
+}
+#maps-test-location{
+    z-index: 1000;
+}
 .menu-nav-setting{
     display: inline-block;
 }
