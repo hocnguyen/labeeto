@@ -53,7 +53,7 @@
             'name'=>'type_report',
             'type' => 'raw',
             'filter'=>$active_product,
-            'value' => '$data->getTypeReport($data->type_report)',
+            'value' => '$data->type_report',
             'htmlOptions'=>array('style'=>'width:300px;')
         ),  
 		

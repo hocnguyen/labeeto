@@ -26,14 +26,12 @@
                     'htmlOptions' => array('class' => 'table-hover', 'style'=>'width:100% !important;'),
                     'data'=>$model,
                     'attributes'=>array(
-                    array('name'=>'id'),
-array('name'=>'user_id'),
-array('name'=>'reported_user'),
-array('name'=>'blocked_user'),
-array('name'=>'type_report'),
-array('name'=>'content'),
-array('name'=>'created'),
-array('name'=>'updated'),
+                    array('name'=>'user_id','value'=>ReportUser::model()->getUser($model->user_id)),
+                    array('name'=>'blocked_user','value'=>ReportUser::model()->getUser($model->blocked_user)),
+                    array('name'=>'type_report'),
+                    array('name'=>'content','type'=>'raw'),
+                    array('name'=>'created'),
+                    array('name'=>'updated'),
                     ),
                     )); ?>
 
