@@ -1,21 +1,26 @@
 <?php
 
 /**
- * This is the model class for table "role_user".
+ * This is the model class for table "permissions".
  *
- * The followings are the available columns in table 'role_user':
+ * The followings are the available columns in table 'permissions':
  * @property integer $id
  * @property string $name
- * @property string $alias
+ * @property integer $parent_id
+ * @property string $description
  * @property string $created
  * @property string $updated
+ *
+ * The followings are the available model relations:
+ * @property Permissions $parent
+ * @property Permissions[] $permissions
  */
-class RoleUser extends CActiveRecord
+class Permissions extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return RoleUser the static model class
+	 * @return Permissions the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -27,7 +32,7 @@ class RoleUser extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'role_user';
+		return 'permissions';
 	}
     public function behaviors()
     {
@@ -42,11 +47,13 @@ class RoleUser extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, alias', 'length', 'max'=>255),
-			array('created, updated', 'safe'),
+            array('name', 'required'),
+			array('parent_id', 'numerical', 'integerOnly'=>true),
+			array('name', 'length', 'max'=>255),
+			array('description, created, updated', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, alias, created, updated', 'safe', 'on'=>'search'),
+			array('id, name, parent_id, description, created, updated', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,6 +65,8 @@ class RoleUser extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'parent' => array(self::BELONGS_TO, 'Permissions', 'parent_id'),
+			'permissions' => array(self::HAS_MANY, 'Permissions', 'parent_id'),
 		);
 	}
 
@@ -69,7 +78,9 @@ class RoleUser extends CActiveRecord
 		return array(
 			'id' => Yii::t('global', 'ID'),
 			'name' => Yii::t('global', 'Name'),
-			'alias' => Yii::t('global', 'Alias'),
+			'parent_id' => Yii::t('global', 'Parent'),
+            'parent.name' => Yii::t('global', 'Parent'),
+			'description' => Yii::t('global', 'Description'),
 			'created' => Yii::t('global', 'Created'),
 			'updated' => Yii::t('global', 'Updated'),
 		);
@@ -88,7 +99,8 @@ class RoleUser extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('alias',$this->alias,true);
+		$criteria->compare('parent_id',$this->parent_id);
+		$criteria->compare('description',$this->description,true);
         if ($this->created)
             $criteria->compare('t.created', date('Y-m-d ', strtotime($this->created)), true);
 		$criteria->compare('updated',$this->updated,true);
@@ -97,6 +109,12 @@ class RoleUser extends CActiveRecord
 			'criteria'=>$criteria,
             'sort'=>array(
                 'defaultOrder'=>'t.id DESC',
+                'attributes'=>array(
+                    'parent.name'=>array(
+                        'asc'=>'parent_id',
+                        'desc'=>'parent_id DESC',
+                    ),
+                    '*'),
             )
 		));
 	}
