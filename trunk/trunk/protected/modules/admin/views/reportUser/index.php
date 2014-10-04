@@ -28,12 +28,27 @@
             'header'=>Yii::t('global','Id'),
             'name'=>'id',
             'value'=>'$data->id',
-            'htmlOptions'=>array('style'=>'width:30px;')
+            'htmlOptions'=>array('style'=>'width:10px;')
         ),
-         
-		'user_id',
-		'reported_user',
-		'blocked_user',
+        array(
+            'header'=>Yii::t('global','User Id'),
+            'name'=>'user_id',
+            'htmlOptions'=>array('style'=>'width:120px;')
+        ),
+        
+        array(
+            'header'=>Yii::t('global','Reported User'),
+            'name'=>'reported_user',
+            'htmlOptions'=>array('style'=>'width:450px;')
+        ), 
+
+         array(
+            'header'=>Yii::t('global','Blocked user'),
+            'name'=>'blocked_user',
+            'htmlOptions'=>array('style'=>'width:450px;')
+        ), 
+		
+		
     array(
         'class'=>'ButtonColumn',
         'header' => Yii::t('global','Actions'),
