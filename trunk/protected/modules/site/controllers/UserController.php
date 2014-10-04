@@ -136,7 +136,8 @@ class UserController extends SiteBaseController {
         $this->layout = 'feed';
         if(!Yii::app()->user->isGuest){
             $info_user = User::model()->findByPk(Yii::app()->user->id);
-            $reported = ReportUser::model()->getReported(Yii::app()->user->id) ;//"1,2,5,4,15";
+            $reported = ReportUser::model()->getBlockedUser(Yii::app()->user->id) ;//"1,2,5,4,15";
+            
             if($reported != '')
                 $condition = " AND t.user_id NOT IN (". $reported .")";
             else
@@ -339,10 +340,11 @@ class UserController extends SiteBaseController {
         $this->layout = 'feed';
         if(!Yii::app()->user->isGuest){
             $blocked = ReportUser::model()->getBlockedUser() ;//"1,2,5,4,15";
-            if($blocked != '')
+            
+            if($blocked)
                 $condition = "t.id IN (". $blocked .")"; //" AND .id IN (". $blocked .")"
             else
-                $condition = '';
+                $condition = 't.id < 0';
             $report = new CActiveDataProvider('User', array(
                 'criteria' => array(
                     'condition' =>$condition,
@@ -676,12 +678,12 @@ class UserController extends SiteBaseController {
     public function actionReportUser(){
         $check = ReportUser::model()->findByAttributes(array('user_id'=>Yii::app()->user->id));
         if($check != Null){
-            $str = $check->reported_user . $_GET['user'] . ',';
-            $check->updateByPk($check->id, array('reported_user'=>$str));
+            $str = $check->blocked_user . $_GET['user'] . ',';
+            $check->updateByPk($check->id, array('blocked_user'=>$str));
         }else{
             $report = new ReportUser();
             $report->user_id = Yii::app()->user->id;
-            $report->reported_user = $_GET['user'] . ',';
+            $report->blocked_user = $_GET['user'] . ',';
             $report->blocked_user = '';
             $report->save();
         }
@@ -743,7 +745,7 @@ class UserController extends SiteBaseController {
                     echo $html;
                 }else{
                     $new_report = new ReportUser();
-                    $new_report->reported_user = '';
+                    $new_report->blocked_user = '';
                     $new_report->blocked_user = $data->id .',';
                     $new_report->save();
                     $html .= '<li id="unlock_'.$data->id.'">

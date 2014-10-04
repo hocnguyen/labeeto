@@ -1,4 +1,5 @@
-<?php $user = User::model()->findByPk($data->user_id); ?>
+<?php $user = User::model()->findByPk($data->user_id); 
+if($user){?>
 <div class="post">
     <div class="first-infor">
         <div class="profile">
@@ -17,3 +18,4 @@
 
     </div>
 </div>
+<?php } ?>
