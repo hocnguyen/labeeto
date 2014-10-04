@@ -17,7 +17,8 @@
  */
 class Permissions extends CActiveRecord
 {
-	/**
+	const STATUS_ACTIVE = 1;
+    /**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
 	 * @return Permissions the static model class
@@ -118,4 +119,14 @@ class Permissions extends CActiveRecord
             )
 		));
 	}
+
+    public function getPermissionsUser(){
+        $sql = " SELECT permissions.name, role_id, per_id, role_permissions.value
+                 FROM permissions
+                 LEFT JOIN role_permissions
+                 ON permissions.id = role_permissions.per_id
+                 GROUP BY permissions.name
+                 ORDER BY permissions.id, role_id";
+        return Yii::app()->db->createCommand($sql)->queryAll();
+    }
 }
