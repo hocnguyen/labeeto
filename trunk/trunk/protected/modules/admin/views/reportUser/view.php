@@ -14,7 +14,7 @@
                 <h2><?php echo Yii::t('global', 'ReportUser'); ?> </h2>
                 <form class="header-tab-view not-bor">
                     <div class="input-append">
-                        <span class="add-on add-on-middle add-on-mini" onclick="window.location.href='<?php echo $this->createUrl('report-user/update?id='.$model->id) ?>'"><i class="icon-edit" title="<?php echo Yii::t('adminlang', 'Edit'); ?>"></i></span>
+                        <span class="add-on add-on-middle add-on-mini" onclick="window.location.href='<?php echo $this->createUrl('reportUser/update?id='.$model->id) ?>'"><i class="icon-edit" title="<?php echo Yii::t('adminlang', 'Edit'); ?>"></i></span>
                         <div class="add-on add-on-middle add-on-mini minimizeTable "><i class="icon-caret-down"></i></div>
                         <div class="add-on add-on-last add-on-mini removeTable"><i class="icon-remove"></i></div>
                     </div>
@@ -27,9 +27,9 @@
                     'data'=>$model,
                     'attributes'=>array(
                     array('name'=>'id'),
-array('name'=>'user_id'),
-array('name'=>'reported_user'),
-array('name'=>'blocked_user'),
+                    array('name'=>'user_id'),
+                    array('name'=>'reported_user'),
+                    array('name'=>'blocked_user'),
                     ),
                     )); ?>
 
