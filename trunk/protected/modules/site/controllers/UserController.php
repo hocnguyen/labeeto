@@ -684,7 +684,6 @@ class UserController extends SiteBaseController {
             $report = new ReportUser();
             $report->user_id = Yii::app()->user->id;
             $report->blocked_user = $_GET['user'] . ',';
-            $report->blocked_user = '';
             $report->save();
         }
     }
