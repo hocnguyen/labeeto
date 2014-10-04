@@ -33,7 +33,7 @@
         array(
             'header'=>Yii::t('global','User Id'),
             'name'=>'user_id',
-            'htmlOptions'=>array('style'=>'width:120px;')
+            'htmlOptions'=>array('style'=>'width:150px;')
         ),
         
         array(
