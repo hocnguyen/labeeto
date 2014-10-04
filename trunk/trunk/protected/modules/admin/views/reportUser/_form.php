@@ -19,7 +19,13 @@
                                 )
                 )); ?>
 
-            <?php echo $form->errorSummary($model); ?>
+            <?php 
+            $type_report = array(
+                '1' => 'Offensive Messaging',
+                '2'=>'Offensive Profile',
+                '3'=>'Offensive Image',
+                '4'=>'Offensive Scamming');
+            echo $form->errorSummary($model); ?>
                             <div class="control-group">
                     <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'user_id'); ?>
 </label>
@@ -45,7 +51,7 @@
                     <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'type_report'); ?>
 </label>
                     <div class="controls">
-                        <?php echo $form->textField($model,'type_report',array('size'=>60,'maxlength'=>255, 'class'=>'span10')); ?>
+                        <?php echo $form->dropDownList($model, 'type_report', $type_report, array('prompt' => '--Select Option--')); ?>
                     </div>
                 </div>
                             <div class="control-group">
