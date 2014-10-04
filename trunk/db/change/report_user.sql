@@ -25,13 +25,18 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- Table structure for table `report_user`
 --
 
-CREATE TABLE IF NOT EXISTS `report_user` (
+CREATE TABLE `report_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
-  `reported_user` text NOT NULL,
-  `blocked_user` text,
+  `reported_user` int(11) NOT NULL,
+  `blocked_user` int(11) DEFAULT NULL,
+  `type_report` varchar(255) DEFAULT NULL,
+  `content` text,
+  `created` datetime DEFAULT NULL,
+  `updated` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8
+
 
 --
 -- Dumping data for table `report_user`
