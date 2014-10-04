@@ -34,8 +34,18 @@ class PermissionsController extends AdminBaseController {
 		if(isset($_POST['Permissions']))
 		{
 			$model->attributes=$_POST['Permissions'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()){
+                if( $model->parent_id != 0 ){
+                    $Role = RoleUser::model()->findAll();
+                    foreach( $Role as $val ){
+                        $rolePermissions            = new RolePermissions();
+                        $rolePermissions->role_id   = $val['id'];
+                        $rolePermissions->per_id    = $model->id;
+                        $rolePermissions->save();
+                    }
+                }
+                $this->redirect(array('view','id'=>$model->id));
+            }
 		}
 
 		$this->render('create',array(
@@ -74,7 +84,8 @@ class PermissionsController extends AdminBaseController {
 	 */
 	public function actionDelete($id)
 	{
-		if(Yii::app()->request->isPostRequest)
+		//RolePermissions::model()->findAllByAttributes( array('per_id'=> $id ) )->deleteAll();
+        if(Yii::app()->request->isPostRequest)
 		{
 			// we only allow deletion via POST request
 			$this->loadModel($id)->delete();
