@@ -26,6 +26,7 @@
     'htmlOptions' => array('class' => 'table table-bordered table-hover table-striped'),
     'dataProvider'=>$model->search(),
     'filter'=>$model,
+    'afterAjaxUpdate' => 'reinstallDatePicker',
     'columns'=>array(
         array(
             'name'=>'id',
