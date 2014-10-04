@@ -18,7 +18,10 @@
 <div class="floatingBox table">
 <div class="container-fluid">
 
-    <?php $this->widget('zii.widgets.grid.CGridView', array(
+    <?php 
+    $active_product = ReportUser::getActiveProduct();
+    $active_user = CHtml::listData(User::model()->findAll(),'id','username');
+    $this->widget('zii.widgets.grid.CGridView', array(
     'id'=>'report-user-grid',
     'htmlOptions' => array('class' => 'table table-bordered table-hover table-striped'),
     'dataProvider'=>$model->search(),
@@ -32,16 +35,24 @@
     	array(
             'header'=>Yii::t('global','User'),
             'name'=>'user_id',
+            'filter'=>$active_user,
+            'value' => 'User::model()->getUser($data->user_id)',
             'htmlOptions'=>array('style'=>'width:300px;')
         ),	
 		array(
             'header'=>Yii::t('global','Blocked User'),
             'name'=>'blocked_user',
+            'type' => 'raw',
+            'filter'=>$active_user,
+            'value' => 'User::model()->getUser($data->blocked_user)',
             'htmlOptions'=>array('style'=>'width:300px;')
         ),  
         array(
             'header'=>Yii::t('global','Type Report'),
             'name'=>'type_report',
+            'type' => 'raw',
+            'filter'=>$active_product,
+            'value' => '$data->getTypeReport($data->type_report)',
             'htmlOptions'=>array('style'=>'width:300px;')
         ),  
 		
