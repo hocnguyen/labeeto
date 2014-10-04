@@ -36,7 +36,7 @@
             'header'=>Yii::t('global','User'),
             'name'=>'user_id',
             'filter'=>$active_user,
-            'value' => 'User::model()->getUser($data->user_id)',
+            'value' => '$data->getUser($data->user_id)',
             'htmlOptions'=>array('style'=>'width:300px;')
         ),	
 		array(
@@ -44,7 +44,7 @@
             'name'=>'blocked_user',
             'type' => 'raw',
             'filter'=>$active_user,
-            'value' => 'User::model()->getUser($data->blocked_user)',
+            'value' => '$data->getUser($data->blocked_user)',
             'htmlOptions'=>array('style'=>'width:300px;')
         ),  
         array(
