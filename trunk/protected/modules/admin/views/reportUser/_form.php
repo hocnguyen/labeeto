@@ -2,7 +2,7 @@
     <div class="row-fluid">
 <div class="span12">
     <div class="containerHeadline">
-        <i class="icon-ok-sign"></i><h2><?php echo Yii::t('global','report-user'); ?></h2>
+        <i class="icon-ok-sign"></i><h2><?php echo Yii::t('global','reportUser'); ?></h2>
         <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
         <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
     </div>
