@@ -43,7 +43,7 @@
                     <div class="controls">
                         <?php
                         $user = CHtml::listData(User::model()->findAll(''),'id','username');
-                        echo $form->dropDownList($model,'user_id',$user); 
+                        echo $form->dropDownList($model,'blocked_user',$user); 
                         ?>
                     </div>
                 </div>
