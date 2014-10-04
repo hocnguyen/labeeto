@@ -5,7 +5,7 @@ class ReportUserController extends AdminBaseController {
 	{
 		parent::init();
 		
-		$this->breadcrumbs[ Yii::t('global', 'Report Users') ] = array('report-user/index');
+		$this->breadcrumbs[ Yii::t('global', 'Report Users') ] = array('reportUser/index');
 		$this->pageTitle[] = Yii::t('global', 'Report Users');
 	}
     
