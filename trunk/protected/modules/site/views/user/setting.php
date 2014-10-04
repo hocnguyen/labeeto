@@ -15,7 +15,7 @@
     <div class="settings-header">
         
         <!-- General Settings -->
-        <div id="GeneralSettings" style="display: none;">
+        <div id="GeneralSettings" style="display: block;">
             <div class="setting-header">General Settings</div>
             <div class="setting-detail">
                 <form role="form" class="form-setting">
@@ -74,7 +74,7 @@
         <!--End General Settings--!>
         
         <!-- Blocklist -->
-        <div id="Blocklist" style="display: block;">
+        <div id="Blocklist" style="display: none;">
         <?php /*if($report){
                 $arr = array();
                 $arr = explode(",",$report->blocked_user);
