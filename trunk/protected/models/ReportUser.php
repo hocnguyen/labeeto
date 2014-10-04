@@ -6,7 +6,12 @@
  * The followings are the available columns in table 'report_user':
  * @property integer $id
  * @property integer $user_id
- * @property string $blocked_user
+ * @property integer $reported_user
+ * @property integer $blocked_user
+ * @property string $type_report
+ * @property string $content
+ * @property string $created
+ * @property string $updated
  */
 class ReportUser extends CActiveRecord
 {
@@ -46,11 +51,12 @@ class ReportUser extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('user_id, blocked_user', 'required'),
-			array('user_id', 'numerical', 'integerOnly'=>true),
-			array('blocked_user', 'safe'),
+			array('user_id, reported_user, blocked_user', 'numerical', 'integerOnly'=>true),
+            array('type_report', 'length', 'max'=>255),
+            array('content, created, updated', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, user_id, , blocked_user', 'safe', 'on'=>'search'),
+			array('id, user_id, reported_user, blocked_user, type_report, content, created, updated', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -74,7 +80,12 @@ class ReportUser extends CActiveRecord
 		return array(
 			'id' => Yii::t('global', 'ID'),
 			'user_id' => Yii::t('global', 'User'),
-			'blocked_user' => Yii::t('global', 'Blocked User'),
+            'reported_user' => Yii::t('global', 'Reported User'),
+            'blocked_user' => Yii::t('global', 'Blocked User'),
+            'type_report' => Yii::t('global', 'Type Report'),
+            'content' => Yii::t('global', 'Content'),
+            'created' => Yii::t('global', 'Created'),
+            'updated' => Yii::t('global', 'Updated'),
 		);
 	}
 
@@ -91,10 +102,19 @@ class ReportUser extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('user_id',$this->user_id);
-		$criteria->compare('blocked_user',$this->blocked_user,true);
+        $criteria->compare('reported_user',$this->reported_user);
+        $criteria->compare('blocked_user',$this->blocked_user);
+        $criteria->compare('type_report',$this->type_report,true);
+        $criteria->compare('content',$this->content,true);
+        if ($this->created)
+            $criteria->compare('t.created', date('Y-m-d ', strtotime($this->created)), true);
+        $criteria->compare('updated',$this->updated,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+            'sort'=>array(
+                'defaultOrder'=>'t.id DESC',
+            )
 		));
 	}
     
@@ -125,10 +145,10 @@ class ReportUser extends CActiveRecord
 
     public function getActiveProduct(){
         $active_product = array(
-          Yii::t('global','Offensive Messaging'),
-          Yii::t('global','Offensive Profile'),
-          Yii::t('global','Offensive Image'),
-          Yii::t('global','Offensive Scamming'),
+            'Offensive Messaging'   => Yii::t('global','Offensive Messaging'),
+            'Offensive Profile'     => Yii::t('global','Offensive Profile'),
+            'Offensive Image'       => Yii::t('global','Offensive Image'),
+            'Offensive Scamming'    => Yii::t('global','Offensive Scamming'),
         
         );
         return $active_product;

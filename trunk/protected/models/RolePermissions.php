@@ -1,23 +1,22 @@
 <?php
 
 /**
- * This is the model class for table "role_user".
+ * This is the model class for table "role_permissions".
  *
- * The followings are the available columns in table 'role_user':
+ * The followings are the available columns in table 'role_permissions':
  * @property integer $id
- * @property string $name
- * @property string $alias
+ * @property integer $role_id
+ * @property integer $per_id
  * @property string $created
  * @property string $updated
  */
-class RoleUser extends CActiveRecord
+class RolePermissions extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return RoleUser the static model class
+	 * @return RolePermissions the static model class
 	 */
-    public  $role_id;
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -28,7 +27,7 @@ class RoleUser extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'role_user';
+		return 'role_permissions';
 	}
     public function behaviors()
     {
@@ -43,11 +42,11 @@ class RoleUser extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, alias', 'length', 'max'=>255),
+			array('role_id, per_id', 'numerical', 'integerOnly'=>true),
 			array('created, updated', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, alias, created, updated', 'safe', 'on'=>'search'),
+			array('id, role_id, per_id, created, updated', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -69,8 +68,8 @@ class RoleUser extends CActiveRecord
 	{
 		return array(
 			'id' => Yii::t('global', 'ID'),
-			'name' => Yii::t('global', 'Name'),
-			'alias' => Yii::t('global', 'Alias'),
+			'role_id' => Yii::t('global', 'Role'),
+			'per_id' => Yii::t('global', 'Per'),
 			'created' => Yii::t('global', 'Created'),
 			'updated' => Yii::t('global', 'Updated'),
 		);
@@ -88,17 +87,27 @@ class RoleUser extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('alias',$this->alias,true);
-        if ($this->created)
-            $criteria->compare('t.created', date('Y-m-d ', strtotime($this->created)), true);
+		$criteria->compare('role_id',$this->role_id);
+		$criteria->compare('per_id',$this->per_id);
+		$criteria->compare('created',$this->created,true);
 		$criteria->compare('updated',$this->updated,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
-            'sort'=>array(
-                'defaultOrder'=>'t.id DESC',
-            )
 		));
 	}
+
+    public function getValue($per_id, $role_id){
+        $rolePer = RolePermissions::model()->findByAttributes(array('per_id'=>$per_id, 'role_id'=>$role_id));
+        return $rolePer['value'];
+    }
+
+    /*
+     * Truncate Table
+     */
+    public function truncateTable()
+    {
+        Yii::app()->db->createCommand()->truncateTable($this->tableName());
+    }
+
 }
