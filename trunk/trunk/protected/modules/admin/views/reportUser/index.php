@@ -24,12 +24,46 @@
     'dataProvider'=>$model->search(),
     'filter'=>$model,
     'columns'=>array(
-    		'id',
-		'user_id',
-		'reported_user',
-		'blocked_user',
-		'type_report',
-		'content',
+        array(
+            'name'=>'id',
+            'value'=>'$data->id',
+            'htmlOptions'=>array('style'=>'width:35px;')
+        ),
+    	array(
+            'header'=>Yii::t('global','User'),
+            'name'=>'user_id',
+            'htmlOptions'=>array('style'=>'width:300px;')
+        ),	
+		array(
+            'header'=>Yii::t('global','Blocked User'),
+            'name'=>'blocked_user',
+            'htmlOptions'=>array('style'=>'width:300px;')
+        ),  
+        array(
+            'header'=>Yii::t('global','Type Report'),
+            'name'=>'type_report',
+            'htmlOptions'=>array('style'=>'width:300px;')
+        ),  
+		
+		
+		array(
+            'name' => 'created',
+            'header'=>Yii::t('global', 'Created'),
+            'htmlOptions'=> array('style' => 'text-align: center; width:135px;'),
+            'filter' => $this->widget('CJuiDateTimePicker', array(
+                        'model'=>$model,
+                        'attribute'=>'created',
+                        'mode'=>'date',
+                        'options'=>array("dateFormat"=>Yii::app()->locale->getDateFormat('medium_js'), 'ampm' => false),
+                        'language' => Yii::app()->language=='en'?'':Yii::app()->language,
+                        'htmlOptions' => array(
+                            'id' => 'datepicker_for_due_date',
+                            'size' => '10',
+                            'style' => 'text-align: center'
+                        ),
+                    ),
+                    true)
+        ),
 		/*
 		'created',
 		'updated',
