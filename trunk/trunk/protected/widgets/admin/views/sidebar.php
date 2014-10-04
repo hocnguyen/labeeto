@@ -90,6 +90,10 @@ $this->widget('widgets.NBADMenu', array(
                                     'label' => Yii::t('global', 'Manage Roles'),
                                     'url' => array('user/admin'),
                                 ),
+                                array(
+                                    'label' => Yii::t('global', 'Manage Permissions'),
+                                    'url' => array('permissions/index'),
+                                ),
                             ),
                         ),
 
