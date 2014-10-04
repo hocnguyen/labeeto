@@ -75,6 +75,10 @@ $this->widget('widgets.NBADMenu', array(
                                     'label' => Yii::t('global', 'Manage Achievements'),
                                     'url' => array('achievements/index'),
                                 ),
+                                 array(
+                                    'label' => Yii::t('global', 'Manage Report User'),
+                                    'url' => array('reportUser/index'),
+                                ),
                             ),
                         ),
 
