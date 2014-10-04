@@ -34,8 +34,16 @@ class RoleUserController extends AdminBaseController {
 		if(isset($_POST['RoleUser']))
 		{
 			$model->attributes=$_POST['RoleUser'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()){
+				$Pers = Permissions::model()->findAll('parent_id != 0');
+                foreach ( $Pers as $val ){
+                    $rolePermissions = new RolePermissions();
+                    $rolePermissions->role_id = $model->id;
+                    $rolePermissions->per_id  = $val['id'];
+                    $rolePermissions->save();
+                }
+                $this->redirect(array('view','id'=>$model->id));
+            }
 		}
 
 		$this->render('create',array(
