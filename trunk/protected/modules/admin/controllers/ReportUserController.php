@@ -34,6 +34,8 @@ class ReportUserController extends AdminBaseController {
 		if(isset($_POST['ReportUser']))
 		{
 			$model->attributes=$_POST['ReportUser'];
+			$model->type_report = $_POST['ReportUser']['type_report'];
+			$model->content = $_POST['ReportUser']['content'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
