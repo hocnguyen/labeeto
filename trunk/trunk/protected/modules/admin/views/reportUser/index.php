@@ -7,7 +7,7 @@
     <h2><?php echo Yii::t('global', 'Report Users'); ?></h2>
     <form>
         <div class="input-append">
-            <span class="add-on add-on-middle add-on-mini" onclick="window.location.href='<?php echo $this->createUrl('report-user/create') ?>'"><i class="icon-plus-sign" title="<?php echo Yii::t('adminlang', 'Create'); ?>" ></i></span>
+            <span class="add-on add-on-middle add-on-mini" onclick="window.location.href='<?php echo $this->createUrl('reportUser/create') ?>'"><i class="icon-plus-sign" title="<?php echo Yii::t('adminlang', 'Create'); ?>" ></i></span>
             <span class="add-on add-on-middle add-on-mini minimizeTable"><i class="icon-caret-down"></i></span>
             <span class="add-on add-on-last add-on-mini removeTable"><i class="icon-remove"></i></span>
         </div>
