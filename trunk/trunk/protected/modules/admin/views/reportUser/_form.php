@@ -21,10 +21,10 @@
 
             <?php 
             $type_report = array(
-                '1' => 'Offensive Messaging',
-                '2'=>'Offensive Profile',
-                '3'=>'Offensive Image',
-                '4'=>'Offensive Scamming');
+                'Offensive Messaging' => 'Offensive Messaging',
+                'Offensive Profile'=>'Offensive Profile',
+                'Offensive Image'=>'Offensive Image',
+                'Offensive Scamming'=>'Offensive Scamming');
             echo $form->errorSummary($model); ?>
                             <div class="control-group">
                     <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'user_id'); ?>
