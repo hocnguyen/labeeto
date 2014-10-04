@@ -133,5 +133,14 @@ class ReportUser extends CActiveRecord
         );
         return $active_product;
     }
+     public function getUser($id){
+        $result = User::model()->find(array(
+                'select'=>'username',
+                'condition'=>'id=:id',
+                'params'=>array( ':id'=>$id ) )
+        );
+
+        return  $result['username'];
+    }
 
 }
