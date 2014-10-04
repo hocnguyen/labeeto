@@ -15,6 +15,11 @@ class ReportUser extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return ReportUser the static model class
 	 */
+
+	const STATUS_ACTIVE=0;
+    const STATUS_INACTIVE=1;
+    const STATUS_UNVERIFIED=2;
+    const STATUS_SUSPENDED=3;
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -105,4 +110,28 @@ class ReportUser extends CActiveRecord
             return 0;
         }
     }
+
+    public function getTypeReport($type){
+        if($type==self::STATUS_ACTIVE)
+            return Yii::t('global','Offensive Messaging');
+        else if( $type == self::STATUS_INACTIVE )
+            Yii::t('global','Offensive Profile');
+        else if( $type== self::STATUS_UNVERIFIED )
+            Yii::t('global','Offensive Image');
+        else if($type == self::STATUS_SUSPENDED )
+            Yii::t('global','Offensive Scamming');
+        
+    }
+
+    public function getActiveProduct(){
+        $active_product = array(
+          Yii::t('global','Offensive Messaging'),
+          Yii::t('global','Offensive Profile'),
+          Yii::t('global','Offensive Image'),
+          Yii::t('global','Offensive Scamming'),
+        
+        );
+        return $active_product;
+    }
+
 }
