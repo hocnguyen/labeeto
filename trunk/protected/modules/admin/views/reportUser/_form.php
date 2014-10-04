@@ -24,7 +24,9 @@
                     <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'user_id'); ?>
 </label>
                     <div class="controls">
-                        <?php echo $form->textField($model,'user_id', array('class'=>'span10')); ?>
+                        <?php
+                        $user = CHtml::listData(User::model()->findAll(''),'id','username');
+                        echo $form->dropDownList($model,'user_id',$user); ?>
                     </div>
                 </div>
                             <div class="control-group">
@@ -53,20 +55,6 @@
 </label>
                     <div class="controls">
                         <?php $this->widget('application.widgets.ckeditor.CKEditor', array( 'name' => 'ReportUser[content]', 'value' => isset($model->content) ? $model->content : '', 'editorTemplate' => 'full' )); ?>
-                    </div>
-                </div>
-                            <div class="control-group">
-                    <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'created'); ?>
-</label>
-                    <div class="controls">
-                        <?php echo $form->textField($model,'created', array('class'=>'span10')); ?>
-                    </div>
-                </div>
-                            <div class="control-group">
-                    <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'updated'); ?>
-</label>
-                    <div class="controls">
-                        <?php echo $form->textField($model,'updated', array('class'=>'span10')); ?>
                     </div>
                 </div>
                             <div class="control-group">
