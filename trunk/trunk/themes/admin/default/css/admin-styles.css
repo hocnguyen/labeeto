@@ -255,6 +255,25 @@
 .tar {
     text-align: right;
 }
+.action-permissions-title{
+    width:70%;
+    text-align:center !important;
+    font-weight: bold;
+    font-size: 15px;
+}
+.name-permissions-role{
+    font-weight: bold;
+    font-size: 15px;
+}
+.name-parent-value{
+    padding-left: 250px !important;
+    font-weight: bold;
+    text-align: center !important;
+}
+.name-child-value{
+   text-align: right !important;
+    margin-right: 15px;
+}
 .plupload_header_content{
     display:none !important;
 }
