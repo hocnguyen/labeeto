@@ -108,6 +108,7 @@ class User extends CActiveRecord
             'achievements' => array(self::HAS_MANY, 'Achievements', 'user_id'),
             'reportuser' => array(self::HAS_MANY, 'ReportUser', 'user_id'),
             'question' => array(self::HAS_MANY, 'Question', 'user_id'),
+            'photo' => array(self::HAS_MANY, 'Photo', 'user_id'),
 		);
 	}
 
