@@ -119,13 +119,13 @@ class ReportUser extends CActiveRecord
 	}
     
     public function getBlockedUser(){
-        $result = self::model()->findByAttributes(array('user_id'=>Yii::app()->user->id));
+        $result = self::model()->findAllByAttributes(array('user_id'=>Yii::app()->user->id));
+        $arr = array();
         if($result){
-            if(strlen($result->blocked_user) > 0){
-                return substr($result->blocked_user,0, -1);
-            }else{
-                return 0;
+            foreach($result as $value){
+                $arr[] = $value->blocked_user;
             }
+            return implode(", ",$arr);
         }else{
             return 0;
         }

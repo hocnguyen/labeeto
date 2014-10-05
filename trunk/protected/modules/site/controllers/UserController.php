@@ -138,7 +138,7 @@ class UserController extends SiteBaseController {
             $info_user = User::model()->findByPk(Yii::app()->user->id);
             $reported = ReportUser::model()->getBlockedUser(Yii::app()->user->id) ;//"1,2,5,4,15";
             
-            if($reported != '')
+            if($reported != 0)
                 $condition = " AND t.user_id NOT IN (". $reported .")";
             else
                 $condition = '';
@@ -676,46 +676,35 @@ class UserController extends SiteBaseController {
     }
     
     public function actionReportUser(){
-        $check = ReportUser::model()->findByAttributes(array('user_id'=>Yii::app()->user->id));
-        if($check != Null){
-            $str = $check->blocked_user . $_GET['user'] . ',';
-            $check->updateByPk($check->id, array('blocked_user'=>$str));
-        }else{
+        if($_GET['user'] != Yii::app()->user->id){
             $report = new ReportUser();
             $report->user_id = Yii::app()->user->id;
-            $report->blocked_user = $_GET['user'] . ',';
+            $report->blocked_user = $_GET['user'];
+            $report->type_report = $_GET['type'];
+            $report->content = $_GET['comment'];
+            $report->created = date('Y:m:d H:m:s');
+            $report->updated = date('Y:m:d H:m:s');
             $report->save();
         }
     }
     
     public function actionUnlockUser(){
-        $check = ReportUser::model()->findByAttributes(array('user_id'=>Yii::app()->user->id));
+        $check = ReportUser::model()->findByAttributes(array('user_id'=>Yii::app()->user->id, 'blocked_user'=>$_GET['id']));
         if($check != Null){
-            $arr = array();
-            $arr = explode(",",$check->blocked_user);
-            $arr = array_slice($arr, 0, -1);
-            if(($key = array_search($_GET['id'], $arr)) !== false) {
-                unset($arr[$key]);
-            }
-            $str = '';
-            foreach($arr as $value){
-                $str.= $value . ',';
-            }
-            $check->updateByPk($check->id, array('blocked_user'=>$str));
+            ReportUser::model()->deleteByPk($check->id);
         }
     }
     
     public function actionAjaxUser(){
-        $result = ReportUser::model()->findByAttributes(array('user_id'=>Yii::app()->user->id));
-        if($result){
-            $str = $result->blocked_user ;
-            $str = substr($str, 0, -1);
+        //$result = ReportUser::model()->findByAttributes(array('user_id'=>Yii::app()->user->id));
+        $str = ReportUser::model()->getBlockedUser();
+        if($str != 0){
             $request = $_GET['term'];
             if( $request !='' ){
                 if($str != '')
-                    $model = User::model()->findAll(array("condition"=>"t.username LIKE '$request%' AND t.id NOT IN(". $str .")"));
+                    $model = User::model()->findAll(array("condition"=>"t.username LIKE '$request%' AND role != 'admin' AND t.id NOT IN(". $str .")"));
     	        else
-                    $model = User::model()->findAll(array("condition"=>"t.username LIKE '$request%'"));
+                    $model = User::model()->findAll(array("condition"=>"t.username LIKE '$request%' AND role != 'admin'"));
                 $data=array();
     	        foreach($model as $get){
     	            $data[]=$get->username;
@@ -729,31 +718,23 @@ class UserController extends SiteBaseController {
     public function actionAddBlocked(){
         if(isset($_GET['user'])){
             $nameuser = $_GET['user'];
-            $report = ReportUser::model()->findByAttributes(array('user_id'=>Yii::app()->user->id));
             $data = User::model()->find( 't.username =:username', array(':username'=>$nameuser ) );
             $html = '';
-            if($data){
-                if($report){
-                    $str = $report->blocked_user . $data->id .',';
-                    ReportUser::model()->updateByPk($report->id, array('blocked_user'=>$str));
-                    $html .= '<li id="unlock_'.$data->id.'">
-                                <img src="/uploads/avatar/'. $data->photo .'">
-                                <span>'. $data->username .' <a data-id="'.$data->id.'" class="UnlockUser"> Unlock</a></span>
-                            </li>';
-                            
-                    echo $html;
-                }else{
-                    $new_report = new ReportUser();
-                    $new_report->blocked_user = '';
-                    $new_report->blocked_user = $data->id .',';
-                    $new_report->save();
-                    $html .= '<li id="unlock_'.$data->id.'">
-                                <img src="/uploads/avatar/'. $data->photo .'">
-                                <span>'. $data->username .' <a data-id="'.$data->id.'" class="UnlockUser"> Unlock</a></span>
-                            </li>';
-                            
-                    echo $html;
-                }
+            if(($data) && ($data->id != Yii::app()->user->id) ){
+                $new_report = new ReportUser();
+                $new_report->user_id = Yii::app()->user->id;
+                $new_report->blocked_user = $data->id;
+                $new_report->type_report = 'Setting';
+                $new_report->content = 'Blocked in Setting Page';
+                $new_report->created = date('Y:m:d H:m:s');
+                $new_report->updated = date('Y:m:d H:m:s');
+                $new_report->save();
+                $html .= '<li id="unlock_'.$data->id.'">
+                            <img src="/uploads/avatar/'. $data->photo .'">
+                            <span>'. $data->username .' <a data-id="'.$data->id.'" class="UnlockUser"> Unlock</a></span>
+                        </li>';
+                        
+                echo $html;
             }
         }
     }

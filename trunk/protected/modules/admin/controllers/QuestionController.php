@@ -193,16 +193,12 @@ class QuestionController extends AdminBaseController {
     public function actionDeleteUser($id)
 	{     
 		if(isset($_GET['id'])){
-		  $this->redirect(Yii::app()->homeUrl);
 		      Question::model()->deleteByPk($_GET['id']);
               
-              $answer = Answer::mmodel()->findByAttributes(array('question_id'=>$_GET['id']));
-              if($answer){
-                    echo "#434"; exit;
-                    Answer::model()->deleteByPk($answer->id);
-                    $this->redirect('/admin/question/questionUser');
-              }
-              $this->redirect(Yii::app()->homeUrl);
+              $answer = Answer::model()->findByAttributes(array('question_id'=>$_GET['id']));
+              if($answer)
+                Answer::model()->deleteByPk($answer->id);
+              $this->redirect('/admin/question/questionUser');
 		}else{
 		  $this->redirect('/admin/question/questionUser');
 		}
