@@ -359,6 +359,7 @@ $(document).ready(function(){
         var id = $(this).attr("data-id");
         var avatar = $('#avatar_hidien_'+id).val();
         $('#IdOfUser').val(id);
+        $('#ReportUser .agreed input').addClass('checked_'+id);
         $('#ReportUser textarea').val('');
         showImageReport(avatar);
     })
@@ -376,9 +377,10 @@ $(document).ready(function(){
      $('#ReportedUser').live('click',function(){
         var type_report = $('#type_report').val();
         var user = $('#IdOfUser').val();
+        var checked = $('.checked_'+user).attr('checked');
         var comment_report = $('#comment_report').val();
-        if(type_report =='' || comment_report ==''){
-            alert('Please ensure the comment is filled out.');
+        if(type_report =='' || comment_report =='' || checked != 'checked' ){
+            alert('Please ensure the comment, type report and checkbox is filled out.');
         }else if(type_report.length == null){
             alert('Please ensure the type report is selected.');
         }else if(comment_report.length > 25){
