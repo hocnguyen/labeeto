@@ -45,12 +45,12 @@ class Photo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('is_public, user_id', 'numerical', 'integerOnly'=>true),
+			array('is_public, user_id, is_approval', 'numerical', 'integerOnly'=>true),
 			array('photo', 'length', 'max'=>500),
 			array('date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, photo, is_public, user_id, date', 'safe', 'on'=>'search'),
+			array('id, photo, is_public, user_id, date, is_approval', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -75,6 +75,7 @@ class Photo extends CActiveRecord
 			'id' => Yii::t('global', 'ID'),
 			'photo' => Yii::t('global', 'Photo'),
 			'is_public' => Yii::t('global', 'Is Public'),
+            'is_approval' => Yii::t('global', 'Is Approval'),
 			'user_id' => Yii::t('global', 'User'),
 			'date' => Yii::t('global', 'Date'),
 		);
@@ -94,11 +95,57 @@ class Photo extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('photo',$this->photo,true);
 		$criteria->compare('is_public',$this->is_public);
+        $criteria->compare('is_approval',$this->is_approval);
 		$criteria->compare('user_id',$this->user_id);
-		$criteria->compare('date',$this->date,true);
+		//$criteria->compare('date',$this->date,true);
+         if ($this->date)
+            $criteria->compare('date', date('Y-m-d ', strtotime($this->date)), true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+            'sort'=>array(
+                'defaultOrder'=>'id DESC',
+                'attributes'=>array(
+                    '*',
+                ),
+            ),
 		));
 	}
+    
+    function showAdminPhoto()
+    {
+        return '<a class="fancybox" href="/uploads/photo/' . $this->photo . '" rel="group">
+                    <img class="img-polaroid fix_image_products" src="/uploads/photo/' . $this->photo . '" style="height: 40px;"/>
+                </a>';
+    }
+    
+    public function getPublic($is_public){
+        if($is_public == 1)
+            return Yii::t('global', 'Public');
+        return Yii::t('global', 'No Public');
+        
+    }
+    
+    public function getApproval($is_approval){
+        if($is_approval == 1)
+            return Yii::t('global', 'Approval');
+        return Yii::t('global', 'No Approval');
+    }
+    
+    public function getPublicStatus(){
+        $public = array(
+            Yii::t('global','No Public'),
+              Yii::t('global','Public')
+              
+            );
+        return $public;
+    }
+    
+    public function getApprovalStatus(){
+        $approval = array(
+              Yii::t('global','No Approval'),
+              Yii::t('global','Approval')
+            );
+        return $approval;
+    }
 }
