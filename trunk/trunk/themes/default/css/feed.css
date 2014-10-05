@@ -2479,7 +2479,7 @@ input[type="range"]::-ms-fill-lower {
     border: 1px solid #1f2a32;
     background: #ddd;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ddd', endColorstr='#ddd'); /* IE */
-    margin-right: 8.5px;
+    margin-right: 6.5px;
 }
 .main-search .search-block button.btn-all:focus{
 	outline: none;
