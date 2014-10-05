@@ -574,7 +574,6 @@ r
             </div>
             
             <div class="all-question"></div>
-            
             <?php if($this->question){ 
                 $i = 0;
                 foreach($this->question as $value){                     
