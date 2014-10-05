@@ -49,7 +49,7 @@
         array(
             'name'=> 'user_id',
             'header'=> Yii::t('global', 'User'),
-            'value'=> '$data->user_id',
+            'value'=> 'User::model()->getUser($data->user_id)',
             'type' => 'raw',
             'filter' => $alluser,
         ),
