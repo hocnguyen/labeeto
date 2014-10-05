@@ -79,6 +79,14 @@ $this->widget('widgets.NBADMenu', array(
                                     'label' => Yii::t('global', 'Manage Report User'),
                                     'url' => array('reportUser/index'),
                                 ),
+                                 array(
+                                    'label' => Yii::t('global', 'Manage Question Default'),
+                                    'url' => array('question/index'),
+                                ),
+                                array(
+                                    'label' => Yii::t('global', 'Manage Question User'),
+                                    'url' => array('question/questionUser'),
+                                ),
                             ),
                         ),
 
