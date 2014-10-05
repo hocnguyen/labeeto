@@ -87,6 +87,11 @@ $this->widget('widgets.NBADMenu', array(
                                     'label' => Yii::t('global', 'Manage Question User'),
                                     'url' => array('question/questionUser'),
                                 ),
+                                
+                                array(
+                                    'label' => Yii::t('global', 'Manage Photo'),
+                                    'url' => array('photo/index'),
+                                ),
                             ),
                         ),
 
