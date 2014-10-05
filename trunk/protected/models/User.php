@@ -107,6 +107,7 @@ class User extends CActiveRecord
 		return array(
             'achievements' => array(self::HAS_MANY, 'Achievements', 'user_id'),
             'reportuser' => array(self::HAS_MANY, 'ReportUser', 'user_id'),
+            'question' => array(self::HAS_MANY, 'Question', 'user_id'),
 		);
 	}
 
@@ -310,6 +311,28 @@ class User extends CActiveRecord
             return  $result['photo'];
         else
             return 'no_image.png';
+    }
+    
+    public function getIdOfUser(){
+        $result = self::model()->findAll();
+        $arr = array();
+        foreach($result as $value){
+            if($value->role != 'admin'){
+                $arr[] = $value->id;
+            }
+        }
+        return $arr;
+    }
+    
+    public function getAllUser(){
+        $result = self::model()->findAll();
+        $arr = array();
+        foreach($result as $value){
+            if($value->role != 'admin'){
+                $arr[$value['id']] = $value['username'];
+            }
+        }
+        return $arr;
     }
 
 }

@@ -16,6 +16,9 @@ class Question extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return Question the static model class
 	 */
+    const DEFAULT_QUESTION = 0;
+    const UESR_QUESTION = 1;
+    public $username;
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -41,11 +44,11 @@ class Question extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('question, user_id, default', 'required'),
+			array('question', 'required'),
 			array('user_id, default', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, question, user_id, default', 'safe', 'on'=>'search'),
+			array('id, question, user_id, default', 'safe', 'on'=>'search, questionuser'),
 		);
 	}
 
@@ -57,6 +60,7 @@ class Question extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+            'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
 
@@ -86,16 +90,17 @@ class Question extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('question',$this->question,true);
-		$criteria->compare('user_id',$this->user_id);
-		$criteria->compare('default',$this->default);
-
+		$criteria->compare('user_id',$this->user_id, true);
+		$criteria->compare('default',$this->default, true);
+        //$criteria->condition = "user_id = ". self::DEFAULT_QUESTION;
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
     
     public function getIdOfQuestion(){
-        $sql = "SELECT * FROM question WHERE user_id = ". Yii::app()->user->id ." OR user_id = '' ORDER BY question.default ASC";
+        $sql = "SELECT * FROM question WHERE user_id = ". Yii::app()->user->id ." OR 
+        user_id = 0 ORDER BY question.default ASC";
         $result = Question::model()->findAllBySql($sql);
         $arr = array();
         foreach ($result as $key => $item) {
@@ -121,4 +126,19 @@ class Question extends CActiveRecord
         ));
         return $result['default'];
     }
+    
+    public function questionuser()
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+
+		$criteria=new CDbCriteria;
+		$criteria->compare('id',$this->id);
+		$criteria->compare('question',$this->question,true);
+		$criteria->compare('user_id',$this->user_id, true);
+        $criteria->compare('t.default', 0);
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}        
 }
