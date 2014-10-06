@@ -39,7 +39,7 @@
             'name'=>'user_id',
             'filter'=>$active_user,
             'value' => '$data->getUser($data->user_id)',
-            'htmlOptions'=>array('style'=>'width:300px;')
+            'htmlOptions'=>array('style'=>'width:200px;')
         ),	
 		array(
             'header'=>Yii::t('global','Blocked User'),
@@ -47,7 +47,7 @@
             'type' => 'raw',
             'filter'=>$active_user,
             'value' => '$data->getUser($data->blocked_user)',
-            'htmlOptions'=>array('style'=>'width:300px;')
+            'htmlOptions'=>array('style'=>'width:200px;')
         ),  
         array(
             'header'=>Yii::t('global','Type Report'),
@@ -55,7 +55,7 @@
             'type' => 'raw',
             'filter'=>$active_product,
             'value' => '$data->type_report',
-            'htmlOptions'=>array('style'=>'width:300px;')
+            'htmlOptions'=>array('style'=>'width:200px;')
         ),  
 		
 		array(
@@ -64,7 +64,7 @@
             'type' => 'raw',
             'filter'=>$active_airchivements,
             'value' => '$data->getAirchivements($data->achievements_id)',
-            'htmlOptions'=>array('style'=>'width:300px;')
+            'htmlOptions'=>array('style'=>'width:200px;')
         ),  
 		array(
             'name' => 'created',
