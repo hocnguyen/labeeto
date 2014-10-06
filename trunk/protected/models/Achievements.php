@@ -135,14 +135,6 @@ class Achievements extends CActiveRecord
             return Yii::t('global','active');
         return Yii::t('global','Inactive');
     }
-    public function getAirchivements($id){
-        $result = Achievements::model()->find(array(
-                'select'=>'name',
-                'condition'=>'id=:id',
-                'params'=>array( ':id'=>$id ) )
-        );
-
-        return  $result['name'];
-    }
+    
 
 }
