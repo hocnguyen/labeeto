@@ -1,0 +1,1 @@
+ALTER TABLE  `report_user` ADD  `achievements_id` INT( 10 ) NOT NULL AFTER  `content`
