@@ -9,6 +9,7 @@
  * @property string $alias
  * @property string $content
  * @property string $location
+ * @property string $media
  * @property integer $status
  * @property integer $user_id
  * @property string $created
@@ -25,7 +26,7 @@ class Achievements extends CActiveRecord
 	 * @return Achievements the static model class
 	 */
     const STATUS_ACTIVE = 1;
-    public $users;
+    public $username;
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -52,11 +53,11 @@ class Achievements extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('status, user_id', 'numerical', 'integerOnly'=>true),
-			array('name, alias', 'length', 'max'=>255),
+			array('name, alias, location, media', 'length', 'max'=>255),
 			array('content, created, updated', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, alias, content, location, status, user_id, created, updated, users', 'safe', 'on'=>'search'),
+			array('id, name, alias, content, location, media, status, user_id, created, updated, username', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -68,7 +69,7 @@ class Achievements extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-          'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
+          'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
 
@@ -83,6 +84,7 @@ class Achievements extends CActiveRecord
 			'alias' => Yii::t('global', 'Alias'),
 			'content' => Yii::t('global', 'Content'),
             'location' => Yii::t('global', 'Location'),
+            'media' => Yii::t('global', 'Media'),
             'status' => Yii::t('global', 'Status'),
             'user_id' => Yii::t('global', 'User'),
 			'created' => Yii::t('global', 'Created'),
@@ -113,16 +115,16 @@ class Achievements extends CActiveRecord
         if ($this->created)
             $criteria->compare('t.created', date('Y-m-d ', strtotime($this->created)), true);
 		$criteria->compare('t.updated',$this->updated,true);
-        $criteria->compare('user.id',$this->users);
+        $criteria->compare('user.username',$this->username, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
             'sort'=>array(
                 'defaultOrder'=>'t.id DESC',
                 'attributes'=>array(
-                    'usernames'=>array(
-                        'asc'=>'users.username',
-                        'desc'=>'users.username DESC',
+                    'username'=>array(
+                        'asc'=>'user.username',
+                        'desc'=>'user.username DESC',
                     ),
                     '*',
                 ),
