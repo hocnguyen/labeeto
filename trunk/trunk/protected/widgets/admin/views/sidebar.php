@@ -101,7 +101,7 @@ $this->widget('widgets.NBADMenu', array(
                             'items' => array(
                                 array(
                                     'label' => Yii::t('global', 'Manage Roles'),
-                                    'url' => array('user/admin'),
+                                    'url' => array('rolePermissions/index'),
                                 ),
                                 array(
                                     'label' => Yii::t('global', 'Manage Permissions'),
