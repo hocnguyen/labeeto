@@ -54,6 +54,16 @@
                         <?php echo $form->dropDownList($model, 'type_report', $type_report, array('prompt' => '--Select Option--')); ?>
                     </div>
                 </div>
+                <div class="control-group">
+                    <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'achievements_id'); ?>
+</label>
+                    <div class="controls">
+                        <?php
+                        $achievements = CHtml::listData(Achievements::model()->findAll(''),'id','name');
+                        echo $form->dropDownList($model,'achievements_id',$achievements); 
+                        ?>
+                    </div>
+                </div>
                             <div class="control-group">
                     <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'content'); ?>
 </label>
