@@ -32,7 +32,12 @@
             'value'=>'$data->id',
             'htmlOptions'=>array('style'=>'width:35px;')
         ),
-		'name',
+        array(
+            'name'=>'username',
+            'header'=>'Member',
+            'value'=>'$data->user->username',
+            'type'=>'raw',
+        ),
         array(
             'name'=>'status',
             'header'=>Yii::t('global','Status'),

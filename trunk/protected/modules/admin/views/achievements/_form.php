@@ -21,10 +21,10 @@
 
             <?php echo $form->errorSummary($model); ?>
                             <div class="control-group">
-                    <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'name'); ?>
+                    <label for="fullname" class="control-label"><?php echo Yii::t('global', 'Member'); ?>
 </label>
                     <div class="controls">
-                        <?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>255, 'class'=>'span10')); ?>
+                        <?php echo $form->dropDownList($model,'user_id',CHtml::listData(User::model()->findAll(),'id','username')); ?>
                     </div>
                 </div>
                             <div class="control-group">
