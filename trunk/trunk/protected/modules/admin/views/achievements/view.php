@@ -25,7 +25,7 @@
                     'htmlOptions' => array('class' => 'table-hover', 'style'=>'width:100% !important;'),
                     'data'=>$model,
                     'attributes'=>array(
-                    array('name'=>'name'),
+                    array('name'=>Yii::t('global','Member'),'value'=>$model->user->username),
                     //array('name'=>'alias'),
                     array('name'=>'content','type'=>'raw'),
                     array('name'=>'status','value'=>Achievements::model()->getStatus($model->status),'type'=>'raw'),
