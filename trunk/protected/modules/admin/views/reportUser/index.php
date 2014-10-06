@@ -21,6 +21,7 @@
     <?php 
     $active_product = ReportUser::getActiveProduct();
     $active_user = CHtml::listData(User::model()->findAll(),'id','username');
+    $active_airchivements = CHtml::listData(Achievements::model()->findAll(),'id','name');
     $this->widget('zii.widgets.grid.CGridView', array(
     'id'=>'report-user-grid',
     'htmlOptions' => array('class' => 'table table-bordered table-hover table-striped'),
@@ -57,7 +58,14 @@
             'htmlOptions'=>array('style'=>'width:300px;')
         ),  
 		
-		
+		array(
+            'header'=>Yii::t('global','Achievements'),
+            'name'=>'achievements_id',
+            'type' => 'raw',
+            'filter'=>$active_airchivements,
+            'value' => '$data->getAirchivements($data->achievements_id)',
+            'htmlOptions'=>array('style'=>'width:300px;')
+        ),  
 		array(
             'name' => 'created',
             'header'=>Yii::t('global', 'Created'),
