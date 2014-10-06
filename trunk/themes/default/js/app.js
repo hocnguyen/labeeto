@@ -218,7 +218,7 @@ $(document).ready(function(){
             check = 3 ;// Password empty
             return check;
         }
-        var re = /^.*(?=.{8,})(?=.*[A-Z])(?=.*[\d]).*$/;
+        var re = /^.*(?=.{8,})/;
         var pw = re.exec(password);
         if (!pw) {
             check = 4 ;// Password must 8 characters long and contain atleast 1 uppercase letter and 1 number
