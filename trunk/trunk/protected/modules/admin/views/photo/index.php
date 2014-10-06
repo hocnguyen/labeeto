@@ -20,7 +20,8 @@
 <div class="floatingBox table">
 <div class="container-fluid">
 
-    <?php 
+    <?php
+    $active_user = CHtml::listData(User::model()->findAll(),'id','username'); 
     $public = Photo::getPublicStatus();
     $approval = Photo::getApprovalStatus();
     $alluser = User::model()->getAllUser();
@@ -51,7 +52,7 @@
             'header'=> Yii::t('global', 'User'),
             'value'=> 'User::model()->getUser($data->user_id)',
             'type' => 'raw',
-            'filter' => $alluser,
+            'filter' =>$active_user ,
         ),
         array(
             'name' => 'date',
