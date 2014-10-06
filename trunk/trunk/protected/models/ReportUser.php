@@ -50,13 +50,13 @@ class ReportUser extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_id, blocked_user', 'required'),
-			array('user_id, reported_user, blocked_user', 'numerical', 'integerOnly'=>true),
+			array('user_id, blocked_user, achievements_id', 'required'),
+			array('user_id, reported_user, blocked_user, achievements_id', 'numerical', 'integerOnly'=>true),
             array('type_report', 'length', 'max'=>255),
             array('content, created, updated', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, user_id, reported_user, blocked_user, type_report, content, created, updated', 'safe', 'on'=>'search'),
+			array('id, user_id, reported_user, blocked_user, type_report, content, created, updated, achievements_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -161,6 +161,16 @@ class ReportUser extends CActiveRecord
         );
 
         return  $result['username'];
+    }
+
+    public function getAirchivements($id){
+        $result = Achievements::model()->find(array(
+                'select'=>'name',
+                'condition'=>'id=:id',
+                'params'=>array( ':id'=>$id ) )
+        );
+
+        return  $result['name'];
     }
 
 }
