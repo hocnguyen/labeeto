@@ -93,7 +93,7 @@
                 },
                 "pw": {
                     "regex": /^.*(?=.{8,})(?=.*[A-Z])(?=.*[\d]).*$/,
-                    "alertText": "* Password must 8 characters long and contain atleast 1 uppercase letter and 1 number"
+                    "alertText": "* Password must 8 characters long "
                 },
                 "space": {
                     "regex": /^([0-9a-z]+)$/,
