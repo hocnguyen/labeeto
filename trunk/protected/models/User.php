@@ -257,17 +257,18 @@ class User extends CActiveRecord
 
     function getStatusMember($status){
         if($status==self::STATUS_ACTIVE)
-            return Yii::t('global','Active');
+            $sta = Yii::t('global','Active');
         else if( $status == self::STATUS_INACTIVE )
-            Yii::t('global','Inactive');
+            $sta = Yii::t('global','Inactive');
         else if( $status == self::STATUS_UNVERIFIED )
-            Yii::t('global','Unverified');
+            $sta = Yii::t('global','Unverified');
         else if( $status == self::STATUS_SUSPENDED )
-            Yii::t('global','Suspended');
+            $sta = Yii::t('global','Suspended');
         else if( $status == self::STATUS_REPORTED )
-            Yii::t('global','Reported');
+            $sta = Yii::t('global','Reported');
         else if( $status == self::STATUS_PREMIUM )
-            Yii::t('global','Premium');
+            $sta =Yii::t('global','Premium');
+        return $sta;
     }
 
     function showAdminImage(){
