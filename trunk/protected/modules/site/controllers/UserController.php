@@ -694,6 +694,11 @@ class UserController extends SiteBaseController {
             ReportUser::model()->deleteByPk($check->id);
         }
     }
+
+    public function actionCheckStatusOnline(  ){
+        $members = new User();
+        $members->updateStatusOnline();
+    }
     
     public function actionAjaxUser(){
         //$result = ReportUser::model()->findByAttributes(array('user_id'=>Yii::app()->user->id));

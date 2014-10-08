@@ -17,12 +17,11 @@
             </div>
             <div class="footer-post">
                 <span class="add-media">
-                    <input type="file" name="media_post" id="media" style="display: none;" />
-                    <label for="media">Add Media</label>
+                   <!-- <input type="file" name="media_post" id="media" style="display: none;" />-->
+                    <label for="media" class="label-add-media">Add Media</label>
                 </span>
                 <span class="add-location" style="margin-top: 10px;">
-                    <input type="file" name="location" id="location" style="display: none;" />
-                    <label for="location" style="margin-top: 5px;">Add Location</label>
+                    <label for="location" style="margin-top: 5px;" class="lable-add-location">Add Location</label>
                 </span>
                 <input type="submit" class="post-btn" value="Post" />
             </div>
@@ -172,6 +171,29 @@
     </div>
   </div>
 </div>
+
+<!-- Modal Add Location-->
+<div class="modal fade" id="addLocation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content special-border">
+            <div class="modal-header header-report">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title report-title">Add a location to post </h4>
+            </div>
+            <div class="">
+               <input id="address" class="location fix-input-location validate[required]" name="location-popup" type="text" placeholder="Where are you?">
+                <div id="maps-test-location"></div>
+            </div>
+            <div class="modal-footer footer-report">
+                <div class="agreed">
+                </div>
+                <a type="button" class="btn btn-primary my-report">Add</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script>
     $('.post-btn').click(function(){
         content = $('.post-textarea').val();
