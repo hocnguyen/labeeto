@@ -44,7 +44,9 @@ class CustomUrlManager extends CUrlManager {
                 
 				"/admin-login" => 'site/user/admin',
 				"/forgotpassword" => 'site/user/lostpassword',
-
+                
+                "/user/detail/<id:([a-zA-z0-9-_]+)>" => 'site/user/detail/',
+                
 				"/" => 'site/index/index',
 				"/<_c:([a-zA-z0-9-]+)>" => 'site/<_c>/index',
 				"/<_c:([a-zA-z0-9-]+)>/<_a:([a-zA-z0-9-]+)>" => 'site/<_c>/<_a>',
