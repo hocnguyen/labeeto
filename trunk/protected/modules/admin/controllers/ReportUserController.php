@@ -114,6 +114,14 @@ class ReportUserController extends AdminBaseController {
 			'dataProvider'=>$dataProvider,
 		));
 	}
+	public function actionSuspend($id)
+	{
+		$connection=Yii::app()->db;
+		$sql="UPDATE users set status='3' WHERE id='$id'";
+        $command = $connection->createCommand($sql);
+		$command->execute();
+		$this->redirect('/admin/reportUser');
+	}
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
@@ -140,4 +148,7 @@ class ReportUserController extends AdminBaseController {
 			Yii::app()->end();
 		}
 	}
+
+   
+
 }
