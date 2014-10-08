@@ -42,7 +42,7 @@
 		'email',
         array(
             'name'=>'status',
-            'header'=>Yii::t('global','Status'),
+            'header'=>Yii::t('global','Membership'),
             'type' => 'raw',
             'filter'=>$active_product,
             'value' => '$data->getStatusMember($data->status)',
