@@ -39,15 +39,16 @@
             'name'=>'user_id',
             'filter'=>$active_user,
             'value' => '$data->getUser($data->user_id)',
-            'htmlOptions'=>array('style'=>'width:200px;')
-        ),	
+            'htmlOptions'=>array('style'=>'width:100px;')
+        ),
+        
 		array(
             'header'=>Yii::t('global','Blocked User'),
             'name'=>'blocked_user',
             'type' => 'raw',
             'filter'=>$active_user,
             'value' => '$data->getUser($data->blocked_user)',
-            'htmlOptions'=>array('style'=>'width:200px;')
+            'htmlOptions'=>array('style'=>'width:100px;')
         ),  
         array(
             'header'=>Yii::t('global','Type Report'),
@@ -55,7 +56,7 @@
             'type' => 'raw',
             'filter'=>$active_product,
             'value' => '$data->type_report',
-            'htmlOptions'=>array('style'=>'width:200px;')
+            'htmlOptions'=>array('style'=>'width:100px;')
         ),  
 		
 		array(
@@ -64,8 +65,17 @@
             'type' => 'raw',
             'filter'=>$active_airchivements,
             'value' => '$data->getAirchivements($data->achievements_id)',
-            'htmlOptions'=>array('style'=>'width:200px;')
-        ),  
+            'htmlOptions'=>array('style'=>'width:100px;')
+        ), 
+        array(
+            'header'=>Yii::t('global','Suspend'),
+            'name'=>'user_id',
+            'value'=>'ReportUser::model()->showlink($data->blocked_user)',
+            'filter'=>'',
+            'htmlOptions'=>array('style'=>'width:100px;'),
+            'type'=>'raw',
+        ),
+ 
 		array(
             'name' => 'created',
             'header'=>Yii::t('global', 'Created'),
