@@ -173,4 +173,8 @@ class ReportUser extends CActiveRecord
         return  $result['name'];
     }
 
+    public function showlink($id){
+        return '<a href="/admin/reportUser/suspend?id='.$id.'" >Suppend</a>';
+    }
+
 }
