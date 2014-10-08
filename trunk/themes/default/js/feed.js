@@ -352,8 +352,15 @@ $(document).ready(function(){
     $('.private-photo').click(function(){
         $('#private_photo').modal('show');
     })
-    
-    
+
+    setInterval("updateCheckStatus()", 10000);
+    function updateCheckStatus()
+    {
+        $.get('/user/checkStatusOnline', function() {
+
+        });
+    }
+
     /**Report user**/
     $('.report-user').click(function(){
         var id = $(this).attr("data-id");
