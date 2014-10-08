@@ -35,6 +35,7 @@
  * @property string $created
  * @property string $updated
  * @property string $verify_profile
+ * @property integer $is_online
  *
  * The followings are the available model relations:
  * @property Achievements[] $achievements
@@ -52,9 +53,11 @@ class User extends CActiveRecord
     const STATUS_SUSPENDED  = 3;
     const STATUS_REPORTED   = 4;
     const STATUS_PREMIUM    = 5;
-    const WAIT_VERIFY    = 1;
-    const VERIFIED    = 2;
-    const NO_VERIFY    = 0;
+    const WAIT_VERIFY       = 1;
+    const VERIFIED          = 2;
+    const NO_VERIFY         = 0;
+    const USER_ONLINE       = 1;
+    const USER_OFFLINE       = 0;
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -81,7 +84,7 @@ class User extends CActiveRecord
 		// will receive user inputs.
 		return array(
             array('username','required'),
-			array('gender, joined, status', 'numerical', 'integerOnly'=>true),
+			array('gender, joined, status, is_online', 'numerical', 'integerOnly'=>true),
 			array('username, email, photo, address', 'length', 'max'=>155),
 			array('career, height, smoke', 'length', 'max'=>100),
 			array('password, fname, lname, education, religion', 'length', 'max'=>40),
@@ -93,7 +96,7 @@ class User extends CActiveRecord
             array('email', 'uniqueEmail','on'=>'create'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, gender, career, email, password, joined, role, ehtnicity, fname, lname, birthday, photo, address, education, religion, height, excercise, passion, goal, smoke, relations, zipcode, latitude, longtitude, drink, status, last_logged, , created, updated', 'safe', 'on'=>'search'),
+			array('id, username, gender, career, email, password, joined, role, ehtnicity, fname, lname, birthday, photo, address, education, religion, height, excercise, passion, goal, smoke, relations, zipcode, latitude, longtitude, drink, status, last_logged, , created, updated, is_online', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -148,6 +151,7 @@ class User extends CActiveRecord
 			'last_logged' => Yii::t('global', 'Last Logged'),
             'created' => Yii::t('global', 'Created'),
             'updated' => Yii::t('global', 'Updated'),
+            'is_online' => Yii::t('global', 'Status'),
 		);
 	}
 
@@ -195,6 +199,7 @@ class User extends CActiveRecord
         if ($this->created)
             $criteria->compare('t.created', date('Y-m-d ', strtotime($this->created)), true);
         $criteria->compare('updated',$this->updated,true);
+        $criteria->compare('is_online',$this->is_online);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -266,7 +271,7 @@ class User extends CActiveRecord
     }
 
     function showAdminImage(){
-        $image = ($this->photo !='')?$this->photo:'no_image.png';
+        $image = ( $this->photo != 'undefined' )?$this->photo:'no_image.png';
             return '<a class="fancybox" href="/uploads/avatar/'.$image.'" rel="group">
 						<img class="img-polaroid fix_image_products" src="/uploads/avatar/'.$image.'" style="height: 40px;"/>
 					</a>';
@@ -275,7 +280,7 @@ class User extends CActiveRecord
     }
 
     function showAdminImageNew( $image ){
-        $image = ($image !='')?$image:'no_image.png';
+        $image = ( $image != 'undefined' )?$image:'no_image.png';
             return '<a class="fancybox" href="/uploads/avatar/'.$image.'" rel="group">
 					<img class="img-polaroid fix_image_products" src="/uploads/avatar/'.$image.'" style="height: 40px;"/>
 				</a>';
@@ -334,6 +339,46 @@ class User extends CActiveRecord
             }
         }
         return $arr;
+    }
+
+    function updateStatusOnline(){
+        $table_members = $this->tableName();
+        Yii::app()->db->createCommand()
+            ->update($table_members,
+                array( 'last_logged'=> new CDbExpression('NOW()'), 'is_online' => User::USER_ONLINE ),
+                'id=:id', array( ':id'=>Yii::app()->user->id )
+            );
+        $sql = " SELECT username FROM users WHERE last_logged > NOW()-60 AND id ='".Yii::app()->user->id."' ";
+        $res = Yii::app()->db->createCommand($sql)->queryAll();
+        foreach ( $res as $result ){
+            $username = $result['username'];
+        }
+        if( $username == '' ){
+            $user = User::model()->findByPk(Yii::app()->user->id);
+            $user->is_online = User::USER_OFFLINE;
+            $user->save();
+        }
+    }
+
+    function checkStatusUserOnline( $user_id ){
+        $sql = " SELECT username FROM users WHERE last_logged > NOW()-60 AND id ='$user_id' ";
+        $res = Yii::app()->db->createCommand($sql)->queryAll();
+        foreach ( $res as $result ){
+            $username = $result['username'];
+        }
+        error_reporting(0);
+        if( $username != '' )
+            $viewStatus = Yii::t('global', 'Online');
+        else
+            $viewStatus = Yii::t('global', 'Offline');
+        return $viewStatus;
+    }
+
+    function checkUserOnlineNew(){
+        $sta = Yii::t('global', 'Offline');
+        if( $this->is_online == User::USER_ONLINE )
+            $sta = Yii::t('global', 'Online');
+        return $sta;
     }
 
 }
