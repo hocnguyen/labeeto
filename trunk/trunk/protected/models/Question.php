@@ -98,8 +98,8 @@ class Question extends CActiveRecord
 		));
 	}
     
-    public function getIdOfQuestion(){
-        $sql = "SELECT * FROM question WHERE user_id = ". Yii::app()->user->id ." OR 
+    public function getIdOfQuestion($id){
+        $sql = "SELECT * FROM question WHERE user_id = ". $id ." OR 
         user_id = 0 ORDER BY question.default ASC";
         $result = Question::model()->findAllBySql($sql);
         $arr = array();

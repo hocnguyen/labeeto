@@ -5,7 +5,7 @@ if($user){?>
         <div class="profile">
             <img src="../uploads/avatar/<?php echo Utils::getAvatar($user->photo); ?>">
             <div class="crycle-img">
-                <h2><a href="/profile_other"><?php echo $user->username; ?></a><span class="time-location">18 F, CA,</span> <span class="dot-icon"> <?php echo $data->created; ?></span></h2>
+                <h2><a href="/user/detail/<?php echo $user->id; ?>"><?php echo $user->username; ?></a><span class="time-location">18 F, CA,</span> <span class="dot-icon"> <?php echo $data->created; ?></span></h2>
                 <a class="message" data-toggle="modal" data-target="#SendaMessage">Send a Message</a>
                 <a class="report-user" data-id="<?php echo $user->id; ?>" data-toggle="modal" data-target="#ReportUser">Report User</a>
                 <input type="hidden" id="avatar_hidien_<?php echo $user->id; ?>" value="<?php echo $user->photo; ?>" />

@@ -94,13 +94,13 @@ class Answer extends CActiveRecord
 		));
 	}
     
-    public function getAnswer(){
-        $arr = Question::model()->getIdOfQuestion();
+    public function getAnswer($id){
+        $arr = Question::model()->getIdOfQuestion($id);
         
         if($arr == NULL)
             return false;
         else{
-            $sql = 'SELECT * FROM answer WHERE question_id IN ('. implode(", ",$arr). ') AND answer.user_id = '. Yii::app()->user->id;
+            $sql = 'SELECT * FROM answer WHERE question_id IN ('. implode(", ",$arr). ') AND answer.user_id = '. $id ;
             $answer = Yii::app()->db->createCommand($sql)->queryAll();
             if($answer)
                 return $answer;

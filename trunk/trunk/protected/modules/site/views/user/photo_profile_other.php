@@ -3,17 +3,16 @@
 <div class="content-photo-private" style="display: none;">
     <div class="title-photo">
         <h3>Private Photos <span>(<?php echo count($private) ?> Photos)</span></h3>
-        <p>
+        <!--<p>
             <a href="#" class="private-photo">Upload</a>
             <a href="#"  class="close-icon close-photo"></a>
-        </p>
+        </p>-->
 
     </div>
     <ul>
         <?php if(!empty($private)){
             foreach($private as $photo){ ?>
                 <li class="per-photo">
-                    <a href="<?php echo $photo->id?>" data-items="private" class="del-photo">X</a>
                     <a href="/uploads/photo/<?php echo $photo->photo ?>" rel="content-photo-private" class="photo">
                         <img class="img-photo" src="/uploads/photo/<?php echo $photo->photo ?>">
                     </a>
@@ -29,10 +28,10 @@
 <div class="content-photo" style="display: none;">
     <div class="title-photo">
         <h3>Photos <span>(<?php echo count($photos)?> Photos)</span></h3>
-        <p>
+       <!-- <p>
             <a href="#" class="public-photo">Upload</a>
             <a href="#"  class="close-icon close-photo"></a>
-        </p>
+        </p>-->
 
     </div>
     <ul>
