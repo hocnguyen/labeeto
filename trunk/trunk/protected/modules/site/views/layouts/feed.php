@@ -131,6 +131,15 @@
             });
 
         });
+
+        function updateCheckStatus()
+        {
+            $.get('/user/checkStatusOnline', function() {
+
+            });
+        }
+        setInterval("updateCheckStatus()", 10000);
+
         $('textarea').placeholder();
         <?php if(!Yii::app()->user->isGuest){ ?>
         var lastest_visit = '<?php echo Yii::app()->session['lastest_visit']; ?>'
