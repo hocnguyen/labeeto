@@ -341,6 +341,33 @@ class User extends CActiveRecord
         }
         return $arr;
     }
+    
+    function getVideo($url){
+        $image_url = parse_url($url);
+        $result = '';
+        if (isset($image_url ) ){
+            if($image_url['host'] == 'www.youtube.com' || $image_url['host'] == 'youtube.com'){
+                $videoUrl = "http://www.youtube.com/oembed?url=" . $url. "&format=json";
+                $object = self::getObjectVideo($videoUrl);
+                $video = json_decode($object, true);
+                $result =  $video['html'];
+            }
+            else if($image_url['host'] == 'www.vimeo.com' || $image_url['host'] == 'vimeo.com'){
+                $oembed_endpoint = 'http://vimeo.com/api/oembed';
+                $xml_url = $oembed_endpoint . '.xml?url=' . rawurlencode($url) . '&width=640';
+                $oembed = simplexml_load_string(self::getObjectVideo($xml_url));
+                $result = html_entity_decode($oembed->html);
+            } else {
+                $result='<div id="content" class="jwplayer novideo" style="margin: 0px auto">'/*.Yii::t('global','No video')*/.'</div>';
+                $result.="<script type='text/javascript'>";
+                $result.='jwplayer("content").setup({';
+                $result.='volume: "100", menu: "true", allowscriptaccess: "always", wmode: "opaque",';
+                $result.='file: "/uploads/media/'.$url.'",';
+                $result.='width: "100%", height: "257", skin: "/uploads/video/six.xml", });</script>';
+            }
+        }
+        return $result;
+    }
 
     function updateStatusOnline(){
         $table_members = $this->tableName();

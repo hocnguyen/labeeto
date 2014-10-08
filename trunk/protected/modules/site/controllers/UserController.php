@@ -269,7 +269,7 @@ class UserController extends SiteBaseController {
         $this->layout = 'feed';
         if(!Yii::app()->user->isGuest){
             $this->user = User::model()->findByPk(Yii::app()->user->id);
-            $this->question = Answer::model()->getAnswer();
+            $this->question = Answer::model()->getAnswer(Yii::app()->user->id);
             $photos = Photo::model()->findAll('is_public=1 AND user_id='.Yii::app()->user->id);
             $private = Photo::model()->findAll('is_public=0 AND user_id='.Yii::app()->user->id);
             $this->render('profile',compact('photos','private'));
@@ -742,5 +742,24 @@ class UserController extends SiteBaseController {
                 echo $html;
             }
         }
+    }
+    
+    public function actionDetail($id){
+        $this->layout = 'feed';
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+            $model = User::model()->findByPk($id);
+            $question = Answer::model()->getAnswer($id);
+            $photos = Photo::model()->findAll('is_public=1 AND user_id='.$id . ' ORDER BY date desc');
+            $private = Photo::model()->findAll('is_public=0 AND user_id='.$id . ' ORDER BY date desc');
+            $achievements = Achievements::model()->findAll('user_id ='. $id . ' ORDER BY created desc');
+            if($model)
+                $this->render('profile_other', compact('model', 'question','photos','private', 'achievements'));
+            else
+                $this->render('my_feed');
+        }else{
+            $this->render('my_feed');
+        }
+        
     }
 }
