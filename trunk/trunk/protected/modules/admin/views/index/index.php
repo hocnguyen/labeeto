@@ -68,6 +68,7 @@
 
     <?php
     $active_product = Lookup::items('StatusUser');
+    $user_online    = Lookup::items('StatusOnline');
     $this->widget('zii.widgets.grid.CGridView', array(
         'id'=>'user-grid',
         'htmlOptions' => array('class' => 'table table-bordered table-hover table-striped'),
@@ -75,22 +76,29 @@
         'afterAjaxUpdate' => 'reinstallDatePicker',
         'filter'=>$model,
         'columns'=>array(
-            array(
+            /*array(
                 'name'=>'id',
                 'value'=>'$data->id',
                 'htmlOptions'=>array('style'=>'width:35px;')
-            ),
+            ),*/
             array(
                 'header'=>Yii::t('global','Image'),
                 'type' => 'raw',
-                'value' => '$data->showAdminImage()',
+                'value' => 'User::model()->showAdminImageNew($data->photo)',
                 'htmlOptions'=>array('style'=>'width:80px;')
             ),
             'username',
             'email',
             array(
+                'name'=>'is_online',
+                'type' => 'raw',
+                'filter'=>$user_online,
+                'value' => '$data->checkUserOnlineNew()',
+                'htmlOptions'=>array('style'=>'width:30px;')
+            ),
+            array(
                 'name'=>'status',
-                'header'=>Yii::t('global','Status'),
+                'header'=>Yii::t('global','Membership'),
                 'type' => 'raw',
                 'filter'=>$active_product,
                 'value' => '$data->getStatusMember($data->status)',
