@@ -252,9 +252,9 @@ class User extends CActiveRecord
 
     function getStatusMember($status){
         if($status==self::STATUS_ACTIVE)
-            return Yii::t('global','Online');
+            return Yii::t('global','Active');
         else if( $status == self::STATUS_INACTIVE )
-            Yii::t('global','Offline');
+            Yii::t('global','Inactive');
         else if( $status == self::STATUS_UNVERIFIED )
             Yii::t('global','Unverified');
         else if( $status == self::STATUS_SUSPENDED )
