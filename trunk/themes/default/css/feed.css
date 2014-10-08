@@ -1858,7 +1858,7 @@ span.check-ok{
     background: url('../images/check_ok.png') no-repeat;
     padding: 13px;
     float: left;
-    width: 40px;
+    /*width: 40px;*/
 }
 .request-title{
     background: url('../images/icon-message.png') no-repeat;
