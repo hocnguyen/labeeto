@@ -27,7 +27,7 @@
                     <li><a href="#" data-toggle="modal" data-target="#WantToChat"><span class="span-chat"></span>CHAT</a></li>
                     <li><a href="#" data-toggle="modal" data-target="#SendaMessage"><span class="span-message"></span>Message</a></li>
                     <li><a href="#"><span class="span-favorite"></span>Favorite</a></li>
-                    <li><a href="#"><span class="span-rate"></span>Rate</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#RateUser"><span class="span-rate"></span>Rate</a></li>
                 </ul>
             </div>
         </div>
@@ -418,6 +418,35 @@
           </div>
           <div class="modal-footer footer-report">
             <a type="button" class="btn btn-primary my-report">Send</a>
+          </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="RateUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+  <div class="modal-dialog">
+    <div class="modal-content" style="width: 440px;">
+          <div class="modal-header header-report special-border" style="background-color: #e8e8e8; border-bottom-color: #cdc7c7;">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <span class="span-to">Rate</span> <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
+            <span class="user-kaka">Romeo Martin Rosales</span>
+          </div>
+          <div style="text-align: center; background-color: #f0f0f0;">
+            <div class="content-star-rate">
+            <ul>
+                <li><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/rate-star-green.png"/></li>
+                <li><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/rate-star-green.png"/></li>
+                <li><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/rate-star-green.png"/></li>
+                <li><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/rate-star-green.png"/></li>
+                <li><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/rate-star.png"/></li>
+            </ul>
+            
+          </div>
+          <span class="text-rate">(set RATING name per number of stars)</span>
+          </div>
+          <div class="modal-footer footer-report" style="border: none;">
+            <a type="button" class="btn btn-primary my-report">Rate</a>
           </div>
     </div>
   </div>
