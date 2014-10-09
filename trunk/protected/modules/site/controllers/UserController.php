@@ -75,6 +75,10 @@ class UserController extends SiteBaseController {
         {
             $this->redirect(Yii::app()->homeUrl);
         }
+        $userOff = User::model()->findByPk( Yii::app()->user->id );
+        $userOff->is_online = User::USER_OFFLINE;
+        $userOff->save();
+
         Yii::app()->user->logout(true);
         Yii::app()->user->setFlash('success', Yii::t('global', 'You are now logged out.'));
         $this->redirect(Yii::app()->homeUrl);

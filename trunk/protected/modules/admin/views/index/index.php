@@ -93,7 +93,7 @@
                 'name'=>'is_online',
                 'type' => 'raw',
                 'filter'=>$user_online,
-                'value' => '$data->checkUserOnlineNew()',
+                'value' => '$data->checkStatusUserOnline( $data->id )',
                 'htmlOptions'=>array('style'=>'width:30px;')
             ),
             array(
