@@ -70,7 +70,7 @@
         array(
             'header'=>Yii::t('global','Suspend'),
             'name'=>'user_id',
-            'value'=>'ReportUser::model()->showlink($data->blocked_user)',
+            'value'=>'$data->showlink($data->blocked_user)',
             'filter'=>'',
             'htmlOptions'=>array('style'=>'width:100px;'),
             'type'=>'raw',
