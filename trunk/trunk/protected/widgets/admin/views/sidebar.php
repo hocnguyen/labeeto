@@ -90,7 +90,7 @@ $this->widget('widgets.NBADMenu', array(
                                 
                                 array(
                                     'label' => Yii::t('global', 'Manage Photo'),
-                                    'url' => array('photo/index'),
+                                    'url' => array('photo/chosse'),
                                 ),
                             ),
                         ),
