@@ -14,7 +14,7 @@ if($user){?>
         <span class="refesh">10</span>
     </div>
     <div class="content-post">
-      <h3> <?php echo $data->content; ?> </h3>
+      <h3 class="my_posted"> <?php echo $data->content; ?> </h3>
 
     </div>
 </div>

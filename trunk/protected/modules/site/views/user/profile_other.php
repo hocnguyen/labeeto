@@ -68,13 +68,19 @@
         <!--<span class="arrow-up"></span>-->
         <div class="post" style="border: none; position: relative;" > 
             <div class="looking-for">
-                <span class="looking_img">LOOKING FOR</span>
+                <span class="looking_img">LOOKING FOR</span> <span class="stick-green-profile"></span>
                 <!--<a href="#"><span class="check-ok"></span></a>-->
-                <p><span class="txt-gender">Gender: </span><span class="txt-female"><?php  if($model->gender == 1) echo "Female"; else echo 'Male'; ?></span><span class="stick-green"></span></p>
-                <p><span class="txt-gender">Relationship: </span><span class="txt-female"><?php echo $model->relations ?></span><span class="stick-green"></span></p>
-                <p><span class="txt-gender">Age: </span><span class="txt-female"><?php echo $model->age ?></span></p>
-                <p><span class="txt-gender">Training: </span><span class="txt-female"><?php if($model->training == 0) echo 'No'; else echo "Yes"; ?></span><span class="stick-green"></span></p>
-            </div>
+                <p>
+                <span class="txt-female-profile">
+                    <?php if($model->training == 0) echo 'No,'; else echo "Yes,"; ?>
+                    <?php echo $model->relations. ',' ?>
+                    <?php  if($model->gender == 1) echo "Female,"; else echo 'Male,'; ?>
+                    <?php echo "Ages: ".  $model->age  ?>
+                    
+                </span>
+                
+                </p>
+                </div>
             <div class="looking-about">
                 <span class="looking_about">about</span>
                 <p><?php echo $model->about; ?></p>

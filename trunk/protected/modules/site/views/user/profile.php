@@ -517,7 +517,7 @@ r
                 <div class="content-post">
                     <h3><span class="link_3">ICEBUCKET CHALLENGE</span> <span class="link_2">#ALSawareness </span><span class="link_1">#LOL</span></h3>
                     <iframe title="YouTube video player" class="youtube-player" type="text/html" style="padding-left: 10px;"
-                    width="98%" height="390" src="http://www.youtube.com/embed/uIbkLjjlMV8"
+                    width="98%" height="300" src="http://www.youtube.com/embed/uIbkLjjlMV8"
                     frameborder="0" allowFullScreen></iframe>
                 </div>
             </div>
