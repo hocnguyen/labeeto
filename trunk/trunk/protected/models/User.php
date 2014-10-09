@@ -376,7 +376,7 @@ class User extends CActiveRecord
                 array( 'last_logged'=> new CDbExpression('NOW()'), 'is_online' => User::USER_ONLINE ),
                 'id=:id', array( ':id'=>Yii::app()->user->id )
             );
-        $sql = " SELECT username FROM users WHERE last_logged > NOW()-60 AND id ='".Yii::app()->user->id."' ";
+        /*$sql = " SELECT username FROM users WHERE last_logged > NOW()-60 AND id ='".Yii::app()->user->id."' ";
         $res = Yii::app()->db->createCommand($sql)->queryAll();
         foreach ( $res as $result ){
             $username = $result['username'];
@@ -385,7 +385,7 @@ class User extends CActiveRecord
             $user = User::model()->findByPk(Yii::app()->user->id);
             $user->is_online = User::USER_OFFLINE;
             $user->save();
-        }
+        }*/
     }
 
     function checkStatusUserOnline( $user_id ){
@@ -395,11 +395,19 @@ class User extends CActiveRecord
             $username = $result['username'];
         }
         error_reporting(0);
-        if( $username != '' )
-            $viewStatus = Yii::t('global', 'Online');
-        else
-            $viewStatus = Yii::t('global', 'Offline');
-        return $viewStatus;
+        if( $username != '' ){
+            $user = User::model()->findByPk($user_id);
+            $user->is_online = User::USER_ONLINE;
+            $user->save();
+            $sta = Yii::t('global', 'Online');
+        }
+        else{
+            $user = User::model()->findByPk($user_id);
+            $user->is_online = User::USER_OFFLINE;
+            $user->save();
+            $sta = Yii::t('global', 'Offline');
+        }
+        return $sta;
     }
 
     function checkUserOnlineNew(){
