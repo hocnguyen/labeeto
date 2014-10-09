@@ -179,6 +179,74 @@ class PhotoController extends AdminBaseController {
                 Photo::model()->updateByPk($value->id, array('is_approval'=>1));
             }
         }
-        $this->redirect('/admin/photo');
+        $this->redirect('/admin/photo/chosse');
+    }
+    
+    public function actionChosse(){
+        $model = new Photo;
+        
+        // Did we submit the form and selected items?
+		if( isset($_POST['bulkoperations']) && $_POST['bulkoperations'] != '' )
+		{
+			// Did we choose any values?
+			if( isset($_POST['record']) && count($_POST['record']) )
+			{
+                 switch( $_POST['bulkoperations'] )
+    				{									
+    					case 'bulkdelete':
+                            // Load records
+					       $records = Photo::model()->deleteByPk(array_keys($_POST['record']));
+        					Yii::app()->user->setFlash('success', Yii::t('global', '{count} items deleted.', array('{count}'=>$records)));
+    					   break;
+    				    
+                        case 'bulkapproval':
+                            $records = Photo::model()->updateByPk(array_keys($_POST['record']), array('is_approval'=>1));
+        					Yii::app()->user->setFlash('success', Yii::t('global', '{count} items approval.', array('{count}'=>$records)));
+    					   break;
+                        
+                        case 'bulkunapproval':
+                            // Load records
+                            $records = Photo::model()->updateByPk(array_keys($_POST['record']), array('is_approval'=>0));
+        					Yii::app()->user->setFlash('success', Yii::t('global', '{count} items unapproval.', array('{count}'=>$records)));
+    					   break;
+                           
+    					default:
+    					// Nothing
+    					break;
+    				}
+    			}
+    		}
+            
+        // Load items and display
+		$criteria = new CDbCriteria;
+        $count = Photo::model()->count();
+		$pages = new CPagination($count);
+		$pages->pageSize = 10;
+		
+		$pages->applyLimit($criteria);
+		
+		$sort = new CSort('Photo');
+		$sort->defaultOrder = 'id DESC';
+		$sort->applyOrder($criteria);
+
+		$sort->attributes = array(
+		        'id'=>'id',
+                'photo'=>'photo',
+                'is_public'=>'is_public',
+                'is_approval'=>'is_approval',
+                'user_id'=>'user_id',
+				'date' =>'date',
+		);
+		
+		$items = Photo::model()->findAll($criteria);
+	
+        $this->render('chosse', array( 'model' => $model, 'items' => $items, 'pages' => $pages, 'sort' => $sort, 'count' => $count ));
+    }
+    
+    public function actionRemove(){
+        if(isset($_GET['id'])){
+            Photo::model()->deleteByPk($_GET['id']);
+        }
+         $this->redirect('/admin/photo/chosse');
     }
 }

@@ -13,8 +13,8 @@
         </div>
     </form>
     <form class="header-tab-view not-bor" action="/admin/photo/approval">
-                    <button type="submit">Approval all photo</button>
-                </form>
+        <button type="submit">Approval all photo</button>
+    </form>
 </div>
 
 <div class="floatingBox table">
