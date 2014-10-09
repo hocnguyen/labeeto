@@ -276,7 +276,9 @@ class UserController extends SiteBaseController {
             $this->question = Answer::model()->getAnswer(Yii::app()->user->id);
             $photos = Photo::model()->findAll('is_public=1 AND user_id='.Yii::app()->user->id);
             $private = Photo::model()->findAll('is_public=0 AND user_id='.Yii::app()->user->id);
-            $this->render('profile',compact('photos','private'));
+            $user    = User::model()->findByPk(Yii::app()->user->id);
+            $online  = $user->is_online;
+            $this->render('profile',compact('photos','private','online'));
         } else {
             $this->redirect('/');
         }
