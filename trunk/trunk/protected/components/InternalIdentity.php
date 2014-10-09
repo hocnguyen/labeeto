@@ -55,6 +55,7 @@ class InternalIdentity extends CUserIdentity
 			$this->setState('role', $record->role);
             $this->errorCode = self::ERROR_NONE;
             $record->last_logged = date('Y-m-d H:i:s');
+            $record->is_online   = User::USER_ONLINE;
             $record->save();
         }
         return !$this->errorCode;
