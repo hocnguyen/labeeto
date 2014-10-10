@@ -218,8 +218,8 @@ $(document).ready(function(){
             check = 3 ;// Password empty
             return check;
         }
-        var re = /^.*(?=.{8,})(?=.*[A-Za-z])(?=.*[\d]).*$/;
-        //var re = /^.*(?=.{8,})(?=.*[A-Za-z])(?=.*[\d]).*$/;
+        
+        var re = /^[^\d]{1}.*(?=.{8,})(?=.*[A-Za-z])(?=.*[\d]).*$/;
         //var re=/^(?=.*[A-Za-z])[A-Za-z0-9\d]{8,}$/;
         var pw = re.exec(password);
         if (!pw) {
