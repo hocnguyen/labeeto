@@ -754,13 +754,14 @@ class UserController extends SiteBaseController {
         $this->layout = 'feed';
         if(isset($_GET['id'])){
             $id = $_GET['id'];
+            $user = User::model()->findByPk(Yii::app()->user->id);
             $model = User::model()->findByPk($id);
             $question = Answer::model()->getAnswer($id);
             $photos = Photo::model()->findAll('is_public=1 AND user_id='.$id . ' ORDER BY date desc');
             $private = Photo::model()->findAll('is_public=0 AND user_id='.$id . ' ORDER BY date desc');
             $achievements = Achievements::model()->findAll('user_id ='. $id . ' ORDER BY created desc');
             if($model)
-                $this->render('profile_other', compact('model', 'question','photos','private', 'achievements'));
+                $this->render('profile_other', compact('model', 'question','photos','private', 'achievements', 'user'));
             else
                 $this->render('my_feed');
         }else{

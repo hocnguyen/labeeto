@@ -67,20 +67,63 @@
         <!--Post 1-->
         <!--<span class="arrow-up"></span>-->
         <div class="post" style="border: none; position: relative;" > 
-            <div class="looking-for">
+            <!--<div class="looking-for">
                 <span class="looking_img">LOOKING FOR</span> <span class="stick-green-profile"></span>
-                <!--<a href="#"><span class="check-ok"></span></a>-->
-                <p>
+                <a href="#"><span class="check-ok"></span></a>-->
+                <!--<p>
                 <span class="txt-female-profile">
-                    <?php if($model->training == 0) echo 'No,'; else echo "Yes,"; ?>
-                    <?php echo $model->relations. ',' ?>
-                    <?php  if($model->gender == 1) echo "Female,"; else echo 'Male,'; ?>
-                    <?php echo "Ages: ".  $model->age  ?>
+                    <?php //if($model->training == 0) echo 'No,'; else echo "Yes,"; ?>
+                    <?php //echo $model->relations. ',' ?>
+                    <?php // if($model->gender == 1) echo "Female,"; else echo 'Male,'; ?>
+                    <?php //echo "Ages: ".  $model->age  ?>
                     
                 </span>
                 
-                </p>
+                </p>-->
+                 <div class="looking-for">
+                    <span class="looking_img">LOOKING FOR</span>
+                    <p>
+                        <span class="txt-gender">Gender: </span>
+                        <?php if($user->gender == $model->gender) {?>
+                            <span class="txt-female" style="color: #9cdd2b;"><?php  if($model->gender == 1) echo "Female"; else echo 'Male'; ?></span>
+                            <span class="stick-green"></span>
+                        <?php }else{ ?>
+                            <span class="txt-female"><?php  if($model->gender == 1) echo "Female"; else echo 'Male'; ?></span>
+                        <?php } ?>
+                    </p>
+                    <p>
+                        <span class="txt-gender">Relationship: </span>
+                        <?php if($user->relations == $model->relations) {?>
+                        <span class="txt-female" style="color: #9cdd2b;"><?php echo $model->relations ?></span>
+                        <span class="stick-green"></span>
+                        <?php }else{ ?>
+                            <span class="txt-female"><?php echo $model->relations ?></span>
+                        <?php } ?>
+                    </p>
+                    <p>
+                        <?php 
+                            $arr_age_user = explode("-",$model->age);
+                            $arr_age_model = explode("-",$user->age);
+                        ?>
+                        <span class="txt-gender">Age: </span>
+                        <?php if(($arr_age_user[0] = $arr_age_model[0]) && ($arr_age_user[1] == $arr_age_model[1])){ ?>
+                        <span class="txt-female" style="color: #9cdd2b;"><?php echo $model->age ?></span>
+                        <span class="stick-green"></span>
+                        <?php }else{ ?>
+                            <span class="txt-female"><?php echo $model->age ?></span>
+                        <?php } ?>
+                    </p>
+                    <p>
+                        <span class="txt-gender">Training Buddy: </span>
+                        <?php if($user->training == $model->training) {?>
+                        <span class="txt-female" style="color: #9cdd2b;"><?php if($model->training == 0) echo 'No'; else echo "Yes"; ?></span>
+                        <span class="stick-green"></span>
+                        <?php }else{ ?>
+                            <span class="txt-female"><?php if($model->training == 0) echo 'No'; else echo "Yes"; ?></span>
+                        <?php }?>
+                    </p>
                 </div>
+                <!--</div>-->
             <div class="looking-about">
                 <span class="looking_about">about</span>
                 <p><?php echo $model->about; ?></p>
