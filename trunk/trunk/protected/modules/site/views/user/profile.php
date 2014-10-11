@@ -46,7 +46,8 @@ r
        
         <div class="content-img">
             <div style="float: left; width: 60%; padding-left: 14%;">
-                <div class="street"><span class="icon-people"></span>24, M, Straight</div>
+                <div class="street"><span class="icon-people"></span>
+                <?php echo date("Y") - date('Y', strtotime($this->user->birthday));  ?>, <?php  if($this->user->gender == 1) echo "F"; else echo 'M Straight'; ?></div>
                 <div class="businuess"><span class="icon-vali"></span><?php if($this->user->career) echo $this->user->career; ?></div>
                 <div class="location"><span class="icon-location"></span><?php if($this->user->address) echo $this->user->address; ?></div>
             </div>
@@ -86,11 +87,11 @@ r
                 <div id="value-gender">
                     <p>
                         <span class="txt-gender"><?php echo Yii::t('global', 'Gender: ') ?></span>
-                        <span class="txt-female"><?php  if($this->user->gender == 1) echo "Female"; else echo 'Male'; ?></span>
+                        <span class="txt-female"><?php  if($this->user->gender_look == 1) echo "Female"; else echo 'Male'; ?></span>
                     </p>
                     <p>
                         <span class="txt-gender"><?php echo Yii::t('global', 'Relationship: ') ?> </span>
-                        <span class="txt-female"><?php if($this->user->relations) echo $this->user->relations; ?></span>
+                        <span class="txt-female"><?php if($this->user->relations_look) echo $this->user->relations_look; ?></span>
                     </p>
                     <p>
                         <span class="txt-gender"><?php echo Yii::t('global', 'Age: ')?> </span>
@@ -105,16 +106,17 @@ r
                     <p>
                         <span class="txt-gender"><?php echo Yii::t('global', 'Gender: ') ?></span>
                         <span class="txt-female">
-                            <input type="radio" name="gender" <?php if($this->user->gender == 0) echo 'checked="true"'; ?> value="0"  />Male
-                            <input type="radio" name="gender" <?php if($this->user->gender == 1) echo 'checked="true"'; ?> value="1" name=""/>Female
+                            <input type="radio" name="gender" <?php if($this->user->gender_look == 0) echo 'checked="true"'; ?> value="0"  />Male
+                            <input type="radio" name="gender" <?php if($this->user->gender_look == 1) echo 'checked="true"'; ?> value="1" name=""/>Female
                         </span>
                     </p>
                     <p>
                         <span class="txt-gender"><?php echo Yii::t('global', 'Relationship: ') ?> </span>
                         <span class="txt-female">
                             <select name="relationship" class="form-control">
-                                <option <?php if($this->user->relations == 'Single') echo 'selected'; ?> value="Single">Single</option>
-                                <option <?php if($this->user->relations == 'Married') echo 'selected'; ?> value="Married">Married</option>
+                                <option <?php if($this->user->relations_look == 'Casual') echo 'selected'; ?> value="Casual">Casual</option>
+                                <option <?php if($this->user->relations_look == 'Something Serious') echo 'selected'; ?> value="Something Serious">Something Serious</option>
+                                <option <?php if($this->user->relations_look == 'Friendship') echo 'selected'; ?> value="Friendship">Friendship</option>
                             </select>
                         </span>
                     </p>
