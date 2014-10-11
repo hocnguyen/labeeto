@@ -173,6 +173,11 @@ class ReportUser extends CActiveRecord
         return  $result['name'];
     }
 
+    public function getAchievementById( $id ){
+        return "<a href='/admin/achievements/view?id=".$id."'>".$id."</a>";
+
+    }
+
     public function showlink($id){
         return '<a href="/admin/reportUser/suspend?id='.$id.'" >Suppend</a>';
     }

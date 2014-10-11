@@ -63,8 +63,8 @@
             'header'=>Yii::t('global','Achievements'),
             'name'=>'achievements_id',
             'type' => 'raw',
-            'filter'=>$active_airchivements,
-            'value' => '$data->getAirchivements($data->achievements_id)',
+            //'filter'=>$active_airchivements,
+            'value' => '$data->getAchievementById($data->achievements_id)',
             'htmlOptions'=>array('style'=>'width:100px;')
         ), 
         array(
