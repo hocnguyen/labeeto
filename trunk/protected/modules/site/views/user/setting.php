@@ -13,7 +13,7 @@
             </ul>
         </div>
     <div class="settings-header">
-        
+        <div style="height: 700px;">
         <!-- General Settings -->
         <div id="GeneralSettings" style="display: block;">
             <div class="setting-header">General Settings</div>
@@ -256,7 +256,7 @@
         </div>
         <!--End Search References--!>
     </div>
-    
+    </div>
 </div>
  
 <br />
