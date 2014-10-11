@@ -2105,7 +2105,7 @@ input[type="range"]::-ms-fill-lower {
 }
 .menu-nav-setting{
     display: inline-block;
-    padding: 55px 30px 0;
+    padding: 55px 30px 0 30.2px;
     border-top: 1px solid #cbcbcb;
     border-bottom: 1px solid #cbcbcb;
     border-radius: 0 !important;
@@ -2124,7 +2124,7 @@ input[type="range"]::-ms-fill-lower {
 .menu-nav-setting ul li{
     list-style: none;
     float: left;
-    padding: 17px 31px 0px;
+    /*padding: 17px 31px 0px;*/
     border-left: 1px solid #1f2a32;
     height: 50px;
 }
@@ -2132,6 +2132,9 @@ input[type="range"]::-ms-fill-lower {
     text-transform: uppercase;
     color: #ffffff;
     font: normal 12pt/normal Proxima Nova Semi Bold;
+    padding: 17px 31px 14px;
+    border-bottom: 3px solid transparent;
+    float: left;
 }
 .menu-nav-setting ul li a:hover{
     text-decoration: none;
@@ -2291,8 +2294,9 @@ input[type="range"]::-ms-fill-lower {
 .contennt-btn-form{
     padding: 40px 30px 30px 0px;
 }
-.li-GeneralSettings{
-    border-bottom: 3px solid #5dc1ea;
+
+.settings-icon{
+    padding: 15px 90px 0px 31px;
 }
 .check-block{
     background: url('../images/check_ok.png') no-repeat 10px 10px;
@@ -2925,4 +2929,102 @@ textarea:focus, input:focus{
     display: inline-block;
     font: normal 16px/normal Helvetica Neue LTPro Bd;
     
+}
+
+/***********************Message***********************/
+.menu-nav-message{
+    display: inline-block;
+    padding: 55px 30px 0;
+    border-top: 1px solid #cbcbcb;
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    behavior: url('../pie/PIE.htc');
+    width: 100%;
+}
+.menu-nav-message ul{
+    float: right;
+    background: #2d3c46;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#2d3c46', endColorstr='#2d3c46'); /* IE */
+    border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    width: 100%;
+}
+
+.menu-nav-message ul li a{
+    text-transform: uppercase;
+    color: #ffffff;
+    font: normal 12pt/normal Proxima Nova Semi Bold;
+}
+.menu-nav-message ul li a:hover{
+    text-decoration: none;
+}
+
+.menu-nav-message ul li.message_new{
+    font: normal 16px/normal Proxima Nova Bold;
+    border-left: none !important;
+    float: left !important;
+    color: #ffffff;
+    padding: 12px 10px 0px;
+    list-style: none;
+    height: 50px;
+    width: 230px;
+    border-right: 1px solid #1f2a32;
+}
+.menu-nav-message ul li.message_new span.new_message{
+    background: url('../images/new_message.png') no-repeat;
+    display: inline-block;
+    height: 30px;
+    width: 180px;
+    padding-top: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+li.li_message{
+    font: normal 16px/normal Proxima Nova Bold;
+    border-left: none !important;
+    float: left !important;
+    color: #ffffff;
+    padding: 17px 10px 0px 20px;
+    list-style: none;
+    height: 50px;
+    float: left;
+}
+.all_message{
+    padding-right: 15px;
+}
+.arrow_message{
+    float: right;
+    background: url('../images/search-arrow-black.png') no-repeat 0px 7px;
+    height: 17px;
+    width: 15px;
+    margin-top: -5px;
+    cursor: pointer;
+}
+li.list_message{
+    float: right;
+}
+li.list_message ul{
+    width: 280px;
+    padding-right: 10px;
+}
+li.list_message ul li{
+    float: left;
+    height: 50px;
+    color: #ffffff;
+    padding-top: 14px;
+    padding-right: 10px;
+}
+li.list_message ul li span{
+    float: right;
+    background: url('../images/pag_message.png') no-repeat;
+    height: 35px;
+    width: 35px;
+    margin-top: -5px;
+    cursor: pointer;
+    display: inline-block;
+    font: normal 16px/normal Proxima Nova Bold;
+    padding: 7px 0px 5px 0px;
+    text-align: center;
 }
