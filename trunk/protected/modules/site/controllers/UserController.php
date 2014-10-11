@@ -484,7 +484,7 @@ class UserController extends SiteBaseController {
         $user = User::model()->findByPk(Yii::app()->user->id);
         $t = '';
         if(isset($_POST['gender'])){
-            User::model()->updateByPk(Yii::app()->user->id, array('gender'=>$_POST['gender']));
+            User::model()->updateByPk(Yii::app()->user->id, array('gender_look'=>$_POST['gender']));
             if($_POST['gender'] == 1) 
                 $gender = 'Female'; 
             else 
@@ -497,7 +497,7 @@ class UserController extends SiteBaseController {
         
         
         if(isset($_POST['relationship'])){
-            User::model()->updateByPk(Yii::app()->user->id, array('relations'=>$_POST['relationship']));
+            User::model()->updateByPk(Yii::app()->user->id, array('relations_look'=>$_POST['relationship']));
             $t.= '<p>
                     <span class="txt-gender">'.Yii::t('global', 'Relationship: ').'</span>
                     <span class="txt-female">'. $_POST['relationship']. '</span>
@@ -520,7 +520,7 @@ class UserController extends SiteBaseController {
             else
                 $l = 'No';
             $t.= '<p>
-                    <span class="txt-gender">'.Yii::t('global', 'Training:').'</span>
+                    <span class="txt-gender">'.Yii::t('global', 'Training Buddy:').'</span>
                     <span class="txt-female">'. $l .'</span>
                  </p>';
         }
@@ -773,5 +773,10 @@ class UserController extends SiteBaseController {
     public function actionMessage(){
         $this->layout = 'feed';
         $this->render('message');
+    }
+    
+    public function actionNewmessage(){
+        $this->layout = 'feed';
+        $this->render('new_message');
     }
 }
