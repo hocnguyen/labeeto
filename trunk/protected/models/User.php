@@ -36,6 +36,7 @@
  * @property string $updated
  * @property string $verify_profile
  * @property integer $is_online
+ * @property integer $membership
  *
  * The followings are the available model relations:
  * @property Achievements[] $achievements
@@ -58,6 +59,11 @@ class User extends CActiveRecord
     const NO_VERIFY         = 0;
     const USER_ONLINE       = 1;
     const USER_OFFLINE       = 0;
+
+    const MEMBER_FREE=0;
+    const MEMBER_VERIFIED=1;
+    const MEMBER_PERSONALTRAINER=2;
+    const MEMBER_PREMIUM=3;
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -84,7 +90,7 @@ class User extends CActiveRecord
 		// will receive user inputs.
 		return array(
             array('username','required'),
-			array('gender, joined, status, is_online', 'numerical', 'integerOnly'=>true),
+			array('gender, joined, status, is_online,membership', 'numerical', 'integerOnly'=>true),
 			array('username, email, photo, address', 'length', 'max'=>155),
 			array('career, height, smoke', 'length', 'max'=>100),
 			array('password, fname, lname, education, religion', 'length', 'max'=>40),
@@ -152,6 +158,8 @@ class User extends CActiveRecord
             'created' => Yii::t('global', 'Created'),
             'updated' => Yii::t('global', 'Updated'),
             'is_online' => Yii::t('global', 'Status'),
+            'membership' => Yii::t('global', 'Membership'),
+
 		);
 	}
 
@@ -200,6 +208,7 @@ class User extends CActiveRecord
             $criteria->compare('t.created', date('Y-m-d ', strtotime($this->created)), true);
         $criteria->compare('updated',$this->updated,true);
         $criteria->compare('is_online',$this->is_online);
+        $criteria->compare('membership',$this->membership);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -268,6 +277,18 @@ class User extends CActiveRecord
             $sta = Yii::t('global','Reported');
         else if( $status == self::STATUS_PREMIUM )
             $sta =Yii::t('global','Premium');
+        return $sta;
+    }
+
+    function getMembership($member){
+        if($member==self::MEMBER_FREE)
+            $sta = Yii::t('global','Free');
+        else if( $status == self::MEMBER_VERIFIED )
+            $sta = Yii::t('global','Verified');
+        else if( $status == self::MEMBER_PERSONALTRAINER )
+            $sta = Yii::t('global','Personal Trainer');
+        else if( $status == self::MEMBER_PREMIUM )
+            $sta = Yii::t('global','Premium');
         return $sta;
     }
 
