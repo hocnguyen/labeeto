@@ -283,11 +283,11 @@ class User extends CActiveRecord
     function getMembership($member){
         if($member==self::MEMBER_FREE)
             $sta = Yii::t('global','Free');
-        else if( $status == self::MEMBER_VERIFIED )
+        else if( $member == self::MEMBER_VERIFIED )
             $sta = Yii::t('global','Verified');
-        else if( $status == self::MEMBER_PERSONALTRAINER )
+        else if( $member == self::MEMBER_PERSONALTRAINER )
             $sta = Yii::t('global','Personal Trainer');
-        else if( $status == self::MEMBER_PREMIUM )
+        else if( $member == self::MEMBER_PREMIUM )
             $sta = Yii::t('global','Premium');
         return $sta;
     }
