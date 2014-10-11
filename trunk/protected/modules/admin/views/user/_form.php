@@ -187,7 +187,13 @@
                         <?php echo $form->dropDownList($model,'status', Lookup::items('StatusUser') ); ?>
                     </div>
                 </div>
-
+                <div class="control-group">
+                    <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'Membership'); ?>
+</label>
+                    <div class="controls">
+                        <?php echo $form->dropDownList($model,'membership', Lookup::items('Membership') ); ?>
+                    </div>
+                </div>
                             <div class="control-group">
                     <div class="controls">
                         <?php echo CHtml::submitButton($model->isNewRecord ? Yii::t('global','Create') : Yii::t('global','Save'), array('class'=>'btn btn-primary')); ?>
