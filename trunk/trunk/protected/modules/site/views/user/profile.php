@@ -28,8 +28,8 @@ r
         </div>
         <div class="content-infor-profile">
             <div class="name_user">
-                <img src="/themes/default/images/<?php echo ($online ==  User::USER_ONLINE)? 'search-online.png' :'settings.png'; ?>" >
                 <?php echo $this->user->username ?>
+                <img src="/themes/default/images/<?php echo ($online ==  User::USER_ONLINE)? 'search-online.png' :'settings.png'; ?>" >
             </div>
             <div class="menu-nav-infor">
                 <ul style="float: right;">
