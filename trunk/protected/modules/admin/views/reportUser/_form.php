@@ -59,7 +59,7 @@
 </label>
                     <div class="controls">
                         <?php
-                        $achievements = CHtml::listData(Achievements::model()->findAll(''),'id','name');
+                        $achievements = CHtml::listData(Achievements::model()->findAll(''),'id','id');
                         echo $form->dropDownList($model,'achievements_id',$achievements); 
                         ?>
                     </div>

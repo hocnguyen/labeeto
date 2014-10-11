@@ -29,6 +29,7 @@
                     array('name'=>'user_id','value'=>ReportUser::model()->getUser($model->user_id)),
                     array('name'=>'blocked_user','value'=>ReportUser::model()->getUser($model->blocked_user)),
                     array('name'=>'type_report'),
+                    array('name'=>'achievements_id', 'value'=>ReportUser::model()->getAchievementById($model->achievements_id),'type'=>'html'),
                     array('name'=>'content','type'=>'raw'),
                     array('name'=>'created'),
                     array('name'=>'updated'),
