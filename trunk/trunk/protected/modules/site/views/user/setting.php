@@ -5,8 +5,8 @@
     
     <div class="menu-nav-setting">
             <ul style="float: right;">
-                <li>Settings</li>
-                <li class="li-GeneralSettings"><a href="#" class="link-GeneralSettings"><?php echo Yii::t('global', 'GENERAL') ?></a>
+                <li class="settings-icon">Settings</li>
+                <li class="li-GeneralSettings"><a href="#" class="link-GeneralSettings" style="border-bottom: 3px solid #5dc1ea"><?php echo Yii::t('global', 'GENERAL') ?></a>
                 <li class="li-SearchReferences"><a href="#" class="link-SearchReferences"><?php echo Yii::t('global', 'SEARCH PREFERENCES') ?></a>
                 <li class="li-Notifications"><a href="#" class="link-Notifications"><?php echo Yii::t('global', 'NOTIFICATIONS') ?></a></li>
                 <li class="li-Blocklist"><a href="#" class="link-Blocklist"><?php echo Yii::t('global', 'BLOCKLIST') ?></a></li>

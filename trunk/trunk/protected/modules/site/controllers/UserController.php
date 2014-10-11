@@ -769,4 +769,9 @@ class UserController extends SiteBaseController {
         }
         
     }
+    
+    public function actionMessage(){
+        $this->layout = 'feed';
+        $this->render('message');
+    }
 }
