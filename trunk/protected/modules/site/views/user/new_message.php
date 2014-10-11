@@ -6,7 +6,7 @@
     <div class="menu-nav-message">
         <ul style="float: right;">
             <li class="message_new"><span class="new_message">New Message</span></li>
-            <li class="li_message"><span class="all_message">ALL MESSAGES</span><span class="arrow_message"></span></li>
+            <li class="li_message"><span class="all_message">NEW MESSAGE</span></li>
             <!--<li class="list_message">
                 <ul>
                     <li><span class="message_1"><</span></li>
@@ -22,7 +22,7 @@
     <div class="message-header">
         <div class="content_left_message">
             <ul>
-                <li><a href="#"><span class="message_5">MESSAGES</span></a></li>
+                <li><a href="#" style="border-left: 4px solid #5dc1ea;"><span class="message_5" style="color: #5dc1ea;">MESSAGES</span></a></li>
                 <li><a href="#"><span class="sent">SENT (23)</span></a></li>
                 <li><a href=""><span class="archived">ARCHIVED (543)</span></a></li>
                 <li><a href=""><span class="trash">TRASH (72)</span></a></li>
@@ -45,15 +45,27 @@
                     <textarea class="form-control" placeholder="Write a message..."></textarea>
                 </li>
                 <li class="add_some">
-                    <div>
+                    <div style="float: left;">
                         <span class="add-media">
                             <input type="file" name="media_post" id="media" style="display: none;" />
                             <label for="media" class="label-add-media">Add Media</label>
                         </span>
                     </div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div style="float: left;">
+                        <span class="add-location">
+                            <input type="file" name="media_post" id="media" style="display: none;" />
+                            <label for="media" class="label-add-media">Add Media</label>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="invite">
+                            <input type="checkbox" id="private_photos"/>
+                            <label for="private_photos">Invite to view private photos</label>
+                        </span>
+                    </div>
+                    <div style="float: right;">
+                        <span class="send_message_1">Send</span>
+                    </div>
                 </li>
             </ul>
         </div>

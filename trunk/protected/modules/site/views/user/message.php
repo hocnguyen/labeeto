@@ -5,16 +5,26 @@
     
     <div class="menu-nav-message">
         <ul style="float: right;">
-            <li class="message_new"><span class="new_message">New Message</span></li>
-            <li class="li_message"><span class="all_message">ALL MESSAGES</span><span class="arrow_message"></span></li>
+            <li class="message_new"><a href="/user/newmessage"><span class="new_message">New Message</span></a></li>
+            <li class="li_message"><span class="all_message">ALL MESSAGES</span>
+                    <span id="toggle_message" class="arrow_message"></span>
+                    <div class="menu_message">
+                        <span></span>
+                        <ul>
+                            <li><a href="#">ALL MESSAGES</a></li>
+                            <li><a href="#">UNREAD</a></li>
+                        </ul>
+                    </div>
+            </li>
+                
             <li class="list_message">
                 <ul>
-                    <li><span class="message_1"><</span></li>
+                    <li><span><</span></li>
                     <li><span class="message_1">1</span></li>
-                    <li><span class="message_1">2</span></li>
-                    <li><span class="message_1">12</span></li>
-                    <li><span class="message_1">13</span></li>
-                    <li><span class="message_1">></span></li>
+                    <li><span>2</span></li>
+                    <li><span>12</span></li>
+                    <li><span>13</span></li>
+                    <li><span>></span></li>
                 </ul>
             </li>
         </ul>
@@ -22,7 +32,7 @@
     <div class="message-header">
         <div class="content_left_message">
             <ul>
-                <li><a href="#"><span class="message_5">MESSAGES</span></a></li>
+                <li><a href="#" style="border-left: 4px solid #5dc1ea;"><span class="message_5" style="color: #5dc1ea;">MESSAGES</span></a></li>
                 <li><a href="#"><span class="sent">SENT (23)</span></a></li>
                 <li><a href=""><span class="archived">ARCHIVED (543)</span></a></li>
                 <li><a href=""><span class="trash">TRASH (72)</span></a></li>
