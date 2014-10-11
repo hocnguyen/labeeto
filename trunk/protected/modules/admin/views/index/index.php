@@ -153,6 +153,7 @@
                     'view' => array
                     (
                         'label'=>'<span class="label cyan" ><i class="icon-info-sign info" title="'.Yii::t('adminlang', 'View').'"></i></span>',
+                        'url'=>'Yii::app()->createUrl("admin/user/view", array("id" => $data->id, "action" => Yii::app()->controller->action->id))',
                         'options' => array( 'class' => 'tipb view-icon-tooltip',
                             'data-original-title' => Yii::t('adminlang', 'View'),
                             'title'       => Yii::t('adminlang', 'View'), ),
@@ -160,6 +161,7 @@
                     'update' => array
                     (
                         'label'=>'<span class="label green" ><i class="icon-pencil edit" title="'.Yii::t('adminlang', 'Edit').'"></i></span>',
+                        'url'=>'Yii::app()->createUrl("admin/user/update", array("id" => $data->id, "action" => Yii::app()->controller->action->id))',
                         'options' => array( 'class' => 'tipb update-icon-tooltip',
                             'data-original-title' => Yii::t('adminlang', 'Edit'),
                             'title'       => Yii::t('adminlang', 'Edit'), ),
@@ -167,6 +169,7 @@
                     'delete' => array
                     (
                         'label'=>'<span class="label red" ><i class="icon-trash delete" title="'.Yii::t('adminlang', 'Delete').'"></i></span>',
+                         'url'=>'Yii::app()->createUrl("admin/user/delete", array("id" => $data->id, "action" => Yii::app()->controller->action->id))',
                         'options' => array( 'class' => 'tipb delete-icon-tooltip',
                             'data-original-title' => Yii::t('adminlang', 'Delete'),
                             'title'       => Yii::t('adminlang', 'Delete') , ),
