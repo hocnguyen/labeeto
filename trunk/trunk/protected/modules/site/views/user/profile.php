@@ -28,7 +28,7 @@ r
         </div>
         <div class="content-infor-profile">
             <div class="name_user">
-                <img src="/themes/default/images/<?php echo ($online ==  User::USER_ONLINE)? 'settings-active.png' :'settings.png'; ?>" >
+                <img src="/themes/default/images/<?php echo ($online ==  User::USER_ONLINE)? 'search-online.png' :'settings.png'; ?>" >
                 <?php echo $this->user->username ?>
             </div>
             <div class="menu-nav-infor">
