@@ -62,7 +62,7 @@
             'header'=>Yii::t('global','Membership'),
             'type' => 'raw',
             'filter'=>$membership,
-            'value' => '($data->membership)',
+            'value' => '$data->getMembership($data->membership)',
             'htmlOptions'=>array('style'=>'width:30px;')
         ),
         array(
