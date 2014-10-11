@@ -107,6 +107,10 @@ $this->widget('widgets.NBADMenu', array(
                                     'label' => Yii::t('global', 'Manage Permissions'),
                                     'url' => array('permissions/index'),
                                 ),
+                                array(
+                                    'label' => Yii::t('global', 'Manage Lock Ip'),
+                                    'url' => array('lockIp/index'),
+                                ),
                             ),
                         ),
 
