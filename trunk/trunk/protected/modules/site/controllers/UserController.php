@@ -779,4 +779,9 @@ class UserController extends SiteBaseController {
         $this->layout = 'feed';
         $this->render('new_message');
     }
+    
+    public function actionMessagedetail(){
+        $this->layout = 'feed';
+        $this->render('message_detail');
+    }
 }
