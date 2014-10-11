@@ -34,7 +34,10 @@
        
         <div class="content-img">
             <div style="float: left; width: 60%; padding-left: 14%;">
-                <div class="street"><span class="icon-people"></span>24, M, Straight</div>
+                <div class="street"><span class="icon-people"></span>
+                <?php $age = date("Y") - date('Y', strtotime($model->birthday));  echo $age;  ?>, 
+                <?php  if($model->gender == 1) echo "F"; else echo 'M Straight'; ?>
+                </div>
                 <div class="businuess"><span class="icon-vali"></span><?php echo $model->career; ?></div>
                 <div class="location"><span class="icon-location"></span><?php echo $model->address; ?></div>
             </div>
@@ -84,29 +87,29 @@
                     <span class="looking_img">LOOKING FOR</span>
                     <p>
                         <span class="txt-gender">Gender: </span>
-                        <?php if($user->gender == $model->gender) {?>
-                            <span class="txt-female" style="color: #9cdd2b;"><?php  if($model->gender == 1) echo "Female"; else echo 'Male'; ?></span>
+                        <?php if($user->gender == $model->gender_look) {?>
+                            <span class="txt-female" style="color: #9cdd2b;"><?php  if($model->gender_look == 1) echo "Female"; else echo 'Male'; ?></span>
                             <span class="stick-green"></span>
                         <?php }else{ ?>
-                            <span class="txt-female"><?php  if($model->gender == 1) echo "Female"; else echo 'Male'; ?></span>
+                            <span class="txt-female"><?php  if($model->gender_look == 1) echo "Female"; else echo 'Male'; ?></span>
                         <?php } ?>
                     </p>
                     <p>
                         <span class="txt-gender">Relationship: </span>
-                        <?php if($user->relations == $model->relations) {?>
-                        <span class="txt-female" style="color: #9cdd2b;"><?php echo $model->relations ?></span>
+                        <?php if($user->relations_look == $model->relations_look) {?>
+                        <span class="txt-female" style="color: #9cdd2b;"><?php echo $model->relations_look ?></span>
                         <span class="stick-green"></span>
                         <?php }else{ ?>
-                            <span class="txt-female"><?php echo $model->relations ?></span>
+                            <span class="txt-female"><?php echo $model->relations_look ?></span>
                         <?php } ?>
                     </p>
                     <p>
                         <?php 
                             $arr_age_user = explode("-",$model->age);
-                            $arr_age_model = explode("-",$user->age);
+                            $age_user = date("Y") - date('Y', strtotime($user->birthday));
                         ?>
                         <span class="txt-gender">Age: </span>
-                        <?php if(($arr_age_user[0] = $arr_age_model[0]) && ($arr_age_user[1] == $arr_age_model[1])){ ?>
+                        <?php if(($arr_age_user[0] <= $age_user) && ($age_user <= $arr_age_user[1] )){ ?>
                         <span class="txt-female" style="color: #9cdd2b;"><?php echo $model->age ?></span>
                         <span class="stick-green"></span>
                         <?php }else{ ?>
