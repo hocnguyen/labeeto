@@ -19,6 +19,7 @@
 <div class="container-fluid">
 
     <?php
+    $membership     = Lookup::items('Membership');
     $active_product = Lookup::items('StatusUser');
     $user_online    = Lookup::items('StatusOnline');
     $this->widget('zii.widgets.grid.CGridView', array(
@@ -50,10 +51,18 @@
         ),
         array(
             'name'=>'status',
-            'header'=>Yii::t('global','Membership'),
+            'header'=>Yii::t('global','Type'),
             'type' => 'raw',
             'filter'=>$active_product,
             'value' => '$data->getStatusMember($data->status)',
+            'htmlOptions'=>array('style'=>'width:30px;')
+        ),
+        array(
+            'name'=>'membership',
+            'header'=>Yii::t('global','Membership'),
+            'type' => 'raw',
+            'filter'=>$membership,
+            'value' => '($data->membership)',
             'htmlOptions'=>array('style'=>'width:30px;')
         ),
         array(
