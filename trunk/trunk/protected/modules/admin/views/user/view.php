@@ -49,6 +49,7 @@
                         array('name'=>'longtitude'),
                         array('name'=>'drink'),
                         array('name'=>'status','value'=>Lookup::item( "StatusUser", $model->status) ),
+                        array('name'=>'membership','value'=>Lookup::item( "Membership", $model->membership) ),
                         array('name'=>'created'),
                         array('name'=>'updated'),
                     ))); ?>
