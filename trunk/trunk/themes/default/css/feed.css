@@ -2933,14 +2933,13 @@ textarea:focus, input:focus{
 
 /***********************Message***********************/
 .menu-nav-message{
-    display: inline-block;
-    padding: 55px 30px 0;
     border-top: 1px solid #cbcbcb;
     border-radius: 0 !important;
     -webkit-border-radius: 0 !important;
     -moz-border-radius: 0 !important;
     behavior: url('../pie/PIE.htc');
-    width: 100%;
+    width: 94%;
+    margin: 55px auto 0;
 }
 .menu-nav-message ul{
     float: right;
@@ -2971,6 +2970,7 @@ textarea:focus, input:focus{
     height: 50px;
     width: 230px;
     border-right: 1px solid #1f2a32;
+    box-shadow: 0px 1px 0px #1f2a32;
 }
 .menu-nav-message ul li.message_new span.new_message{
     background: url('../images/new_message.png') no-repeat;
@@ -2990,6 +2990,7 @@ li.li_message{
     list-style: none;
     height: 50px;
     float: left;
+    position: relative;
 }
 .all_message{
     padding-right: 15px;
@@ -3001,6 +3002,45 @@ li.li_message{
     width: 15px;
     margin-top: -5px;
     cursor: pointer;
+    position: relative;
+}
+.menu_message{
+    display: none;
+    border: 1px solid #20303b;
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    background: url(../images/bg-slide.png) repeat;
+    width: 237px;
+    border-radius: 4px;
+    overflow: inherit !important;
+    z-index: 999;
+}
+.menu_message ul{
+     opacity: 0.4;
+     list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.menu_message:after {
+    content: '';
+    position: absolute;
+    left: 207px;
+    top: -12px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 12px solid #21313c;
+}
+.menu_message ul li a {
+    display: block;
+    padding: 15px;
+    border-top: 1px solid #20303b;
+    border-bottom: 1px solid #20303b;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
 }
 li.list_message{
     float: right;
@@ -3027,4 +3067,319 @@ li.list_message ul li span{
     font: normal 16px/normal Proxima Nova Bold;
     padding: 7px 0px 5px 0px;
     text-align: center;
+}
+li.list_message ul li span.message_1{
+    background: url('../images/pag_message_1.png') no-repeat;
+    margin-top: -2px;
+}
+
+.content_left_message{
+    width: 230px; 
+    float: left; 
+    background: #2d3c46; 
+    margin-top: -1px;
+}
+.content_left_message ul li span{
+    text-transform: uppercase;
+    font: normal 12.5px/normal Proxima Nova Semi Bold;
+    color: #dddddd;
+}
+.content_left_message ul li{
+    border-bottom: 1px solid #1f2a32;
+    cursor: pointer;
+}
+.content_left_message ul li a{
+    padding: 20px 10px 15px 30px;
+    display: block; 
+    /*border-left: 4px solid #5dc1ea; */
+}
+.content_left_message ul li a:hover{
+    text-decoration: none;
+}
+.content_left_message ul li span.trash{
+    background: url('../images/trash.png') no-repeat;
+   padding-left: 30px;
+    height: 20px;
+    display: block;
+    padding-top: 5px;
+}
+.content_left_message ul li span.archived{
+    background: url('../images/archived.png') no-repeat;
+    padding-left: 30px;
+    height: 20px;
+    display: block;
+    padding-top: 2px;
+}
+.content_left_message ul li span.sent{
+    background: url('../images/sent.png') no-repeat;
+    padding-left: 30px;
+    height: 20px;
+    display: block;
+    padding-top: 5px;
+}
+
+.content_left_message ul li span.message_5{
+    background: url('../images/message_p.png') no-repeat;
+    padding-left: 30px;
+    height: 20px;
+    display: block;
+    padding-top: 2px;
+}
+.message_box_all{
+    width: 689px;
+    float: right;
+    margin-top: -2px;
+}
+ul.content_message_box{
+    width: 100%;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+ul.content_message_box li.message_detail_1{
+    padding: 20px;
+    background-color: #c1dde9;
+    border-bottom: 1px solid #bdb3b3;
+    overflow: hidden;
+    cursor: pointer;
+}
+ul.content_message_box li.message_detail_2{
+    padding: 20px;
+    background-color: #efefef;
+    border-bottom: 1px solid #bdb3b3;
+    overflow: hidden;
+    cursor: pointer;
+}
+ul.content_message_box li.message_detail_3{
+    padding: 20px;
+    background-color: #efefef;
+    overflow: hidden;
+    cursor: pointer;
+}
+.content_message_box .message_detail_3 img,
+.content_message_box .message_detail_2 img,
+.content_message_box .message_detail_1 img{
+    border-radius: 100%;
+}
+.content_message_box .message_detail_3 .view_message,
+.content_message_box .message_detail_2 .view_message,
+.content_message_box .message_detail_1 .view_message{
+    float: left;
+    padding-left: 40px;
+}
+.content_message_box .message_detail_3 .view_message h6,
+.content_message_box .message_detail_2 .view_message h6,
+.content_message_box .message_detail_1 .view_message h6{
+    color: #363e43;
+    font: normal 17px/normal Helvetica Neue LTPro Bd;
+}
+.content_message_box .message_detail_3 .view_message p,
+.content_message_box .message_detail_2 .view_message p,
+.content_message_box .message_detail_1 .view_message p{
+    color: #5e5e5e;
+    font: normal 15px/normal Helvetica Neue LTPro Bd;
+}
+.content_message_box .message_detail_3 .name_time,
+.content_message_box .message_detail_2 .name_time,
+.content_message_box .message_detail_1 .name_time{
+    float: left;
+    padding: 3px 0px 0px 10px;
+}
+.content_message_box .message_detail_3 .name_time h6,
+.content_message_box .message_detail_2 .name_time h6,
+.content_message_box .message_detail_1 .name_time h6{
+    color: #4d5a63;
+    font: normal 17px/normal Helvetica Neue LTPro Bd;
+}
+.content_message_box .message_detail_3 .name_time p,
+.content_message_box .message_detail_2 .name_time p,
+.content_message_box .message_detail_1 .name_time p{
+    color: #6f6262;
+    font: normal 13px/normal Helvetica Neue LT Pro;
+}
+li.message_search{
+    padding: 20px 10px 20px 10px;
+    border-bottom: 2px solid #1f2a32 !important;
+}
+li.message_search input{
+    background-image: url('../images/search.png');
+    background-repeat: no-repeat;
+    text-indent: 20px;
+    background-position: 4px 6px;
+    font: normal 16px/normal Helvetica Neue LT Pro Lt;
+    color: #a4a4a4;
+}
+.message_box_all .content_message_box .send_message img{
+    border-radius: 100%;
+}
+.message_box_all .content_message_box .send_message{
+    padding: 10px;
+    overflow: hidden;
+    border-bottom: 1px solid #cbcbcb;
+    background: #ffffff;
+}
+.sent_to{
+    float: left;
+    font: normal 16px/normal Helvetica Neue LTPro Bd;
+    color: #676b6d;
+    padding: 10px 10px 0px 0px;
+}
+.send_name{
+    float: left;
+    color: #4d5a63;
+    font: normal 16px/normal Helvetica Neue LTPro Bd;
+    padding: 10px 10px 0px 15px;
+}
+.compose{
+    padding: 25px 10px;
+    background: #e8e8e8;
+    font: normal 16px/normal Helvetica Neue LTPro Bd;
+    color: #676b6d;
+}
+.message_box_all .content_message_box li textarea{
+    height: 100px;
+    font: normal 16px/normal Helvetica Neue Light;
+    color: #929292;
+    border-radius: 0 !important;
+}
+.message_box_all .content_message_box li.add_some{
+    height: 65px;
+    background: #f0f0f0 ;
+    color: #978f8f;
+    font: normal 13px/normal Helvetica Neue Light;
+}
+.message_box_all .content_message_box li.add_some .add-media{
+    margin: 22px;
+    float: left;
+    cursor: pointer;
+    background: url(../images/icon-upload.png) no-repeat;
+    text-indent: 20px;
+    height: 20px;
+}
+
+.message_box_all .content_message_box li.add_some .add-location{
+    margin: 22px;
+    float: left;
+    font: normal 13px/normal Helvetica Neue Light;
+    cursor: pointer;
+    background: url(../images/icon-location.png) no-repeat;
+    text-indent: 15px;
+    height: 20px;
+}
+.message_box_all .content_message_box li.add_some .invite{
+    margin: 20px;
+    float: left;
+    text-indent: 15px;
+    height: 20px;
+}
+.message_box_all .content_message_box li.add_some .send_message_1{
+    margin: 15px;
+    float: left;
+    height: 30px;
+    background: url(../images/send_message.png) no-repeat;
+    width: 105px;
+    color: #ffffff;
+    font: normal 16px/normal Proxima Nova Bold;
+    padding-top: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+.message_box_all .content_message_box .messege_to_me{
+    padding: 20px;
+    background-color: #efefef;
+    border-bottom: 1px solid #bdb3b3;
+    overflow: hidden;
+    cursor: pointer;
+}
+.message_box_all .content_message_box .messege_to_me img{
+    height: 90px;
+    width: 90px;
+    border-radius: 100%;
+    border: 1px solid #dddddd;
+    padding: 3px;
+}
+.message_box_all .content_message_box .messege_to_me .name_time{
+    float: left;
+    padding: 15px 0px 0px 10px;
+    width: 120px;
+}
+.message_box_all .content_message_box .messege_to_me .name_time h6{
+    color: #ed4c5f;
+    font: normal 22px/normal Helvetica Neue LTPro Bd;
+}
+.message_box_all .content_message_box .messege_to_me .name_time span{
+    color: #6f6262;
+    font: normal 13px/normal Helvetica Neue LT Pro;
+}
+.message_box_all .content_message_box .messege_to_me .view_message{
+    float: left;
+    padding-left: 40px;
+    padding-top: 18px;
+}
+.message_box_all .content_message_box .messege_to_me .view_message h6{
+    color: #363e43;
+    font: normal 17px/normal Helvetica Neue LTPro Bd;
+    padding-bottom: 10px;
+}
+.message_box_all .content_message_box .messege_to_me .view_message span{
+    color: #727b81;
+    font: normal 17px/normal Helvetica Neue LT Pro Lt;
+    font-style: italic;
+}
+.message_box_all .content_message_box .messege_to_me .view_message span.text_message{
+    color: #363e43;
+    font: normal 17px/normal Helvetica Neue LTPro Bd;
+}
+.message_box_all .content_message_box .messege_to_me .view_message .btn-sure .sure,
+.message_box_all .content_message_box .messege_to_me .view_message .btn-sure .noway{
+    float: left;
+    height: 30px;
+    width: 125px;
+    font: normal 16px/normal Proxima Nova Bold;
+    padding-top: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+.message_box_all .content_message_box .messege_to_me .view_message .btn-sure .sure{
+    background: url(../images/sure.png) no-repeat;
+    color: #ffffff;
+}
+.message_box_all .content_message_box .messege_to_me .view_message .btn-sure .noway{
+    background: url(../images/noway.png) no-repeat;
+    color: #c1c3c4;
+    font: normal 16px/normal Proxima Nova Bold;
+    margin-left: 10px;
+}
+.bk_green{
+    background-color: #bdd8e3 !important;
+}
+.list_action{
+    float: right;
+}
+
+.list_action ul li{
+    float: left;
+    text-transform: uppercase;
+    color: #ffffff;
+    font: normal 12.5px/normal Proxima Nova Semi Bold;
+    padding: 16px 20px 0px 20px;
+    border-left: 1px solid #1f2a32;
+    height: 50px;
+    cursor: pointer;
+}
+.list_action ul li span.archive_message {
+    background: url('../images/archived.png') no-repeat;
+    padding: 0px 0px 0px 30px;
+    margin-top: 10px;
+}
+.list_action ul li span.delete_message {
+    background: url('../images/trash.png') no-repeat;
+    padding: 7px 0px 0px 25px;
+    margin-top: 10px;
+}
+.message-header{
+    width: 94%;
+    background: #2d3c46;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 0px 0px 0px 5px;
 }

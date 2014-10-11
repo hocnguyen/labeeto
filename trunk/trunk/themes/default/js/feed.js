@@ -16,6 +16,10 @@ $(document).ready(function(){
     $("#toggle").click(function(){
         $(".menu-slide").toggle();
     });
+    
+    $("#toggle_message").click(function(){
+        $(".menu_message").toggle();
+    });
    
     $("#toggle-notification").click(function(){
         $(".menu-notification").toggle();
