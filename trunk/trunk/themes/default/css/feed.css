@@ -3383,3 +3383,9 @@ li.message_search input{
     margin: auto;
     border-radius: 0px 0px 0px 5px;
 }
+.btn-default{
+    background-color: #2D3C46;
+    background: #2D3C46;
+    border-color: #2D3C46;
+    color:#2D3C46;
+}
