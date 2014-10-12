@@ -126,7 +126,6 @@ class PhotoController extends AdminBaseController {
 	{
 		$model=new Photo('search');
 		$model->unsetAttributes();  // clear any default values
-        $model->is_public = 0;
 		if(isset($_GET['Photo']))
 			$model->attributes=$_GET['Photo'];
         
