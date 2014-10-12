@@ -39,7 +39,6 @@
             'htmlOptions'=>array('style'=>'text-align:center'),
             'value' => 'CHtml::checkBox("record[$data->id]", $data->id, array("value"=>$data->id,"id"=>"record_".$data->id))',
         ),
-    		'id',
         array(
             'name'=> 'photo',
             'header'=> Yii::t('global', 'Photo'),
@@ -47,13 +46,13 @@
             'type' => 'raw',
             'filter' => false,
         ),
-        /*array(
+        array(
             'name'=> 'is_public',
             'header'=> Yii::t('global', 'Public'),
             'value'=> '$data->getPublic($data->is_public)',
             'type' => 'raw',
             'filter' => $public,
-        ),*/
+        ),
         array(
             'name'=> 'user_id',
             'header'=> Yii::t('global', 'User'),
