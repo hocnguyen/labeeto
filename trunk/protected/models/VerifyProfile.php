@@ -48,7 +48,7 @@ class VerifyProfile extends CActiveRecord
 			array('date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, photo, user_id, date, code', 'safe', 'on'=>'search'),
+			array('id, photo, user_id, date, code, is_approval', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -74,6 +74,7 @@ class VerifyProfile extends CActiveRecord
 			'user_id' => Yii::t('global', 'User'),
 			'date' => Yii::t('global', 'Date'),
 			'code' => Yii::t('global', 'Code'),
+            'is_approval' => Yii::t('global', "Approval"),
 		);
 	}
 
@@ -91,9 +92,12 @@ class VerifyProfile extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('photo',$this->photo,true);
 		$criteria->compare('user_id',$this->user_id);
-		$criteria->compare('date',$this->date,true);
+		//$criteria->compare('date',$this->date,true);
 		$criteria->compare('code',$this->code,true);
-
+        $criteria->compare('is_approval',$this->is_approval);
+        if ($this->date)
+            $criteria->compare('date', date('Y-m-d ', strtotime($this->date)), true);
+            
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
@@ -103,5 +107,19 @@ class VerifyProfile extends CActiveRecord
         if($is_approval == 1)
             return Yii::t('global', 'Approval');
         return Yii::t('global', 'No Approval');
+    } 
+    function showAdminPhoto()
+    {
+        return '<a class="fancybox" href="/uploads/photoVerify/' . $this->photo . '" rel="group">
+                    <img class="img-polaroid fix_image_products" src="/uploads/photoVerify/' . $this->photo . '" style="height: 40px;"/>
+                </a>';
+    }
+    
+    public function getApprovalStatus(){
+        $approval = array(
+              Yii::t('global','No Approval'),
+              Yii::t('global','Approval')
+            );
+        return $approval;
     }
 }
