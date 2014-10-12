@@ -210,4 +210,15 @@ class VerifyProfileController extends AdminBaseController {
         }
          $this->redirect('/admin/verifyProfile');
     }
+    
+    public function actionApproval()
+    {
+        $allphoto = Photo::model()->findAll();
+        if($allphoto){
+            foreach($allphoto as $value){
+                VerifyProfile::model()->updateByPk($value->id, array('is_approval'=>1));
+            }
+        }
+        $this->redirect('/admin/verifyProfile');
+    }
 }

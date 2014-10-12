@@ -12,7 +12,9 @@
             <span class="add-on add-on-last add-on-mini removeTable"><i class="icon-remove"></i></span>
         </div>
     </form>
-
+    <form class="header-tab-view not-bor" action="/admin/verifyProfile/approval">
+        <button type="submit">Approval all photo</button>
+    </form>
 </div>
 
 <div class="floatingBox table">
