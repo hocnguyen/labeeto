@@ -29,7 +29,7 @@ r
         <div class="content-infor-profile">
             <div class="name_user">
                 <?php echo $this->user->username ?>
-                <img src="/themes/default/images/<?php echo ($online ==  User::USER_ONLINE)? 'search-online.png' :'settings.png'; ?>" >
+                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/<?php echo ($online ==  User::USER_ONLINE)? 'search-online.png' :'settings.png'; ?>" >
             </div>
             <div class="menu-nav-infor">
                 <ul style="float: right;">
@@ -47,7 +47,9 @@ r
         <div class="content-img">
             <div style="float: left; width: 60%; padding-left: 14%;">
                 <div class="street"><span class="icon-people"></span>
-                <?php echo date("Y") - date('Y', strtotime($this->user->birthday));  ?>, <?php  if($this->user->gender == 1) echo "F"; else echo 'M Straight'; ?></div>
+                <?php echo date("Y") - date('Y', strtotime($this->user->birthday));  ?>, <?php  if($this->user->gender == 1) echo "F"; else echo 'M Straight'; ?> <?php if ($online->membership ==  User::MEMBER_VERIFIED ) { ?>
+                        <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/verify.png" >
+                    <?php } ?></div>
                 <div class="businuess"><span class="icon-vali"></span><?php if($this->user->career) echo $this->user->career; ?></div>
                 <div class="location"><span class="icon-location"></span><?php if($this->user->address) echo $this->user->address; ?></div>
             </div>
