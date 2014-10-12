@@ -87,7 +87,7 @@
     }
 
     public function getAvatar( $photo ){
-        $image = ( $photo != '' )?$photo:'no_image.png';
+        $image = ( $photo != '' && $photo != 'undefined' )?$photo:'no-avatar.png';
         return $image;
     }
 

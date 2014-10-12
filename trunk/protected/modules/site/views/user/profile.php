@@ -28,7 +28,7 @@ r
         </div>
         <div class="content-infor-profile">
             <div class="name_user">
-                <?php echo $this->user->username ?>
+                <?php echo Utils::short_description($this->user->username, 10); ?>
                 <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/<?php echo ($online->is_online ==  User::USER_ONLINE)? 'search-online.png' :'search-btn-gray.png'; ?>" >
             </div>
             <div class="menu-nav-infor">
