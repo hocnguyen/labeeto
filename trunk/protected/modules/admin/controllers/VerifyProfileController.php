@@ -34,8 +34,24 @@ class VerifyProfileController extends AdminBaseController {
 		if(isset($_POST['VerifyProfile']))
 		{
 			$model->attributes=$_POST['VerifyProfile'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+            $model->date = date('Y:m:d H:m:s');
+			$uploadedFile = CUploadedFile::getInstance($model,'photo');
+            if(!empty($uploadedFile)) {
+                $rnd = rand(0,9999);
+                $fileName = "{$rnd}-{$uploadedFile}";
+                $model->photo = $fileName;
+            }
+            else{
+                $model->photo   = '' ;
+            }
+            $model->code = strtoupper($_POST['VerifyProfile']['code']);
+			if($model->save()){
+		     if(!empty($uploadedFile)) {
+                $uploadedFile->saveAs(Yii::app()->basePath.'/../uploads/photoVerify/'.$model->photo);
+            }
+            
+			$this->redirect(array('view','id'=>$model->id));
+            }
 		}
 
 		$this->render('create',array(
@@ -57,9 +73,24 @@ class VerifyProfileController extends AdminBaseController {
 
 		if(isset($_POST['VerifyProfile']))
 		{
-			$model->attributes=$_POST['VerifyProfile'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->is_approval = $_POST['Photo']['is_approval'];
+            $uploadedFile = CUploadedFile::getInstance($model,'photo');
+            
+            if(!empty($uploadedFile)) {
+                $rnd = rand(0,9999);
+                $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
+                $model->photo = $fileName;
+            }else{
+                $modelold       = $this->loadModel($id);
+                $model->photo   = $modelold->photo ;
+            }
+            $model->code = strtoupper($_POST['VerifyProfile']['code']);
+			if($model->save()){
+			     if(!empty($uploadedFile)) {
+                    $uploadedFile->saveAs(Yii::app()->basePath.'/../uploads/photoVerify/'.$model->photo);
+                    }
+			     $this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('update',array(
@@ -92,7 +123,10 @@ class VerifyProfileController extends AdminBaseController {
 	 */
 	public function actionIndex()
 	{
-		$model = new VerifyProfile;
+		$model=new VerifyProfile('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['VerifyProfile']))
+			$model->attributes=$_GET['VerifyProfile'];
         
         // Did we submit the form and selected items?
 		if( isset($_POST['bulkoperations']) && $_POST['bulkoperations'] != '' )
@@ -101,7 +135,14 @@ class VerifyProfileController extends AdminBaseController {
 			if( isset($_POST['record']) && count($_POST['record']) )
 			{
                  switch( $_POST['bulkoperations'] )
-    				{						
+    				{									
+    				    
+    					case 'bulkdelete':
+                            // Load records
+					       $records = VerifyProfile::model()->deleteByPk(array_keys($_POST['record']));
+        					Yii::app()->user->setFlash('success', Yii::t('global', '{count} items deleted.', array('{count}'=>$records)));
+    					   break;
+    				    
                         case 'bulkapproval':
                             $records = VerifyProfile::model()->updateByPk(array_keys($_POST['record']), array('is_approval'=>1));
         					Yii::app()->user->setFlash('success', Yii::t('global', '{count} items approval.', array('{count}'=>$records)));
@@ -120,31 +161,9 @@ class VerifyProfileController extends AdminBaseController {
     			}
     		}
             
-		// Load items and display
-		$criteria = new CDbCriteria;
-        $count = VerifyProfile::model()->count();
-		$pages = new CPagination($count);
-		$pages->pageSize = 10;
-		
-		$pages->applyLimit($criteria);
-		
-		$sort = new CSort('VerifyProfile');
-		$sort->defaultOrder = 'id DESC';
-		$sort->applyOrder($criteria);
-
-		$sort->attributes = array(
-		        'id'=>'id',
-                'photo'=>'photo',
-                'code'=>'code',
-                'is_approval'=>'is_approval',
-                'user_id'=>'user_id',
-				'date' =>'date',
-		);
-		
-		$items = VerifyProfile::model()->findAll($criteria);
-	
-        $this->render('index', array( 'model' => $model, 'items' => $items, 'pages' => $pages, 'sort' => $sort, 'count' => $count ));
-    
+		$this->render('index',array(
+			'model'=>$model,
+		));
 	}
 
 	/**
@@ -184,16 +203,7 @@ class VerifyProfileController extends AdminBaseController {
 		}
 	}
     
-    public function actionApproval()
-    {
-        $allphoto = VerifyProfile::model()->findAll();
-        if($allphoto){
-            foreach($allphoto as $value){
-                VerifyProfile::model()->updateByPk($value->id, array('is_approval'=>1));
-            }
-        }
-        $this->redirect('/admin/verifyProfile');
-    }
+    
     public function actionRemove(){
         if(isset($_GET['id'])){
             VerifyProfile::model()->deleteByPk($_GET['id']);

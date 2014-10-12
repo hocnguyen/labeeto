@@ -14,9 +14,10 @@
                     'id'=>'verify-profile-form',
                     'enableAjaxValidation'=>false,
                     'htmlOptions'=>array(
-                                'class'=>'form-horizontal contentForm',
-                                'data-validate'=>'parsley',
-                                )
+                            'enctype' => 'multipart/form-data',
+                            'class'=>'form-horizontal contentForm',
+                            'data-validate'=>'parsley',
+                    )
                 )); ?>
 
             <?php echo $form->errorSummary($model); ?>
@@ -24,14 +25,21 @@
                     <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'photo'); ?>
 </label>
                     <div class="controls">
-                        <?php echo $form->textField($model,'photo',array('size'=>60,'maxlength'=>500, 'class'=>'span10')); ?>
+                        <?php echo $form->fileField($model,'photo'); ?>
+                        <?php if ($model->photo): ?>
+                        <a class="fancybox" <?php echo 'href="/uploads/photoVerify/' . $model->photo . '"' ?> rel="group">
+                            <img class="img-polaroid" <?php echo 'src="/uploads/photoVerify/' . $model->photo . '"' ?>
+                                 style="height: 50px;"/>
+                        </a>
+                        <?php endif; ?>
                     </div>
                 </div>
                             <div class="control-group">
                     <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'user_id'); ?>
 </label>
                     <div class="controls">
-                        <?php echo $form->textField($model,'user_id', array('class'=>'span10')); ?>
+                        <?php $alluser = User::model()->getAllUser(); ?>
+                        <?php echo $form->dropDownList($model,'user_id', $alluser); ?>
                     </div>
                 </div>
                             <div class="control-group">
@@ -39,13 +47,6 @@
 </label>
                     <div class="controls">
                         <?php echo $form->textField($model,'code',array('size'=>10,'maxlength'=>10, 'class'=>'span10')); ?>
-                    </div>
-                </div>
-                            <div class="control-group">
-                    <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'date'); ?>
-</label>
-                    <div class="controls">
-                        <?php echo $form->textField($model,'date', array('class'=>'span10')); ?>
                     </div>
                 </div>
                             <div class="control-group">

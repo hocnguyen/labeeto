@@ -19,7 +19,7 @@
 
 <div class="floatingBox table">
 <div class="container-fluid">
-
+<form action="/admin/photo" method="post">	
     <?php
     $active_user = CHtml::listData(User::model()->findAll(),'id','username'); 
     $public = Photo::getPublicStatus();
@@ -32,6 +32,13 @@
     'afterAjaxUpdate' => 'reinstallDatePicker',
     'filter'=>$model,
     'columns'=>array(
+        array(
+             'header'=>'Check',
+            'class'=>'CDataColumn',
+            'type'=>'raw',
+            'htmlOptions'=>array('style'=>'text-align:center'),
+            'value' => 'CHtml::checkBox("record[$data->id]", $data->id, array("value"=>$data->id,"id"=>"record_".$data->id))',
+        ),
     		'id',
         array(
             'name'=> 'photo',
@@ -40,13 +47,13 @@
             'type' => 'raw',
             'filter' => false,
         ),
-        array(
+        /*array(
             'name'=> 'is_public',
             'header'=> Yii::t('global', 'Public'),
             'value'=> '$data->getPublic($data->is_public)',
             'type' => 'raw',
             'filter' => $public,
-        ),
+        ),*/
         array(
             'name'=> 'user_id',
             'header'=> Yii::t('global', 'User'),
@@ -112,7 +119,16 @@
     ),
     )); ?>
 
-
+<div class="footer tar">
+		<select name="bulkoperations" style="margin-top: 7px;">
+			<option value=""><?php echo Yii::t('global', '-- Choose Action --'); ?></option>
+			<option value="bulkdelete"><?php echo Yii::t('global', 'Delete Selected'); ?></option>
+            <option value="bulkapproval"><?php echo Yii::t('global', 'Approval Selected'); ?></option>
+            <option value="bulkunapproval"><?php echo Yii::t('global', 'Un Approval Selected'); ?></option>
+		</select>
+		<?php echo CHtml::submitButton( Yii::t('global', 'Apply'), array( 'confirm' => Yii::t('global', 'Are you sure you would like to perform a bulk operation?'), 'class'=>'btn')); ?>
+</div>
+</form>
 </div>
 </div>
 
