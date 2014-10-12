@@ -49,9 +49,9 @@
                                 <td><?php echo ($row->is_approval == 1)? Yii::t('global', 'Approval'): Yii::t('global', 'Not Approval'); ?></td>
 								<td class="tipb"><span><?php echo Yii::app()->dateFormatter->formatDateTime($row->date, 'long', 'short'); ?></span></td>
 								<td>
-                                    <a href="<?php echo $this->createUrl('photo/view', array( 'id' => $row->id )); ?>" class="tipb" data-original-title="<?php echo Yii::t('adminglobal', 'View this KavaFalim!'); ?>"><img src="/assets/images/view.png" alt="<?php echo Yii::t('adminglobal','View') ?>" /></a>
-                                    <a href="<?php echo $this->createUrl('photo/update', array( 'id' => $row->id )); ?>" class="tipb" data-original-title="<?php echo Yii::t('adminglobal', 'Update this KavaFalim!'); ?>"><img src="/assets/images/update.png" alt="<?php echo Yii::t('adminglobal','Update') ?>" /></a>
-									<a href="<?php echo $this->createUrl('photo/remove', array( 'id' => $row->id )); ?>" class="tipb" data-original-title="<?php echo Yii::t('adminglobal', 'Delete this KavaFalim!'); ?>"><img src="/assets/images/delete.png" alt="<?php echo Yii::t('adminglobal','Delete') ?>" /></a>
+                                    <a href="<?php echo $this->createUrl('photo/view', array( 'id' => $row->id )); ?>" class="tipb" data-original-title="<?php echo Yii::t('adminglobal', 'View this Photo!'); ?>"><img src="/assets/images/view.png" alt="<?php echo Yii::t('adminglobal','View') ?>" /></a>
+                                    <a href="<?php echo $this->createUrl('photo/update', array( 'id' => $row->id )); ?>" class="tipb" data-original-title="<?php echo Yii::t('adminglobal', 'Update this Photo!'); ?>"><img src="/assets/images/update.png" alt="<?php echo Yii::t('adminglobal','Update') ?>" /></a>
+									<a href="<?php echo $this->createUrl('photo/remove', array( 'id' => $row->id )); ?>" class="tipb" data-original-title="<?php echo Yii::t('adminglobal', 'Delete this Photo!'); ?>"><img src="/assets/images/delete.png" alt="<?php echo Yii::t('adminglobal','Delete') ?>" /></a>
 								</td>
 							</tr>
 						<?php endforeach ?>

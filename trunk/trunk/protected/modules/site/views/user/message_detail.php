@@ -76,6 +76,7 @@
                         he conviction no decisively. Marianne jointure attended she hastened surprise but she.
                          </span>
                     </div>
+                    <div class="clearfix"></div>
                 </li>
                 <li class="compose">
                     Write a reply
