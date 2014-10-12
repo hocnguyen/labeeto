@@ -31,7 +31,7 @@ r
                 <?php echo Utils::short_description($this->user->username, 10); ?>
                 <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/<?php echo ($online->is_online ==  User::USER_ONLINE)? 'search-online.png' :'search-btn-gray.png'; ?>" class="icononline" style="padding-bottom: 3px;" >
                 <?php if($online->membership ==  User::MEMBER_VERIFIED){ ?>
-                <a class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Verified User" style="background: transparent; border: none;">
+                <a href="/user/verify" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Verified User" style="background: transparent; border: none;">
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/search-check-red.png">
                 </a>
                 <?php } ?>
