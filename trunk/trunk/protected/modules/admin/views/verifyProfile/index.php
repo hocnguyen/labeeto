@@ -54,7 +54,7 @@
         array(
             'name'=> 'user_id',
             'header'=> Yii::t('global', 'User'),
-            'value'=> 'User::model()->getUser($data->user_id)',
+            'value'=> '$data->getLinkUser($data->user_id)',
             'type' => 'raw',
             'filter' =>$active_user ,
         ),

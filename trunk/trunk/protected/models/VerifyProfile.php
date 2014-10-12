@@ -122,4 +122,9 @@ class VerifyProfile extends CActiveRecord
             );
         return $approval;
     }
+    
+    public function getLinkUser($id){
+        $user = User::model()->getUser($id);
+        return '<label><a href="/admin/user/view?id='. $id .'&action=index">'. $user .'</a></label>';
+    }
 }
