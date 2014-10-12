@@ -1,93 +1,140 @@
-<div class="page-header">
-	<h1><?php echo Yii::t('global','Manage') ?> <small><?php echo Yii::t('global','Verify Profile') ?></small></h1>
-</div>
-
-<!-- Start .notifications -->
-<?php $this->widget('widgets.admin.notifications'); ?>
-<!-- End .notifications -->
-
+<div class="container-fluid">
 
 <div class="row-fluid">
-	<div class="span12">                    
-		<div class="head clearfix">
-			<div class="isw-mail"></div>
-			<h1><?php echo Yii::t('global', 'Verify Profile'); ?> (<?php echo Yii::app()->format->number($count); ?>)</h1>
-		      <form class="header-tab-view not-bor" action="/admin/verifyProfile/approval">
-                <button type="submit"><?php echo Yii::t('global', 'Approval all photo') ?></button>
-            </form>
-		</div>
-		<div class="block-fluid">
-			<?php echo CHtml::form(); ?>
-			<table cellpadding="0" cellspacing="0" width="100%" class="table">
-				<thead>
-					<tr>
-						<th style='width: 5%;'><input name="checkall" type="checkbox" /></th>
-                       <th style='width: 10%;'><?php echo $sort->link('user_id', Yii::t('global', 'User'), array( 'class' => 'tipb', 'title' => Yii::t('global', 'Sort list by user') ) ); ?></th>
-					   <th style='width: 6%;'><?php echo Yii::t('global', 'Photo'); ?></th>
-                       <th style='width: 15%;'><?php echo $sort->link('code', Yii::t('global', 'Code'), array( 'class' => 'tipb', 'title' => Yii::t('global', 'Sort list by public') ) ); ?></th>
-                       <th style='width: 15%;'><?php echo $sort->link('is_approval', Yii::t('global', 'Approval'), array( 'class' => 'tipb', 'title' => Yii::t('global', 'Sort list by approval') ) ); ?></th>
-                       <th style='width: 15%;'><?php echo $sort->link('date', Yii::t('global', 'Created'), array( 'class' => 'tipb', 'title' => Yii::t('global', 'Sort list by date') ) ); ?></th>
-					   <th style='width: 5%;'><?php echo Yii::t('global', 'Options'); ?></th>						
-					</tr>
-				</thead>
-				<tbody>
-					<?php if ($items): ?>
-						<?php foreach ($items as $row): ?>
-							<tr>
-								<td>
-                                    <span>
-                                        <?php echo CHtml::checkbox( 'record[' . $row->id.']' ); ?>
-                                    </span>
-                                </td>
-                                <td><?php echo User::model()->getUser($row->user_id) ?></td>
-                                <td>
-                                    <a class="fancybox" href="/uploads/photoVerify/<?php echo $row->photo ?>" rel="group">
-                                        <img class="img-polaroid fix_image_products" src="/uploads/photoVerify/<?php echo $row->photo ?>" style="height: 40px;"/>
-                                    </a>
-                                </td>
-                                <td><?php echo $row->code ; ?></td>
-                                <td><?php echo ($row->is_approval == 1)? Yii::t('global', 'Approval'): Yii::t('global', 'Not Approval'); ?></td>
-								<td class="tipb"><span><?php echo Yii::app()->dateFormatter->formatDateTime($row->date, 'long', 'short'); ?></span></td>
-								<td>
-                                    <a href="<?php echo $this->createUrl('verifyProfile/view', array( 'id' => $row->id )); ?>" class="tipb" data-original-title="<?php echo Yii::t('adminglobal', 'View this Verify Profile!'); ?>"><img src="/assets/images/view.png" alt="<?php echo Yii::t('adminglobal','View') ?>" /></a>
-                                    <a href="<?php echo $this->createUrl('verifyProfile/remove', array( 'id' => $row->id )); ?>" class="tipb" data-original-title="<?php echo Yii::t('adminglobal', 'Delete this Verify Profile!'); ?>"><img src="/assets/images/delete.png" alt="<?php echo Yii::t('adminglobal','Delete') ?>" /></a>
-								</td>
-							</tr>
-						<?php endforeach ?>
-					<?php else: ?>	
-						<tr>
-							<td colspan='5' style='text-align:center;'><?php echo Yii::t('global', 'No newsletters found.'); ?></td>
-						</tr>
-					<?php endif; ?>                               
-				</tbody>
-			</table>
-			<div class="footer tar">
-					<select name="bulkoperations" style="margin-top: 7px;">
-						<option value=""><?php echo Yii::t('global', '-- Choose Action --'); ?></option>
-                        <option value="bulkapproval"><?php echo Yii::t('global', 'Approval Selected'); ?></option>
-                        <option value="bulkunapproval"><?php echo Yii::t('global', 'Un Approval Selected'); ?></option>
-					</select>
-					<?php echo CHtml::submitButton( Yii::t('global', 'Apply'), array( 'confirm' => Yii::t('global', 'Are you sure you would like to perform a bulk operation?'), 'class'=>'btn')); ?>
-			</div>
-			
-			</div>
-			<?php echo CHtml::endForm(); ?>
-			<?php $this->widget('widgets.MyADPager', array('pages'=>$pages, 'htmlOptions'=>array('class'=>'paging') )); ?>
-		</div>
-	</div>   
+<div class="span12">
+
+<div class="containerHeadline tableHeadline">
+    <h2><?php echo Yii::t('global', 'Verify Profiles'); ?></h2>
+    <form>
+        <div class="input-append">
+            <span class="add-on add-on-middle add-on-mini" onclick="window.location.href='<?php echo $this->createUrl('verifyProfile/create') ?>'"><i class="icon-plus-sign" title="<?php echo Yii::t('adminlang', 'Create'); ?>" ></i></span>
+            <span class="add-on add-on-middle add-on-mini minimizeTable"><i class="icon-caret-down"></i></span>
+            <span class="add-on add-on-last add-on-mini removeTable"><i class="icon-remove"></i></span>
+        </div>
+    </form>
+
 </div>
-<br/>
 
-<script type="text/javascript">
-    $(document).ready(function(){
-        $("input[name=checkall]").click(function(){
-            if(!$(this).is(':checked'))
-                $(this).parents('table').find('span').removeClass('checked').find('input[type=checkbox]').attr('checked',false);
-            else
-                $(this).parents('table').find('span').addClass('checked').find('input[type=checkbox]').attr('checked',true);
-                
-        }); 
-        
-     }); 
+<div class="floatingBox table">
+<div class="container-fluid">
+<form action="/admin/verifyProfile" method="post">	
+    <?php 
+    $active_user = CHtml::listData(User::model()->findAll(),'id','username'); 
+    $approval = VerifyProfile::getApprovalStatus();
+    $this->widget('zii.widgets.grid.CGridView', array(
+    'id'=>'verify-profile-grid',
+    'htmlOptions' => array('class' => 'table table-bordered table-hover table-striped'),
+    'afterAjaxUpdate' => 'reinstallDatePicker',
+    'dataProvider'=>$model->search(),
+    'filter'=>$model,
+    'columns'=>array(
+        array(
+             'header'=>'Check',
+            'class'=>'CDataColumn',
+            'type'=>'raw',
+            'htmlOptions'=>array('style'=>'text-align:center'),
+            'value' => 'CHtml::checkBox("record[$data->id]", $data->id, array("value"=>$data->id,"id"=>"record_".$data->id))',
+        ),
+    	array(
+            'name'=> 'photo',
+            'header'=> Yii::t('global', 'Photo'),
+            'value'=> '$data->showAdminPhoto()',
+            'type' => 'raw',
+            'filter' => false,
+        ),
+        array(
+            'name'=> 'code',
+            'header'=> Yii::t('global', 'Code'),
+            'value'=> '$data->code',
+            'type' => 'raw',
+            'filter' => $public,
+        ),
+        array(
+            'name'=> 'user_id',
+            'header'=> Yii::t('global', 'User'),
+            'value'=> 'User::model()->getUser($data->user_id)',
+            'type' => 'raw',
+            'filter' =>$active_user ,
+        ),
+        array(
+            'name' => 'date',
+            'header'=>Yii::t('global', 'Date'),
+            'htmlOptions'=> array('style' => 'text-align: center; width:135px;'),
+            'filter' => $this->widget('CJuiDateTimePicker', array(
+                        'model'=>$model,
+                        'attribute'=>'date',
+                        'mode'=>'date',
+                        'options'=>array("dateFormat"=>Yii::app()->locale->getDateFormat('medium_js'), 'ampm' => false),
+                        'language' => Yii::app()->language=='en'?'':Yii::app()->language,
+                        'htmlOptions' => array(
+                            'id' => 'datepicker_for_due_date_last',
+                            'size' => '10',
+                            'style' => 'text-align: center'
+                        ),
+                    ),
+                    true)
+        ),
+        array(
+            'name'=> 'is_approval',
+            'header'=> Yii::t('global', 'Approval'),
+            'value'=> '$data->getApproval($data->is_approval)',
+            'type' => 'raw',
+            'filter' => $approval,
+        ),
+    array(
+        'class'=>'ButtonColumn',
+        'header' => Yii::t('global','Actions'),
+        'template'=>'{view} {update} {delete}',
+        'buttons'=>array
+        (
+
+        'view' => array
+        (
+        'label'=>'<span class="label cyan" ><i class="icon-info-sign info" title="'.Yii::t('adminlang', 'View').'"></i></span>',
+        'options' => array( 'class' => 'tipb view-icon-tooltip',
+        'data-original-title' => Yii::t('adminlang', 'View'),
+        'title'       => Yii::t('adminlang', 'View'), ),
+        ),
+        'update' => array
+        (
+        'label'=>'<span class="label green" ><i class="icon-pencil edit" title="'.Yii::t('adminlang', 'Edit').'"></i></span>',
+        'options' => array( 'class' => 'tipb update-icon-tooltip',
+        'data-original-title' => Yii::t('adminlang', 'Edit'),
+        'title'       => Yii::t('adminlang', 'Edit'), ),
+        ),
+        'delete' => array
+        (
+        'label'=>'<span class="label red" ><i class="icon-trash delete" title="'.Yii::t('adminlang', 'Delete').'"></i></span>',
+        'options' => array( 'class' => 'tipb delete-icon-tooltip',
+        'data-original-title' => Yii::t('adminlang', 'Delete'),
+        'title'       => Yii::t('adminlang', 'Delete') , ),
+    ),
+        ),
+    ),
+    ),
+    )); ?>
+<div class="footer tar">
+		<select name="bulkoperations" style="margin-top: 7px;">
+			<option value=""><?php echo Yii::t('global', '-- Choose Action --'); ?></option>
+			<option value="bulkdelete"><?php echo Yii::t('global', 'Delete Selected'); ?></option>
+            <option value="bulkapproval"><?php echo Yii::t('global', 'Approval Selected'); ?></option>
+            <option value="bulkunapproval"><?php echo Yii::t('global', 'Un Approval Selected'); ?></option>
+		</select>
+		<?php echo CHtml::submitButton( Yii::t('global', 'Apply'), array( 'confirm' => Yii::t('global', 'Are you sure you would like to perform a bulk operation?'), 'class'=>'btn')); ?>
+</div>
+</form>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<script>
+    $('.update-icon-tooltip').tooltip({
+    });
+    $('.view-icon-tooltip').tooltip({
+    });
+    $('.delete-icon-tooltip').tooltip({
+    });
 </script>
-

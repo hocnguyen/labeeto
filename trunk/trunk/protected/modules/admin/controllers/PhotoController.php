@@ -126,9 +126,42 @@ class PhotoController extends AdminBaseController {
 	{
 		$model=new Photo('search');
 		$model->unsetAttributes();  // clear any default values
+        $model->is_public = 0;
 		if(isset($_GET['Photo']))
 			$model->attributes=$_GET['Photo'];
-
+        
+        // Did we submit the form and selected items?
+		if( isset($_POST['bulkoperations']) && $_POST['bulkoperations'] != '' )
+		{
+			// Did we choose any values?
+			if( isset($_POST['record']) && count($_POST['record']) )
+			{
+                 switch( $_POST['bulkoperations'] )
+    				{									
+    					case 'bulkdelete':
+                            // Load records
+					       $records = Photo::model()->deleteByPk(array_keys($_POST['record']));
+        					Yii::app()->user->setFlash('success', Yii::t('global', '{count} items deleted.', array('{count}'=>$records)));
+    					   break;
+    				    
+                        case 'bulkapproval':
+                            $records = Photo::model()->updateByPk(array_keys($_POST['record']), array('is_approval'=>1));
+        					Yii::app()->user->setFlash('success', Yii::t('global', '{count} items approval.', array('{count}'=>$records)));
+    					   break;
+                        
+                        case 'bulkunapproval':
+                            // Load records
+                            $records = Photo::model()->updateByPk(array_keys($_POST['record']), array('is_approval'=>0));
+        					Yii::app()->user->setFlash('success', Yii::t('global', '{count} items unapproval.', array('{count}'=>$records)));
+    					   break;
+                           
+    					default:
+    					// Nothing
+    					break;
+    				}
+    			}
+    		}
+            
 		$this->render('index',array(
 			'model'=>$model,
 		));
@@ -248,6 +281,6 @@ class PhotoController extends AdminBaseController {
         if(isset($_GET['id'])){
             Photo::model()->deleteByPk($_GET['id']);
         }
-         $this->redirect('/admin/photo/chosse');
+         $this->redirect('/admin/photo');
     }
 }
