@@ -210,13 +210,13 @@
                         <div>
                             <label class="col-md-12 label-gender">I am a</label>
                             <label class="radio-inline special-label">
-                              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" class="radio-inl"> Man
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" class="radio-inl"> Straight
                             </label>
                             <label class="radio-inline special-label">
-                              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" class="radio-inl"> Woman
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" class="radio-inl"> Gay
                             </label>
                             <label class="radio-inline special-label">
-                              <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" class="radio-inl"> Couple
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" class="radio-inl"> Bi
                             </label>
                         </div>
                         
@@ -230,9 +230,6 @@
                             </label>
                             <label class="radio-inline special-label">
                               <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" class="radio-inl"> Casual
-                            </label>
-                            <label class="radio-inline special-label">
-                              <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" class="radio-inl"> Long Term
                             </label>
                         </div>
                         
