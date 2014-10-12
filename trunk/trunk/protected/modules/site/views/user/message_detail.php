@@ -71,12 +71,13 @@
                     </div>
                     
                     <div class="view_message">
-                        <span class="text_message">
-                        In by an appetite no humoured returned informed. Possession so comparison inquietude he 
-                        he conviction no decisively. Marianne jointure attended she hastened surprise but she.
-                         </span>
+                        <h6>Sure babydoll. Where you at? </h6>
+                        <span>You have shared your private photos to Jessica</span>
+                        <!--<span class="text_message">
+                        In by an appetite no humoured returned informed
+                         </span>-->
                     </div>
-                    <div class="clearfix"></div>
+                    
                 </li>
                 <li class="compose">
                     Write a reply
