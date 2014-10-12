@@ -22,7 +22,7 @@
         <div class="content-infor-profile">
             <div class="name_user">
                 <?php echo Utils::short_description($model->username,10); ?>
-                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/<?php echo ($online->is_online ==  User::USER_ONLINE)? 'search-online.png' :'search-btn-gray.png'; ?>" >
+                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/<?php echo ($online->is_online ==  User::USER_ONLINE)? 'search-online.png' :'search-btn-gray.png'; ?>" style="padding-bottom: 3px;" >
             </div>
             <div class="menu-nav-infor">
                 <ul style="float: right;">
