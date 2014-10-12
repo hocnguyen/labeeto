@@ -126,7 +126,7 @@
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title report-title">Are you sure you want to block this user? </h4>
         <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
-        <span class="user-kaka user-ricky">Ricky Martin</span>
+        <span class="user-kaka user-ricky" id="my_username"></span>
       </div>
       <form method="post">
         <input type="hidden" value="0" id="IdOfUser" />
@@ -160,7 +160,7 @@
           <div class="modal-header header-report special-border">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             <span class="span-to">To</span> <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
-            <span class="user-kaka">Ricky Martin</span>
+            <span class="user-kaka" id="txt_username"></span>
           </div>
           <div class="">
             <textarea class="form-control" rows="4" cols="50" placeholder="Write a message"></textarea>
