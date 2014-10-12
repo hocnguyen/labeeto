@@ -358,15 +358,29 @@ $(document).ready(function(){
     })
 
     /**Report user**/
-    $('.report-user').click(function(){
+    $('.report-user').live('click' ,function(){
         var id = $(this).attr("data-id");
         var avatar = $('#avatar_hidien_'+id).val();
+        var username = $('#name_hidien_'+id).val();
         $('#IdOfUser').val(id);
+        $('#my_username').text(username);
         $('#ReportUser .agreed input').addClass('checked_'+id);
         $('#ReportUser textarea').val('');
         showImageReport(avatar);
     })
     
+    
+    /**Send Message**/
+    $('.message').live('click' ,function(){
+        var id = $(this).attr("data-id");
+        var avatar = $('#avatar_hidien_'+id).val();
+        var username = $('#name_hidien_'+id).val();
+        $('#SendaMessage').val(id);
+        $('#txt_username').text(username);
+        $('#SendaMessage .agreed input').addClass('checked_'+id);
+        $('#SendaMessage textarea').val('');
+        showImageSendMessage(avatar);
+    })
     
     function showImageReport(name_image){
         if ($('#ReportUser img').attr('src') == ''){
@@ -374,6 +388,15 @@ $(document).ready(function(){
         }else{
             $('#ReportUser img').attr('src', '');
             $('#ReportUser img').attr('src', '/uploads/avatar/'+ name_image);
+        }
+     }
+     
+     function showImageSendMessage(name_image){
+        if ($('#SendaMessage img').attr('src') == ''){
+                $('#SendaMessage img').attr('src', '/uploads/avatar/'+ name_image);
+        }else{
+            $('#SendaMessage img').attr('src', '');
+            $('#SendaMessage img').attr('src', '/uploads/avatar/'+ name_image);
         }
      }
      

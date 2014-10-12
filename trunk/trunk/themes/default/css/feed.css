@@ -1079,15 +1079,22 @@ span.minuten{
     color: #9f9f9f;
 }
 .my-report{
-    background-color: #fc5b6e; 
+    /*background-color: #fc5b6e; 
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fc5b6e', endColorstr='#fc5b6e'); /* IE */
     border: none;
     font: normal 16px/normal Proxima Nova Bold;
+    background: url('../images/sent_modal.png') no-repeat;
+    height: 30px;
+    width: 70px;
+}
+.my-report:active,
+.my-report:focus{
+    border: none;
+    background: #ed4c5f;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ed4c5f', endColorstr='#ed4c5f'); /* IE */
 }
 .footer-report a:hover{
     border: none; 
-    background-color: #fc5b6e;
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fc5b6e', endColorstr='#fc5b6e'); /* IE */
 }
 .header-report, 
 .footer-report{
