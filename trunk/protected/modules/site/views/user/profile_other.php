@@ -12,7 +12,8 @@
         </div>
 
         <div class="avartar">
-            <?php if($model->photo =='undefined'){ ?>
+            <?php error_reporting(0);?>
+            <?php  if(($model->photo =='') || ($model->photo =='undefined')){ ?>
                 <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/no-avatar.png">
             <?php } else { ?>
                 <img src="/uploads/avatar/<?php echo $model->photo ?>" />
