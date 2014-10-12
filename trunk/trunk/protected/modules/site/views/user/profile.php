@@ -30,7 +30,7 @@ r
             <div class="name_user">
                 <?php echo Utils::short_description($this->user->username, 10); ?>
                 <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/<?php echo ($online->is_online ==  User::USER_ONLINE)? 'search-online.png' :'search-btn-gray.png'; ?>" >
-                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/<?php echo ($online->is_online ==  User::USER_ONLINE)? 'search-check-red.png' :'search-btn-gray.png'; ?>" >
+                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/<?php echo ($online->is_online ==  User::USER_ONLINE)? 'search-check-red.png' :'search-btn-gray.png'; ?>"class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Verified User" >
             </div>
             <div class="menu-nav-infor">
                 <ul style="float: right;">
