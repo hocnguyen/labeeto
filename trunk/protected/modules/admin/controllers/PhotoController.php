@@ -219,6 +219,7 @@ class PhotoController extends AdminBaseController {
             
         // Load items and display
 		$criteria = new CDbCriteria;
+        $criteria->condition = 'is_public = 0';
         $count = Photo::model()->count();
 		$pages = new CPagination($count);
 		$pages->pageSize = 10;
