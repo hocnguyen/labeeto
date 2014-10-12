@@ -2206,11 +2206,13 @@ input[type="range"]::-ms-fill-lower {
     width: 100%;
 }
 .btn-save-st{
-    background: url('../images/save.png') no-repeat;
+    background: url('../images/save.png') no-repeat !important;
+    color: #ffffff !important;
 }
 .btn-cancel-st{
-    background: url('../images/cancel.png') no-repeat;
+    background: url('../images/cancel.png') no-repeat !important;
     margin-left: 5px;
+    color: #ffffff !important;
 }
 .btn-save-st,
 .btn-cancel-st{
