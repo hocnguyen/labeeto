@@ -471,7 +471,8 @@ a{
      margin: 0px auto;
      /*padding-bottom: 50px;*/
      width: 980px;
-     padding: 0 0 50px;
+     padding: 0 0 65px;
+     /*padding: 0 0 50px;*/
  }
  .content-main {
      width: 100%;
@@ -2939,7 +2940,7 @@ textarea:focus, input:focus{
     -moz-border-radius: 0 !important;
     behavior: url('../pie/PIE.htc');
     width: 94%;
-    margin: 55px auto 0;
+    margin: 0px auto 0;
 }
 .menu-nav-message ul{
     float: right;
