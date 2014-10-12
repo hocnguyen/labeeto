@@ -61,7 +61,7 @@
                         <input type="text" class="form-control" id="exampleInputPassword1"  style="width: 220px; height: 43px;">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail1" class="label-text">Timezone</label>
+                        <label for="exampleInputEmail1" class="label-text">City/Suburb</label>
                         <input type="number" class="form-control pre-fill-text" value="check" id="exampleInputEmail1" placeholder="Pre-Fill">
                       </div>
                       <div style="padding: 20px 0px;">
