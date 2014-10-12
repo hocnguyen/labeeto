@@ -2734,12 +2734,26 @@ input[type="range"]::-ms-fill-lower {
     border-left:1px solid #354957;
     font:normal 14px/normal Proxima Nova Semi Bold
 }
+   .search-result ul.list-result li .chat-message .chat-01-premium{
+       float:left;width:110px;
+       padding: 25px 15px;
+       border-right: 1px solid #1f2a32;
+       border-left:1px solid #354957;
+       font:normal 14px/normal Proxima Nova Semi Bold
+   }
 .search-result ul.list-result li .chat-message .chat-01 a{
     font:normal 14px/normal Proxima Nova Bold;
     text-decoration: none;
     color:#fff;
     text-transform: uppercase;
 }
+   .search-result ul.list-result li .chat-message .chat-01-premium a{
+       font:normal 14px/normal Proxima Nova Bold;
+       text-decoration: none;
+       color:#fca5ae !important;
+       text-transform: uppercase;
+       text-shadow: 1px #d5d2d2 !important;
+   }
 .search-result ul.list-result li .chat-message .name-01 span.online{
     background: url('../images/search-online.png') no-repeat 3px 7px;
     padding-left: 15px;
@@ -2766,6 +2780,14 @@ input[type="range"]::-ms-fill-lower {
     cursor: pointer;
     color: #5c7789;
 }
+
+   .search-result ul.list-result li .chat-message .chat-01-premium a{
+       background: url('../images/chat_premium.png') no-repeat 0px 0px;
+       padding-left: 30px;
+       cursor: pointer;
+       color: #5c7789;
+   }
+
 .text-search-01{
     color: #c8c8c8 !important;
 }
@@ -2899,6 +2921,9 @@ textarea:focus, input:focus{
 .btn-block-list:focus{
     outline: 0;
     border: 0;
+}
+.premium-member-new{
+    background: #ff4056 !important;
 }
 .content-post h3.my_posted{
     font:normal 20px/normal Helvetica Neue LTPro Roman;
