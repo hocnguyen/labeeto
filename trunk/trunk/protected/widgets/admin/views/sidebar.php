@@ -92,6 +92,11 @@ $this->widget('widgets.NBADMenu', array(
                                     'label' => Yii::t('global', 'Manage Photo'),
                                     'url' => array('photo/chosse'),
                                 ),
+                                
+                                array(
+                                    'label' => Yii::t('global', 'Manage Verify Profile'),
+                                    'url' => array('verifyProfile/index'),
+                                ),
                             ),
                         ),
 
