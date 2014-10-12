@@ -290,7 +290,8 @@ class UserController extends SiteBaseController {
         $this->layout = 'feed';
         if(!Yii::app()->user->isGuest){
             $this->user = User::model()->findByPk(Yii::app()->user->id);
-            $this->render('profile_other');
+            $online    = User::model()->findByPk(Yii::app()->user->id);
+            $this->render('profile_other', compact('online'));
         } else {
             $this->redirect('/');
         }

@@ -21,6 +21,7 @@
         <div class="content-infor-profile">
             <div class="name_user">
                 <?php echo $model->username ?>
+                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/<?php echo ($online->is_online ==  User::USER_ONLINE)? 'search-online.png' :'settings.png'; ?>" >
             </div>
             <div class="menu-nav-infor">
                 <ul style="float: right;">
@@ -37,6 +38,9 @@
                 <div class="street"><span class="icon-people"></span>
                 <?php $age = date("Y") - date('Y', strtotime($model->birthday));  echo $age;  ?>, 
                 <?php  if($model->gender == 1) echo "F"; else echo 'M Straight'; ?>
+                    <?php if ($online->membership ==  User::MEMBER_VERIFIED ) { ?>
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/verify.png" >
+                    <?php } ?>
                 </div>
                 <div class="businuess"><span class="icon-vali"></span><?php echo $model->career; ?></div>
                 <div class="location"><span class="icon-location"></span><?php echo $model->address; ?></div>
