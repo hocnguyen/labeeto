@@ -67,8 +67,10 @@
 <div class="container-fluid">
 
     <?php
+    $membership     = Lookup::items('Membership');
     $active_product = Lookup::items('StatusUser');
     $user_online    = Lookup::items('StatusOnline');
+    $gender         = Lookup::items('Gender');
     $this->widget('zii.widgets.grid.CGridView', array(
         'id'=>'user-grid',
         'htmlOptions' => array('class' => 'table table-bordered table-hover table-striped'),
@@ -90,6 +92,13 @@
             'username',
             'email',
             array(
+                'name'=>'gender',
+                'type' => 'raw',
+                'filter'=>$gender,
+                'value' => '$data->checkGenderUser()',
+                'htmlOptions'=>array('style'=>'width:30px;')
+            ),
+            array(
                 'name'=>'is_online',
                 'type' => 'raw',
                 'filter'=>$user_online,
@@ -102,6 +111,14 @@
                 'type' => 'raw',
                 'filter'=>$active_product,
                 'value' => '$data->getStatusMember($data->status)',
+                'htmlOptions'=>array('style'=>'width:30px;')
+            ),
+            array(
+                'name'=>'membership',
+                'header'=>Yii::t('global','Membership'),
+                'type' => 'raw',
+                'filter'=>$membership,
+                'value' => '$data->getMembership($data->membership)',
                 'htmlOptions'=>array('style'=>'width:30px;')
             ),
             array(
@@ -204,3 +221,8 @@
     $('.change-password').tooltip({
     });
 </script>
+<style>
+    select{
+        width: 105px !important;
+    }
+</style>

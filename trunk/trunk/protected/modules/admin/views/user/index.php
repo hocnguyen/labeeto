@@ -22,6 +22,7 @@
     $membership     = Lookup::items('Membership');
     $active_product = Lookup::items('StatusUser');
     $user_online    = Lookup::items('StatusOnline');
+    $gender         = Lookup::items('Gender');
     $this->widget('zii.widgets.grid.CGridView', array(
     'id'=>'user-grid',
     'htmlOptions' => array('class' => 'table table-bordered table-hover table-striped'),
@@ -42,6 +43,13 @@
         ),
 		'username',
 		'email',
+        array(
+            'name'=>'gender',
+            'type' => 'raw',
+            'filter'=>$gender,
+            'value' => '$data->checkGenderUser()',
+            'htmlOptions'=>array('style'=>'width:30px;')
+        ),
         array(
             'name'=>'is_online',
             'type' => 'raw',
@@ -164,3 +172,8 @@
     $('.change-password').tooltip({
     });
 </script>
+<style>
+    select{
+        width: 105px !important;
+    }
+</style>
