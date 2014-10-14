@@ -58,7 +58,9 @@ class User extends CActiveRecord
     const VERIFIED          = 2;
     const NO_VERIFY         = 0;
     const USER_ONLINE       = 1;
-    const USER_OFFLINE       = 0;
+    const USER_OFFLINE      = 0;
+    const GENDER_MALE       = 0;
+    const GENDER_FEMALE     = 1;
 
     const MEMBER_FREE=0;
     const MEMBER_VERIFIED=1;
@@ -435,6 +437,13 @@ class User extends CActiveRecord
         $sta = Yii::t('global', 'Offline');
         if( $this->is_online == User::USER_ONLINE )
             $sta = Yii::t('global', 'Online');
+        return $sta;
+    }
+
+    function checkGenderUser(){
+        $sta = Yii::t('global', 'Male');
+        if( $this->gender == User::GENDER_FEMALE )
+            $sta = Yii::t('global', 'Female');
         return $sta;
     }
 
