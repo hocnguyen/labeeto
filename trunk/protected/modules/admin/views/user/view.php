@@ -27,6 +27,7 @@
                     'attributes'=>array(
                         array('name'=>'username'),
                         array('name'=>'gender','value'=>Lookup::item( "Gender", $model->gender) ),
+                        array('name'=>'verified','value'=>User::model()->checkVerifiedUserNew($model->verified), 'type'=>'raw' ),
                         array('name'=>'career'),
                         array('name'=>'email'),
                         array('name'=>'role'),

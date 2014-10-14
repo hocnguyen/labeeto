@@ -35,6 +35,13 @@
                         <?php echo $form->dropDownList($model,'gender', Lookup::items('Gender') ); ?>
                     </div>
                 </div>
+            <div class="control-group">
+                <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'verified'); ?>
+                </label>
+                <div class="controls">
+                    <?php echo $form->dropDownList($model,'verified', Utils::getStatusCommon() ); ?>
+                </div>
+            </div>
                             <div class="control-group">
                     <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'career'); ?>
 </label>
