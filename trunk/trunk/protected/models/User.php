@@ -37,6 +37,7 @@
  * @property string $verify_profile
  * @property integer $is_online
  * @property integer $membership
+ * @property integer $verified
  *
  * The followings are the available model relations:
  * @property Achievements[] $achievements
@@ -61,6 +62,7 @@ class User extends CActiveRecord
     const USER_OFFLINE      = 0;
     const GENDER_MALE       = 0;
     const GENDER_FEMALE     = 1;
+    const NEW_VERIFIED      = 1;
 
     const MEMBER_FREE=0;
     const MEMBER_VERIFIED=1;
@@ -92,7 +94,7 @@ class User extends CActiveRecord
 		// will receive user inputs.
 		return array(
             array('username','required'),
-			array('gender, joined, status, is_online,membership', 'numerical', 'integerOnly'=>true),
+			array('gender, joined, status, is_online,membership, verified', 'numerical', 'integerOnly'=>true),
 			array('username, email, photo, address', 'length', 'max'=>155),
 			array('career, height, smoke', 'length', 'max'=>100),
 			array('password, fname, lname, education, religion', 'length', 'max'=>40),
@@ -104,7 +106,7 @@ class User extends CActiveRecord
             array('email', 'uniqueEmail','on'=>'create'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, gender, career, email, password, joined, role, ehtnicity, fname, lname, birthday, photo, address, education, religion, height, excercise, passion, goal, smoke, relations, zipcode, latitude, longtitude, drink, status, last_logged, , created, updated, is_online', 'safe', 'on'=>'search'),
+			array('id, username, gender, career, email, password, joined, role, ehtnicity, fname, lname, birthday, photo, address, education, religion, height, excercise, passion, goal, smoke, relations, zipcode, latitude, longtitude, drink, status, last_logged, , created, updated, is_online, verified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -161,7 +163,7 @@ class User extends CActiveRecord
             'updated' => Yii::t('global', 'Updated'),
             'is_online' => Yii::t('global', 'Status'),
             'membership' => Yii::t('global', 'Membership'),
-
+            'verified' => Yii::t('global', 'Verified'),
 		);
 	}
 
@@ -211,6 +213,7 @@ class User extends CActiveRecord
         $criteria->compare('updated',$this->updated,true);
         $criteria->compare('is_online',$this->is_online);
         $criteria->compare('membership',$this->membership);
+        $criteria->compare('verified',$this->verified);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -444,6 +447,20 @@ class User extends CActiveRecord
         $sta = Yii::t('global', 'Male');
         if( $this->gender == User::GENDER_FEMALE )
             $sta = Yii::t('global', 'Female');
+        return $sta;
+    }
+
+    function checkVerifiedUser(){
+        $sta = Yii::t('global', 'No');
+        if( $this->verified == User::NEW_VERIFIED )
+            $sta = Yii::t('global', 'Yes');
+        return $sta;
+    }
+
+    function checkVerifiedUserNew( $verified ){
+        $sta = Yii::t('global', 'No');
+        if( $verified == User::NEW_VERIFIED )
+            $sta = Yii::t('global', 'Yes');
         return $sta;
     }
 

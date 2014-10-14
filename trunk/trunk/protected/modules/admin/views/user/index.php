@@ -23,6 +23,7 @@
     $active_product = Lookup::items('StatusUser');
     $user_online    = Lookup::items('StatusOnline');
     $gender         = Lookup::items('Gender');
+    $verified       = Utils::getStatusCommon();
     $this->widget('zii.widgets.grid.CGridView', array(
     'id'=>'user-grid',
     'htmlOptions' => array('class' => 'table table-bordered table-hover table-striped'),
@@ -48,6 +49,13 @@
             'type' => 'raw',
             'filter'=>$gender,
             'value' => '$data->checkGenderUser()',
+            'htmlOptions'=>array('style'=>'width:30px;')
+        ),
+        array(
+            'name'=>'verified',
+            'type' => 'raw',
+            'filter'=>$verified,
+            'value' => '$data->checkVerifiedUser()',
             'htmlOptions'=>array('style'=>'width:30px;')
         ),
         array(
@@ -174,6 +182,6 @@
 </script>
 <style>
     select{
-        width: 105px !important;
+        width: 100px !important;
     }
 </style>
