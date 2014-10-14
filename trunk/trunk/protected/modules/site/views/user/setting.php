@@ -62,7 +62,8 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1" class="label-text">City/Suburb</label>
-                        <input type="number" class="form-control pre-fill-text" value="check" id="exampleInputEmail1" placeholder="Pre-Fill">
+                        <input type="text" id="address_setting" class="form-control pre-fill-text" id="exampleInputEmail1" placeholder="Pre-Fill">
+                        <div id="maps-test-setting"></div>
                       </div>
                       <div style="padding: 20px 0px;">
                             <button type="submit" class="btn btn-default btn-save-st">SAVE</button>
@@ -269,5 +270,31 @@
         </div>
     <?php } ?>
 </div>
+   <script type="text/javascript">
+            function initialize() {
+                $.session.clear();
+                var options = {
+                    types: ['(cities)']
+                };
+                var map = new google.maps.Map(document.getElementById('maps-test-setting'));
+                var input = /** @type {HTMLInputElement} */(
+                    document.getElementById('address_setting'));
+                var autocomplete = new google.maps.places.Autocomplete(input,options);
+                autocomplete.bindTo('bounds',map);
+                google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                    var place = autocomplete.getPlace();
+                    if (!place.geometry) {
+                        return;
+                    }
+                    // If the place has a geometry, then present it on a map.
+                    $.session.set('address',place.formatted_address);
+                    $.session.set('latitude',place.geometry.location.k);
+                    $.session.set('longitude',place.geometry.location.B);
+    
+                });
+    
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
 
+    </script>
 
