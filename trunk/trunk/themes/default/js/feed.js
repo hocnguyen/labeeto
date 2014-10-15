@@ -382,23 +382,6 @@ $(document).ready(function(){
         showImageSendMessage(avatar);
     })
     
-    $('.rate_user').live('click', function(){
-        var id = $(this).attr("data-id");
-        var avatar = $('#other_photo_'+id).val();
-        var username = $('#other_name_'+id).val();
-        $('#RateUser .user-kaka').text(username);
-        showImageRate(avatar);
-    })
-    
-    function showImageRate(name_image){
-        if ($('#RateUser .dis_img').attr('src') == ''){
-                $('#RateUser .dis_img').attr('src', '/uploads/avatar/'+ name_image);
-        }else{
-            $('#RateUser .dis_img').attr('src', '');
-            $('#RateUser .dis_img').attr('src', '/uploads/avatar/'+ name_image);
-        }
-     }
-     
     function showImageReport(name_image){
         if ($('#ReportUser img').attr('src') == ''){
                 $('#ReportUser img').attr('src', '/uploads/avatar/'+ name_image);
@@ -458,4 +441,23 @@ $(document).ready(function(){
             });
         }
      });
+     
+     
+     $('.rate_user_profile').live('click', function(){
+        var id = $(this).attr("data-id");
+        console.log(id);
+        var avatar = $('#other_photo_'+id).val();
+        var username = $('#other_name_'+id).val();
+        $('#RateUser .user-kaka').text(username);
+        showImageRate(avatar);
+    })
+    
+    function showImageRate(name_image){
+        if ($('#RateUser .dis_img').attr('src') == ''){
+                $('#RateUser .dis_img').attr('src', '/uploads/avatar/'+ name_image);
+        }else{
+            $('#RateUser .dis_img').attr('src', '');
+            $('#RateUser .dis_img').attr('src', '/uploads/avatar/'+ name_image);
+        }
+     }
 });
