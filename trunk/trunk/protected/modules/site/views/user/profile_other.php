@@ -34,7 +34,12 @@
                     <li><a href="#" data-toggle="modal" data-target="#WantToChat"><span class="span-chat"></span>CHAT</a></li>
                     <li><a href="#" data-toggle="modal" data-target="#SendaMessage"><span class="span-message"></span>Message</a></li>
                     <li><a href="#"><span class="span-favorite"></span>Favorite</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#RateUser"><span class="span-rate"></span>Rate</a></li>
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#RateUser" class="rate_user" data-id="<?php echo $model->id ?>"  >
+                            <span class="span-rate"></span>Rate</a>
+                        <input type="hidden" id="other_photo_<?php echo $model->id ?>" value="<?php echo $model->photo ?>" />
+                        <input type="hidden" id="other_name_<?php echo $model->id ?>" value="<?php echo $model->username ?>" />
+                    </li>
                 </ul>
             </div>
         </div>
@@ -485,19 +490,37 @@
     <div class="modal-content" style="width: 440px;">
           <div class="modal-header header-report special-border" style="background-color: #e8e8e8; border-bottom-color: #cdc7c7;">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <span class="span-to">Rate</span> <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
-            <span class="user-kaka">Romeo Martin Rosales</span>
+            <span class="span-to">Rate</span> <img class="dis_img" src="">
+            <span class="user-kaka"></span>
           </div>
           <div style="text-align: center; background-color: #f0f0f0;">
             <div class="content-star-rate">
-            <ul>
-                <li><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/rate-star-green.png"/></li>
-                <li><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/rate-star-green.png"/></li>
-                <li><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/rate-star-green.png"/></li>
-                <li><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/rate-star-green.png"/></li>
-                <li><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/rate-star.png"/></li>
-            </ul>
-            
+            <div class="rating-label">
+                 <span class="rating_new_shop_label">
+                   <?php 
+                      $this->widget('ext.dzRaty.DzRaty', array(
+                            'name' => 'my_rating_'.$model->id,
+                            'value' => Ratings::model()->getRating($model->id),
+                            'options' => array(
+                                    'half' => TRUE,
+                                    	'click' => "js:function(score, evt){ ratings(score,".$model->id.") }",
+                             ),
+                            'htmlOptions' => array(
+                                'class' => 'new-half-class'
+                            ),
+                        ));
+                        //$this->renderPartial('../elements/rate_product');
+                    ?></span>
+                    <span class="number_rating_category">( <?php Ratings::model()->totalRating( $model->id ); ?> ) </span>
+                
+            </div>
+            <!--<ul>
+                <li><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/rate-star-green.png"/></li>
+                <li><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/rate-star-green.png"/></li>
+                <li><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/rate-star-green.png"/></li>
+                <li><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/rate-star-green.png"/></li>
+                <li><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/rate-star.png"/></li>
+            </ul>-->
           </div>
           <span class="text-rate">(set RATING name per number of stars)</span>
           </div>
