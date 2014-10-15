@@ -115,7 +115,7 @@
             ),
             array(
                 'name'=>'status',
-                'header'=>Yii::t('global','Membership'),
+                'header'=>Yii::t('global','Type'),
                 'type' => 'raw',
                 'filter'=>$active_product,
                 'value' => '$data->getStatusMember($data->status)',
