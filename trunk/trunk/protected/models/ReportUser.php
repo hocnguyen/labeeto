@@ -10,6 +10,7 @@
  * @property integer $blocked_user
  * @property string $type_report
  * @property string $content
+ * @property string $comment
  * @property string $created
  * @property string $updated
  */
@@ -50,13 +51,13 @@ class ReportUser extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_id, blocked_user, achievements_id', 'required'),
+			array('user_id, blocked_user, achievements_id, comment', 'required'),
 			array('user_id, reported_user, blocked_user, achievements_id', 'numerical', 'integerOnly'=>true),
             array('type_report', 'length', 'max'=>255),
             array('content, created, updated', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, user_id, reported_user, blocked_user, type_report, content, created, updated, achievements_id', 'safe', 'on'=>'search'),
+			array('id, user_id, reported_user, blocked_user, type_report, content,comment, created, updated, achievements_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -84,6 +85,7 @@ class ReportUser extends CActiveRecord
             'blocked_user' => Yii::t('global', 'Blocked User'),
             'type_report' => Yii::t('global', 'Type Report'),
             'content' => Yii::t('global', 'Content'),
+            'comment' => Yii::t('global', 'Comment'),
             'created' => Yii::t('global', 'Created'),
             'updated' => Yii::t('global', 'Updated'),
 		);
@@ -106,6 +108,7 @@ class ReportUser extends CActiveRecord
         $criteria->compare('blocked_user',$this->blocked_user);
         $criteria->compare('type_report',$this->type_report,true);
         $criteria->compare('content',$this->content,true);
+         $criteria->compare('comment',$this->comment,true);
         if ($this->created)
             $criteria->compare('t.created', date('Y-m-d ', strtotime($this->created)), true);
         $criteria->compare('updated',$this->updated,true);
