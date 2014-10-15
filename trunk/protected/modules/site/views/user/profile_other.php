@@ -35,7 +35,7 @@
                     <li><a href="#" data-toggle="modal" data-target="#SendaMessage"><span class="span-message"></span>Message</a></li>
                     <li><a href="#"><span class="span-favorite"></span>Favorite</a></li>
                     <li>
-                        <a href="#" data-toggle="modal" data-target="#RateUser" class="rate_user" data-id="<?php echo $model->id ?>"  >
+                        <a href="#" data-toggle="modal" data-target="#RateUser" class="rate_user_profile" data-id="<?php echo $model->id ?>"  >
                             <span class="span-rate"></span>Rate</a>
                         <input type="hidden" id="other_photo_<?php echo $model->id ?>" value="<?php echo $model->photo ?>" />
                         <input type="hidden" id="other_name_<?php echo $model->id ?>" value="<?php echo $model->username ?>" />
