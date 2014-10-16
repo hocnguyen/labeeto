@@ -495,37 +495,26 @@
           </div>
           <div style="text-align: center; background-color: #f0f0f0;">
             <div class="content-star-rate">
-            <div class="rating-label">
-                 <span class="rating_new_shop_label">
                    <?php 
                       $this->widget('ext.dzRaty.DzRaty', array(
-                            'name' => 'my_rating_'.$model->id,
+                            'name' => 'my_rating_field_label_product_'.$model->id,
                             'value' => Ratings::model()->getRating($model->id),
                             'options' => array(
                                     'half' => TRUE,
                                     	'click' => "js:function(score, evt){ ratings(score,".$model->id.") }",
-                             ),
+    
+                            ),
                             'htmlOptions' => array(
-                                'class' => 'new-half-class'
+                            'class' => 'new-half-class'
                             ),
                         ));
-                        //$this->renderPartial('../elements/rate_product');
-                    ?></span>
-                    <span class="number_rating_category">( <?php Ratings::model()->totalRating( $model->id ); ?> ) </span>
+                    ?>
                 
-            </div>
-            <!--<ul>
-                <li><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/rate-star-green.png"/></li>
-                <li><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/rate-star-green.png"/></li>
-                <li><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/rate-star-green.png"/></li>
-                <li><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/rate-star-green.png"/></li>
-                <li><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/rate-star.png"/></li>
-            </ul>-->
           </div>
           <span class="text-rate">(set RATING name per number of stars)</span>
           </div>
           <div class="modal-footer footer-report" style="border: none;">
-            <a type="button" class="btn btn-primary my-report">Rate</a>
+            <a type="button" class="btn btn-primary my-report" id="close_rate" >Rate</a>
           </div>
     </div>
   </div>
