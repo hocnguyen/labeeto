@@ -8,3 +8,5 @@ CREATE TABLE IF NOT EXISTS `ratings` (
   `ip` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=177 ;
+
+ALTER TABLE `ratings` DROP `type`;
