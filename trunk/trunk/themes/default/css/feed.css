@@ -2955,6 +2955,7 @@ textarea:focus, input:focus{
 }
 .content-star-rate{
     display: inline-block;
+    padding: 25px 0px 15px 0px;
 }
 .content-star-rate ul li{
     float: left;
@@ -2964,6 +2965,7 @@ textarea:focus, input:focus{
 #RateUser .text-rate{
     display: inline-block;
     font: normal 16px/normal Helvetica Neue LTPro Bd;
+    padding-bottom: 10px
     
 }
 
@@ -3458,4 +3460,7 @@ li.message_search input{
 }
 .content-star-rate img{
     float: left;
+}
+#close_rate{
+    margin-bottom: 10px;
 }
