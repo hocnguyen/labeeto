@@ -2229,13 +2229,13 @@ input[type="range"]::-ms-fill-lower {
     font: normal 18px/normal Proxima Nova Bold;
 }
 .btn-block-list{
-    background: url('../images/cancel.png') no-repeat;
+    background: url('../images/cancel.png') no-repeat !important;
     width: 125px;
     height: 45px;
     margin-left: 10px;
     border: none;
     font: normal 18px/normal Proxima Nova Bold;
-    color: #ffffff;
+    color: #ffffff !important;
     text-transform: uppercase;
 }
 .btn-block-list:hover{
@@ -3452,4 +3452,10 @@ li.message_search input{
     background: #2D3C46;
     border-color: #2D3C46;
     color:#2D3C46;
+}
+.content-star-rate .new-half-class{
+    width: 100% !important;
+}
+.content-star-rate img{
+    float: left;
 }
