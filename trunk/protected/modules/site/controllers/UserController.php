@@ -784,4 +784,23 @@ class UserController extends SiteBaseController {
         $this->layout = 'feed';
         $this->render('message_detail');
     }
+    
+    public function actionSaveRating(){
+        $score      = intval( $_GET['score'] );
+        $user_id = intval( $_GET['id'] );
+        $ip         =  $_SERVER['REMOTE_ADDR'];
+      
+        $result = new Ratings;
+        $result->score = $score;
+        $result->user_id = $user_id;
+        $result->ip = $ip;
+        $result->created = date('Y:m:d H:m:s');
+        $result->updated = date('Y:m:d H:m:s');
+        
+        if($result->save() == false) {
+            echo 'false';
+        } else {
+            echo 'true';
+        }
+    }
 }
