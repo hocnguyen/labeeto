@@ -45,12 +45,12 @@ class Ratings extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('score, user_id, created, updated', 'required'),
-			array('user_id, type', 'numerical', 'integerOnly'=>true),
+			array('user_id', 'numerical', 'integerOnly'=>true),
 			array('score', 'numerical'),
 			array('ip', 'length', 'max'=>30),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, score, user_id, type, created, updated, ip', 'safe', 'on'=>'search'),
+			array('id, score, user_id, created, updated, ip', 'safe', 'on'=>'search'),
 		);
 	}
 
