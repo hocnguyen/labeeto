@@ -65,20 +65,20 @@
                     </div>
                 </div>
                             <div class="control-group">
-                    <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'content'); ?>
+                    <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'comment'); ?>
 </label>
                     <div class="controls">
                         <?php $this->widget('application.widgets.ckeditor.CKEditor', array( 'name' => 'ReportUser[content]', 'value' => isset($model->content) ? $model->content : '', 'editorTemplate' => 'full' )); ?>
                     </div>
                 </div>
 
-                 <div class="control-group">
+                 <!-- <div class="control-group">
                     <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'comment'); ?>
-</label>
+                 </label>
                     <div class="controls">
                         <?php $this->widget('application.widgets.ckeditor.CKEditor', array( 'name' => 'ReportUser[comment]', 'value' => isset($model->comment) ? $model->comment : '', 'editorTemplate' => 'full' )); ?>
                     </div>
-                </div>
+                                 </div> -->
                             <div class="control-group">
                     <div class="controls">
                         <?php echo CHtml::submitButton($model->isNewRecord ? Yii::t('global','Create') : Yii::t('global','Save'), array('class'=>'btn btn-primary')); ?>
