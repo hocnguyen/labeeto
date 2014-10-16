@@ -445,7 +445,6 @@ $(document).ready(function(){
      
      $('.rate_user_profile').live('click', function(){
         var id = $(this).attr("data-id");
-        console.log(id);
         var avatar = $('#other_photo_'+id).val();
         var username = $('#other_name_'+id).val();
         $('#RateUser .user-kaka').text(username);
@@ -460,4 +459,8 @@ $(document).ready(function(){
             $('#RateUser .dis_img').attr('src', '/uploads/avatar/'+ name_image);
         }
      }
+     
+     $('#close_rate').live('click', function(){
+        $('#RateUser').modal('hide');
+     });
 });
