@@ -183,6 +183,7 @@ $(document).ready(function(){
             check=1;// Username not empty
             return check;
         }
+
         if(address==''){
             check=6;// Address not empty
             return check;
@@ -220,12 +221,14 @@ $(document).ready(function(){
         }
         
         var re = /^[^\d]{1}.*(?=.{8,})(?=.*[A-Za-z])(?=.*[\d]).*$/;
-        //var re=/^(?=.*[A-Za-z])[A-Za-z0-9\d]{8,}$/;
-        var pw = re.exec(password);
+        var red=/^(?=.*[A-Za-z])[A-Za-z0-9\d]{4,20}.*$/;
+
+        var pw = re.exec(username);
         if (!pw) {
             check = 4 ;// Password must 8 characters long and contain atleast 1 uppercase letter and 1 number
             return check;
         }
+        var space=red.exec(password);
         if (email_exists ==1) {
             check = 5 ;// Email exists.
             return check;
