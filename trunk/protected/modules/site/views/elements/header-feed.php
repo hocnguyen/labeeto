@@ -92,7 +92,10 @@
         </div>
         <div class="profile-nav">
             <div class="test-nav" style="width: 179px; float: right; height: 50px;">
-                <?php if($this->user->photo =='undefined'){ ?>
+                <?php
+                    error_reporting(0);
+                ?>
+                <?php if(($this->user->photo =='')||($this->user->photo =='undefined')){ ?>
                     <img class="avatar-nav" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/no-avatar.png">
                <?php } else { ?>
                     <img class="avatar-nav" src="/uploads/avatar/<?php echo $this->user->photo ?>" />
