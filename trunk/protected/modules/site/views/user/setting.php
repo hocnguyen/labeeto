@@ -211,6 +211,16 @@
                         <div>
                             <label class="col-md-12 label-gender">I am a</label>
                             <label class="radio-inline special-label">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" class="radio-inl"> Male
+                            </label>
+                            <label class="radio-inline special-label">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" class="radio-inl"> Famale
+                            </label>
+                        </div>
+                        
+                        <div style="margin-top: 40px;">
+                            <label class="col-md-12 label-gender">Who is</label>
+                            <label class="radio-inline special-label">
                               <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" class="radio-inl"> Straight
                             </label>
                             <label class="radio-inline special-label">
