@@ -31,7 +31,6 @@
                     array('name'=>'type_report'),
                     array('name'=>'achievements_id', 'value'=>ReportUser::model()->getAchievementById($model->achievements_id),'type'=>'html'),
                     array('name'=>'content','type'=>'raw'),
-                    array('name'=>'comment','type'=>'raw'),
                     array('name'=>'created'),
                     array('name'=>'updated'),
                     ),
