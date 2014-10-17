@@ -157,6 +157,14 @@
                         <option value="9">Other</option>
                     </select>
                 </div>
+                <div class="gender_look column-form">
+                    <label>Gender Looking</label>
+                    <select name="gender_look" id="gender_look" class="text-gender_look validate[required]">
+                        <option value="Straight">Straight</option>
+                        <option value="Gay">Gay</option>
+                        <option value="BI">BI</option>
+                    </select>
+                </div>
 
                 <div class="address column-form">
                     <label>Suburb/City</label>

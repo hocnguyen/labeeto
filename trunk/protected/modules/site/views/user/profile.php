@@ -53,7 +53,7 @@ r
         <div class="content-img">
             <div style="float: left; width: 60%; padding-left: 14%;">
                 <div class="street"><span class="icon-people"></span>
-                <?php echo date("Y") - date('Y', strtotime($this->user->birthday));  ?>, <?php  if($this->user->gender == 1) echo "F"; else echo 'M Straight'; ?> <?php if ($online->membership ==  User::MEMBER_VERIFIED ) { ?>
+                <?php echo date("Y") - date('Y', strtotime($this->user->birthday));  ?>, <?php  if($this->user->gender == 1) echo "F"; else echo 'M'; ?>, <?php echo $this->user->gender_look; ?> <?php if ($online->membership ==  User::MEMBER_VERIFIED ) { ?>
                         <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/verify.png" >
                     <?php } ?></div>
                 <div class="businuess"><span class="icon-vali"></span><?php if($this->user->career) echo $this->user->career; ?></div>
@@ -475,8 +475,8 @@ r
             <div class="title-photo">
                 <h3>Videos <span>(2 Videos)</span></h3>
                 <p>
-                    <a href="#" data-toggle="modal" data-target="#ChangeAvatar">Upload</a>
-                    <a href="#">delete</a>
+                    <a href="#" data-toggle="modal" data-target="#UploadVideo">Upload</a>
+                    <!--<a href="#">delete</a>-->
                     <a href="#" class="close-icon"></a>
                 </p>
                 
@@ -527,6 +527,8 @@ r
                 </div>
                 <div class="content-post">
                     <h3><span class="link_3">ICEBUCKET CHALLENGE</span> <span class="link_2">#ALSawareness </span><span class="link_1">#LOL</span></h3>
+                   
+
                     <iframe title="YouTube video player" class="youtube-player" type="text/html" style="padding-left: 10px;"
                     width="98%" height="300" src="http://www.youtube.com/embed/uIbkLjjlMV8"
                     frameborder="0" allowFullScreen></iframe>
@@ -670,6 +672,31 @@ r
             <div style="width: 50%; float: left;">
                 <input type="file" id="photo-new" name="photo-change" style="display: none;">
                 <label for="photo-new" class="btn btn-primary my-report-1">From My Computer </label>
+            </div>
+        </form>
+            <div style="width: 50%; float: left;">
+                <a type="button" class="btn btn-primary my-report-1">From Facebook</a>
+            </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="UploadVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content special-border">
+      <div class="modal-header header-report">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <span>Upload Video</span>
+        
+      </div>
+      <div class="modal-footer footer-report footer-upgarde">
+        <form method="post" id="form-upload-video">
+            <div style="width: 50%; float: left;">
+                <input type="file" id="video-new" name="videos" style="display: none;">
+                <label for="video-new" class="btn btn-primary my-report-1">From My Computer </label>
             </div>
         </form>
             <div style="width: 50%; float: left;">

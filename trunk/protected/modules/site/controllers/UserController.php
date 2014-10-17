@@ -206,6 +206,7 @@ class UserController extends SiteBaseController {
         $model->height = $_GET['height'];
         $model->gender = $_GET['gender'];
         $model->ehtnicity = $_GET['ehtnicity'];
+        $model->gender_look = $_GET['gender_look'];
         $model->address = $_GET['address'];
         $model->career = $_GET['career'];
         $model->education = $_GET['education'];
@@ -803,4 +804,34 @@ class UserController extends SiteBaseController {
             echo 'true';
         }
     }
+    
+    public function actionUploadVideo(){
+        if (isset($_FILES['videos'])){
+            $allowed_extensions = array("3g2", "3gp", "3gpp", "asf", "dat", "divx", "dv", "f4v", "flv", "m2ts", "m4v", "mkv", "mod",
+            "mov", "mp4", "mpe", "mpeg", "mpeg4", "mpg", "mts", "nsv", "ogm", "ogv", "qt", "tod", "ts", "vob", "wmv");
+            $file_type = $_FILES['videos']['type'];
+            $check = 1;
+            foreach($allowed_extensions as $value){
+                if($file_type == "video/".$value){
+                   $check = 0;
+                }
+            }
+            if($check == 0){
+                $folder = Yii::app()->basePath.'/../uploads/video/';
+                $filename = $this->generateRandomString().$_FILES['videos']['name'];
+                if (move_uploaded_file($_FILES['videos']['tmp_name'], $folder.$filename)){
+                    $video = new Video();
+                    $video->video = $filename;
+                    $video->is_public = 0;
+                    $video->date = date('Y-m-d h:s');
+                    $video->user_id = Yii::app()->user->id;
+                    $video->save();
+                }
+            }else{
+                echo $check;
+            }
+            
+        }
+    }
+    
 }
