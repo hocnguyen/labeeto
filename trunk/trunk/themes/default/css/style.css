@@ -497,7 +497,7 @@ input[type=submit]:hover{
 }
 .content-registration {
     width: 100%;
-    min-height: 346px;
+    min-height: 380px;
     background: #EEEEEE;
     display: block;
 }
@@ -598,7 +598,7 @@ input[type=submit]:hover{
 }
 .gender {
     float: left;
-    width: 40%;
+    width: 30%;
     margin-top: 5px;
 }
 .group-radio {
@@ -610,6 +610,7 @@ input[type=submit]:hover{
     margin-right: 10px;
     font-size: 14px!important;
 }
+.text-gender_look,
 .text-ehtnicity {
     width: 90%;
     height: 30px;

@@ -463,4 +463,6 @@ $(document).ready(function(){
      $('#close_rate').live('click', function(){
         $('#RateUser').modal('hide');
      });
+     
+     
 });
