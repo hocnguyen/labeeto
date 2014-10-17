@@ -95,7 +95,7 @@ class User extends CActiveRecord
 		return array(
             array('username','required'),
 			array('gender, joined, status, is_online,membership, verified', 'numerical', 'integerOnly'=>true),
-			array('username, email, photo, address', 'length', 'max'=>155),
+			array('username, email, photo, address, gender_look', 'length', 'max'=>155),
 			array('career, height, smoke', 'length', 'max'=>100),
 			array('password, fname, lname, education, religion', 'length', 'max'=>40),
 			array('role, ehtnicity', 'length', 'max'=>30),
@@ -106,7 +106,7 @@ class User extends CActiveRecord
             array('email', 'uniqueEmail','on'=>'create'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, gender, career, email, password, joined, role, ehtnicity, fname, lname, birthday, photo, address, education, religion, height, excercise, passion, goal, smoke, relations, zipcode, latitude, longtitude, drink, status, last_logged, , created, updated, is_online, verified', 'safe', 'on'=>'search'),
+			array('id, username, gender, career, email, password, joined, role, ehtnicity, fname, lname, birthday, photo, address, education, religion, height, excercise, passion, goal, smoke, relations, zipcode, latitude, longtitude, gender_look, drink, status, last_logged, , created, updated, is_online, verified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -164,6 +164,7 @@ class User extends CActiveRecord
             'is_online' => Yii::t('global', 'Status'),
             'membership' => Yii::t('global', 'Membership'),
             'verified' => Yii::t('global', 'Verified'),
+            'gender_look' => Y::t('global', 'Gender Looking'),
 		);
 	}
 
@@ -214,6 +215,7 @@ class User extends CActiveRecord
         $criteria->compare('is_online',$this->is_online);
         $criteria->compare('membership',$this->membership);
         $criteria->compare('verified',$this->verified);
+        $criteria->compare('gender_look',$this->gender_look);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
