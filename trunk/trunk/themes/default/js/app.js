@@ -221,7 +221,7 @@ $(document).ready(function(){
         }
         
         var re = /^[^\d]{1}.*(?=.{8,})(?=.*[A-Za-z])(?=.*[\d]).*$/;
-        var red=/^.*(?=.{4,20})(?=.*[A-Za-z])(?=.*[\d]).*$/;
+        var red=/^.*(?=.{4,20})(?=.*[A-Za-z]).*$/;
 
         var pw = re.exec(password);
         if (!pw) {
