@@ -35,6 +35,11 @@
             console.log(html);
         });
      }
+    function ratings_post( score, id){    
+         $.get('/user/saveVoting?score='+score+'&id='+id, function(html) {
+            console.log(html);
+        });
+     }
     </script>
 </head>
 <body>

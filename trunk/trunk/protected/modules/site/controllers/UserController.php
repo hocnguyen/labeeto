@@ -278,7 +278,8 @@ class UserController extends SiteBaseController {
             $photos = Photo::model()->findAll('is_public=1 AND user_id='.Yii::app()->user->id);
             $private = Photo::model()->findAll('is_public=0 AND user_id='.Yii::app()->user->id);
             $online    = User::model()->findByPk(Yii::app()->user->id);
-            $this->render('profile',compact('photos','private','online'));
+            $achievements = Achievements::model()->findAll('user_id ='. Yii::app()->user->id . ' ORDER BY created desc LIMIT 3');
+            $this->render('profile',compact('photos','private','online', 'achievements'));
         } else {
             $this->redirect('/');
         }
@@ -760,7 +761,7 @@ class UserController extends SiteBaseController {
             $question = Answer::model()->getAnswer($id);
             $photos = Photo::model()->findAll('is_public=1 AND user_id='.$id . ' ORDER BY date desc');
             $private = Photo::model()->findAll('is_public=0 AND user_id='.$id . ' ORDER BY date desc');
-            $achievements = Achievements::model()->findAll('user_id ='. $id . ' ORDER BY created desc');
+            $achievements = Achievements::model()->findAll('user_id ='. $id . ' ORDER BY created desc LIMIT 3');
             if($model)
                 $this->render('profile_other', compact('model', 'question','photos','private', 'achievements', 'user'));
             else
@@ -834,4 +835,22 @@ class UserController extends SiteBaseController {
         }
     }
     
+    public function actionSaveVoting(){
+        $score      = intval( $_GET['score'] );
+        $user_id = intval( $_GET['id'] );
+        $ip         =  $_SERVER['REMOTE_ADDR'];
+      
+        $result = new Vote();
+        $result->score = $score;
+        $result->post_id = $user_id;
+        $result->ip = $ip;
+        $result->created = date('Y:m:d H:m:s');
+        $result->updated = date('Y:m:d H:m:s');
+        
+        if($result->save() == false) {
+            echo 'false';
+        } else {
+            echo 'true';
+        }
+    }
 }
