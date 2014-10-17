@@ -34,8 +34,10 @@ $(document).ready(function(){
         var relations = document.getElementById("relations");
         var relation = relations.options[relations.selectedIndex].value;
         var ehtnicity = $('#ehtnicity').val();
+        var gender_look = $('#gender_look').val();
+        console.log(gender_look);
         var gender = $( "input:radio[name=gender]:checked" ).val();
-        var validate = checkValidate(name_exists,username,address,day,month,year,ehtnicity,feet,inche);
+        var validate = checkValidate(name_exists,username,address,day,month,year,ehtnicity,feet,inche, gender_look);
         if(validate ==0){
            /* $.get('user/checkUser?name='+username+'&email='+ $.session.get('email'),function(html){
                 if(html ==0){
@@ -47,6 +49,7 @@ $(document).ready(function(){
             $.session.set('username', username);
             $.session.set('birthday', month+"/"+day+"/"+year);
             $.session.set('ehtnicity', ehtnicity);
+            $.session.set('gender_look', gender_look);
             $.session.set('height', feet+'.'+inche);
             $.session.set('gender', gender);
             $.session.set('relations', relation);
@@ -79,6 +82,7 @@ $(document).ready(function(){
             variableGet+="height="+ $.session.get('height')+"&";
             variableGet+="gender="+ $.session.get('gender')+"&";
             variableGet+="ehtnicity="+ $.session.get('ehtnicity')+"&";
+            variableGet+="gender_look="+ $.session.get('gender_look')+"&";
             variableGet+="address="+ $.session.get('address')+"&";
             variableGet+="latitude="+ $.session.get('latitude')+"&";
             variableGet+="longtitude="+ $.session.get('longitude')+"&";
@@ -92,6 +96,7 @@ $(document).ready(function(){
             variableGet+="smoke="+smoke+"&";
             variableGet+="drink="+drink+"&";
             variableGet+="photo="+$.session.get("avatar");
+            console.log(variableGet);
             $.get("/user/register?"+variableGet,function(){
                 $.session.clear();
                 $('.step-2').hide();
@@ -173,7 +178,7 @@ $(document).ready(function(){
         });
         return false;
     });
-    function checkValidate(name_exists,username,address,day,month,year,ehtnicity,feet,inche){
+    function checkValidate(name_exists,username,address,day,month,year,ehtnicity,feet,inche, gender_look){
         var check =0;
         if(name_exists ==1){
             check=10;// Username not empty
@@ -196,6 +201,12 @@ $(document).ready(function(){
             check=8;// Ehtnicity not empty
             return check;
         }
+        
+        if(gender_look ==''){
+            check=11;// gender_look not empty
+            return check;
+        }
+        
         if(feet =='' || inche=='' ){
             check=9;// Height not empty
             return check;
@@ -264,6 +275,8 @@ $(document).ready(function(){
             $('.error').html('Birthday not empty!');
         }else if(error ==8) {
             $('.error').html('Ehtnicity not empty!');
+        }else if(error ==11) {
+            $('.error').html('Gender looking not empty!');
         }else if(error ==9) {
             $('.error').html('Height not empty!');
         }

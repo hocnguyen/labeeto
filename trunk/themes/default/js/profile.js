@@ -607,4 +607,35 @@ $(document).ready(function(){
             $('.avartar img').attr('src', '/uploads/avatar/'+ name_image);
         }
      }
+     
+     $('#video-new').change(function(e){
+        $('#form-upload-video').submit();
+     });
+     $('#form-upload-video').submit(function(e){
+         e.preventDefault();
+            var formData = new FormData(this);
+            //$('.private-up').addClass('loading');
+            //$('.private-up').html('');
+            $.ajax({
+                type:'POST',
+                url: '/user/UploadVideo',
+                data:formData,
+                cache:false,
+                contentType: false,
+                processData: false,
+                success:function(data){
+                    $('#UploadVideo').modal('hide');
+                    if(data == 1){
+                        alert('Invalid video format.');
+                    }
+                    
+                   location.assign('/profile?type=video');
+                },
+                error: function(data){
+                    console.log("error");
+                }
+            });
+            return false;
+    });
+    
 });
