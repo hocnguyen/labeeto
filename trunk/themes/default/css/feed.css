@@ -745,6 +745,7 @@ a.report-user:hover{
     font:normal 20pt/normal Helvetica Neue LTPro Bd; 
     cursor: pointer;
 }
+.content-post h4 span.link_2,
 .content-post h3 span.link_2{
     color: #51a9cd;
     font:normal 20px/normal Helvetica Neue LTPro Bd;
@@ -982,7 +983,7 @@ span.minuten{
     font-weight: bold;
     margin-right: 10px;
     margin-top: 5px;
-    
+    cursor: pointer;
 }
 .footer-feed{
     /*background: url('../images/bg-head-feed.png') repeat; */
@@ -2942,7 +2943,7 @@ textarea:focus, input:focus{
     font: normal 16px/normal Helvetica Neue LTPro Bd;
     float: left;
 }
-
+#RatePost .modal-header img,
 #RateUser .modal-header img {
     width: 50px;
     height: 50px;
@@ -2962,6 +2963,7 @@ textarea:focus, input:focus{
     padding: 10px 5px;
     cursor: pointer;
 }
+#RatePost .text-rate,
 #RateUser .text-rate{
     display: inline-block;
     font: normal 16px/normal Helvetica Neue LTPro Bd;
