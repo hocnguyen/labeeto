@@ -48,7 +48,7 @@
             <div style="float: left; width: 60%; padding-left: 14%;">
                 <div class="street"><span class="icon-people"></span>
                 <?php $age = date("Y") - date('Y', strtotime($model->birthday));  echo $age;  ?>, 
-                <?php  if($model->gender == 1) echo "F"; else echo 'M Straight'; ?>
+                <?php  if($model->gender == 1) echo "F"; else echo 'M'; ?>, <?php echo $model->gender_look ?>
                     <?php if ($online->membership ==  User::MEMBER_VERIFIED ) { ?>
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/verify.png" >
                     <?php } ?>
@@ -497,7 +497,7 @@
             <div class="content-star-rate">
                    <?php 
                       $this->widget('ext.dzRaty.DzRaty', array(
-                            'name' => 'my_rating_field_label_product_'.$model->id,
+                            'name' => 'my_rating_'.$model->id,
                             'value' => Ratings::model()->getRating($model->id),
                             'options' => array(
                                     'half' => TRUE,
