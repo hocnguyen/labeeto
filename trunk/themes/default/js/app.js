@@ -229,7 +229,11 @@ $(document).ready(function(){
             return check;
         }
         var space=red.exec(username);
-        
+        if(!space){
+            check = 7;
+            return check;
+        }
+
         if (email_exists ==1) {
             check = 5 ;// Email exists.
             return check;
