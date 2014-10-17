@@ -223,12 +223,13 @@ $(document).ready(function(){
         var re = /^[^\d]{1}.*(?=.{8,})(?=.*[A-Za-z])(?=.*[\d]).*$/;
         var red=/^.*(?=.{4,20})(?=.*[A-Za-z])(?=.*[\d]).*$/;
 
-        var pw = re.exec(username);
+        var pw = re.exec(password);
         if (!pw) {
             check = 4 ;// Password must 8 characters long and contain atleast 1 uppercase letter and 1 number
             return check;
         }
-        var space=red.exec(password);
+        var space=red.exec(username);
+        
         if (email_exists ==1) {
             check = 5 ;// Email exists.
             return check;
