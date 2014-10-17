@@ -515,28 +515,62 @@ r
         <!--Home Page-->
         <div class="content-profile">
         <!--Post 1-->
-            <div class="post"> 
-                <div class="first-infor infor-pro">
-                    <div class="profile">
-                        <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatart-step2.png">
-                        <div class="crycle-img">
-                            <h2 class="h2-name">Rome Martin J. Rosales<span class="time-location">18 F, CA,</span> <span class="dot-icon"> 2 hr</span></h2>
+            <?php if($achievements) { 
+                foreach($achievements as $value){
+                ?>
+                <div class="post"> 
+                    <div class="first-infor infor-pro">
+                        <div class="profile">
+                        <?php if($this->user->photo =='undefined'){ ?>
+                            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/no-avatar.png">
+                        <?php } else { ?>
+                            <img src="/uploads/avatar/<?php echo $this->user->photo ?>" />
+                        <?php } ?>
+                            <div class="crycle-img">
+                                <h2 class="h2-name"><?php echo $model->username ?><span class="time-location">33 M, NY,</span> <span class="dot-icon">Yesterday</span></h2>
+                            </div>
                         </div>
+                        <div class="refesh">75</div>
                     </div>
-                    <span class="refesh">1002</span>
+                    <div class="content-post">
+                        <h4>
+                        <?php 
+                          $arr = $value->content;
+                          $search = array(); $replace = array();
+                          for($i = 0; $i < strlen($arr) - 1; $i++){
+                                if($arr[$i] == '#'){
+                                    $str = '';
+                                    for($j = $i; $j< (strlen($arr) ); $j++){
+                                        if($arr[$j] != ' '){
+                                            $str.= $arr[$j];
+                                        }else{
+                                            break;
+                                        }
+                                    }
+                                    $search[] = $str;
+                                    $replace[] = '<span class="link_2">'. $str .'</span>';
+                                }
+                          }
+                          echo str_replace($search, $replace, $value->content); ?> 
+      
+                        <!--<span class="link_1">#LOL</span>-->
+                        </h4>
+                        <?php if($value->media){ 
+                            $filetype = pathinfo($value->media, PATHINFO_EXTENSION);
+                            if(($filetype == 'jpg') || ($filetype == 'PNG') || ($filetype == 'png') || ($filetype == 'GIF') || ($filetype == 'gif')){ ?>
+                                <img src="/uploads/media/<?php echo $value->media ?>" alt="" />
+                            <?php }
+                            if(($filetype == '3gp') || ($filetype == 'avi') || ($filetype == 'flv') || ($filetype == 'mp4') || ($filetype == 'FLV')){ ?>
+                                <div class="video-view" style="padding: 10px; width: 100%;">
+                                <?php echo $model->getVideo($value->media) ?>
+                                </div>
+                           <?php }
+                        } ?>
+                    </div>
                 </div>
-                <div class="content-post">
-                    <h3><span class="link_3">ICEBUCKET CHALLENGE</span> <span class="link_2">#ALSawareness </span><span class="link_1">#LOL</span></h3>
-                   
-
-                    <iframe title="YouTube video player" class="youtube-player" type="text/html" style="padding-left: 10px;"
-                    width="98%" height="300" src="http://www.youtube.com/embed/uIbkLjjlMV8"
-                    frameborder="0" allowFullScreen></iframe>
-                </div>
-            </div>
-            <!--End Post 1 -->
+            <?php } }?>
             
-            <div class="post"> 
+           <!-- <div class="post"> 
                 <div class="first-infor infor-pro">
                     <div class="profile">
                         <img src="/themes/default/images/avatart-step2.png">
@@ -566,7 +600,7 @@ r
                     <h4>Shoutout to my nigga Manny Pacman Pacquiao for
                     helping in my weight-loss programme.<span class="link_1">#LOL</span></h4>
                 </div>
-            </div>
+            </div>-->
         </div>
         <div class="post" style="padding-bottom: 0px;"> 
             <div class="bit-and-bit">
