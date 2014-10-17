@@ -96,7 +96,7 @@
                     "alertText": "* Password must be 8 characters long and contain 1 number and 1 letter "
                 },
                 "space": {
-                    "regex": /^[a-zA-Z0-9]{4,20}$/,
+                    "regex": /^.*(?=.{4,20})(?=.*[A-Za-z])(?=.*[\d]).*$/,
                     "alertText": "* Invalid username"
                 },
                 "integer": {
