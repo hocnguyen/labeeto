@@ -72,6 +72,11 @@ $(document).ready(function(){
     
     /*Passion*/
     $('#form-passion').submit(function(e) {
+        var passion = $('#passion').val();
+        if(passion.length > 35){
+            alert('Please ensure the length fitness passion smaller than 35 character.!');
+            return false;
+        }
         e.preventDefault();
         var formData = new FormData(this);
         $.ajax({
@@ -95,6 +100,11 @@ $(document).ready(function(){
     
     /*Goals*/
     $('#form-goal').submit(function(e) {
+        var goals = $('#goals').val();
+        if(goals.length > 35){
+            alert('Please ensure the length goals smaller than 35 character.!');
+            return false;
+        }
         e.preventDefault();
         var formData = new FormData(this);
         $.ajax({
@@ -164,6 +174,11 @@ $(document).ready(function(){
     
     /*Diet*/
     $('#form-diet').submit(function(e) {
+        var diet = $('#diet').val();
+        if(diet.length > 35){
+            alert('Please ensure the length diet smaller than 35 character.!');
+            return false;
+        }
         e.preventDefault();
         var formData = new FormData(this);
         $.ajax({
@@ -187,6 +202,11 @@ $(document).ready(function(){
     
     /*About*/
     $('#form-about').submit(function(e) {
+        var about = $('#about').val();
+        if(about.length > 35){
+            alert('Please ensure the length about smaller than 35 character.!');
+            return false;
+        }
         e.preventDefault();
         var formData = new FormData(this);
         $.ajax({
@@ -288,6 +308,11 @@ $(document).ready(function(){
     
     /*Gym*/
     $('#form-gym').submit(function(e) {
+        var gym = $('#gym').val();
+        if(gym.length > 35){
+            alert('Please ensure the length gym membership smaller than 35 character.!');
+            return false;
+        }
         e.preventDefault();
         var formData = new FormData(this);
         $.ajax({
