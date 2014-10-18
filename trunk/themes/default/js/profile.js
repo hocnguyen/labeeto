@@ -601,7 +601,6 @@ $(document).ready(function(){
     /* Start Delete question answer */
         $('.deleteAnswer').live("click",function(){
             var id_question = $(this).attr('data-id');
-            console.log(id_question);
             $.get('/user/deleteQuestions?id='+id_question,function(data){
                 if(data!=0){
                     $('#content-question-default_' + id_question).hide();
@@ -663,4 +662,14 @@ $(document).ready(function(){
             return false;
     });
     
+    $('.favorite_user').click(function(){
+        var user_id = $(this).attr('data-id');
+        $.get('/user/saveFavorite?id='+user_id,function(data){
+            if(data == 'exit'){
+                alert("This user was in list your favorited");
+            }else{
+                window.location.reload(true);
+            }
+        });
+    });
 });
