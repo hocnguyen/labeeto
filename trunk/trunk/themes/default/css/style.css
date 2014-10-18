@@ -497,7 +497,7 @@ input[type=submit]:hover{
 }
 .content-registration {
     width: 100%;
-    min-height: 380px;
+    min-height: 336px;
     background: #EEEEEE;
     display: block;
 }
