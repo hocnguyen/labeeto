@@ -3466,3 +3466,6 @@ li.message_search input{
 #close_rate{
     margin-bottom: 10px;
 }
+.favorite_user{
+    cursor: pointer;
+}
