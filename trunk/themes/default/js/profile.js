@@ -668,6 +668,7 @@ $(document).ready(function(){
             if(data == 'exit'){
                 alert("This user was in list your favorited");
             }else{
+                alert("This user added to list your favorited");
                 window.location.reload(true);
             }
         });
