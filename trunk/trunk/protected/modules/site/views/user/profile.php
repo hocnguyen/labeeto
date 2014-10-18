@@ -527,6 +527,7 @@ r
                             <img src="/uploads/avatar/<?php echo $this->user->photo ?>" />
                         <?php } ?>
                             <div class="crycle-img">
+                                <?php error_reporting(0);?>
                                 <h2 class="h2-name"><?php echo $model->username ?><span class="time-location">33 M, NY,</span> <span class="dot-icon">Yesterday</span></h2>
                             </div>
                         </div>
