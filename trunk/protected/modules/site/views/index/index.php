@@ -87,13 +87,34 @@
                     <label>Username</label>
                     <input type="text" id="username-step2" name="username-step2" class="text-input validate[required],funcCall[checkUsernameExists]"/>
                 </div>
-                <div class="relationship column-form">
+                <!--<div class="relationship column-form">
                     <label>Relationship Status</label>
                     <select name="relations" id="relations" class="text-input validate[required]">
                         <option>Single</option>
                         <option>Married</option>
                     </select>
+                </div>-->
+                <select name="relations" id="relations" class="text-input validate[required]" style="display: none;">
+                        <option selected="true">Single</option>
+                        <option>Married</option>
+                    </select>
+                <div class="relationship column-form">
+                    <label>Sexuality</label>
+                    <select name="gender_look" id="gender_look" class="text-input validate[required]" style="height: 34px;">
+                        <option value="Straight">Straight</option>
+                        <option value="Gay">Gay</option>
+                        <option value="BI">BI</option>
+                    </select>
                 </div>
+               <!-- <div class="gender_look column-form">
+                    <label>Gender Looking</label>
+                    <select name="gender_look" id="gender_look" class="text-gender_look validate[required]">
+                        <option value="Straight">Straight</option>
+                        <option value="Gay">Gay</option>
+                        <option value="BI">BI</option>
+                    </select>
+                </div>-->
+                
                 <div class="birthday column-form">
                     <label>Birthday</label>
                     <div class="select-option">
@@ -157,14 +178,7 @@
                         <option value="9">Other</option>
                     </select>
                 </div>
-                <div class="gender_look column-form">
-                    <label>Gender Looking</label>
-                    <select name="gender_look" id="gender_look" class="text-gender_look validate[required]">
-                        <option value="Straight">Straight</option>
-                        <option value="Gay">Gay</option>
-                        <option value="BI">BI</option>
-                    </select>
-                </div>
+                
 
                 <div class="address column-form">
                     <label>Suburb/City</label>
