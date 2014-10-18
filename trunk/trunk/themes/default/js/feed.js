@@ -468,25 +468,4 @@ $(document).ready(function(){
         $('#RateUser').modal('hide');
      });
      
-     $(".refesh").click(function(){
-        var id = $(this).attr("data-id");
-        var avatar = $('#avatar_hidien_'+id).val();
-        var username = $('#name_hidien_'+id).val();
-        $('#RatePost .user-kaka').text(username);
-        showImageVote(avatar);
-     });
-     
-     
-     function showImageVote(name_image){
-        if ($('#RatePost .dis_img').attr('src') == ''){
-                $('#RatePost .dis_img').attr('src', '/uploads/avatar/'+ name_image);
-        }else{
-            $('#RatePost .dis_img').attr('src', '');
-            $('#RatePost .dis_img').attr('src', '/uploads/avatar/'+ name_image);
-        }
-     }
-     
-     $('#close_rate').click(function(){
-        $('#RatePost').modal('hide');
-     });
 });
