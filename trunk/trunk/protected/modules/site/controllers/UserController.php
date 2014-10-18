@@ -762,8 +762,9 @@ class UserController extends SiteBaseController {
             $photos = Photo::model()->findAll('is_public=1 AND is_approval = 1 AND user_id='.$id . ' ORDER BY date desc');
             $private = Photo::model()->findAll('is_public=0 AND is_approval = 1 AND user_id='.$id . ' ORDER BY date desc');
             $achievements = Achievements::model()->findAll('user_id ='. $id . ' ORDER BY created desc LIMIT 3');
+            $favorite = FavoriteUser::model()->checkfavorite($id);
             if($model)
-                $this->render('profile_other', compact('model', 'question','photos','private', 'achievements', 'user'));
+                $this->render('profile_other', compact('model', 'question','photos','private', 'achievements', 'user', 'favorite'));
             else
                 $this->render('my_feed');
         }else{
@@ -852,5 +853,23 @@ class UserController extends SiteBaseController {
         } else {
             echo 'true';
         }
+    }
+    
+    public function actionSaveFavorite(){
+        $check =  FavoriteUser::model()->findByAttributes(array('user_id'=>Yii::app()->user->id, 'favorite_id'=>$_GET['id']));
+        if(!$check){
+            $favorite = new FavoriteUser();
+            $favorite->user_id = Yii::app()->user->id;
+            $favorite->favorite_id =  $_GET['id'];
+            $favorite->created = date('Y:m:d H:m:s');
+            $favorite->updated = date('Y:m:d H:m:s');
+            if($favorite->save() == false)
+                echo 'false';
+            else
+                echo 'true';
+        }else{
+            echo 'exit';
+        }
+        
     }
 }
