@@ -96,7 +96,6 @@ class Answer extends CActiveRecord
     
     public function getAnswer($id){
         $arr = Question::model()->getIdOfQuestion($id);
-        
         if($arr == NULL)
             return false;
         else{
