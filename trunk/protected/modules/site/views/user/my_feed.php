@@ -40,9 +40,21 @@
                     </ul>
                 </div>
                 <div class="tab-content">
-                    <div id="popular" class="tab-pane"></div>
-                    <div id="recent" class="tab-pane"></div>
+                    <div id="popular" class="tab-pane active">
+                        
+                    </div>
+                    <div id="recent" class="tab-pane">
+                        <?php
+                          $this->widget('zii.widgets.CListView', array(
+                              'dataProvider'=>$achievement,
+                              'itemView'=>'../elements/achievement_view',
+                              'summaryText'=>'',
+                              'viewData'=>array('infor'=>$info_user)
+                          ));
+                          ?>
+                    </div>
                     <div id="trending" class="tab-pane">
+                        
                         <div class="my-tabs-div"></div>
                         <form>
                             <input type="text" name="search" class="form-control seach-tab"/>
@@ -64,17 +76,10 @@
                 </div>
             </div>
         </div>
+        
+        
+        
         <!--End Form Search -->
-        
-      <?php
-      $this->widget('zii.widgets.CListView', array(
-          'dataProvider'=>$achievement,
-          'itemView'=>'../elements/achievement_view',
-          'summaryText'=>'',
-          'viewData'=>array('infor'=>$info_user)
-      ));
-      ?>
-        
         
     </div>
     <!--End Content Left  -->
@@ -192,41 +197,7 @@
         </div>
     </div>
 </div>
-<!--Rate Post-->
-<div class="modal fade" id="RatePost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
-  <div class="modal-dialog">
-    <div class="modal-content" style="width: 440px;">
-          <div class="modal-header header-report special-border" style="background-color: #e8e8e8; border-bottom-color: #cdc7c7;">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <span class="span-to">Rate</span> <img class="dis_img" src="">
-            <span class="user-kaka"></span>
-          </div>
-          <div style="text-align: center; background-color: #f0f0f0;">
-            <div class="content-star-rate">
-                   <?php 
-                      $this->widget('ext.dzRaty.DzRaty', array(
-                            'name' => 'my_rating_post_1',//.$model->id,
-                            'value' => 0, //Ratings::model()->getRating($model->id),
-                            'options' => array(
-                                    'half' => TRUE,
-                                    	'click' => "js:function(score, evt){ ratings_post(score, 5) }",
-    
-                            ),
-                            'htmlOptions' => array(
-                            'class' => 'new-half-class'
-                            ),
-                        ));
-                    ?>
-                
-          </div>
-          <span class="text-rate">(set RATING name per number of stars)</span>
-          </div>
-          <div class="modal-footer footer-report" style="border: none;">
-            <a type="button" class="btn btn-primary my-report" id="close_rate" >Rate</a>
-          </div>
-    </div>
-  </div>
-</div>
+
 
 
 <script>
