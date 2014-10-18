@@ -100,7 +100,7 @@ class Question extends CActiveRecord
     
     public function getIdOfQuestion($id){
         $sql = "SELECT * FROM question WHERE user_id = ". $id ." OR 
-        user_id = 0 ORDER BY question.default ASC";
+        user_id = 0 ORDER BY question.default DESC";        
         $result = Question::model()->findAllBySql($sql);
         $arr = array();
         foreach ($result as $key => $item) {

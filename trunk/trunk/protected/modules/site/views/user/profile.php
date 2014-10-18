@@ -176,7 +176,7 @@ r
                 <span class="note-span" id="id-about"></span>
                 <p id="value-about"><?php if($this->user->about) echo $this->user->about; ?></p>
                 <form method="post" style="display: none;" id="form-about">
-                    <textarea class="form-control" name="about"><?php if($this->user->about) echo $this->user->about; ?></textarea>
+                    <textarea class="form-control" id="about" name="about"><?php if($this->user->about) echo $this->user->about; ?></textarea>
                     <span class="my-btn">
                         <input type="submit" value="Save"/>
                         <span class="text-cancel" id="cancel-about">Cancel</span>
@@ -316,7 +316,7 @@ r
                 <span class="note-span" id="id-passion"></span>
                 <span class="godfather" id="value-passion"><?php if($this->user->passion) echo $this->user->passion ?> </span>
                 <form method="post" style="display: none;" id="form-passion">
-                    <input type="text" name="passion" class="form-control" value="<?php if($this->user->passion) echo $this->user->passion; ?>"/>
+                    <input type="text" name="passion" id="passion" class="form-control" value="<?php if($this->user->passion) echo $this->user->passion; ?>"/>
                     <span class="my-btn">
                         <input type="submit" value="Save"/>
                         <span class="text-cancel" id="cancel-passion">Cancel</span>
@@ -329,7 +329,7 @@ r
                 <span class="note-span" id="id-gym"></span>
                 <span class="godfather" id="value-gym"><?php if($this->user->gym) echo $this->user->gym ?> </span>
                 <form method="post" style="display: none;" id="form-gym">
-                    <input type="text" name="gym" class="form-control" value="<?php if($this->user->gym) echo $this->user->gym; ?>"/>
+                    <input type="text" name="gym" id="gym" class="form-control" value="<?php if($this->user->gym) echo $this->user->gym; ?>"/>
                     <span class="my-btn">
                         <input type="submit" value="Save"/>
                         <span class="text-cancel" id="cancel-gym">Cancel</span>
@@ -343,7 +343,7 @@ r
                 <span class="note-span" id="id-diet"></span>
                 <span class="godfather" id="value-diet"><?php if($this->user->diet) echo $this->user->diet ?> </span>
                 <form method="post" style="display: none;" id="form-diet">
-                    <input type="text" name="diet" class="form-control" value="<?php if($this->user->diet) echo $this->user->diet; ?>"/>
+                    <input type="text" name="diet" id="diet" class="form-control" value="<?php if($this->user->diet) echo $this->user->diet; ?>"/>
                     <span class="my-btn">
                         <input type="submit" value="Save"/>
                         <span class="text-cancel" id="cancel-diet">Cancel</span>
@@ -356,7 +356,7 @@ r
                 <span class="note-span" id="id-goal"></span>
                 <span class="godfather" id="value-goal"><?php if($this->user->goal) echo $this->user->goal ?> </span>
                 <form method="post" style="display: none;" id="form-goal">
-                    <input type="text" name="goal" class="form-control" value="<?php if($this->user->goal) echo $this->user->goal; ?>"/>
+                    <input type="text" name="goal" id="goals" class="form-control" value="<?php if($this->user->goal) echo $this->user->goal; ?>"/>
                     <span class="my-btn">
                         <input type="submit" value="Save"/>
                         <span class="text-cancel" id="cancel-goal">Cancel</span>
