@@ -12,7 +12,7 @@ if($user){?>
                 <input type="hidden" id="name_hidien_<?php echo $user->id; ?>" value="<?php echo $user->username; ?>" />
             </div>
         </div>
-        <span class="refesh" data-id="<?php echo $user->id; ?>" data-toggle="modal" data-target="#RatePost">10</span>
+        <span class="refesh">10</span>
     </div>
     <div class="content-post">
       <h3 class="my_posted"> 
