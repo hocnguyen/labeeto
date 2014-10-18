@@ -33,7 +33,12 @@
                 <ul style="float: right;">
                     <li><a href="#" data-toggle="modal" data-target="#WantToChat"><span class="span-chat"></span>CHAT</a></li>
                     <li><a href="#" data-toggle="modal" data-target="#SendaMessage"><span class="span-message"></span>Message</a></li>
-                    <li><a href="#"><span class="span-favorite"></span>Favorite</a></li>
+                    <?php if($favorite == false){ ?>
+                        <li><a class="favorite_user" data-id="<?php echo $model->id ?>"  style="color: #51a9cd;"><span class="span-favorite"></span>Favorited</a></li>
+                    <?php }else{ ?>
+                        <li><a class="favorite_user" data-id="<?php echo $model->id ?>"><span class="span-favorite"></span>Favorite</a></li>
+                    <?php } ?>
+                    
                     <li>
                         <a href="#" data-toggle="modal" data-target="#RateUser" class="rate_user_profile" data-id="<?php echo $model->id ?>"  >
                             <span class="span-rate"></span>Rate</a>
