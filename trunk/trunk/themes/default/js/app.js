@@ -232,7 +232,7 @@ $(document).ready(function(){
             return check;
         }
         //var re=/^[^\d]{1}.*(?=.{8,})(?=.*[A-Za-z])(?=.*[\d]).*$/
-        var re = /^[A-Za-z][A-Za-z0-9]{7}$/i;
+        var re = /^[a-z][a-z0-9]{7}$/i;
         var red=/^.*(?=.{4,20})(?=.*[A-Za-z]).*$/;
 
         var pw = re.exec(password);
