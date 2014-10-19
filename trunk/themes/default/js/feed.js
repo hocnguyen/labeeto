@@ -363,16 +363,18 @@ $(document).ready(function(){
 
     /**Report user**/
     $('.report-user').live('click' ,function(){
-        var id = $(this).attr("data-id");
+        var result = $(this).attr("data-id");
+        var substr = result.split("_");
+        var id = substr[0];
+        var achievements_id = substr[1];
         var avatar = $('#avatar_hidien_'+id).val();
         var username = $('#name_hidien_'+id).val();
-        var achievements_id = $('#achievements_id_'+id).val();
-        console.log(achievements_id);                
+        console.log(achievements_id);
         $('#IdOfUser').val(id);
         $('#my_username').text(username);
         $('#ReportUser .agreed input').addClass('checked_'+id);
         $('#ReportUser textarea').val('');
-        $('#achievements_id').val(achievements_id);        
+        $('#achievements_id').val(achievements_id);     
         showImageReport(avatar);
     })
     
@@ -412,8 +414,8 @@ $(document).ready(function(){
         var user = $('#IdOfUser').val();
         var checked = $('.checked_'+user).attr('checked');
         var comment_report = $('#comment_report').val();
-        var achievements_id = $("#achievements_id").val();        
-        console.log(comment_report);        
+        var achievements_id = $("#achievements_id").val();      
+        
         if(type_report =='' || comment_report =='' || checked != 'checked' ){
             alert('Please ensure the comment, type report and checkbox is filled out.');
         }else if(type_report.length == null){
