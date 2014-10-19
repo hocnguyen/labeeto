@@ -466,4 +466,17 @@ class User extends CActiveRecord
         return $sta;
     }
 
+    public function getSuspendedUser(){
+        $result = self::model()->findAllByAttributes(array('status'=>User::STATUS_SUSPENDED));
+        $arr = array();
+        if($result){
+            foreach($result as $value){
+                $arr[] = $value->id;
+            }
+            return implode(", ",$arr);
+        }else{
+            return 0;
+        }
+    }
+
 }
