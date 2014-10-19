@@ -92,7 +92,7 @@
                     "alertText": "* Enter Valid Zip Code (XXXXXX or XXXXX-XXXX)"
                 },
                 "pw": {
-                    "regex": /^[a-z][a-z0-9]{7}$/i,
+                    "regex": /^[^\dA-Z]{1}[^A-Z]*(?=[^A-Z]{7,})(?=[^A-Z]*[a-z])(?=[^A-Z]*[\d])[^A-Z]*$/,
                     "alertText": "* Password must be 8 characters long and contain 1 number and 1 letter "
                 },
                 "space": {
