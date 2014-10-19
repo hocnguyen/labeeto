@@ -8,7 +8,7 @@
             <div class="main-search">
                 <div class="search-block first-block">
                     <div class="text-explore">
-                        <input type="text" id="search"/>                        
+                        <input type="text" id="search" name="Search[username]"/>                        
                     </div>
                     <button id="any-btn" class="btn-all">any</button>
                     <button id="casual-btn" class="btn-all btn-all-01">casual</button>
@@ -25,30 +25,30 @@
                 <div class="search-block-special">
                     <div class="search-block-02">
                         <label>gender</label>
-                        <input type="number" placeholder="Gender Preference" id="gender"/>
+                        <input type="number" placeholder="Gender Preference" id="gender" name="Search[gender]"/>
                     </div>
                     <div class="search-block-03">
                         <label>Ages</label>
                         <div class="list-age"> 
-                            <input type="text" value="74" id="start"/>
+                            <input type="text" value="74" id="start" name="Search[ages_start]"/>
                             <span>To</span>
-                            <input type="text" value="74" id="end"/>
+                            <input type="text" value="74" id="end" name="Search[ages_end]"/>
                         </div>
                     </div>
                     <div class="search-block-02">
                         <label>Within</label>
                         <div class="list-age"> 
-                            <input type="text" value="74" id="start"/>
+                            <input type="text" value="74" id="start" name="Search[within]"/>
                             <span>Miles of</span>
-                            <input type="text" value="5000" id="end" style="width: 89px;"/>
+                            <input type="text" value="5000" id="end" style="width: 89px;" name="Search[miles]"/>
                         </div>
                     </div>
                     <div class="search-block-03" style="margin-right: 0px; float: right;">
                         <label>Height (cm)</label>
                         <div class="list-age"> 
-                            <input type="text" value="163" id="start"/>
+                            <input type="text" value="163" id="start" name="Search[height_start]"/>
                             <span>To</span>
-                            <input type="text" value="210" id="end"/>
+                            <input type="text" value="210" id="end" name="Search[height_start]"/>
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -57,19 +57,19 @@
                 <div class="search-block-special">
                     <div class="search-block-02">
                         <label>Education</label>
-                        <input type="number" placeholder="Pre-filled" id="gender">
+                        <input type="number" placeholder="Pre-filled" id="gender" name="Search[education]" />
                     </div>
                     <div class="search-block-02">
                         <label>Race</label>
-                        <input type="number" placeholder="Pre-filled" id="race">
+                        <input type="number" placeholder="Pre-filled" id="race" name="Search[race]" />
                     </div>
                     <div class="search-block-02">
                         <label>Faith</label>
-                        <input type="number" placeholder="Pre-filled" id="race">
+                        <input type="number" placeholder="Pre-filled" id="race" name="Search[faith]" /> 
                     </div>
                     <div class="search-block-02" style="margin-right: 0px; float: right;">
                         <label>Kids</label>
-                        <input type="number" placeholder="Pre-filled" id="race">
+                        <input type="number" placeholder="Pre-filled" id="race" name="Search[kids]" />
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -77,15 +77,15 @@
                 <div class="search-block-special">
                     <div class="search-block-02">
                         <label>Exercise Level</label>
-                        <input type="number" placeholder="Pre-filled" id="gender">
+                        <input type="number" placeholder="Pre-filled" id="gender" name="Search[exercise_level]"/>
                     </div>
                     <div class="search-block-02">
                         <label>Drinking Level</label>
-                        <input type="number" placeholder="Pre-filled" id="gender">
+                        <input type="number" placeholder="Pre-filled" id="gender" name="Search[drinking_level]" />
                     </div>
                     <div class="search-block-02">
                         <label>Smoking Level</label>
-                        <input type="number" placeholder="Pre-filled" id="gender">
+                        <input type="number" placeholder="Pre-filled" id="gender" name="Search[smoking_level]" />
                     </div>
                     <div class="search-block-02">
                         <div style="margin-top: 20px;">
