@@ -167,14 +167,24 @@ class UserController extends SiteBaseController {
             $search = '';
             if(isset($_GET['search'])){
                 $search = new CActiveDataProvider('Achievements', array(
-                'criteria' => array(
-                    'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition,
-                    'order' => 'id DESC ',
-                ),
-                'pagination'=>array(
-                    'pageSize'=> self::PAGE_SIZE,
-                )
-            ));
+                    'criteria' => array(
+                        'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition,
+                        'order' => 'id DESC ',
+                    ),
+                    'pagination'=>array(
+                        'pageSize'=> self::PAGE_SIZE,
+                    )
+                ));
+            }else{
+                $search = new CActiveDataProvider('Achievements', array(
+                    'criteria' => array(
+                        'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition,
+                        'order' => 'id DESC ',
+                    ),
+                    'pagination'=>array(
+                        'pageSize'=> self::PAGE_SIZE,
+                    )
+                ));
             }
             $this->user = User::model()->findByPk(Yii::app()->user->id);
             $this->render('my_feed', compact('achievement', 'info_user', 'popular', 'search'));
