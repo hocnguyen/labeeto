@@ -22,8 +22,8 @@
         <div class="content-infor-profile">
             <div class="name_user">
                 <?php echo Utils::short_description($model->username,10); ?>
-                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/<?php echo ($online->is_online ==  User::USER_ONLINE)? 'search-online.png' :'search-btn-gray.png'; ?>" style="padding-bottom: 3px;" >
-                <?php if($online->membership ==  User::MEMBER_VERIFIED){ ?>
+                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/<?php echo ($model->is_online ==  User::USER_ONLINE)? 'search-online.png' :'search-btn-gray.png'; ?>" style="padding-bottom: 3px;" >
+                <?php if($model->verified ==  User::MEMBER_VERIFIED){ ?>
                 <a class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Verified User" style="background: transparent; border: none;">
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/search-check-red.png">
                 </a>
@@ -34,7 +34,7 @@
                     <li><a href="#" data-toggle="modal" data-target="#WantToChat"><span class="span-chat"></span>CHAT</a></li>
                     <li><a href="#" data-toggle="modal" data-target="#SendaMessage"><span class="span-message"></span>Message</a></li>
                     <?php if($favorite == false){ ?>
-                        <li><a class="favorite_user" data-id="<?php echo $model->id ?>"  style="color: #51a9cd;"><span class="span-favorite"></span>Favorited</a></li>
+                        <li><a class="favorite_user" data-id="<?php echo $model->id ?>"  style="color: #51a9cd;"><span class="span-favorited"></span>Favorited</a></li>
                     <?php }else{ ?>
                         <li><a class="favorite_user" data-id="<?php echo $model->id ?>"><span class="span-favorite"></span>Favorite</a></li>
                     <?php } ?>
@@ -54,7 +54,7 @@
                 <div class="street"><span class="icon-people"></span>
                 <?php $age = date("Y") - date('Y', strtotime($model->birthday));  echo $age;  ?>, 
                 <?php  if($model->gender == 1) echo "F"; else echo 'M'; ?>, <?php echo $model->gender_look ?>
-                    <?php if ($online->membership ==  User::MEMBER_VERIFIED ) { ?>
+                    <?php if ($model->membership ==  User::MEMBER_VERIFIED ) { ?>
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/verify.png" >
                     <?php } ?>
                 </div>
