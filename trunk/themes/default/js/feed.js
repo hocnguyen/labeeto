@@ -387,8 +387,8 @@ $(document).ready(function(){
     })
     
     function showImageReport(name_image){
-        if ($('#ReportUser img').attr('src') == ''){
-                $('#ReportUser img').attr('src', '/uploads/avatar/'+ name_image);
+        if ($('#ReportUser img').attr('src') == '' || $('#ReportUser img').attr('src') == 'undefined' ){
+                $('#ReportUser img').attr('src', '/themes/default/images/no-avatar.png');
         }else{
             $('#ReportUser img').attr('src', '');
             $('#ReportUser img').attr('src', '/uploads/avatar/'+ name_image);
@@ -396,8 +396,8 @@ $(document).ready(function(){
      }
      
      function showImageSendMessage(name_image){
-        if ($('#SendaMessage img').attr('src') == ''){
-                $('#SendaMessage img').attr('src', '/uploads/avatar/'+ name_image);
+        if ($('#SendaMessage img').attr('src') == '' || $('#ReportUser img').attr('src') == 'undefined' ){
+                $('#SendaMessage img').attr('src', '/themes/default/images/no-avatar.png');
         }else{
             $('#SendaMessage img').attr('src', '');
             $('#SendaMessage img').attr('src', '/uploads/avatar/'+ name_image);

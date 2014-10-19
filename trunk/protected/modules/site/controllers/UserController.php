@@ -640,8 +640,43 @@ class UserController extends SiteBaseController {
         $this->layout = 'feed';
         if(!Yii::app()->user->isGuest){
             if( isset($_POST['Search']) ){
-                var_dump($_POST['Search']);
 
+                $condition      = " ";
+                $ext            = " ";
+                $username       = $_POST['Search']['username'];
+                $gender         = $_POST['Search']['gender'];
+                $age_start      = $_POST['Search']['age_start'];
+                $age_end        = $_POST['Search']['age_end'];
+                $within_start   = $_POST['Search']['within_start'];
+                $within_end     = $_POST['Search']['within_end'];
+
+                if( $username != '' )
+                    $condition .= " username LIKE '%".$username."%'  ";
+                if( $gender != '-1' ){
+                    if( $username != '' )
+                        $ext       = " AND ";
+                    $condition .= $ext." gender = ".$gender." ";
+                }
+                if(  $age_start != '' ){
+                    $year_age   = date("Y") - $age_start;
+                    if( $username != '' || $gender != '' )
+                        $ext       = " AND ";
+                    $condition .= $ext." YEAR(birthday) <= ".$year_age." ";
+                }
+                if( $age_end != '' ){
+                    $year_age_end  = date("Y") - $age_end;
+                    if( $username != '' || $gender != '' || $age_start != '' )
+                        $ext       = " AND ";
+                    $condition .= $ext." YEAR(birthday) >= ".$year_age_end." ";
+                }
+                $users = new CActiveDataProvider('User', array(
+                    'criteria' => array(
+                        'condition' => $condition,
+                        'order'     => 'membership DESC',
+                    )
+                ));
+                $this->render('search',compact('users','username', 'gender', 'age_start', 'age_end', 'within_start', 'within_end'));
+                exit;
             }
             $this->user = User::model()->findByPk(Yii::app()->user->id);
             $this->render('search');
