@@ -7,7 +7,7 @@ if($user){?>
             <div class="crycle-img">
                 <h2><a href="/user/detail/<?php echo $user->id; ?>"><?php echo $user->username; ?></a><span class="time-location">18 F, CA,</span> <span class="dot-icon"> <?php echo $data->created; ?></span></h2>
                 <a class="message" data-id="<?php echo $user->id; ?>" data-toggle="modal" data-target="#SendaMessage">Send a Message</a>
-                <a class="report-user" data-id="<?php echo $user->id; ?>" data-toggle="modal" data-target="#ReportUser">Report User</a>
+                <a class="report-user" data-id="<?php echo $user->id . '_' . $data->id;; ?>" data-toggle="modal" data-target="#ReportUser">Report User</a>
                 <input type="hidden" id="avatar_hidien_<?php echo $user->id; ?>" value="<?php echo $user->photo; ?>" />
                 <input type="hidden" id="name_hidien_<?php echo $user->id; ?>" value="<?php echo $user->username; ?>" />
             </div>
