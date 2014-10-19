@@ -1084,9 +1084,10 @@ span.minuten{
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fc5b6e', endColorstr='#fc5b6e'); /* IE */
     border: none;
     font: normal 16px/normal Proxima Nova Bold;
-    background: url('../images/sent_modal.png') no-repeat;
+    /*background: url('../images/sent_modal.png') no-repeat;*/
+    background : #ed4c5f;
     height: 30px;
-    width: 70px;
+    width: 160px;
 }
 .my-report:active,
 .my-report:focus{
