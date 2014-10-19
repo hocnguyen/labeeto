@@ -164,7 +164,7 @@ class User extends CActiveRecord
             'is_online' => Yii::t('global', 'Status'),
             'membership' => Yii::t('global', 'Membership'),
             'verified' => Yii::t('global', 'Verified'),
-            'gender_look' => Y::t('global', 'Gender Looking'),
+            'gender_look' => Yii::t('global', 'Gender Looking'),
 		);
 	}
 
