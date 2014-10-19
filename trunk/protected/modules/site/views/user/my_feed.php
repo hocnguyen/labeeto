@@ -34,13 +34,13 @@
             <div>
                 <div class="my-tabs">
                     <ul class="nav nav-tabs" role="tablist">
-                      <li class="active"><a href="#popular" role="tab" data-toggle="tab">Popular</a></li>
+                      <li class="<?php if(!isset($_GET['search'])) echo "active"; ?>"><a href="#popular" role="tab" data-toggle="tab">Popular</a></li>
                       <li><a href="#recent" role="tab" data-toggle="tab">Recent</a></li>
-                      <li><a href="#trending" role="tab" data-toggle="tab">Trending</a></li>
+                      <li class="<?php if(isset($_GET['search'])) echo "active"; ?>"><a href="#trending" role="tab" data-toggle="tab">Trending</a></li>
                     </ul>
                 </div>
                 <div class="tab-content">
-                    <div id="popular" class="tab-pane active">
+                    <div id="popular" class="tab-pane  <?php if(!isset($_GET['search'])) echo "active"; ?>">
                         <?php
                           $this->widget('zii.widgets.CListView', array(
                               'dataProvider'=>$popular,
@@ -60,8 +60,15 @@
                           ));
                           ?>
                     </div>
-                    <div id="trending" class="tab-pane">
-                        
+                    <div id="trending" class="tab-pane <?php if(isset($_GET['search'])) echo "active"; ?>" >
+                        <?php
+                          $this->widget('zii.widgets.CListView', array(
+                              'dataProvider'=>$search,
+                              'itemView'=>'../elements/popular_view',
+                              'summaryText'=>'',
+                              'viewData'=>array('infor'=>$info_user)
+                          ));
+                          ?>
                         <div class="my-tabs-div"></div>
                         <form>
                             <input type="text" name="search" class="form-control seach-tab"/>

@@ -10,6 +10,7 @@ if($user){?>
                 <a class="report-user" data-id="<?php echo $user->id; ?>" data-toggle="modal" data-target="#ReportUser">Report User</a>
                 <input type="hidden" id="avatar_hidien_<?php echo $user->id; ?>" value="<?php echo $user->photo; ?>" />
                 <input type="hidden" id="name_hidien_<?php echo $user->id; ?>" value="<?php echo $user->username; ?>" />
+                <input type="hidden" id="achievements_<?php echo $data->id; ?>" />
             </div>
         </div>
         <span class="refesh">10</span>

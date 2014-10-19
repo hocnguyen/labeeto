@@ -164,8 +164,20 @@ class UserController extends SiteBaseController {
                     'pageSize'=> self::PAGE_SIZE,
                 )
             ));
+            $search = '';
+            if(isset($_GET['search'])){
+                $search = new CActiveDataProvider('Achievements', array(
+                'criteria' => array(
+                    'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition,
+                    'order' => 'id DESC ',
+                ),
+                'pagination'=>array(
+                    'pageSize'=> self::PAGE_SIZE,
+                )
+            ));
+            }
             $this->user = User::model()->findByPk(Yii::app()->user->id);
-            $this->render('my_feed', compact('achievement', 'info_user', 'popular'));
+            $this->render('my_feed', compact('achievement', 'info_user', 'popular', 'search'));
         } else {
             $this->redirect('/');
         }
