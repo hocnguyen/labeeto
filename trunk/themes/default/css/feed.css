@@ -3477,3 +3477,28 @@ li.message_search input{
     display: inline-block;
     vertical-align: middle;
 }
+.first-infor .vote {
+    float: right;
+    padding: 7px 0px;
+    color: #51a9cd;
+    font: normal 16px/normal Helvetica Neue LTPro Bd;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.first-infor .vote ul li{
+    list-style: none;
+}
+.first-infor .vote .upvote{
+    background: url('../images/upvote.png') no-repeat;
+    height: 15px;
+    cursor: pointer;
+    width: 15px;
+}
+.first-infor .vote .downvote{
+    background: url('../images/downvote.png') no-repeat;
+    height: 15px;
+    margin-top: 5px;
+    cursor: pointer;
+    width: 15px;
+}

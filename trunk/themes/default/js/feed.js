@@ -366,10 +366,13 @@ $(document).ready(function(){
         var id = $(this).attr("data-id");
         var avatar = $('#avatar_hidien_'+id).val();
         var username = $('#name_hidien_'+id).val();
+        var achievements_id = $('#achievements_id_'+id).val();
+        console.log(achievements_id);                
         $('#IdOfUser').val(id);
         $('#my_username').text(username);
         $('#ReportUser .agreed input').addClass('checked_'+id);
         $('#ReportUser textarea').val('');
+        $('#achievements_id').val(achievements_id);        
         showImageReport(avatar);
     })
     
@@ -409,6 +412,8 @@ $(document).ready(function(){
         var user = $('#IdOfUser').val();
         var checked = $('.checked_'+user).attr('checked');
         var comment_report = $('#comment_report').val();
+        var achievements_id = $("#achievements_id").val();        
+        console.log(comment_report);        
         if(type_report =='' || comment_report =='' || checked != 'checked' ){
             alert('Please ensure the comment, type report and checkbox is filled out.');
         }else if(type_report.length == null){
@@ -417,7 +422,7 @@ $(document).ready(function(){
             alert('Please ensure the comment is sorter 25 character.');
         }else {
             $('#ReportUser').modal('hide');
-            $.get('/user/reportUser?type='+type_report+'&comment='+comment_report+'&user='+user ,function(data){
+            $.get('/user/reportUser?type='+type_report+'&comment='+comment_report+'&user='+user+'&achievements_id='+achievements_id ,function(data){
                 /**Reset Form Add New**/
                 $('#type_report').attr('value', '');
                 $('#comment_report').attr('value', '');
@@ -466,6 +471,22 @@ $(document).ready(function(){
      
      $('#close_rate').live('click', function(){
         $('#RateUser').modal('hide');
+     });
+     
+     $('.upvote').click(function(){
+        var id = $(this).attr('data-id');
+        $.get('/user/updateVote?id='+id ,function(data){
+            console.log(data);
+            $('.change_vote_'+id).text(data);
+        });
+     });
+     
+     $('.downvote').click(function(){
+        var id = $(this).attr('data-id');
+        $.get('/user/changeVote?id='+id ,function(data){
+            console.log(data);
+            $('.change_vote_'+id).text(data);
+        });
      });
      
 });
