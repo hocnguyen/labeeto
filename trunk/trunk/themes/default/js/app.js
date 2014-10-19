@@ -47,7 +47,8 @@ $(document).ready(function(){
                 }
             });*/
             $.session.set('username', username);
-            $.session.set('birthday', month+"/"+day+"/"+year);
+            /*$.session.set('birthday', month+"/"+day+"/"+year);*/
+            $.session.set('birthday', year+"-"+month+"-"+day);
             $.session.set('ehtnicity', ehtnicity);
             $.session.set('gender_look', gender_look);
             $.session.set('height', feet+'.'+inche);

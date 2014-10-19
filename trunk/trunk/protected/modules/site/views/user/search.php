@@ -8,7 +8,7 @@
             <div class="main-search">
                 <div class="search-block first-block">
                     <div class="text-explore">
-                        <input type="text" id="search"/>                        
+                        <input type="text" id="search" name="Search[username]"/>
                     </div>
                     <button id="any-btn" class="btn-all">any</button>
                     <button id="casual-btn" class="btn-all btn-all-01">casual</button>
@@ -25,22 +25,25 @@
                 <div class="search-block">
                     <div class="search-block-02">
                         <label>gender</label>
-                        <input type="number" placeholder="Gender Preference" id="gender"/>
+                        <select name="Search[gender]" id="gender">
+                            <option value="1"><?php echo Yii::t('global','Female');?> </option>
+                            <option value="0"><?php echo Yii::t('global','Male');?> </option>
+                        </select>
                     </div>
                     <div class="search-block-03">
                         <label>Ages</label>
                         <div class="list-age"> 
-                            <input type="text" value="74" id="start"/>
+                            <input type="text"  id="start" name="Search[age_start]"/>
                             <span>To</span>
-                            <input type="text" value="74" id="end"/>
+                            <input type="text"  id="end" name="Search[age_end]"/>
                         </div>
                     </div>
                     <div class="search-block-02">
                         <label>Within</label>
                         <div class="list-age"> 
-                            <input type="text" value="74" id="start"/>
+                            <input type="text"  id="start" name="Search[within_start]"/>
                             <span>Miles of</span>
-                            <input type="text" value="5000" id="end" style="width: 89px;"/>
+                            <input type="text"  id="end" style="width: 89px;" name="Search[within_end]"/>
                         </div>
                     </div>
                     <div class="clear"></div>

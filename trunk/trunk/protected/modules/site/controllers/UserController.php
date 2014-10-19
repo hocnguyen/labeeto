@@ -202,7 +202,7 @@ class UserController extends SiteBaseController {
         $model->username = $_GET['username'];
         $model->email = $_GET['email'];
         $model->password = md5(sha1($_GET['password']));
-        $model->birthday = $_GET['year'].'-'.$_GET['month'].'-'.$_GET['day'];
+        $model->birthday = $_GET['birthday'];
         $model->height = $_GET['height'];
         $model->gender = $_GET['gender'];
         $model->ehtnicity = $_GET['ehtnicity'];
