@@ -67,19 +67,19 @@
                 <div class="search-block-special">
                     <div class="search-block-02">
                         <label>Education</label>
-                        <input type="number" placeholder="Pre-filled" id="gender" name="Search[education]" />
+                        <input type="number" placeholder="Pre-filled" id="gender" name="Search[education]" value="<?php echo isset($height_start)?$height_start:''; ?>" />
                     </div>
                     <div class="search-block-02">
                         <label>Race</label>
-                        <input type="number" placeholder="Pre-filled" id="race" name="Search[race]" />
+                        <input type="number" placeholder="Pre-filled" id="race" name="Search[race]" value="<?php echo isset($race)?$race:''; ?>" />
                     </div>
                     <div class="search-block-02">
                         <label>Faith</label>
-                        <input type="number" placeholder="Pre-filled" id="race" name="Search[faith]" /> 
+                        <input type="number" placeholder="Pre-filled" id="race" name="Search[faith]" value="<?php echo isset($faith)?$faith:''; ?>" />
                     </div>
                     <div class="search-block-02" style="margin-right: 0px; float: right;">
                         <label>Kids</label>
-                        <input type="number" placeholder="Pre-filled" id="race" name="Search[kids]" />
+                        <input type="number" placeholder="Pre-filled" id="race" name="Search[kids]" value="<?php echo isset($kids)?$kids:''; ?>" />
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -87,15 +87,15 @@
                 <div class="search-block-special">
                     <div class="search-block-02">
                         <label>Exercise Level</label>
-                        <input type="number" placeholder="Pre-filled" id="gender" name="Search[exercise_level]"/>
+                        <input type="number" placeholder="Pre-filled" id="gender" name="Search[exercise_level]" value="<?php echo isset($exercise_level)?$exercise_level:''; ?>"/>
                     </div>
                     <div class="search-block-02">
                         <label>Drinking Level</label>
-                        <input type="number" placeholder="Pre-filled" id="gender" name="Search[drinking_level]" />
+                        <input type="number" placeholder="Pre-filled" id="gender" name="Search[drinking_level]" value="<?php echo isset($drinking_level)?$drinking_level:''; ?>" />
                     </div>
                     <div class="search-block-02">
                         <label>Smoking Level</label>
-                        <input type="number" placeholder="Pre-filled" id="gender" name="Search[smoking_level]" />
+                        <input type="number" placeholder="Pre-filled" id="gender" name="Search[smoking_level]" value="<?php echo isset($smoking_level)?$smoking_level:''; ?>" />
                     </div>
                     <div class="search-block-02">
                         <div style="margin-top: 20px;">
@@ -155,20 +155,7 @@
              ));
                 }
      ?>
-        
-        <!-- <div class="pagination-post" style="margin-top: 100px;">
-            <ul>
-                <li><a href="#" class="prev-post"><</a></li>
-                <li><a href="#" class="normal-pag">1</a></li>
-                <li><a href="#" class="special-pag">2</a></li>
-                <li><a href="#" class="normal-pag">3</a></li>
-                <li><a href="#" class="normal-pag">4</a></li>
-                <li><a href="#">....</a></li>
-                <li><a href="#" class="normal-pag">9</a></li>
-                <li><a href="#" class="normal-pag">10</a></li>
-                <li><a href="#" class="next-post">></a></li>
-            </ul>
-        </div> -->
+
         
     </div>
     <!--End Content Left  -->

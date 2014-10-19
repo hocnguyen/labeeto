@@ -139,13 +139,14 @@ class UserController extends SiteBaseController {
     public function actionMy_feed(){
         $this->layout = 'feed';
         if(!Yii::app()->user->isGuest){
-            $info_user = User::model()->findByPk(Yii::app()->user->id);
-            $reported = ReportUser::model()->getBlockedUser(Yii::app()->user->id) ;//"1,2,5,4,15";
-            
+            $info_user  = User::model()->findByPk(Yii::app()->user->id);
+            $reported   = ReportUser::model()->getBlockedUser(Yii::app()->user->id) ;//"1,2,5,4,15";
+            $suspended  = User::model()->getSuspendedUser();
+            $condition = '';
             if($reported != 0)
-                $condition = " AND t.user_id NOT IN (". $reported .")";
-            else
-                $condition = '';
+                $condition .= " AND t.user_id NOT IN (". $reported .") ";
+            if( $suspended != 0 )
+                $condition .= " AND t.user_id NOT IN (". $suspended .") ";
             $achievement = new CActiveDataProvider('Achievements', array(
                 'criteria' => array(
                     'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition,
