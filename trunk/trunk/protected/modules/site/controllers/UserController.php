@@ -766,7 +766,7 @@ class UserController extends SiteBaseController {
                         'order'     => 'membership DESC',
                     )
                 ));
-                $this->render('advance_search',compact('users','username', 'gender', 'age_start', 'age_end', 'within_start', 'miles','height_start', 'height_end'));
+                $this->render('advance_search',compact('users','username', 'gender', 'age_start',   'age_end', 'within_start', 'miles','height_start', 'height_end','education','race','faith','kids','exercise_level','drink_level','smoking_level'));
                 exit;
             }
             $this->user = User::model()->findByPk(Yii::app()->user->id);
