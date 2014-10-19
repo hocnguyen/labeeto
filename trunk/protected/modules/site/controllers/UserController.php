@@ -757,6 +757,7 @@ class UserController extends SiteBaseController {
         $this->layout = 'feed';
         if(isset($_GET['id'])){
             $id = $_GET['id'];
+            $this->user = User::model()->findByPk(Yii::app()->user->id);
             $user = User::model()->findByPk(Yii::app()->user->id);
             $model = User::model()->findByPk($id);
             $question = Answer::model()->getAnswer($id);
@@ -764,8 +765,9 @@ class UserController extends SiteBaseController {
             $private = Photo::model()->findAll('is_public=0 AND is_approval = 1 AND user_id='.$id . ' ORDER BY date desc');
             $achievements = Achievements::model()->findAll('user_id ='. $id . ' ORDER BY created desc LIMIT 3');
             $favorite = FavoriteUser::model()->checkfavorite($id);
+            $online = User::model()->findByPk(Yii::app()->user->id);
             if($model)
-                $this->render('profile_other', compact('model', 'question','photos','private', 'achievements', 'user', 'favorite'));
+                $this->render('profile_other', compact('model', 'question','photos','private', 'achievements', 'user', 'favorite','online'));
             else
                 $this->render('my_feed');
         }else{
