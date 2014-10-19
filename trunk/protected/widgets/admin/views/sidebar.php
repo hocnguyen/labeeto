@@ -119,6 +119,21 @@ $this->widget('widgets.NBADMenu', array(
                             ),
                         ),
 
+                        array(
+                            'label' => Yii::t('global', 'Chat & Inbox'),
+                            'itemOptions' => array( 'class' => 'dropdown' ),
+                            'items' => array(
+                                array(
+                                    'label' => Yii::t('global', 'Manage Chat'),
+                                    'url' => array('chat/index'),
+                                ),
+                                array(
+                                    'label' => Yii::t('global', 'Manage Inbox'),
+                                    'url' => array('chat/inbox'),
+                                ),
+                            ),
+                        ),
+
 
 
 

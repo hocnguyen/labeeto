@@ -11,7 +11,7 @@
         <div class="span12">
             <div class="containerHeadline tableHeadline">
                 <i class="icon-table"></i>
-                <h2><?php echo Yii::t('global', 'ReportUser'); ?> </h2>
+                <h2><?php echo Yii::t('global', 'Report User'); ?> </h2>
                 <form class="header-tab-view not-bor">
                     <div class="input-append">
                         <span class="add-on add-on-middle add-on-mini" onclick="window.location.href='<?php echo $this->createUrl('reportUser/update?id='.$model->id) ?>'"><i class="icon-edit" title="<?php echo Yii::t('adminlang', 'Edit'); ?>"></i></span>
