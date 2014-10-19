@@ -362,7 +362,7 @@ class UserController extends SiteBaseController {
                     'pageSize'=> self::PAGE_SIZE,
                 )
             ));
-            
+            $this->user = User::model()->findByPk(Yii::app()->user->id);
             $this->render('setting', compact('report'));
         } else {
             $this->redirect('/');
