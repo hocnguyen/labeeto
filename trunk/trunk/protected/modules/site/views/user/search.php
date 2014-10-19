@@ -50,7 +50,7 @@
                         <div class="list-age"> 
                             <input type="text"  id="start" name="Search[within_start]" value="<?php echo isset($within_start)?$within_start:''; ?>" />
                             <span>Miles of</span>
-                            <input type="text"  id="end" style="width: 89px;" name="Search[within_end]" value="<?php echo isset($within_end)?$within_end:''; ?>" />
+                            <input type="text"  id="end" style="width: 89px;" name="Search[within_end]" value="<?php echo isset($miles)?$miles:''; ?>" />
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -85,8 +85,8 @@
     <?php
     if( isset($users) ){ ?>
     <div role="alert" class="alert alert-success alert-dismissible">
-                    <button data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                    <?php echo Yii::t('global','Total have'); ?> <?php echo count($users->getData() ); ?> <?php echo Yii::t('global','result search') ?>
+    <button data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+    <?php echo Yii::t('global','Total have'); ?> <?php echo count($users->getData() ); ?> <?php echo Yii::t('global','result search') ?>
     </div>
      <?php
      $this->widget('zii.widgets.CListView', array(
