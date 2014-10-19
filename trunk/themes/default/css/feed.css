@@ -3470,3 +3470,10 @@ li.message_search input{
 .favorite_user{
     cursor: pointer;
 }
+.span-favorited{
+    background: url('../images/favorite_blue.png') no-repeat;
+    width: 25px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+}
