@@ -202,7 +202,7 @@ class UserController extends SiteBaseController {
         $model->username = $_GET['username'];
         $model->email = $_GET['email'];
         $model->password = md5(sha1($_GET['password']));
-        $model->birthday = $_GET['birthday'];
+        $model->birthday = $_GET['year'].'-'.$_GET['month'].'-'.$_GET['day'];
         $model->height = $_GET['height'];
         $model->gender = $_GET['gender'];
         $model->ehtnicity = $_GET['ehtnicity'];
@@ -638,6 +638,10 @@ class UserController extends SiteBaseController {
     public function actionSearch(){
         $this->layout = 'feed';
         if(!Yii::app()->user->isGuest){
+            if( isset($_POST['Search']) ){
+                var_dump($_POST['Search']);
+
+            }
             $this->user = User::model()->findByPk(Yii::app()->user->id);
             $this->render('search');
         } else {
