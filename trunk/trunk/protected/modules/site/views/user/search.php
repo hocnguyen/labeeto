@@ -8,7 +8,7 @@
             <div class="main-search">
                 <div class="search-block first-block">
                     <div class="text-explore">
-                        <input type="text" id="search" name="Search[username]"/>
+                        <input type="text" id="search" name="Search[username]" value="<?php echo isset($username)?$username:''; ?>"/>
                     </div>
                     <button id="any-btn" class="btn-all">any</button>
                     <button id="casual-btn" class="btn-all btn-all-01">casual</button>
@@ -26,24 +26,31 @@
                     <div class="search-block-02">
                         <label>gender</label>
                         <select name="Search[gender]" id="gender">
-                            <option value="1"><?php echo Yii::t('global','Female');?> </option>
-                            <option value="0"><?php echo Yii::t('global','Male');?> </option>
+                            <?php
+                                $arr = array(
+                                    '-1'=>Yii::t('global','All'),
+                                    '1'=>Yii::t('global','Female'),
+                                    '0'=>Yii::t('global','Male')
+                                );
+                            foreach( $arr as $key=>$val ){ ?>
+                                <option value="<?php echo $key; ?>" <?php if( isset($gender) ){ if( $gender == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
+                            <?php } ?>
                         </select>
                     </div>
                     <div class="search-block-03">
                         <label>Ages</label>
                         <div class="list-age"> 
-                            <input type="text"  id="start" name="Search[age_start]"/>
+                            <input type="text"  id="start" name="Search[age_start]" value="<?php echo isset($age_start)?$age_start:''; ?>"/>
                             <span>To</span>
-                            <input type="text"  id="end" name="Search[age_end]"/>
+                            <input type="text"  id="end" name="Search[age_end]" value="<?php echo isset($age_end)?$age_end:''; ?>"/>
                         </div>
                     </div>
                     <div class="search-block-02">
                         <label>Within</label>
                         <div class="list-age"> 
-                            <input type="text"  id="start" name="Search[within_start]"/>
+                            <input type="text"  id="start" name="Search[within_start]" value="<?php echo isset($within_start)?$within_start:''; ?>" />
                             <span>Miles of</span>
-                            <input type="text"  id="end" style="width: 89px;" name="Search[within_end]"/>
+                            <input type="text"  id="end" style="width: 89px;" name="Search[within_end]" value="<?php echo isset($within_end)?$within_end:''; ?>" />
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -75,255 +82,23 @@
     <div style="margin-top: 45px;">
      <!-- Content Left  -->
     <div class="left-content-01">
-        <div class="search-result">
-            <ul class="list-result">
-            <li class="premium-member-new">
-                <div class="avatar-intro">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/search-avatar.png" alt=""/>
-                    <p>
-                        <strong>Hi I'm Trish.'Nam veteran. Nice to meet you !</strong>
-                        <strong>I'm looking for a weird looking boyfriend.</strong>
-                        <a data-toggle="modal" data-target="#ReportUser" class="report">Report User</a>
-                    </p>
-                </div>
-                <div class="chat-message">
-                    <div class="name-01">
-                        <h3>Trisha <span class="text-search-01">27 F, PH</span> <span class="check-red"></span></h3>
-                        <span class="online">online</span>
-                    </div>
-                    <div class="message-01">
-                        <a data-toggle="modal" data-target="#SendaMessage">message</a>
-                    </div>
-
-                    <div class="chat-01-premium">
-                        <a data-toggle="modal" data-target="#WantToChat">Chat</a>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-            </li>
-
-            <li class="premium-member-new">
-                <div class="avatar-intro">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/search-avatar.png" alt=""/>
-                    <p>
-                        <strong>Hi I'm Trish.'Nam veteran. Nice to meet you !</strong>
-                        <strong>I'm looking for a weird looking boyfriend.</strong>
-                        <a data-toggle="modal" data-target="#ReportUser" class="report">Report User</a>
-                    </p>
-                </div>
-                <div class="chat-message">
-                    <div class="name-01">
-                        <h3>Trisha <span class="text-search-01">27 F, PH</span> <span class="check-red"></span></h3>
-                        <span class="online">online</span>
-                    </div>
-                    <div class="message-01">
-                        <a data-toggle="modal" data-target="#SendaMessage">message</a>
-                    </div>
-
-                    <div class="chat-01-premium">
-                        <a data-toggle="modal" data-target="#WantToChat">Chat</a>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-            </li>
-
-
-                <li>
-                    <div class="avatar-intro">
-                        <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/search-avatar.png" alt=""/>
-                        <p>
-                            <strong>Hi I'm Trish.'Nam veteran. Nice to meet you !</strong>
-                            <strong>I'm looking for a weird looking boyfriend.</strong>
-                            <a data-toggle="modal" data-target="#ReportUser" class="report">Report User</a>
-                        </p>
-                    </div>
-                    <div class="chat-message">
-                        <div class="name-01">
-                            <h3>Trisha <span class="text-search-01">27 F, PH</span> <span class="check-red"></span></h3>
-                            <span class="online">online</span>
-                        </div>
-                        <div class="message-01">
-                            <a data-toggle="modal" data-target="#SendaMessage">message</a>
-                        </div>
-                        
-                        <div class="chat-01">
-                            <a data-toggle="modal" data-target="#WantToChat">Chat</a>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </li>
-                
-                <li>
-                    <div class="avatar-intro">
-                        <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/search-avatar.png" alt=""/>
-                        <p>
-                            <strong>Hi I'm Trish.'Nam veteran. Nice to meet you !</strong>
-                            <strong>I' looking for a weird looking boyfriend. </strong>
-                            <a data-toggle="modal" data-target="#ReportUser" class="report">Report User</a>
-                        </p>
-                    </div>
-                    <div class="chat-message">
-                        <div class="name-01">
-                            <h3>Trisha <span class="text-search-01">27 F, PH</span> <span class="check-red"></span></h3>
-                            <span class="online">online</span>
-                        </div>
-                        <div class="message-01">
-                            <a data-toggle="modal" data-target="#SendaMessage">message</a>
-                        </div>
-                        
-                        <div class="chat-01">
-                            <a data-toggle="modal" data-target="#WantToChat">Chat</a>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </li>
-                
-                <li>
-                    <div class="avatar-intro">
-                        <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/search-avatar.png" alt=""/>
-                        <p>
-                            <strong>Hi I'm Trish.'Nam veteran. Nice to meet you !</strong>
-                            <strong>I' looking for a weird looking boyfriend. </strong>
-                            <a data-toggle="modal" data-target="#ReportUser" class="report">Report User</a>
-                        </p>
-                    </div>
-                    <div class="chat-message">
-                        <div class="name-01">
-                            <h3>Trisha <span class="text-search-01">27 F, PH</span> <span class="check-red"></span></h3>
-                            <span class="online">online</span>
-                        </div>
-                        <div class="message-01">
-                            <a data-toggle="modal" data-target="#SendaMessage">message</a>
-                        </div>
-                        
-                        <div class="chat-01">
-                            <a data-toggle="modal" data-target="#WantToChat">Chat</a>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </li>
-                
-                <li>
-                    <div class="avatar-intro">
-                        <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/search-avatar.png" alt=""/>
-                        <p>
-                            <strong>Hi I'm Trish.'Nam veteran. Nice to meet you !</strong>
-                            <strong>I' looking for a weird looking boyfriend. </strong>
-                            <a data-toggle="modal" data-target="#ReportUser" class="report">Report User</a>
-                        </p>
-                    </div>
-                    <div class="chat-message">
-                        <div class="name-01">
-                            <h3>Trisha <span class="text-search-01">27 F, PH</span> <span class="check-red"></span></h3>
-                            <span class="online">online</span>
-                        </div>
-                        <div class="message-01">
-                            <a data-toggle="modal" data-target="#SendaMessage">message</a>
-                        </div>
-                        
-                        <div class="chat-01">
-                            <a data-toggle="modal" data-target="#WantToChat">Chat</a>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </li>
-                
-                <li>
-                    <div class="avatar-intro">
-                        <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/search-avatar.png" alt=""/>
-                        <p>
-                            <strong>Hi I'm Trish.'Nam veteran. Nice to meet you !</strong>
-                            <strong>I' looking for a weird looking boyfriend. </strong>
-                            <a data-toggle="modal" data-target="#ReportUser" class="report">Report User</a>
-                        </p>
-                    </div>
-                    <div class="chat-message">
-                        <div class="name-01">
-                            <h3>Trisha <span class="text-search-01">27 F, PH</span> <span class="check-red"></span></h3>
-                            <span class="online">online</span>
-                        </div>
-                        <div class="message-01">
-                            <a data-toggle="modal" data-target="#SendaMessage">message</a>
-                        </div>
-                        
-                        <div class="chat-01">
-                            <a data-toggle="modal" data-target="#WantToChat">Chat</a>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </li>
-                
-                
-                <li>
-                    <div class="avatar-intro">
-                        <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/search-avatar.png" alt=""/>
-                        <p>
-                            <strong>Hi I'm Trish.'Nam veteran. Nice to meet you !</strong>
-                            <strong>I' looking for a weird looking boyfriend. </strong>
-                            <a data-toggle="modal" data-target="#ReportUser" class="report">Report User</a>
-                        </p>
-                    </div>
-                    <div class="chat-message">
-                        <div class="name-01">
-                            <h3>Trisha <span class="text-search-01">27 F, PH</span> <span class="check-red"></span></h3>
-                            <span class="offline">last seen 54m ago</span>
-                        </div>
-                        <div class="message-01">
-                            <a data-toggle="modal" data-target="#SendaMessage">message</a>
-                        </div>
-                        
-                        <div class="chat-01">
-                            <a data-toggle="modal" data-target="#WantToChat">Chat</a>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </li>
-                
-                <li>
-                    <div class="avatar-intro">
-                        <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/search-avatar.png" alt=""/>
-                        <p>
-                            <strong>Hi I'm Trish.'Nam veteran. Nice to meet you !</strong>
-                            <strong>I' looking for a weird looking boyfriend. </strong>
-                            <a data-toggle="modal" data-target="#ReportUser" class="report">Report User</a>
-                        </p>
-                    </div>
-                    <div class="chat-message">
-                        <div class="name-01">
-                            <h3>Trisha <span class="text-search-01">27 F, PH</span> <span class="check-red"></span></h3>
-                            <span class="offline">last seen 54m ago</span>
-                        </div>
-                        <div class="message-01">
-                            <a data-toggle="modal" data-target="#SendaMessage">message</a>
-                        </div>
-                        
-                        <div class="chat-01">
-                            <a data-toggle="modal" data-target="#WantToChat" >Chat</a>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </li>
-                
-            </ul>
-        </div>
-        
-        <div class="pagination-post" style="margin-top: 100px;">
-            <ul>
-                <li><a href="#" class="prev-post"><</a></li>
-                <li><a href="#" class="normal-pag">1</a></li>
-                <li><a href="#" class="special-pag">2</a></li>
-                <li><a href="#" class="normal-pag">3</a></li>
-                <li><a href="#" class="normal-pag">4</a></li>
-                <li><a href="#">....</a></li>
-                <li><a href="#" class="normal-pag">9</a></li>
-                <li><a href="#" class="normal-pag">10</a></li>
-                <li><a href="#" class="next-post">></a></li>
-            </ul>
-        </div>
-        
+    <?php
+    if( isset($users) ){ ?>
+    <div role="alert" class="alert alert-success alert-dismissible">
+                    <button data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <?php echo Yii::t('global','Total have'); ?> <?php echo count($users->getData() ); ?> <?php echo Yii::t('global','result search') ?>
+    </div>
+     <?php
+     $this->widget('zii.widgets.CListView', array(
+         'dataProvider'=>$users,
+         'itemView'=>'result_search_users',
+         'summaryText'=>''
+     ));
+        }
+     ?>
     </div>
     <!--End Content Left  -->
-    
+
     <!-- Content Right -->
     <div class="right-content-01">
         <div class="adv-01">
@@ -360,49 +135,56 @@
 </div>
 <!-- Modal Report-->
 <div class="modal fade" id="ReportUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content special-border">
-      <div class="modal-header header-report">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title report-title">Is there something wrong with this profile? </h4>
-        <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
-        <span class="user-kaka user-ricky">Ricky Martin</span>
-      </div>
-      <div class="">
-        <select class="form-control" style="border-radius: 0;">
-            <option>Test</option>
-            <option>Test</option>
-            <option>Test</option>
-            <option>Test</option>
-        </select>
-      </div>
-      <div class="modal-footer footer-report">
-        <div class="agreed">
-            <input type="checkbox" name="" class="pull-left"/> <span>Would you also like to block this user from making contact with you?</span>
+    <div class="modal-dialog">
+        <div class="modal-content special-border">
+            <div class="modal-header header-report">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title report-title">Are you sure you want to block this user? </h4>
+                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
+                <span class="user-kaka user-ricky" id="my_username"></span>
+            </div>
+            <form method="post">
+                <input type="hidden" value="0" id="IdOfUser" />
+                <select class="form-control" style="border-radius: 0;" id="type_report">
+                    <option value="Offensive Messaging">Offensive Messaging</option>
+                    <option value="Offensive Profile">Offensive Profile</option>
+                    <option value="Offensive Image">Offensive Image</option>
+                    <option value="Spamming/Scamming">Spamming/Scamming</option>
+                </select>
+                <br />
+                <textarea name="comment" id="comment_report" class="form-control" placeholder="Add comment here..." rows="4">
+
+                </textarea>
+
+                <div class="modal-footer footer-report">
+                    <div class="agreed">
+                        <input type="checkbox" name="" class="pull-left"/>
+                        <span>Would you also like to block this user from making contact with you?</span>
+                    </div>
+                    <button type="button" class="btn btn-primary my-report" id="ReportedUser" >Report</button>
+                </div>
+            </form>
         </div>
-        <a type="button" class="btn btn-primary my-report">Report</a>
-      </div>
     </div>
-  </div>
 </div>
 
 <!-- Modal Message-->
 <div class="modal fade" id="SendaMessage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-          <div class="modal-header header-report special-border">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <span class="span-to">To</span> <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
-            <span class="user-kaka">Ricky Martin</span>
-          </div>
-          <div class="">
-            <textarea class="form-control" rows="4" cols="50" placeholder="Write a message"></textarea>
-          </div>
-          <div class="modal-footer footer-report">
-            <a type="button" class="btn btn-primary my-report">Send</a>
-          </div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header header-report special-border">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <span class="span-to">To</span> <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
+                <span class="user-kaka" id="txt_username"></span>
+            </div>
+            <div class="">
+                <textarea class="form-control" rows="4" cols="50" placeholder="Write a message"></textarea>
+            </div>
+            <div class="modal-footer footer-report">
+                <a type="button" class="btn btn-primary my-report">Send</a>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 <script>
     $('.post-btn').click(function(){
