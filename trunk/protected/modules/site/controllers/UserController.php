@@ -675,6 +675,7 @@ class UserController extends SiteBaseController {
                     $user->save();
                 }
             }
+            User::model()->findByPk(Yii::app()->user->id, array('verified'=>1));
             $this->user = User::model()->findByPk(Yii::app()->user->id);
             $this->render('verifyPhoto');
         } else {
