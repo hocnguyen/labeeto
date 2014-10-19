@@ -198,29 +198,30 @@ class UserController extends SiteBaseController {
         $this->redirect('/');
     }
     public function actionRegister(){
-        $model = new User();
-        $model->username = $_GET['username'];
-        $model->email = $_GET['email'];
-        $model->password = md5(sha1($_GET['password']));
-        $model->birthday = $_GET['birthday'];
-        $model->height = $_GET['height'];
-        $model->gender = $_GET['gender'];
-        $model->ehtnicity = $_GET['ehtnicity'];
+        $bd                 = explode( '_', $_GET['birthday'] );
+        $model              = new User();
+        $model->username    = $_GET['username'];
+        $model->email       = $_GET['email'];
+        $model->password    = md5(sha1($_GET['password']));
+        $model->birthday    = $bd[0].'-'.$bd[1].'-'.$bd[2];
+        $model->height      = $_GET['height'];
+        $model->gender      = $_GET['gender'];
+        $model->ehtnicity   = $_GET['ehtnicity'];
         $model->gender_look = $_GET['gender_look'];
-        $model->address = $_GET['address'];
-        $model->career = $_GET['career'];
-        $model->education = $_GET['education'];
-        $model->religion = $_GET['religion'];
-        $model->excercise = $_GET['excercise'];
-        $model->passion = $_GET['passion'];
-        $model->goal = $_GET['goal'];
-        $model->smoke = $_GET['smoke'];
-        $model->drink = $_GET['drink'];
-        $model->relations = $_GET['relations'];
-        $model->latitude = $_GET['latitude'];
-        $model->longtitude = $_GET['longtitude'];
-        $model->photo = $_GET['photo'];
-        $model->age = '18-19';
+        $model->address     = $_GET['address'];
+        $model->career      = $_GET['career'];
+        $model->education   = $_GET['education'];
+        $model->religion    = $_GET['religion'];
+        $model->excercise   = $_GET['excercise'];
+        $model->passion     = $_GET['passion'];
+        $model->goal        = $_GET['goal'];
+        $model->smoke       = $_GET['smoke'];
+        $model->drink       = $_GET['drink'];
+        $model->relations   = $_GET['relations'];
+        $model->latitude    = $_GET['latitude'];
+        $model->longtitude  = $_GET['longtitude'];
+        $model->photo       = $_GET['photo'];
+        $model->age         = '18-19';
         if($model->save()){
             //Register Newletters
             $newletters = new Newsletter();
