@@ -51,7 +51,7 @@ class ReportUser extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_id, blocked_user', 'required'),
+			array('user_id, blocked_user, achievements_id', 'required'),
 			array('user_id, reported_user, blocked_user, achievements_id', 'numerical', 'integerOnly'=>true),
             array('type_report', 'length', 'max'=>255),
             array('content, created, updated', 'safe'),
