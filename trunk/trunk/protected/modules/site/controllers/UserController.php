@@ -155,8 +155,17 @@ class UserController extends SiteBaseController {
                     'pageSize'=> self::PAGE_SIZE,
                 )
             ));
+            $popular = new CActiveDataProvider('Achievements', array(
+                'criteria' => array(
+                    'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition,
+                    'order' => 'vote DESC ',
+                ),
+                'pagination'=>array(
+                    'pageSize'=> self::PAGE_SIZE,
+                )
+            ));
             $this->user = User::model()->findByPk(Yii::app()->user->id);
-            $this->render('my_feed', compact('achievement', 'info_user'));
+            $this->render('my_feed', compact('achievement', 'info_user', 'popular'));
         } else {
             $this->redirect('/');
         }
@@ -731,6 +740,7 @@ class UserController extends SiteBaseController {
             $report->blocked_user = $_GET['user'];
             $report->type_report = $_GET['type'];
             $report->content = $_GET['comment'];
+            $report->achievements_id = $_GET['achievements_id'];
             $report->created = date('Y:m:d H:m:s');
             $report->updated = date('Y:m:d H:m:s');
             $report->save();
@@ -912,6 +922,30 @@ class UserController extends SiteBaseController {
                 echo 'true';
         }else{
             echo 'exit';
+        }
+    }
+    
+    public function actionUpdateVote(){
+        $id = $_GET['id'];
+        $achievements = Achievements::model()->findByPk($id);
+        if($achievements){
+            Achievements::model()->updateByPk($id, array('vote'=>$achievements->vote + 1));
+            echo $achievements->vote + 1;
+            
+        }
+        
+    }
+    
+    public function actionChangeVote(){
+        $id = $_GET['id'];
+        $achievements = Achievements::model()->findByPk($id);
+        if($achievements){
+            if($achievements->vote > 0){
+                Achievements::model()->updateByPk($id, array('vote'=>$achievements->vote - 1));
+                echo $achievements->vote - 1;
+            }else{
+                echo 0;
+            }
         }
         
     }

@@ -41,7 +41,14 @@
                 </div>
                 <div class="tab-content">
                     <div id="popular" class="tab-pane active">
-                        
+                        <?php
+                          $this->widget('zii.widgets.CListView', array(
+                              'dataProvider'=>$popular,
+                              'itemView'=>'../elements/popular_view',
+                              'summaryText'=>'',
+                              'viewData'=>array('infor'=>$info_user)
+                          ));
+                          ?>
                     </div>
                     <div id="recent" class="tab-pane">
                         <?php
@@ -143,7 +150,7 @@
         </select>
         <br />
         <textarea name="comment" id="comment_report" class="form-control" placeholder="Add comment here..." rows="4">
-            
+        <input type="hidden" id="achievements_id" value="" />   
         </textarea>
       
       <div class="modal-footer footer-report">
@@ -169,6 +176,7 @@
           </div>
           <div class="">
             <textarea class="form-control" rows="4" cols="50" placeholder="Write a message"></textarea>
+            
           </div>
           <div class="modal-footer footer-report">
             <a type="button" class="btn btn-primary my-report">Send</a>
