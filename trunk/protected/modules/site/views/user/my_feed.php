@@ -157,9 +157,9 @@
         </select>
         <br />
         <textarea name="comment" id="comment_report" class="form-control" placeholder="Add comment here..." rows="4">
-        <input type="hidden" id="achievements_id" value="" />   
+           
         </textarea>
-      
+        <input type="hidden" id="achievements_id" value="0" />
       <div class="modal-footer footer-report">
         <div class="agreed">
             <input type="checkbox" name="" class="pull-left"/> 
