@@ -138,5 +138,15 @@ class Achievements extends CActiveRecord
         return Yii::t('global','Inactive');
     }
     
-
+    public function getCore($id){
+        $achievements = self::model()->findByPk($id);
+        $base_ranking = Vote::model()->getSumVote($id);
+        $datepostactive = time() - strtotime($achievements->created) ; 
+        $datepostactive = floor($datepostactive/(60*60*24)) + 1;
+        $core_final = $base_ranking - ((Yii::app()->settings->time_penalty/100) * $datepostactive);
+        if($core_final < 0)
+            $core_final = 0;
+        return floor($core_final);
+    }
+    
 }

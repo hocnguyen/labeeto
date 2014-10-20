@@ -5,8 +5,10 @@
  *
  * The followings are the available columns in table 'vote':
  * @property integer $id
- * @property double $score
- * @property integer $post_id
+ * @property integer $user_id
+ * @property integer $achievements_id
+ * @property integer $up_vote
+ * @property integer $down_vote
  * @property string $created
  * @property string $updated
  * @property string $ip
@@ -43,13 +45,12 @@ class Vote extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('score, post_id, created, updated', 'required'),
-			array('post_id', 'numerical', 'integerOnly'=>true),
-			array('score', 'numerical'),
+			array('user_id, achievements_id, created, updated', 'required'),
+			array('user_id, achievements_id, up_vote, down_vote', 'numerical', 'integerOnly'=>true),
 			array('ip', 'length', 'max'=>30),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, score, post_id, created, updated, ip', 'safe', 'on'=>'search'),
+			array('id, user_id, achievements_id, up_vote, down_vote, created, updated, ip', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -71,8 +72,10 @@ class Vote extends CActiveRecord
 	{
 		return array(
 			'id' => Yii::t('global', 'ID'),
-			'score' => Yii::t('global', 'Score'),
-			'post_id' => Yii::t('global', 'Post'),
+			'user_id' => Yii::t('global', 'User'),
+			'achievements_id' => Yii::t('global', 'Achievements'),
+			'up_vote' => Yii::t('global', 'Up Vote'),
+			'down_vote' => Yii::t('global', 'Down Vote'),
 			'created' => Yii::t('global', 'Created'),
 			'updated' => Yii::t('global', 'Updated'),
 			'ip' => Yii::t('global', 'Ip'),
@@ -91,8 +94,10 @@ class Vote extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('score',$this->score);
-		$criteria->compare('post_id',$this->post_id);
+		$criteria->compare('user_id',$this->user_id);
+		$criteria->compare('achievements_id',$this->achievements_id);
+		$criteria->compare('up_vote',$this->up_vote);
+		$criteria->compare('down_vote',$this->down_vote);
 		$criteria->compare('created',$this->created,true);
 		$criteria->compare('updated',$this->updated,true);
 		$criteria->compare('ip',$this->ip,true);
@@ -102,28 +107,14 @@ class Vote extends CActiveRecord
 		));
 	}
     
-    public function getVoting( $post_id, $option = 0 ){
-        $sql = 'SELECT COUNT(id) as id_count, SUM(score) as score_sum FROM vote WHERE post_id='.$post_id;
-        $allVoting = Yii::app()->db->createCommand($sql)->queryAll();
-        $scoreCurrent = 0;
-        if($allVoting){
-            if($allVoting[0]['id_count'] !=0){
-                $scoreCurrent = $allVoting[0]['score_sum'] / $allVoting[0]['id_count'];
-            } else{
-                $scoreCurrent = 0 ;
-            }
-        }
-        if( $option == 1 )
-            echo $scoreCurrent;
-        else 
-            return $scoreCurrent;
-    }
-    
-    public function totalVoting( $post_id, $type = 0 ){
-        $sql = "SELECT COUNT(id) AS totalvoting FROM vote WHERE post_id = ".$post_id;
-        $totals = Yii::app()->db->createCommand($sql)->queryAll();
-        foreach ($totals as $total){
-            echo $total['totalvoting'];
-        }
+    public function getSumVote($achievements_id){
+        $sql_1 = "SELECT SUM(up_vote) AS  up_vote FROM vote WHERE achievements_id = ". $achievements_id;
+        $up_vote = Yii::app()->db->createCommand($sql_1)->queryScalar();
+        $sql_2 = "SELECT SUM(down_vote) AS  down_vote FROM vote WHERE achievements_id = ". $achievements_id;
+        $down_vote = Yii::app()->db->createCommand($sql_2)->queryScalar();
+        $sum = $up_vote - $down_vote;
+        if($sum < 0)
+            $sum = 0;
+        return $sum;
     }
 }
