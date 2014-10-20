@@ -61,14 +61,6 @@
                           ?>
                     </div>
                     <div id="trending" class="tab-pane <?php if(isset($_GET['search'])) echo "active"; ?>" >
-                        <?php
-                          $this->widget('zii.widgets.CListView', array(
-                              'dataProvider'=>$search,
-                              'itemView'=>'../elements/popular_view',
-                              'summaryText'=>'',
-                              'viewData'=>array('infor'=>$info_user)
-                          ));
-                          ?>
                         <div class="my-tabs-div"></div>
                         <form>
                             <input type="text" name="search" class="form-control seach-tab"/>
@@ -86,6 +78,15 @@
                                 </ul>
                             </div>
                         </div>
+                        <?php
+                          $this->widget('zii.widgets.CListView', array(
+                              'dataProvider'=>$search,
+                              'itemView'=>'../elements/popular_view',
+                              'summaryText'=>'',
+                              'viewData'=>array('infor'=>$info_user)
+                          ));
+                          ?>
+                        
                     </div>
                 </div>
             </div>
