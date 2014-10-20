@@ -477,7 +477,7 @@ $(document).ready(function(){
      
      $('.upvote').click(function(){
         var id = $(this).attr('data-id');
-        $.get('/user/updateVote?id='+id ,function(data){
+        $.get('/user/updateVote?id='+id+'&type=1' ,function(data){
             console.log(data);
             $('.change_vote_'+id).text(data);
         });
@@ -485,7 +485,7 @@ $(document).ready(function(){
      
      $('.downvote').click(function(){
         var id = $(this).attr('data-id');
-        $.get('/user/changeVote?id='+id ,function(data){
+        $.get('/user/updateVote?id='+id+'&type=0' ,function(data){
             console.log(data);
             $('.change_vote_'+id).text(data);
         });
