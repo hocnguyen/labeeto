@@ -2545,7 +2545,7 @@ input[type="range"]::-ms-fill-lower {
     float:left;
     margin-right: 24px;
 }
-.search-block-03 #gender, .search-block-02 #gender{
+.search-block-03 #gender, .search-block-02 #gender ,.search-block-02 #education{
     height: 35px;
     padding: 5px 3px 5px 10px;
     color: #a4a4a4;
