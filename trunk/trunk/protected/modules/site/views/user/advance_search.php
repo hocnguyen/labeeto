@@ -67,7 +67,16 @@
                 <div class="search-block-special">
                     <div class="search-block-02">
                         <label>Education</label>
-                        <input type="number" placeholder="Pre-filled" id="gender" name="Search[education]" value="<?php echo isset($height_start)?$height_start:''; ?>" />
+                        <select name="Search[education]" id="education">
+                            <?php 
+                                $edu = CHtml::listData(Education::model()->findAll(),'id','name');
+                                foreach( $edu as $key=>$val ){ ?>
+                                <option value="<?php echo $key; ?>" <?php if( isset($education) ){ if( $education == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
+                            <?php } ?>
+                            ?>
+
+                        </select>
+                        
                     </div>
                     <div class="search-block-02">
                         <label>Race</label>
