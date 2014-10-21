@@ -15,6 +15,7 @@
  */
 class Vote extends CActiveRecord
 {
+    public $username;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -62,6 +63,7 @@ class Vote extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+          'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
 
@@ -92,18 +94,34 @@ class Vote extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-
-		$criteria->compare('id',$this->id);
-		$criteria->compare('user_id',$this->user_id);
-		$criteria->compare('achievements_id',$this->achievements_id);
-		$criteria->compare('up_vote',$this->up_vote);
-		$criteria->compare('down_vote',$this->down_vote);
-		$criteria->compare('created',$this->created,true);
-		$criteria->compare('updated',$this->updated,true);
-		$criteria->compare('ip',$this->ip,true);
-
+        $criteria->together = true;
+        $criteria->with = array('user');
+        
+		$criteria->compare('t.id',$this->id);
+		$criteria->compare('t.user_id',$this->user_id);
+		$criteria->compare('t.achievements_id', $_GET['id']);
+		$criteria->compare('t.up_vote',$this->up_vote);
+		$criteria->compare('t.down_vote',$this->down_vote);
+		if ($this->created)
+            $criteria->compare('t.created', date('Y-m-d ', strtotime($this->created)), true);
+        if ($this->updated)
+            $criteria->compare('t.updated', date('Y-m-d ', strtotime($this->updated)), true);
+            
+        
+        $criteria->compare('t.ip',$this->ip,true);
+        $criteria->compare('user.username',$this->username, true);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+            'sort'=>array(
+                'defaultOrder'=>'t.id DESC',
+                'attributes'=>array(
+                    'username'=>array(
+                        'asc'=>'user.username',
+                        'desc'=>'user.username DESC',
+                    ),
+                    '*',
+                ),
+            )
 		));
 	}
     
@@ -117,4 +135,5 @@ class Vote extends CActiveRecord
             $sum = 0;
         return $sum;
     }
+    
 }

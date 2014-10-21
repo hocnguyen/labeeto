@@ -57,7 +57,7 @@ class Achievements extends CActiveRecord
 			array('content, created, updated', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, alias, content, location, media, status, user_id, created, updated, username', 'safe', 'on'=>'search'),
+			array('id, name, alias, content, vote, location, media, status, user_id, created, updated, username', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -89,6 +89,7 @@ class Achievements extends CActiveRecord
             'user_id' => Yii::t('global', 'User'),
 			'created' => Yii::t('global', 'Created'),
 			'updated' => Yii::t('global', 'Updated'),
+            'vote' => Yii::t('global', 'Vote'),
 		);
 	}
 
@@ -112,6 +113,7 @@ class Achievements extends CActiveRecord
         $criteria->compare('t.location',$this->location,true);
 		$criteria->compare('t.status',$this->status);
         $criteria->compare('t.user_id',$this->user_id);
+        $criteria->compare('t.vote',$this->vote);
         if ($this->created)
             $criteria->compare('t.created', date('Y-m-d ', strtotime($this->created)), true);
 		$criteria->compare('t.updated',$this->updated,true);

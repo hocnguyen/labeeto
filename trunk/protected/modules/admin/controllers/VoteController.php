@@ -1,12 +1,12 @@
 <?php
 
-class AchievementsController extends AdminBaseController {
+class VoteController extends AdminBaseController {
     public function init()
 	{
 		parent::init();
 		
-		$this->breadcrumbs[ Yii::t('global', 'Achievements') ] = array('achievements/index');
-		$this->pageTitle[] = Yii::t('global', 'Achievements');
+		$this->breadcrumbs[ Yii::t('global', 'Votes') ] = array('vote/index');
+		$this->pageTitle[] = Yii::t('global', 'Votes');
 	}
     
 	/**
@@ -26,14 +26,14 @@ class AchievementsController extends AdminBaseController {
 	 */
 	public function actionCreate()
 	{
-		$model=new Achievements;
+		$model=new Vote;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Achievements']))
+		if(isset($_POST['Vote']))
 		{
-			$model->attributes=$_POST['Achievements'];
+			$model->attributes=$_POST['Vote'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -55,9 +55,9 @@ class AchievementsController extends AdminBaseController {
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Achievements']))
+		if(isset($_POST['Vote']))
 		{
-			$model->attributes=$_POST['Achievements'];
+			$model->attributes=$_POST['Vote'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -92,10 +92,10 @@ class AchievementsController extends AdminBaseController {
 	 */
 	public function actionIndex()
 	{
-		$model=new Achievements('search');
+		$model=new Vote('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Achievements']))
-			$model->attributes=$_GET['Achievements'];
+		if(isset($_GET['Vote']))
+			$model->attributes=$_GET['Vote'];
 
 		$this->render('index',array(
 			'model'=>$model,
@@ -107,7 +107,7 @@ class AchievementsController extends AdminBaseController {
 	 */
 	public function actionAdmin()
 	{
-		$dataProvider=new CActiveDataProvider('Achievements');
+		$dataProvider=new CActiveDataProvider('Vote');
 		$this->render('admin',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -120,7 +120,7 @@ class AchievementsController extends AdminBaseController {
 	 */
 	public function loadModel($id)
 	{
-		$model=Achievements::model()->findByPk((int)$id);
+		$model=Vote::model()->findByPk((int)$id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -132,25 +132,20 @@ class AchievementsController extends AdminBaseController {
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='achievements-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='vote-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
 	}
     
-    /**
-	 * Lists all models.
-	 */
-	public function actionVote()
-	{
-		$model=new Achievements('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Achievements']))
-			$model->attributes=$_GET['Achievements'];
-
-		$this->render('vote',array(
-			'model'=>$model,
-		));
-	}
+    public function actionDetail(){
+        if(isset($_GET['id'])){
+            $model = new Vote('search');
+            $model->unsetAttributes();  // clear any default values
+		          if(isset($_GET['Vote']))
+			$model->attributes=$_GET['Vote'];
+            $this->render('detail', compact('model'));
+        }
+    }
 }
