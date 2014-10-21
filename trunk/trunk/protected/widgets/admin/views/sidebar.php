@@ -97,6 +97,10 @@ $this->widget('widgets.NBADMenu', array(
                                     'label' => Yii::t('global', 'Manage Verify Profile'),
                                     'url' => array('verifyProfile/index'),
                                 ),
+                                array(
+                                    'label' => Yii::t('global', 'Manage Up and Down Vote'),
+                                    'url' => array('achievements/vote'),
+                                ),
                             ),
                         ),
 
