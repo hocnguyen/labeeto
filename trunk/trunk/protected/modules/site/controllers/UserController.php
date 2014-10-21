@@ -753,13 +753,11 @@ class UserController extends SiteBaseController {
                 if( $education !='')
                     $condition .= " education LIKE '%".$education."%'  ";
 
-                if($height_start !='')
+                /*if($height_start !='')
                      $ext = "AND";
                      $condition .= $ext." height = ".$height_start." "; 
-
-                if($height_end !='')
-                     $ext = "AND";
-                     $condition .= $ext." height = ".$height_end." ";   
+                */
+                 
                   
 
                 if(  $age_start != '' ){
