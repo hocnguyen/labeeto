@@ -672,7 +672,7 @@ class UserController extends SiteBaseController {
         $this->layout = 'feed';
         if(!Yii::app()->user->isGuest){
             if( isset($_POST['Search']) ){
-
+                
                 $condition      = " ";
                 $ext            = " ";
                 $username       = $_POST['Search']['username'];
