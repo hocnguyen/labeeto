@@ -744,11 +744,19 @@ class UserController extends SiteBaseController {
 
                 if( $username != '' )
                     $condition .= " username LIKE '%".$username."%'  ";
+
                 if( $gender != '-1' ){
                     if( $username != '' )
                         $ext       = " AND ";
                     $condition .= $ext." gender = ".$gender." ";
                 }
+                if( $education !='')
+                    $condition .= " education LIKE '%".$education."%'  ";
+
+                if($height_start !='')
+                     $ext = "AND";
+                     $condition .= $ext." height = ".$height_start." ";   
+                 
                 if(  $age_start != '' ){
                     $year_age   = date("Y") - $age_start;
                     if( $username != '' || $gender != '' )
@@ -767,6 +775,7 @@ class UserController extends SiteBaseController {
                         'order'     => 'membership DESC',
                     )
                 ));
+
                 $this->render('advance_search',compact('users','username', 'gender', 'age_start',   'age_end', 'within_start', 'miles','height_start', 'height_end','education','race','faith','kids','exercise_level','drink_level','smoking_level'));
                 exit;
             }
