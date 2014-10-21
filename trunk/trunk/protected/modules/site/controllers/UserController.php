@@ -755,8 +755,13 @@ class UserController extends SiteBaseController {
 
                 if($height_start !='')
                      $ext = "AND";
-                     $condition .= $ext." height = ".$height_start." ";   
-                 
+                     $condition .= $ext." height = ".$height_start." "; 
+
+                if($height_end !='')
+                     $ext = "AND";
+                     $condition .= $ext." height = ".$height_end." ";   
+                  
+
                 if(  $age_start != '' ){
                     $year_age   = date("Y") - $age_start;
                     if( $username != '' || $gender != '' )
