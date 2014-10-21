@@ -96,52 +96,20 @@
                 <div class="search-block-special">
                     <div class="search-block-02">
                         <label>Exercise Level</label>
-                        <select id="gender" name="Search[exercise_level]">
-                        <?php
-                            $exer = array(
-                                    '0'=>Yii::t('global','Basic'),
-                                    '1'=>Yii::t('global','Advanced'),
-                                    '2'=>Yii::t('global','Fluent')
-                                );
-
-                            foreach($exer as $key=>$val ){ ?>
-                                <option value="<?php echo $key; ?>" <?php if( isset($exercise_level) ){ if($exercise_level == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
-                            <?php } ?>
-                            ?>
-                        </select>
+                        <input  type="range" name="Search[exercise_level]"  min="0" value="<?php echo isset($exercise_level)?$exercise_level:''; ?>" max="100" data-rangeslider>
+                        
                         
                     </div>
                     <div class="search-block-02">
                         <label>Drinking Level</label>
-                        <select id="gender" name="Search[drinking_level]">
-                            <?php
-                            $dri =array(
-                                    '0'=>Yii::t('global','Basic'),
-                                    '1'=>Yii::t('global','Advanced'),
-                                    '2'=>Yii::t('global','Fluent')
-                                );
-                            foreach( $dri as $key=>$val ){ ?>
-                                <option value="<?php echo $key; ?>" <?php if( isset($drink_level) ){ if( $drink_level == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
-                            <?php } ?>
-                            ?>
-                        </select>
+                        <input  type="range" name="Search[drinking_level]"  min="0" value="<?php echo isset($drinking_level)?$drinking_level:''; ?>" max="100" data-rangeslider>
+                        
                         
                     </div>
                     <div class="search-block-02">
                         <label>Smoking Level</label>
-                        <select id="gender" name="Search[smoking_level]">
-                            <?php
-                            $smo = array(
-                                    '0'=>Yii::t('global','Basic'),
-                                    '1'=>Yii::t('global','Advanced'),
-                                    '2'=>Yii::t('global','Fluent')
-                                );
-
-                            foreach( $smo as $key=>$val ){ ?>
-                                <option value="<?php echo $key; ?>" <?php if( isset($smoking_level) ){ if( $smoking_level == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
-                            <?php } ?>
-                            ?>
-                        </select>
+                        <input  type="range" name="Search[smoking_level]"  min="0" value="<?php echo isset($smoking_level)?$smoking_level:''; ?>" max="100" data-rangeslider>
+                        
                        
                     </div>
                     <div class="search-block-02">
