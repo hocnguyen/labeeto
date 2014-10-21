@@ -142,6 +142,7 @@ class UserController extends SiteBaseController {
             $info_user  = User::model()->findByPk(Yii::app()->user->id);
             $reported   = ReportUser::model()->getBlockedUser(Yii::app()->user->id) ;//"1,2,5,4,15";
             $suspended  = User::model()->getSuspendedUser();
+            $trending = SearchTrending::model()->getTop5Search();
             $condition = '';
             if($reported != 0)
                 $condition .= " AND t.user_id NOT IN (". $reported .") ";
@@ -167,9 +168,12 @@ class UserController extends SiteBaseController {
             ));
             $search = '';
             if(isset($_GET['search'])){
+                $search = preg_replace('/[^A-Za-z0-9\-]/', '', $_GET['search']);
+                $str_search = Achievements::model()->getIdSearch($search);
+                SearchTrending::model()->addNewCharacter($search);
                 $search = new CActiveDataProvider('Achievements', array(
                     'criteria' => array(
-                        'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition,
+                        'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition . $str_search,
                         'order' => 'id DESC ',
                     ),
                     'pagination'=>array(
@@ -188,7 +192,7 @@ class UserController extends SiteBaseController {
                 ));
             }
             $this->user = User::model()->findByPk(Yii::app()->user->id);
-            $this->render('my_feed', compact('achievement', 'info_user', 'popular', 'search'));
+            $this->render('my_feed', compact('achievement', 'info_user', 'popular', 'search', 'trending'));
         } else {
             $this->redirect('/');
         }

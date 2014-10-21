@@ -151,4 +151,37 @@ class Achievements extends CActiveRecord
         return floor($core_final);
     }
     
+    public function getIdSearch($string){
+        $result = self::model()->findAll();
+        $final = array();
+        foreach($result as $key=>$value){
+            $arr = $value->content;
+            for($i = 0; $i < strlen($arr) - 1; $i++){
+                if($arr[$i] == '#'){
+                    $str = '';
+                    for($j = $i; $j< (strlen($arr) ); $j++){
+                        if($arr[$j] != ' '){
+                            $str.= $arr[$j];
+                        }else{
+                            break;
+                        }
+                    }
+                    $check = '#'. $string;
+                    if($str == $check){
+                        $final[] = $value->id;
+                    }
+                }
+            }
+        }
+        $count = count($final);
+        $str_id = '';
+        if($count <= 0){
+            $str_id = 'AND id < 1';
+        }else if($count == 1){
+            $str_id = 'AND id = '. $final[0];
+        }else{
+            $str_id = ' AND id IN ('. implode(", ",$final) .')';
+        }
+        return $str_id;
+    }
 }
