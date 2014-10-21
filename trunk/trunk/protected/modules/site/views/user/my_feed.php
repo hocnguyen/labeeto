@@ -63,25 +63,25 @@
                     <div id="trending" class="tab-pane <?php if(isset($_GET['search'])) echo "active"; ?>" >
                         <div class="my-tabs-div"></div>
                         <form>
-                            <input type="text" name="search" class="form-control seach-tab"/>
+                            <input type="text" name="search" class="form-control seach-tab" value="<?php if(isset($_GET['search'])) echo '#'. preg_replace('/[^A-Za-z0-9\-]/', '', $_GET['search']); ?>"/>
                         </form>
                         <div class="my-tabs-footer">
                             <p>CURRENTLY TRENDING <span id="toggle">Menu toggel</span></p>
+                            <?php if($trending){ ?>
                             <div class="menu-slide">
                                 <span></span>
                                 <ul>
-                                    <li><a href="#">#LOL</a></li>
-                                    <li><a href="#">#Legday</a></li>
-                                    <li><a href="#">#CARDIO</a></li>
-                                    <li><a href="#">#ALSawareness</a></li>
-                                    <li><a href="#">#WCW</a></li>
+                                    <?php foreach($trending as $value){ ?>
+                                    <li><a href="/my_feed?search=<?php echo $value['text'] ?>">#<?php echo $value['text'] ?></a></li>
+                                    <?php } ?>
                                 </ul>
                             </div>
+                            <?php } ?>
                         </div>
                         <?php
                           $this->widget('zii.widgets.CListView', array(
                               'dataProvider'=>$search,
-                              'itemView'=>'../elements/popular_view',
+                              'itemView'=>'../elements/trending_view',
                               'summaryText'=>'',
                               'viewData'=>array('infor'=>$info_user)
                           ));
