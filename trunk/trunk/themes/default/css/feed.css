@@ -3502,3 +3502,4 @@ li.message_search input{
     cursor: pointer;
     width: 15px;
 }
+.search-block-special  input[type="range"] {width: 248px !important;height: 9px;border-radius: 5px;background: #ec5268;-webkit-appearance: none;cursor: pointer;border: 0;outline: none;padding: 0;margin: 0 0;}
