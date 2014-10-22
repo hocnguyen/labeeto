@@ -145,12 +145,16 @@ class Achievements extends CActiveRecord
     public function getCore($id){
         $achievements = self::model()->findByPk($id);
         $base_ranking = Vote::model()->getSumVote($id);
+        
         $datepostactive = time() - strtotime($achievements->created) ; 
-        $datepostactive = floor($datepostactive/(60*60*24)) + 1;
-        $core_final = $base_ranking - ((Yii::app()->settings->time_penalty/100) * $datepostactive);
+        $datepostactive = ceil($datepostactive/(60*60*24));
+        $time_penalty = $datepostactive * Yii::app()->settings->time_penalty;
+        if($time_penalty > 90)
+            $time_penalty = 90;
+        $core_final = $base_ranking * (($time_penalty/100));
         if($core_final < 0)
             $core_final = 0;
-        return floor($core_final);
+        return ceil($core_final);
     }
     
     public function getIdSearch($string){
