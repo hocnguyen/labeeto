@@ -754,6 +754,7 @@ class UserController extends SiteBaseController {
                         $ext       = " AND ";
                     $condition .= $ext." gender = ".$gender." ";
                 }
+
                 if( $education !='')
                     $condition .= " education LIKE '%".$education."%'  ";
 
@@ -762,19 +763,18 @@ class UserController extends SiteBaseController {
                          $ext = "AND";
                     $condition .= $ext." height = ".$height_start." ";
                 } 
+
                 if($height_end !=''){
                     if($education !='' ||$height_start !='' )
                         $ext = "AND";
                     $condition .= $ext." height = ".$height_end." ";
                 }
+                
                 if($kids !=''){
                      if($education !='')
                         $ext="AND";
                     $condition .= $ext." children = ".$kids." ";
                 }
-                
-                 
-                  
 
                 if(  $age_start != '' ){
                     $year_age   = date("Y") - $age_start;
