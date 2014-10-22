@@ -15,7 +15,7 @@ if($user){?>
         <div class="vote">
             <ul>
                 <li class="upvote" data-id=<?php echo $data->id; ?>></li>
-                <li><span class="change_vote_<?php echo $data->id; ?>"><?php echo $data->vote ?></span></li>
+                <li><span class="change_vote_<?php echo $data->id; ?>"><?php echo Achievements::model()->getCore($data->id); ?></span></li>
                 <li class="downvote" data-id=<?php echo $data->id; ?>></li>
             </ul>
         </div>
