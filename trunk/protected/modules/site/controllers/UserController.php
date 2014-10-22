@@ -769,7 +769,6 @@ class UserController extends SiteBaseController {
                         $ext = "AND";
                     $condition .= $ext." height = ".$height_end." ";
                 }
-                
                 if($kids !=''){
                      if($education !='')
                         $ext="AND";
