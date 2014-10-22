@@ -477,18 +477,30 @@ $(document).ready(function(){
      
      $('.upvote').click(function(){
         var id = $(this).attr('data-id');
-        $.get('/user/updateVote?id='+id+'&type=1' ,function(data){
+        $.get('/user/checkVote?id='+id+'&type=1' ,function(data){
             console.log(data);
-            $('.change_vote_'+id).text(data);
+            if(data == 'true'){
+                $.get('/user/updateVote?id='+id+'&type=1' ,function(txt){
+                    $('.change_vote_'+id).text(txt);
+                });
+            }else{
+                alert('You can click up and down vote one time');
+            }
         });
      });
      
      $('.downvote').click(function(){
         var id = $(this).attr('data-id');
-        $.get('/user/updateVote?id='+id+'&type=0' ,function(data){
+        $.get('/user/checkVote?id='+id+'&type=0' ,function(data){
             console.log(data);
-            $('.change_vote_'+id).text(data);
+            if(data == 'true'){
+                $.get('/user/updateVote?id='+id+'&type=0' ,function(txt){
+                    $('.change_vote_'+id).text(txt);
+                });
+            }else{
+                alert('You can click up and down vote one time');
+            }
         });
+        
      });
-     
 });
