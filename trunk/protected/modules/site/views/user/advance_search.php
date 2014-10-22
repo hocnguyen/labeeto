@@ -88,7 +88,16 @@
                     </div>
                     <div class="search-block-02" style="margin-right: 0px; float: right;">
                         <label>Kids</label>
-                        <input type="number" placeholder="Pre-filled" id="race" name="Search[kids]" value="<?php echo isset($kids)?$kids:''; ?>" />
+                        <select name="Search[kids]" id="education">
+                            <?php 
+                                $kids = CHtml::listData(Children::model()->findAll(),'id','name');
+                                foreach( $kids as $key=>$val ){ ?>
+                                <option value="<?php echo $key; ?>" <?php if( isset($kids) ){ if( $kids == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
+                            <?php } ?>
+                            ?>
+
+                        </select>
+                        
                     </div>
                     <div class="clear"></div>
                 </div>
