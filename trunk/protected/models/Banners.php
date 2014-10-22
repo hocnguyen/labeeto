@@ -127,7 +127,9 @@ class Banners extends CActiveRecord
 			'criteria'=>$criteria,
             'sort'=>array(
                 'defaultOrder'=>'t.id DESC',
-            )
+            ),
+            'pagination' => array(  'pageSize'=>Yii::app()->user->getState('pageSize',Yii::app()->params['defaultPageSize']),
+            ),
 		));
 	}
     

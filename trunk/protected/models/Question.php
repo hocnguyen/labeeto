@@ -95,6 +95,8 @@ class Question extends CActiveRecord
         //$criteria->condition = "user_id = ". self::DEFAULT_QUESTION;
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+            'pagination' => array(  'pageSize'=>Yii::app()->user->getState('pageSize',Yii::app()->params['defaultPageSize']),
+            ),
 		));
 	}
     
