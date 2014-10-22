@@ -73,7 +73,8 @@ return array(
 							'subdomain_languages' => false,
 							'loggedInDays' => 10,
 							'default_group' => 'user',
-							
+                            'defaultPageSize' => 10,
+                            'pageSizeOptions'=>array(10=>10,25=>25,50=>50,100=>100),
        ),
         'aliases' => array(
                 'helpers' => 'application.widgets',

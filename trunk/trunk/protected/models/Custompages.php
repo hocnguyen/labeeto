@@ -208,7 +208,9 @@ class Custompages extends CActiveRecord
 			'criteria'=>$criteria,
             'sort'=>array(
                 'defaultOrder'=>'id DESC',
-            )
+            ),
+            'pagination' => array(  'pageSize'=>Yii::app()->user->getState('pageSize',Yii::app()->params['defaultPageSize']),
+            ),
 		));
 	}
 

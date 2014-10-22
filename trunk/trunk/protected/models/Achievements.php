@@ -130,7 +130,9 @@ class Achievements extends CActiveRecord
                     ),
                     '*',
                 ),
-            )
+            ),
+            'pagination' => array(  'pageSize'=>Yii::app()->user->getState('pageSize',Yii::app()->params['defaultPageSize']),
+            ),
 		));
 	}
 
