@@ -13,7 +13,13 @@ if($user){?>
             </div>
         </div>
         
-        <span class="refesh">10</span>
+        <div class="vote">
+            <ul>
+                <li class="upvote" data-id=<?php echo $data->id; ?>></li>
+                <li><span class="change_vote_<?php echo $data->id; ?>"><?php echo Achievements::model()->getCore($data->id); ?></span></li>
+                <li class="downvote" data-id=<?php echo $data->id; ?>></li>
+            </ul>
+        </div>
     </div>
     <div class="content-post">
       <h3 class="my_posted"> 
@@ -43,7 +49,6 @@ if($user){?>
       echo str_replace($search, $replace, $data->content);
      }else{
         $arr = $data->content;
-          $str_serach = 
           $search = array(); $replace = array();
           for($i = 0; $i < strlen($arr) - 1; $i++){
                 if($arr[$i] == '#'){
@@ -56,10 +61,8 @@ if($user){?>
                         }
                     }
                     
-                    if($str == $str_serach){
-                        $search[] = $str;
-                        $replace[] = '<span class="link_1">'. $str .'</span>';
-                    }
+                    $search[] = $str;
+                    $replace[] = '<span class="link_2">'. $str .'</span>';
                     
                 }
           }

@@ -138,6 +138,7 @@ class UserController extends SiteBaseController {
 
     public function actionMy_feed(){
         $this->layout = 'feed';
+        //echo Achievements::model()->getCore(22); exit;
         if(!Yii::app()->user->isGuest){
             $info_user  = User::model()->findByPk(Yii::app()->user->id);
             $reported   = ReportUser::model()->getBlockedUser(Yii::app()->user->id) ;//"1,2,5,4,15";
@@ -1062,4 +1063,17 @@ class UserController extends SiteBaseController {
         
     }
     
+    public function actionCheckVote(){
+        $id = $_GET['id'];
+        $type = $_GET['type'];
+        if($type == 0)
+            $old_vote = Vote::model()->findByAttributes(array('achievements_id'=>$id, 'user_id'=>Yii::app()->user->id, 'down_vote'=>1));
+        else
+            $old_vote = Vote::model()->findByAttributes(array('achievements_id'=>$id, 'user_id' => Yii::app()->user->id, 'up_vote'=>1 ));
+        if(!$old_vote){
+            echo 'true';
+        }else{
+            echo 'false';
+        }
+    }
 }

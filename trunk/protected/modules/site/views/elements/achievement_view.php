@@ -13,7 +13,13 @@ if($user){?>
             </div>
         </div>
         
-        <span class="refesh">10</span>
+        <div class="vote">
+            <ul>
+                <li class="upvote" data-id=<?php echo $data->id; ?>></li>
+                <li><span class="change_vote_<?php echo $data->id; ?>"><?php echo Achievements::model()->getCore($data->id); ?></span></li>
+                <li class="downvote" data-id=<?php echo $data->id; ?>></li>
+            </ul>
+        </div>
     </div>
     <div class="content-post">
       <h3 class="my_posted"> 
