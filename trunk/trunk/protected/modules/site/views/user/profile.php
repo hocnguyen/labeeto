@@ -76,7 +76,7 @@ r
                     <!--<a href="#" data-toggle="modal" data-target="#PrivateVideo">-->
                         <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/videos.png" />
                         <h6><?php echo Yii::t('global', 'Videos') ?></h6>
-                        <h3>15</h3>
+                        <h3><p><?php echo count($video); ?></p></h3>
                     <span class="line-green-video"></span>
                     <!--</a>-->
                 </div>
@@ -471,44 +471,8 @@ r
     </div>
     <div class="right-profile">
     
-        <div class="content-video" style="display: none;">
-            <div class="title-photo">
-                <h3>Videos <span>(2 Videos)</span></h3>
-                <p>
-                    <a href="#" data-toggle="modal" data-target="#UploadVideo">Upload</a>
-                    <!--<a href="#">delete</a>-->
-                    <a href="#" class="close-icon"></a>
-                </p>
-                
-            </div>
-            
-            <div class="post-video"> 
-                <!--<div class="title-video">
-                    <h2>This is my title</h2>
-                </div>-->
-                <div class="content-post">
-                    <h3><span class="link_3">ICEBUCKET CHALLENGE</span> <span class="link_2">#ALSawareness </span><span class="link_1">#LOL</span></h3>
-                    <span class="hour-post">1 hr</span>
-                    <iframe title="YouTube video player" class="youtube-player" type="text/html" style="padding-left: 10px; padding-bottom: 10px;"
-                    width="98%" height="390" src="http://www.youtube.com/embed/uIbkLjjlMV8"
-                    frameborder="0" allowFullScreen></iframe>
-                </div>
-            </div>
-            
-            <div class="post-video video-border"> 
-                <!--<div class="title-video">
-                    <h2>This is my title</h2>
-                </div>-->
-                <div class="content-post">
-                    <h3><span class="link_3">Workout like a pro in 3 minutes.</span></h3>
-                    <span class="hour-post">1 hr</span>
-                    <iframe title="YouTube video player" class="youtube-player" type="text/html" style="padding-left: 10px; padding-bottom: 10px;"
-                    width="98%" height="390" src="http://www.youtube.com/embed/uIbkLjjlMV8"
-                    frameborder="0" allowFullScreen></iframe>
-                </div>
-            </div>
-            
-        </div>
+        
+        <?php $this->renderPartial('/user/video',compact('video')) ?>
         
         <?php $this->renderPartial('/user/photo',compact('photos','private')) ?>
         
