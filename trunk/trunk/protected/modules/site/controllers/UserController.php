@@ -315,9 +315,10 @@ class UserController extends SiteBaseController {
             $this->question = Answer::model()->getAnswer(Yii::app()->user->id);
             $photos = Photo::model()->findAll('is_public=1 AND user_id='.Yii::app()->user->id);
             $private = Photo::model()->findAll('is_public=0 AND user_id='.Yii::app()->user->id);
+            $video = Video::model()->findAll('is_public=0 AND user_id='.Yii::app()->user->id . ' ORDER BY id DESC');
             $online    = User::model()->findByPk(Yii::app()->user->id);
             $achievements = Achievements::model()->findAll('user_id ='. Yii::app()->user->id . ' ORDER BY created desc LIMIT 3');
-            $this->render('profile',compact('photos','private','online', 'achievements'));
+            $this->render('profile',compact('photos','private','online', 'achievements', 'video'));
         } else {
             $this->redirect('/');
         }
