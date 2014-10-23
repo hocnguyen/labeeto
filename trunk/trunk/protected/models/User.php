@@ -481,4 +481,10 @@ class User extends CActiveRecord
         }
     }
 
+    public function getNameUser( $id ){
+        $user = User::model()->findByPk($id);
+        return "<a href='/admin/members/view?id=".$id."'>".$user->username."</a>";
+
+    }
+
 }

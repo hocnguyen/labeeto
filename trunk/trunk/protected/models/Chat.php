@@ -14,7 +14,8 @@
  */
 class Chat extends CActiveRecord
 {
-	/**
+    const STATUS_READ =  1;
+    /**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
 	 * @return Chat the static model class
@@ -91,12 +92,13 @@ class Chat extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('to',$this->to);
-		$criteria->compare('from',$this->from);
+		$criteria->compare('t.id',$this->id);
+		$criteria->compare('t.to',$this->to);
+		$criteria->compare('t.from',$this->from);
 		$criteria->compare('message',$this->message,true);
 		$criteria->compare('is_read',$this->is_read);
-		$criteria->compare('created',$this->created,true);
+        if ($this->created)
+            $criteria->compare('t.created', date('Y-m-d ', strtotime($this->created)), true);
 		$criteria->compare('updated',$this->updated,true);
 
 		return new CActiveDataProvider($this, array(
@@ -105,4 +107,20 @@ class Chat extends CActiveRecord
             ),
 		));
 	}
+
+    function getStatus(){
+        $status = Yii::t('global','Unread');
+        if( $this->is_read == self::STATUS_READ )
+            $status = Yii::t('global','Read');
+        return $status;
+    }
+
+    function getActiveChat(){
+        $active_chat = array(
+            Yii::t('global','Unread'),
+            Yii::t('global','Read')
+        );
+        return $active_chat;
+    }
+
 }
