@@ -495,7 +495,13 @@ r
                                 <h2 class="h2-name"><?php echo $model->username ?><span class="time-location">33 M, NY,</span> <span class="dot-icon">Yesterday</span></h2>
                             </div>
                         </div>
-                        <div class="refesh">75</div>
+                        <div class="vote">
+                            <ul>
+                                <li class="upvote" data-id=<?php echo $value->id; ?>></li>
+                                <li><span class="change_vote_<?php echo $value->id; ?>"><?php echo Achievements::model()->getCore($value->id); ?></span></li>
+                                <li class="downvote" data-id=<?php echo $value->id; ?>></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="content-post">
                         <h4>
