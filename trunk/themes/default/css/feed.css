@@ -3490,7 +3490,7 @@ li.message_search input{
     list-style: none;
 }
 .first-infor .vote .upvote{
-    background: url('../images/upvote.png') no-repeat;
+    background: url('../images/grey_arrows.png') no-repeat;
     height: 15px;
     cursor: pointer;
     width: 15px;
