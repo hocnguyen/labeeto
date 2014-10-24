@@ -19,7 +19,7 @@
             <span class="<?php echo ($data->is_online)?'online':'offline'; ?>"><?php echo ($data->is_online)?'online':'offline'; ?></span>
         </div>
         <div class="message-01">
-            <a data-toggle="modal" data-target="#SendaMessage" data-id="<?php echo $data->id; ?>">message</a>
+            <a data-toggle="modal" class="message" data-target="#SendaMessage" data-id="<?php echo $data->id; ?>">message</a>
             <input type="hidden" id="avatar_hidien_<?php echo $data->id; ?>" value="<?php echo $data->photo; ?>" />
             <input type="hidden" id="name_hidien_<?php echo $data->id; ?>" value="<?php echo $data->username; ?>" />
         </div>
