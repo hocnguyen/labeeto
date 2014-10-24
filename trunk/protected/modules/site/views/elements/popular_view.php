@@ -3,7 +3,14 @@ if($user){?>
 <div class="post">
     <div class="first-infor">
         <div class="profile">
-            <img src="../uploads/avatar/<?php echo Utils::getAvatar($user->photo); ?>">
+            
+            <?php if(($user->photo =='')||($user->photo =='undefined')){ ?>
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/no-avatar.png">
+            <?php } else { ?>
+                <img src="../uploads/avatar/<?php echo Utils::getAvatar($user->photo); ?>">
+            <?php } ?>
+
+            
             <div class="crycle-img">
                 <h2><a href="/user/detail/<?php echo $user->id; ?>"><?php echo $user->username; ?></a><span class="time-location">18 F, CA,</span> <span class="dot-icon"> <?php echo $data->created; ?></span></h2>
                 <a class="message" data-id="<?php echo $user->id; ?>" data-toggle="modal" data-target="#SendaMessage">Send a Message</a>
