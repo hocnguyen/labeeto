@@ -482,9 +482,10 @@ $(document).ready(function(){
             if(data == 'true'){
                 $.get('/user/updateVote?id='+id+'&type=1' ,function(txt){
                     $('.change_vote_'+id).text(txt);
+                    //$(this).css('background-image', 'none');
+                    $('#downvote_'+id).css('background-image','url(/themes/default/images/downvote.png)');
+                    $('#upvote_'+id).css('background-image', 'url(/themes/default/images/upvote.png)')
                 });
-            }else{
-                alert('You can click up and down vote one time');
             }
         });
      });
@@ -496,9 +497,9 @@ $(document).ready(function(){
             if(data == 'true'){
                 $.get('/user/updateVote?id='+id+'&type=0' ,function(txt){
                     $('.change_vote_'+id).text(txt);
+                    $('#upvote_'+id).css('background-image', 'url(/themes/default/images/grey_arrows.png)');
+                    $('#downvote_'+id).css('background-image', 'url(/themes/default/images/red_arrows.png)')
                 });
-            }else{
-                alert('You can click up and down vote one time');
             }
         });
         
