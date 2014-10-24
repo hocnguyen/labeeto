@@ -636,6 +636,8 @@ $(document).ready(function(){
         $('#form-upload-video').submit();
      });
      $('#form-upload-video').submit(function(e){
+        var desciption = $('#form-upload-video textarea').val();
+        console.log(desciption);
          e.preventDefault();
             var formData = new FormData(this);
             //$('.private-up').addClass('loading');
