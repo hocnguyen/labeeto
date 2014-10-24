@@ -18,7 +18,9 @@
                             m4v: "<?php echo "/uploads/video/". $value->video ?>",
                             ogv: "<?php echo "/uploads/video/". $value->video ?>",
                             flv: "<?php echo "/uploads/video/". $value->video ?>",
-                            poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+                            poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png",
+                            width: "100%",
+                            height: "100%",
                           });
                         },
                         play: function() { // To avoid multiple jPlayers playing together.
@@ -26,9 +28,10 @@
                 		},
                         cssSelectorAncestor: "#jp_container_<?php echo $value->id ?>",
                         swfPath: "/js",
-                         supplied: "ogv, m4v, oga, mp3, flv, 3g2, 3gp, 3gpp, asf, dat, divx, dv, f4v, flv, m2ts, mkv, mod, mov, mp4, mpe, mpeg, mpeg4, mpg, mts, nsv, ogm, ogv, qt, tod, ts, vob, wmv",
-                          smoothPlayBar: true,
-                          keyEnabled: true,
+                        supplied: "ogv, m4v, oga, mp3, flv, 3g2, 3gp, 3gpp, asf, dat, divx, dv, f4v, flv, m2ts, mkv, mod, mov, mp4, mpe, mpeg, mpeg4, mpg, mts, nsv, ogm, ogv, qt, tod, ts, vob, wmv",
+                        smoothPlayBar: true,
+                        keyEnabled: true,
+                        
                       });
                     });
                   </script>

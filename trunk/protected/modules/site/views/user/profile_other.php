@@ -78,7 +78,7 @@
                 <div class="photo-private" id="VideosNormal">
                     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/videos.png" />
                     <h6>Videos</h6>
-                    <h3>15</h3>
+                    <h3><?php echo count($video); ?></h3>
                     <span class="line-green-video"></span>
                 </div>
                 
@@ -322,6 +322,7 @@
             </div>
             
         </div>-->
+        <?php $this->renderPartial('/user/video',compact('video')) ?>
         <?php $this->renderPartial('/user/photo_profile_other',compact('photos','private')) ?>
         <!--Home Page-->
         <div class="content-profile">
@@ -377,9 +378,9 @@
                         </div>
                         <div class="vote">
                             <ul>
-                                <li class="upvote" data-id=<?php echo $value->id; ?>></li>
-                                <li><span class="change_vote_<?php echo $value->id; ?>"><?php echo $value->vote ?></span></li>
-                                <li class="downvote" data-id=<?php echo $value->id; ?>></li>
+                                <li class="upvote" id="upvote_<?php echo $value->id; ?>" data-id=<?php echo $value->id; ?>></li>
+                                <li><span class="change_vote_<?php echo $value->id; ?>"><?php echo Achievements::model()->getCore($value->id); ?></span></li>
+                                <li class="downvote" id="downvote_<?php echo $value->id; ?>" data-id=<?php echo $value->id; ?>></li>
                             </ul>
                         </div>
                     </div>
