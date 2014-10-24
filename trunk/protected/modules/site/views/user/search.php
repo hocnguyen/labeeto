@@ -174,8 +174,14 @@
         <div class="modal-content">
             <div class="modal-header header-report special-border">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <span class="span-to">To</span> <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
-                <span class="user-kaka" id="txt_username"></span>
+                <span class="span-to">To </span> 
+                <?php error_reporting(0);?>
+                <?php if(($data->photo =='')||($data->photo =='undefined')){ ?>
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/no-avatar.png">
+                <?php } else { ?>
+                    <img src="/uploads/avatar/<?php echo $data->photo ?>"  />
+                <?php } ?>
+                <span class="user-kaka" id="txt_username"><?php echo $data->username;?></span>
             </div>
             <div class="">
                 <textarea class="form-control" rows="4" cols="50" placeholder="Write a message"></textarea>
@@ -228,7 +234,8 @@
     <div class="modal-content">
           <div class="modal-header header-report special-border">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <span class="span-to">To</span> <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
+            <span class="span-to">To </span> 
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
             <span class="user-kaka">Ricky Martin</span>
           </div>
           <div class="">
@@ -248,7 +255,7 @@
     <div class="modal-content special-border">
       <div class="modal-header header-report">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title request-title">Do you wish to chat with this person? </h4>
+        <h4 class="modal-title request-title">Do you wish to chat with this person ? </h4>
         
       </div>
       <div class="modal-footer footer-report">
