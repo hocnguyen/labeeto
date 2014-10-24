@@ -1,4 +1,3 @@
-r
 <div class="banner-ad-top">
     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/ads-top.png" />
 </div>
@@ -699,6 +698,10 @@ r
       </div>
       <div class="modal-footer footer-report footer-upgarde">
         <form method="post" id="form-upload-video">
+            <div class="">
+            <textarea name="description" class="form-control" rows="4" cols="50" placeholder="Write a description"></textarea>
+            
+          </div>
             <div style="width: 50%; float: left;">
                 <input type="file" id="video-new" name="videos" style="display: none;">
                 <label for="video-new" class="btn btn-primary my-report-1">From My Computer </label>
