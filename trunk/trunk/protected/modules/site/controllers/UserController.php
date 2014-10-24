@@ -983,6 +983,7 @@ class UserController extends SiteBaseController {
                 if (move_uploaded_file($_FILES['videos']['tmp_name'], $folder.$filename)){
                     $video = new Video();
                     $video->video = $filename;
+                    $video->description = $_POST['description'];
                     $video->is_public = 0;
                     $video->date = date('Y-m-d h:s');
                     $video->user_id = Yii::app()->user->id;

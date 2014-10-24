@@ -1,4 +1,14 @@
-
+<script type="text/javascript">
+function popUpVideos(popurl,popwidth,popheight,move_x,move_y,aFile)
+{
+    bFile=encodeURIComponent(aFile);
+    popup=window.open(popurl,'win','toolbar=0,location=0,directories=0,status=1,menubar=0,scrollbars=0,resizable=0,width='+popwidth+',height='+popheight);
+    popup.moveTo(move_x,move_y);
+    self.name="mainWin";
+    
+    setTimeout("popup.createPlayer(bFile)",750);
+}
+</script>
 <div class="content-video" style="display: none;">
             <div class="title-photo">
                 <h3>Videos <span>(<?php echo count($video) ?> Videos)</span></h3>
@@ -31,15 +41,25 @@
                         supplied: "ogv, m4v, oga, mp3, flv, 3g2, 3gp, 3gpp, asf, dat, divx, dv, f4v, flv, m2ts, mkv, mod, mov, mp4, mpe, mpeg, mpeg4, mpg, mts, nsv, ogm, ogv, qt, tod, ts, vob, wmv",
                         smoothPlayBar: true,
                         keyEnabled: true,
+                        wmode:"window",
+                        solution:"flash,html",
+                        swfPath: "/themes/default/jPlayer/jplayer.swf",
+                        stretching: "fill",
                         
                       });
                     });
                   </script>
             <div class="post-video"> 
                 <div class="content-post">
-                    <h3><span class="link_3">ICEBUCKET CHALLENGE</span> <span class="link_2">#ALSawareness </span><span class="link_1">#LOL</span></h3>
+                    <h3 class="description_video">
+                        <?php echo $value->description; ?>
+                        <!--<span class="link_3">ICEBUCKET CHALLENGE</span> 
+                        <span class="link_2">#ALSawareness </span>
+                        <span class="link_1">#LOL</span>-->
+                    </h3>
                     <span class="hour-post"><?php echo $value->date ?></span>
                     <div style="padding-left: 10px;">
+                    <a href="#" onclick="popUpVideos('popup-1.html', '340', '352', '600', '200', 'another_video.flv'); return false;">
 		              <div id="jp_container_<?php echo $value->id ?>" class="jp-video ">
                             <div class="jp-type-single">
                               <div id="jquery_jplayer_<?php echo $value->id ?>" class="jp-jplayer"></div>
@@ -78,7 +98,7 @@
                               </div>
                             </div>
                           </div>
-				
+				        </a>
                     </div>
                 </div>
             </div>
