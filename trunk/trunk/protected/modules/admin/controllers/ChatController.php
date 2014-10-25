@@ -113,6 +113,18 @@ class ChatController extends AdminBaseController {
 		));
 	}
 
+	public function actionInbox()
+	{
+		$model=new Chat('search');
+		$model->unsetAttributes();  // clear any default values
+		$model->is_read='0';
+		if(isset($_GET['Chat']))
+			$model->attributes=$_GET['Chat'];
+
+		$this->render('index',array(
+			'model'=>$model,
+		));
+	}
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
