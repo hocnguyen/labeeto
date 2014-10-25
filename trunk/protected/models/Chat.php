@@ -122,5 +122,10 @@ class Chat extends CActiveRecord
         );
         return $active_chat;
     }
+    function getDataByStatus( $name ){
+        if( $this->is_read != self::STATUS_READ )
+            $name = '<b>'.$name.'</b>';
+        return $name;
+    }
 
 }
