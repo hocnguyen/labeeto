@@ -100,8 +100,9 @@ $(document).ready(function(){
             console.log(variableGet);
             $.get("/user/register?"+variableGet,function(){
                 $.session.clear();
-                $('.step-2').hide();
-                $('.step-3').show();
+                /*$('.step-2').hide();
+                $('.step-3').show();*/ 
+                window.location.assign('/my_feed');
             });
             $(".post-a-day").fancybox({
                 'padding': 0,
