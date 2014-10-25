@@ -80,11 +80,29 @@
                     </div>
                     <div class="search-block-02">
                         <label>Race</label>
-                        <input type="number" placeholder="Pre-filled" id="race" name="Search[race]" value="<?php echo isset($race)?$race:''; ?>" />
+                        <select name="Search[race]" id="education">
+                            <?php 
+                                $race = CHtml::listData(Ethnicity::model()->findAll(),'id','name');
+                                foreach( $race as $key=>$val ){ ?>
+                                <option value="<?php echo $key; ?>" <?php if( isset($race) ){ if( $race == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
+                            <?php } ?>
+                            ?>
+
+                        </select>
+                        
                     </div>
                     <div class="search-block-02">
                         <label>Faith</label>
-                        <input type="number" placeholder="Pre-filled" id="race" name="Search[faith]" value="<?php echo isset($faith)?$faith:''; ?>" />
+                        <select name="Search[faith]" id="education">
+                            <?php 
+                                $faith = CHtml::listData(Religion::model()->findAll(),'id','name');
+                                foreach( $faith as $key=>$val ){ ?>
+                                <option value="<?php echo $key; ?>" <?php if( isset($faith) ){ if( $faith == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
+                            <?php } ?>
+                            ?>
+
+                        </select>
+                        
                     </div>
                     <div class="search-block-02" style="margin-right: 0px; float: right;">
                         <label>Kids</label>
