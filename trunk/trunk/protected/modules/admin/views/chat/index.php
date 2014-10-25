@@ -45,14 +45,14 @@
         array(
             'name'=>'to',
             'header' => Yii::t('global','Sender'),
-            'value'=>'User::model()->getNameUser($data->to)',
+            'value'=>'$data->getDataByStatus(User::model()->getNameUser($data->to))',
             'filter'=> $active_user,
             'type'=>'html',
         ),
         array(
             'name'=>'from',
             'header' => Yii::t('global','Recipient'),
-            'value'=>'User::model()->getNameUser($data->from)',
+            'value'=>'$data->getDataByStatus(User::model()->getNameUser($data->from))',
             'filter'=> $active_user,
             'type'=>'html',
         ),
