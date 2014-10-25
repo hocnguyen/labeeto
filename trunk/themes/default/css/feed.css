@@ -2549,7 +2549,7 @@ input[type="range"]::-ms-fill-lower {
     height: 35px;
     padding: 5px 3px 5px 10px;
     color: #a4a4a4;
-    width: 210px;
+    width: 200px;
     border-radius:4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
