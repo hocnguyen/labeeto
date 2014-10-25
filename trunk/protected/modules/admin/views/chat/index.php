@@ -59,7 +59,7 @@
         array(
             'name'=>'is_read',
             'header' => Yii::t('global','Status'),
-            'value'=>'$data->getStatus()',
+            'value'=>'$data->getDataByStatus($data->getStatus())',
             'filter'=> $active_chat,
             'type'=>'html',
         ),
