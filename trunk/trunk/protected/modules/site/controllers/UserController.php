@@ -780,6 +780,17 @@ class UserController extends SiteBaseController {
                         $ext="AND";
                     $condition .= $ext." children = ".$kids." ";
                 }
+                if($race!=''){
+                    if($education !='' || $kids !='')
+                        $ext = 'AND';
+                    $condition .= $ext." ehtnicity = ".$race." ";
+                }
+                if($faith !=''){
+                    if($education !='' || $kids !='' || $race='')
+                         $ext = 'AND';
+                    $condition .= $ext." religion = ".$faith." "; 
+                }
+
 
                 if(  $age_start != '' ){
                     $year_age   = date("Y") - $age_start;
