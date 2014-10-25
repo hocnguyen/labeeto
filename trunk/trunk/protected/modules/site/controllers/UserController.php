@@ -757,7 +757,7 @@ class UserController extends SiteBaseController {
                     $condition .= $ext." gender = ".$gender." ";
                 }
 
-                if( $education !=''){
+                if( $education !='-1'){
                     if( $username != '' )
                         $ext       = " AND ";
                     $condition .= $ext." education = ".$education." ";
@@ -775,18 +775,18 @@ class UserController extends SiteBaseController {
                         $ext = "AND";
                     $condition .= $ext." height = ".$height_end." ";
                 }
-                if($kids !=''){
-                     if($education !='')
+                if($kids !='-1'){
+                     if($username !='')
                         $ext="AND";
                     $condition .= $ext." children = ".$kids." ";
                 }
-                if($race!=''){
-                    if($education !='' || $kids !='')
+                if($race!='-1'){
+                    if($username !='')
                         $ext = 'AND';
                     $condition .= $ext." ehtnicity = ".$race." ";
                 }
-                if($faith !=''){
-                    if($education !='' || $kids !='' || $race='')
+                if($faith !='-1'){
+                    if($username !='')
                          $ext = 'AND';
                     $condition .= $ext." religion = ".$faith." "; 
                 }
