@@ -2774,7 +2774,7 @@ input[type="range"]::-ms-fill-lower {
 }
 .search-result ul.list-result li .chat-message .message-01 a{
     background: url('../images/message_1.png') no-repeat 0px 0px;
-    padding-left: 30px;
+    padding-left: 10px ;
     cursor: pointer;
 }
 .search-result ul.list-result li .chat-message .chat-01 a{
