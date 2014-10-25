@@ -70,6 +70,7 @@
                         <select name="Search[education]" id="education">
                             <?php 
                                 $edu = CHtml::listData(Education::model()->findAll(),'id','name');
+                                echo "<option value='-1'>All</option>";
                                 foreach( $edu as $key=>$val ){ ?>
                                 <option value="<?php echo $key; ?>" <?php if( isset($education) ){ if( $education == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
                             <?php } ?>
@@ -83,6 +84,7 @@
                         <select name="Search[race]" id="education">
                             <?php 
                                 $race = CHtml::listData(Ethnicity::model()->findAll(),'id','name');
+                                echo "<option value='-1'>All</option>";
                                 foreach( $race as $key=>$val ){ ?>
                                 <option value="<?php echo $key; ?>" <?php if( isset($race) ){ if( $race == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
                             <?php } ?>
@@ -96,6 +98,7 @@
                         <select name="Search[faith]" id="education">
                             <?php 
                                 $faith = CHtml::listData(Religion::model()->findAll(),'id','name');
+                                echo "<option value='-1'>All</option>";
                                 foreach( $faith as $key=>$val ){ ?>
                                 <option value="<?php echo $key; ?>" <?php if( isset($faith) ){ if( $faith == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
                             <?php } ?>
@@ -109,6 +112,7 @@
                         <select name="Search[kids]" id="education">
                             <?php 
                                 $kids = CHtml::listData(Children::model()->findAll(),'id','name');
+                                echo "<option value='-1'>All</option>";
                                 foreach( $kids as $key=>$val ){ ?>
                                 <option value="<?php echo $key; ?>" <?php if( isset($kids) ){ if( $kids == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
                             <?php } ?>
