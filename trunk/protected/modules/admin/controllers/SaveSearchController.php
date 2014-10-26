@@ -5,7 +5,7 @@ class SaveSearchController extends AdminBaseController {
 	{
 		parent::init();
 		
-		$this->breadcrumbs[ Yii::t('global', 'Save Searches') ] = array('save-search/index');
+		$this->breadcrumbs[ Yii::t('global', 'Save Searches') ] = array('saveSearch/index');
 		$this->pageTitle[] = Yii::t('global', 'Save Searches');
 	}
     
