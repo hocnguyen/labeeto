@@ -61,7 +61,7 @@ class SaveSearch extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('created, updated', 'required'),
+			//array('created, updated', 'required'),
 			array('user_id, gender, age_from, age_to, children, is_online, verified', 'numerical', 'integerOnly'=>true),
 			array('within_from, within_to, height_from, height_to', 'numerical'),
 			array('username', 'length', 'max'=>155),
@@ -154,4 +154,14 @@ class SaveSearch extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+	public function getUser($id){
+        $result = User::model()->find(array(
+                'select'=>'username',
+                'condition'=>'id=:id',
+                'params'=>array( ':id'=>$id ) )
+        );
+
+        return  $result['username'];
+    }
 }
