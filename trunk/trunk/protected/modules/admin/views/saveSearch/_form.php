@@ -151,14 +151,14 @@
                     <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'is_online'); ?>
 </label>
                     <div class="controls">
-                        <?php echo $form->textField($model,'is_online', array('class'=>'span10')); ?>
+                        <?php echo $form->dropDownList($model,'gender', Lookup::items('StatusOnline') ); ?>
                     </div>
                 </div>
                             <div class="control-group">
                     <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'verified'); ?>
 </label>
                     <div class="controls">
-                        <?php echo $form->textField($model,'verified', array('class'=>'span10')); ?>
+                        <?php echo $form->dropDownList($model,'gender', Lookup::items('StatusUser') ); ?>
                     </div>
                 </div>
                             
