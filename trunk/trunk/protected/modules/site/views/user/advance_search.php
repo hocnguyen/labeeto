@@ -67,7 +67,7 @@
                 <div class="search-block-special">
                     <div class="search-block-02">
                         <label>Education</label>
-                        <select name="Search[education]" id="education" class="education">
+                        <select name="Search[education]" id="education" class="ss_education">
                             <?php 
                                 $edu = CHtml::listData(Education::model()->findAll(),'id','name');
                                 echo "<option value='-1'>All</option>";

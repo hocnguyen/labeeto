@@ -498,7 +498,7 @@ $(document).ready(function(){
             var miles            = $('.miles').val();
             var height_start     = $('.height_start').val();
             var height_end       = $('.height_end').val();
-            var education        = $('.education').val();
+            var education        = $('.ss_education').val();
             var race             = $('.race').val();
             var faith            = $('.faith').val();
             var kids             = $('.kids').val();
