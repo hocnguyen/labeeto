@@ -50,7 +50,53 @@ $this->widget('widgets.NBADMenu', array(
 							),
 						),
 
+                       array(
+                            'label' => Yii::t('global', 'Manage Save Search'),
+                            'itemOptions' => array( 'class' => 'dropdown' ),
+                            'items' => array(
+                                array(
+                                    'label' => Yii::t('global', 'Save Search'),
+                                    'url' => array('saveSearch/index'),
+                                ),
+                                
+                            ),
+                        ),
+
                         array(
+                            'label' => Yii::t('global', 'Privacy & Permissions'),
+                            'itemOptions' => array( 'class' => 'dropdown' ),
+                            'items' => array(
+                                array(
+                                    'label' => Yii::t('global', 'Manage Roles'),
+                                    'url' => array('rolePermissions/index'),
+                                ),
+                                array(
+                                    'label' => Yii::t('global', 'Manage Permissions'),
+                                    'url' => array('permissions/index'),
+                                ),
+                                array(
+                                    'label' => Yii::t('global', 'Manage Lock Ip'),
+                                    'url' => array('lockIp/index'),
+                                ),
+                            ),
+                        ),
+
+                        array(
+                            'label' => Yii::t('global', 'Chat & Inbox'),
+                            'itemOptions' => array( 'class' => 'dropdown' ),
+                            'items' => array(
+                                array(
+                                    'label' => Yii::t('global', 'Manage Chat'),
+                                    'url' => array('chat/index'),
+                                ),
+                                array(
+                                    'label' => Yii::t('global', 'Manage Inbox'),
+                                    'url' => array('chat/inbox'),
+                                ),
+                            ),
+                        ),
+
+                         array(
                             'label' => Yii::t('global', 'CMS'),
                             //'icon' => 'icon-th-large',
                             'itemOptions' => array( 'class' => 'dropdown' ),
@@ -103,42 +149,6 @@ $this->widget('widgets.NBADMenu', array(
                                 ),
                             ),
                         ),
-
-                        array(
-                            'label' => Yii::t('global', 'Privacy & Permissions'),
-                            'itemOptions' => array( 'class' => 'dropdown' ),
-                            'items' => array(
-                                array(
-                                    'label' => Yii::t('global', 'Manage Roles'),
-                                    'url' => array('rolePermissions/index'),
-                                ),
-                                array(
-                                    'label' => Yii::t('global', 'Manage Permissions'),
-                                    'url' => array('permissions/index'),
-                                ),
-                                array(
-                                    'label' => Yii::t('global', 'Manage Lock Ip'),
-                                    'url' => array('lockIp/index'),
-                                ),
-                            ),
-                        ),
-
-                        array(
-                            'label' => Yii::t('global', 'Chat & Inbox'),
-                            'itemOptions' => array( 'class' => 'dropdown' ),
-                            'items' => array(
-                                array(
-                                    'label' => Yii::t('global', 'Manage Chat'),
-                                    'url' => array('chat/index'),
-                                ),
-                                array(
-                                    'label' => Yii::t('global', 'Manage Inbox'),
-                                    'url' => array('chat/inbox'),
-                                ),
-                            ),
-                        ),
-
-
 
 
     )
