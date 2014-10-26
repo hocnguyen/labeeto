@@ -40,17 +40,17 @@
                     <div class="search-block-03">
                         <label>Ages</label>
                         <div class="list-age"> 
-                            <input type="text" class="age_start"  id="start" name="Search[age_start]" value="<?php echo isset($age_start)?$age_start:''; ?>"/>
+                            <input type="text" class="age_start"  id="start" name="Search[age_start]" value="<?php echo isset($age_start)?$age_start:'18'; ?>"/>
                             <span>To</span>
-                            <input type="text" class="age_end"  id="end" name="Search[age_end]" value="<?php echo isset($age_end)?$age_end:''; ?>"/>
+                            <input type="text" class="age_end"  id="end" name="Search[age_end]" value="<?php echo isset($age_end)?$age_end:'28'; ?>"/>
                         </div>
                     </div>
                     <div class="search-block-02">
                         <label>Within</label>
                         <div class="list-age"> 
-                            <input type="text" class="within_start" id="start" name="Search[within_start]" value="<?php echo isset($within_start)?$within_start:''; ?>" />
+                            <input type="text" class="within_start" id="start" name="Search[within_start]" value="<?php echo isset($within_start)?$within_start:'50'; ?>" />
                             <span>Miles of</span>
-                            <input type="text" class="within_end" id="end" style="width: 89px;" name="Search[within_end]" value="<?php echo isset($miles)?$miles:''; ?>" />
+                            <input type="text" class="within_end" id="end" style="width: 89px;" name="Search[within_end]" value="<?php echo isset($miles)?$miles:'100'; ?>" />
                         </div>
                     </div>
                     <div class="clear"></div>
