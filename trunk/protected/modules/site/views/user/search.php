@@ -8,7 +8,7 @@
             <div class="main-search">
                 <div class="search-block first-block">
                     <div class="text-explore">
-                        <input type="text" id="search" name="Search[username]" value="<?php echo isset($username)?$username:''; ?>"/>
+                        <input type="text" id="search" name="Search[username]" value="<?php echo isset($username)?$username:''; ?>" class="username"/>
                     </div>
                     <button id="any-btn" class="btn-all">any</button>
                     <button id="casual-btn" class="btn-all btn-all-01">casual</button>
@@ -40,17 +40,17 @@
                     <div class="search-block-03">
                         <label>Ages</label>
                         <div class="list-age"> 
-                            <input type="text"  id="start" name="Search[age_start]" value="<?php echo isset($age_start)?$age_start:''; ?>"/>
+                            <input type="text" class="age_start"  id="start" name="Search[age_start]" value="<?php echo isset($age_start)?$age_start:''; ?>"/>
                             <span>To</span>
-                            <input type="text"  id="end" name="Search[age_end]" value="<?php echo isset($age_end)?$age_end:''; ?>"/>
+                            <input type="text" class="age_end"  id="end" name="Search[age_end]" value="<?php echo isset($age_end)?$age_end:''; ?>"/>
                         </div>
                     </div>
                     <div class="search-block-02">
                         <label>Within</label>
                         <div class="list-age"> 
-                            <input type="text"  id="start" name="Search[within_start]" value="<?php echo isset($within_start)?$within_start:''; ?>" />
+                            <input type="text" class="within_start" id="start" name="Search[within_start]" value="<?php echo isset($within_start)?$within_start:''; ?>" />
                             <span>Miles of</span>
-                            <input type="text"  id="end" style="width: 89px;" name="Search[within_end]" value="<?php echo isset($miles)?$miles:''; ?>" />
+                            <input type="text" class="within_end" id="end" style="width: 89px;" name="Search[within_end]" value="<?php echo isset($miles)?$miles:''; ?>" />
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -62,7 +62,7 @@
                             <span></span>   
                         </li>
                         <li>
-                            <a href="#">SAVED SEARCHES</a>
+                            <a class="save-search-func">SAVED SEARCHES</a>
                             <span class="white"></span>
                         </li>
                         <li>
@@ -262,4 +262,16 @@
       </div>
     </div>
   </div>
+</div>
+
+<!-- Modal Save Search -->
+<div class="modal fade" id="save_search_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content special-border">
+            <div class="modal-header header-report">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title request-title"> Save your search success ! </h4>
+            </div>
+        </div>
+    </div>
 </div>

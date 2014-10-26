@@ -3495,6 +3495,12 @@ li.message_search input{
     cursor: pointer;
     width: 15px;
 }
+.save-search-func{
+    cursor: pointer;
+}
+.save-search-advance-new{
+    cursor:pointer;
+}
 .first-infor .vote .downvote{
     background: url('../images/downvote.png') no-repeat;
     height: 15px;

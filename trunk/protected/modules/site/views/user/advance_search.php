@@ -8,7 +8,7 @@
             <div class="main-search">
                 <div class="search-block first-block">
                     <div class="text-explore">
-                        <input type="text" id="search" name="Search[username]" value="<?php echo isset($username)?$username:''; ?>"/>                        
+                        <input type="text" id="search" name="Search[username]" value="<?php echo isset($username)?$username:''; ?>" class="username"/>
                     </div>
                     <button id="any-btn" class="btn-all">any</button>
                     <button id="casual-btn" class="btn-all btn-all-01">casual</button>
@@ -40,25 +40,25 @@
                     <div class="search-block-03">
                         <label>Ages</label>
                         <div class="list-age"> 
-                            <input type="text"  id="start" name="Search[ages_start]"  value="<?php echo isset($age_start)?$age_start:''; ?>"/>
+                            <input type="text" class="age_start" id="start" name="Search[ages_start]"  value="<?php echo isset($age_start)?$age_start:''; ?>"/>
                             <span>To</span>
-                            <input type="text"  id="end" name="Search[ages_end]" value="<?php echo isset($age_end)?$age_end:''; ?>"/>
+                            <input type="text" class="age_end" id="end" name="Search[ages_end]" value="<?php echo isset($age_end)?$age_end:''; ?>"/>
                         </div>
                     </div>
                     <div class="search-block-02">
                         <label>Within</label>
                         <div class="list-age"> 
-                            <input type="text"  id="start" name="Search[within]" value="<?php echo isset($within_start)?$within_start:''; ?>" />
+                            <input type="text" class="within_start"   id="start" name="Search[within]" value="<?php echo isset($within_start)?$within_start:''; ?>" />
                             <span>Miles of</span>
-                            <input type="text"  id="end" style="width: 89px;" name="Search[miles]"  value="<?php echo isset($miles)?$miles:''; ?>"/>
+                            <input type="text" class="miles" id="end" style="width: 89px;" name="Search[miles]"  value="<?php echo isset($miles)?$miles:''; ?>"/>
                         </div>
                     </div>
                     <div class="search-block-03" style="margin-right: 0px; float: right;">
                         <label>Height (cm)</label>
                         <div class="list-age"> 
-                            <input type="text"  id="start" name="Search[height_start]"  value="<?php echo isset($height_start)?$height_start:''; ?>"/>
+                            <input type="text" class="height_start" id="start" name="Search[height_start]"  value="<?php echo isset($height_start)?$height_start:''; ?>"/>
                             <span>To</span>
-                            <input type="text"  id="end" name="Search[height_end]" value="<?php echo isset($height_end)?$height_end:''; ?>"/>
+                            <input type="text" class="height_end" id="end" name="Search[height_end]" value="<?php echo isset($height_end)?$height_end:''; ?>"/>
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -67,7 +67,7 @@
                 <div class="search-block-special">
                     <div class="search-block-02">
                         <label>Education</label>
-                        <select name="Search[education]" id="education">
+                        <select name="Search[education]" id="education" class="education">
                             <?php 
                                 $edu = CHtml::listData(Education::model()->findAll(),'id','name');
                                 echo "<option value='-1'>All</option>";
@@ -81,7 +81,7 @@
                     </div>
                     <div class="search-block-02">
                         <label>Race</label>
-                        <select name="Search[race]" id="education">
+                        <select name="Search[race]" id="education" class="race">
                             <?php 
                                 $race = CHtml::listData(Ethnicity::model()->findAll(),'id','name');
                                 echo "<option value='-1'>All</option>";
@@ -95,7 +95,7 @@
                     </div>
                     <div class="search-block-02">
                         <label>Faith</label>
-                        <select name="Search[faith]" id="education">
+                        <select name="Search[faith]" id="education" class="faith">
                             <?php 
                                 $faith = CHtml::listData(Religion::model()->findAll(),'id','name');
                                 echo "<option value='-1'>All</option>";
@@ -109,7 +109,7 @@
                     </div>
                     <div class="search-block-02" style="margin-right: 0px; float: right;">
                         <label>Kids</label>
-                        <select name="Search[kids]" id="education">
+                        <select name="Search[kids]" id="education" class="kids">
                             <?php 
                                 $kids = CHtml::listData(Children::model()->findAll(),'id','name');
                                 echo "<option value='-1'>All</option>";
@@ -127,33 +127,33 @@
                 <div class="search-block-special">
                     <div class="search-block-02">
                         <label>Exercise Level</label>
-                        <input  type="range" name="Search[exercise_level]"  min="0" value="<?php echo isset($exercise_level)?$exercise_level:''; ?>" max="100" data-rangeslider>
+                        <input  type="range" class="exercise_level" name="Search[exercise_level]"  min="0" value="<?php echo isset($exercise_level)?$exercise_level:''; ?>" max="100" data-rangeslider>
                         
                         
                     </div>
                     <div class="search-block-02">
                         <label>Drinking Level</label>
-                        <input  type="range" name="Search[drinking_level]"  min="0" value="<?php echo isset($drinking_level)?$drinking_level:''; ?>" max="100" data-rangeslider>
+                        <input  type="range" class="drinking_level" name="Search[drinking_level]"  min="0" value="<?php echo isset($drinking_level)?$drinking_level:''; ?>" max="100" data-rangeslider>
                         
                         
                     </div>
                     <div class="search-block-02">
                         <label>Smoking Level</label>
-                        <input  type="range" name="Search[smoking_level]"  min="0" value="<?php echo isset($smoking_level)?$smoking_level:''; ?>" max="100" data-rangeslider>
+                        <input  type="range" class="smoking_level" name="Search[smoking_level]"  min="0" value="<?php echo isset($smoking_level)?$smoking_level:''; ?>" max="100" data-rangeslider>
                         
                        
                     </div>
                     <div class="search-block-02">
                         <div style="margin-top: 20px;">
                             <label>
-                                <input type="checkbox"> Only show users that are online
+                                <input type="checkbox" class="ss_online" value="1"> Only show users that are online
                             </label>
                         </div>
                     </div>
                     <div class="search-block-02">
                         <div style="margin-left: 20px; margin-top: 20px;">
                             <label>
-                                <input type="checkbox"> Only show users that are verified
+                                <input type="checkbox" class="ss_verified" value="1"> Only show users that are verified
                             </label>
                         </div>
                     </div>
@@ -167,7 +167,7 @@
                             <span></span>   
                         </li>
                         <li>
-                            <a href="#">SAVED SEARCHES</a>
+                            <a class="save-search-advance-new">SAVED SEARCHES</a>
                             <span class="white"></span>
                         </li>
                         <li>
@@ -360,4 +360,16 @@
       </div>
     </div>
   </div>
+</div>
+
+<!-- Modal Save Search -->
+<div class="modal fade" id="save_search_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content special-border">
+            <div class="modal-header header-report">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title request-title"> Save your search success ! </h4>
+            </div>
+        </div>
+    </div>
 </div>
