@@ -41,7 +41,7 @@
                     <label for="fullname" class="control-label"><?php echo $form->labelEx($model,'gender'); ?>
 </label>
                     <div class="controls">
-                        <?php echo $form->textField($model,'gender', array('class'=>'span10')); ?>
+                        <?php echo $form->dropDownList($model,'gender', Lookup::items('Gender') ); ?>
                     </div>
                 </div>
                             <div class="control-group">
