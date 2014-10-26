@@ -7,7 +7,7 @@
     <h2><?php echo Yii::t('global', 'Save Searches'); ?></h2>
     <form>
         <div class="input-append">
-            <span class="add-on add-on-middle add-on-mini" onclick="window.location.href='<?php echo $this->createUrl('save-search/create') ?>'"><i class="icon-plus-sign" title="<?php echo Yii::t('adminlang', 'Create'); ?>" ></i></span>
+            <span class="add-on add-on-middle add-on-mini" onclick="window.location.href='<?php echo $this->createUrl('saveSearch/create') ?>'"><i class="icon-plus-sign" title="<?php echo Yii::t('adminlang', 'Create'); ?>" ></i></span>
             <span class="add-on add-on-middle add-on-mini minimizeTable"><i class="icon-caret-down"></i></span>
             <span class="add-on add-on-last add-on-mini removeTable"><i class="icon-remove"></i></span>
         </div>
@@ -18,18 +18,74 @@
 <div class="floatingBox table">
 <div class="container-fluid">
 
-    <?php $this->widget('zii.widgets.grid.CGridView', array(
+    <?php 
+    $active_user = CHtml::listData(User::model()->findAll(),'id','username');
+    $this->widget('zii.widgets.grid.CGridView', array(
     'id'=>'save-search-grid',
     'htmlOptions' => array('class' => 'table table-bordered table-hover table-striped'),
     'dataProvider'=>$model->search(),
     'filter'=>$model,
+    'afterAjaxUpdate' => 'reinstallDatePicker',
     'columns'=>array(
-    		'id',
-		'user_id',
-		'username',
-		'gender',
-		'age_from',
-		'age_to',
+        array(
+            'name'=>'id',
+            'value'=>'$data->id',
+            'htmlOptions'=>array('style'=>'width:35px;')
+        ),
+        array(
+            
+            'header'=>Yii::t('global','User'),
+            'name'=>'user_id',
+            'filter'=>$active_user,
+            'value' => '$data->getUser($data->user_id)',
+            'htmlOptions'=>array('style'=>'width:100px;')
+        
+        ),
+    	array(
+            'header'=>Yii::t('global','Username'),
+            'name'=>'username',
+            'value'=>'$data->username',
+            'htmlOptions'=>array('style'=>'width:100px;')
+        ),	
+		
+		array(
+            'header'=>Yii::t('global','Gender'),
+            'name'=>'gender',
+            'value'=>'$data->gender',
+            'htmlOptions'=>array('style'=>'width:100px;')
+        ),  
+		
+        array(
+            'header'=>Yii::t('global','Age From'),
+            'name'=>'age_from',
+            'value'=>'$data->age_from',
+            'htmlOptions'=>array('style'=>'width:100px;')
+        ),
+        array(
+            'header'=>Yii::t('global','Age To'),
+            'name'=>'age_to',
+            'value'=>'$data->age_to',
+            'htmlOptions'=>array('style'=>'width:100px;')
+        ),
+		
+		array(
+            'name' => 'created',
+            'header'=>Yii::t('global', 'Created'),
+            'htmlOptions'=> array('style' => 'text-align: center; width:135px;'),
+            'filter' => $this->widget('CJuiDateTimePicker', array(
+                        'model'=>$model,
+                        'attribute'=>'created',
+                        'mode'=>'date',
+                        'options'=>array("dateFormat"=>Yii::app()->locale->getDateFormat('medium_js'), 'ampm' => false),
+                        'language' => Yii::app()->language=='en'?'':Yii::app()->language,
+                        'htmlOptions' => array(
+                            'id' => 'datepicker_for_due_date',
+                            'size' => '10',
+                            'style' => 'text-align: center'
+                        ),
+                    ),
+                    true)
+        ),
 		/*
 		'within_from',
 		'within_to',
