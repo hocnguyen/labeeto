@@ -19,12 +19,12 @@
 <div class="container-fluid">
 
     <?php 
-    $active_user = CHtml::listData(User::model()->findAll(),'id','username');
-    $active_edu=CHtml::listData(Education::model()->findAll(),'id','name');
-    $active_ethi=CHtml::listData(Ethnicity::model()->findAll(),'id','name');
-    $action_religi=CHtml::listData(Religion::model()->findAll(),'id','name');
-    $active_child=CHtml::listData(Children::model()->findAll(),'id','name');
-    $gender       = Lookup::items('Gender');
+    $active_user   = CHtml::listData (User::model()->findAll(),'id','username');
+    $active_edu    = CHtml::listData (Education::model()->findAll(),'id','name');
+    $active_ethi   = CHtml::listData (Ethnicity::model()->findAll(),'id','name');
+    $action_religi = CHtml::listData (Religion::model()->findAll(),'id','name');
+    $active_child  = CHtml::listData (Children::model()->findAll(),'id','name');
+    $gender        = Lookup::items('Gender');
     $this->widget('zii.widgets.grid.CGridView', array(
     'id'=>'save-search-grid',
     'htmlOptions' => array('class' => 'table table-bordered table-hover table-striped'),
@@ -50,7 +50,7 @@
             'header'=>Yii::t('global','Username'),
             'name'=>'username',
             'value'=>'$data->username',
-            'htmlOptions'=>array('style'=>'width:50px;')
+            'htmlOptions'=>array('style'=>'width:100px;')
         ),	
 		
 		array(
