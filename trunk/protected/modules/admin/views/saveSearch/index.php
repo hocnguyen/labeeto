@@ -20,6 +20,11 @@
 
     <?php 
     $active_user = CHtml::listData(User::model()->findAll(),'id','username');
+    $active_edu=CHtml::listData(Education::model()->findAll(),'id','name');
+    $active_ethi=CHtml::listData(Ethnicity::model()->findAll(),'id','name');
+    $action_religi=CHtml::listData(Religion::model()->findAll(),'id','name');
+    $active_child=CHtml::listData(Children::model()->findAll(),'id','name');
+    $gender       = Lookup::items('Gender');
     $this->widget('zii.widgets.grid.CGridView', array(
     'id'=>'save-search-grid',
     'htmlOptions' => array('class' => 'table table-bordered table-hover table-striped'),
@@ -38,35 +43,70 @@
             'name'=>'user_id',
             'filter'=>$active_user,
             'value' => '$data->getUser($data->user_id)',
-            'htmlOptions'=>array('style'=>'width:100px;')
+            'htmlOptions'=>array('style'=>'width:50px;')
         
         ),
     	array(
             'header'=>Yii::t('global','Username'),
             'name'=>'username',
             'value'=>'$data->username',
-            'htmlOptions'=>array('style'=>'width:100px;')
+            'htmlOptions'=>array('style'=>'width:50px;')
         ),	
 		
 		array(
             'header'=>Yii::t('global','Gender'),
             'name'=>'gender',
-            'value'=>'$data->gender',
-            'htmlOptions'=>array('style'=>'width:100px;')
+            'type' => 'raw',
+            'filter'=>$gender,
+            'value' => '$data->checkGenderUser()',
+            'htmlOptions'=>array('style'=>'width:30px;')
+        
         ),  
 		
-        array(
+        /*array(
             'header'=>Yii::t('global','Age From'),
             'name'=>'age_from',
             'value'=>'$data->age_from',
-            'htmlOptions'=>array('style'=>'width:100px;')
+            'htmlOptions'=>array('style'=>'width:50px;')
         ),
         array(
             'header'=>Yii::t('global','Age To'),
             'name'=>'age_to',
             'value'=>'$data->age_to',
-            'htmlOptions'=>array('style'=>'width:100px;')
+            'htmlOptions'=>array('style'=>'width:70px;')
+        ),*/
+        array(
+            'header'=>Yii::t('global','Education'),
+            'name'=>'age_from',
+            'value'=>'$data->getEducation($data->education)',
+            'filter'=>$active_edu,
+            'htmlOptions'=>array('style'=>'width:70px;')
         ),
+
+        array(
+            'header'=>Yii::t('global','Ehtnicity'),
+            'name'=>'age_from',
+            'value'=>'$data->getEthnicty($data->ehtnicity)',
+            'filter'=>$active_ethi,
+            'htmlOptions'=>array('style'=>'width:50px;')
+        ),
+
+        /*array(
+            'header'=>Yii::t('global','Religion'),
+            'name'=>'age_from',
+            'value'=>'$data->age_from',
+            'filter'=>$action_religi,
+            'htmlOptions'=>array('style'=>'width:50px;')
+        ),
+
+        array(
+            'header'=>Yii::t('global','Children'),
+            'name'=>'age_from',
+            'value'=>'$data->age_from',
+            'filter'=>$active_child,
+            'htmlOptions'=>array('style'=>'width:50px;')
+        ),*/
+
 		
 		array(
             'name' => 'created',
