@@ -1,3 +1,8 @@
+<style>
+    .filters select{
+        width: 150px;
+    }
+</style>
 <div class="container-fluid">
 
 <div class="row-fluid">
@@ -38,8 +43,8 @@
     'id'=>'save-search-grid',
     'htmlOptions' => array('class' => 'table table-bordered table-hover table-striped'),
     'dataProvider'=>$model->search(),
-    'filter'=>$model,
     'afterAjaxUpdate' => 'reinstallDatePicker',
+    'filter'=>$model,
     'columns'=>array(
         array(
             'name'=>'id',
@@ -68,11 +73,11 @@
             'type' => 'raw',
             'filter'=>$gender,
             'value' => '$data->checkGenderUser()',
-            'htmlOptions'=>array('style'=>'width:30px;')
+            'htmlOptions'=>array('style'=>'width:35px;')
         
         ),  
 		
-        /*array(
+        array(
             'header'=>Yii::t('global','Age From'),
             'name'=>'age_from',
             'value'=>'$data->age_from',
@@ -83,7 +88,7 @@
             'name'=>'age_to',
             'value'=>'$data->age_to',
             'htmlOptions'=>array('style'=>'width:70px;')
-        ),*/
+        ),
         array(
             'header'=>Yii::t('global','Education'),
             'name'=>'age_from',
