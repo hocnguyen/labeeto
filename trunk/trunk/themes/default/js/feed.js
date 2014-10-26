@@ -474,6 +474,45 @@ $(document).ready(function(){
      $('#close_rate').live('click', function(){
         $('#RateUser').modal('hide');
      });
+
+    $('.save-search-func').live('click', function(){
+            var username        = $('.username').val();
+            var gender          = $('#gender').val();
+            var age_start       = $('.age_start').val();
+            var age_end         = $('.age_end').val();
+            var within_start    = $('.within_start').val();
+            var within_end      = $('.within_end').val();
+        if( username !='' || gender != -1 || age_start != '' || age_end != '' || within_start != '' || within_end != '' ){
+            $.get('/user/saveSearch?username='+username+'&gender='+gender+'&age_start='+age_start+'&age_end='+age_end+'&within_start='+within_start+'&within_end='+within_end ,function(data){
+                $('#save_search_modal').modal('show');
+            });
+        }
+    });
+
+    $('.save-search-advance-new').live('click', function(){
+            var username         = $('.username').val();
+            var gender           = $('#gender').val();
+            var age_start        = $('.age_start').val();
+            var age_end          = $('.age_end').val();
+            var within_start     = $('.within_start').val();
+            var miles            = $('.miles').val();
+            var height_start     = $('.height_start').val();
+            var height_end       = $('.height_end').val();
+            var education        = $('.education').val();
+            var race             = $('.race').val();
+            var faith            = $('.faith').val();
+            var kids             = $('.kids').val();
+            var exercise_level   = $('.exercise_level').val();
+            var drinking_level   = $('.drinking_level').val();
+            var smoking_level    = $('.smoking_level').val();
+            var ss_online        = $('.ss_online').val();
+            var ss_verified      = $('.ss_verified').val();
+        if( username !='' || gender != -1 || age_start != '' || age_end != '' || within_start != '' || miles != '' || height_start != '' || height_end != '' || education != '' || race != '' || faith != '' || kids != '' || exercise_level != '' || drinking_level != '' || smoking_level != '' || ss_online != '' || ss_verified != '' ){
+            $.get('/user/saveSearchAdvanced?username='+username+'&gender='+gender+'&age_start='+age_start+'&age_end='+age_end+'&within_start='+within_start+'&miles='+miles+'&height_start='+height_start+'&height_start='+height_start+'&height_end='+height_end+'&education='+education+'&race='+race+'&faith='+faith+'&kids='+kids+'&exercise_level='+exercise_level+'&drinking_level='+drinking_level+'&smoking_level='+smoking_level+'&ss_online='+ss_online+'&ss_verified='+ss_verified ,function(data){
+                $('#save_search_modal').modal('show');
+            });
+        }
+    });
      
      $('.upvote').click(function(){
         var id = $(this).attr('data-id');

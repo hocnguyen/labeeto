@@ -1080,6 +1080,65 @@ class UserController extends SiteBaseController {
         }
         
     }
+
+    public function actionSaveSearch(){
+        $username                = $_GET['username'];
+        $gender                  = intval($_GET['gender']);
+        $age_start               = $_GET['age_start'];
+        $age_end                 = $_GET['age_end'];
+        $within_start            = $_GET['within_start'];
+        $within_end              = $_GET['within_end'];
+        $saveSearch              = new SaveSearch();
+        $saveSearch->user_id     = Yii::app()->user->id;
+        $saveSearch->username    = $username;
+        $saveSearch->gender      = $gender;
+        $saveSearch->age_from    = $age_start;
+        $saveSearch->age_to      = $age_end;
+        $saveSearch->within_from = $within_start;
+        $saveSearch->within_to   = $within_end;
+        $saveSearch->save();
+    }
+
+    public function actionSaveSearchAdvanced(){
+        $username                = $_GET['username'];
+        $gender                  = intval($_GET['gender']);
+        $age_start               = $_GET['age_start'];
+        $age_end                 = $_GET['age_end'];
+        $within_start            = $_GET['within_start'];
+        $miles                   = $_GET['miles'];
+        $height_start            = $_GET['height_start'];
+        $height_end              = $_GET['height_end'];
+        $education               = $_GET['education'];
+        $race                    = $_GET['race'];
+        $faith                   = $_GET['faith'];
+        $kids                    = $_GET['kids'];
+        $exercise_level          = $_GET['exercise_level'];
+        $drinking_level          = $_GET['drinking_level'];
+        $smoking_level           = $_GET['smoking_level'];
+        $ss_online               = $_GET['ss_online'];
+        $ss_verified             = $_GET['ss_verified'];
+
+        $saveSearch              = new SaveSearch();
+        $saveSearch->user_id     = Yii::app()->user->id;
+        $saveSearch->username    = $username;
+        $saveSearch->gender      = $gender;
+        $saveSearch->age_from    = $age_start;
+        $saveSearch->age_to      = $age_end;
+        $saveSearch->within_from = $within_start;
+        $saveSearch->within_to   = $miles;
+        $saveSearch->height_from = $height_start;
+        $saveSearch->height_to   = $height_end;
+        $saveSearch->education   = $education;
+        $saveSearch->ehtnicity   = $race;
+        $saveSearch->religion    = $faith;
+        $saveSearch->children    = $kids;
+        $saveSearch->excercise   = $exercise_level;
+        $saveSearch->drink       = $drinking_level;
+        $saveSearch->smoke       = $smoking_level;
+        $saveSearch->is_online   = $ss_online;
+        $saveSearch->verified    = $ss_verified;
+        $saveSearch->save();
+    }
     
     public function actionCheckVote(){
         $id = $_GET['id'];
