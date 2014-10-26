@@ -1,4 +1,4 @@
-CREATE TABLE `search` (
+CREATE TABLE `save_search` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `user_id` INT(11) NOT NULL DEFAULT '0',
   `username` VARCHAR(155) NOT NULL DEFAULT '',
