@@ -14,7 +14,7 @@
                 <h2><?php echo Yii::t('global', 'SaveSearch'); ?> </h2>
                 <form class="header-tab-view not-bor">
                     <div class="input-append">
-                        <span class="add-on add-on-middle add-on-mini" onclick="window.location.href='<?php echo $this->createUrl('save-search/update?id='.$model->id) ?>'"><i class="icon-edit" title="<?php echo Yii::t('adminlang', 'Edit'); ?>"></i></span>
+                        <span class="add-on add-on-middle add-on-mini" onclick="window.location.href='<?php echo $this->createUrl('saveSearch/update?id='.$model->id) ?>'"><i class="icon-edit" title="<?php echo Yii::t('adminlang', 'Edit'); ?>"></i></span>
                         <div class="add-on add-on-middle add-on-mini minimizeTable "><i class="icon-caret-down"></i></div>
                         <div class="add-on add-on-last add-on-mini removeTable"><i class="icon-remove"></i></div>
                     </div>
