@@ -36,6 +36,8 @@ class SaveSearch extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return SaveSearch the static model class
 	 */
+	const GENDER_MALE       = 0;
+    const GENDER_FEMALE     = 1;
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -163,5 +165,30 @@ class SaveSearch extends CActiveRecord
         );
 
         return  $result['username'];
+    }
+    public function getEducation($id){
+        $result = Education::model()->find(array(
+                'select'=>'name',
+                'condition'=>'id=:id',
+                'params'=>array( ':id'=>$id ) )
+        );
+
+        return  $result['name'];
+    }
+    public function getEthnicty($id){
+        $result = Ethnicity::model()->find(array(
+                'select'=>'name',
+                'condition'=>'id=:id',
+                'params'=>array( ':id'=>$id ) )
+        );
+
+        return  $result['name'];
+    }
+
+    function checkGenderUser(){
+        $sta = Yii::t('global', 'Male');
+        if( $this->gender == User::GENDER_FEMALE )
+            $sta = Yii::t('global', 'Female');
+        return $sta;
     }
 }
