@@ -17,7 +17,16 @@
 
 <div class="floatingBox table">
 <div class="container-fluid">
-
+    <div class="row-fluid"><div class="span7">
+            <?php
+            $this->widget('application.extensions.PageSize.PageSize', array(
+                'mGridId' => 'user-grid',
+                'mPageSize' => @$_GET['pageSize'],
+                'mDefPageSize' => Yii::app()->params['defaultPageSize'],
+                'mPageSizeOptions'=>Yii::app()->params['pageSizeOptions'],
+            ));
+            ?>
+    </div><div class="span5"></div></div>
     <?php 
     $active_user   = CHtml::listData (User::model()->findAll(),'id','username');
     $active_edu    = CHtml::listData (Education::model()->findAll(),'id','name');
