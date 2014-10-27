@@ -143,8 +143,8 @@
                 </p>
             </div>
             <footer>
-                <div class="profileSettingBlock editProfile" onclick="window.location.href='/admin/members/update?id=<?php echo Yii::app()->user->id; ?>'"><i class="icon-user"></i>edit profile</div>
-                <div class="profileSettingBlock changePassword" onclick="window.location.href='/admin/members/changepass?id=<?php echo Yii::app()->user->id; ?>&action=index'"><i class="icon-lock"></i>change password</div>
+                <div class="profileSettingBlock editProfile" onclick="window.location.href='/admin/user/update?id=<?php echo Yii::app()->user->id; ?>'"><i class="icon-user"></i>edit profile</div>
+                <div class="profileSettingBlock changePassword" onclick="window.location.href='/admin/user/changepass?id=<?php echo Yii::app()->user->id; ?>&action=index'"><i class="icon-lock"></i>change password</div>
                 <div class="profileSettingBlock logout" onclick = "window.location.href='/logout'"><i class="icon-off"></i>logout </div>
             </footer>
         </div>
