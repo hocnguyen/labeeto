@@ -23,9 +23,10 @@
                     <?php $arr = explode(".", $this->user->birthday); ?>
                     <label for="exampleInputEmail1" class="label-text">Birthday</label>
                         <select class="form-control select-day" id="days">
-                            <?php for($i = 1; $i < 32; $i++ ){
+                            <?php for($i = 01; $i < 32; $i++ ){
                                 $select = "";
                                 if($arr[0] == $i) $select = "selected";
+                                if($i < 10) $i = '0'.$i;
                                 echo "<option ". $select ."> " . $i . "</option>";
                             } ?>
                         </select>
@@ -33,6 +34,7 @@
                             <?php for($i = 1; $i < 13; $i++ ){
                                 $select = "";
                                 if($arr[1] == $i) $select = "selected";
+                                if($i < 10) $i = '0'.$i;
                                 echo "<option ". $select ."> " . $i . "</option>";
                             } ?>
                         </select>
