@@ -673,4 +673,128 @@ $(document).ready(function(){
             }
         });
     });
+    
+    /*$('#InputEmail').blur(function(){
+        var email = $(this).val();
+        $.get('/user/checkEmailSetting?email='+email,function(data){
+            if(data == 1){
+                $('#error_InputEmail').css('display', 'block');
+                $('#ok_InputEmail').css('display', 'none');
+            }else{
+                $('#ok_InputEmail').css('display', 'block');
+                $('#error_InputEmail').css('display', 'none');
+            }
+        });
+    });*/
+    
+    /*$('#InputPassword_2').blur(function(){
+        var pass_1 = $(this).val();
+        if(pass_1.length > 0){
+            var re=/^[^\dA-Z]{1}[^A-Z]*(?=[^A-Z]{7,})(?=[^A-Z]*[a-z])(?=[^A-Z]*[\d])[^A-Z]*$/
+            //var re=/^[^\d]{1}.*(?=.{8,})(?=.*[A-Za-z])(?=.*[\d]).*$/
+            //var re = /^[a-z][a-z0-9]{7}$/i;
+            var red=/^.*(?=.{4,20})(?=.*[A-Za-z]).*$/;
+    
+            var pw = re.exec(pass_1);
+            if (!pw) {
+                $('#error_InputPassword_2').css('display', 'block');
+                $('#ok_InputPassword_2').css('display', 'none');
+            }else{
+                $('#ok_InputPassword_2').css('display', 'block');
+                $('#error_InputPassword_2').css('display', 'none');
+            }
+        }
+    })*/
+    
+    /*$('#InputPassword_3').blur(function(){
+        var pass_3 = $(this).val();
+        var pass_2 = $('#InputPassword_2').val();
+        if((pass_3.length > 0) && (pass_2.length > 0)){
+            if(pass_3 != pass_2){
+                $('#error_InputPassword_3').css('display', 'block');
+                $('#ok_InputPassword_3').css('display', 'none');
+            }else{
+                $('#ok_InputPassword_3').css('display', 'block');
+                $('#error_InputPassword_3').css('display', 'none');
+            }
+        }
+    });*/
+    
+    $('#save_general_settings').click(function(){
+        var days = $('#days').val();
+        var months = $('#months').val();
+        var years = $('#years').val();
+        var email = $('#InputEmail').val();
+        /*var pass_1 = $('#InputPassword_1').val();*/
+        var pass_2 = $('#InputPassword_2').val();
+        var pass_3 = $('#InputPassword_3').val();
+        var zipcode = $('#Zipcode').val();
+        var CitySuburb = $('#address_setting').val();
+        var birthday = years + '-' + months + '-' + days;
+        $.get('/user/checkEmailSetting?email='+email,function(data){
+            if(data == 1){
+                $('#error_InputEmail').css('display', 'block');
+                $('#ok_InputEmail').css('display', 'none');
+                return false;
+            }else{
+                $('#ok_InputEmail').css('display', 'block');
+                $('#error_InputEmail').css('display', 'none');
+            }
+        });
+        
+        if(pass_2.length > 0){
+            var re=/^[^\dA-Z]{1}[^A-Z]*(?=[^A-Z]{7,})(?=[^A-Z]*[a-z])(?=[^A-Z]*[\d])[^A-Z]*$/
+            //var re=/^[^\d]{1}.*(?=.{8,})(?=.*[A-Za-z])(?=.*[\d]).*$/
+            //var re = /^[a-z][a-z0-9]{7}$/i;
+            var red=/^.*(?=.{4,20})(?=.*[A-Za-z]).*$/;
+    
+            var pw = re.exec(pass_2);
+            if (!pw) {
+                $('#error_InputPassword_2').css('display', 'block');
+                $('#ok_InputPassword_2').css('display', 'none');
+                return false;
+            }else{
+                $('#ok_InputPassword_2').css('display', 'block');
+                $('#error_InputPassword_2').css('display', 'none');
+            }
+        }
+        
+        if((pass_2.length > 0) && (pass_3.length == 0)){
+            $('#error_InputPassword_3').css('display', 'block');
+            $('#ok_InputPassword_3').css('display', 'none');
+            return false;
+        }
+        
+        if((pass_3.length > 0) && (pass_2.length > 0)){
+            if(pass_3 != pass_2){
+                $('#error_InputPassword_3').css('display', 'block');
+                $('#ok_InputPassword_3').css('display', 'none');
+                return false;
+            }else{
+                $('#ok_InputPassword_3').css('display', 'block');
+                $('#error_InputPassword_3').css('display', 'none');
+            }
+        }
+        var intRegex = /^\d+$/;
+        var floatRegex = /^((\d+(\.\d *)?)|((\d*\.)?\d+))$/;
+        if(zipcode.length > 0){
+            if(intRegex.test(zipcode) || floatRegex.test(zipcode)){
+                $('#ok_Zipcode').css('display', 'block');
+                $('#error_Zipcode').css('display', 'none');
+                console.log(zipcode);
+            }else{
+                $('#error_Zipcode').css('display', 'block');
+                $('#ok_Zipcode').css('display', 'none');
+                console.log(zipcode);
+                return false;
+            }
+            
+        }
+        
+        
+       $.get('/user/settingGeneral?birthday='+birthday+'&email='+email+'&pass='+pass_3+'&zipcode='+zipcode+'&address='+CitySuburb,function(data){
+            
+        });
+        location.reload(true);
+    })
 });
