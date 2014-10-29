@@ -759,6 +759,12 @@ $(document).ready(function(){
             }
         }
         
+        if((pass_3.length > 0) && (pass_2.length == 0)){
+            $('#error_InputPassword_2').css('display', 'block');
+            $('#ok_InputPassword_2').css('display', 'none');
+            return false;
+        }
+        
         if((pass_2.length > 0) && (pass_3.length == 0)){
             $('#error_InputPassword_3').css('display', 'block');
             $('#ok_InputPassword_3').css('display', 'none');
