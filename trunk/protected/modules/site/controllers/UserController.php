@@ -996,6 +996,7 @@ class UserController extends SiteBaseController {
                     $video->video = $filename;
                     $video->description = $_POST['description'];
                     $video->is_public = 0;
+                    $video->is_approval = 1;
                     $video->date = date('Y-m-d h:s');
                     $video->user_id = Yii::app()->user->id;
                     $video->save();
