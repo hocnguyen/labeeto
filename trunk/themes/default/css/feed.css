@@ -2312,7 +2312,7 @@ input[type="range"]::-ms-fill-lower {
     padding: 15px 90px 0px 31px;
 }
 .check-block{
-    background: url('../images/check_ok.png') no-repeat 10px 10px;
+    background: url('../images/check_ok.png') no-repeat 0px 10px;
     height: 40px;
     width: 40px;
     float: left;
@@ -2408,6 +2408,7 @@ input[type="range"]::-ms-fill-lower {
     float: left; 
     height: 43px; 
     margin-bottom: 10px;
+    margin-right: 20px;
 }
 .input-pass{
     width: 350px; 
