@@ -731,6 +731,7 @@ $(document).ready(function(){
         var zipcode = $('#Zipcode').val();
         var CitySuburb = $('#address_setting').val();
         var birthday = years + '-' + months + '-' + days;
+        
         $.get('/user/checkEmailSetting?email='+email,function(data){
             if(data == 1){
                 $('#error_InputEmail').css('display', 'block');
