@@ -1153,4 +1153,32 @@ class UserController extends SiteBaseController {
             echo 'false';
         }
     }
+    
+    public function actionSettingGeneral(){
+        $model =  new User();
+        if($_GET['pass'] != '')
+            $password = $model->hashPassword($_GET['pass']);
+        else
+            $password = User::model()->findByPk(Yii::app()->user->id)->password;
+        User::model()->updateByPk(Yii::app()->user->id, array(
+            'email'=>$_GET['email'],
+            'birthday'=>$_GET['birthday'],
+            'zipcode'=>$_GET['zipcode'],
+            'address'=>$_GET['address'],
+            'password'=>$password,
+        ));
+    }
+    
+    public function actionCheckEmailSetting(){
+        $user = User::model()->findByPk(Yii::app()->user->id);
+        if($_GET['email'] == $user->email){
+            echo 0;
+        }else{
+            if(filter_var($_GET['email'], FILTER_VALIDATE_EMAIL)){
+                echo 0;
+            }else{
+                echo 1;
+            }
+        }
+    }
 }

@@ -20,54 +20,68 @@
             <div class="setting-detail">
                 <form role="form" class="form-setting">
                     <div class="form-group">
+                    <?php $arr = explode(".", $this->user->birthday); ?>
                     <label for="exampleInputEmail1" class="label-text">Birthday</label>
-                        <select class="form-control select-day">
-                            <option>Day</option>
+                        <select class="form-control select-day" id="days">
                             <?php for($i = 1; $i < 32; $i++ ){
-                                echo "<option> " . $i . "</option>";
+                                $select = "";
+                                if($arr[0] == $i) $select = "selected";
+                                echo "<option ". $select ."> " . $i . "</option>";
                             } ?>
                         </select>
-                        <select class="form-control select-month">
-                            <option>Month</option>
+                        <select class="form-control select-month" id="months">
                             <?php for($i = 1; $i < 13; $i++ ){
-                                echo "<option> " . $i . "</option>";
+                                $select = "";
+                                if($arr[1] == $i) $select = "selected";
+                                echo "<option ". $select ."> " . $i . "</option>";
                             } ?>
                         </select>
-                        <select class="form-control select-month">
-                            <option>Year</option>
-                            <?php for($i = 1970; $i < 2015; $i++ ){
-                                echo "<option> " . $i . "</option>";
+                        <select class="form-control select-month" id="years">
+                            <?php for($i = 1970; $i < date("Y")+1; $i++ ){
+                                $select = "";
+                                if($arr[2] == $i) $select = "selected";
+                                echo "<option ". $select ."> " . $i . "</option>";
                             } ?>
                         </select>
                     </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail1" class="label-text" style="padding-top: 15px;">Email address</label>
-                        <input type="email" class="form-control input-text" id="exampleInputEmail1"><span class="check-block"></span>
+                        <label for="InputEmail" class="label-text" style="padding-top: 15px;">Email address</label>
+                        <input type="text" class="form-control input-text" value="<?php echo $this->user->email ?>" id="InputEmail">
+                        <span class="check-block"  id="ok_InputEmail" style="display: none;"></span>
+                        <p style="color: red; font-size: 12px; margin-top: 15px; margin-left: 20px; display: none;" id="error_InputEmail">Email not correct</p>
+                      </div>
+                      <!--<div class="form-group">
+                        <label for="InputPassword_1" class="label-text">Password</label>
+                        <input type="password" class="form-control input-text" disabled="true" value="<?php // echo $this->user->password; ?>" id="InputPassword_1">
+                        <span class="check-block" id="ok_InputPassword_1" style="display: none;"></span>
+                      </div>-->
+                      <div class="form-group">
+                        <label for="InputPassword_2" class="label-text"> New Password</label>
+                        <input type="password" class="form-control input-text" id="InputPassword_2">
+                        <span class="check-block" id="ok_InputPassword_2" style="display: none;"></span>
+                        <p style="color: red; font-size: 12px; margin-top: 15px; margin-left: 20px; display: none;" id="error_InputPassword_2">Password must be 8 characters long and contain 1 number and 1 letter</p>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputPassword1" class="label-text">Password</label>
-                        <input type="password" class="form-control input-text" id="exampleInputPassword1"><span class="check-block"></span>
+                        <label for="InputPassword_3" class="label-text">New Password(Confirm)</label>
+                        <input type="password" class="form-control input-text" id="InputPassword_3">
+                        <span class="check-block" id="ok_InputPassword_3" style="display: none;"></span>
+                        <p style="color: red; font-size: 12px; margin-top: 15px; margin-left: 20px; display: none;" id="error_InputPassword_3">Confirm password is not same password</p>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputPassword1" class="label-text"> New Password</label>
-                        <input type="password" class="form-control input-pass" id="exampleInputPassword1">
+                        <label for="Zipcode" class="label-text">Zip code </label>
+                        <input type="text" value="<?php echo $this->user->zipcode ?>" class="form-control" id="Zipcode"  style="width: 220px; height: 43px; display: inline-block; float: left; margin-bottom: 10px; margin-right: 20px;">
+                        <span class="check-block" id="ok_Zipcode" style="display: none;"></span>
+                        <p style="color: red; font-size: 12px; margin-top: 15px; margin-left: 20px; display: none;" id="error_Zipcode">Zip Code must is number</p>
+                      
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail1" class="label-text">New Password(Confirm)</label>
-                        <input type="password" class="form-control input-pass" id="exampleInputEmail1">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword1" class="label-text">Zip code </label>
-                        <input type="text" class="form-control" id="exampleInputPassword1"  style="width: 220px; height: 43px;">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1" class="label-text">City/Suburb</label>
-                        <input type="text" id="address_setting" class="form-control pre-fill-text" id="exampleInputEmail1" placeholder="Pre-Fill">
+                        <label for="CitySuburb" class="label-text">City/Suburb</label>
+                        <input type="text" id="address_setting" value="<?php echo $this->user->address ?>" class="form-control pre-fill-text" id="CitySuburb" placeholder="Pre-Fill">
                         <div id="maps-test-setting"></div>
                       </div>
                       <div style="padding: 20px 0px;">
-                            <button type="submit" class="btn btn-default btn-save-st">SAVE</button>
-                            <button type="submit" class="btn btn-default btn-cancel-st">CANCEL</button>
+                            <button type="submit" class="btn btn-default btn-save-st" id="save_general_settings">SAVE</button>
+                            <button class="btn btn-default btn-cancel-st"  >CANCEL</button>
                       </div>
                 </form>
             </div>
