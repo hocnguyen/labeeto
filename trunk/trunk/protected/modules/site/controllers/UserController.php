@@ -792,6 +792,8 @@ class UserController extends SiteBaseController {
                          $ext = 'AND';
                     $condition .= $ext." religion = ".$faith." "; 
                 }
+                
+
 
 
                 if(  $age_start != '' ){
