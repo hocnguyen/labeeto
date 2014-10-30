@@ -386,6 +386,10 @@ a{
     top: 15px;
     font-size: 11pt;
  }
+.uper-case{
+    float:right;
+    text-transform: uppercase;
+}
  .arrow-nav {
      float: right;
      padding: 20px 0;
