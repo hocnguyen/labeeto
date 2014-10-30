@@ -506,8 +506,11 @@ $(document).ready(function(){
                 success:function(data){
                     console.log(data);
                     $('#ChangeAvatar').modal('hide');
-                    //showModalTemp(data);
-                    location.assign('/profile');
+                    if(data == 1){
+                        alert('Invalid image format.');
+                    }else{
+                        location.assign('/profile');
+                    }
                 },
                 error: function(data){
                     console.log("error");
@@ -525,7 +528,7 @@ $(document).ready(function(){
         var formData = new FormData(this);
         $('.photo-up').addClass('loading');
         $('.photo-up').html('');
-
+        
         $.ajax({
             type:'POST',
             url: '/user/UploadPhoto',
@@ -534,9 +537,12 @@ $(document).ready(function(){
             contentType: false,
             processData: false,
             success:function(data){
-                console.log(data);
                 $('#public_photo').modal('hide');
-                location.assign('/profile?type=photos');
+                if(data == 1){
+                    alert('Invalid image format.');
+                }else{
+                    location.assign('/profile?type=photos');
+                }
             },
             error: function(data){
                 console.log("error");
@@ -564,7 +570,11 @@ $(document).ready(function(){
             success:function(data){
                 console.log(data);
                 $('#private_photo').modal('hide');
-                location.assign('/profile?type=private');
+                if(data == 1){
+                     alert('Invalid image format.');
+                }else{
+                    location.assign('/profile?type=private');
+                }
             },
             error: function(data){
                 console.log("error");
@@ -638,8 +648,8 @@ $(document).ready(function(){
      $('#form-upload-video').submit(function(e){
          e.preventDefault();
             var formData = new FormData(this);
-            //$('.private-up').addClass('loading');
-            //$('.private-up').html('');
+            $('.video-up').addClass('loading');
+            $('.video-up').html('');
             $.ajax({
                 type:'POST',
                 url: '/user/UploadVideo',
@@ -649,11 +659,12 @@ $(document).ready(function(){
                 processData: false,
                 success:function(data){
                     $('#UploadVideo').modal('hide');
+                    console.log(data);
                     if(data == 1){
                         alert('Invalid video format.');
+                    }else{
+                        location.assign('/profile?type=video');
                     }
-                    
-                   location.assign('/profile?type=video');
                 },
                 error: function(data){
                     console.log("error");
