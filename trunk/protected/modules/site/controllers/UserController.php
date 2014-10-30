@@ -757,36 +757,38 @@ class UserController extends SiteBaseController {
                     $condition .= $ext." gender = ".$gender." ";
                 }
 
+                
+
+                if($height_start !=''){
+                    if($username !='' ||$gender != '-1')
+                         $ext = "AND";
+                    $condition .= $ext." height = ".$height_start." ";
+                } 
+
+                if($height_end !=''){
+                     if($username !='' || $height_start !=''||$gender != '-1')
+                        $ext = "AND";
+                    $condition .= $ext." height = ".$height_end." ";
+                }
+
                 if( $education !='-1'){
                     if( $username != '' )
                         $ext       = " AND ";
                     $condition .= $ext." education = ".$education." ";
                 }
                 
-
-                if($height_start !=''){
-                    if($username !='')
-                         $ext = "AND";
-                    $condition .= $ext." height = ".$height_start." ";
-                } 
-
-                if($height_end !=''){
-                     if($username !='' || $height_start !='')
-                        $ext = "AND";
-                    $condition .= $ext." height = ".$height_end." ";
-                }
                 if($kids !='-1'){
-                     if($username !='')
+                     if($username !='' || $education !='-1')
                         $ext="AND";
                     $condition .= $ext." children = ".$kids." ";
                 }
                 if($race!='-1'){
-                    if($username !='')
+                    if($username !='' || $education !='-1' || $kids !='-1')
                         $ext = 'AND';
                     $condition .= $ext." ehtnicity = ".$race." ";
                 }
                 if($faith !='-1'){
-                    if($username !='')
+                    if($username !=''  || $education !='-1' || $kids !='-1' || $race!='-1')
                          $ext = 'AND';
                     $condition .= $ext." religion = ".$faith." "; 
                 }
