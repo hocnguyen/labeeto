@@ -258,7 +258,7 @@ a{
     margin-left: -6px;
 }
 .menu-nav a:hover {
-    color: #5dc1ea;
+    color: #ea5a5a;
     text-decoration: none;
     border: 5px solid transparent;
     -webkit-border-image: url('../images/bottom-login.png') 27 27 27 27 stretch stretch; /* Safari 5 */
@@ -269,7 +269,7 @@ a{
     border-left: 0px;
 }
 .menu-nav a:hover .search{
-    background: url("../images/search_green.png") no-repeat right 10%;
+     background: url("../images/search_green.png") no-repeat right 10%; */
 }
 .menu-nav a:hover .get-fit{
     background: url("../images/heart_green.png") no-repeat right 10%;
