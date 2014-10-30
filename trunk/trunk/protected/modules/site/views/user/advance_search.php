@@ -80,7 +80,7 @@
                     </div>
                     <div class="search-block-02">
                         <label>Race</label>
-                        <select name="Search[race]" id="education" class="race">
+                        <select name="Search[race]" id="faith" class="race">
                             <?php 
                                 $race = CHtml::listData(Ethnicity::model()->findAll(),'id','name');
                                 echo "<option value='-1'>All</option>";
@@ -94,7 +94,7 @@
                     </div>
                     <div class="search-block-02">
                         <label>Faith</label>
-                        <select name="Search[faith]" id="education" class="faith">
+                        <select name="Search[faith]" id="faith" class="faith">
                             <?php 
                                 $faith = CHtml::listData(Religion::model()->findAll(),'id','name');
                                 echo "<option value='-1'>All</option>";
@@ -106,9 +106,9 @@
                         </select>
                         
                     </div>
-                    <div class="search-block-02" style="margin-right: 0px; float: right;">
+                    <div class="search-block-02" style="margin-right: 0px; float: left;">
                         <label>Kids</label>
-                        <select name="Search[kids]" id="education" class="kids">
+                        <select name="Search[kids]" id="faith" class="kids">
                             <?php 
                                 $kids = CHtml::listData(Children::model()->findAll(),'id','name');
                                 echo "<option value='-1'>All</option>";
