@@ -221,7 +221,7 @@ a{
     float: left;
 }
 .menu-nav {
-    width: 54%;
+    width: 40%;
     float: left;
     margin-left: 20px;
     /* background: url("../images/line-nav.png") no-repeat; */
@@ -282,10 +282,26 @@ a{
 }
 .notify {
     float: left;
-    width: 15%;
+    width: 25%;
     height: 50px;
     padding: 16px 10px 10px 10px;
     /* background: url('../images/line-nav.png') no-repeat right; */
+}
+.search-request{
+    background: url('../images/search-icon-xam.png') no-repeat center;
+    width: 22px;
+    height: 20px;
+    float: left;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.olock-request{
+    background: url('../images/olock-icon.png') no-repeat center;
+    width: 22px;
+    height: 20px;
+    float: left;
+    cursor: pointer;
+    margin-left: 10px;
 }
 .friend-request {
     background: url('../images/friend.png') no-repeat center;
@@ -341,6 +357,9 @@ a{
     padding-top: 3px;
 }
 .profile-nav {
+    /* width: 25px;
+    float:left;
+    height: 179px; */
     cursor: pointer;
     position: relative;
 
@@ -362,7 +381,7 @@ a{
     color: #c0c0c0;
     font-weight: bold;
     font-family: Proxima Nova Semi Bold;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     position: relative;
     top: 15px;
     font-size: 11pt;
@@ -370,7 +389,7 @@ a{
  .arrow-nav {
      float: right;
      padding: 20px 0;
-     background: url('../images/line-nav.png') no-repeat right;
+     /* background: url('../images/line-nav.png') no-repeat right; */
      padding-right: 20px;
  }
  .menu-profile {
