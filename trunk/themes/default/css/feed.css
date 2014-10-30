@@ -2561,7 +2561,19 @@ input[type="range"]::-ms-fill-lower {
     height: 35px;
     padding: 5px 3px 5px 10px;
     color: #a4a4a4;
-    width: 200px;
+    width: 210px;
+    border-radius:4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    behavior: url('../pie/PIE.htc');
+    border: 1px solid #a4a4a4;
+    font-size:14px;
+}
+.search-block-02 #faith{
+    height: 35px;
+    padding: 5px 3px 5px 10px;
+    color: #a4a4a4;
+    width: 160px;
     border-radius:4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
