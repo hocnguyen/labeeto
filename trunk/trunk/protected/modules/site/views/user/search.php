@@ -11,7 +11,7 @@
                         <input type="text" id="search" placeholder="EXPLOER" name="Search[username]" value="<?php echo isset($username)?$username:''; ?>" class="username"/>
                     </div>
                     <div class="text-explore">
-                        <input type="text" id="search"  placeholder="LOOKING FOR: FRIENDSHIP" name="Search[username]" value="<?php echo isset($username)?$username:''; ?>" class="username"/>
+                        <input type="text" id="search"  placeholder="LOOKING FOR: FRIENDSHIP" name="Search[looking]"  class="username"/>
                     </div>
                     <div class="btn-training">
                         <span class="premium">
