@@ -388,6 +388,7 @@ a{
  }
 .uper-case{
     float:right;
+    padding-left: 5px;
     text-transform: uppercase;
 }
  .arrow-nav {
