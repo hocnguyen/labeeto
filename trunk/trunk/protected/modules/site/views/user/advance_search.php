@@ -127,13 +127,16 @@
                     <div class="search-block-02">
                         <label>Exercise Level</label>
                         <select name="Search[exercise_level]" id="education" class="kids">
-                            <?php 
-                                $exer = CHtml::listData(Children::model()->findAll(),'id','name');
-                                echo "<option value='-1'>All</option>";
-                                foreach(  $exer as $key=>$val ){ ?>
-                                <option value="<?php echo $key; ?>" <?php if( isset( $exer) ){ if( $exer == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
+                            <?php
+                                $exer = array(
+                                   '-1'=>Yii::t('global','All'),
+                                    '1'=>Yii::t('global','Often'),
+                                    '0'=>Yii::t('global','Sometimes'),
+                                    '2'=>Yii::t('global','Never')
+                                );
+                            foreach($exer as $key=>$val ){ ?>
+                                <option value="<?php echo $key; ?>" <?php if( isset($exercise_level) ){ if( $exercise_level == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
                             <?php } ?>
-                            ?>
 
                         </select>
                         
@@ -143,13 +146,16 @@
                     <div class="search-block-02">
                         <label>Drinking Level</label>
                         <select name="Search[drinking_level]" id="education" class="kids">
-                            <?php 
-                                $driking = CHtml::listData(Children::model()->findAll(),'id','name');
-                                echo "<option value='-1'>All</option>";
-                                foreach( $driking as $key=>$val ){ ?>
-                                <option value="<?php echo $key; ?>" <?php if( isset($driking) ){ if( $driking == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
+                            <?php
+                                $dri = array(
+                                    '-1'=>Yii::t('global','All'),
+                                    '1'=>Yii::t('global','Often'),
+                                    '0'=>Yii::t('global','Sometimes'),
+                                    '2'=>Yii::t('global','Never')
+                                );
+                            foreach( $dri as $key=>$val ){ ?>
+                                <option value="<?php echo $key; ?>" <?php if( isset($drink_level) ){ if( $drink_level == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
                             <?php } ?>
-                            ?>
 
                         </select>
                         
@@ -158,13 +164,16 @@
                     <div class="search-block-02">
                         <label>Smoking Level</label>
                         <select name="Search[smoking_level]" id="education" class="kids">
-                            <?php 
-                                $smoking = CHtml::listData(Children::model()->findAll(),'id','name');
-                                echo "<option value='-1'>All</option>";
-                                foreach( $smoking as $key=>$val ){ ?>
-                                <option value="<?php echo $key; ?>" <?php if( isset($smoking) ){ if( $smoking == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
+                            <?php
+                                $somking = array(
+                                    '-1'=>Yii::t('global','All'),
+                                    '1'=>Yii::t('global','Often'),
+                                    '0'=>Yii::t('global','Sometimes'),
+                                    '2'=>Yii::t('global','Never')
+                                );
+                            foreach( $somking as $key=>$val ){ ?>
+                                <option value="<?php echo $key; ?>" <?php if( isset($smoking_level) ){ if($smoking_level == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
                             <?php } ?>
-                            ?>
 
                         </select>
                         
