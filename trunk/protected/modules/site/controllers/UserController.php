@@ -792,7 +792,23 @@ class UserController extends SiteBaseController {
                          $ext = 'AND';
                     $condition .= $ext." religion = ".$faith." "; 
                 }
-                
+
+                if($exercise_level !='-1'){
+                    if($username !=''  || $education !='-1' || $kids !='-1' || $race!='-1' || $faith !='-1')
+                         $ext = 'AND';
+                    $condition .= $ext." smoke = ".$exercise_level." "; 
+                }
+                if($drink_level !='-1'){
+                    if($username !=''  || $education !='-1' || $kids !='-1' || $race!='-1' || $faith !='-1' || $exercise_level !='-1')
+                         $ext = 'AND';
+                    $condition .= $ext." drink = ".$exercise_level." "; 
+                }
+
+                if($smoking_level !='-1'){
+                    if($username !=''  || $education !='-1' || $kids !='-1' || $race!='-1' || $faith !='-1' || $exercise_level !='-1' || $drink_level!='-1')
+                         $ext = 'AND';
+                    $condition .= $ext." drink = ".$exercise_level." "; 
+                }
 
 
 
