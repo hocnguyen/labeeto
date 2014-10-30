@@ -28,6 +28,7 @@ function popUpVideos(popurl,popwidth,popheight,move_x,move_y,aFile)
                             m4v: "<?php echo "/uploads/video/". $value->video ?>",
                             ogv: "<?php echo "/uploads/video/". $value->video ?>",
                             flv: "<?php echo "/uploads/video/". $value->video ?>",
+                            mov: "<?php echo "/uploads/video/". $value->video ?>",
                             poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png",
                             width: "100%",
                             height: "100%",
@@ -43,7 +44,7 @@ function popUpVideos(popurl,popwidth,popheight,move_x,move_y,aFile)
                         keyEnabled: true,
                         wmode:"window",
                         solution:"flash,html",
-                        swfPath: "/themes/default/jPlayer/jplayer.swf",
+                        swfPath: "/themes/default/jPlayer/Jplayer.swf",
                         stretching: "fill",
                         
                       });
@@ -58,8 +59,7 @@ function popUpVideos(popurl,popwidth,popheight,move_x,move_y,aFile)
                         <span class="link_1">#LOL</span>-->
                     </h3>
                     <span class="hour-post"><?php echo $value->date ?></span>
-                    <div style="padding-left: 10px;">
-                    <a href="#" onclick="popUpVideos('popup-1.html', '340', '352', '600', '200', 'another_video.flv'); return false;">
+                    <div style="padding-left: 10px; cursor: pointer;" class="video_view_pop_up" data-id="<?php echo $value->id ?>">
 		              <div id="jp_container_<?php echo $value->id ?>" class="jp-video ">
                             <div class="jp-type-single">
                               <div id="jquery_jplayer_<?php echo $value->id ?>" class="jp-jplayer"></div>
@@ -98,10 +98,17 @@ function popUpVideos(popurl,popwidth,popheight,move_x,move_y,aFile)
                               </div>
                             </div>
                           </div>
-				        </a>
                     </div>
                 </div>
             </div>
             <?php } ?>
             
         </div>
+
+<div class="modal fade" id="VideoView" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content special-border" id="videopopup">
+      
+    </div>
+  </div>
+</div>

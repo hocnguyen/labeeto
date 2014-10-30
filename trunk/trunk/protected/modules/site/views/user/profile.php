@@ -696,7 +696,7 @@
         <span>Upload Video</span>
         
       </div>
-      <div class="modal-footer footer-report footer-upgarde">
+      <div class="modal-footer footer-report footer-upgarde video-up">
         <form method="post" id="form-upload-video">
             <div class="">
             <textarea name="description" class="form-control" rows="4" cols="50" placeholder="Write a description"></textarea>
