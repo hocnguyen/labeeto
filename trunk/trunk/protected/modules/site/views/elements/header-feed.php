@@ -4,14 +4,14 @@
             <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/logo-feed.png" alt="Logo"/>
         </a>
         <div class="menu-nav">
-            <a href="/user/advanceSearch" class="menu-item"><span class="icon search"></span> SEARCH</a>
+            <!-- <a href="/user/advanceSearch" class="menu-item"><span class="icon search"></span> SEARCH</a> -->
             <a href="#" class="menu-item"><span class="icon top-rate"></span>TOP RATED</a>
             <a href="#" class="menu-item"><span class="icon get-fit"></span>GET FIT</a>
             <a href="#" class="menu-item"><span class="icon inspire"></span>Speed date</a>
         </div>
         <div class="notify">
             <div class="search-request" href="#">
-                
+                <a href="/user/advanceSearch" class="menu-item"></a> 
             </div>
             <div class="olock-request">
                 
@@ -97,7 +97,18 @@
             </div>
         </div>
         <div class="profile-nav">
-            <div class="test-nav" style="width: 179px; float: right; height: 50px;">
+            <div class="test-nav" style="width: 210px; float: right; height: 50px;">
+                
+                <div class="username-nav">
+                    <?php
+                    if(strlen(Yii::app()->user->username) > 8){
+                        echo "Welcome, ".substr(Yii::app()->user->username, 0, 5). '...';
+                    }else{
+                        echo "Welcome, " .Yii::app()->user->username;
+                    }
+
+                    ?>
+                </div>
                 <?php
                     error_reporting(0);
                 ?>
@@ -106,16 +117,6 @@
                <?php } else { ?>
                     <img class="avatar-nav" src="/uploads/avatar/<?php echo $this->user->photo ?>" />
                 <?php } ?>
-                <div class="username-nav">
-                    <?php
-                    if(strlen(Yii::app()->user->username) > 8){
-                        echo substr(Yii::app()->user->username, 0, 5). '...';
-                    }else{
-                        echo Yii::app()->user->username;
-                    }
-
-                    ?>
-                </div>
                 <img class="arrow-nav" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/arrow_down.png" />
             </div>
             <div class="menu-profile">
