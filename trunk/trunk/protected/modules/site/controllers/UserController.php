@@ -746,21 +746,20 @@ class UserController extends SiteBaseController {
                 $exercise_level = $_POST['Search']['exercise_level'];
                 $drink_level    = $_POST['Search']['drinking_level'];
                 $smoking_level  = $_POST['Search']['smoking_level'];
+                $looking_friendship = $_POST['Search']['looking_friendship'];
 
 
                 if( $username != '' )
                     $condition .= " username LIKE '%".$username."%'  ";
 
                 if( $gender != '-1' ){
-                    if( $username != '' )
+                    if( $username != ''  )
                         $ext       = " AND ";
                     $condition .= $ext." gender = ".$gender." ";
                 }
 
-                
-
                 if($height_start !=''){
-                    if($username !='' ||$gender != '-1')
+                    if($username !=''  ||$gender != '-1')
                          $ext = "AND";
                     $condition .= $ext." height = ".$height_start." ";
                 } 
