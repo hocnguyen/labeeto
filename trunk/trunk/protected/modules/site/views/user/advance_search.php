@@ -39,17 +39,17 @@
                     <div class="search-block-03">
                         <label>Ages</label>
                         <div class="list-age"> 
-                            <input type="text" class="age_start" id="start" name="Search[ages_start]"  value="<?php echo isset($age_start)?$age_start:'18'; ?>"/>
+                            <input type="text" class="age_start" id="start" name="Search[ages_start]"  value="<?php echo isset($age_start)?$age_start:''; ?>"/>
                             <span>To</span>
-                            <input type="text" class="age_end" id="end" name="Search[ages_end]" value="<?php echo isset($age_end)?$age_end:'28'; ?>"/>
+                            <input type="text" class="age_end" id="end" name="Search[ages_end]" value="<?php echo isset($age_end)?$age_end:''; ?>"/>
                         </div>
                     </div>
                     <div class="search-block-02">
                         <label>Within</label>
                         <div class="list-age"> 
-                            <input type="text" class="within_start"   id="start" name="Search[within]" value="<?php echo isset($within_start)?$within_start:'50'; ?>" />
+                            <input type="text" class="within_start"   id="start" name="Search[within]" value="<?php echo isset($within_start)?$within_start:''; ?>" />
                             <span>Miles of</span>
-                            <input type="text" class="miles" id="end" style="width: 89px;" name="Search[miles]"  value="<?php echo isset($miles)?$miles:'100'; ?>"/>
+                            <input type="text" class="miles" id="end" style="width: 89px;" name="Search[miles]"  value="<?php echo isset($miles)?$miles:''; ?>"/>
                         </div>
                     </div>
                     <div class="search-block-03" style="margin-right: 0px; float: right;">
@@ -128,10 +128,10 @@
                         <label>Exercise Level</label>
                         <select name="Search[exercise_level]" id="education" class="kids">
                             <?php 
-                                $kid = CHtml::listData(Children::model()->findAll(),'id','name');
+                                $exer = CHtml::listData(Children::model()->findAll(),'id','name');
                                 echo "<option value='-1'>All</option>";
-                                foreach( $kids as $key=>$val ){ ?>
-                                <option value="<?php echo $key; ?>" <?php if( isset($kids) ){ if( $kids == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
+                                foreach(  $exer as $key=>$val ){ ?>
+                                <option value="<?php echo $key; ?>" <?php if( isset( $exer) ){ if( $exer == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
                             <?php } ?>
                             ?>
 
@@ -144,10 +144,10 @@
                         <label>Drinking Level</label>
                         <select name="Search[drinking_level]" id="education" class="kids">
                             <?php 
-                                $kid = CHtml::listData(Children::model()->findAll(),'id','name');
+                                $driking = CHtml::listData(Children::model()->findAll(),'id','name');
                                 echo "<option value='-1'>All</option>";
-                                foreach( $kids as $key=>$val ){ ?>
-                                <option value="<?php echo $key; ?>" <?php if( isset($kids) ){ if( $kids == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
+                                foreach( $driking as $key=>$val ){ ?>
+                                <option value="<?php echo $key; ?>" <?php if( isset($driking) ){ if( $driking == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
                             <?php } ?>
                             ?>
 
@@ -159,10 +159,10 @@
                         <label>Smoking Level</label>
                         <select name="Search[smoking_level]" id="education" class="kids">
                             <?php 
-                                $kid = CHtml::listData(Children::model()->findAll(),'id','name');
+                                $smoking = CHtml::listData(Children::model()->findAll(),'id','name');
                                 echo "<option value='-1'>All</option>";
-                                foreach( $kids as $key=>$val ){ ?>
-                                <option value="<?php echo $key; ?>" <?php if( isset($kids) ){ if( $kids == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
+                                foreach( $smoking as $key=>$val ){ ?>
+                                <option value="<?php echo $key; ?>" <?php if( isset($smoking) ){ if( $smoking == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
                             <?php } ?>
                             ?>
 
