@@ -97,14 +97,14 @@
             </div>
         </div>
         <div class="profile-nav">
-            <div class="test-nav" style="width: 210px; float: right; height: 50px;">
+            <div class="test-nav" style="width: 215px; float: right; height: 50px;">
                 
                 <div class="username-nav">
                     <?php
                     if(strlen(Yii::app()->user->username) > 8){
-                        echo "Welcome,"  ."<div class='uper-case'>".substr(Yii::app()->user->username, 0, 5). '...'."</div>";
+                        echo "Welcome," ."<div class='uper-case'>".substr(Yii::app()->user->username, 0, 5). '...'."</div>";
                     }else{
-                        echo "Welcome, " ."<div class='uper-case'>".Yii::app()->user->username."</div>";
+                        echo "Welcome," ."<div class='uper-case'>".Yii::app()->user->username."</div>";
                     }
 
                     ?>
