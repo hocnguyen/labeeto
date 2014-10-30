@@ -224,14 +224,14 @@ a{
     width: 54%;
     float: left;
     margin-left: 20px;
-    background: url("../images/line-nav.png") no-repeat;
+    /* background: url("../images/line-nav.png") no-repeat; */
 }
 .menu-item {
     /*width: 25%;*/
     float: left;
     color: white;
     padding-top: 16px;
-    background: url("../images/line-nav.png") no-repeat right;
+    /* background: url("../images/line-nav.png") no-repeat right; */
     height: 50px;
     text-transform: uppercase;
     padding-right: 15px;
@@ -285,7 +285,7 @@ a{
     width: 15%;
     height: 50px;
     padding: 16px 10px 10px 10px;
-    background: url('../images/line-nav.png') no-repeat right;
+    /* background: url('../images/line-nav.png') no-repeat right; */
 }
 .friend-request {
     background: url('../images/friend.png') no-repeat center;
@@ -321,6 +321,7 @@ a{
 .notify-active {
     background: url('../images/notify_active.png') no-repeat center!important;
 }
+
 .notice-notify {
     float: right;
     width: 19px;
@@ -2495,7 +2496,7 @@ input[type="range"]::-ms-fill-lower {
     height: 35px;
     /* background:#fff url('../images/search.png') no-repeat 12px 8px; */
     border: 1px solid #a4a4a4;
-    padding: 0 10px 0 35px;
+    padding: 0 10px 0 20px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
