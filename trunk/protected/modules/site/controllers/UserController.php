@@ -586,12 +586,27 @@ class UserController extends SiteBaseController {
     
     public function actionChangeAvatar(){
         if (isset($_FILES['photo-change'])){
-            $folder = Yii::app()->basePath.'/../uploads/avatar/';
-
-            $filename = $this->generateRandomString().$_FILES['photo-change']['name'];
-            if (move_uploaded_file($_FILES['photo-change']['tmp_name'], $folder.$filename)){
+            $allowed_extensions = array("image/jpeg", "image/png", "image/gif", 'application/x-shockwave-flash', 'image/psd', 'image/bmp',
+            'image/tiff', 'image/tiff', 'application/octet-stream',
+            'image/jp2', 'application/octet-stream', 'application/octet-stream',
+            'application/x-shockwave-flash', 'image/iff', 'image/vnd.wap.wbmp', 'image/xbm');
+            $file_type = $_FILES['photo-change']['type'];
+            $check = 1;
+            foreach($allowed_extensions as $value){
+                if($file_type == $value){
+                   $check = 0;
+                }
+            }
+            if($check == 0){
+                
+                $folder = Yii::app()->basePath.'/../uploads/avatar/';
+    
+                $filename = $this->generateRandomString().$_FILES['photo-change']['name'];
+                move_uploaded_file($_FILES['photo-change']['tmp_name'], $folder.$filename);
                 User::model()->updateByPk(Yii::app()->user->id, array('photo'=>$filename));
-                echo $filename;
+                echo $check; 
+            }else{
+                echo $check; 
             }
         }
     }
@@ -639,29 +654,63 @@ class UserController extends SiteBaseController {
 
     public function actionUploadPhoto(){
         if (isset($_FILES['photos'])){
-            $folder = Yii::app()->basePath.'/../uploads/photo/';
-            $filename = $this->generateRandomString().$_FILES['photos']['name'];
-            if (move_uploaded_file($_FILES['photos']['tmp_name'], $folder.$filename)){
-                $photo = new Photo();
-                $photo->photo = $filename;
-                $photo->is_public = 1;
-                $photo->date = date('Y-m-d h:s');
-                $photo->user_id = Yii::app()->user->id;
-                $photo->save();
+            
+            $allowed_extensions = array("image/jpeg", "image/png", "image/gif", 'application/x-shockwave-flash', 'image/psd', 'image/bmp',
+            'image/tiff', 'image/tiff', 'application/octet-stream',
+            'image/jp2', 'application/octet-stream', 'application/octet-stream',
+            'application/x-shockwave-flash', 'image/iff', 'image/vnd.wap.wbmp', 'image/xbm');
+            $file_type = $_FILES['photos']['type'];
+            $check = 1;
+            foreach($allowed_extensions as $value){
+                if($file_type == $value){
+                   $check = 0;
+                }
+            }
+            if($check == 0){
+                $folder = Yii::app()->basePath.'/../uploads/photo/';
+                $filename = $this->generateRandomString().$_FILES['photos']['name'];
+                if (move_uploaded_file($_FILES['photos']['tmp_name'], $folder.$filename)){
+                    $photo = new Photo();
+                    $photo->photo = $filename;
+                    $photo->is_public = 1;
+                    $photo->date = date('Y-m-d h:s');
+                    $photo->user_id = Yii::app()->user->id;
+                    $photo->save();
+                }
+                echo $check;
+            }else{
+                echo $check;
             }
         }
     }
     public function actionUploadPrivate(){
         if (isset($_FILES['photos'])){
-            $folder = Yii::app()->basePath.'/../uploads/photo/';
-            $filename = $this->generateRandomString().$_FILES['photos']['name'];
-            if (move_uploaded_file($_FILES['photos']['tmp_name'], $folder.$filename)){
-                $photo = new Photo();
-                $photo->photo = $filename;
-                $photo->is_public = 0;
-                $photo->date = date('Y-m-d h:s');
-                $photo->user_id = Yii::app()->user->id;
-                $photo->save();
+            
+            $allowed_extensions = array("image/jpeg", "image/png", "image/gif", 'application/x-shockwave-flash', 'image/psd', 'image/bmp',
+            'image/tiff', 'image/tiff', 'application/octet-stream',
+            'image/jp2', 'application/octet-stream', 'application/octet-stream',
+            'application/x-shockwave-flash', 'image/iff', 'image/vnd.wap.wbmp', 'image/xbm');
+            $file_type = $_FILES['photos']['type'];
+            $check = 1;
+            foreach($allowed_extensions as $value){
+                if($file_type == $value){
+                   $check = 0;
+                }
+            }
+            if($check == 0){
+                $folder = Yii::app()->basePath.'/../uploads/photo/';
+                $filename = $this->generateRandomString().$_FILES['photos']['name'];
+                if (move_uploaded_file($_FILES['photos']['tmp_name'], $folder.$filename)){
+                    $photo = new Photo();
+                    $photo->photo = $filename;
+                    $photo->is_public = 0;
+                    $photo->date = date('Y-m-d h:s');
+                    $photo->user_id = Yii::app()->user->id;
+                    $photo->save();
+                }
+                echo $check;
+            }else{
+                echo $check;
             }
         }
     }
@@ -1001,7 +1050,7 @@ class UserController extends SiteBaseController {
             $allowed_extensions = array("3g2", "3gp", "3gpp", "asf", "dat", "divx", "dv", "f4v", "flv", "m2ts", "m4v", "mkv", "mod",
             "mov", "quicktime", "mp4", "mpe", "mpeg", "mpeg4", "mpg", "mts", "nsv", "ogm", "ogv", "qt", "tod", "ts", "vob", "wmv");
             $file_type = $_FILES['videos']['type'];
-            $check = $file_type;
+            $check = 1;
             foreach($allowed_extensions as $value){
                 if($file_type == "video/".$value){
                    $check = 0;
