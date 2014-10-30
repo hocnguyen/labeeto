@@ -10,6 +10,12 @@
             <a href="#" class="menu-item"><span class="icon inspire"></span>Speed date</a>
         </div>
         <div class="notify">
+            <div class="search-request" href="#">
+                
+            </div>
+            <div class="olock-request">
+                
+            </div>
             <div class="friend-request friend-active">
                 <div class="notice-notify">8</div>
             </div>
