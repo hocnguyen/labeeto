@@ -10,10 +10,9 @@
                     <div class="text-explore">
                         <input type="text" id="search" name="Search[username]" value="<?php echo isset($username)?$username:''; ?>" class="username"/>
                     </div>
-                    <button id="any-btn" class="btn-all">any</button>
-                    <button id="casual-btn" class="btn-all btn-all-01">casual</button>
-                    <button id="serious-btn" class="btn-all">somethings serious</button>
-                    <button id="friend-btn" class="btn-all btn-all-01">friendship</button>
+                    <div class="text-explore">
+                        <input type="text" id="search"  placeholder="LOOKING FOR: FRIENDSHIP" name="Search[username]" value="<?php echo isset($username)?$username:''; ?>" class="username"/>
+                    </div>
                     <div class="btn-training">
                         <span class="premium">
                             <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/search-premium.png" alt="" />
