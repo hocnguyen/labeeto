@@ -8,12 +8,11 @@
             <div class="main-search">
                 <div class="search-block first-block">
                     <div class="text-explore">
-                        <input type="text" id="search" name="Search[username]" value="<?php echo isset($username)?$username:''; ?>" class="username"/>
+                        <input type="text" id="search"  placeholder="EXPLOER" name="Search[username]" value="<?php echo isset($username)?$username:''; ?>" class="username"/>
                     </div>
-                    <button id="any-btn" class="btn-all">any</button>
-                    <button id="casual-btn" class="btn-all btn-all-01">casual</button>
-                    <button id="serious-btn" class="btn-all">somethings serious</button>
-                    <button id="friend-btn" class="btn-all btn-all-01">friendship</button>
+                    <div class="text-explore">
+                        <input type="text" id="search"  placeholder="LOOKING FOR: FRIENDSHIP" name="Search[username]" value="<?php echo isset($username)?$username:''; ?>" class="username"/>
+                    </div>
                     <div class="btn-training">
                         <span class="premium">
                             <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/search-premium.png" alt="" />
@@ -127,19 +126,48 @@
                 <div class="search-block-special">
                     <div class="search-block-02">
                         <label>Exercise Level</label>
-                        <input  type="range" class="exercise_level" name="Search[exercise_level]"  min="0" value="<?php echo isset($exercise_level)?$exercise_level:''; ?>" max="100" data-rangeslider>
+                        <select name="Search[exercise_level]" id="education" class="kids">
+                            <?php 
+                                $kid = CHtml::listData(Children::model()->findAll(),'id','name');
+                                echo "<option value='-1'>All</option>";
+                                foreach( $kids as $key=>$val ){ ?>
+                                <option value="<?php echo $key; ?>" <?php if( isset($kids) ){ if( $kids == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
+                            <?php } ?>
+                            ?>
+
+                        </select>
+                        
                         
                         
                     </div>
                     <div class="search-block-02">
                         <label>Drinking Level</label>
-                        <input  type="range" class="drinking_level" name="Search[drinking_level]"  min="0" value="<?php echo isset($drinking_level)?$drinking_level:''; ?>" max="100" data-rangeslider>
+                        <select name="Search[drinking_level]" id="education" class="kids">
+                            <?php 
+                                $kid = CHtml::listData(Children::model()->findAll(),'id','name');
+                                echo "<option value='-1'>All</option>";
+                                foreach( $kids as $key=>$val ){ ?>
+                                <option value="<?php echo $key; ?>" <?php if( isset($kids) ){ if( $kids == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
+                            <?php } ?>
+                            ?>
+
+                        </select>
                         
                         
                     </div>
                     <div class="search-block-02">
                         <label>Smoking Level</label>
-                        <input  type="range" class="smoking_level" name="Search[smoking_level]"  min="0" value="<?php echo isset($smoking_level)?$smoking_level:''; ?>" max="100" data-rangeslider>
+                        <select name="Search[smoking_level]" id="education" class="kids">
+                            <?php 
+                                $kid = CHtml::listData(Children::model()->findAll(),'id','name');
+                                echo "<option value='-1'>All</option>";
+                                foreach( $kids as $key=>$val ){ ?>
+                                <option value="<?php echo $key; ?>" <?php if( isset($kids) ){ if( $kids == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
+                            <?php } ?>
+                            ?>
+
+                        </select>
+                        
                         
                        
                     </div>
@@ -163,7 +191,7 @@
                 <div class="search-block last-block">
                     <ul>
                         <li>
-                            <a href="/user/advanceSearch">ADVANCE SEARCH</a>
+                            <a href="/user/search">SIMPLE SEARCH</a>
                             <span></span>   
                         </li>
                         <li>
