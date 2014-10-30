@@ -297,11 +297,12 @@ a{
 }
 .olock-request{
     background: url('../images/olock-icon.png') no-repeat center;
-    width: 22px;
-    height: 20px;
+    width: 24px;
+    height: 25px;
     float: left;
     cursor: pointer;
     margin-left: 10px;
+    margin-top: -5px;
 }
 .friend-request {
     background: url('../images/friend.png') no-repeat center;
