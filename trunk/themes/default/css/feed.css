@@ -207,7 +207,7 @@ a{
 #wrapper{overflow: hidden;}
 .head-feed {
     height: 50px;
-    background-color: #2b3a44;
+    background-color: #313541;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#2b3a44', endColorstr='#2b3a44'); /* IE */
     outline:0;
 }
@@ -2459,7 +2459,7 @@ input[type="range"]::-ms-fill-lower {
     clear:both;
 }
 .main-search{
-    background: #2d3c46;
+    background: #ffffff;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#2d3c46', endColorstr='#2d3c46'); /* IE */
     border-radius:4px;
     -webkit-border-radius: 4px;
@@ -2473,9 +2473,13 @@ input[type="range"]::-ms-fill-lower {
     border-bottom: 0 transparent;
 }
 .main-search .search-block{
-    border-top:1px solid #1f2a32;
-    border-bottom:1px solid #354957;
+    
+    border-top:1px solid #ffffff;
+    border-bottom:1px solid #ffffff;
     padding: 20px 20px 20px 20px;
+}
+.main-search .last-block{
+    background: #313541;
 }
 
 .main-search .search-block-special{
@@ -2483,14 +2487,14 @@ input[type="range"]::-ms-fill-lower {
 }
 
 .main-search .search-block .text-explore{
-    width:380px;
+    width:340px;
     float:left;
     margin-right: 20px;
 }
 .main-search .search-block .text-explore input{
     height: 35px;
-    background:#fff url('../images/search.png') no-repeat 12px 8px;
-    border: 1px solid #1f2a32;
+    /* background:#fff url('../images/search.png') no-repeat 12px 8px; */
+    border: 1px solid #a4a4a4;
     padding: 0 10px 0 35px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -2534,8 +2538,14 @@ input[type="range"]::-ms-fill-lower {
 }
 .main-search .search-block .btn-training button{
     background-color: #192934;
+    width: 150px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#192934', endColorstr='#192934'); /* IE */
     margin-right: 0;
+    text-align: left;
+    padding-left: 15px;
 }
 .search-block-03{
     float:left;
@@ -2555,9 +2565,10 @@ input[type="range"]::-ms-fill-lower {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     behavior: url('../pie/PIE.htc');
-    border: 1px solid #1f2a32;
+    border: 1px solid #a4a4a4;
     font-size:14px;
 }
+
 .search-block-03 #race, .search-block-02 #race{
     height: 35px;
     padding: 5px 3px 5px 10px;
@@ -2580,7 +2591,7 @@ input[type="range"]::-ms-fill-lower {
 }
 .search-block-03 .list-age,
 .search-block-02 .list-age{
-    background: #1f2a32;
+    background: #ffffff;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#1f2a32', endColorstr='#1f2a32'); /* IE */
     overflow: hidden;
     /*padding: 1px;*/
@@ -2590,7 +2601,7 @@ input[type="range"]::-ms-fill-lower {
 .search-block-03 .list-age span,
 .search-block-02 .list-age span{
     float: left;
-    color: #7f98ab;
+    color: #a4a4a4;
     padding: 12px 10px;
     font: normal 14px/normal Proxima Nova Bold Italic;
 }
@@ -2600,7 +2611,7 @@ input[type="range"]::-ms-fill-lower {
     padding: 10px 15px;
     background: #fff;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fff', endColorstr='#fff'); /* IE */
-    border: 1px solid #1f2a32;
+    border: 1px solid #a4a4a4;
     width: 65px;
     font-size: 14px;
     float: left;
@@ -2631,14 +2642,14 @@ input[type="range"]::-ms-fill-lower {
     width: 15px;
 }
 .search-block ul li:first-child a{padding-left: 0; color: #dddddd; }
-.search-block ul li a{float:left;padding:5px 23px;text-decoration:none;color: #809db1;}
+.search-block ul li a{float:left;padding:5px 23px;text-decoration:none;color: #ed4c5f;}
 .search-block ul li button.btn-save-search{
     width: 184px;
     height: 30px;
     border: none;
-    color: #c1c3c4;
+    color: #ffffff;
     font: normal 18px/normal Proxima Nova Semi Bold;
-    background: url('../images/search-save.png') no-repeat;
+    background: url('../images/search-search.png') no-repeat;
     margin:0 5px;
 }
 .search-block ul li button.btn-search-page{
@@ -2809,7 +2820,7 @@ textarea:focus, input:focus{
 .premium{
     position: absolute;
     top: -7px;
-    left: 15px;
+    right: -2px;
 }
 .form-control:focus{
     border: 0 !important;
