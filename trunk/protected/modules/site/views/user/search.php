@@ -8,7 +8,7 @@
             <div class="main-search">
                 <div class="search-block first-block">
                     <div class="text-explore">
-                        <input type="text" id="search" name="Search[username]" value="<?php echo isset($username)?$username:''; ?>" class="username"/>
+                        <input type="text" id="search" placeholder="EXPLOER" name="Search[username]" value="<?php echo isset($username)?$username:''; ?>" class="username"/>
                     </div>
                     <div class="text-explore">
                         <input type="text" id="search"  placeholder="LOOKING FOR: FRIENDSHIP" name="Search[username]" value="<?php echo isset($username)?$username:''; ?>" class="username"/>
