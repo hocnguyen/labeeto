@@ -102,9 +102,9 @@
                 <div class="username-nav">
                     <?php
                     if(strlen(Yii::app()->user->username) > 8){
-                        echo "Welcome, ".substr(Yii::app()->user->username, 0, 5). '...';
+                        echo "Welcome,"  ."<div class='uper-case'>".substr(Yii::app()->user->username, 0, 5). '...'."</div>";
                     }else{
-                        echo "Welcome, " .Yii::app()->user->username;
+                        echo "Welcome, " ."<div class='uper-case'>".Yii::app()->user->username."</div>";
                     }
 
                     ?>
