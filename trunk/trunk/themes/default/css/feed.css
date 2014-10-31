@@ -2704,6 +2704,8 @@ input[type="range"]::-ms-fill-lower {
 .search-result ul.list-result li{
     width: 100%;
     border-radius: 5px;
+    border-radius: 1px solid #fafafa;
+
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     behavior: url('../pie/PIE.htc');
@@ -2791,13 +2793,11 @@ input[type="range"]::-ms-fill-lower {
     text-transform: uppercase;
 }
 .search-result ul.list-result li .chat-message .chat-01{
-    float:right;
-    width:50px;
+    float: right;
+    font: 14px Proxima Nova Semi Bold;
     margin-right: 20px;
-    padding: 20px 15px;
-    /* border-right: 1px solid #1f2a32;
-    border-left:1px solid #354957; */
-    font:normal 14px/normal Proxima Nova Semi Bold
+    padding: 31px 15px;
+    width: 50px;
 }
    .search-result ul.list-result li .chat-message .chat-01-premium{
        float:left;width:110px;
@@ -2835,19 +2835,17 @@ input[type="range"]::-ms-fill-lower {
     padding-left: 30px;
 }
 .search-result ul.list-result li .chat-message .message-01 a{
-    background: url('../images/icon_message.png') no-repeat 0px 0px;
-    padding-left: 10px ;
-    width:100px;
-    height: 40px;
+    background: url("../images/icon_message.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     cursor: pointer;
+    height: 40px;
+    padding-left: 10px;
+    width: 40px;
 }
 .search-result ul.list-result li .chat-message .chat-01 a{
-    background: url('../images/icon_chat.png') no-repeat 0px 0px;
-    width:100px;
-    height: 100px;
-    padding-left: 30px;
-    cursor: pointer;
+    background: url("../images/icon_chat.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     color: #5c7789;
+    cursor: pointer;
+    padding: 11px 18px;
 }
 
    .search-result ul.list-result li .chat-message .chat-01-premium a{
