@@ -2517,6 +2517,19 @@ input[type="range"]::-ms-fill-lower {
     float:left;
     margin-right: 20px;
 }
+.main-search .search-block .text-explore select{
+    height: 35px;
+    padding: 5px 3px 5px 10px;
+    color: #a4a4a4;
+    width: 340px;
+    border-radius:4px;
+    font:normal 16px/normal ProximaNova Regular;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    behavior: url('../pie/PIE.htc');
+    border: 1px solid #a4a4a4;
+    font-size:14px;
+}
 .main-search .search-block .text-explore input{
     height: 35px;
     /* background:#fff url('../images/search.png') no-repeat 12px 8px; */
