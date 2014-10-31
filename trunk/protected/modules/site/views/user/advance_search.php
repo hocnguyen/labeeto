@@ -39,7 +39,7 @@
                         <select name="Search[gender]" id="gender">
                             <?php
                                 $arr = array(
-                                    '-1'=>Yii::t('global','All'),
+                                    '-1'=>Yii::t('global','Gender Preference'),
                                     '1'=>Yii::t('global','Female'),
                                     '0'=>Yii::t('global','Male')
                                 );
@@ -51,25 +51,25 @@
                     <div class="search-block-03">
                         <label>Ages</label>
                         <div class="list-age"> 
-                            <input type="text" class="age_start" id="start" name="Search[ages_start]"  value="<?php echo isset($age_start)?$age_start:''; ?>"/>
+                            <input type="text" placeholder="74" class="age_start" id="start" name="Search[ages_start]"  value="<?php echo isset($age_start)?$age_start:''; ?>"/>
                             <span>To</span>
-                            <input type="text" class="age_end" id="end" name="Search[ages_end]" value="<?php echo isset($age_end)?$age_end:''; ?>"/>
+                            <input type="text"  placeholder="74" class="age_end" id="end" name="Search[ages_end]" value="<?php echo isset($age_end)?$age_end:''; ?>"/>
                         </div>
                     </div>
                     <div class="search-block-02">
                         <label>Within</label>
                         <div class="list-age"> 
-                            <input type="text" class="within_start"   id="start" name="Search[within]" value="<?php echo isset($within_start)?$within_start:''; ?>" />
+                            <input type="text" class="within_start" placeholder="12"  id="start" name="Search[within]" value="<?php echo isset($within_start)?$within_start:''; ?>" />
                             <span>Miles of</span>
-                            <input type="text" class="miles" id="end" style="width: 89px;" name="Search[miles]"  value="<?php echo isset($miles)?$miles:''; ?>"/>
+                            <input type="text" class="miles" id="end" placeholder="5000" style="width: 89px;" name="Search[miles]"  value="<?php echo isset($miles)?$miles:''; ?>"/>
                         </div>
                     </div>
                     <div class="search-block-03" style="margin-right: 0px; float: right;">
                         <label>Height (cm)</label>
                         <div class="list-age"> 
-                            <input type="text" class="height_start" id="start" name="Search[height_start]"  value="<?php echo isset($height_start)?$height_start:''; ?>"/>
+                            <input type="text" placeholder="163" class="height_start" id="start" name="Search[height_start]"  value="<?php echo isset($height_start)?$height_start:''; ?>"/>
                             <span>To</span>
-                            <input type="text" class="height_end" id="end" name="Search[height_end]" value="<?php echo isset($height_end)?$height_end:''; ?>"/>
+                            <input type="text"  placeholder="210" class="height_end" id="end" name="Search[height_end]" value="<?php echo isset($height_end)?$height_end:''; ?>"/>
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -81,7 +81,7 @@
                         <select name="Search[education]" id="education" class="ss_education">
                             <?php 
                                 $edu = CHtml::listData(Education::model()->findAll(),'id','name');
-                                echo "<option value='-1'>All</option>";
+                                echo "<option value='-1'>Pre-filled</option>";
                                 foreach( $edu as $key=>$val ){ ?>
                                 <option value="<?php echo $key; ?>" <?php if( isset($education) ){ if( $education == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
                             <?php } ?>
@@ -95,7 +95,7 @@
                         <select name="Search[race]" id="faith" class="race">
                             <?php 
                                 $race = CHtml::listData(Ethnicity::model()->findAll(),'id','name');
-                                echo "<option value='-1'>All</option>";
+                                echo "<option value='-1'>Pre-filled</option>";
                                 foreach( $race as $key=>$val ){ ?>
                                 <option value="<?php echo $key; ?>" <?php if( isset($race) ){ if( $race == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
                             <?php } ?>
@@ -109,7 +109,7 @@
                         <select name="Search[faith]" id="faith" class="faith">
                             <?php 
                                 $faith = CHtml::listData(Religion::model()->findAll(),'id','name');
-                                echo "<option value='-1'>All</option>";
+                                echo "<option value='-1'>Pre-filled</option>";
                                 foreach( $faith as $key=>$val ){ ?>
                                 <option value="<?php echo $key; ?>" <?php if( isset($faith) ){ if( $faith == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
                             <?php } ?>
@@ -123,7 +123,7 @@
                         <select name="Search[kids]" id="faith" class="kids">
                             <?php 
                                 $kids = CHtml::listData(Children::model()->findAll(),'id','name');
-                                echo "<option value='-1'>All</option>";
+                                echo "<option value='-1'>Pre-filled</option>";
                                 foreach( $kids as $key=>$val ){ ?>
                                 <option value="<?php echo $key; ?>" <?php if( isset($kids) ){ if( $kids == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
                             <?php } ?>
@@ -141,7 +141,7 @@
                         <select name="Search[exercise_level]" id="education" class="kids">
                             <?php
                                 $exer = array(
-                                   '-1'=>Yii::t('global','All'),
+                                   '-1'=>Yii::t('global','Pre-filled'),
                                     '1'=>Yii::t('global','Often'),
                                     '0'=>Yii::t('global','Sometimes'),
                                     '2'=>Yii::t('global','Never')
@@ -160,7 +160,7 @@
                         <select name="Search[drinking_level]" id="education" class="kids">
                             <?php
                                 $dri = array(
-                                    '-1'=>Yii::t('global','All'),
+                                    '-1'=>Yii::t('global','Pre-filled'),
                                     '1'=>Yii::t('global','Often'),
                                     '0'=>Yii::t('global','Sometimes'),
                                     '2'=>Yii::t('global','Never')
@@ -178,7 +178,7 @@
                         <select name="Search[smoking_level]" id="education" class="kids">
                             <?php
                                 $somking = array(
-                                    '-1'=>Yii::t('global','All'),
+                                    '-1'=>Yii::t('global','Pre-filled'),
                                     '1'=>Yii::t('global','Often'),
                                     '0'=>Yii::t('global','Sometimes'),
                                     '2'=>Yii::t('global','Never')
