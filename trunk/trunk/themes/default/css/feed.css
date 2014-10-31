@@ -2588,6 +2588,7 @@ input[type="range"]::-ms-fill-lower {
     color: #a4a4a4;
     width: 210px;
     border-radius:4px;
+    font:normal 16px/normal ProximaNova Regular;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     behavior: url('../pie/PIE.htc');
@@ -2622,7 +2623,8 @@ input[type="range"]::-ms-fill-lower {
 .search-block-03 label, .search-block-02 label{
     display:block;
     color:#fff;
-    font:normal 14px/normal Proxima Nova Bold;
+    font:normal 16px/normal ProximaNova Bold;
+    font-weight: bold;
     text-transform: capitalize;
     margin-bottom: 5px; 
     color: #dddddd;
@@ -2641,7 +2643,8 @@ input[type="range"]::-ms-fill-lower {
     float: left;
     color: #a4a4a4;
     padding: 12px 10px;
-    font: normal 14px/normal Proxima Nova Bold Italic;
+    font-weight: bold;
+    font: normal 14px/normal  ProximaNova-BoldIt;
 }
 .search-block-03 .list-age input, .search-block-02 .list-age input{
     color: #a4a4a4; 
