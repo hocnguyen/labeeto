@@ -11,7 +11,19 @@
                         <input type="text" id="search"  placeholder="EXPLOER" name="Search[username]" value="<?php echo isset($username)?$username:''; ?>" class="username"/>
                     </div>
                     <div class="text-explore">
-                        <input type="text" id="search"  placeholder="LOOKING FOR: FRIENDSHIP" name="Search[looking_friendship]"  class="username"/>
+                        <select name="Search[looking_friendship]" id="education" class="username">
+                            <?php
+                                $look = array(
+                                    '-1'=>Yii::t('global','All'),
+                                    '1'=>Yii::t('global','Straight '),
+                                    '0'=>Yii::t('global','Gay '),
+                                    '2'=>Yii::t('global','Bi '),
+                                );
+                            foreach( $look as $key=>$val ){ ?>
+                                <option value="<?php echo $key; ?>" <?php if( isset($looking_friendship) ){ if( $looking_friendship == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
+                            <?php } ?>
+                        </select>
+                        
                     </div>
                     <div class="btn-training">
                         <span class="premium">
