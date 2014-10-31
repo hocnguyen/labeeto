@@ -2797,7 +2797,7 @@ input[type="range"]::-ms-fill-lower {
     font: 14px Proxima Nova Semi Bold;
     margin-right: 20px;
     padding: 31px 15px;
-    width: 50px;
+    /* width: 50px; */
 }
    .search-result ul.list-result li .chat-message .chat-01-premium{
        float:left;width:110px;
