@@ -2848,12 +2848,12 @@ input[type="range"]::-ms-fill-lower {
     padding: 11px 18px;
 }
 
-   .search-result ul.list-result li .chat-message .chat-01-premium a{
+.search-result ul.list-result li .chat-message .chat-01-premium a{
        background: url('../images/chat_premium.png') no-repeat 0px 0px;
        padding-left: 30px;
        cursor: pointer;
        color: #5c7789;
-   }
+}
 
 .text-search-01{
     color: #c8c8c8 !important;
