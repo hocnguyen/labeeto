@@ -14,7 +14,7 @@
                         <select name="Search[looking_friendship]" id="education" class="username">
                             <?php
                                 $look = array(
-                                    '-1'=>Yii::t('global','All'),
+                                    '-1'=>Yii::t('global','LOOKING FOR: FRIENDSHIP'),
                                     '1'=>Yii::t('global','Straight '),
                                     '0'=>Yii::t('global','Gay '),
                                     '2'=>Yii::t('global','Bi '),
