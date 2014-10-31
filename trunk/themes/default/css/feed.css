@@ -2720,15 +2720,18 @@ input[type="range"]::-ms-fill-lower {
     /* padding: 0 4px; */
     overflow: hidden;
 }
-.search-result ul.list-result li .avatar-intro img{
+.chat-message .avatar-intro img{
     float:left;
     margin-left: 10px;
     margin-top: 10px;
     width: 50px;
     height: 50px;
-    border-radius:4px 0 0 4px;
+    border-radius: 100%;
+    -webkit-border-radius:100%;
+    -moz-border-radius: 100%;
+    /* border-radius:4px 0 0 4px;
     -webkit-border-radius: 4px 0 0 4px;
-    -moz-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px; */
     behavior: url('../pie/PIE.htc');
 }
 .search-result ul.list-result li .avatar-intro p{
@@ -2759,9 +2762,11 @@ input[type="range"]::-ms-fill-lower {
 .search-result ul.list-result li .avatar-intro p a:hover{
     color: #aaa0a0;
 }
-.search-result ul.list-result li .chat-message .avatar-intro{
+ .chat-message .avatar-intro{
+    overflow: hidden;
     float:left;
     width:60px;
+
 }
 .search-result ul.list-result li .chat-message .name-01{
     float:left;
@@ -3577,4 +3582,7 @@ li.message_search input{
 .description_video{
     font: normal 25px/normal Helvetica Neue LT Pro;
     color: #886969;
+}
+.chat-message .avartar-info img{
+    border-radius: 100%
 }
