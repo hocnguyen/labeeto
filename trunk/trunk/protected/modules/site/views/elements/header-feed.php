@@ -10,7 +10,7 @@
             <a href="#" class="menu-item"><span class="icon inspire"></span>Speed date</a>
         </div>
         <div class="notify">
-            <div class="search-request" href="#">
+            <div class="search-request" >
                 <a href="/user/advanceSearch" class="menu-item"></a> 
             </div>
             <div class="olock-request">
