@@ -2685,13 +2685,13 @@ input[type="range"]::-ms-fill-lower {
 }
 .search-block ul li span{
     float: right;
-    background: url('../images/search-arrow-black.png') no-repeat 0px 7px;
+    background: url('../images/search-down-update.png') no-repeat 0px 7px;
     height: 17px;
     width: 15px;
 }
 .search-block ul li span.white{
     float: right;
-    background: url('../images/search-arrow-white.png') no-repeat 0px 7px;
+    background: url('../images/search-arrow-update.png') no-repeat 0px 7px;
     height: 17px;
     width: 15px;
 }
@@ -2787,7 +2787,7 @@ input[type="range"]::-ms-fill-lower {
 }
 .search-result ul.list-result li .chat-message .name-01{
     float:left;
-    width:200px;
+    width:300px;
     padding:15px;
     /* border-right: 1px solid #1f2a32; */
 }
@@ -2853,7 +2853,11 @@ input[type="range"]::-ms-fill-lower {
 }
 
 .search-result ul.list-result li .chat-message .name-01 span.check-red{
-    background: url('../images/search-check-red.png') no-repeat 10px 0px;
+    background: url('../images/search-check-white.png') no-repeat 10px 0px;
+    padding-left: 30px;
+}
+.search-result ul.list-result li .chat-message .name-01 span.premium{
+    background: url('../images/premium.png') no-repeat 10px 0px;
     padding-left: 30px;
 }
 .search-result ul.list-result li .chat-message .message-01 a{
