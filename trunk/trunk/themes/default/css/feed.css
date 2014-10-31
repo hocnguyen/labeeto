@@ -2749,8 +2749,9 @@ input[type="range"]::-ms-fill-lower {
     background: #fafafa;
 }
 .search-result ul.list-result li .avatar-intro p strong{
+    color:#d5d3d3;
     display: block; 
-    font:italic bold 16px/normal Proxima Nova Bold;
+    font:italic 16px/normal ProximaNova RegularIt;
     padding-bottom: 10px;
 }
 .search-result ul.list-result li .avatar-intro p a{
