@@ -801,59 +801,64 @@ class UserController extends SiteBaseController {
                 if( $username != '' )
                     $condition .= " username LIKE '%".$username."%'  ";
 
-                if( $gender != '-1' ){
+                if( $looking_friendship !='-1' ){
                     if( $username != ''  )
+                        $ext       = " AND ";
+                    $condition .= $ext." gender_look = ".$looking_friendship." ";
+                }
+                if( $gender != '-1' ){
+                    if( $username != '' || $looking_friendship !='-1')
                         $ext       = " AND ";
                     $condition .= $ext." gender = ".$gender." ";
                 }
 
                 if($height_start !=''){
-                    if($username !=''  ||$gender != '-1')
+                    if($username !=''  ||$looking_friendship !='-1'||$gender != '-1')
                          $ext = "AND";
                     $condition .= $ext." height = ".$height_start." ";
                 } 
 
                 if($height_end !=''){
-                     if($username !='' || $height_start !=''||$gender != '-1')
+                     if($username !='' ||$looking_friendship !='-1'|| $height_start !=''||$gender != '-1')
                         $ext = "AND";
                     $condition .= $ext." height = ".$height_end." ";
                 }
 
                 if( $education !='-1'){
-                    if( $username != '' )
+                    if( $username != '' ||$looking_friendship !='-1')
                         $ext       = " AND ";
                     $condition .= $ext." education = ".$education." ";
                 }
                 
                 if($kids !='-1'){
-                     if($username !='' || $education !='-1')
+                     if($username !='' || $education !='-1'||$looking_friendship !='-1')
                         $ext="AND";
                     $condition .= $ext." children = ".$kids." ";
                 }
                 if($race!='-1'){
-                    if($username !='' || $education !='-1' || $kids !='-1')
+                    if($username !='' || $education !='-1' || $kids !='-1'||$looking_friendship !='-1')
                         $ext = 'AND';
                     $condition .= $ext." ehtnicity = ".$race." ";
                 }
                 if($faith !='-1'){
-                    if($username !=''  || $education !='-1' || $kids !='-1' || $race!='-1')
+                    if($username !=''  || $education !='-1' || $kids !='-1' || $race!='-1'||$looking_friendship !='-1')
                          $ext = 'AND';
                     $condition .= $ext." religion = ".$faith." "; 
                 }
 
                 if($exercise_level !='-1'){
-                    if($username !=''  || $education !='-1' || $kids !='-1' || $race!='-1' || $faith !='-1')
+                    if($username !=''  || $education !='-1' || $kids !='-1' || $race!='-1' || $faith !='-1'||$looking_friendship !='-1')
                          $ext = 'AND';
                     $condition .= $ext." smoke = ".$exercise_level." "; 
                 }
                 if($drink_level !='-1'){
-                    if($username !=''  || $education !='-1' || $kids !='-1' || $race!='-1' || $faith !='-1' || $exercise_level !='-1')
+                    if($username !=''  || $education !='-1' || $kids !='-1' || $race!='-1' || $faith !='-1' || $exercise_level !='-1'||$looking_friendship !='-1')
                          $ext = 'AND';
                     $condition .= $ext." drink = ".$exercise_level." "; 
                 }
 
                 if($smoking_level !='-1'){
-                    if($username !=''  || $education !='-1' || $kids !='-1' || $race!='-1' || $faith !='-1' || $exercise_level !='-1' || $drink_level!='-1')
+                    if($username !=''  || $education !='-1' || $kids !='-1' || $race!='-1' || $faith !='-1' || $exercise_level !='-1' || $drink_level!='-1' ||$looking_friendship !='-1')
                          $ext = 'AND';
                     $condition .= $ext." drink = ".$exercise_level." "; 
                 }
@@ -862,13 +867,13 @@ class UserController extends SiteBaseController {
 
                 if(  $age_start != '' ){
                     $year_age   = date("Y") - $age_start;
-                    if( $username != '' || $gender != '' )
+                    if( $username != '' || $gender != '' ||$looking_friendship !='-1')
                         $ext       = " AND ";
                     $condition .= $ext." YEAR(birthday) <= ".$year_age." ";
                 }
                 if( $age_end != '' ){
                     $year_age_end  = date("Y") - $age_end;
-                    if( $username != '' || $gender != '' || $age_start != '' )
+                    if( $username != '' || $gender != '' || $age_start != ''||$looking_friendship !='-1' )
                         $ext       = " AND ";
                     $condition .= $ext." YEAR(birthday) >= ".$year_age_end." ";
                 }
