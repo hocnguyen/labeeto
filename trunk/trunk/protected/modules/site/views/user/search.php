@@ -83,10 +83,10 @@
     <div class="left-content-01">
     <?php
     if( isset($users) ){ ?>
-    <div role="alert" class="alert alert-success alert-dismissible">
+    <!-- <div role="alert" class="alert alert-success alert-dismissible">
     <button data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
     <?php echo Yii::t('global','Total have'); ?> <?php echo count($users->getData() ); ?> <?php echo Yii::t('global','result search') ?>
-    </div>
+    </div> -->
      <?php
      $this->widget('zii.widgets.CListView', array(
          'dataProvider'=>$users,
