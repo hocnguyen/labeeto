@@ -2758,7 +2758,33 @@ ul.list-result{
 .search-result ul.list-result li .avatar-intro{
     /* border-bottom:1px solid #1f2a32;  */
     /* padding: 0 4px; */
+
     overflow: hidden;
+}
+.icon-online.avatar-intro:before {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    content: '';
+    content: '';
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    bottom: 0px;
+    right: 0px;
+}
+.icon-online.avatar-intro:after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: url('../images/search-online.png');
+    bottom: 3px;
+    right: 3px;
 }
 .chat-message .avatar-intro img{
     float:left;
@@ -2805,6 +2831,7 @@ ul.list-result{
     color: #aaa0a0;
 }
  .chat-message .avatar-intro{
+    position: relative;
     overflow: hidden;
     float:left;
     width:60px;
