@@ -2652,7 +2652,7 @@ input[type="range"]::-ms-fill-lower {
     color:#fff;
     font:normal 14px/normal ProximaNova Bold;
     font-weight: bold;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     margin-bottom: 5px; 
     color: #dddddd;
 }
@@ -2781,6 +2781,7 @@ ul.list-result{
     padding: 20px 15px;
 }
 .search-result .chat-message{
+    margin-top: -5px;
     background: #fafafa;
 }
 .search-result ul.list-result li .avatar-intro p strong{
