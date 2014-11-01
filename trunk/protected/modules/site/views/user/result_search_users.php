@@ -2,7 +2,7 @@
 <ul class="list-result">
 <li class="<?php echo ( $data->membership == User::MEMBER_PREMIUM )?'premium-member-new':'' ?>" >
     <div class="chat-message">
-        <div class="avatar-intro">
+        <div class="avatar-intro icon-online">
             <?php if(($data->photo =='')||($data->photo =='undefined')){ ?>
             <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/no-avatar.png">
             <?php } else { ?>
@@ -11,7 +11,7 @@
         </div>
         
         <div class="name-01">
-            <h3><a href="/user/detail/<?php echo $data->id; ?>"> <?php echo $data->username; ?> </a> <span class="check-red"></span></h3>
+            <h3><a href="/user/detail/<?php echo $data->id; ?>"> <?php echo $data->username; ?> </a> <span class="check-red"></span><span class="icon-premium"></h3>
             <span class="text-search-01"><?php echo  date('Y')- date('Y', strtotime($data->birthday)); ?> F, PH</span> 
             <!-- <span class="<?php echo ($data->is_online)?'online':'offline'; ?>"><?php echo ($data->is_online)?'online':'offline'; ?></span> -->
         </div>
