@@ -274,10 +274,10 @@ a{
      background: url("../images/search_green.png") no-repeat right 10%; */
 }
 .menu-nav a:hover .get-fit{
-    background: url("../images/icon-nav-tim.png") no-repeat right 10%;
+    background: url("../images/icon-heart-hover.png") no-repeat right 10%;
 }
 .menu-nav a:hover .inspire {
-    background: url("../images/icon-nav-check.png") no-repeat right 10%;
+    background: url("../images/icon-start-hover.png") no-repeat right 10%;
 }
 .menu-nav a:hover .top-rate{
     background: url("../images/icon-nav-sao.png") no-repeat right 10%;
@@ -2782,9 +2782,9 @@ ul.list-result{
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: url('../images/search-online.png');
-    bottom: 3px;
-    right: 3px;
+    background: url('../images/icon-online-search.png')no-repeat;
+    bottom: 2px;
+    right: 2px;
 }
 .chat-message .avatar-intro img{
     float:left;
