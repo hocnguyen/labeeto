@@ -211,7 +211,7 @@
                 
                 <div class="search-block last-block">
                     <ul>
-                        <li>
+                        <li class="simple">
                             <a href="/user/search">SIMPLE SEARCH</a>
                             <span></span>   
                         </li>
