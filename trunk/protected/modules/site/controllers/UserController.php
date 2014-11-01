@@ -1229,18 +1229,22 @@ class UserController extends SiteBaseController {
     }
     
     public function actionSettingGeneral(){
+        $user = User::model()->findByPk(Yii::app()->user->id);
         $model =  new User();
         if($_GET['pass'] != '')
             $password = $model->hashPassword($_GET['pass']);
         else
             $password = User::model()->findByPk(Yii::app()->user->id)->password;
-        User::model()->updateByPk(Yii::app()->user->id, array(
-            'email'=>$_GET['email'],
-            'birthday'=>$_GET['birthday'],
-            'zipcode'=>$_GET['zipcode'],
-            'address'=>$_GET['address'],
-            'password'=>$password,
-        ));
+        if($_GET['birthday'] != '')
+            User::model()->updateByPk(Yii::app()->user->id, array('birthday'=>$_GET['birthday']));
+        if($_GET['email'] != '')
+            User::model()->updateByPk(Yii::app()->user->id, array('email'=>$_GET['email']));
+        if($_GET['zipcode'] != '')
+            User::model()->updateByPk(Yii::app()->user->id, array('zipcode'=>$_GET['zipcode']));
+        if($_GET['address'] != '')
+            User::model()->updateByPk(Yii::app()->user->id, array('address'=>$_GET['address']));
+        if($_GET['password'] != '')
+            User::model()->updateByPk(Yii::app()->user->id, array('password'=>$_GET['password'])); 
     }
     
     public function actionCheckEmailSetting(){
@@ -1254,5 +1258,16 @@ class UserController extends SiteBaseController {
                 echo 1;
             }
         }
+    }
+    
+    public function actionCheckOldPass(){
+        $user = User::model()->findByPk(Yii::app()->user->id);
+        $model = new User();
+        $old = $user->password;
+        $check = $model->hashPassword($_GET['pass']);
+        if($old != $check)
+            echo 1;
+        else
+            echo 0;
     }
 }

@@ -176,6 +176,7 @@
                 <p id="value-about"><?php if($this->user->about) echo $this->user->about; ?></p>
                 <form method="post" style="display: none;" id="form-about">
                     <textarea class="form-control" id="about" name="about"><?php if($this->user->about) echo $this->user->about; ?></textarea>
+                    <p style="font-size: 14px; margin-top: 5px;" id="about-count"> You have <?php echo 50 - (strlen($this->user->about)) ?> characters remaining </p>
                     <span class="my-btn">
                         <input type="submit" value="Save"/>
                         <span class="text-cancel" id="cancel-about">Cancel</span>
@@ -316,6 +317,7 @@
                 <span class="godfather" id="value-passion"><?php if($this->user->passion) echo $this->user->passion ?> </span>
                 <form method="post" style="display: none;" id="form-passion">
                     <input type="text" name="passion" id="passion" class="form-control" value="<?php if($this->user->passion) echo $this->user->passion; ?>"/>
+                    <p style="font-size: 14px; margin-top: 5px;" id="passion-count"> You have <?php echo 35 - (strlen($this->user->passion)) ?> characters remaining </p>
                     <span class="my-btn">
                         <input type="submit" value="Save"/>
                         <span class="text-cancel" id="cancel-passion">Cancel</span>
@@ -329,6 +331,7 @@
                 <span class="godfather" id="value-gym"><?php if($this->user->gym) echo $this->user->gym ?> </span>
                 <form method="post" style="display: none;" id="form-gym">
                     <input type="text" name="gym" id="gym" class="form-control" value="<?php if($this->user->gym) echo $this->user->gym; ?>"/>
+                    <p style="font-size: 14px; margin-top: 5px;" id="gym-count"> You have <?php echo 35 - (strlen($this->user->gym)) ?> characters remaining </p>
                     <span class="my-btn">
                         <input type="submit" value="Save"/>
                         <span class="text-cancel" id="cancel-gym">Cancel</span>
@@ -343,6 +346,7 @@
                 <span class="godfather" id="value-diet"><?php if($this->user->diet) echo $this->user->diet ?> </span>
                 <form method="post" style="display: none;" id="form-diet">
                     <input type="text" name="diet" id="diet" class="form-control" value="<?php if($this->user->diet) echo $this->user->diet; ?>"/>
+                    <p style="font-size: 14px; margin-top: 5px;" id="diet-count"> You have <?php echo 35 - (strlen($this->user->diet)) ?> characters remaining </p>
                     <span class="my-btn">
                         <input type="submit" value="Save"/>
                         <span class="text-cancel" id="cancel-diet">Cancel</span>
@@ -356,6 +360,7 @@
                 <span class="godfather" id="value-goal"><?php if($this->user->goal) echo $this->user->goal ?> </span>
                 <form method="post" style="display: none;" id="form-goal">
                     <input type="text" name="goal" id="goals" class="form-control" value="<?php if($this->user->goal) echo $this->user->goal; ?>"/>
+                    <p style="font-size: 14px; margin-top: 5px;" id="goals-count"> You have <?php echo 35 - (strlen($this->user->goal)) ?> characters remaining </p>
                     <span class="my-btn">
                         <input type="submit" value="Save"/>
                         <span class="text-cancel" id="cancel-goal">Cancel</span>
@@ -580,9 +585,11 @@
             <div id="question-custom-form" class="content-form-question">
                 <div class="form-group">
                     <input type="text" id="question" class="form-control" name="question" placeholder="Enter a question" />
+                    <p style="font-size: 14px; margin-top: 5px;" id="question-count">You have 35 characters remaining</p>
                 </div>
                 <div class="form-group">
                     <textarea class="form-control" id="answer" name="answer" placeholder="And now answer it!"></textarea>
+                    <p style="font-size: 14px; margin-top: 5px;" id="answer-count">You have 35 characters remaining</p>
                 </div>
                 <span class="my-btn">
                     <input type="submit" value="Save" class="post-question"/>
@@ -608,20 +615,43 @@
                         <div id="question_<?php echo $value['question_id']; ?>" style="display: none;" method="post">
                             <?php if($check == 0) { ?>
                                 <input type="text" id="user_question_<?php echo $value['question_id']; ?>" name="question" class="form-control" value="<?php echo Question::model()->getQuestion($value['question_id']); ?>" />
+                                <p style="font-size: 14px; margin-top: 5px;" id="question-count_<?php echo $value['question_id'];?>"> You have <?php echo 35 - (strlen(Question::model()->getQuestion($value['question_id']))) ?> characters remaining </p>
                                 <br />
                             <?php }else{ ?>
                                 <input type="hidden" id="user_question_<?php echo $value['question_id']; ?>" name="question" class="form-control" value="<?php echo Question::model()->getQuestion($value['question_id']); ?>" />
                             <?php } ?>
-                            <textarea class="form-control" id="user_answer_<?php echo $value['question_id']; ?>" name="answer"> <?php echo $value['answer']; ?> </textarea>
+                            <textarea class="form-control" id="user_answer_<?php echo $value['question_id']; ?>" name="answer"><?php echo $value['answer']; ?></textarea>
+                            <p style="font-size: 14px; margin-top: 5px;" id="answer-count_<?php echo $value['question_id'];?>"> You have <?php echo 35 - (strlen($value['answer'])) ?> characters remaining </p>
                             <span class="my-btn">
-                                <input type="button" value="Save" class="saveAnswer" data-id="<?php echo $value['question_id'];; ?>" />
+                                
                                 <?php if($check == 0) { ?>
+                                    <input type="button" value="Save" class="saveAnswer" data-id="<?php echo $value['question_id']. "_". 0; ?>" />
                                     <span class="text-cancel q_default_delete deleteAnswer" data-id="<?php echo $value['question_id']; ?>">Delete</span>
+                                <?php }else{ ?>
+                                    <input type="button" value="Save" class="saveAnswer" data-id="<?php echo $value['question_id']. "_". 1; ?>" />
                                 <?php } ?>
                                 <span class="text-cancel q_default_cancel" data-id="<?php echo $value['question_id']; ?>">Cancel</span>
                             </span>
                         </div>
                     </div>
+                    <script type="text/javascript">
+                        $("#user_question_<?php echo $value['question_id']; ?>").on('input', function(){
+                            var question_lenght = $("#user_question_<?php echo $value['question_id']; ?>").val().trim().length;
+                            if(question_lenght < 36)
+                                $('#question-count_<?php echo $value['question_id']; ?>').html('You have ' + (35 - question_lenght) + ' characters remaining');
+                            else
+                                alert('Please ensure the length question smaller than 35 character.!');
+                        });
+                        
+                        $("#user_answer_<?php echo $value['question_id']; ?>").on('input', function(){
+                            var answer_lenght = $("#user_answer_<?php echo $value['question_id']; ?>").val().trim().length;
+                            if(answer_lenght < 36)
+                                $('#answer-count_<?php echo $value['question_id']; ?>').html('You have ' + (35 - answer_lenght) + ' characters remaining');
+                            else
+                                alert('Please ensure the length answer smaller than 35 character.!');
+                        });
+                        
+                    </script>
                 <?php $i++; } 
             } ?>
             
