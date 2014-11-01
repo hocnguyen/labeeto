@@ -11,7 +11,7 @@
         </div>
         
         <div class="name-01">
-            <h3><a href="/user/detail/<?php echo $data->id; ?>"> <?php echo $data->username; ?> </a> <span class="check-red"></span><span class="premium"></span></h3>
+            <h3 class="show"><a href="/user/detail/<?php echo $data->id; ?>"> <?php echo $data->username; ?> </a> <span class="check-red"></span><span class="premium"></span></h3>
             <span class="text-search-01"><?php echo  date('Y')- date('Y', strtotime($data->birthday)); ?> F, PH</span> 
             <!-- <span class="<?php echo ($data->is_online)?'online':'offline'; ?>"><?php echo ($data->is_online)?'online':'offline'; ?></span> -->
         </div>
