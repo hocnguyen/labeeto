@@ -2606,7 +2606,7 @@ input[type="range"]::-ms-fill-lower {
     width: 210px;
     border-radius:4px;
     -webkit-appearance: none;
-    background: #ffffff url('../images/selectbox_red.png') no-repeat 97% center;
+    background: #ffffff url('../images/selectbox-chec-duoi.png') no-repeat 97% center;
     font:normal 16px/normal ProximaNova Regular;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -2621,7 +2621,7 @@ input[type="range"]::-ms-fill-lower {
     width: 160px;
     border-radius:4px;
     -webkit-appearance: none;
-    background: #ffffff url('../images/selectbox_red.png') no-repeat 97% center;
+    background: #ffffff url('../images/selectbox-chec-duoi.png')  no-repeat 97% center;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     behavior: url('../pie/PIE.htc');
