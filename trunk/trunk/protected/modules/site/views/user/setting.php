@@ -30,6 +30,7 @@
                                 echo "<option ". $select ."> " . $i . "</option>";
                             } ?>
                         </select>
+                        <input type="hidden" id="ss_days" value="<?php echo $arr[0]; ?>" />
                         <select class="form-control select-month" id="months">
                             <?php for($i = 1; $i < 13; $i++ ){
                                 $select = "";
@@ -38,6 +39,7 @@
                                 echo "<option ". $select ."> " . $i . "</option>";
                             } ?>
                         </select>
+                         <input type="hidden" id="ss_months" value="<?php echo $arr[1]; ?>" />
                         <select class="form-control select-month" id="years">
                             <?php for($i = 1970; $i < date("Y")+1; $i++ ){
                                 $select = "";
@@ -45,18 +47,21 @@
                                 echo "<option ". $select ."> " . $i . "</option>";
                             } ?>
                         </select>
+                         <input type="hidden" id="ss_years" value="<?php echo $arr[2]; ?>" />
                     </div>
                       <div class="form-group">
                         <label for="InputEmail" class="label-text" style="padding-top: 15px;">Email address</label>
                         <input type="text" class="form-control input-text" value="<?php echo $this->user->email ?>" id="InputEmail">
+                        <input type="hidden" id="ss_email" value="<?php echo $this->user->email ?>" />
                         <span class="check-block"  id="ok_InputEmail" style="display: none;"></span>
                         <p style="color: red; font-size: 12px; margin-top: 15px; margin-left: 20px; display: none;" id="error_InputEmail">Email not correct</p>
                       </div>
-                      <!--<div class="form-group">
+                      <div class="form-group">
                         <label for="InputPassword_1" class="label-text">Password</label>
-                        <input type="password" class="form-control input-text" disabled="true" value="<?php // echo $this->user->password; ?>" id="InputPassword_1">
+                        <input type="password" class="form-control input-text" id="InputPassword_1">
                         <span class="check-block" id="ok_InputPassword_1" style="display: none;"></span>
-                      </div>-->
+                        <p style="color: red; font-size: 12px; margin-top: 15px; margin-left: 20px; display: none;" id="error_InputPassword_1">Password not same login password</p>
+                      </div>
                       <div class="form-group">
                         <label for="InputPassword_2" class="label-text"> New Password</label>
                         <input type="password" class="form-control input-text" id="InputPassword_2">
@@ -72,6 +77,7 @@
                       <div class="form-group">
                         <label for="Zipcode" class="label-text">Zip code </label>
                         <input type="text" value="<?php echo $this->user->zipcode ?>" class="form-control" id="Zipcode"  style="width: 220px; height: 43px; display: inline-block; float: left; margin-bottom: 10px; margin-right: 20px;">
+                        <input type="hidden" id="ss_zipcode" value="<?php echo $this->user->zipcode ?>" />
                         <span class="check-block" id="ok_Zipcode" style="display: none;"></span>
                         <p style="color: red; font-size: 12px; margin-top: 15px; margin-left: 20px; display: none;" id="error_Zipcode">Zip Code must is number</p>
                       
@@ -79,6 +85,7 @@
                       <div class="form-group">
                         <label for="CitySuburb" class="label-text">City/Suburb</label>
                         <input type="text" id="address_setting" value="<?php echo $this->user->address ?>" class="form-control pre-fill-text" id="CitySuburb" placeholder="Pre-Fill">
+                        <input type="hidden" id="ss_address" value="<?php echo $this->user->address ?>" />
                         <div id="maps-test-setting"></div>
                       </div>
                       <div style="padding: 20px 0px;">
