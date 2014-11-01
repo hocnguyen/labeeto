@@ -2704,6 +2704,9 @@ input[type="range"]::-ms-fill-lower {
     float:left;
     font: normal 12.5px/normal Proxima Nova Semi Bold
 }
+.search-block ul li.last{
+    margin-top:5px;
+}
 .search-block ul li span{
     float: left;
     background: url('../images/search-down-update.png') no-repeat 0px 7px;
