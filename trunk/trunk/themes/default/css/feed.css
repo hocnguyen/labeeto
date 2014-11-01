@@ -2887,7 +2887,7 @@ ul.list-result{
     background: url('../images/search-check-white.png') no-repeat 10px 0px;
     padding-left: 30px;
 }
-.search-result ul.list-result li .chat-message .name-01 span.premium{
+.search-result ul.list-result li .chat-message .name-01 span.icon-premium{
     background: url('../images/premium.png') no-repeat 10px 0px;
     /* padding-left: 30px; */
     margin-left: -5px;
@@ -2933,9 +2933,9 @@ h3.show {
     position: relative;
 }
 .premium{
-   /*  position: absolute;
-   top: 0px;
-   right: 120px; */
+   position: absolute;
+   top: 5px;
+   right: -9px; 
 }
 .form-control:focus{
     border: 0 !important;
