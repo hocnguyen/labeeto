@@ -1,3 +1,4 @@
+
 <div class="banner-ad-top">
     <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/ads-top.png" />
 </div>
@@ -64,7 +65,7 @@
                             <input type="text" class="miles" id="end" placeholder="5000" style="width: 89px;" name="Search[miles]"  value="<?php echo isset($miles)?$miles:''; ?>"/>
                         </div>
                     </div>
-                    <div class="search-block-03" style="margin-right: 0px; float: right;">
+                    <div class="search-block-03" style="margin-right: 60px; float: right;">
                         <label>Height (cm)</label>
                         <div class="list-age"> 
                             <input type="text" placeholder="163" class="height_start" id="start" name="Search[height_start]"  value="<?php echo isset($height_start)?$height_start:''; ?>"/>
