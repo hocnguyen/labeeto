@@ -2,7 +2,7 @@
 <ul class="list-result">
 <li class="<?php echo ( $data->membership == User::MEMBER_PREMIUM )?'premium-member-new':'' ?>" >
     <div class="chat-message">
-        <div class="avatar-intro">
+        <div class="avatar-intro icon-online">
             <?php if(($data->photo =='')||($data->photo =='undefined')){ ?>
             <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/no-avatar.png">
             <?php } else { ?>
