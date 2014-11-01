@@ -2697,8 +2697,13 @@ input[type="range"]::-ms-fill-lower {
     float:left;
     font: normal 12.5px/normal Proxima Nova Semi Bold
 }
+.search-block ul li.simple{
+    width: 22%;
+    float:left;
+    font: normal 12.5px/normal Proxima Nova Semi Bold
+}
 .search-block ul li span{
-    float: right;
+    float: left;
     background: url('../images/search-down-update.png') no-repeat 0px 7px;
     height: 17px;
     width: 15px;
@@ -2710,7 +2715,7 @@ input[type="range"]::-ms-fill-lower {
     width: 15px;
 }
 .search-block ul li:first-child a{padding-left: 0; color: #dddddd; }
-.search-block ul li a{float:left;padding:5px 23px;text-decoration:none;color: #ed4c5f;}
+.search-block ul li a{float:left;padding:5px 18px;text-decoration:none;color: #ed4c5f;}
 .search-block ul li button.btn-save-search{
     width: 184px;
     height: 30px;
@@ -2718,7 +2723,7 @@ input[type="range"]::-ms-fill-lower {
     color: #ffffff;
     font: normal 18px/normal Proxima Nova Semi Bold;
     background: url('../images/search-search.png') no-repeat;
-    margin:0 5px;
+    margin:0 10px;
 }
 .search-block ul li button.btn-search-page{
     width: 224px;
