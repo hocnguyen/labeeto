@@ -2817,6 +2817,12 @@ ul.list-result{
     font:bold 16px/normal Helvetica Neue LTPro Bd;
     color:#fff;
 }
+.name-01 h3 a{
+    color:#4d5a63;
+}
+.name-01 h3 a:hover{
+    color:#4d5a63;
+}
 .search-result ul.list-result li .chat-message .name-01 span{
     color:#4c8143;
     font:bold 14px/normal Open Sans Light;
