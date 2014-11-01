@@ -179,7 +179,7 @@
     line-height: 1;
     }
     ol, ul {
-    list-style: none;
+        list-style: none;
     }
     blockquote, q {
     quotes: none;
@@ -504,7 +504,7 @@ a{
  }
  .content-main {
      width: 100%;
-    padding: 0px 30px;
+    /* padding: 0px 30px; */
  }
  .content-main-setting {
      width: 100%;
@@ -2478,6 +2478,7 @@ input[type="range"]::-ms-fill-lower {
     width: 550px;
 }
 .right-content-01 {
+    margin-right: 30px;
     float: right;
     width: 336px;
     min-height: 100px;
@@ -2734,7 +2735,7 @@ input[type="range"]::-ms-fill-lower {
     width: 100%;
     border-radius: 5px;
     border-radius: 1px solid #fafafa;
-
+    /* padding-left: 30px; */
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     behavior: url('../pie/PIE.htc');
@@ -2743,6 +2744,9 @@ input[type="range"]::-ms-fill-lower {
     overflow: hidden;
     padding: 4px 0 0;
     margin-bottom: 20px;
+}
+ul.list-result{
+    padding-left: 30px;
 }
 .search-result ul.list-result li .avatar-intro{
     /* border-bottom:1px solid #1f2a32;  */
