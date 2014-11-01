@@ -184,7 +184,7 @@
                                     '2'=>Yii::t('global','Never')
                                 );
                             foreach( $somking as $key=>$val ){ ?>
-                                <option value="<?php echo $key; ?>" <?php if( isset($smoking_level) ){ if($smoking_level == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
+                                <option  value="<?php echo $key; ?>" <?php if( isset($smoking_level) ){ if($smoking_level == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
                             <?php } ?>
 
                         </select>
