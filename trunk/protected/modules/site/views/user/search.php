@@ -67,15 +67,15 @@
                 </div>
                 <div class="search-block last-block">
                     <ul>
-                        <li class="simple">
+                        <li class="simple last">
                             <a href="/user/advanceSearch">ADVANCE SEARCH</a>
                             <span></span>   
                         </li>
-                        <li>
+                        <li class="last">
                             <a class="save-search-func">SAVED SEARCHES</a>
                             <span class="white"></span>
                         </li>
-                        <li>
+                        <li class="last">
                             <a href="#">RESET FILTERS</a>
                         </li>
                         <li>
