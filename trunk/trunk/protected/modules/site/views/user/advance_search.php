@@ -214,15 +214,15 @@
                 
                 <div class="search-block last-block">
                     <ul>
-                        <li class="simple">
+                        <li class="simple last">
                             <a href="/user/search">SIMPLE SEARCH</a>
                             <span></span>   
                         </li>
-                        <li>
+                        <li class="last">
                             <a class="save-search-advance-new">SAVED SEARCHES</a>
                             <span class="white"></span>
                         </li>
-                        <li>
+                        <li class="last">
                             <a href="#">RESET FILTERS</a>
                         </li>
                         <li>
