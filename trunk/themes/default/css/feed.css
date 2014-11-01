@@ -2739,7 +2739,7 @@ input[type="range"]::-ms-fill-lower {
 .search-result{}
 .search-result .list-result{}
 .search-result ul.list-result li{
-    width: 100%;
+    width: 550px;
     border-radius: 5px;
     border-radius: 1px solid #fafafa;
     /* padding-left: 30px; */
