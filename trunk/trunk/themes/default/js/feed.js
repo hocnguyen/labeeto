@@ -322,8 +322,8 @@ $(document).ready(function(){
         var question = $('#question').val();
         if(answer =='' || question ==''){
             alert('Please ensure the question and answer is filled out.');
-        }else if(answer.length > 20){
-            alert('Please ensure the length answer smaller than 20 character.!');
+        }else if(answer.length > 35){
+            alert('Please ensure the length answer smaller than 35 character.!');
         }else if(question.length > 35){
             alert('Please ensure the length question smaller than 35 character.!');
         }else{

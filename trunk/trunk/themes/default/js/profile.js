@@ -72,7 +72,7 @@ $(document).ready(function(){
     
     /*Passion*/
     $('#form-passion').submit(function(e) {
-        var passion = $('#passion').val();
+        var passion = $('#passion').val().trim();
         if(passion.length > 35){
             alert('Please ensure the length fitness passion smaller than 35 character.!');
             return false;
@@ -100,7 +100,7 @@ $(document).ready(function(){
     
     /*Goals*/
     $('#form-goal').submit(function(e) {
-        var goals = $('#goals').val();
+        var goals = $('#goals').val().trim();
         if(goals.length > 35){
             alert('Please ensure the length goals smaller than 35 character.!');
             return false;
@@ -174,7 +174,7 @@ $(document).ready(function(){
     
     /*Diet*/
     $('#form-diet').submit(function(e) {
-        var diet = $('#diet').val();
+        var diet = $('#diet').val().trim();
         if(diet.length > 35){
             alert('Please ensure the length diet smaller than 35 character.!');
             return false;
@@ -202,9 +202,9 @@ $(document).ready(function(){
     
     /*About*/
     $('#form-about').submit(function(e) {
-        var about = $('#about').val();
-        if(about.length > 35){
-            alert('Please ensure the length about smaller than 35 character.!');
+        var about = $('#about').val().trim();
+        if(about.length > 50){
+            alert('Please ensure the length about smaller than 50 character.!');
             return false;
         }
         e.preventDefault();
@@ -308,7 +308,7 @@ $(document).ready(function(){
     
     /*Gym*/
     $('#form-gym').submit(function(e) {
-        var gym = $('#gym').val();
+        var gym = $('#gym').val().trim();
         if(gym.length > 35){
             alert('Please ensure the length gym membership smaller than 35 character.!');
             return false;
@@ -585,11 +585,33 @@ $(document).ready(function(){
 
     /* Start Update question answer */
         $('.saveAnswer').click(function(){
-            var id_question = $(this).attr('data-id');
-            var question = $('#user_question_'+id_question).val();
-            var answer = $('#user_answer_'+id_question).val();
+            var result = $(this).attr('data-id');
+            var substr = result.split("_");
+            var check = substr[1];
+            var id_question = substr[0];
+            var question = $('#user_question_'+id_question).val().trim();
+            var answer = $('#user_answer_'+id_question).val().trim();
             if(answer =='' || question ==''){
                 alert('Please ensure the question and answer is filled out.');
+            }else if(answer.length > 35){
+                alert('Please ensure the length answer smaller than 35 character.!');
+            }else if(question.length > 35){
+                if(check == 0){
+                    alert('Please ensure the length question smaller than 35 character.!');
+                }else{
+                    $.get('/user/updateQuestions?question='+question+'&answer='+answer+'&id='+id_question,function(data){
+                        if(data!=0){
+                            $('#question_' + id_question).hide();
+                            $('.answer_'+ id_question).html(answer);
+                            $('#sentence_question_'+id_question).html(question);
+                            $('.answer_'+ id_question).show();
+                            $('#sentence_question_'+id_question).show();
+                        } else {
+                            alert('Can not save answer. Please try again later');
+                        }
+    
+                    });
+                }
             }else {
                 $.get('/user/updateQuestions?question='+question+'&answer='+answer+'&id='+id_question,function(data){
                     if(data!=0){
@@ -732,87 +754,185 @@ $(document).ready(function(){
     });*/
     
     $('#save_general_settings').click(function(){
+        
         var days = $('#days').val();
         var months = $('#months').val();
         var years = $('#years').val();
-        var email = $('#InputEmail').val();
-        /*var pass_1 = $('#InputPassword_1').val();*/
+        var birthday = '';
+        var change_pass = 0;
+        window.check_all = 0;
+        
+        if((days == $('#ss_days').val()) && (months == $('#ss_months').val()) && (years == $('#ss_years').val())){
+            birthday = '';
+        }else{
+            birthday = years + '-' + months + '-' + days;    
+        }   
+    
+        
+        var email = $('#InputEmail').val().trim();
+        
+            
+        var pass_1 = $('#InputPassword_1').val();
         var pass_2 = $('#InputPassword_2').val();
         var pass_3 = $('#InputPassword_3').val();
+        
+        if(email == $('#ss_email').val().trim()){
+            email = '';
+        }else{
+            $.get('/user/checkEmailSetting?email='+email,function(data){
+                if(data == 1){
+                    $('#error_InputEmail').css('display', 'block');
+                    $('#ok_InputEmail').css('display', 'none');
+                    window.check_all = 1;
+                }else{
+                    $('#ok_InputEmail').css('display', 'block');
+                    $('#error_InputEmail').css('display', 'none');
+                }
+            });
+        }
+        console.log(window.check_all);
+        return false;    
+        if(pass_1.length > 0){
+            $.get('/user/checkOldPass?pass='+pass_1,function(data){
+                if(data == 1){
+                    $('#error_InputPassword_1').css('display', 'block');
+                    $('#ok_InputPassword_1').css('display', 'none');
+                    $('#error_InputPassword_2').css('display', 'block');
+                    $('#ok_InputPassword_2').css('display', 'none');
+                    $('#error_InputPassword_3').css('display', 'block');
+                    $('#ok_InputPassword_3').css('display', 'none');
+                    window.check_all = 1;
+                }else{
+                    $('#ok_InputPassword_1').css('display', 'block');
+                    $('#error_InputPassword_1').css('display', 'none');
+                    
+                    /** Check pass new **/
+                    if(pass_2.length > 0){
+                        var re=/^[^\dA-Z]{1}[^A-Z]*(?=[^A-Z]{7,})(?=[^A-Z]*[a-z])(?=[^A-Z]*[\d])[^A-Z]*$/;
+                        var red=/^.*(?=.{4,20})(?=.*[A-Za-z]).*$/;
+                
+                        var pw = re.exec(pass_2);
+                        if (!pw) {
+                            $('#error_InputPassword_2').css('display', 'block');
+                            $('#ok_InputPassword_2').css('display', 'none');
+                            $('#error_InputPassword_3').css('display', 'block');
+                            $('#ok_InputPassword_3').css('display', 'none');
+                            window.check_all = 1;
+                        }else{
+                            $('#ok_InputPassword_2').css('display', 'block');
+                            $('#error_InputPassword_2').css('display', 'none');
+                            
+                            /** Check pass confirm **/
+                            if(pass_3.length > 0){
+                                if(pass_3 != pass_2){
+                                    $('#error_InputPassword_3').css('display', 'block');
+                                    $('#ok_InputPassword_3').css('display', 'none');
+                                    window.check_all = 1;
+                                }else{
+                                    $('#ok_InputPassword_3').css('display', 'block');
+                                    $('#error_InputPassword_3').css('display', 'none');
+                                    change_pass = 1;
+                                }
+                            }else{
+                                window.check_all = 1;
+                            }
+                        }
+                    }else{
+                        window.check_all = 1;
+                    }
+                }
+            });
+        }
+        
+        if(change_pass == 0)
+            pass_3 = '';
+        
         var zipcode = $('#Zipcode').val();
-        var CitySuburb = $('#address_setting').val();
-        var birthday = years + '-' + months + '-' + days;
-        
-        $.get('/user/checkEmailSetting?email='+email,function(data){
-            if(data == 1){
-                $('#error_InputEmail').css('display', 'block');
-                $('#ok_InputEmail').css('display', 'none');
-                return false;
-            }else{
-                $('#ok_InputEmail').css('display', 'block');
-                $('#error_InputEmail').css('display', 'none');
+        if(zipcode == $('#ss_zipcode').val().trim()){
+            zipcode = '';
+        }else{
+            var intRegex = /^\d+$/;
+            var floatRegex = /^((\d+(\.\d *)?)|((\d*\.)?\d+))$/;
+            if(zipcode.length > 0){
+                if(intRegex.test(zipcode) || floatRegex.test(zipcode)){
+                    $('#ok_Zipcode').css('display', 'block');
+                    $('#error_Zipcode').css('display', 'none');
+                }else{
+                    $('#error_Zipcode').css('display', 'block');
+                    $('#ok_Zipcode').css('display', 'none');
+                    window.check_all = 1;
+                }
+                
             }
-        });
+        }
         
-        if(pass_2.length > 0){
-            var re=/^[^\dA-Z]{1}[^A-Z]*(?=[^A-Z]{7,})(?=[^A-Z]*[a-z])(?=[^A-Z]*[\d])[^A-Z]*$/
-            //var re=/^[^\d]{1}.*(?=.{8,})(?=.*[A-Za-z])(?=.*[\d]).*$/
-            //var re = /^[a-z][a-z0-9]{7}$/i;
-            var red=/^.*(?=.{4,20})(?=.*[A-Za-z]).*$/;
+        
+        var CitySuburb = $('#address_setting').val().trim();
+        if(CitySuburb != $('#ss_address').val().trim())
+            CitySuburb = '';
+        
+        if(check_all == 0){
+            $.get('/user/settingGeneral?birthday='+birthday+'&email='+email+'&pass='+pass_3+'&zipcode='+zipcode+'&address='+CitySuburb,function(data){
+                
+           });
+        }
+        
+       //location.reload(true);
+    })
     
-            var pw = re.exec(pass_2);
-            if (!pw) {
-                $('#error_InputPassword_2').css('display', 'block');
-                $('#ok_InputPassword_2').css('display', 'none');
-                return false;
-            }else{
-                $('#ok_InputPassword_2').css('display', 'block');
-                $('#error_InputPassword_2').css('display', 'none');
-            }
-        }
-        
-        if((pass_3.length > 0) && (pass_2.length == 0)){
-            $('#error_InputPassword_2').css('display', 'block');
-            $('#ok_InputPassword_2').css('display', 'none');
-            return false;
-        }
-        
-        if((pass_2.length > 0) && (pass_3.length == 0)){
-            $('#error_InputPassword_3').css('display', 'block');
-            $('#ok_InputPassword_3').css('display', 'none');
-            return false;
-        }
-        
-        if((pass_3.length > 0) && (pass_2.length > 0)){
-            if(pass_3 != pass_2){
-                $('#error_InputPassword_3').css('display', 'block');
-                $('#ok_InputPassword_3').css('display', 'none');
-                return false;
-            }else{
-                $('#ok_InputPassword_3').css('display', 'block');
-                $('#error_InputPassword_3').css('display', 'none');
-            }
-        }
-        var intRegex = /^\d+$/;
-        var floatRegex = /^((\d+(\.\d *)?)|((\d*\.)?\d+))$/;
-        if(zipcode.length > 0){
-            if(intRegex.test(zipcode) || floatRegex.test(zipcode)){
-                $('#ok_Zipcode').css('display', 'block');
-                $('#error_Zipcode').css('display', 'none');
-                console.log(zipcode);
-            }else{
-                $('#error_Zipcode').css('display', 'block');
-                $('#ok_Zipcode').css('display', 'none');
-                console.log(zipcode);
-                return false;
-            }
-            
-        }
-        
-        
-       $.get('/user/settingGeneral?birthday='+birthday+'&email='+email+'&pass='+pass_3+'&zipcode='+zipcode+'&address='+CitySuburb,function(data){
-            
-        });
-        location.reload(true);
+    $("#question").on('input', function(){
+        var question_lenght = $("#question").val().trim().length;
+        if(question_lenght < 36)
+            $('#question-count').html('You have ' + (35 - question_lenght) + ' characters remaining');
+        else
+            alert('Please ensure the length question smaller than 35 character.!');
+    })
+    
+    $('#answer').on('input', function(){
+        var answer_lenght = $('#answer').val().trim().length;
+        if(answer_lenght < 36)
+            $('#answer-count').html('You have ' + (35 - answer_lenght) + ' characters remaining');
+        else
+            alert('Please ensure the length answer smaller than 35 character.!');
+    })
+    
+    $('#passion').on('input', function(){
+        var passion_lenght = $('#passion').val().trim().length;
+        if(passion_lenght < 36)
+            $('#passion-count').html('You have ' + (35 - passion_lenght) + ' characters remaining');
+        else
+            alert('Please ensure the length answer smaller than 35 character.!');
+    })
+    
+    $('#gym').on('input', function(){
+        var diet = $('#gym').val().trim().length;
+        if(gym_lenght < 36)
+            $('#gym-count').html('You have ' + (35 - gym_lenght) + ' characters remaining');
+        else
+            alert('Please ensure the length answer smaller than 35 character.!');
+    })
+    
+    $('#diet').on('input', function(){
+        var diet_lenght = $('#diet').val().trim().length;
+        if(diet_lenght < 36)
+            $('#diet-count').html('You have ' + (35 - diet_lenght) + ' characters remaining');
+        else
+            alert('Please ensure the length answer smaller than 35 character.!');
+    })
+    
+    $('#goals').on('input', function(){
+        var about = $('#goals').val().trim().length;
+        if(goal_lenght < 36)
+            $('#goals-count').html('You have ' + (35 - goal_lenght) + ' characters remaining');
+        else
+            alert('Please ensure the length answer smaller than 35 character.!');
+    })
+    
+    $('#about').on('input', function(){
+        var about_lenght = $('#about').val().trim().length;
+        if(about_lenght < 51)
+            $('#about-count').html('You have ' + (50 - about_lenght) + ' characters remaining');
+        else
+            alert('Please ensure the length answer smaller than 50 character.!');
     })
 });
