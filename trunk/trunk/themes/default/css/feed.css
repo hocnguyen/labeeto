@@ -2527,7 +2527,9 @@ input[type="range"]::-ms-fill-lower {
     border-radius:4px;
     -webkit-appearance: none;
     background: #ffffff url('../images/looking_check.png') no-repeat 97% center;
-    font:normal 16px/normal ProximaNova Regular;
+    font:normal 14px/normal ProximaNova Regular;
+    color:#a4a4a4;
+    text-transform: uppercase;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     behavior: url('../pie/PIE.htc');
@@ -2535,6 +2537,9 @@ input[type="range"]::-ms-fill-lower {
     font-size:14px;
 }
 .main-search .search-block .text-explore input{
+    font:normal 14px/normal ProximaNova Regular;
+    color:#a4a4a4;
+    text-transform: uppercase;
     height: 35px;
     /* background:#fff url('../images/search.png') no-repeat 12px 8px; */
     border: 1px solid #a4a4a4;
@@ -2543,7 +2548,6 @@ input[type="range"]::-ms-fill-lower {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     behavior: url('../pie/PIE.htc');
-    font: normal 16px/normal Helvetica Neue LT Pro Lt;
     width:100%;
 }
 .main-search .search-block button.btn-all{
@@ -2607,7 +2611,7 @@ input[type="range"]::-ms-fill-lower {
     border-radius:4px;
     -webkit-appearance: none;
     background: #ffffff url('../images/selectbox-chec-duoi.png') no-repeat 97% center;
-    font:normal 16px/normal ProximaNova Regular;
+    font:normal 14px/normal ProximaNova Regular;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     behavior: url('../pie/PIE.htc');
@@ -2621,6 +2625,7 @@ input[type="range"]::-ms-fill-lower {
     width: 160px;
     border-radius:4px;
     -webkit-appearance: none;
+    font:normal 14px/normal ProximaNova Regular;
     background: #ffffff url('../images/selectbox-chec-duoi.png')  no-repeat 97% center;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -2644,7 +2649,7 @@ input[type="range"]::-ms-fill-lower {
 .search-block-03 label, .search-block-02 label{
     display:block;
     color:#fff;
-    font:normal 16px/normal ProximaNova Bold;
+    font:normal 14px/normal ProximaNova Bold;
     font-weight: bold;
     text-transform: capitalize;
     margin-bottom: 5px; 
@@ -2669,7 +2674,7 @@ input[type="range"]::-ms-fill-lower {
 }
 .search-block-03 .list-age input, .search-block-02 .list-age input{
     color: #a4a4a4; 
-    font: normal 16px/normal Helvetica Neue LT Pro Lt; 
+    font:normal 14px/normal ProximaNova Regular; 
     padding: 10px 15px;
     background: #fff;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fff', endColorstr='#fff'); /* IE */
