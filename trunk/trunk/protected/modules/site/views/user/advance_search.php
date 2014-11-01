@@ -196,6 +196,7 @@
                         <div style="margin-top: 20px;">
                             <label>
                                 <input type="checkbox" class="ss_online" value="1"> Only show users that are online
+
                             </label>
                         </div>
                     </div>
@@ -203,6 +204,7 @@
                         <div style="margin-left: 20px; margin-top: 20px;">
                             <label>
                                 <input type="checkbox" class="ss_verified" value="1"> Only show users that are verified
+
                             </label>
                         </div>
                     </div>
