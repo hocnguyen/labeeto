@@ -36,7 +36,7 @@
                 </div>
                 <div class="search-block-special">
                     <div class="search-block-02">
-                        <label>gender</label>
+                        <label>Gender</label>
                         <select name="Search[gender]" id="gender">
                             <?php
                                 $arr = array(
