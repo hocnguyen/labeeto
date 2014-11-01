@@ -241,14 +241,16 @@ a{
     background: url("../images/search.png") no-repeat right 10%;
 }
 .top-rate {
-    background: url("../images/top_rate.png") no-repeat right 10%;
+    margin-top:-6px;
+    background: url("../images/icon-nav-sao.png") no-repeat right 10%;
 }
 .get-fit {
-    background: url("../images/get_fit.png") no-repeat right 10%;
+    margin-top:-6px;
+    background: url("../images/icon-nav-tim.png") no-repeat right 10%;
 }
 .inspire {
-    background: url("../images/speed_date_ui.png") no-repeat right 10%;
-    margin-top: -5px;
+    background: url("../images/icon-nav-check.png") no-repeat right 10%;
+    margin-top: -6px;
 }
 .icon {
     height: 23px;
@@ -272,13 +274,13 @@ a{
      background: url("../images/search_green.png") no-repeat right 10%; */
 }
 .menu-nav a:hover .get-fit{
-    background: url("../images/heart_green.png") no-repeat right 10%;
+    background: url("../images/icon-nav-tim.png") no-repeat right 10%;
 }
 .menu-nav a:hover .inspire {
-    background: url("../images/speed_date.png") no-repeat right 10%;
+    background: url("../images/icon-nav-check.png") no-repeat right 10%;
 }
 .menu-nav a:hover .top-rate{
-    background: url("../images/hinh_2.png") no-repeat right 10%;
+    background: url("../images/icon-nav-sao.png") no-repeat right 10%;
 }
 .notify {
     float: left;
@@ -2523,6 +2525,8 @@ input[type="range"]::-ms-fill-lower {
     color: #a4a4a4;
     width: 340px;
     border-radius:4px;
+    -webkit-appearance: none;
+    background: #ffffff url('../images/looking_check.png') no-repeat 97% center;
     font:normal 16px/normal ProximaNova Regular;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -2601,6 +2605,8 @@ input[type="range"]::-ms-fill-lower {
     color: #a4a4a4;
     width: 210px;
     border-radius:4px;
+    -webkit-appearance: none;
+    background: #ffffff url('../images/selectbox_red.png') no-repeat 97% center;
     font:normal 16px/normal ProximaNova Regular;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -2614,6 +2620,8 @@ input[type="range"]::-ms-fill-lower {
     color: #a4a4a4;
     width: 160px;
     border-radius:4px;
+    -webkit-appearance: none;
+    background: #ffffff url('../images/selectbox_red.png') no-repeat 97% center;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     behavior: url('../pie/PIE.htc');
