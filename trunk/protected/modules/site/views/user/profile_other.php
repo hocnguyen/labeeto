@@ -1,6 +1,6 @@
-<div class="banner-ad-top">
-    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/ads-top.png" />
-</div>
+<!--<div class="banner-ad-top">
+    <img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/ads-top.png" />
+</div>-->
 <hr class="hr-line" />
 <div class="content-main">
     <?php //$this->widget('widgets.admin.notifications'); ?>

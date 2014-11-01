@@ -1,7 +1,7 @@
 <div class="clearfix footer-feed">
     <div class="content-footer">
         <a href="#" class="logo-footer" style="margin-left: -10px;">
-            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/logo-feed.png" alt="Logo"/>
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/new_logo.png" alt="Logo"/>
         </a>
         <ul class="menu-footer">
             <li><a href="#">Privacy Policy</a></li>

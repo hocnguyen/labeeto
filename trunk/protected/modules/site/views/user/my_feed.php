@@ -1,7 +1,7 @@
-<div class="banner-ad-top">
-    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/ads-top.png" />
-</div>
-<div class="content-main">
+<!--<div class="banner-ad-top">
+    <img src="<?php // echo Yii::app()->themeManager->baseUrl; ?>/images/ads-top.png" />
+</div>-->
+<div class="content-main-1" >
     <?php //$this->widget('widgets.admin.notifications'); ?>
      <!-- Content Left  -->
     <div class="left-content">
@@ -18,10 +18,10 @@
             <div class="footer-post">
                 <span class="add-media">
                    <!-- <input type="file" name="media_post" id="media" style="display: none;" />-->
-                    <label for="media" class="label-add-media">Add Media</label>
+                    <label for="media" class="label-add-media"></label>
                 </span>
                 <span class="add-location" style="margin-top: 10px;">
-                    <label for="location" style="margin-top: 5px;" class="lable-add-location">Add Location</label>
+                    <label for="location" style="margin-top: 5px;" class="lable-add-location"></label>
                 </span>
                 <input type="submit" class="post-btn" value="Post" />
             </div>
@@ -32,13 +32,20 @@
         <!--Form Search -->
         <div class="tabs">
             <div>
-                <div class="my-tabs">
+                <div class="content-tab">
                     <ul class="nav nav-tabs" role="tablist">
-                      <li class="<?php if(!isset($_GET['search'])) echo "active"; ?>"><a href="#popular" role="tab" data-toggle="tab">Popular</a></li>
-                      <li><a href="#recent" role="tab" data-toggle="tab">Recent</a></li>
-                      <li class="<?php if(isset($_GET['search'])) echo "active"; ?>"><a href="#trending" role="tab" data-toggle="tab">Trending</a></li>
+                        <li class="<?php if(!isset($_GET['search'])) echo "active"; ?>"><a href="#popular" role="tab" data-toggle="tab">Popular</a></li>
+                        <li><a href="#recent" role="tab" data-toggle="tab">Recent</a></li>
+                        <li class="<?php if(isset($_GET['search'])) echo "active"; ?>"><a href="#trending" role="tab" data-toggle="tab">Trending</a></li>
                     </ul>
                 </div>
+                <!--<div class="my-tabs">
+                    <ul class="nav nav-tabs" role="tablist">
+                      <li class="<?php //if(!isset($_GET['search'])) echo "active"; ?>"><a href="#popular" role="tab" data-toggle="tab">Popular</a></li>
+                      <li><a href="#recent" role="tab" data-toggle="tab">Recent</a></li>
+                      <li class="<?php // if(isset($_GET['search'])) echo "active"; ?>"><a href="#trending" role="tab" data-toggle="tab">Trending</a></li>
+                    </ul>
+                </div>-->
                 <div class="tab-content">
                     <div id="popular" class="tab-pane  <?php if(!isset($_GET['search'])) echo "active"; ?>">
                         <?php
@@ -61,23 +68,51 @@
                           ?>
                     </div>
                     <div id="trending" class="tab-pane <?php if(isset($_GET['search'])) echo "active"; ?>" >
-                        <div class="my-tabs-div"></div>
-                        <form>
-                            <input type="text" name="search" class="form-control seach-tab" value="<?php if(isset($_GET['search'])) echo '#'. preg_replace('/[^A-Za-z0-9\-]/', '', $_GET['search']); ?>"/>
-                        </form>
-                        <div class="my-tabs-footer">
-                            <p>CURRENTLY TRENDING <span id="toggle">Menu toggel</span></p>
-                            <?php if($trending){ ?>
-                            <div class="menu-slide">
-                                <span></span>
-                                <ul>
-                                    <?php foreach($trending as $value){ ?>
-                                    <li><a href="/my_feed?search=<?php echo $value['text'] ?>">#<?php echo $value['text'] ?></a></li>
-                                    <?php } ?>
+                        <!--<div class="my-tabs-div"></div>-->
+                        <div>
+                            <div class="content-form-trending">
+                                <form>
+                                    <input type="text" name="search" class="form-control seach-tab" value="<?php if(isset($_GET['search'])) echo '#'. preg_replace('/[^A-Za-z0-9\-]/', '', $_GET['search']); ?>"/>
+                                </form>
+                            </div>
+                            <!--<div class="my-tabs-footer">
+                                <p>CURRENTLY TRENDING <span id="toggle">Menu toggel</span></p>
+                                <?php if($trending){ ?>
+                                <div class="menu-slide">
+                                    <span></span>
+                                    <ul>
+                                        <?php //foreach($trending as $value){ ?>
+                                        <li><a href="/my_feed?search=<?php //echo $value['text'] ?>">#<?php //echo $value['text'] ?></a></li>
+                                        <?php // } ?>
+                                    </ul>
+                                </div>
+                                <?php } ?>
+                            </div>-->
+                            <div class="content-search-trending">
+                                <ul style="width: 30%;">
+                                    <li><a href="#">#LOL</a></li>
+                                    <li><a href="#">#iPhone6Plus</a></li>
+                                    <li><a href="#">#RIPBebeYash</a></li>
+                                    <li><a href="#">#YASSS</a></li>
+                                    <li><a href="#">#PaidHoliday</a></li>
+                                </ul>
+                                <ul style="width: 30%;">
+                                    <li><a href="#">#Haggard</a></li>
+                                    <li><a href="#">#JLONewApt</a></li>
+                                    <li><a href="#">#2NE1onBH</a></li>
+                                    <li><a href="#">#HowAboutNO</a></li>
+                                    <li><a href="#">#BreakingNews</a></li>
+                                </ul>
+                                <ul style="width: 40%;">
+                                    <li><a href="#">#StealMyGirlVideoToday</a></li>
+                                    <li><a href="#">#TillaCaroUKTour</a></li>
+                                    <li><a href="#">#OttoPorterToSouthBeach</a></li>
+                                    <li><a href="#">#MessageToSelf</a></li>
+                                    <li><a href="#">#TeamGWEN</a></li>
                                 </ul>
                             </div>
-                            <?php } ?>
                         </div>
+                        
                         <?php
                           $this->widget('zii.widgets.CListView', array(
                               'dataProvider'=>$search,
@@ -100,6 +135,83 @@
     <!--End Content Left  -->
     <!-- Content Right -->
     <div class="right-content">
+        <div class="content_all_user">
+            <div class="featured">
+                FEATURED USERS
+            </div>
+            <ul>
+                <li>
+                    <div class="user_name_f">
+                        <a href="#"><img src="/themes/default/images/f_avatar.png"></a>
+                        <div class="f_information">
+                            <h4>thatsmyjam853</h4>
+                            <span>22, Nashville, TN</span>
+                        </div>
+                        <div class="message_email">
+                            <span class="f_email"></span>
+                            <span class="f_message"></span>
+                        </div>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="user_name_f">
+                        <a href="#"><img src="/themes/default/images/f_avatar.png"></a>
+                        <div class="f_information">
+                            <h4>thatsmyjam853</h4>
+                            <span>22, Nashville, TN</span>
+                        </div>
+                        <div class="message_email">
+                            <span class="f_email"></span>
+                            <span class="f_message"></span>
+                        </div>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="user_name_f">
+                        <a href="#"><img src="/themes/default/images/f_avatar.png"></a>
+                        <div class="f_information">
+                            <h4>thatsmyjam853</h4>
+                            <span>22, Nashville, TN</span>
+                        </div>
+                        <div class="message_email">
+                            <span class="f_email"></span>
+                            <span class="f_message"></span>
+                        </div>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="user_name_f">
+                        <a href="#"><img src="/themes/default/images/f_avatar.png"></a>
+                        <div class="f_information">
+                            <h4>thatsmyjam853</h4>
+                            <span>22, Nashville, TN</span>
+                        </div>
+                        <div class="message_email">
+                            <span class="f_email"></span>
+                            <span class="f_message"></span>
+                        </div>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="user_name_f">
+                        <a href="#"><img src="/themes/default/images/f_avatar.png"></a>
+                        <div class="f_information">
+                            <h4>thatsmyjam853</h4>
+                            <span>22, Nashville, TN</span>
+                        </div>
+                        <div class="message_email">
+                            <span class="f_email"></span>
+                            <span class="f_message"></span>
+                        </div>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
         <div>
             <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/ad1.png" />
         </div>
