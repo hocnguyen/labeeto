@@ -1,7 +1,7 @@
 <div class="head-feed">
     <div class="content-head">
         <a href="/my_feed" id="logo">
-            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/logo-feed.png" alt="Logo"/>
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/new_logo.png" alt="Logo"/>
         </a>
         <div class="menu-nav">
             <!-- <a href="/user/advanceSearch" class="menu-item"><span class="icon search"></span> SEARCH</a> -->
@@ -119,6 +119,13 @@
                 <?php } ?>
                 <img class="arrow-nav" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/arrow_down.png" />
             </div>
+            <!--<div>
+                <div class="n_menu_profile">
+                    <img src="/uploads/avatar/<?php //echo $this->user->photo ?>" />
+                    <h4>AYANA PALISUC</h4>
+                    <p><span></span></p>
+                </div>
+            </div>-->
             <div class="menu-profile">
                 <a href="/profile" class=" profile-item firt-profile"><span class="icon-profile your-profile"></span><span class="content-pro-txt">YOUR PROFILE</span></a>
                 <a href="#" class=" profile-item"><span class="icon-profile favorite"></span><span class="content-pro-txt">FAVORITE</span></a>
