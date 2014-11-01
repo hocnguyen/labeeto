@@ -2516,7 +2516,7 @@ input[type="range"]::-ms-fill-lower {
 }
 
 .main-search .search-block .text-explore{
-    width:340px;
+    width:370px;
     float:left;
     margin-right: 20px;
 }
@@ -2608,7 +2608,7 @@ input[type="range"]::-ms-fill-lower {
     height: 35px;
     padding: 5px 3px 5px 10px;
     color: #a4a4a4;
-    width: 210px;
+    width: 250px;
     border-radius:4px;
     -webkit-appearance: none;
     background: #ffffff url('../images/selectbox-chec-duoi.png') no-repeat 97% center;
@@ -2623,7 +2623,7 @@ input[type="range"]::-ms-fill-lower {
     height: 35px;
     padding: 5px 3px 5px 10px;
     color: #a4a4a4;
-    width: 160px;
+    width: 200px;
     border-radius:4px;
     -webkit-appearance: none;
     font:normal 14px/normal ProximaNova Regular;
