@@ -2734,6 +2734,33 @@ ul.list-result{
     /* padding: 0 4px; */
     overflow: hidden;
 }
+
+.icon-offline.avatar-intro:before {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    content: '';
+    content: '';
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    bottom: 0px;
+    right: 0px;
+}
+.icon-offline.avatar-intro:after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: url('../images/icon-search-offline.png')no-repeat;
+    bottom: 2px;
+    right: 2px;
+}
+
 .chat-message .avatar-intro img{
     float:left;
     margin-left: 10px;
