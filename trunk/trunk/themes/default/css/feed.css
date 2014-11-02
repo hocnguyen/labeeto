@@ -2737,17 +2737,31 @@ ul.list-result{
     /* padding: 0 4px; */
     overflow: hidden;
 }
-
-.icon-offline.avatar-intro:before {
+.icon-online.avatar-intro:before {
     position: absolute;
-    width: 15px;
-    height: 15px;
-    content: '';
     content: '';
     height: 16px;
     width: 16px;
+    background: #fff;
+    border-radius: 50%;
+    bottom: 0px;
+    right: 0px;
+}
+.icon-online.avatar-intro:after {
     position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: url('../images/icon-online-search.png')no-repeat;
+    bottom: 2px;
+    right: 2px;
+}
+.icon-offline.avatar-intro:before {
     position: absolute;
+    content: '';
+    height: 16px;
+    width: 16px;
     background: #fff;
     border-radius: 50%;
     bottom: 0px;
@@ -2809,6 +2823,7 @@ ul.list-result{
     color: #aaa0a0;
 }
  .chat-message .avatar-intro{
+    position:relative;
     overflow: hidden;
     float:left;
     width:60px;
@@ -2943,7 +2958,14 @@ textarea:focus, input:focus{
     width:107px;
     height:107px;
 }
-
+.search-result ul.list-result li .chat-message .name-01 span.icon-premium {
+    background: url('../images/premium.png') no-repeat 10px 0px;
+    /* padding-left: 30px; */
+    margin-left: -5px;
+    display: inline-block;
+    width: 80px;
+    height: 15px;
+}
 .wrapper-verify{
 
 }
