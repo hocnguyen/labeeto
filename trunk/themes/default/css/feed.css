@@ -2723,7 +2723,7 @@ input[type="range"]::-ms-fill-lower {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     behavior: url('../pie/PIE.htc');
-    background: #fefefe;
+    background: #f9f9f9;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#2c3b45', endColorstr='#2c3b45'); /* IE */
     overflow: hidden;
     padding: 4px 0 0;
