@@ -2716,14 +2716,14 @@ input[type="range"]::-ms-fill-lower {
 .search-result{}
 .search-result .list-result{}
 .search-result ul.list-result li{
+    border:1px solid #ddd;
     width: 100%;
     border-radius: 5px;
-    border-radius: 1px solid #fafafa;
     /* padding-left: 30px; */
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     behavior: url('../pie/PIE.htc');
-    background: #fafafa;
+    background: #fefefe;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#2c3b45', endColorstr='#2c3b45'); /* IE */
     overflow: hidden;
     padding: 4px 0 0;
@@ -2794,13 +2794,14 @@ ul.list-result{
 }
 .search-result ul.list-result li .avatar-intro p{
     overflow: hidden;
-    background: #ffffff;
+    background: #fefefe;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fff', endColorstr='#fff'); /* IE */
     font:normal 14px/normal Arial;
     height:102px;
     padding: 20px 15px;
 }
 .search-result .chat-message{
+    border-bottom: 1px solid #ddd;
     margin-top: -5px;
     background: #fafafa;
 }
@@ -3073,7 +3074,8 @@ textarea:focus, input:focus{
     border: 0;
 }
 .premium-member-new{
-    background: #ff4056 !important;
+    background-color: #f6f6f6;
+    border:1px solid #ddd;
 }
 .content-post h3.my_posted{
     font:normal 20px/normal Helvetica Neue LTPro Roman;
