@@ -503,7 +503,7 @@ a{
      /*padding: 0 0 50px;*/
  }
  .content-main {
-     width: 100%;
+     width: 980px;
     /* padding: 0px 30px; */
  }
 .content-main-1{
@@ -2677,6 +2677,9 @@ input[type="range"]::-ms-fill-lower {
     width: 22%;
     float:left;
     font: normal 12.5px/normal Proxima Nova Semi Bold
+}
+.search-block ul li.last{
+    margin-top:4px;
 }
 .search-block ul li span{
     float: left;
