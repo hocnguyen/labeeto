@@ -274,10 +274,10 @@ a{
      background: url("../images/search_green.png") no-repeat right 10%; */
 }
 .menu-nav a:hover .get-fit{
-    background: url("../images/icon-nav-tim.png") no-repeat right 10%;
+    background: url("../images/icon-heart-hover.png") no-repeat right 10%;
 }
 .menu-nav a:hover .inspire {
-    background: url("../images/icon-nav-check.png") no-repeat right 10%;
+    background: url("../images/icon-start-hover.png") no-repeat right 10%;
 }
 .menu-nav a:hover .top-rate{
     background: url("../images/icon-nav-sao.png") no-repeat right 10%;
