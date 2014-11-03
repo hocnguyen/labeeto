@@ -760,7 +760,7 @@ $(document).ready(function(){
         var years = $('#years').val();
         var birthday = '';
         var change_pass = 0;
-        window.check_all = 0;
+        var check_all = 0;
         
         if((days == $('#ss_days').val()) && (months == $('#ss_months').val()) && (years == $('#ss_years').val())){
             birthday = '';
@@ -768,10 +768,7 @@ $(document).ready(function(){
             birthday = years + '-' + months + '-' + days;    
         }   
     
-        
         var email = $('#InputEmail').val().trim();
-        
-            
         var pass_1 = $('#InputPassword_1').val();
         var pass_2 = $('#InputPassword_2').val();
         var pass_3 = $('#InputPassword_3').val();
@@ -783,14 +780,15 @@ $(document).ready(function(){
                 if(data == 1){
                     $('#error_InputEmail').css('display', 'block');
                     $('#ok_InputEmail').css('display', 'none');
-                    window.check_all = 1;
+                    check_all = 1;
+                    console.log(check_all);
                 }else{
                     $('#ok_InputEmail').css('display', 'block');
                     $('#error_InputEmail').css('display', 'none');
                 }
+                console.log(check_all);
             });
         }
-        console.log(window.check_all);
         return false;    
         if(pass_1.length > 0){
             $.get('/user/checkOldPass?pass='+pass_1,function(data){
@@ -801,7 +799,7 @@ $(document).ready(function(){
                     $('#ok_InputPassword_2').css('display', 'none');
                     $('#error_InputPassword_3').css('display', 'block');
                     $('#ok_InputPassword_3').css('display', 'none');
-                    window.check_all = 1;
+                    check_all = 1;
                 }else{
                     $('#ok_InputPassword_1').css('display', 'block');
                     $('#error_InputPassword_1').css('display', 'none');
@@ -817,7 +815,7 @@ $(document).ready(function(){
                             $('#ok_InputPassword_2').css('display', 'none');
                             $('#error_InputPassword_3').css('display', 'block');
                             $('#ok_InputPassword_3').css('display', 'none');
-                            window.check_all = 1;
+                            check_all = 1;
                         }else{
                             $('#ok_InputPassword_2').css('display', 'block');
                             $('#error_InputPassword_2').css('display', 'none');
@@ -827,18 +825,18 @@ $(document).ready(function(){
                                 if(pass_3 != pass_2){
                                     $('#error_InputPassword_3').css('display', 'block');
                                     $('#ok_InputPassword_3').css('display', 'none');
-                                    window.check_all = 1;
+                                    check_all = 1;
                                 }else{
                                     $('#ok_InputPassword_3').css('display', 'block');
                                     $('#error_InputPassword_3').css('display', 'none');
                                     change_pass = 1;
                                 }
                             }else{
-                                window.check_all = 1;
+                                check_all = 1;
                             }
                         }
                     }else{
-                        window.check_all = 1;
+                        check_all = 1;
                     }
                 }
             });
@@ -860,7 +858,7 @@ $(document).ready(function(){
                 }else{
                     $('#error_Zipcode').css('display', 'block');
                     $('#ok_Zipcode').css('display', 'none');
-                    window.check_all = 1;
+                    check_all = 1;
                 }
                 
             }
