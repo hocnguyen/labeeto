@@ -2587,7 +2587,7 @@ input[type="range"]::-ms-fill-lower {
     width: 250px;
     border-radius:4px;
     -webkit-appearance: none;
-    background: #ffffff url('../images/selectbox-chec-duoi.png') no-repeat 97% center;
+    background: #ffffff url('../images/icon-textbox.png') no-repeat 97% center;
     font:normal 14px/normal ProximaNova Regular;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -2603,7 +2603,7 @@ input[type="range"]::-ms-fill-lower {
     border-radius:4px;
     -webkit-appearance: none;
     font:normal 14px/normal ProximaNova Regular;
-    background: #ffffff url('../images/selectbox-chec-duoi.png')  no-repeat 97% center;
+    background: #ffffff url('../images/icon-textbox.png')  no-repeat 97% center;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     behavior: url('../pie/PIE.htc');
