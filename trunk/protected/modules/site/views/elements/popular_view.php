@@ -4,12 +4,11 @@ if($user){?>
     <div class="first-infor">
         <div class="profile">
             <?php if(($user->photo =='')||($user->photo =='undefined')){ ?>
-            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/no-avatar.png">
+                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/no-avatar.png">
             <?php } else { ?>
                 <img src="../uploads/avatar/<?php echo Utils::getAvatar($user->photo); ?>">
-                <img class="online-icon-p" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/online-icon.png" />
-                
             <?php } ?>
+            <img class="online-icon-p" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/online-icon.png" />
             <div class="crycle-img">
                 <h2>
                     <a href="/user/detail/<?php echo $user->id; ?>"><?php echo $user->username; ?></a>
