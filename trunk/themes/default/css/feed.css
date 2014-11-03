@@ -212,7 +212,7 @@ a{
     outline:0;
 }
 .content-head{
-    width: 980px;
+    width: 960px;
     height: 50px;
     margin: 0 auto;
 }
@@ -284,10 +284,11 @@ a{
 }
 .notify {
     float: left;
-    width: 25%;
-    height: 50px;
+    /*width: 24%;
+    height: 50px;*/
     padding: 16px 10px 10px 10px;
     /* background: url('../images/line-nav.png') no-repeat right; */
+    margin-left: 75px;
 }
 .search-request{
     background: url('../images/search-icon-xam.png') no-repeat center;
@@ -323,7 +324,7 @@ a{
     height: 20px;
     float: left;
     cursor: pointer;
-    margin-left:25px ;
+    margin-left: 15px;
 }
 .message-active {
     background: url('../images/message_active.png') no-repeat center!important;
@@ -334,7 +335,7 @@ a{
     height: 20px;
     float: left;
     cursor: pointer;
-    margin-left: 12px;
+    margin-left: 10px;
     position: relative;
 }
 .notify-active {
@@ -386,8 +387,10 @@ a{
     font-family: Proxima Nova Semi Bold;
     /* text-transform: uppercase; */
     position: relative;
-    top: 15px;
-    font-size: 15px;
+    top: 20px;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-top: 2px;
  }
 .uper-case{
     float:right;
@@ -402,30 +405,17 @@ a{
  }
  .menu-profile {
      display: none;
-     width: 234px;
-     height: 414px;
+     width: 245px;
+     height: 370px;
      position: absolute;
      right: 0px;
-     background: url('../images/bg_nav_menu.png');
-     top: 44px;
+     top: 60px;
      border-radius: 5px;
      -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
      z-index: 999;
      behavior: url(../pie/PIE.htc);
  }
- .profile-item {
-     width: 100%;
-     float: left;
-     padding: 14px 15px 11px 15px;
-     color: #b9adad;
-     background: url("../images/line-profile.png") no-repeat top;
-     line-height: 25px;
- }
-.profile-item:hover > span {
-    color: #ff6476;
-    text-decoration: none;
-}
  .firt-profile {
      background: none!important;
      margin-top: 10px;
@@ -435,6 +425,7 @@ a{
      height: 25px;
      float: left;
      margin-right: 10px;
+     margin-top: -7px;
  }
  .your-profile {
      background: url('../images/your-profile.png') no-repeat center;
@@ -446,19 +437,19 @@ a{
      background: url('../images/post-an-chievement.png') no-repeat center;
  }
  .invite-friend {
-     background: url('../images/invite-friend.png') no-repeat center;
+     background: url('../images/invite-friend_1.png') no-repeat center;
  }
  .settings {
-     background: url('../images/settings.png') no-repeat center;
+     background: url('../images/settings-1.png') no-repeat center;
  }
  .post-an-ad {
      background: url('../images/post-an-ad.png') no-repeat center;
  }
  .upgrade-account {
-     background: url('../images/upgrade-nom.png') no-repeat center;
+     background: url('../images/upgrade-nom-1.png') no-repeat center;
  }
  .logout {
-     background: url('../images/logout.png') no-repeat center;
+     background: url('../images/logout-1.png') no-repeat center;
  }
 
 .profile-item:hover .your-profile {
@@ -997,7 +988,7 @@ span.minuten{
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#1c1f20', endColorstr='#1c1f20'); /* IE */
 }
 .content-footer{
-    width: 980px;
+    width: 960px;
     margin: 0 auto;
 }
 .menu-footer li{ 
@@ -3817,12 +3808,11 @@ ul li .user_name_f a img{
 .n_menu_profile{
     width: 245px;
     height: 160px;
-    border: 1px solid red;
     background: #ea5a5a;
     border-radius: 5px 5px 0px 0px;
     text-align: center;
     padding: 10px;
-    z-index: 9999;
+    text-decoration: none;
 }
 .n_menu_profile img{
     border-radius: 100%;
@@ -3833,10 +3823,61 @@ ul li .user_name_f a img{
     color: #ffffff;
     text-transform: uppercase;
     font: normal 12.5px/normal Proxima Nova Semi Bold; 
+    margin-top: 10px;
+}
+.n_menu_profile a:hover{
+    text-decoration: none !important;
 }
 .n_menu_profile p span{
-    background: url("../images/icon_chat.png") no-repeat;
+    background: url("../images/icon_user_1.png") no-repeat;
     display: inline-block;
-    height: 40px;
-    width: 40px;
+    height: 25px;
+    width: 25px;
+    margin-top: 15px;
+}
+.n_menu_profile h4.description_user{
+    color: #313541;
+}
+.menu-profile .menu-child{
+    border-radius: 0px 0px 5px 5px;
+    border: 1px solid #eeeeee;
+}
+.menu-profile .menu-child{
+    background: #ffffff;
+}
+.menu-profile .menu-child ul li{
+    padding: 20px 0px 20px 20px;
+    font: normal 12.5px/normal Proxima Nova Semi Bold; 
+    border-top: 1px solid #eeeeee;
+    
+}
+.menu-profile .menu-child ul li a{
+    text-decoration: none;
+    color: #687381;
+}
+.menu-profile .menu-child ul li a:hover{
+    color: #ff6476 !important;
+}
+.profile-item:hover .invite-friend {
+     background: url('../images/invite-friend-active.png') no-repeat center;
+ }
+.profile-item:hover .settings {
+     background: url('../images/settings-active.png') no-repeat center;
+ }
+.profile-item:hover .upgrade-account {
+     background: url('../images/upgrade-account.png') no-repeat center;
+ }
+.profile-item:hover .logout {
+     background: url('../images/logout-active.png') no-repeat center;
+ }
+ .menu-profile:after {
+    content: '';
+    position: absolute;
+    left: 205px;
+    top: -10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 12px solid #ea5a5a;
 }
