@@ -97,7 +97,7 @@
             </div>
         </div>
         <div class="profile-nav">
-            <div class="test-nav" style="width: 218px; float: right; height: 50px;">
+            <div class="test-nav" style="width: 170px; float: right; height: 50px;">
                 
                 <div class="username-nav">
                     <?php
@@ -117,7 +117,7 @@
                <?php } else { ?>
                     <img class="avatar-nav" src="/uploads/avatar/<?php echo $this->user->photo ?>" />
                 <?php } ?>
-                <img class="arrow-nav" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/arrow_down.png" />
+                <!--<img class="arrow-nav" src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/arrow_down.png" />-->
             </div>
             <!--<div>
                 <div class="n_menu_profile">
@@ -127,14 +127,22 @@
                 </div>
             </div>-->
             <div class="menu-profile">
-                <a href="/profile" class=" profile-item firt-profile"><span class="icon-profile your-profile"></span><span class="content-pro-txt">YOUR PROFILE</span></a>
-                <a href="#" class=" profile-item"><span class="icon-profile favorite"></span><span class="content-pro-txt">FAVORITE</span></a>
-                <a href="#" class=" profile-item"><span class="icon-profile post-an-achievement"></span><span class="content-pro-txt">POST AN ACHIEVEMENT</span></a>
-                <a href="#" class=" profile-item"><span class="icon-profile invite-friend"></span><span class="content-pro-txt">INVITE FRIEND</span></a>
-                <a href="/settings" class=" profile-item"><span class="icon-profile settings"></span><span class="content-pro-txt">SETTING</span></a>
-                <a href="#" class=" profile-item"><span class="icon-profile post-an-ad"></span><span class="content-pro-txt">POST AN AD</span></a>
-                <a href="#" class=" profile-item"><span class="icon-profile upgrade-account"></span><span class="content-pro-txt">UPGRADE ACCOUNT</span></a>
-                <a href="<?php echo $this->createUrl('/user/logout'); ?>" class=" profile-item"><span class="icon-profile logout"></span><span class="content-pro-txt">LOGOUT</span></a>
+                <div class="n_menu_profile">
+                    <a href="/profile">
+                        <img src="/uploads/avatar/<?php echo $this->user->photo ?>" />
+                        <h4>AYANA PALISUC</h4>
+                        <p><span></span></p>
+                        <h4 class="description_user">YOUR PROFILE</h4>
+                    </a>
+                </div>
+                <div class="menu-child">
+                    <ul>
+                        <li><a href="#" class="profile-item"><span class="icon-profile invite-friend"></span><span class="content-pro">INVITE FRIENDS</span></a></li>
+                        <li><a href="/settings" class="profile-item"><span class="icon-profile settings"></span><span class="content-pro">SETTINGS</span></a></li>
+                        <li><a href="#" class="profile-item"><span class="icon-profile upgrade-account"></span><span class="content-pro">UPGRADE ACCOUNT</span></a></li>
+                        <li><a href="#" class="profile-item"><span class="icon-profile logout"></span><span class="content-pro"></span>LOG OUT</a></li>
+                    </ul>
+                </div>
             </div>
 
         </div>
