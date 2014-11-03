@@ -1,6 +1,6 @@
  <div class="search-result">
 <ul class="list-result">
-<li class="<?php echo ( $data->membership == User::MEMBER_PREMIUM )?'premium-member-new':'' ?>" >
+<li class="" >
     <div class="chat-message">
         <div class="avatar-intro <?php echo ($data->is_online)?'icon-online':'icon-offline'; ?>">
             <?php if(($data->photo =='')||($data->photo =='undefined')){ ?>
@@ -11,13 +11,16 @@
         </div>
         
         <div class="name-01">
-            <h3 class="show"><a href="/user/detail/<?php echo $data->id; ?>"> <?php echo $data->username; ?> </a> <span class="check-red"></span><span class="icon-premium"></span></h3>
+            <h3 class="show"><a href="/user/detail/<?php echo $data->id; ?>"> <?php echo $data->username; ?> </a> 
+                <span class="check-red"></span>
+                <span class="<?php echo ( $data->membership == User::MEMBER_PREMIUM )?'icon-premium':'' ?>"></span>
+            </h3>
             <span class="text-search-01"><?php echo  date('Y')- date('Y', strtotime($data->birthday)); ?> F, PH</span> 
             <!-- <span class="<?php echo ($data->is_online)?'online':'offline'; ?>"><?php echo ($data->is_online)?'online':'offline'; ?></span> -->
         </div>
-        
+        <!-- <?php echo ( $data->membership == User::MEMBER_PREMIUM )?'-premium':'' ?>" -->
 
-        <div class="chat-01<?php echo ( $data->membership == User::MEMBER_PREMIUM )?'-premium':'' ?>">
+        <div class="chat-01">
             <a data-toggle="modal" data-target="#WantToChat" data-id=" <?php echo $data->id; ?> "></a>
         </div>
         
