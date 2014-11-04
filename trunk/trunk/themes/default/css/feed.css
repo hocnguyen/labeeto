@@ -176,7 +176,7 @@
     vertical-align: baseline;
     }
     body {
-    line-height: 1;
+    line-height: 1; 
     }
     ol, ul {
         list-style: none;
@@ -2593,6 +2593,7 @@ input[type="range"]::-ms-fill-lower {
     width: 188px;
     border-radius:4px;
     -webkit-appearance: none;
+    -moz-appearance:none; 
     font:normal 14px/normal ProximaNova Regular;
     background: #ffffff url('../images/icon-textbox.png')  no-repeat 97% center;
     -webkit-border-radius: 4px;
@@ -2708,7 +2709,7 @@ input[type="range"]::-ms-fill-lower {
 .search-result .list-result{}
 .search-result ul.list-result li{
     border:1px solid #ddd;
-    width: 100%;
+    width: 532px;
     border-radius: 5px;
     /* padding-left: 30px; */
     -webkit-border-radius: 5px;
@@ -2718,15 +2719,18 @@ input[type="range"]::-ms-fill-lower {
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#2c3b45', endColorstr='#2c3b45'); /* IE */
     overflow: hidden;
     padding: 4px 0 0;
-    margin-bottom: 20px;
+    margin-top:-5px;
+    margin-bottom: 22px;
 }
 ul.list-result{
     padding-left: 30px;
 }
-.search-result ul.list-result li .avatar-intro{
+.search-result ul.list-result li .avatar-intro-01{
     /* border-bottom:1px solid #1f2a32;  */
     /* padding: 0 4px; */
+    width:537px;
     overflow: hidden;
+    height: 90px
 }
 .icon-online.avatar-intro:before {
     position: absolute;
@@ -2783,26 +2787,32 @@ ul.list-result{
     -moz-border-radius: 4px 0 0 4px; */
     behavior: url('../pie/PIE.htc');
 }
-.search-result ul.list-result li .avatar-intro p{
+.search-result ul.list-result li .avatar-intro-01 p{
     overflow: hidden;
-    background: #fefefe;
+    /* background: #fefefe; */
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fff', endColorstr='#fff'); /* IE */
     font:normal 14px/normal Arial;
     height:102px;
     padding: 20px 15px;
 }
 .search-result .chat-message{
+    height: 67px;
     border-bottom: 1px solid #ddd;
     margin-top: -5px;
     background: #fafafa;
 }
-.search-result ul.list-result li .avatar-intro p strong{
+.search-result .avatar-intro-01{
+    height: 100px;
+    background: #fefefe;
+}
+.search-result ul.list-result li .avatar-intro-01 p strong{
+    margin-top: -5px;
     color:#d5d3d3;
     display: block; 
     font:italic 16px/normal ProximaNova RegularIt;
     padding-bottom: 10px;
 }
-.search-result ul.list-result li .avatar-intro p a{
+.search-result ul.list-result li .avatar-intro-01 p a{
     float:right;
     background: url(../images/icon_user.png) no-repeat left 1px;
     padding: 7px 0px 7px 27px;
@@ -2842,10 +2852,11 @@ ul.list-result{
     font:bold 14px/normal Open Sans Light;
 }
 .search-result ul.list-result li .chat-message .message-01{
+    height:0px;
     float:right;
     /* margin-right: 15px; */
     width:50px;
-    padding: 20px 15px;
+    padding: 20px 20px;
    /*  border-right: 1px solid #1f2a32;
    border-left:1px solid #354957; */
     font:normal 14px/normal Proxima Nova Semi Bold;
@@ -2857,32 +2868,33 @@ ul.list-result{
     text-transform: uppercase;
 }
 .search-result ul.list-result li .chat-message .chat-01{
+    height:0px;
     float: right;
     font: 14px Proxima Nova Semi Bold;
-    margin-right: 20px;
+    margin-right: 10px;
     padding: 31px 15px;
     /* width: 50px; */
 }
-   .search-result ul.list-result li .chat-message .chat-01-premium{
+.search-result ul.list-result li .chat-message .chat-01-premium{
        float:left;width:110px;
        padding: 25px 15px;
        border-right: 1px solid #1f2a32;
        border-left:1px solid #354957;
        font:normal 14px/normal Proxima Nova Semi Bold
-   }
+}
 .search-result ul.list-result li .chat-message .chat-01 a{
     font:normal 14px/normal Proxima Nova Bold;
     text-decoration: none;
     color:#fff;
     text-transform: uppercase;
 }
-   .search-result ul.list-result li .chat-message .chat-01-premium a{
+.search-result ul.list-result li .chat-message .chat-01-premium a{
        font:normal 14px/normal Proxima Nova Bold;
        text-decoration: none;
        color:#fca5ae !important;
        text-transform: uppercase;
        text-shadow: 1px #d5d2d2 !important;
-   }
+}
 .search-result ul.list-result li .chat-message .name-01 span.online{
     background: url('../images/search-online.png') no-repeat 3px 7px;
     padding-left: 15px;
