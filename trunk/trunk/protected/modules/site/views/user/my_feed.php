@@ -53,7 +53,13 @@
                               'dataProvider'=>$popular,
                               'itemView'=>'../elements/popular_view',
                               'summaryText'=>'',
-                              'viewData'=>array('infor'=>$info_user)
+                              'viewData'=>array('infor'=>$info_user),
+                              'pager'        => array(
+                                    'firstPageLabel' => '<<',
+                                    'prevPageLabel'  => '<',
+                                    'nextPageLabel'  => '>',
+                                    'lastPageLabel'  => '>>',
+                              ),
                           ));
                           ?>
                     </div>
@@ -63,7 +69,13 @@
                               'dataProvider'=>$achievement,
                               'itemView'=>'../elements/achievement_view',
                               'summaryText'=>'',
-                              'viewData'=>array('infor'=>$info_user)
+                              'viewData'=>array('infor'=>$info_user),
+                              'pager'        => array(
+                                    'firstPageLabel' => '<<',
+                                    'prevPageLabel'  => '<',
+                                    'nextPageLabel'  => '>',
+                                    'lastPageLabel'  => '>>',
+                              ),
                           ));
                           ?>
                     </div>
@@ -118,7 +130,13 @@
                               'dataProvider'=>$search,
                               'itemView'=>'../elements/trending_view',
                               'summaryText'=>'',
-                              'viewData'=>array('infor'=>$info_user)
+                              'viewData'=>array('infor'=>$info_user),
+                              'pager'        => array(
+                                    'firstPageLabel' => '<<',
+                                    'prevPageLabel'  => '<',
+                                    'nextPageLabel'  => '>',
+                                    'lastPageLabel'  => '>>',
+                              ),
                           ));
                           ?>
                         
@@ -126,9 +144,19 @@
                 </div>
             </div>
         </div>
-        
-        
-        
+        <!--<div class="pagination-post">
+            <ul>
+                <li class="prev-post"><a href="#"><</a></li>
+                <li class="normal-pag"><a href="#">1</a></li>
+                <li class="special-pag"><a href="#">2</a></li>
+                <li class="normal-pag"><a href="#" >3</a></li>
+                <li class="normal-pag"><a href="#">4</a></li>
+                <li><a href="#">....</a></li>
+                <li class="normal-pag"><a href="#" >9</a></li>
+                <li class="normal-pag"><a href="#">10</a></li>
+                <li class="next-post"><a href="#">></a></li>
+            </ul>
+        </div>-->
         <!--End Form Search -->
         
     </div>
