@@ -173,7 +173,7 @@ h2.tag-line{
     margin-right: 6px;
     width: 165px;
     height: 42px;
-    line-height: 42px;
+    /* line-height: 42px; */
     padding-left: 55px;
     padding-right: 10px;
     font-family: "Open Sans", Helvetica, sans-serif;
