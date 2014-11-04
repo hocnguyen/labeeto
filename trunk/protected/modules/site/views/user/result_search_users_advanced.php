@@ -14,7 +14,7 @@
        
         <div class="name-01">
             <h3 class="show"><a href="/user/detail/<?php echo $data->id; ?>"> <?php echo $data->username; ?> </a> 
-                <span class="check-red"></span>
+                <span class="<?php echo ($data->verified == User::MEMBER_VERIFIED )?'check-red':'' ?>"></span>
                 <span class="<?php echo ($data->membership == User::MEMBER_PREMIUM )?'icon-premium':'' ?>"></span>
             </h3>
             <span class="text-search-01"><?php echo  date('Y')- date('Y', strtotime($data->birthday)); ?> F, PH</span> 
