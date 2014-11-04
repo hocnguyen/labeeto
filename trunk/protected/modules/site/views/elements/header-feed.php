@@ -97,7 +97,7 @@
             </div>
         </div>
         <div class="profile-nav">
-            <div class="test-nav" style="width: 170px; float: right; height: 50px;">
+            <div class="test-nav" style="width: 172px; float: right; height: 50px;">
                 
                 <div class="username-nav">
                     <?php
