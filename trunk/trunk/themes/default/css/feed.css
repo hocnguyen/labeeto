@@ -1026,10 +1026,10 @@ span.minuten{
 .pagination-post ul li{
     float: left; 
     list-style: none; 
-    padding: 30px 10px 0 15px;
+    /*padding: 30px 10px 0 15px;*/
 }
 .prev-post, .next-post{
-    background: url('../images/pag_3.png') no-repeat; 
+    background: url('../images/pag_3_3.png') no-repeat; 
     float: left; 
     padding: 11px 15px 5px 12px;
     color: white;
@@ -1038,18 +1038,41 @@ span.minuten{
 .pagination-post ul li a:hover{
     text-decoration: none;
 }
+.paginate_button,
 .normal-pag{
-    background: url('../images/pag_1.png') no-repeat; 
+    background: url('../images/pag_1_1.png') no-repeat; 
     float: left; 
-    padding: 8px 15px 5px 12px;
+    padding: 5px 15px 5px 12px;
     color: white;
     font:normal 12pt/normal Arial; 
     
 }
+.pager ul li{
+    margin: 0px 5px;
+}
+.pager ul li a{
+    color: white;
+    font:normal 16px/normal Helvetica Neue LT Pro BdCn;
+}
+li.paginate_active a:hover,
+li.paginate_button a:hover{
+    background: transparent !important;
+}
+li.paginate_button a,
+li.paginate_active a{
+    background: transparent;
+    border: 0;
+    padding: 0;
+}
+.pager ul li:first-child,
+.pager ul li:last-child{
+    display: none !important;
+}
+.paginate_active,
 .special-pag{
-    background: url('../images/pag_2.png') no-repeat; 
+    background: url('../images/pag_2_2.png') no-repeat; 
     float: left; 
-    padding: 8px 15px 5px 12px;
+    padding: 5px 15px 5px 12px;
     color: white;
     font:normal 12pt/normal Arial; 
 }
