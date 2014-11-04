@@ -288,7 +288,7 @@ a{
     height: 50px;*/
     padding: 16px 10px 10px 10px;
     /* background: url('../images/line-nav.png') no-repeat right; */
-    /* margin-left: 75px; */
+    margin-left: 75px;
 }
 .search-request{
     background: url('../images/search-icon-xam.png') no-repeat center;
@@ -2732,47 +2732,15 @@ ul.list-result{
     overflow: hidden;
     height: 90px
 }
-.icon-online.avatar-intro:before {
-    position: absolute;
-    content: '';
-    height: 16px;
-    width: 16px;
-    background: #fff;
-    border-radius: 50%;
-    bottom: 0px;
-    right: 0px;
-}
-.icon-online.avatar-intro:after {
-    position: absolute;
-    content: '';
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: url('../images/icon-online-search.png')no-repeat;
-    bottom: 2px;
-    right: 2px;
-}
-.icon-offline.avatar-intro:before {
-    position: absolute;
-    content: '';
-    height: 16px;
-    width: 16px;
-    background: #fff;
-    border-radius: 50%;
-    bottom: 0px;
-    right: 0px;
-}
-.icon-offline.avatar-intro:after {
-    position: absolute;
-    content: '';
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: url('../images/icon-search-offline.png')no-repeat;
-    bottom: 2px;
-    right: 2px;
-}
 
+.avatar-intro .icon-online-pre{
+    height: 17px !important;
+    width: 17px !important;
+    position:absolute;
+    top: 30px;
+    left: 38px;
+    margin-right: 5px;
+}
 .chat-message .avatar-intro img{
     float:left;
     margin-left: 10px;
@@ -2828,7 +2796,7 @@ ul.list-result{
     position:relative;
     overflow: hidden;
     float:left;
-    width:60px;
+    width:100px;
 
 }
 .search-result ul.list-result li .chat-message .name-01{
