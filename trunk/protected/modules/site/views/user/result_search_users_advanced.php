@@ -2,14 +2,16 @@
 <ul class="list-result">
 <li class="">
     <div class="chat-message">
-        <div class="avatar-intro <?php echo ($data->is_online)?'icon-online':'icon-offline'; ?>">
+        <div class="avatar-intro">
+            <!-- <?php  echo ($data->is_online)?'icon-online':'icon-offline'; ?> -->
             <?php if(($data->photo =='')||($data->photo =='undefined')){ ?>
             <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/no-avatar.png">
             <?php } else { ?>
                 <img src="/uploads/avatar/<?php echo $data->photo ?>" />
-            <?php } ?> 
+            <?php } ?>
+            <img class="icon-online-pre" src="/themes/default/images/<?php echo ($data->is_online)?'online-icon.png':'online-icon.png'; ?>"> 
         </div>
-        
+       
         <div class="name-01">
             <h3 class="show"><a href="/user/detail/<?php echo $data->id; ?>"> <?php echo $data->username; ?> </a> 
                 <span class="check-red"></span>
