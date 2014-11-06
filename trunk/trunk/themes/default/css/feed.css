@@ -1047,10 +1047,13 @@ span.minuten{
     font:normal 12pt/normal Arial; 
     
 }
-.pager ul li{
+.pager a{
     margin: 0px 5px;
 }
-.pager ul li a{
+.pager a:hover{
+    text-decoration: none;
+}
+.pager a{
     color: white;
     font:normal 16px/normal Helvetica Neue LT Pro BdCn;
 }
@@ -1064,8 +1067,8 @@ li.paginate_active a{
     border: 0;
     padding: 0;
 }
-.pager ul li:first-child,
-.pager ul li:last-child{
+.pager a:first-child,
+.pager a:last-child{
     display: none !important;
 }
 .paginate_active,
@@ -1253,7 +1256,7 @@ ul.social li.insta:hover{
     padding: 10px;
 }
 .content-post h4 {
-    color: #977c7c;
+    color: #404040;
 }
 .content-post h4 span.link_1 {
     color: #fc5b6e;
@@ -1732,7 +1735,7 @@ ul li.menu-nav{
 }
 .content-post h4{
     padding: 10px;
-    font: normal 20px/normal Helvetica Neue LTPro Bd;
+    font: normal 20px/normal Proxima Nova Regular;
 }
 .menu-notification ul li a h6{
     font: normal 12pt/normal Proxima Nova Semi Bold;
@@ -3072,8 +3075,8 @@ textarea:focus, input:focus{
     border:1px solid #ddd;
 }
 .content-post h3.my_posted{
-    font:normal 20px/normal Helvetica Neue LTPro Roman;
-    color: #886969;
+    font:normal 20px/normal Proxima Nova Regular;
+    color: #404040;
     text-align: justify;
     background: #fefefe;
 }
