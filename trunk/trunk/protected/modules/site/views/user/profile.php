@@ -1,8 +1,7 @@
 <!--<div class="banner-ad-top">
     <img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/ads-top.png" />
 </div>-->
-<hr class="hr-line" />
-<div class="content-main">
+<div class="content-main-1">
     <?php //$this->widget('widgets.admin.notifications'); ?>
     
     
@@ -549,6 +548,45 @@
                                 </div>
                            <?php }
                         } ?>
+                        <div class="comment-post-home">
+                            <p style="padding-bottom: 10px;"><span class="comment_txt">Comment</span><span class="comment_count">(2)</span></p>
+                            <ul>
+                                <li>
+                                    <div class="user_comment_post">
+                                        <a href="#"><img src="/themes/default/images/1_avarta.png"></a>
+                                        <div class="infor_comment">
+                                            <h5><span>cutesyjf24</span></h5>
+                                            <h6><span class="minus_1">8 min </span> - <span class="where_location">Tampa Bay, FL</span></h6>
+                                        </div>
+                                        <div class="comment_detail_post">
+                                            <span>Of Course! Russian Models are hot hot hot!</span>
+                                            <a href="#"><img src="/themes/default/images/three_dot.png" /></a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="user_comment_post">
+                                        <a href="#"><img src="/themes/default/images/1_avarta.png"></a>
+                                        <div class="infor_comment">
+                                            <h5><span>cutesyjf24</span></h5>
+                                            <h6><span class="minus_1">8 min </span> - <span class="where_location">Tampa Bay, FL</span></h6>
+                                        </div>
+                                        <div class="comment_detail_post">
+                                            <span>Of Course! Russian Models are hot hot hot!</span>
+                                            <a href="#"><img src="/themes/default/images/three_dot.png" /></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="my_comment">
+                            <div style="float: left; margin-left: 5px;">
+                                <a href="#"><img src="/themes/default/images/1_avarta.png"></a>
+                            </div>
+                            <div class="content_input_comment">
+                                <input class="form-control comment_post_txt" placeholder="Add comment here..." />
+                            </div>
+                          </div>
                     </div>
                 </div>
             <?php } }?>
