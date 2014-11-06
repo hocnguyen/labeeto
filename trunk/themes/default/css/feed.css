@@ -1234,18 +1234,13 @@ ul.social li.insta:hover{
     background-position: -63px -18px;
 }
 /*My profile*/
-.hr-line{
-    border-top: 1px solid #ddd;
-    width: 100%;
-    margin-top: 0px;
-}
 .left-profile{
     float: left;
-    width: 38%;
+    width: 347px;
 }
 .right-profile{
     float: left;
-    width: 62%;
+    width: 550px;
     padding: 0 0 0 20px;
 }
 .h2-name{
