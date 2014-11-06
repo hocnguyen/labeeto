@@ -17,7 +17,7 @@ if($user){?>
                 </h2>
                 <h2>
                     <span class="time-location">18 F, CA,</span> 
-                    <span class="dot-icon"> <?php echo $data->created; ?></span>
+                    <span class="dot-icon"> <?php echo Achievements::time_elapsed_string($data->created); ?></span>
                 </h2>
                 <!--<a class="message" data-id="<?php //echo $user->id; ?>" data-toggle="modal" data-target="#SendaMessage">Send a Message</a>
                 <a class="report-user" data-id="<?php //echo $user->id . '_' . $data->id;; ?>" data-toggle="modal" data-target="#ReportUser">Report User</a>

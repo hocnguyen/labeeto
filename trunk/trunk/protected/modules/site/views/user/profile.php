@@ -494,9 +494,17 @@
                         <?php } else { ?>
                             <img src="/uploads/avatar/<?php echo $this->user->photo ?>" />
                         <?php } ?>
+                        <img class="online-icon-p" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/online-icon.png" />
                             <div class="crycle-img">
-                                <?php error_reporting(0);?>
-                                <h2 class="h2-name"><?php echo $model->username ?><span class="time-location">33 M, NY,</span> <span class="dot-icon">Yesterday</span></h2>
+                                <h2 class="h2-name">
+                                    <a href="/user/detail/<?php echo $model->id; ?>"><?php echo $model->username ?></a>
+                                    <img class="premium-icon" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/premium_2.png" />
+                                    <img class="check-icon" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/icon_check.png" />
+                                </h2>
+                                <h2>
+                                    <span class="time-location">33 M, NY,</span> 
+                                    <span class="dot-icon"><?php echo Achievements::time_elapsed_string($model->created); ?></span>
+                                </h2>
                             </div>
                         </div>
                         <div class="vote">
