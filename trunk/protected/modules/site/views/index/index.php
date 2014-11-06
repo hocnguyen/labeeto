@@ -1,6 +1,6 @@
 
 <h1 class="heading"> Meet people. Find love. Get fit.</h1>
-<h2 class="tag-line"> We'll get you connected to people who share your healthy lifestyle and passionate goals</h2>
+<h2 class="tag-line"> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</h2>
 <?php $form=$this->beginWidget('CActiveForm', array(
     'id'=>'signup-form',
 
@@ -22,8 +22,8 @@
 <?php $this->endWidget(); ?>
 
 <p class="description">
-    By clicking Sign Up, you agree to our <a href="#">Terms</a> and that you have read our <a href="#">Data Use Policy</a>,including our
-    <a href="#">Cookie Use</a>.
+    By clicking Sign Up, you agree to our <a href="#">Terms</a> and that you have read our <a href="#">Data Use Policy</a> including our
+    <a href="#">Cookie Use.</a>
 </p>
 
 <a href="#" id="signin-fb">

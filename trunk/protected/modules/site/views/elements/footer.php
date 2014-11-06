@@ -1,7 +1,7 @@
 <div class="container">
     <div class="clearfix">
         <ul class="footer-nav">
-            <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/footer_logo.png" alt="labeeto"/></a></li>
+            <li><a href="#"><img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/new_logo.png" alt="labeeto"/></a></li>
             <li><a href="#">Privacy Policy</a></li>
             <li><a href="#">Term of Use</a></li>
             <li><a href="#">Site Map</a></li>
