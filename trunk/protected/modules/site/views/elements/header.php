@@ -27,12 +27,11 @@
             </div>
             <input type="submit" value="Log In"/>
             </form>
-            <p class="signup-text"><?php echo Yii::t('global','Forgot Password'); ?> ? <a href="#forgot-password-fancybox" class="fancybox" ><?php echo Yii::t('global','Reset Now') ?></a></p>
+            <p class="signup-text"><?php //echo Yii::t('global','Forgot Password'); ?> 
+            <a href="#forgot-password-fancybox" class="fancybox" >
+            <?php echo Yii::t('global','Forgot Password?') ?></a></p>
         </div>
-        <div id="or">
-            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/or_line.png" alt=""/>
-        </div>
-        <div class="inner-wrapper">
+        <div class="inner-wrapper bg-inner-wrapper">
             <a href="#">
                 <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/signin_fb.png" id="facebookPopup" alt="Sign In With Facebook"/>
             </a>
