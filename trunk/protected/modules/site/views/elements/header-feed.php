@@ -7,7 +7,7 @@
             <!-- <a href="/user/advanceSearch" class="menu-item"><span class="icon search"></span> SEARCH</a> -->
             <a href="#" class="menu-item"><span class="icon top-rate"></span>TOP RATED</a>
             <a href="#" class="menu-item"><span class="icon get-fit"></span>GET FIT</a>
-            <a href="#" class="menu-item"><span class="icon inspire"></span>Speed date</a>
+            <a href="#" class="menu-item"><span class="icon inspire"></span>INSPIRE</a>
         </div>
         <div class="notify">
             <div class="search-request" >
@@ -97,7 +97,7 @@
             </div>
         </div>
         <div class="profile-nav">
-            <div class="test-nav" style="width: 172px; float: right; height: 50px;">
+            <div class="test-nav" style="width: 175px; float: right; height: 50px;">
                 
                 <div class="username-nav">
                     <?php
