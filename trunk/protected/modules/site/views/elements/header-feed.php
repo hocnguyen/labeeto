@@ -140,7 +140,7 @@
                         <li><a href="#" class="profile-item"><span class="icon-profile invite-friend"></span><span class="content-pro">INVITE FRIENDS</span></a></li>
                         <li><a href="/settings" class="profile-item"><span class="icon-profile settings"></span><span class="content-pro">SETTINGS</span></a></li>
                         <li><a href="#" class="profile-item"><span class="icon-profile upgrade-account"></span><span class="content-pro">UPGRADE ACCOUNT</span></a></li>
-                        <li><a href="#" class="profile-item"><span class="icon-profile logout"></span><span class="content-pro"></span>LOG OUT</a></li>
+                        <li><a href="/user/logout" class="profile-item"><span class="icon-profile logout"></span><span class="content-pro"></span>LOG OUT</a></li>
                     </ul>
                 </div>
             </div>
