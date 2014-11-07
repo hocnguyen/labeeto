@@ -209,13 +209,19 @@ h2.tag-line{
     -moz-border-radius: 2px;
 }
 .username-input{
-    background: #ffffff url(../images/icon_user.png) no-repeat 12px center;
+    background: #ffffff url(../images/icon_user.png) no-repeat;
+    background-repeat: no-repeat;
+    background-position: 95% 12px;
+    padding-right: 20px !important;
 }
 .email-input{
     background: #ffffff url(../images/icon_email.png) no-repeat 12px center;
 }
 .password-input{
-    background: #ffffff url(../images/icon_password.png) no-repeat 12px center;
+    background: #ffffff url(../images/icon_password.png) no-repeat;
+    background-repeat: no-repeat;
+    background-position: 95% 12px;
+    padding-right: 20px !important;
 }
 .form-wrapper{
     text-align: center;
@@ -231,14 +237,15 @@ h2.tag-line{
     margin-top: -1px;
     line-height: 44px;
     height: 46px;
-    font-size: 18px;
-    font-family: "Proxima Nova Bold";
+    font-size: 16px;
+    font-family: Proxima Nova Bold;
     border: 0;
     border-bottom: 2px solid #711f28;
     cursor: pointer;
     border-radius: 2px ;
     -webkit-border-radius: 2px ;
     -moz-border-radius: 2px ;
+    text-transform: uppercase;
 }
 p.description{
     font-family: Proxima Nova Regular;
@@ -334,7 +341,7 @@ p.copyright{
 }
 .facebook-fancybox{
     display: none;
-    max-width: 332px;
+    width: 445px;
     border-radius: 2px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -349,9 +356,13 @@ p.copyright{
     border: 5px solid rgba(255, 255, 255, .12);
 }
 .inner-fancybox{
-    max-width: 332px;
-    background-color: #f2f2f2;
-    padding-bottom: 30px;
+    width: 445px;
+    background-color: #ffffff;
+}
+.bg-inner-wrapper{
+    background: #f2f2f2;
+    padding: 40px 0px;
+    margin-top: 20px;
 }
 .fancybox-heading{
     background-color: rgba(33, 39, 57, 0.6);
@@ -367,14 +378,14 @@ p.copyright{
     padding-bottom: 15px;
 }
 .inner-wrapper{
-    padding-left: 22px;
-    padding-right: 22px;
+    padding-left: 73px;
+    padding-right: 73px;
 }
 #fancybox-form {
-    padding-top: 29px;
+    padding-top: 40px;
 }
 #fancybox-form input[type=text], #fancybox-form input[type=password]{
-    width: 222px;
+    width: 300px;
     margin: 0 0 8px;
 }
 #fancybox-form input[type=submit]{
@@ -395,6 +406,7 @@ p.copyright{
     font-weight: bold;
     color: #ea5a5a;
     text-decoration: none;
+    font: normal 15.28px/normal Proxima Nova SemiBold;
 }
 #or{
     margin-bottom: 16px;
@@ -1009,6 +1021,23 @@ span.add-location {
     background: url(../images/loading.gif) no-repeat center center #fff;
     width: 100%;
     height: 20px;
+}
+#fancybox-form input[type=password],
+#fancybox-form input[type=text]{
+    margin-right: 6px;
+    width: 265px;
+    height: 42px;
+    /* line-height: 42px; */
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: Proxima Nova Regular;
+    font-weight: 300;
+    font-size: 14.67px;
+    display: inline-block;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
 }
 /* Fix type range on IE8 */
 /*
