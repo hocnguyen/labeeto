@@ -209,15 +209,22 @@ h2.tag-line{
     -moz-border-radius: 2px;
 }
 .username-input{
+    background: #ffffff url(../images/icon_user.png) no-repeat 12px center;
+}
+.email-input{
+    background: #ffffff url(../images/icon_email.png) no-repeat 12px center;
+        
+}
+.password-input{
+    background: #ffffff url(../images/icon_password.png) no-repeat 12px center;
+}
+.inner-fancybox .username-input{
     background: #ffffff url(../images/icon_user.png) no-repeat;
     background-repeat: no-repeat;
     background-position: 95% 12px;
     padding-right: 20px !important;
 }
-.email-input{
-    background: #ffffff url(../images/icon_email.png) no-repeat 12px center;
-}
-.password-input{
+.inner-fancybox .password-input{
     background: #ffffff url(../images/icon_password.png) no-repeat;
     background-repeat: no-repeat;
     background-position: 95% 12px;
@@ -304,7 +311,6 @@ ul.social-share li{
     width: 18px;
     height: 18px;
     background: url('../images/social_sprite.png') no-repeat;
-    transition: all .7s;
     float: left;
     margin-right: 15px;
 }
@@ -415,8 +421,8 @@ p.copyright{
     max-width: 100%;
 }
 .checkbox-wrapper{
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12.22px;
+    font-family: Proxima Nova Regular;
     color: #9f9f9f;
     margin-bottom: 17px;
     margin-top: 5px;
@@ -1022,15 +1028,15 @@ span.add-location {
     width: 100%;
     height: 20px;
 }
-#fancybox-form input[type=password],
-#fancybox-form input[type=text]{
+.inner-fancybox #fancybox-form input[type=password],
+.inner-fancybox #fancybox-form input[type=text]{
     margin-right: 6px;
     width: 265px;
     height: 42px;
     /* line-height: 42px; */
     padding-left: 10px;
     padding-right: 10px;
-    font-family: Proxima Nova Regular;
+    /*font-family: Proxima Nova Regular;*/
     font-weight: 300;
     font-size: 14.67px;
     display: inline-block;
@@ -1038,6 +1044,9 @@ span.add-location {
     border-radius: 2px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
+}
+#keep-me-logged{
+    vertical-align: middle;
 }
 /* Fix type range on IE8 */
 /*
