@@ -370,4 +370,57 @@ $(document).ready(function(){
             alert('Please fill your email!');
         }
     })
+    
+    
+    $('.inner-fancybox .username-input').focus(function(){
+        var txt = $(this).val().trim().length;
+        if(txt > 0){
+            $(this).css('background', 'none');
+        }
+    })
+    
+    $('.inner-fancybox .username-input').on('input', function(){
+        var txt = $(this).val().trim().length;
+        if(txt > 0){
+            $(this).css('background', 'none');
+        }
+    })
+    
+    $('.inner-fancybox .username-input').focusout(function(){
+        var txt = $(this).val().trim().length;
+        if(txt > 0){
+            $(this).css('background', 'none');
+        }else{
+            $(this).css('background', 'url(/themes/default/images/icon_user.png) no-repeat');
+            $(this).css('background-repeat', 'no-repeat');
+            $(this).css('background-position', '95% 12px');
+            $(this).css('padding-right', '20px !important');
+        }
+    })
+    
+    $('.inner-fancybox .password-input').focus(function(){
+        var txt = $(this).val().trim().length;
+        if(txt > 0){
+            $(this).css('background', 'none');
+        }
+    })
+    
+    $('.inner-fancybox .password-input').on('input', function(){
+        var txt = $(this).val().trim().length;
+        if(txt > 0){
+            $(this).css('background', 'none');
+        }
+    })
+    
+    $('.inner-fancybox .password-input').focusout(function(){
+        var txt = $(this).val().trim().length;
+        if(txt > 0){
+            $(this).css('background', 'none');
+        }else{
+            $(this).css('background', 'url(/themes/default/images/icon_password.png) no-repeat');
+            $(this).css('background-repeat', 'no-repeat');
+            $(this).css('background-position', '95% 12px');
+            $(this).css('padding-right', '20px !important');
+        }
+    })      
 });
