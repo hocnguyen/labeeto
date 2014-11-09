@@ -360,11 +360,14 @@ $(document).ready(function(){
     
     /***********************************************************************/
                     /*******Menu Setting*******/
+
     $('.link-GeneralSettings').click(function(){
-        $('.li-GeneralSettings a').css('border-bottom', '3px solid #5dc1ea');
-        $('.li-SearchReferences a').css('border-bottom', 'none');
-        $('.li-Notifications a').css('border-bottom', 'none');
-        $('.li-Blocklist a').css('border-bottom', 'none');
+        $('.li-GeneralSettings a').css('background', '#f0eeee');
+        $('.li-GeneralSettings a').css('width', '230px');
+        $('.li-GeneralSettings a').css('height', '42px');
+        $('.li-SearchReferences a').css('background', 'none');
+        $('.li-Notifications a').css('background', 'none');
+        $('.li-Blocklist a').css('background', 'none');
         $('#SearchReferences').hide();
         $('#Notifications').hide();
         $('#Blocklist').hide();
@@ -373,10 +376,12 @@ $(document).ready(function(){
     });
     
     $('.link-SearchReferences').click(function(){
-        $('.li-SearchReferences a').css('border-bottom', '3px solid #5dc1ea');
-        $('.li-GeneralSettings a').css('border-bottom', 'none');
-        $('.li-Notifications a').css('border-bottom', 'none');
-        $('.li-Blocklist a').css('border-bottom', 'none');
+        $('.li-SearchReferences a').css('background', '#f0eeee');
+        $('.li-SearchReferences a').css('width', '230px');
+        $('.li-SearchReferences a').css('height', '42px');
+        $('.li-GeneralSettings a').css('background', 'none');
+        $('.li-Notifications a').css('background', 'none');
+        $('.li-Blocklist a').css('background', 'none');
         $('#GeneralSettings').hide();
         $('#Notifications').hide();
         $('#Blocklist').hide();
@@ -385,10 +390,12 @@ $(document).ready(function(){
     });
     
     $('.link-Notifications').click(function(){
-        $('.li-Notifications a').css('border-bottom', '3px solid #5dc1ea');
-        $('.li-SearchReferences a').css('border-bottom', 'none');
-        $('.li-GeneralSettings a').css('border-bottom', 'none');
-        $('.li-Blocklist a').css('border-bottom', 'none');
+        $('.li-Notifications a').css('background', '#f0eeee');
+        $('.li-Notifications a').css('width', '230px');
+        $('.li-Notifications a').css('height', '42px');
+        $('.li-SearchReferences a').css('background', 'none');
+        $('.li-GeneralSettings a').css('background', 'none');
+        $('.li-Blocklist a').css('background', 'none');
         $('#SearchReferences').hide();
         $('#GeneralSettings').hide();
         $('#Blocklist').hide();
@@ -397,10 +404,12 @@ $(document).ready(function(){
     });
     
     $('.link-Blocklist').click(function(){
-        $('.li-Blocklist a').css('border-bottom', '3px solid #5dc1ea');
-        $('.li-SearchReferences a').css('border-bottom', 'none');
-        $('.li-GeneralSettings a').css('border-bottom', 'none');
-        $('.li-Notifications a').css('border-bottom', 'none');
+        $('.li-Blocklist a').css('background', '#f0eeee');
+        $('.li-Blocklist a').css('width', '235px');
+        $('.li-Blocklist a').css('height', '42px');
+        $('.li-SearchReferences a').css('background', 'none');
+        $('.li-GeneralSettings a').css('background', 'none');
+        $('.li-Notifications a').css('background', 'none');
         $('#SearchReferences').hide();
         $('#Notifications').hide();
         $('#GeneralSettings').hide();
