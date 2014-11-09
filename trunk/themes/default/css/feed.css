@@ -4000,4 +4000,7 @@ h3.profile-setting-title span{
     -webkit-appearance: none;
     background: #ffffff url('../images/icon-textbox.png') no-repeat 97% center;
 }
-
+.form-group input.color-focus:focus{
+    border:1px solid #ddd;
+    background: #fbf8f8;
+}
