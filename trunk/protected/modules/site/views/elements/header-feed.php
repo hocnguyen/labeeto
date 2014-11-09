@@ -3,11 +3,11 @@
         <a href="/my_feed" id="logo">
             <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/new_logo.png" alt="Logo"/>
         </a>
-        <div class="menu-nav">
+        <div class="menu-nav" style="width: 340px; height: 1px;">
             <!-- <a href="/user/advanceSearch" class="menu-item"><span class="icon search"></span> SEARCH</a> -->
-            <a href="#" class="menu-item"><span class="icon top-rate"></span>TOP RATED</a>
+           <!-- <a href="#" class="menu-item"><span class="icon top-rate"></span>TOP RATED</a>
             <a href="#" class="menu-item"><span class="icon get-fit"></span>GET FIT</a>
-            <a href="#" class="menu-item"><span class="icon inspire"></span>INSPIRE</a>
+            <a href="#" class="menu-item"><span class="icon inspire"></span>INSPIRE</a>-->
         </div>
         <div class="notify">
             <div class="search-request" >
@@ -112,13 +112,7 @@
                 <?php
                     error_reporting(0);
                 ?>
-                <?php if(($this->user->photo =='')||($this->user->photo =='undefined')){ ?>
-                    <img class="avatar-nav" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/no-avatar.png">
-               <?php } else { ?>
-                    <img class="avatar-nav" src="/uploads/avatar/<?php echo $this->user->photo ?>" />
-                <?php } ?>
-                <!--<img class="arrow-nav" src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/arrow_down.png" />-->
-            </div>
+                </div>
             <!--<div>
                 <div class="n_menu_profile">
                     <img src="/uploads/avatar/<?php //echo $this->user->photo ?>" />

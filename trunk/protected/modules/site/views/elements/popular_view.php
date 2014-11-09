@@ -27,9 +27,9 @@ if($user){?>
         </div>
         <div class="vote">
             <ul>
-                <li class="upvote" id="upvote_<?php echo $data->id; ?>" data-id=<?php echo $data->id; ?>></li>
+                <li><span class="upvote" id="upvote_<?php echo $data->id; ?>" data-id=<?php echo $data->id; ?>></span></li>
                 <li><span class="change_vote_<?php echo $data->id; ?>"><?php echo Achievements::model()->getCore($data->id); ?></span></li>
-                <li class="downvote" id="downvote_<?php echo $data->id; ?>" data-id=<?php echo $data->id; ?>></li>
+                <li><span class="downvote" id="downvote_<?php echo $data->id; ?>" data-id=<?php echo $data->id; ?>></span></li>
             </ul>
         </div>
     </div>
