@@ -3634,7 +3634,7 @@ li.message_search input{
     overflow: hidden;
 }
 .first-infor .vote .upvote{
-    background: url('../images/grey_arrows.png') no-repeat;
+    background: url('../images/upvote.png') no-repeat; /*grey_arrows.png*/
     height: 15px;
     cursor: pointer;
     width: 15px;
