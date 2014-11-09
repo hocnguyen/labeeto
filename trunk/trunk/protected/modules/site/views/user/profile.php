@@ -496,6 +496,7 @@
                         <img class="online-icon-p" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/online-icon.png" />
                             <div class="crycle-img">
                                 <h2 class="h2-name">
+                                    <?php error_reporting(0);?>
                                     <a href="/user/detail/<?php echo $model->id; ?>"><?php echo $model->username ?></a>
                                     <img class="premium-icon" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/premium_2.png" />
                                     <img class="check-icon" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/icon_check.png" />
