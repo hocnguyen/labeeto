@@ -233,7 +233,7 @@ a{
     /* background: url("../images/line-nav.png") no-repeat right; */
     height: 50px;
     text-transform: uppercase;
-    padding-right: 15px;
+    padding-right: 20px;
     font: normal 12.5px/normal Proxima Nova Semi Bold;
 }
 .search {
@@ -285,7 +285,7 @@ a{
     height: 50px;*/
     padding: 16px 10px 10px 10px;
     /* background: url('../images/line-nav.png') no-repeat right; */
-    margin-left: 125px;
+    margin-left: 110px;
 }
 .search-request{
     background: url('../images/search-icon-xam.png') no-repeat center;
@@ -1208,7 +1208,6 @@ ul.social li{
     width: 18px;
     height: 18px;
     background: url('../images/social_sprite.png') no-repeat;
-    transition: all .7s;
     float: left;
     margin-right: 15px;
 }
@@ -3623,20 +3622,23 @@ li.message_search input{
 .first-infor .vote {
     float: right;
     /*padding: 7px 0px;*/
-    color: #51a9cd;
+    color: #404040;
     font: normal 16px/normal Helvetica Neue LTPro Bd;
     font-weight: bold;
     margin-right: 10px;
     /*margin-top: 5px;*/
+    text-align: center
 }
 .first-infor .vote ul li{
     list-style: none;
+    overflow: hidden;
 }
 .first-infor .vote .upvote{
     background: url('../images/grey_arrows.png') no-repeat;
     height: 15px;
     cursor: pointer;
     width: 15px;
+    display: inline-block;
 }
 .save-search-func{
     cursor: pointer;
@@ -3650,6 +3652,7 @@ li.message_search input{
     margin-top: 5px;
     cursor: pointer;
     width: 15px;
+    display: inline-block;
 }
 .search-block-special  input[type="range"] {width: 248px !important;height: 9px;border-radius: 5px;background: #ec5268;-webkit-appearance: none;cursor: pointer;border: 0;outline: none;padding: 0;margin: 0 0;}
 
