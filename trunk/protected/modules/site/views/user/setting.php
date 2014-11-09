@@ -93,14 +93,14 @@
                     </div>
                       <div class="form-group">
                         <label for="InputEmail" class="label-text" style="padding-top: 15px;">Email address</label>
-                        <input type="text" class="form-control input-text" value="<?php echo $this->user->email ?>" id="InputEmail">
+                        <input type="text" class="form-control input-text color-focus" value="<?php echo $this->user->email ?>" id="InputEmail">
                         <input type="hidden" id="ss_email" value="<?php echo $this->user->email ?>" />
                         <span class="check-block"  id="ok_InputEmail" style="display: none;"></span>
                         <p style="color: red; font-size: 12px; margin-top: 15px; margin-left: 20px; display: none;" id="error_InputEmail">Email not correct</p>
                       </div>
                       <div class="form-group">
                         <label for="InputOld_Password" class="label-text">OldPassword</label>
-                        <input type="password" class="form-control input-text" id="InputPassword_1">
+                        <input type="password" class="form-control input-text color-focus" id="InputPassword_1">
                         <span class="check-block" id="ok_InputPassword_1" style="display: none;"></span>
                         <p style="color: red; font-size: 12px; margin-top: 15px; margin-left: 20px; display: none;" id="error_InputPassword_1">Password not same login password</p>
                       </div>
@@ -124,7 +124,7 @@
                       </div>
                       <div class="form-group">
                         <label for="Zipcode" class="label-text">Zip code </label>
-                        <input type="text" value="<?php echo $this->user->zipcode ?>" class="form-control" id="Zipcode"  style="width: 180px; height: 43px; display: inline-block; float: left; margin-bottom: 10px; margin-right: 20px;">
+                        <input type="text" value="<?php echo $this->user->zipcode ?>" class="form-control" id="Zipcode"  style="width: 180px; height: 43px; display: inline-block; float: left; margin-bottom: 10px; margin-right: 20px;" placeholder="Day">
                         <input type="hidden" id="ss_zipcode" value="<?php echo $this->user->zipcode ?>" />
                         <span class="check-block" id="ok_Zipcode" style="display: none;"></span>
                         <p style="color: red; font-size: 12px; margin-top: 15px; margin-left: 20px; display: none;" id="error_Zipcode">Zip Code must is number</p>
