@@ -2132,8 +2132,8 @@ input[type="range"]::-ms-fill-lower {
 }
 .menu-nav-setting{
     display: inline-block;
-    padding: 55px 30px 0 30.2px;
-    border-top: 1px solid #cbcbcb;
+    padding: 0px 15px 0 15px;
+    /* border-top: 1px solid #cbcbcb; */
    /*  border-bottom: 1px solid #cbcbcb; */
     border-radius: 0 !important;
     -webkit-border-radius: 0 !important;
@@ -2141,42 +2141,48 @@ input[type="range"]::-ms-fill-lower {
     behavior: url('../pie/PIE.htc');
 }
 .menu-nav-setting ul{
+    /* text-align: center; */
+    border:1px solid #ddd;
+    width: 927px;
     float: right;
-    background: #2d3c46;
+    background: #f8f7f7;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#2d3c46', endColorstr='#2d3c46'); /* IE */
-    border-radius: 5px 5px 0px 0px;
+    /* border-radius: 5px 5px 0px 0px;
     -webkit-border-radius: 5px 5px 0px 0px;
-    -moz-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px; */
 }
 .menu-nav-setting ul li{
+    margin-left: -1px;
+    width: 25%;
     list-style: none;
     float: left;
     /*padding: 17px 31px 0px;*/
-    border-left: 1px solid #1f2a32;
-    height: 50px;
+    border-left: 1px solid #ddd;
+    height: 42px;
 }
+
 .menu-nav-setting ul li a{
     text-transform: uppercase;
-    color: #ffffff;
+    color: #313541;
     font: normal 12pt/normal Proxima Nova Semi Bold;
-    padding: 17px 31px 14px;
+    padding: 14px 15px 14px;
     border-bottom: 3px solid transparent;
     float: left;
 }
 .menu-nav-setting ul li a:hover{
     text-decoration: none;
 }
-.menu-nav-setting ul li:first-child{
+/* .menu-nav-setting ul li:first-child{
     text-transform: uppercase;
     font: normal 18px/normal Helvetica Neue LTPro Md;
     color: #e2d4c0;
-     background: url('../images/setting-2.png') no-repeat 10px 15px;
+    background: url('../images/setting-2.png') no-repeat 10px 15px;
     border-left: none !important;
     float: left !important;
     padding-right: 70px;
     margin-top: -3px;
     text-indent: 10px;
-}
+} */
 
 .label-add-media{
     cursor: pointer;
@@ -2204,13 +2210,15 @@ input[type="range"]::-ms-fill-lower {
     font-weight: bold;
 }
 .setting-detail{
+    margin-top: -1px;
+    background: #ffffff;
     border: 1px solid #ddd;
     border-top: none !important;
-    padding: 20px 20px 25px;
+    padding: 20px 10px 25px; 
     color: #676b6d;
 }
 .setting-detail .form-setting{
-    padding-left: 30px;
+    padding-left: 10px;
 }
 .setting-detail .content-blocklist, 
 .setting-detail .content-notification,
@@ -2220,31 +2228,32 @@ input[type="range"]::-ms-fill-lower {
 }
 .label-text{
     font: normal 14px/normal Proxima Nova Bold;
-    color: #7b7777;
+    color: #a4a4a4;
     padding-bottom: 5px;
     width: 100%;
 }
 .btn-save-st{
-    background: url('../images/save.png') no-repeat !important;
+    background: #ed4c5f no-repeat !important;
     color: #ffffff !important;
 }
 .btn-cancel-st{
-    background: url('../images/cancel.png') no-repeat !important;
+    background: #313541 no-repeat !important;
     margin-left: 5px;
     color: #ffffff !important;
 }
 .btn-save-st,
 .btn-cancel-st{
-    width: 125px;
-    height: 45px;
+    margin-left: 10px;
+    width: 186px;
+    height: 32px;
     border: none;
     color: #ffffff;
-    font: normal 18px/normal Proxima Nova Bold;
+    font: normal 14px/normal Proxima Nova Bold;
 }
 .btn-save-st:hover,
 .btn-cancel-st:hover{
     color: #ffffff;
-    font: normal 18px/normal Proxima Nova Bold;
+    font: normal 14px/normal Proxima Nova Bold;
 }
 .btn-block-list{
     background: url('../images/cancel.png') no-repeat !important;
@@ -2289,7 +2298,7 @@ input[type="range"]::-ms-fill-lower {
     padding-bottom: 7px;
 }
 .locklist ul li span{
-    color: #4d5a63;
+    color: #a4a4a4;
     font: normal 16px/normal Helvetica Neue LTPro Bd;
     padding-left: 10px;
 }
@@ -2306,14 +2315,15 @@ input[type="range"]::-ms-fill-lower {
     padding-bottom: 6px;
 }
 .content-notification .col-sm-12 .checkbox label{
-    padding-left: 25px;
-    font: normal 14px/normal Proxima Nova Bold;
+    color:#b2b2b2;
+    padding-left: 10px;
+    font: normal 14px/normal Proxima Nova Regular;
 }
 
 .label-gender{
     display: block;
     font: normal 14px/normal Proxima Nova Bold;
-    color: #7b7777;
+    color: #ababab;
     padding-bottom: 15px;
 }
 .content-references .radio-inline label{
@@ -2321,7 +2331,10 @@ input[type="range"]::-ms-fill-lower {
     color: #7b7777;
 }
 .contennt-btn-form{
-    padding: 40px 30px 30px 0px;
+    margin-left:470px;
+    padding-top:50px;
+    padding-left:30px;
+   /*  padding: 40px 30px 30px 0px; */
 }
 
 .settings-icon{
@@ -2410,20 +2423,24 @@ input[type="range"]::-ms-fill-lower {
     display: block;
 }
 .select-day{
-    width: 80px; 
+    width: 180px; 
     float: left;
+    -webkit-appearance: none;
+    background: #ffffff url('../images/icon-textbox.png') no-repeat 97% center;
 }
 .select-month{
-    width: 90px; 
+    width: 180px; 
     float: left; 
     margin-left: 10px;
+    -webkit-appearance: none;
+    background: #ffffff url('../images/icon-textbox.png') no-repeat 97% center;
 }
 .input-text{
-    width: 350px; 
+    width: 574px; 
     display: inline-block; 
     float: left; 
     height: 43px; 
-    margin-bottom: 10px;
+    margin-bottom: 22px;
     margin-right: 20px;
 }
 .input-pass{
@@ -2432,7 +2449,7 @@ input[type="range"]::-ms-fill-lower {
 }
 .settings-header{
     width: 100%; 
-    padding: 0 30px;
+    padding: 0 15px;
 }
 .radio-inl{
     margin: 0 !important;
@@ -2440,18 +2457,22 @@ input[type="range"]::-ms-fill-lower {
     width: 30px;
 }
 .special-label{
-    font: normal 18px/normal Proxima Nova Regular;
+    color:#b8b8b8;
+    font: normal 14px/normal Proxima Nova Regular;
     padding-left: 10px !important;
 }
 .yes-no{
-    font: normal 18px/normal Proxima Nova Regular; 
+    color:#b8b8b8;
+    font: normal 14px/normal Proxima Nova Regular; 
     padding-left: 10px;
 }
 .pre-fill-text{
-    width: 230px; 
+    width: 180px; 
     height: 43px;
     font: normal 16px/normal Helvetica Neue LT Pro Lt;
     padding-right: 10px;
+    -webkit-appearance: none;
+    background: #ffffff url('../images/icon-textbox.png') no-repeat 97% center;
 }
 .right-content-01 div.adv-01{
     margin-bottom: 30px;
@@ -3886,3 +3907,97 @@ ul li .user_name_f a img{
     border-right: 10px solid transparent;
     border-bottom: 12px solid #ea5a5a;
 }
+
+/* Page Setting new Design*/
+.profile-setting{
+    margin-top:17px;
+    margin-left: 15px;
+    background: #ffffff;
+    width: 927px;
+    height:150px;
+
+}
+h3.profile-setting-title{
+    padding-top: 10px;
+    color: #484b54;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    font: normal 14px/normal Proxima Nova Semibold;
+}
+h3.profile-setting-title span{
+    font: normal 14px/normal Proxima Nova Semibold;
+    font-weight: bold;
+}
+.profile-setting-details{
+    margin-top: 20px;
+}
+.profile-setting .profile-setting-details ul li{
+    margin-left: 2px;
+    float:left;
+    width: 152px;
+}
+.profile-setting .profile-setting-details .profile-image,.profile-setting .profile-setting-details .profile-name ,.profile-setting .profile-setting-details .profile-address  {
+    text-align: center;
+}
+.profile-setting .profile-setting-details img{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+
+}
+.profile-setting .profile-setting-details .profile-name{
+    color: #4d5a63;
+    font: normal 14px/normal Helvetica Neue LTPro Bd;
+}
+.profile-setting .profile-setting-details .profile-name span{
+    font-weight: bold;
+}
+.profile-setting .profile-setting-details .profile-address{
+    color: #bebaba;
+    font: normal 14px/normal Helvetica Neue LTPro Roman;
+}
+.profile-setting .profile-setting-details .profile-address span{
+   text-transform: uppercase;
+}
+
+.menu-setting{
+    margin-top:15px;
+    margin-left: 15px;
+    background: #313541;
+    width: 927px;
+    text-transform: uppercase;
+    height: 48px;
+    color:#74808f;
+    text-align: center;
+    font: normal 14px/normal Proxima Nova Bold;
+    line-height: 48px;
+    border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+}
+
+.width-checkbox{
+    width:20px;
+    height: 20px;
+}
+
+.height-city{
+    padding-top: 12px;
+}
+.search-prefer{
+    padding-top: 20px;
+   /*  padding-left: 10px; */
+}
+.serach-prefer-select{
+    height: 40px;
+    width: 180px;
+    margin-left:20px;
+    padding-left: 10px;
+    border:1px solid #ddd;
+    font: normal 14px/normal Proxima Nova Regular;
+    color:#a4a4a4;
+    -webkit-appearance: none;
+    background: #ffffff url('../images/icon-textbox.png') no-repeat 97% center;
+}
+
