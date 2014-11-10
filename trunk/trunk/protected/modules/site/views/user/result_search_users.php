@@ -9,7 +9,7 @@
             <?php } else { ?>
                 <img src="/uploads/avatar/<?php echo $data->photo ?>" />
             <?php } ?>
-            <img class="icon-online-pre" src="/themes/default/images/<?php echo ($data->is_online)?'online-icon.png':'online-icon.png'; ?>"> 
+            <img class="icon-online-pre" src="/themes/default/images/<?php echo ($data->is_online)?'online-icon.png':'office-icon.png'; ?>"> 
         </div>
        
         <div class="name-01">
