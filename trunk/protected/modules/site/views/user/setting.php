@@ -5,43 +5,92 @@
     <div class="profile-setting">
         <h3 class="profile-setting-title"><span>features users</span></h3>
         <div class="profile-setting-details">
-            <ul>
-                <li>
-                    <div class="profile-image"><img src="/uploads/avatar/2370-oxbOBQWFmh10547536_10152567050905902_582391135425311779_n.jpg" alt="profile-img1" width="50" height="50"/></div>
-                    <div class="profile-name"><span>@BrenWintonBren</span></div>
-                    <div class="profile-address">38,Tules,<span> mi</span></div>
-                </li>
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <ul>
+                            <li>
+                                <div class="profile-image"><img src="/uploads/avatar/2370-oxbOBQWFmh10547536_10152567050905902_582391135425311779_n.jpg" alt="profile-img1" width="50" height="50"/></div>
+                                <div class="profile-name"><span>@BrenWintonBren</span></div>
+                                <div class="profile-address">38,Tules,<span> mi</span></div>
+                            </li>
+                            <li>
+                                <div class="profile-image"><img src="/uploads/avatar/2370-oxbOBQWFmh10547536_10152567050905902_582391135425311779_n.jpg" alt="profile-img1" width="50" height="50"/></div>
+                                <div class="profile-name"><span>@BrenWintonBren</span></div>
+                                <div class="profile-address">38,Tules,<span> mi</span></div>
+                            </li>
+                             <li>
+                                <div class="profile-image"><img src="/uploads/avatar/2370-oxbOBQWFmh10547536_10152567050905902_582391135425311779_n.jpg" alt="profile-img1" width="50" height="50"/></div>
+                                <div class="profile-name"><span>@BrenWintonBren</span></div>
+                                <div class="profile-address">38,Tules,<span> mi</span></div>
+                            </li>
 
-                <li>
-                    <div class="profile-image"><img src="/uploads/avatar/2370-oxbOBQWFmh10547536_10152567050905902_582391135425311779_n.jpg" alt="profile-img1" width="50" height="50"/></div>
-                    <div class="profile-name"><span>@BrenWinton</span></div>
-                    <div class="profile-address">38,Tules,<span> mi</span></div>
-                </li>
+                            <li>
+                                <div class="profile-image"><img src="/uploads/avatar/2370-oxbOBQWFmh10547536_10152567050905902_582391135425311779_n.jpg" alt="profile-img1" width="50" height="50"/></div>
+                                <div class="profile-name"><span>@BrenWintonBren</span></div>
+                                <div class="profile-address">38,Tules,<span> mi</span></div>
+                            </li>
+                            <li>
+                                <div class="profile-image"><img src="/uploads/avatar/2370-oxbOBQWFmh10547536_10152567050905902_582391135425311779_n.jpg" alt="profile-img1" width="50" height="50"/></div>
+                                <div class="profile-name"><span>@BrenWintonBren</span></div>
+                                <div class="profile-address">38,Tules,<span> mi</span></div>
+                            </li>
+                            <li>
+                                <div class="profile-image"><img src="/uploads/avatar/2370-oxbOBQWFmh10547536_10152567050905902_582391135425311779_n.jpg" alt="profile-img1" width="50" height="50"/></div>
+                                <div class="profile-name"><span>@BrenWintonBren</span></div>
+                                <div class="profile-address">38,Tules,<span> mi</span></div>
+                            </li>
+                        <ul>
+                    </div>
+                    <div class="item">
+                        <ul>
+                            <li>
+                                <div class="profile-image"><img src="/uploads/avatar/2370-oxbOBQWFmh10547536_10152567050905902_582391135425311779_n.jpg" alt="profile-img1" width="50" height="50"/></div>
+                                <div class="profile-name"><span>@BrenWintonBren</span></div>
+                                <div class="profile-address">38,Tules,<span> mi</span></div>
+                            </li>
+                            <li>
+                                <div class="profile-image"><img src="/uploads/avatar/2370-oxbOBQWFmh10547536_10152567050905902_582391135425311779_n.jpg" alt="profile-img1" width="50" height="50"/></div>
+                                <div class="profile-name"><span>@BrenWintonBren</span></div>
+                                <div class="profile-address">38,Tules,<span> mi</span></div>
+                            </li>
+                             <li>
+                                <div class="profile-image"><img src="/uploads/avatar/2370-oxbOBQWFmh10547536_10152567050905902_582391135425311779_n.jpg" alt="profile-img1" width="50" height="50"/></div>
+                                <div class="profile-name"><span>@BrenWintonBren</span></div>
+                                <div class="profile-address">38,Tules,<span> mi</span></div>
+                            </li>
 
-                <li>
-                    <div class="profile-image"><img src="/uploads/avatar/2370-oxbOBQWFmh10547536_10152567050905902_582391135425311779_n.jpg" alt="profile-img1" width="50" height="50"/></div>
-                     <div class="profile-name"><span>@BrenWinton</span></div>
-                    <div class="profile-address">38,Tules,<span> mi</span></div>
-                </li>
+                            <li>
+                                <div class="profile-image"><img src="/uploads/avatar/2370-oxbOBQWFmh10547536_10152567050905902_582391135425311779_n.jpg" alt="profile-img1" width="50" height="50"/></div>
+                                <div class="profile-name"><span>@BrenWintonBren</span></div>
+                                <div class="profile-address">38,Tules,<span> mi</span></div>
+                            </li>
+                            <li>
+                                <div class="profile-image"><img src="/uploads/avatar/2370-oxbOBQWFmh10547536_10152567050905902_582391135425311779_n.jpg" alt="profile-img1" width="50" height="50"/></div>
+                                <div class="profile-name"><span>@BrenWintonBren</span></div>
+                                <div class="profile-address">38,Tules,<span> mi</span></div>
+                            </li>
+                            <li>
+                                <div class="profile-image"><img src="/uploads/avatar/2370-oxbOBQWFmh10547536_10152567050905902_582391135425311779_n.jpg" alt="profile-img1" width="50" height="50"/></div>
+                                <div class="profile-name"><span>@BrenWintonBren</span></div>
+                                <div class="profile-address">38,Tules,<span> mi</span></div>
+                            </li>
 
-                <li>
-                    <div class="profile-image"><img src="/uploads/avatar/2370-oxbOBQWFmh10547536_10152567050905902_582391135425311779_n.jpg" alt="profile-img1" width="50" height="50"/></div>
-                     <div class="profile-name"><span>@BrenWinton</span></div>
-                    <div class="profile-address">38,Tules,<span> mi</span></div>
-                </li>
+                            
+                        <ul>
+                    </div>
 
-                <li>
-                    <div class="profile-image"><img src="/uploads/avatar/2370-oxbOBQWFmh10547536_10152567050905902_582391135425311779_n.jpg" alt="profile-img1" width="50" height="50"/></div>
-                     <div class="profile-name"><span>@BrenWinton</span></div>
-                    <div class="profile-address">38,Tules,<span> mi</span></div>
-                </li>
-                
-                <li>
-                    <div class="profile-image"><img src="/uploads/avatar/2370-oxbOBQWFmh10547536_10152567050905902_582391135425311779_n.jpg" alt="profile-img1" width="50" height="50"/></div>
-                    <div class="profile-name"><span>@BrenWinton</span></div>
-                    <div class="profile-address">38,Tules,<span> mi</span></div>
-                </li>
-            <ul>
+
+                </div>
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
         </div>
     </div>
     <div class="menu-setting">settings</div>
