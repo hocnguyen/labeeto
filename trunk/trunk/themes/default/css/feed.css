@@ -3984,6 +3984,12 @@ h3.profile-setting-title span{
     width:20px;
     height: 20px;
 }
+.form-group .col-sm-12 {
+    margin-bottom: 5px;
+}
+input.width-checkbox {
+    margin-top: -1px;
+}
 
 .height-city{
     padding-top: 12px;
