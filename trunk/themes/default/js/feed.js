@@ -382,7 +382,7 @@ $(document).ready(function(){
     $('.chat-system').live('click', function(){
         var infor = $(this).attr("data-id");
         var infor_common   = infor.split('--');
-        $('.my-report').attr('data-id',infor_common[0]);
+        $('.my-report').attr('data-id',infor_common[1]);
         $('.username-chat-system').text(infor_common[1]);
         showImageChatSystem(infor_common[2]);
     });
