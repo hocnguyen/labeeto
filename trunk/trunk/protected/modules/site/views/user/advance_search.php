@@ -405,9 +405,9 @@
       <div class="modal-footer footer-report">
         <div class="avatar-model">
             <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
-            <span class="request-romeo">Romeo</span>
+            <span class="request-romeo username-chat-system"></span>
         </div>
-        <a type="button" class="btn btn-primary my-report">Send Chat Request</a>
+        <a type="button" class="btn btn-primary my-report" data-id="">Send Chat Request</a>
       </div>
     </div>
   </div>
