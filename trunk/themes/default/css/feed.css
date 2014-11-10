@@ -3933,9 +3933,9 @@ h3.profile-setting-title span{
     margin-top: 20px;
 }
 .profile-setting .profile-setting-details ul li{
-    margin-left: 2px;
+    margin-left: 14px;
     float:left;
-    width: 152px;
+    width: 140px;
 }
 .profile-setting .profile-setting-details .profile-image,.profile-setting .profile-setting-details .profile-name ,.profile-setting .profile-setting-details .profile-address  {
     text-align: center;
@@ -4003,4 +4003,28 @@ h3.profile-setting-title span{
 .form-group input.color-focus:focus{
     border:1px solid #ddd;
     background: #fbf8f8;
+}
+.carousel-control .glyphicon-chevron-left {
+    left: 10%;
+
+}
+.carousel-control .glyphicon-chevron-right {
+    right: 10%;
+}
+.carousel-control.left{
+    background:url('../images/icon-pre.png') no-repeat;
+    position: absolute;
+    top:11px;
+    left:6px;
+}
+.carousel-control.right{
+    background:url('../images/icon-next.png') no-repeat;
+    top:15px;
+    right:-120px; 
+}
+.glyphicon-chevron-left:before {
+    content: "";
+}
+.glyphicon-chevron-right:before {
+    content: "";
 }
