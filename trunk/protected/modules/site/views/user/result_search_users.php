@@ -23,7 +23,7 @@
         
 
         <div class="chat-01">
-            <a data-toggle="modal" data-target="#WantToChat" data-id=" <?php echo $data->id; ?> "></a>
+            <a data-toggle="modal" data-target="#WantToChat" data-id="<?php echo $data->id; ?>--<?php echo $data->username; ?>--<?php echo $data->photo; ?>" class="chat-system"></a>
         </div>
         
         <div class="message-01">

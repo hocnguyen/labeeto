@@ -127,5 +127,8 @@ class Chat extends CActiveRecord
             $name = '<b>'.$name.'</b>';
         return $name;
     }
+    function getUsername(){
+        return Yii::app()->user->id;
+    }
 
 }
