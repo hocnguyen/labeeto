@@ -35,8 +35,8 @@
                                 <div class="profile-name"><span>@BrenWintonBren</span></div>
                                 <div class="profile-address">38,Tules,<span> mi</span></div>
                             </li>
-                            <li>
-                                <div class="profile-image pre"><img src="/themes/default/images/f_avatar.png" alt="profile-img1" width="50" height="50"/></div>
+                            <li class="pre">
+                                <div class="profile-image"><img src="/themes/default/images/f_avatar.png" alt="profile-img1" width="50" height="50"/></div>
                                 <div class="profile-name"><span>@BrenWintonBren</span></div>
                                 <div class="profile-address">38,Tules,<span> mi</span></div>
                             </li>
