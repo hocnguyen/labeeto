@@ -3933,9 +3933,12 @@ h3.profile-setting-title span{
     margin-top: 20px;
 }
 .profile-setting .profile-setting-details ul li{
-    margin-left: 14px;
+    margin-right:5px;
     float:left;
-    width: 140px;
+    width: 135px;
+}
+.profile-setting .profile-setting-details ul li.first{
+     margin-left: 40px;
 }
 .profile-setting .profile-setting-details .profile-image,.profile-setting .profile-setting-details .profile-name ,.profile-setting .profile-setting-details .profile-address  {
     text-align: center;
@@ -4015,12 +4018,12 @@ h3.profile-setting-title span{
     background:url('../images/icon-pre.png') no-repeat;
     position: absolute;
     top:11px;
-    left:6px;
+    left:25px;
 }
 .carousel-control.right{
     background:url('../images/icon-next.png') no-repeat;
     top:15px;
-    right:-120px; 
+    right:-75px; 
 }
 .glyphicon-chevron-left:before {
     content: "";
