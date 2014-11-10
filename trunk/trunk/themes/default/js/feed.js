@@ -402,7 +402,7 @@ $(document).ready(function(){
         var avatar = $('#avatar_hidien_'+id).val();
         var username = $('#name_hidien_'+id).val();
         $('#SendaMessage').val(id);
-        $('#txt_username').text(username);
+        $('.user-kaka').text(username);
         $('#SendaMessage .agreed input').addClass('checked_'+id);
         $('#SendaMessage textarea').val('');
         showImageSendMessage(avatar);
