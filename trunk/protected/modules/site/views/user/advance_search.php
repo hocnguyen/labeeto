@@ -84,8 +84,7 @@
                                 echo "<option value='-1'>Pre-filled</option>";
                                 foreach( $edu as $key=>$val ){ ?>
                                 <option value="<?php echo $key; ?>" <?php if( isset($education) ){ if( $education == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
-                            <?php } ?>
-                            ?>
+                            <?php } ?> 
 
                         </select>
                         
@@ -99,7 +98,6 @@
                                 foreach( $race as $key=>$val ){ ?>
                                 <option value="<?php echo $key; ?>" <?php if( isset($race) ){ if( $race == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
                             <?php } ?>
-                            ?>
 
                         </select>
                         
@@ -113,7 +111,6 @@
                                 foreach( $faith as $key=>$val ){ ?>
                                 <option value="<?php echo $key; ?>" <?php if( isset($faith) ){ if( $faith == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
                             <?php } ?>
-                            ?>
 
                         </select>
                         
@@ -127,7 +124,6 @@
                                 foreach( $kids as $key=>$val ){ ?>
                                 <option value="<?php echo $key; ?>" <?php if( isset($kids) ){ if( $kids == $key ){ echo "selected = 'select' "; } } ?> ><?php echo $val;?> </option>
                             <?php } ?>
-                            ?>
 
                         </select>
                         
