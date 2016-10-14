@@ -2,6 +2,8 @@ CREATE TABLE  `labeeto`.`education` (
 `id` INT( 11 ) NULL AUTO_INCREMENT PRIMARY KEY ,
 `name` VARCHAR( 255 ) NULL
 ) ENGINE = INNODB;
+// test
+
 
 CREATE TABLE  `labeeto`.`religion` (
 `id` INT( 11 ) NULL AUTO_INCREMENT PRIMARY KEY ,
